@@ -1,0 +1,56 @@
+{
+  "sample_id": "00026_T8_0052",
+  "video_id": "00026",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00026_T8_0052_k2.mp4",
+  "psq": 0.5941841060320534,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.9,
+  "nep": 0.9912203907966614,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.8485281374238571,
+  "csep_v3_coverage": 0.9,
+  "csep_v3_consistency": 0.8,
+  "ses": 0.8650388479232788,
+  "off_target": 0.0,
+  "id_drift": 0.13496115207672119,
+  "dps": 0.75,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 1.0,
+      "5": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "4-5": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9923895597457886,
+      "2": 0.9952161908149719,
+      "3": 0.9845588207244873,
+      "4": 0.9877077341079712,
+      "5": 0.9962296485900879
+    },
+    "mask_query": "bride in a half-fastened ivory wedding gown, hair in soft loose waves",
+    "mask_hits": {
+      "4": false,
+      "5": false
+    }
+  },
+  "k": 2
+}

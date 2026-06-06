@@ -1,0 +1,55 @@
+{
+  "sample_id": "00015_T8_0030",
+  "video_id": "00015",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00015_T8_0030_k2.mp4",
+  "psq": 0.6248185604810714,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.5,
+  "nep": 0.9894767999649048,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.6324555320336759,
+  "csep_v3_coverage": 0.5,
+  "csep_v3_consistency": 0.8,
+  "ses": 0.9675472180048624,
+  "off_target": 0.0,
+  "id_drift": 0.032452781995137535,
+  "dps": 0.5,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 0.5,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.2,
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9830783605575562,
+      "2": 0.9872710704803467,
+      "3": 0.9969658851623535,
+      "4": 0.9905918836593628
+    },
+    "mask_query": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye",
+    "mask_hits": {
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 2
+}

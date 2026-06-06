@@ -1,0 +1,50 @@
+{
+  "sample_id": "00004_T8_0009",
+  "video_id": "00004",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00004_T8_0009_k0.mp4",
+  "psq": 0.5438171336385939,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.8,
+  "nep": 0.987768550713857,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.8507245977719625,
+  "off_target": 0.0,
+  "id_drift": 0.1492754022280375,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.8
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9848932027816772,
+      "2": 0.9902899265289307,
+      "3": 0.9881225228309631
+    },
+    "mask_query": "young man in a charcoal sweater leaning forward across the table",
+    "mask_hits": {
+      "3": false
+    }
+  },
+  "k": 0
+}

@@ -1,0 +1,54 @@
+{
+  "sample_id": "00005_T8_0010",
+  "video_id": "00005",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00005_T8_0010_k0.mp4",
+  "psq": 0.6023765926890903,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.30000000000000004,
+  "nep": 0.9853943188985189,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.5477225575051662,
+  "csep_v3_coverage": 0.30000000000000004,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.9451298117637634,
+  "off_target": 0.0,
+  "id_drift": 0.05487018823623657,
+  "dps": 0.75,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "2": 0.2,
+      "3": 0.4
+    },
+    "csep_v3_pair_scores": {
+      "2-3": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9958528280258179,
+      "2": 0.9825369119644165,
+      "3": 0.9777932167053223
+    },
+    "mask_query": "astronaut in a navy blue mission polo with a name tag, hair floating slightly",
+    "mask_hits": {
+      "2": false,
+      "3": false
+    }
+  },
+  "k": 0
+}

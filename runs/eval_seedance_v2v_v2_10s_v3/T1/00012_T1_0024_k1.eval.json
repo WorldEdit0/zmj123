@@ -1,0 +1,64 @@
+{
+  "sample_id": "00012_T1_0024",
+  "video_id": "00012",
+  "task_id": "T1",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T1/00012_T1_0024_k1.mp4",
+  "psq": 0.609486230413119,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.55,
+  "nep": 0.968759760260582,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.6633249580710799,
+  "csep_v3_coverage": 0.55,
+  "csep_v3_consistency": 0.7999999999999999,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.8,
+      "2": 0.6,
+      "3": 0.0,
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 0.8,
+      "1-3": 0.8,
+      "1-4": 0.8,
+      "2-3": 0.8,
+      "2-4": 0.8,
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9764240980148315,
+      "2": 0.9818782210350037,
+      "3": 0.9815430045127869,
+      "4": 0.9351937174797058
+    },
+    "mask_query": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot",
+    "mask_hits": {
+      "1": true,
+      "2": false,
+      "3": false,
+      "4": true
+    }
+  },
+  "k": 1
+}

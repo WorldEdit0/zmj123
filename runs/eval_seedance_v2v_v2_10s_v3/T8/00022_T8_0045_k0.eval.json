@@ -1,0 +1,51 @@
+{
+  "sample_id": "00022_T8_0045",
+  "video_id": "00022",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00022_T8_0045_k0.mp4",
+  "psq": 0.5902648870150249,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9804544895887375,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.9109793305397034,
+  "off_target": 0.0029361979166666664,
+  "id_drift": 0.08902066946029663,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9931802153587341,
+      "2": 0.9454817771911621,
+      "3": 0.991040825843811,
+      "4": 0.9921151399612427
+    },
+    "mask_query": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window",
+    "mask_hits": {
+      "4": false
+    }
+  },
+  "k": 0
+}

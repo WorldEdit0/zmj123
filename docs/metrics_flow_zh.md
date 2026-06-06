@@ -49,7 +49,7 @@ run_eval.py
   |
   |-- PSQ     只看 edited frames
   |-- EE_v3   source/edit 对应帧对 -> Qwen3-VL 评分
-  |-- NEP     source/edit DINO 相似度，SAM3 mask 外区域
+  |-- NEP     局部任务 source/edit DINO 相似度，edit.mask_queries union mask 外区域
   |-- CSEP_v3 edited shot 两两比较 -> Qwen3-VL 一致性
   |-- SES     OffTarget + IDdrift
   v
@@ -178,11 +178,12 @@ source per-shot frames          edited per-shot frames
 source per-shot frames          edited per-shot frames
           |                              |
           |                              |
-          +------ SAM3 mask 可选 --------+
+          +------ edit.mask_queries ------+
+          | source_queries / edited_queries
           |                              |
           v                              v
-如果有 mask：取 mask 外区域
-如果无 mask / mask miss：使用整帧
+SAM3 分别在 source / edited 查询目标区域
+取 source mask 与 edited mask 的 union 外区域
           |
           v
 DINOv2 embed source frames -> shot source embedding
@@ -198,7 +199,9 @@ NEP = mean(所有可评分 shot_nep)
 注意：
 
 - SAM3 mask 当前只用于 NEP 的非编辑区域比较。
-- mask miss 不会导致指标失败，会退回整帧 NEP，并在 `extra.mask_hits` 里记录。
+- NEP 只对局部编辑任务启用；T3/T5/T6/T7 这类全局、结构或转场任务返回 `None`。
+- 对局部任务，mask miss 的 shot 会跳过，不再退回整帧 NEP；miss 细节记录在 `extra.mask_hits`。
+- T4 的 anchor 只表示空间关系，不再作为 NEP 的编辑区域 mask query。
 
 ## CSEP_v3
 

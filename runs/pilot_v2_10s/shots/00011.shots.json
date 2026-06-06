@@ -1,0 +1,183 @@
+{
+  "video_id": "00011",
+  "video_path": "data/source_videos_10s/videos/00011.mp4",
+  "fps": 24.0,
+  "total_frames": 241,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 10.042,
+  "expected_shots": 4,
+  "omnishotcut": {
+    "n_shots": 4,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59,
+        "duration_frames": 60,
+        "t_start": 0.0,
+        "t_end": 2.5,
+        "duration_sec": 2.5
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128,
+        "duration_frames": 69,
+        "t_start": 2.5,
+        "t_end": 5.375,
+        "duration_sec": 2.875
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201,
+        "duration_frames": 73,
+        "t_start": 5.375,
+        "t_end": 8.417,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240,
+        "duration_frames": 39,
+        "t_start": 8.417,
+        "t_end": 10.042,
+        "duration_sec": 1.625
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 4,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 58,
+        "duration_frames": 59,
+        "t_start": 0.0,
+        "t_end": 2.458,
+        "duration_sec": 2.458
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 59,
+        "frame_end": 127,
+        "duration_frames": 69,
+        "t_start": 2.458,
+        "t_end": 5.333,
+        "duration_sec": 2.875
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 128,
+        "frame_end": 200,
+        "duration_frames": 73,
+        "t_start": 5.333,
+        "t_end": 8.375,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240,
+        "duration_frames": 40,
+        "t_start": 8.375,
+        "t_end": 10.042,
+        "duration_sec": 1.667
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 4,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59,
+        "duration_frames": 60,
+        "t_start": 0.0,
+        "t_end": 2.5,
+        "duration_sec": 2.5
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128,
+        "duration_frames": 69,
+        "t_start": 2.5,
+        "t_end": 5.375,
+        "duration_sec": 2.875
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201,
+        "duration_frames": 73,
+        "t_start": 5.375,
+        "t_end": 8.417,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240,
+        "duration_frames": 39,
+        "t_start": 8.417,
+        "t_end": 10.042,
+        "duration_sec": 1.625
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 59,
+      "duration_frames": 60,
+      "t_start": 0.0,
+      "t_end": 2.5,
+      "duration_sec": 2.5
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 60,
+      "frame_end": 128,
+      "duration_frames": 69,
+      "t_start": 2.5,
+      "t_end": 5.375,
+      "duration_sec": 2.875
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 129,
+      "frame_end": 201,
+      "duration_frames": 73,
+      "t_start": 5.375,
+      "t_end": 8.417,
+      "duration_sec": 3.042
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 202,
+      "frame_end": 240,
+      "duration_frames": 39,
+      "t_start": 8.417,
+      "t_end": 10.042,
+      "duration_sec": 1.625
+    }
+  ],
+  "consensus_n_shots": 4,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

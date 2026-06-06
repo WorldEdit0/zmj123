@@ -1,0 +1,183 @@
+{
+  "video_id": "00001",
+  "video_path": "data/source_videos/videos/00001.mp4",
+  "fps": 24.0,
+  "total_frames": 361,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 15.042,
+  "expected_shots": 4,
+  "omnishotcut": {
+    "n_shots": 4,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48,
+        "duration_frames": 49,
+        "t_start": 0.0,
+        "t_end": 2.042,
+        "duration_sec": 2.042
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 168,
+        "duration_frames": 120,
+        "t_start": 2.042,
+        "t_end": 7.042,
+        "duration_sec": 5.0
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 316,
+        "duration_frames": 148,
+        "t_start": 7.042,
+        "t_end": 13.208,
+        "duration_sec": 6.167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 317,
+        "frame_end": 360,
+        "duration_frames": 44,
+        "t_start": 13.208,
+        "t_end": 15.042,
+        "duration_sec": 1.833
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 4,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 47,
+        "duration_frames": 48,
+        "t_start": 0.0,
+        "t_end": 2.0,
+        "duration_sec": 2.0
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 48,
+        "frame_end": 167,
+        "duration_frames": 120,
+        "t_start": 2.0,
+        "t_end": 7.0,
+        "duration_sec": 5.0
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 168,
+        "frame_end": 315,
+        "duration_frames": 148,
+        "t_start": 7.0,
+        "t_end": 13.167,
+        "duration_sec": 6.167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 316,
+        "frame_end": 360,
+        "duration_frames": 45,
+        "t_start": 13.167,
+        "t_end": 15.042,
+        "duration_sec": 1.875
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 4,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48,
+        "duration_frames": 49,
+        "t_start": 0.0,
+        "t_end": 2.042,
+        "duration_sec": 2.042
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 168,
+        "duration_frames": 120,
+        "t_start": 2.042,
+        "t_end": 7.042,
+        "duration_sec": 5.0
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 316,
+        "duration_frames": 148,
+        "t_start": 7.042,
+        "t_end": 13.208,
+        "duration_sec": 6.167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 317,
+        "frame_end": 360,
+        "duration_frames": 44,
+        "t_start": 13.208,
+        "t_end": 15.042,
+        "duration_sec": 1.833
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 48,
+      "duration_frames": 49,
+      "t_start": 0.0,
+      "t_end": 2.042,
+      "duration_sec": 2.042
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 49,
+      "frame_end": 168,
+      "duration_frames": 120,
+      "t_start": 2.042,
+      "t_end": 7.042,
+      "duration_sec": 5.0
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 169,
+      "frame_end": 316,
+      "duration_frames": 148,
+      "t_start": 7.042,
+      "t_end": 13.208,
+      "duration_sec": 6.167
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 317,
+      "frame_end": 360,
+      "duration_frames": 44,
+      "t_start": 13.208,
+      "t_end": 15.042,
+      "duration_sec": 1.833
+    }
+  ],
+  "consensus_n_shots": 4,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

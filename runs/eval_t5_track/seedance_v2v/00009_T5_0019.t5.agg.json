@@ -1,0 +1,9 @@
+{
+  "sample_id": "00009_T5_0019",
+  "op": "swap",
+  "k_count": 3,
+  "tsf_mean": 0.9252510468165079,
+  "tsf_std": 0.0015956816398223841,
+  "count_correct_mean": 1.0,
+  "content_alignment_mean": 0.850502093633016
+}

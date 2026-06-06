@@ -1,0 +1,51 @@
+{
+  "sample_id": "00008_T8_0017",
+  "video_id": "00008",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00008_T8_0017_k0.mp4",
+  "psq": 0.5638014702002208,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.7202137261629105,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.3863268196582794,
+  "off_target": 0.017021484374999996,
+  "id_drift": 0.6136731803417206,
+  "dps": 0.16666666666666666,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 0.3333333333333333,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9919965863227844,
+      "2": 0.4473336637020111,
+      "3": 0.9450007081031799,
+      "4": 0.4965239465236664
+    },
+    "mask_query": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 0
+}

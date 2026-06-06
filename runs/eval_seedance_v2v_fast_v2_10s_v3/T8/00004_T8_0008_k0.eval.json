@@ -1,0 +1,54 @@
+{
+  "sample_id": "00004_T8_0008",
+  "video_id": "00004",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00004_T8_0008_k0.mp4",
+  "psq": 0.546249885559082,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.4,
+  "nep": 0.988873024781545,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.0,
+  "csep_v3_coverage": 0.4,
+  "csep_v3_consistency": 0.0,
+  "ses": 0.8514424761136373,
+  "off_target": 0.0,
+  "id_drift": 0.1485575238863627,
+  "dps": 1.0,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "2": 0.8,
+      "3": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "2-3": 0.0
+    },
+    "nep_per_shot": {
+      "1": 0.9850447177886963,
+      "2": 0.991244912147522,
+      "3": 0.9903294444084167
+    },
+    "mask_query": "reader in a deep purple shawl with long dark hair and silver rings",
+    "mask_hits": {
+      "2": false,
+      "3": false
+    }
+  },
+  "k": 0
+}

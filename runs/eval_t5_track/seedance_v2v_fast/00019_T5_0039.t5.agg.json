@@ -1,0 +1,9 @@
+{
+  "sample_id": "00019_T5_0039",
+  "op": "insert",
+  "k_count": 3,
+  "tsf_mean": 0.4106867214043935,
+  "tsf_std": 0.023964424412409424,
+  "count_correct_mean": 0.0,
+  "content_alignment_mean": 0.821373442808787
+}

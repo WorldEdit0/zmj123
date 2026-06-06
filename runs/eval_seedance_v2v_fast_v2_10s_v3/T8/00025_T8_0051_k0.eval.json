@@ -1,0 +1,56 @@
+{
+  "sample_id": "00025_T8_0051",
+  "video_id": "00025",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00025_T8_0051_k0.mp4",
+  "psq": 0.562245525042216,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9885447859764099,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.0,
+  "csep_v3_coverage": 0.0,
+  "csep_v3_consistency": 0.8,
+  "ses": 0.8671293556690216,
+  "off_target": 0.0,
+  "id_drift": 0.1328706443309784,
+  "dps": 0.3333333333333333,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 0.6666666666666666,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.0,
+      "5": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "4-5": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9911286234855652,
+      "2": 0.9925105571746826,
+      "3": 0.9915781617164612,
+      "4": 0.9687691330909729,
+      "5": 0.9987374544143677
+    },
+    "mask_query": "passenger in a chunky red sweater with a knit beanie",
+    "mask_hits": {
+      "4": true,
+      "5": false
+    }
+  },
+  "k": 0
+}

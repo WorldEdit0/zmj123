@@ -1,0 +1,60 @@
+{
+  "sample_id": "00025_T8_0050",
+  "video_id": "00025",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00025_T8_0050_k1.mp4",
+  "psq": 0.5619058898289999,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9886338233947753,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.0,
+  "csep_v3_coverage": 0.0,
+  "csep_v3_consistency": 0.26666666666666666,
+  "ses": 0.8702031672000885,
+  "off_target": 0.0,
+  "id_drift": 0.1297968327999115,
+  "dps": 0.6666666666666666,
+  "dps_p_persist": 0.3333333333333333,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 0.0,
+      "3-5": 0.0,
+      "4-5": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9925421476364136,
+      "2": 0.9931998252868652,
+      "3": 0.9900922775268555,
+      "4": 0.9688166379928589,
+      "5": 0.9985182285308838
+    },
+    "mask_query": "pilot in a beige flight suit and aviator sunglasses, gloves on hands",
+    "mask_hits": {
+      "3": false,
+      "4": false,
+      "5": false
+    }
+  },
+  "k": 1
+}

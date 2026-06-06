@@ -1,0 +1,55 @@
+{
+  "sample_id": "00006_T8_0012",
+  "video_id": "00006",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00006_T8_0012_k2.mp4",
+  "psq": 0.5752508646249772,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.1,
+  "nep": 0.6158333346247673,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.31622776601683794,
+  "csep_v3_coverage": 0.1,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.886238157749176,
+  "off_target": 0.0,
+  "id_drift": 0.11376184225082397,
+  "dps": 0.25,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 0.5,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.2,
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9930219650268555,
+      "2": 0.9892405271530151,
+      "3": 0.15757060050964355,
+      "4": 0.32350024580955505
+    },
+    "mask_query": "teen skater in a baggy white tee and black cargo shorts",
+    "mask_hits": {
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 2
+}

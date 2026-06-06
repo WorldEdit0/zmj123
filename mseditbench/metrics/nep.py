@@ -6,6 +6,9 @@ cross-cut DINO is meaningless since the next shot is intentionally different.
 
 If a caller has known non-comparable shots, pass shot_id in skip_shots so
 they do not pull the average down.
+
+For local edit tasks, pass require_masks=True so shots without a valid edit
+region mask are skipped instead of falling back to whole-frame similarity.
 """
 
 from __future__ import annotations
@@ -60,12 +63,16 @@ def nep(
 
     if not per_shot:
         # 中文注释：没有任何可评分 shot 时，返回 None 作为“不可评估”。
+        reason = None
+        if require_masks and n_mask_missing:
+            reason = "required edit-region masks were missing"
         return {
             "nep": None,
             "per_shot_nep": {},
             "n_scored": 0,
             "n_skipped": n_skipped,
             "n_mask_missing": n_mask_missing,
+            "reason": reason,
         }
 
     return {

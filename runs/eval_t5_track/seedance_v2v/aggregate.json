@@ -1,0 +1,33 @@
+{
+  "baseline": "seedance_v2v",
+  "snapshot_id": "t5_track",
+  "task_id": "T5",
+  "n_prompts": 60,
+  "k_samples": 3,
+  "tsf_mean": 0.5360288173322463,
+  "tsf_std": 0.199087085776068,
+  "count_correct_mean": 0.29444444444444434,
+  "content_alignment_mean": 0.7776131902200482,
+  "by_op": {
+    "insert": {
+      "n": 29,
+      "tsf_mean": 0.4285636332592574,
+      "tsf_std": 0.12545270398426597
+    },
+    "delete": {
+      "n": 18,
+      "tsf_mean": 0.5025370087888505,
+      "tsf_std": 0.10284352268323745
+    },
+    "swap": {
+      "n": 8,
+      "tsf_mean": 0.8548600835104784,
+      "tsf_std": 0.1906160575390802
+    },
+    "reorder": {
+      "n": 5,
+      "tsf_mean": 0.7697673698266347,
+      "tsf_std": 0.07446900676168608
+    }
+  }
+}

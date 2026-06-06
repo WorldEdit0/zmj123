@@ -1,0 +1,51 @@
+{
+  "sample_id": "00023_T8_0047",
+  "video_id": "00023",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00023_T8_0047_k1.mp4",
+  "psq": 0.5958053561051686,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.9735254049301147,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.9139240582784017,
+  "off_target": 0.006354166666666667,
+  "id_drift": 0.08607594172159831,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.989919126033783,
+      "2": 0.977519690990448,
+      "3": 0.9384251832962036,
+      "4": 0.9882376194000244
+    },
+    "mask_query": "young busker in a beat-up brown leather jacket with a stubbled chin",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 1
+}

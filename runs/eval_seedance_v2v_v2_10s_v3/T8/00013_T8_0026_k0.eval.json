@@ -1,0 +1,55 @@
+{
+  "sample_id": "00013_T8_0026",
+  "video_id": "00013",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00013_T8_0026_k0.mp4",
+  "psq": 0.6192139859994252,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.7,
+  "nep": 0.9877160340547562,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.8366600265340756,
+  "csep_v3_coverage": 0.7,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.9539836843808492,
+  "off_target": 0.0,
+  "id_drift": 0.046016315619150795,
+  "dps": 0.75,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.5,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.6,
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.99229896068573,
+      "2": 0.9926115870475769,
+      "3": 0.9940203428268433,
+      "4": 0.9719332456588745
+    },
+    "mask_query": "locksmith in a navy jumpsuit with a tool roll over one shoulder",
+    "mask_hits": {
+      "3": false,
+      "4": true
+    }
+  },
+  "k": 0
+}

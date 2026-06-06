@@ -126,7 +126,7 @@ python -m mseditbench.eval.t5_track \
 | **PSQ** | Perceptual quality of edited frames | pyiqa MUSIQ + LAION-Aes | [0, 1] ↑ |
 | **EE_v3** | Did the edit apply the instruction? | Seed VLM 0-5 rating per shot | [0, 1] ↑ |
 | **CSEP_v3** | Does the edit propagate consistently across shots? | √(coverage × consistency); both VLM-rated | [0, 1] ↑ |
-| **NEP** | Is the un-edited region preserved? | DINOv2 cos sim outside SAM-3 mask | [0, 1] ↑ |
+| **NEP** | Is the un-edited region preserved for local edits? | DINOv2 cos sim outside the SAM-3 union mask from `edit.mask_queries` | [0, 1] ↑ / None when inapplicable |
 | **SES** | Is editing safely contained (no off-target damage / identity drift)? | 1 − max(IDdrift, OffTarget); ArcFace + CLIP-T | [0, 1] ↑ |
 | **TSF** (T5) | Did the requested shot order happen? | OmniShotCut shot detection + ordered DINOv2 content alignment | [0, 1] ↑ |
 

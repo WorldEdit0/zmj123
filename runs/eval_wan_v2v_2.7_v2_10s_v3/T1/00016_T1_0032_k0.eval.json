@@ -1,0 +1,64 @@
+{
+  "sample_id": "00016_T1_0032",
+  "video_id": "00016",
+  "task_id": "T1",
+  "baseline": "wan_v2v_2.7_v2_10s",
+  "snapshot_id": "wan_v2v_2.7_v2_10s_v3",
+  "edited_video_path": "runs/wan_v2v_2.7_edit_v2_10s/videos/T1/00016_T1_0032.mp4",
+  "psq": 0.651574367682139,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.65,
+  "nep": 0.8546365797519684,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.7359800721939873,
+  "csep_v3_coverage": 0.65,
+  "csep_v3_consistency": 0.8333333333333334,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.8,
+      "2": 0.6,
+      "3": 0.6,
+      "4": 0.6
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 0.8,
+      "1-3": 0.8,
+      "1-4": 0.8,
+      "2-3": 1.0,
+      "2-4": 0.8,
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9328919649124146,
+      "2": 0.9306343793869019,
+      "3": 0.7753206491470337,
+      "4": 0.7796993255615234
+    },
+    "mask_query": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap",
+    "mask_hits": {
+      "1": true,
+      "2": true,
+      "3": false,
+      "4": true
+    }
+  },
+  "k": 0
+}

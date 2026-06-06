@@ -1,0 +1,465 @@
+{
+  "summary": {
+    "n_total": 30,
+    "n_exact_match": 30,
+    "n_off_by_one": 0,
+    "n_off_more": 0,
+    "hit_rate": 1.0,
+    "off_by_one_rate": 0.0,
+    "n_failed": 0,
+    "transnetv2_available_on": 30,
+    "tn_ps_count_match_count": 28,
+    "tn_ps_full_agree_count": 28,
+    "expected_shot_distribution": {
+      "3": 6,
+      "4": 16,
+      "5": 8
+    },
+    "actual_shot_distribution": {
+      "3": 6,
+      "4": 16,
+      "5": 8
+    },
+    "diff_distribution": {
+      "0": 30
+    },
+    "category_stats": {
+      "dialogue_2person_indoor": {
+        "total": 5,
+        "exact": 5,
+        "hit_rate": 1.0
+      },
+      "dialogue_2person_outdoor": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "daily_life_solo": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "action_solo_outdoor": {
+        "total": 3,
+        "exact": 3,
+        "hit_rate": 1.0
+      },
+      "action_solo_indoor": {
+        "total": 5,
+        "exact": 5,
+        "hit_rate": 1.0
+      },
+      "outdoor_couple": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "daily_life_solo_outdoor": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "daily_life_solo_indoor": {
+        "total": 3,
+        "exact": 3,
+        "hit_rate": 1.0
+      },
+      "outdoor_solo_nature": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "daily_life_couple_indoor": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "dialogue_groupchild_indoor": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "outdoor_solo_observation": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "action_2person_indoor": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "outdoor_solo_dynamic": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      }
+    },
+    "failed_videos": [],
+    "recommendations": [
+      "\u2705 Hit rate 100% >= 85%. SAFE TO SCALE: extend prompt set to 150 videos."
+    ]
+  },
+  "per_video": [
+    {
+      "video_id": "00000",
+      "scene_id": "kitchen_morning_dialogue",
+      "category": "dialogue_2person_indoor",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00001",
+      "scene_id": "office_meeting_quiet",
+      "category": "dialogue_2person_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00002",
+      "scene_id": "street_cafe_evening",
+      "category": "dialogue_2person_outdoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00003",
+      "scene_id": "bedroom_morning_solo",
+      "category": "daily_life_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00004",
+      "scene_id": "library_studying_solo",
+      "category": "daily_life_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00005",
+      "scene_id": "park_jogging_evening",
+      "category": "action_solo_outdoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00006",
+      "scene_id": "kitchen_cooking_solo",
+      "category": "action_solo_indoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00007",
+      "scene_id": "garage_repair_solo",
+      "category": "action_solo_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00008",
+      "scene_id": "restaurant_waiter_dinner",
+      "category": "dialogue_2person_indoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00009",
+      "scene_id": "beach_walking_couple",
+      "category": "outdoor_couple",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00010",
+      "scene_id": "rooftop_phonecall_night",
+      "category": "daily_life_solo_outdoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00011",
+      "scene_id": "subway_commute_morning",
+      "category": "daily_life_solo_indoor",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00012",
+      "scene_id": "forest_hiking_solo",
+      "category": "outdoor_solo_nature",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00013",
+      "scene_id": "bookstore_browsing_couple",
+      "category": "daily_life_couple_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00014",
+      "scene_id": "playground_kid_solo",
+      "category": "daily_life_solo_outdoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 6,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00015",
+      "scene_id": "train_station_farewell",
+      "category": "dialogue_2person_outdoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00016",
+      "scene_id": "art_studio_painting_solo",
+      "category": "action_solo_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00017",
+      "scene_id": "gym_workout_solo",
+      "category": "action_solo_indoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00018",
+      "scene_id": "garden_planting_solo",
+      "category": "action_solo_outdoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00019",
+      "scene_id": "studio_recording_solo",
+      "category": "action_solo_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00020",
+      "scene_id": "classroom_teacher_lesson",
+      "category": "dialogue_groupchild_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00021",
+      "scene_id": "hospital_corridor_walk",
+      "category": "dialogue_2person_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00022",
+      "scene_id": "cafe_writing_solo",
+      "category": "daily_life_solo_indoor",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00023",
+      "scene_id": "alley_cat_observation",
+      "category": "outdoor_solo_observation",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00024",
+      "scene_id": "office_late_night_solo",
+      "category": "daily_life_solo_indoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00025",
+      "scene_id": "barbershop_haircut",
+      "category": "action_2person_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00026",
+      "scene_id": "rainy_street_umbrella",
+      "category": "outdoor_solo_observation",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00027",
+      "scene_id": "music_lesson_child",
+      "category": "dialogue_2person_indoor",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00028",
+      "scene_id": "beach_storm_dog",
+      "category": "outdoor_solo_dynamic",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 2,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00029",
+      "scene_id": "rooftop_morning_yoga",
+      "category": "action_solo_outdoor",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    }
+  ]
+}

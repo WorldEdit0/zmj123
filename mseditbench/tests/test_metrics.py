@@ -103,6 +103,17 @@ def test_nep_skips_inserted_shots():
     assert r["nep"] is not None and r["n_scored"] == 2, f"n_scored={r['n_scored']}"
 
 
+def test_nep_requires_masks_when_requested():
+    src = {1: _make_frames(0), 2: _make_frames(1)}
+    r = M.nep(src, src, require_masks=True)
+    assert r["nep"] is None, f"nep should be None without required masks, got {r['nep']}"
+    assert r["n_mask_missing"] == 2, f"n_mask_missing={r['n_mask_missing']}"
+
+    masks = {1: np.zeros((32, 32), dtype=np.uint8), 2: np.zeros((32, 32), dtype=np.uint8)}
+    r = M.nep(src, src, per_shot_edit_masks=masks, require_masks=True)
+    assert r["nep"] is not None and r["n_scored"] == 2, f"n_scored={r['n_scored']}"
+
+
 def test_ses_perfect_when_no_drift():
     r = M.ses(id_drift=0.0, off_target_mean=0.0)
     assert r["ses"] == 1.0, f"ses={r['ses']}"

@@ -1,0 +1,59 @@
+{
+  "sample_id": "00019_T3_0039",
+  "video_id": "00019",
+  "task_id": "T3",
+  "baseline": "wan_v2v_2.7_v2_10s",
+  "snapshot_id": "wan_v2v_2.7_v2_10s_v3",
+  "edited_video_path": "runs/wan_v2v_2.7_edit_v2_10s/videos/T3/00019_T3_0039.mp4",
+  "psq": 0.48643179039160406,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.65,
+  "nep": 0.7904253154993057,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.7211102550927979,
+  "csep_v3_coverage": 0.65,
+  "csep_v3_consistency": 0.7999999999999999,
+  "ses": 0.31576091051101685,
+  "off_target": 0.0,
+  "id_drift": 0.6842390894889832,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.6,
+      "2": 0.4,
+      "3": 0.8,
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 0.8,
+      "1-3": 0.8,
+      "1-4": 0.8,
+      "2-3": 0.8,
+      "2-4": 0.8,
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9118697643280029,
+      "2": 0.852708101272583,
+      "3": 0.6626491546630859,
+      "4": 0.734474241733551
+    },
+    "mask_query": null,
+    "mask_hits": {}
+  },
+  "k": 0
+}

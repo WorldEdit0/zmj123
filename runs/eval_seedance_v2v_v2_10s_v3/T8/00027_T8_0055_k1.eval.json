@@ -1,0 +1,52 @@
+{
+  "sample_id": "00027_T8_0055",
+  "video_id": "00027",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00027_T8_0055_k1.mp4",
+  "psq": 0.6267287871837616,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.8,
+  "nep": 0.9213507413864136,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.7855581402778625,
+  "off_target": 0.0175830078125,
+  "id_drift": 0.21444185972213745,
+  "dps": 0.875,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.75,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "5": 0.8
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9962213635444641,
+      "2": 0.9951586723327637,
+      "3": 0.9920149445533752,
+      "4": 0.6552726030349731,
+      "5": 0.9680861234664917
+    },
+    "mask_query": "stern female judge in a black robe with reading glasses on a chain",
+    "mask_hits": {
+      "5": true
+    }
+  },
+  "k": 1
+}

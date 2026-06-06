@@ -13,7 +13,6 @@ CLIP/
 OmniShotCut/
 Qwen3-VL/
 sam3/
-runs/
 mseditbench/ckpt/
 data/source_videos_10s/
 .claude/

@@ -1,0 +1,55 @@
+{
+  "sample_id": "00016_T8_0032",
+  "video_id": "00016",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00016_T8_0032_k1.mp4",
+  "psq": 0.5922915164629619,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.4,
+  "nep": 0.9924995303153992,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.6324555320336759,
+  "csep_v3_coverage": 0.4,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.8422815799713135,
+  "off_target": 0.0,
+  "id_drift": 0.15771842002868652,
+  "dps": 0.25,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.0,
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9925155639648438,
+      "2": 0.9929325580596924,
+      "3": 0.9916929006576538,
+      "4": 0.9928570985794067
+    },
+    "mask_query": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap",
+    "mask_hits": {
+      "3": false,
+      "4": true
+    }
+  },
+  "k": 1
+}

@@ -1,0 +1,485 @@
+{
+  "summary": {
+    "n_total": 30,
+    "n_exact_match": 30,
+    "n_off_by_one": 0,
+    "n_off_more": 0,
+    "hit_rate": 1.0,
+    "off_by_one_rate": 0.0,
+    "n_failed": 0,
+    "transnetv2_available_on": 30,
+    "tn_ps_count_match_count": 25,
+    "tn_ps_full_agree_count": 25,
+    "expected_shot_distribution": {
+      "3": 6,
+      "4": 18,
+      "5": 6
+    },
+    "actual_shot_distribution": {
+      "3": 6,
+      "4": 18,
+      "5": 6
+    },
+    "diff_distribution": {
+      "0": 30
+    },
+    "category_stats": {
+      "service_indoor_solo": {
+        "total": 4,
+        "exact": 4,
+        "hit_rate": 1.0
+      },
+      "craft_indoor_solo": {
+        "total": 4,
+        "exact": 4,
+        "hit_rate": 1.0
+      },
+      "performance_indoor_2person": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "lifestyle_indoor_2person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "lifestyle_special_solo": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "sport_outdoor_2person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "performance_indoor_solo": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "sport_outdoor_solo": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "service_indoor_2person": {
+        "total": 3,
+        "exact": 3,
+        "hit_rate": 1.0
+      },
+      "work_outdoor_solo": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "sport_indoor_2person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "lifestyle_outdoor_solo": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "service_outdoor_2person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "performance_outdoor_2person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "work_indoor_solo": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "lifestyle_outdoor_3person": {
+        "total": 2,
+        "exact": 2,
+        "hit_rate": 1.0
+      },
+      "lifestyle_indoor_3person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      },
+      "drama_indoor_3person": {
+        "total": 1,
+        "exact": 1,
+        "hit_rate": 1.0
+      }
+    },
+    "failed_videos": [],
+    "recommendations": [
+      "\u2705 Hit rate 100% >= 85%. SAFE TO SCALE: extend prompt set to 150 videos."
+    ]
+  },
+  "per_video": [
+    {
+      "video_id": "00000",
+      "scene_id": "coffee_barista_latte_art",
+      "category": "service_indoor_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00001",
+      "scene_id": "potter_centering_clay",
+      "category": "craft_indoor_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00002",
+      "scene_id": "florist_bouquet_wrap",
+      "category": "service_indoor_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00003",
+      "scene_id": "magician_card_reveal",
+      "category": "performance_indoor_2person",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00004",
+      "scene_id": "tarot_card_reading",
+      "category": "lifestyle_indoor_2person",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00005",
+      "scene_id": "astronaut_zero_gravity_drink",
+      "category": "lifestyle_special_solo",
+      "expected": 3,
+      "actual_consensus": 3,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00006",
+      "scene_id": "skater_kickflip_park",
+      "category": "sport_outdoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 3,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00007",
+      "scene_id": "dj_concert_set",
+      "category": "performance_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 2,
+      "actual_pyscenedetect": 6,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00008",
+      "scene_id": "surfer_dawn_patrol",
+      "category": "sport_outdoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00009",
+      "scene_id": "snowboarder_mountain_run",
+      "category": "sport_outdoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 2,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00010",
+      "scene_id": "tattoo_artist_session",
+      "category": "service_indoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00011",
+      "scene_id": "glass_blower_vase",
+      "category": "craft_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00012",
+      "scene_id": "calligrapher_brush_stroke",
+      "category": "craft_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00013",
+      "scene_id": "locksmith_picking_lock",
+      "category": "work_outdoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00014",
+      "scene_id": "veterinarian_puppy_checkup",
+      "category": "service_indoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00015",
+      "scene_id": "watch_repair_workshop",
+      "category": "craft_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 3,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00016",
+      "scene_id": "chef_dessert_plating",
+      "category": "service_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00017",
+      "scene_id": "yoga_partner_stretch",
+      "category": "sport_indoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00018",
+      "scene_id": "dog_grooming_salon",
+      "category": "service_indoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00019",
+      "scene_id": "backyard_bbq_grill",
+      "category": "lifestyle_outdoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00020",
+      "scene_id": "fishing_on_dock",
+      "category": "lifestyle_outdoor_solo",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00021",
+      "scene_id": "acupuncture_session",
+      "category": "service_indoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00022",
+      "scene_id": "ice_cream_truck",
+      "category": "service_outdoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 6,
+      "boundaries_agree": false,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00023",
+      "scene_id": "busker_subway_musician",
+      "category": "performance_outdoor_2person",
+      "expected": 4,
+      "actual_consensus": 4,
+      "actual_transnetv2": 4,
+      "actual_pyscenedetect": 4,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00024",
+      "scene_id": "car_mechanic_engine_swap",
+      "category": "work_indoor_solo",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00025",
+      "scene_id": "hot_air_balloon_launch",
+      "category": "lifestyle_outdoor_3person",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00026",
+      "scene_id": "wedding_dress_fitting",
+      "category": "lifestyle_indoor_3person",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00027",
+      "scene_id": "courtroom_verdict",
+      "category": "drama_indoor_3person",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00028",
+      "scene_id": "campfire_ghost_story",
+      "category": "lifestyle_outdoor_3person",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    },
+    {
+      "video_id": "00029",
+      "scene_id": "bartender_cocktail_show",
+      "category": "performance_indoor_2person",
+      "expected": 5,
+      "actual_consensus": 5,
+      "actual_transnetv2": 5,
+      "actual_pyscenedetect": 5,
+      "boundaries_agree": true,
+      "match": true,
+      "note": ""
+    }
+  ]
+}

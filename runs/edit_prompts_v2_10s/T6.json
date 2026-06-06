@@ -1,0 +1,3792 @@
+[
+  {
+    "sample_id": "00000_T6_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 145,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young male barista in a black apron, hair tucked under a beanie"
+      }
+    ],
+    "key_objects": [
+      "white ceramic latte cup",
+      "stainless steel milk pitcher",
+      "espresso machine"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the cafe scene as an over-the-shoulder shot from behind the espresso machine, with a slow dolly-in toward the barista.",
+      "target_phrase": "an over-the-shoulder shot from behind the espresso machine",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow dolly-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00000_T6_0001",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 145,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young male barista in a black apron, hair tucked under a beanie"
+      }
+    ],
+    "key_objects": [
+      "white ceramic latte cup",
+      "stainless steel milk pitcher",
+      "espresso machine"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 2 of the cafe scene as an overhead bird's-eye-view shot looking straight down on the cup, with a slow vertical lift.",
+      "target_phrase": "an overhead bird's-eye-view shot",
+      "applicable_shots": [
+        2
+      ],
+      "extra": {
+        "target_shot_id": 2,
+        "target_framing": "overhead bird's-eye-view",
+        "camera_move": "slow vertical lift"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00001_T6_0002",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman with hair in a tight bun, wearing a clay-streaked navy apron"
+      }
+    ],
+    "key_objects": [
+      "spinning pottery wheel",
+      "wet lump of brown clay",
+      "wooden tool"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the pottery studio as a low-angle shot from below the wheel looking up at the woman, with a slow arc around her.",
+      "target_phrase": "a low-angle shot from below the pottery wheel",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow arc around the subject"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00001_T6_0003",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman with hair in a tight bun, wearing a clay-streaked navy apron"
+      }
+    ],
+    "key_objects": [
+      "spinning pottery wheel",
+      "wet lump of brown clay",
+      "wooden tool"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the pottery studio as a wide establishing shot taking in the whole studio, with a slow pull-out.",
+      "target_phrase": "a wide establishing shot of the whole studio",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "wide establishing",
+        "camera_move": "slow pull-out"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00002_T6_0004",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 76
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 77,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older florist with silver-streaked hair tied back, wearing a green canvas apron"
+      }
+    ],
+    "key_objects": [
+      "bunch of pink peonies",
+      "brown kraft paper",
+      "thin twine"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 2 of the florist scene as an overhead shot looking straight down at the bouquet on the kraft paper, with a slow rotation.",
+      "target_phrase": "an overhead shot looking down at the bouquet",
+      "applicable_shots": [
+        2
+      ],
+      "extra": {
+        "target_shot_id": 2,
+        "target_framing": "overhead",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00002_T6_0005",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 76
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 77,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older florist with silver-streaked hair tied back, wearing a green canvas apron"
+      }
+    ],
+    "key_objects": [
+      "bunch of pink peonies",
+      "brown kraft paper",
+      "thin twine"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the florist scene as a wide pull-out from the bow up to the full florist at her counter.",
+      "target_phrase": "a wide shot pulling out from the bow to the full florist",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "wide",
+        "camera_move": "slow pull-out"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00003_T6_0006",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 40
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 41,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "magician in a black vest, white shirt, and slim black tie"
+      },
+      {
+        "id": "C2",
+        "desc": "audience member in a red blouse, hair in a side braid"
+      }
+    ],
+    "key_objects": [
+      "red-backed deck of cards",
+      "small round table"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the magic act as a low-angle shot from the audience member's lap looking up at the magician, with a slight handheld jitter.",
+      "target_phrase": "a low-angle shot from the audience member's lap",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "subtle handheld jitter"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00003_T6_0007",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 40
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 41,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "magician in a black vest, white shirt, and slim black tie"
+      },
+      {
+        "id": "C2",
+        "desc": "audience member in a red blouse, hair in a side braid"
+      }
+    ],
+    "key_objects": [
+      "red-backed deck of cards",
+      "small round table"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the magic act as an over-the-shoulder shot from behind the magician looking down at the deck, with a slow push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the magician",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00004_T6_0008",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 114
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 115,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "reader in a deep purple shawl with long dark hair and silver rings"
+      },
+      {
+        "id": "C2",
+        "desc": "young man in a charcoal sweater leaning forward across the table"
+      }
+    ],
+    "key_objects": [
+      "candle in a glass holder",
+      "tarot deck on velvet cloth"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the tarot reading as a close-up on the candle flame with the reader and seeker blurred in the background, with a slow rack-focus to her face.",
+      "target_phrase": "a close-up on the candle flame with rack focus",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "close-up",
+        "camera_move": "rack-focus pull"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00004_T6_0009",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 114
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 115,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "reader in a deep purple shawl with long dark hair and silver rings"
+      },
+      {
+        "id": "C2",
+        "desc": "young man in a charcoal sweater leaning forward across the table"
+      }
+    ],
+    "key_objects": [
+      "candle in a glass holder",
+      "tarot deck on velvet cloth"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the tarot reading as a low-angle shot from below the table looking up at the reader's face, with a slow push-in.",
+      "target_phrase": "a low-angle shot from below the table",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "low-angle",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00005_T6_0010",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "astronaut in a navy blue mission polo with a name tag, hair floating slightly"
+      }
+    ],
+    "key_objects": [
+      "silver drink pouch with straw",
+      "instrument panel with switches"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the space-station scene as a low-angle shot from the floor looking up at the floating astronaut, with a slow 180-degree orbit.",
+      "target_phrase": "a low-angle shot from the floor",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow 180-degree orbit"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00005_T6_0011",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "astronaut in a navy blue mission polo with a name tag, hair floating slightly"
+      }
+    ],
+    "key_objects": [
+      "silver drink pouch with straw",
+      "instrument panel with switches"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 2 of the space-station scene as an extreme close-up on the wobbling water sphere with the astronaut blurred behind, with a slow push-in.",
+      "target_phrase": "an extreme close-up on the wobbling water sphere",
+      "applicable_shots": [
+        2
+      ],
+      "extra": {
+        "target_shot_id": 2,
+        "target_framing": "extreme close-up",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00006_T6_0012",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 46
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 47,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 200,
+        "frame_end": 212
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 213,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "teen skater in a baggy white tee and black cargo shorts"
+      },
+      {
+        "id": "C2",
+        "desc": "friend in a backwards red cap watching from a bench"
+      }
+    ],
+    "key_objects": [
+      "skateboard",
+      "concrete quarter pipe"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the skatepark as a high-angle drone shot looking down at the skater rolling toward the quarter pipe, with a slow tilt-down.",
+      "target_phrase": "a high-angle drone shot looking down at the skater",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "high-angle",
+        "camera_move": "slow tilt-down"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00006_T6_0013",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 46
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 47,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 200,
+        "frame_end": 212
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 213,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "teen skater in a baggy white tee and black cargo shorts"
+      },
+      {
+        "id": "C2",
+        "desc": "friend in a backwards red cap watching from a bench"
+      }
+    ],
+    "key_objects": [
+      "skateboard",
+      "concrete quarter pipe"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the skatepark as a close-up on the friend's face on the bench reacting, with a quick whip-pan toward him.",
+      "target_phrase": "a close-up on the friend's face on the bench",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "close-up",
+        "camera_move": "quick whip-pan"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00007_T6_0014",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 81
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 82,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones"
+      }
+    ],
+    "key_objects": [
+      "DJ controller deck",
+      "stage lasers",
+      "raised crowd hands"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the DJ stage as a low-angle shot from the front of the stage looking up at the DJ, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the front of the stage",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00007_T6_0015",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 81
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 82,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones"
+      }
+    ],
+    "key_objects": [
+      "DJ controller deck",
+      "stage lasers",
+      "raised crowd hands"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the DJ stage as an extreme close-up on the DJ's eyes behind his sunglasses, with a slight handheld push-in.",
+      "target_phrase": "an extreme close-up on the DJ's eyes",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "extreme close-up",
+        "camera_move": "slight handheld push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00008_T6_0016",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 83,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 216
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 217,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair"
+      }
+    ],
+    "key_objects": [
+      "white surfboard with green stripe",
+      "ocean wave"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the surfing sequence as an overhead drone shot looking straight down at the paddling surfer, with a slow tracking-forward move.",
+      "target_phrase": "an overhead drone shot of the paddling surfer",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow tracking forward"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00008_T6_0017",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 83,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 216
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 217,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair"
+      }
+    ],
+    "key_objects": [
+      "white surfboard with green stripe",
+      "ocean wave"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the surfing sequence as a wide static shot from the beach showing the whole wave, with a slow pull-out.",
+      "target_phrase": "a wide static beach shot of the whole wave",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "wide",
+        "camera_move": "slow pull-out"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00009_T6_0018",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 41
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 42,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 142,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "snowboarder in an orange jacket and black helmet with mirrored goggles"
+      }
+    ],
+    "key_objects": [
+      "red snowboard",
+      "powder snow slope"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the snowboard run as an overhead drone shot looking straight down at the snowboarder at the slope's edge, with a slow tilt-up to the horizon.",
+      "target_phrase": "an overhead drone shot looking down at the slope edge",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow tilt-up to horizon"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00009_T6_0019",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 41
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 42,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 142,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "snowboarder in an orange jacket and black helmet with mirrored goggles"
+      }
+    ],
+    "key_objects": [
+      "red snowboard",
+      "powder snow slope"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the snowboard run as an over-the-shoulder shot from behind the snowboarder mid-grab, with a steady tracking forward.",
+      "target_phrase": "an over-the-shoulder shot from behind the snowboarder",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "steady tracking forward"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00010_T6_0020",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 81,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"
+      },
+      {
+        "id": "C2",
+        "desc": "client in a sleeveless tank top with arm extended on the padded rest"
+      }
+    ],
+    "key_objects": [
+      "tattoo machine",
+      "small ink cup",
+      "tracing stencil on forearm"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the tattoo studio as a low-angle shot from below the padded rest looking up at the artist's face, with a slow push-in.",
+      "target_phrase": "a low-angle shot from below the padded rest",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00010_T6_0021",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 81,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"
+      },
+      {
+        "id": "C2",
+        "desc": "client in a sleeveless tank top with arm extended on the padded rest"
+      }
+    ],
+    "key_objects": [
+      "tattoo machine",
+      "small ink cup",
+      "tracing stencil on forearm"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the tattoo studio as an extreme close-up on the needle tip touching the skin, with a slow rotation.",
+      "target_phrase": "an extreme close-up on the needle tip and skin",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "extreme close-up",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00011_T6_0022",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "glass blower in a white t-shirt and black gloves, sweat on his forehead"
+      }
+    ],
+    "key_objects": [
+      "long blowpipe",
+      "molten glass blob",
+      "open furnace"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the glass-blowing workshop as an overhead shot looking down on the blowpipe and furnace mouth, with a slow lift-up.",
+      "target_phrase": "an overhead shot looking down on the blowpipe and furnace",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow lift-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00011_T6_0023",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "glass blower in a white t-shirt and black gloves, sweat on his forehead"
+      }
+    ],
+    "key_objects": [
+      "long blowpipe",
+      "molten glass blob",
+      "open furnace"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the glass-blowing workshop as an over-the-shoulder shot from behind the glass blower looking at the swelling bulb, with a slow push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the glass blower",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00012_T6_0024",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"
+      }
+    ],
+    "key_objects": [
+      "bamboo brush",
+      "ink stone with black ink",
+      "rice paper sheet"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the calligraphy room as a low-angle shot from the floor looking up at the woman kneeling at her desk, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the floor",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00012_T6_0025",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"
+      }
+    ],
+    "key_objects": [
+      "bamboo brush",
+      "ink stone with black ink",
+      "rice paper sheet"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the calligraphy room as an overhead shot looking straight down on the rice paper as the stroke is drawn, with a slow rotation.",
+      "target_phrase": "an overhead shot looking down at the rice paper",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "overhead",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00013_T6_0026",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 100
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "locksmith in a navy jumpsuit with a tool roll over one shoulder"
+      }
+    ],
+    "key_objects": [
+      "tension wrench",
+      "pick set",
+      "brass deadbolt door"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the lock-picking scene as a high-angle shot from above looking down at the kneeling locksmith and his tool roll, with a slow tilt-down.",
+      "target_phrase": "a high-angle shot from above the kneeling locksmith",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "high-angle",
+        "camera_move": "slow tilt-down"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00013_T6_0027",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 100
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "locksmith in a navy jumpsuit with a tool roll over one shoulder"
+      }
+    ],
+    "key_objects": [
+      "tension wrench",
+      "pick set",
+      "brass deadbolt door"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the lock-picking scene as a wide shot from inside the apartment showing the door swinging open, with a slow pull-back into the room.",
+      "target_phrase": "a wide shot from inside the apartment",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "wide",
+        "camera_move": "slow pull-back"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00014_T6_0028",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck"
+      },
+      {
+        "id": "C2",
+        "desc": "small golden retriever puppy with floppy ears"
+      }
+    ],
+    "key_objects": [
+      "stainless steel exam table",
+      "stethoscope",
+      "small treat"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the vet clinic as a low-angle shot from the puppy's eye level looking up as it is lifted onto the table, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the puppy's eye level",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00014_T6_0029",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck"
+      },
+      {
+        "id": "C2",
+        "desc": "small golden retriever puppy with floppy ears"
+      }
+    ],
+    "key_objects": [
+      "stainless steel exam table",
+      "stethoscope",
+      "small treat"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the vet clinic as an over-the-shoulder shot from behind the vet looking at the puppy taking the treat, with a slight push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the vet",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slight push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00015_T6_0030",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 12
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 13,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+      }
+    ],
+    "key_objects": [
+      "disassembled mechanical watch",
+      "tweezers",
+      "tiny brass screw"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the watch-repair workshop as a low-angle shot from the desk surface looking up at the watchmaker, with a slow push-in.",
+      "target_phrase": "a low-angle shot from the desk surface",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00015_T6_0031",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 12
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 13,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+      }
+    ],
+    "key_objects": [
+      "disassembled mechanical watch",
+      "tweezers",
+      "tiny brass screw"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the watch-repair workshop as an overhead shot looking straight down at the assembled watch on the green pad, with a slow lift-up.",
+      "target_phrase": "an overhead shot looking down at the watch",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "overhead",
+        "camera_move": "slow lift-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00016_T6_0032",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 163
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 164,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"
+      }
+    ],
+    "key_objects": [
+      "round white plate",
+      "piping bag of cream",
+      "raspberry coulis bottle"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 2 of the chef-plating sequence as an overhead shot looking straight down at the white plate as the cream is piped, with a slow rotation.",
+      "target_phrase": "an overhead shot looking down at the plate",
+      "applicable_shots": [
+        2
+      ],
+      "extra": {
+        "target_shot_id": 2,
+        "target_framing": "overhead",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00016_T6_0033",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 163
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 164,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"
+      }
+    ],
+    "key_objects": [
+      "round white plate",
+      "piping bag of cream",
+      "raspberry coulis bottle"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the chef-plating sequence as a close-up on the chef's smiling face as he rings the service bell, with a quick push-in.",
+      "target_phrase": "a close-up on the chef's face",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "close-up",
+        "camera_move": "quick push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00017_T6_0034",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 117
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 118,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman in a teal tank top with a long french braid"
+      },
+      {
+        "id": "C2",
+        "desc": "woman in a black sports bra and gray leggings, hair in a top knot"
+      }
+    ],
+    "key_objects": [
+      "wooden floor",
+      "two purple yoga mats"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the yoga studio as an overhead shot looking down at the two seated women on their mats, with a slow rotation.",
+      "target_phrase": "an overhead shot looking down at the two women",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00017_T6_0035",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 117
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 118,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman in a teal tank top with a long french braid"
+      },
+      {
+        "id": "C2",
+        "desc": "woman in a black sports bra and gray leggings, hair in a top knot"
+      }
+    ],
+    "key_objects": [
+      "wooden floor",
+      "two purple yoga mats"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the yoga studio as a wide pull-out shot showing both women laughing together, with a slow tracking pull-back.",
+      "target_phrase": "a wide pull-out shot of both women",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "wide",
+        "camera_move": "slow tracking pull-back"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00018_T6_0036",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 107
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 108,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "groomer with curly red hair, in a pink smock and grooming arm bands"
+      }
+    ],
+    "key_objects": [
+      "small white poodle",
+      "metal grooming table",
+      "grooming shears"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the grooming salon as an over-the-shoulder shot from behind the groomer looking down at the table as she lifts the poodle on, with a slow push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the groomer",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00018_T6_0037",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 107
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 108,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "groomer with curly red hair, in a pink smock and grooming arm bands"
+      }
+    ],
+    "key_objects": [
+      "small white poodle",
+      "metal grooming table",
+      "grooming shears"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the grooming salon as an extreme close-up on the shears beside the dog's eye, with a slow rotation.",
+      "target_phrase": "an extreme close-up on the shears beside the dog's eye",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "extreme close-up",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00019_T6_0038",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron"
+      }
+    ],
+    "key_objects": [
+      "smoking charcoal grill",
+      "tongs",
+      "thick burger patty on a sesame bun"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the backyard BBQ as a low-angle shot from beside the grill looking up at the man as he lifts the lid, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from beside the grill",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00019_T6_0039",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron"
+      }
+    ],
+    "key_objects": [
+      "smoking charcoal grill",
+      "tongs",
+      "thick burger patty on a sesame bun"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the backyard BBQ as an over-the-shoulder shot from behind the man as he takes the first bite, with a slight push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the man",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slight push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00020_T6_0040",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older man in a faded green vest and brown wide-brim hat, with a short gray beard"
+      }
+    ],
+    "key_objects": [
+      "fishing rod",
+      "tackle box",
+      "wooden lake dock"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the fishing-dock scene as a low-angle shot from the lake water looking up at the man on the dock, with a slow push-in.",
+      "target_phrase": "a low-angle shot from the lake water",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00020_T6_0041",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older man in a faded green vest and brown wide-brim hat, with a short gray beard"
+      }
+    ],
+    "key_objects": [
+      "fishing rod",
+      "tackle box",
+      "wooden lake dock"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the fishing-dock scene as a wide shot showing the man and the bobber together with the lake stretching behind, with a slow pull-out.",
+      "target_phrase": "a wide shot showing the man and the bobber",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "wide",
+        "camera_move": "slow pull-out"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00021_T6_0042",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 25
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 26,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"
+      },
+      {
+        "id": "C2",
+        "desc": "patient lying face-down on a treatment table, towel draped over the lower back"
+      }
+    ],
+    "key_objects": [
+      "thin acupuncture needles",
+      "small wooden tray",
+      "treatment table"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the acupuncture room as a high-angle shot from above the treatment table looking down at the patient, with a slow tilt-down.",
+      "target_phrase": "a high-angle shot from above the table",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "high-angle",
+        "camera_move": "slow tilt-down"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00021_T6_0043",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 25
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 26,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"
+      },
+      {
+        "id": "C2",
+        "desc": "patient lying face-down on a treatment table, towel draped over the lower back"
+      }
+    ],
+    "key_objects": [
+      "thin acupuncture needles",
+      "small wooden tray",
+      "treatment table"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the acupuncture room as a close-up on the patient's relaxing face turned to one side on the headrest, with a slow push-in.",
+      "target_phrase": "a close-up on the patient's face",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "close-up",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00022_T6_0044",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 99
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 182
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 183,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window"
+      },
+      {
+        "id": "C2",
+        "desc": "small boy in a green dinosaur t-shirt with messy brown hair"
+      }
+    ],
+    "key_objects": [
+      "pink ice cream truck",
+      "waffle cone",
+      "scoop of strawberry ice cream"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the ice-cream-truck scene as a low-angle shot at the boy's eye level looking up at the truck window, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot at the boy's eye level",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00022_T6_0045",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 99
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 182
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 183,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window"
+      },
+      {
+        "id": "C2",
+        "desc": "small boy in a green dinosaur t-shirt with messy brown hair"
+      }
+    ],
+    "key_objects": [
+      "pink ice cream truck",
+      "waffle cone",
+      "scoop of strawberry ice cream"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the ice-cream-truck scene as an over-the-shoulder shot from behind the server looking down at the scoop, with a slow push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the server",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00023_T6_0046",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 162
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 163,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young busker in a beat-up brown leather jacket with a stubbled chin"
+      },
+      {
+        "id": "C2",
+        "desc": "commuter in a long beige coat with a leather briefcase"
+      }
+    ],
+    "key_objects": [
+      "acoustic guitar",
+      "open guitar case",
+      "subway tile wall"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the subway-busker scene as a low-angle shot from the floor looking up at the busker on the amp, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the floor",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00023_T6_0047",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 162
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 163,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young busker in a beat-up brown leather jacket with a stubbled chin"
+      },
+      {
+        "id": "C2",
+        "desc": "commuter in a long beige coat with a leather briefcase"
+      }
+    ],
+    "key_objects": [
+      "acoustic guitar",
+      "open guitar case",
+      "subway tile wall"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 3 of the subway-busker scene as a wide static shot showing the whole passage with the commuter and busker, with a slow pull-out.",
+      "target_phrase": "a wide static shot of the whole passage",
+      "applicable_shots": [
+        3
+      ],
+      "extra": {
+        "target_shot_id": 3,
+        "target_framing": "wide",
+        "camera_move": "slow pull-out"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00024_T6_0048",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 78
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 79,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"
+      }
+    ],
+    "key_objects": [
+      "raised car hood",
+      "ratchet wrench",
+      "alternator"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the garage scene as a low-angle shot from beneath the front bumper looking up at the mechanic at the hood, with a slow push-in.",
+      "target_phrase": "a low-angle shot from beneath the bumper",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00024_T6_0049",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 78
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 79,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"
+      }
+    ],
+    "key_objects": [
+      "raised car hood",
+      "ratchet wrench",
+      "alternator"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 5 of the garage scene as a high-angle shot from above the engine bay looking down at the mechanic slamming the hood shut, with a slow tilt-down.",
+      "target_phrase": "a high-angle shot from above the engine bay",
+      "applicable_shots": [
+        5
+      ],
+      "extra": {
+        "target_shot_id": 5,
+        "target_framing": "high-angle",
+        "camera_move": "slow tilt-down"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00025_T6_0050",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 177
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 178,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "pilot in a beige flight suit and aviator sunglasses, gloves on hands"
+      },
+      {
+        "id": "C2",
+        "desc": "passenger in a chunky red sweater with a knit beanie"
+      },
+      {
+        "id": "C3",
+        "desc": "ground crew member in an orange high-visibility vest"
+      }
+    ],
+    "key_objects": [
+      "wicker basket",
+      "rainbow-striped balloon envelope",
+      "propane burner"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the balloon launch as an overhead drone shot looking straight down at the spreading balloon envelope, with a slow lift-up.",
+      "target_phrase": "an overhead drone shot of the spreading envelope",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow lift-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00025_T6_0051",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 177
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 178,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "pilot in a beige flight suit and aviator sunglasses, gloves on hands"
+      },
+      {
+        "id": "C2",
+        "desc": "passenger in a chunky red sweater with a knit beanie"
+      },
+      {
+        "id": "C3",
+        "desc": "ground crew member in an orange high-visibility vest"
+      }
+    ],
+    "key_objects": [
+      "wicker basket",
+      "rainbow-striped balloon envelope",
+      "propane burner"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 5 of the balloon launch as a low-angle shot from the grass looking straight up as the balloon rises overhead, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the grass looking straight up",
+      "applicable_shots": [
+        5
+      ],
+      "extra": {
+        "target_shot_id": 5,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00026_T6_0052",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 64
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 65,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 109,
+        "frame_end": 156
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 157,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bride in a half-fastened ivory wedding gown, hair in soft loose waves"
+      },
+      {
+        "id": "C2",
+        "desc": "seamstress with reading glasses and a measuring tape around her neck"
+      },
+      {
+        "id": "C3",
+        "desc": "older mother in a sky-blue blazer, watching from a velvet sofa"
+      }
+    ],
+    "key_objects": [
+      "circular pedestal",
+      "tall three-panel mirror",
+      "lace veil"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the bridal salon as an overhead shot from above the pedestal looking down on the bride, with a slow rotation.",
+      "target_phrase": "an overhead shot above the pedestal",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00026_T6_0053",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 64
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 65,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 109,
+        "frame_end": 156
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 157,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bride in a half-fastened ivory wedding gown, hair in soft loose waves"
+      },
+      {
+        "id": "C2",
+        "desc": "seamstress with reading glasses and a measuring tape around her neck"
+      },
+      {
+        "id": "C3",
+        "desc": "older mother in a sky-blue blazer, watching from a velvet sofa"
+      }
+    ],
+    "key_objects": [
+      "circular pedestal",
+      "tall three-panel mirror",
+      "lace veil"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 5 of the bridal salon as a close-up on the bride's eyes welling up, with a slow push-in.",
+      "target_phrase": "a close-up on the bride's eyes",
+      "applicable_shots": [
+        5
+      ],
+      "extra": {
+        "target_shot_id": 5,
+        "target_framing": "close-up",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00027_T6_0054",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 73,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 193,
+        "frame_end": 224
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 225,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "stern female judge in a black robe with reading glasses on a chain"
+      },
+      {
+        "id": "C2",
+        "desc": "young defendant in a charcoal suit, standing at the table"
+      },
+      {
+        "id": "C3",
+        "desc": "jury foreperson in a beige cardigan, reading from a folded paper"
+      }
+    ],
+    "key_objects": [
+      "wooden gavel",
+      "judge's bench",
+      "folded jury verdict paper"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the courtroom as a low-angle shot from the gallery looking up at the judge taking her seat, with a slow tilt-up.",
+      "target_phrase": "a low-angle shot from the gallery",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "low-angle",
+        "camera_move": "slow tilt-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00027_T6_0055",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 73,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 193,
+        "frame_end": 224
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 225,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "stern female judge in a black robe with reading glasses on a chain"
+      },
+      {
+        "id": "C2",
+        "desc": "young defendant in a charcoal suit, standing at the table"
+      },
+      {
+        "id": "C3",
+        "desc": "jury foreperson in a beige cardigan, reading from a folded paper"
+      }
+    ],
+    "key_objects": [
+      "wooden gavel",
+      "judge's bench",
+      "folded jury verdict paper"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 5 of the courtroom as an extreme close-up on the gavel head striking the block, with a slow push-in.",
+      "target_phrase": "an extreme close-up on the gavel head",
+      "applicable_shots": [
+        5
+      ],
+      "extra": {
+        "target_shot_id": 5,
+        "target_framing": "extreme close-up",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00028_T6_0056",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 37
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 38,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 160
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 161,
+        "frame_end": 204
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 205,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "storyteller with a wide-brim hat, holding a long stick toward the fire"
+      },
+      {
+        "id": "C2",
+        "desc": "young woman in a chunky knit sweater hugging her knees"
+      },
+      {
+        "id": "C3",
+        "desc": "young man in a denim jacket holding a marshmallow on a skewer"
+      }
+    ],
+    "key_objects": [
+      "crackling campfire",
+      "log seats",
+      "marshmallow on skewer"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the campfire as an overhead shot looking straight down at the three friends and the fire, with a slow lift-up.",
+      "target_phrase": "an overhead shot looking down at the friends and fire",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "overhead",
+        "camera_move": "slow lift-up"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00028_T6_0057",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 37
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 38,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 160
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 161,
+        "frame_end": 204
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 205,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "storyteller with a wide-brim hat, holding a long stick toward the fire"
+      },
+      {
+        "id": "C2",
+        "desc": "young woman in a chunky knit sweater hugging her knees"
+      },
+      {
+        "id": "C3",
+        "desc": "young man in a denim jacket holding a marshmallow on a skewer"
+      }
+    ],
+    "key_objects": [
+      "crackling campfire",
+      "log seats",
+      "marshmallow on skewer"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the campfire as a close-up on the marshmallow falling into the fire, with a slow push-in.",
+      "target_phrase": "a close-up on the falling marshmallow",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "close-up",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00029_T6_0058",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 145
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 196
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 197,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bartender in a tight white shirt, black vest, and slim suspenders"
+      },
+      {
+        "id": "C2",
+        "desc": "customer in a sleek black dress sitting at the bar with chin on hand"
+      }
+    ],
+    "key_objects": [
+      "metal cocktail shaker",
+      "coupe glass",
+      "small kitchen torch"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 1 of the cocktail bar as an over-the-shoulder shot from behind the customer looking at the bartender pouring, with a slow push-in.",
+      "target_phrase": "an over-the-shoulder shot from behind the customer",
+      "applicable_shots": [
+        1
+      ],
+      "extra": {
+        "target_shot_id": 1,
+        "target_framing": "over-the-shoulder",
+        "camera_move": "slow push-in"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00029_T6_0059",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 145
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 196
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 197,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bartender in a tight white shirt, black vest, and slim suspenders"
+      },
+      {
+        "id": "C2",
+        "desc": "customer in a sleek black dress sitting at the bar with chin on hand"
+      }
+    ],
+    "key_objects": [
+      "metal cocktail shaker",
+      "coupe glass",
+      "small kitchen torch"
+    ],
+    "edit": {
+      "task_id": "T6",
+      "instruction": "Re-shoot shot 4 of the cocktail bar as an extreme close-up on the orange peel flame and oil flare, with a slow rotation.",
+      "target_phrase": "an extreme close-up on the flaming orange peel",
+      "applicable_shots": [
+        4
+      ],
+      "extra": {
+        "target_shot_id": 4,
+        "target_framing": "extreme close-up",
+        "camera_move": "slow rotation"
+      },
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_global",
+        "edit_type": "cinematic_reshoot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  }
+]

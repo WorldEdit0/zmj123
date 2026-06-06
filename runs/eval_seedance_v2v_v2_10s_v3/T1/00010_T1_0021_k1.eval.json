@@ -1,0 +1,64 @@
+{
+  "sample_id": "00010_T1_0021",
+  "video_id": "00010",
+  "task_id": "T1",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T1/00010_T1_0021_k1.mp4",
+  "psq": 0.5825836022694906,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.45000000000000007,
+  "nep": 0.9681297242641449,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.4415880433163924,
+  "csep_v3_coverage": 0.45000000000000007,
+  "csep_v3_consistency": 0.43333333333333335,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.8,
+      "2": 0.4,
+      "3": 0.0,
+      "4": 0.6
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 0.8,
+      "1-3": 0.0,
+      "1-4": 0.8,
+      "2-3": 0.0,
+      "2-4": 1.0,
+      "3-4": 0.0
+    },
+    "nep_per_shot": {
+      "1": 0.9386899471282959,
+      "2": 0.9845861792564392,
+      "3": 0.9925140142440796,
+      "4": 0.9567287564277649
+    },
+    "mask_query": "client in a sleeveless tank top with arm extended on the padded rest",
+    "mask_hits": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 1
+}

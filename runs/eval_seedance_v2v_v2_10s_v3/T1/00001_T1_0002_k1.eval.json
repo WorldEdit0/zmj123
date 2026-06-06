@@ -1,0 +1,58 @@
+{
+  "sample_id": "00001_T1_0002",
+  "video_id": "00001",
+  "task_id": "T1",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T1/00001_T1_0002_k1.mp4",
+  "psq": 0.6463651204109192,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.5333333333333333,
+  "nep": 0.9534637729326884,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.7055336829505574,
+  "csep_v3_coverage": 0.5333333333333333,
+  "csep_v3_consistency": 0.9333333333333332,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.6,
+      "2": 0.6,
+      "3": 0.4
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 1.0,
+      "1-3": 0.8,
+      "2-3": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9210920929908752,
+      "2": 0.955773651599884,
+      "3": 0.9835255742073059
+    },
+    "mask_query": "woman with hair in a tight bun, wearing a clay-streaked navy apron",
+    "mask_hits": {
+      "1": false,
+      "2": false,
+      "3": false
+    }
+  },
+  "k": 1
+}

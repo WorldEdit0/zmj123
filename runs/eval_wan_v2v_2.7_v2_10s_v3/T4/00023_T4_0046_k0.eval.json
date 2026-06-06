@@ -1,0 +1,64 @@
+{
+  "sample_id": "00023_T4_0046",
+  "video_id": "00023",
+  "task_id": "T4",
+  "baseline": "wan_v2v_2.7_v2_10s",
+  "snapshot_id": "wan_v2v_2.7_v2_10s_v3",
+  "edited_video_path": "runs/wan_v2v_2.7_edit_v2_10s/videos/T4/00023_T4_0046.mp4",
+  "psq": 0.6558772587776185,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.44999999999999996,
+  "nep": 0.6927641443908215,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.6363961030678927,
+  "csep_v3_coverage": 0.44999999999999996,
+  "csep_v3_consistency": 0.8999999999999999,
+  "ses": 0.6121426224708557,
+  "off_target": 0.0,
+  "id_drift": 0.3878573775291443,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.6,
+      "2": 0.8,
+      "3": 0.2,
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 1.0,
+      "1-3": 1.0,
+      "1-4": 0.8,
+      "2-3": 1.0,
+      "2-4": 0.8,
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9269648194313049,
+      "2": 0.924686074256897,
+      "3": 0.2448595017194748,
+      "4": 0.6745461821556091
+    },
+    "mask_query": "acoustic guitar",
+    "mask_hits": {
+      "1": true,
+      "2": true,
+      "3": false,
+      "4": true
+    }
+  },
+  "k": 0
+}

@@ -1,0 +1,51 @@
+{
+  "sample_id": "00014_T8_0029",
+  "video_id": "00014",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00014_T8_0029_k0.mp4",
+  "psq": 0.6199852760632834,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9830450117588043,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.9187970956166586,
+  "off_target": 0.0,
+  "id_drift": 0.08120290438334148,
+  "dps": 0.8333333333333333,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.6666666666666666,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9866503477096558,
+      "2": 0.9885987639427185,
+      "3": 0.9724838733673096,
+      "4": 0.9844470620155334
+    },
+    "mask_query": "small golden retriever puppy with floppy ears",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 0
+}

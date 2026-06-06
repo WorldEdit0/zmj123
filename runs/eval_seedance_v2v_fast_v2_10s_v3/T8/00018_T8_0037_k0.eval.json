@@ -1,0 +1,51 @@
+{
+  "sample_id": "00018_T8_0037",
+  "video_id": "00018",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00018_T8_0037_k0.mp4",
+  "psq": 0.6096380593379338,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.8,
+  "nep": 0.9868323057889938,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.8605489730834961,
+  "off_target": 6.510416666666528e-06,
+  "id_drift": 0.1394510269165039,
+  "dps": 0.8333333333333333,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.6666666666666666,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.8
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9896335005760193,
+      "2": 0.9949893355369568,
+      "3": 0.9714578986167908,
+      "4": 0.9912484884262085
+    },
+    "mask_query": "groomer with curly red hair, in a pink smock and grooming arm bands",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 0
+}

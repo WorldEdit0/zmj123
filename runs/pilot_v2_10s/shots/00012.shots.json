@@ -1,0 +1,183 @@
+{
+  "video_id": "00012",
+  "video_path": "data/source_videos_10s/videos/00012.mp4",
+  "fps": 24.0,
+  "total_frames": 241,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 10.042,
+  "expected_shots": 4,
+  "omnishotcut": {
+    "n_shots": 4,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45,
+        "duration_frames": 46,
+        "t_start": 0.0,
+        "t_end": 1.917,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108,
+        "duration_frames": 63,
+        "t_start": 1.917,
+        "t_end": 4.542,
+        "duration_sec": 2.625
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178,
+        "duration_frames": 70,
+        "t_start": 4.542,
+        "t_end": 7.458,
+        "duration_sec": 2.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240,
+        "duration_frames": 62,
+        "t_start": 7.458,
+        "t_end": 10.042,
+        "duration_sec": 2.583
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 4,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44,
+        "duration_frames": 45,
+        "t_start": 0.0,
+        "t_end": 1.875,
+        "duration_sec": 1.875
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 107,
+        "duration_frames": 63,
+        "t_start": 1.875,
+        "t_end": 4.5,
+        "duration_sec": 2.625
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 108,
+        "frame_end": 177,
+        "duration_frames": 70,
+        "t_start": 4.5,
+        "t_end": 7.417,
+        "duration_sec": 2.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 178,
+        "frame_end": 240,
+        "duration_frames": 63,
+        "t_start": 7.417,
+        "t_end": 10.042,
+        "duration_sec": 2.625
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 4,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45,
+        "duration_frames": 46,
+        "t_start": 0.0,
+        "t_end": 1.917,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108,
+        "duration_frames": 63,
+        "t_start": 1.917,
+        "t_end": 4.542,
+        "duration_sec": 2.625
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178,
+        "duration_frames": 70,
+        "t_start": 4.542,
+        "t_end": 7.458,
+        "duration_sec": 2.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240,
+        "duration_frames": 62,
+        "t_start": 7.458,
+        "t_end": 10.042,
+        "duration_sec": 2.583
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 45,
+      "duration_frames": 46,
+      "t_start": 0.0,
+      "t_end": 1.917,
+      "duration_sec": 1.917
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 46,
+      "frame_end": 108,
+      "duration_frames": 63,
+      "t_start": 1.917,
+      "t_end": 4.542,
+      "duration_sec": 2.625
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 109,
+      "frame_end": 178,
+      "duration_frames": 70,
+      "t_start": 4.542,
+      "t_end": 7.458,
+      "duration_sec": 2.917
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 179,
+      "frame_end": 240,
+      "duration_frames": 62,
+      "t_start": 7.458,
+      "t_end": 10.042,
+      "duration_sec": 2.583
+    }
+  ],
+  "consensus_n_shots": 4,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

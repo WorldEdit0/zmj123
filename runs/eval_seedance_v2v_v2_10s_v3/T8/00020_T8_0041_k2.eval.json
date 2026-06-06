@@ -1,0 +1,51 @@
+{
+  "sample_id": "00020_T8_0041",
+  "video_id": "00020",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00020_T8_0041_k2.mp4",
+  "psq": 0.6119501340389252,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.7713537663221359,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.9566045701503754,
+  "off_target": 0.021083984375,
+  "id_drift": 0.043395429849624634,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9866417050361633,
+      "2": 0.9907509684562683,
+      "3": 0.12457865476608276,
+      "4": 0.9834437370300293
+    },
+    "mask_query": "older man in a faded green vest and brown wide-brim hat, with a short gray beard",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 2
+}

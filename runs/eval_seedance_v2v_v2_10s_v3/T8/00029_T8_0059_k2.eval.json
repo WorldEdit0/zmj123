@@ -1,0 +1,52 @@
+{
+  "sample_id": "00029_T8_0059",
+  "video_id": "00029",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00029_T8_0059_k2.mp4",
+  "psq": 0.6263708284695942,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.6,
+  "nep": 0.8857109546661377,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.5099504999816418,
+  "off_target": 0.0001574707031249999,
+  "id_drift": 0.49004950001835823,
+  "dps": 0.75,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.5,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "5": 0.6
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.7972959280014038,
+      "2": 0.6559039354324341,
+      "3": 0.9873641729354858,
+      "4": 0.9970574378967285,
+      "5": 0.9909332990646362
+    },
+    "mask_query": "customer in a sleek black dress sitting at the bar with chin on hand",
+    "mask_hits": {
+      "5": false
+    }
+  },
+  "k": 2
+}

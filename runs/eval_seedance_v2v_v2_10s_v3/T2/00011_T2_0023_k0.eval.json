@@ -1,0 +1,64 @@
+{
+  "sample_id": "00011_T2_0023",
+  "video_id": "00011",
+  "task_id": "T2",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T2/00011_T2_0023_k0.mp4",
+  "psq": 0.6061040524641672,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.5,
+  "nep": 0.983393669128418,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.5627314338711378,
+  "csep_v3_coverage": 0.5,
+  "csep_v3_consistency": 0.6333333333333333,
+  "ses": 0.9158903360366821,
+  "off_target": 0.0,
+  "id_drift": 0.08410966396331787,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.2,
+      "2": 0.6,
+      "3": 0.6,
+      "4": 0.6
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 0.0,
+      "1-3": 0.4,
+      "1-4": 0.8,
+      "2-3": 0.8,
+      "2-4": 0.8,
+      "3-4": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9876605272293091,
+      "2": 0.9743704199790955,
+      "3": 0.9822131991386414,
+      "4": 0.989330530166626
+    },
+    "mask_query": "glass blower in a white t-shirt and black gloves, sweat on his forehead",
+    "mask_hits": {
+      "1": true,
+      "2": false,
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 0
+}

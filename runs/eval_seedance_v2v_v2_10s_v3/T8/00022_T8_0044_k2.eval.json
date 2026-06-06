@@ -1,0 +1,55 @@
+{
+  "sample_id": "00022_T8_0044",
+  "video_id": "00022",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00022_T8_0044_k2.mp4",
+  "psq": 0.5954628539085389,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.7632480207830667,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.0,
+  "csep_v3_coverage": 0.0,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.9327433407306671,
+  "off_target": 0.016428222656249998,
+  "id_drift": 0.06725665926933289,
+  "dps": 0.25,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.0,
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.09115461260080338,
+      "2": 0.9796536564826965,
+      "3": 0.9904160499572754,
+      "4": 0.9917677640914917
+    },
+    "mask_query": "small boy in a green dinosaur t-shirt with messy brown hair",
+    "mask_hits": {
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 2
+}

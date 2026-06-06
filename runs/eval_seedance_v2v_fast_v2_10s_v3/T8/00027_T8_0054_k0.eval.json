@@ -1,0 +1,56 @@
+{
+  "sample_id": "00027_T8_0054",
+  "video_id": "00027",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00027_T8_0054_k0.mp4",
+  "psq": 0.5967252521514893,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.8,
+  "nep": 0.9659331798553467,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.8944271909999159,
+  "csep_v3_coverage": 0.8,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.9102551102638244,
+  "off_target": 0.0006575520833333332,
+  "id_drift": 0.08974488973617553,
+  "dps": 0.6666666666666666,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.3333333333333333,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.8,
+      "5": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "4-5": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9937738180160522,
+      "2": 0.974094569683075,
+      "3": 0.9602986574172974,
+      "4": 0.9684357047080994,
+      "5": 0.9330631494522095
+    },
+    "mask_query": "young defendant in a charcoal suit, standing at the table",
+    "mask_hits": {
+      "4": false,
+      "5": false
+    }
+  },
+  "k": 0
+}

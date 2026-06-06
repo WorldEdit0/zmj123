@@ -1,0 +1,9 @@
+{
+  "sample_id": "00004_T5_0008",
+  "op": "delete",
+  "k_count": 3,
+  "tsf_mean": 0.4634479582309723,
+  "tsf_std": 0.00782243246962501,
+  "count_correct_mean": 0.0,
+  "content_alignment_mean": 0.9268959164619446
+}

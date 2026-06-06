@@ -1,0 +1,60 @@
+{
+  "sample_id": "00029_T8_0058",
+  "video_id": "00029",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00029_T8_0058_k2.mp4",
+  "psq": 0.5851642115910848,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9894532084465026,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.0,
+  "csep_v3_coverage": 0.0,
+  "csep_v3_consistency": 0.6,
+  "ses": 0.9218312501907349,
+  "off_target": 0.0,
+  "id_drift": 0.07816874980926514,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 1.0,
+      "3-5": 0.0,
+      "4-5": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9895907044410706,
+      "2": 0.9850063920021057,
+      "3": 0.9864301085472107,
+      "4": 0.995954155921936,
+      "5": 0.9902846813201904
+    },
+    "mask_query": "bartender in a tight white shirt, black vest, and slim suspenders",
+    "mask_hits": {
+      "3": false,
+      "4": false,
+      "5": false
+    }
+  },
+  "k": 2
+}

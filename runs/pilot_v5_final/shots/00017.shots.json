@@ -1,0 +1,219 @@
+{
+  "video_id": "00017",
+  "video_path": "data/source_videos/videos/00017.mp4",
+  "fps": 24.0,
+  "total_frames": 361,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 15.042,
+  "expected_shots": 5,
+  "omnishotcut": {
+    "n_shots": 5,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 19,
+        "duration_frames": 20,
+        "t_start": 0.0,
+        "t_end": 0.833,
+        "duration_sec": 0.833
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 20,
+        "frame_end": 68,
+        "duration_frames": 49,
+        "t_start": 0.833,
+        "t_end": 2.875,
+        "duration_sec": 2.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 69,
+        "frame_end": 145,
+        "duration_frames": 77,
+        "t_start": 2.875,
+        "t_end": 6.083,
+        "duration_sec": 3.208
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 230,
+        "duration_frames": 85,
+        "t_start": 6.083,
+        "t_end": 9.625,
+        "duration_sec": 3.542
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 231,
+        "frame_end": 360,
+        "duration_frames": 130,
+        "t_start": 9.625,
+        "t_end": 15.042,
+        "duration_sec": 5.417
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 5,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 18,
+        "duration_frames": 19,
+        "t_start": 0.0,
+        "t_end": 0.792,
+        "duration_sec": 0.792
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 19,
+        "frame_end": 67,
+        "duration_frames": 49,
+        "t_start": 0.792,
+        "t_end": 2.833,
+        "duration_sec": 2.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 68,
+        "frame_end": 144,
+        "duration_frames": 77,
+        "t_start": 2.833,
+        "t_end": 6.042,
+        "duration_sec": 3.208
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 229,
+        "duration_frames": 85,
+        "t_start": 6.042,
+        "t_end": 9.583,
+        "duration_sec": 3.542
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 230,
+        "frame_end": 360,
+        "duration_frames": 131,
+        "t_start": 9.583,
+        "t_end": 15.042,
+        "duration_sec": 5.458
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 5,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 19,
+        "duration_frames": 20,
+        "t_start": 0.0,
+        "t_end": 0.833,
+        "duration_sec": 0.833
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 20,
+        "frame_end": 68,
+        "duration_frames": 49,
+        "t_start": 0.833,
+        "t_end": 2.875,
+        "duration_sec": 2.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 69,
+        "frame_end": 145,
+        "duration_frames": 77,
+        "t_start": 2.875,
+        "t_end": 6.083,
+        "duration_sec": 3.208
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 230,
+        "duration_frames": 85,
+        "t_start": 6.083,
+        "t_end": 9.625,
+        "duration_sec": 3.542
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 231,
+        "frame_end": 360,
+        "duration_frames": 130,
+        "t_start": 9.625,
+        "t_end": 15.042,
+        "duration_sec": 5.417
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 19,
+      "duration_frames": 20,
+      "t_start": 0.0,
+      "t_end": 0.833,
+      "duration_sec": 0.833
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 20,
+      "frame_end": 68,
+      "duration_frames": 49,
+      "t_start": 0.833,
+      "t_end": 2.875,
+      "duration_sec": 2.042
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 69,
+      "frame_end": 145,
+      "duration_frames": 77,
+      "t_start": 2.875,
+      "t_end": 6.083,
+      "duration_sec": 3.208
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 146,
+      "frame_end": 230,
+      "duration_frames": 85,
+      "t_start": 6.083,
+      "t_end": 9.625,
+      "duration_sec": 3.542
+    },
+    {
+      "shot_id": 5,
+      "frame_start": 231,
+      "frame_end": 360,
+      "duration_frames": 130,
+      "t_start": 9.625,
+      "t_end": 15.042,
+      "duration_sec": 5.417
+    }
+  ],
+  "consensus_n_shots": 5,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

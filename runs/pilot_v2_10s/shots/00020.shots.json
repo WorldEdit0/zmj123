@@ -1,0 +1,183 @@
+{
+  "video_id": "00020",
+  "video_path": "data/source_videos_10s/videos/00020.mp4",
+  "fps": 24.0,
+  "total_frames": 241,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 10.042,
+  "expected_shots": 4,
+  "omnishotcut": {
+    "n_shots": 4,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45,
+        "duration_frames": 46,
+        "t_start": 0.0,
+        "t_end": 1.917,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118,
+        "duration_frames": 73,
+        "t_start": 1.917,
+        "t_end": 4.958,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164,
+        "duration_frames": 46,
+        "t_start": 4.958,
+        "t_end": 6.875,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240,
+        "duration_frames": 76,
+        "t_start": 6.875,
+        "t_end": 10.042,
+        "duration_sec": 3.167
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 4,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44,
+        "duration_frames": 45,
+        "t_start": 0.0,
+        "t_end": 1.875,
+        "duration_sec": 1.875
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 117,
+        "duration_frames": 73,
+        "t_start": 1.875,
+        "t_end": 4.917,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 118,
+        "frame_end": 163,
+        "duration_frames": 46,
+        "t_start": 4.917,
+        "t_end": 6.833,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 164,
+        "frame_end": 240,
+        "duration_frames": 77,
+        "t_start": 6.833,
+        "t_end": 10.042,
+        "duration_sec": 3.208
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 4,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45,
+        "duration_frames": 46,
+        "t_start": 0.0,
+        "t_end": 1.917,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118,
+        "duration_frames": 73,
+        "t_start": 1.917,
+        "t_end": 4.958,
+        "duration_sec": 3.042
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164,
+        "duration_frames": 46,
+        "t_start": 4.958,
+        "t_end": 6.875,
+        "duration_sec": 1.917
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240,
+        "duration_frames": 76,
+        "t_start": 6.875,
+        "t_end": 10.042,
+        "duration_sec": 3.167
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 45,
+      "duration_frames": 46,
+      "t_start": 0.0,
+      "t_end": 1.917,
+      "duration_sec": 1.917
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 46,
+      "frame_end": 118,
+      "duration_frames": 73,
+      "t_start": 1.917,
+      "t_end": 4.958,
+      "duration_sec": 3.042
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 119,
+      "frame_end": 164,
+      "duration_frames": 46,
+      "t_start": 4.958,
+      "t_end": 6.875,
+      "duration_sec": 1.917
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 165,
+      "frame_end": 240,
+      "duration_frames": 76,
+      "t_start": 6.875,
+      "t_end": 10.042,
+      "duration_sec": 3.167
+    }
+  ],
+  "consensus_n_shots": 4,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

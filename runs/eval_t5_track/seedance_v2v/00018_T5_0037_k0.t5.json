@@ -1,0 +1,11 @@
+{
+  "sample_id": "00018_T5_0037",
+  "k": 0,
+  "op": "insert",
+  "source_shot_count": 5,
+  "expected_shot_count": 6,
+  "edit_shot_count": 5,
+  "count_correct": 0,
+  "content_alignment": 0.9294875264167786,
+  "tsf": 0.4647437632083893
+}

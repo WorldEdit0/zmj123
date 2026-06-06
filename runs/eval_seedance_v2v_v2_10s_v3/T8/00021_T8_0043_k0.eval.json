@@ -1,0 +1,51 @@
+{
+  "sample_id": "00021_T8_0043",
+  "video_id": "00021",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00021_T8_0043_k0.mp4",
+  "psq": 0.6161146674553554,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9895671308040619,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.7678178548812866,
+  "off_target": 0.0,
+  "id_drift": 0.23218214511871338,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.0
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9877253174781799,
+      "2": 0.9911441206932068,
+      "3": 0.9862903356552124,
+      "4": 0.9931087493896484
+    },
+    "mask_query": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic",
+    "mask_hits": {
+      "4": true
+    }
+  },
+  "k": 0
+}

@@ -1,0 +1,71 @@
+{
+  "sample_id": "00029_T1_0058",
+  "video_id": "00029",
+  "task_id": "T1",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T1/00029_T1_0058_k0.mp4",
+  "psq": 0.6001305883725484,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.8,
+  "nep": 0.9553008675575256,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.8294576541331089,
+  "csep_v3_coverage": 0.8,
+  "csep_v3_consistency": 0.86,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.8,
+      "2": 0.8,
+      "3": 0.8,
+      "4": 0.8,
+      "5": 0.8
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 1.0,
+      "1-3": 1.0,
+      "1-4": 0.8,
+      "1-5": 0.8,
+      "2-3": 0.8,
+      "2-4": 0.8,
+      "2-5": 0.8,
+      "3-4": 1.0,
+      "3-5": 0.8,
+      "4-5": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9298578500747681,
+      "2": 0.9382564425468445,
+      "3": 0.9730809330940247,
+      "4": 0.9456867575645447,
+      "5": 0.9896223545074463
+    },
+    "mask_query": "bartender in a tight white shirt, black vest, and slim suspenders",
+    "mask_hits": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false,
+      "5": false
+    }
+  },
+  "k": 0
+}

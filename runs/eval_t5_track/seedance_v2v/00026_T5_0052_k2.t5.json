@@ -1,0 +1,11 @@
+{
+  "sample_id": "00026_T5_0052",
+  "k": 2,
+  "op": "delete",
+  "source_shot_count": 3,
+  "expected_shot_count": 2,
+  "edit_shot_count": 3,
+  "count_correct": 0,
+  "content_alignment": 0.9673824310302734,
+  "tsf": 0.4836912155151367
+}

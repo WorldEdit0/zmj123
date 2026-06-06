@@ -1,0 +1,3908 @@
+[
+  {
+    "sample_id": "00000_T2_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 145,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young male barista in a black apron, hair tucked under a beanie"
+      }
+    ],
+    "key_objects": [
+      "white ceramic latte cup",
+      "stainless steel milk pitcher",
+      "espresso machine"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the barista's black apron to a deep maroon apron in every shot of the cafe.",
+      "target_phrase": "a barista wearing a deep maroon apron",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black apron"
+        ],
+        "edited_queries": [
+          "deep maroon apron"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00000_T2_0001",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 145,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young male barista in a black apron, hair tucked under a beanie"
+      }
+    ],
+    "key_objects": [
+      "white ceramic latte cup",
+      "stainless steel milk pitcher",
+      "espresso machine"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the barista's beanie with a tall white pleated chef's hat in every shot.",
+      "target_phrase": "a barista wearing a tall white pleated chef's hat",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "beanie"
+        ],
+        "edited_queries": [
+          "tall white pleated chef's hat"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00001_T2_0002",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman with hair in a tight bun, wearing a clay-streaked navy apron"
+      }
+    ],
+    "key_objects": [
+      "spinning pottery wheel",
+      "wet lump of brown clay",
+      "wooden tool"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the potter's navy apron to a bright white apron streaked with the same clay in every shot.",
+      "target_phrase": "a potter in a clay-streaked white apron",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "navy apron"
+        ],
+        "edited_queries": [
+          "bright white apron streaked with the same clay"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00001_T2_0003",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman with hair in a tight bun, wearing a clay-streaked navy apron"
+      }
+    ],
+    "key_objects": [
+      "spinning pottery wheel",
+      "wet lump of brown clay",
+      "wooden tool"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Untie the potter's tight bun and let her hair hang loose to her shoulders in every shot at the wheel.",
+      "target_phrase": "a potter with loose hair hanging to her shoulders",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "tight bun"
+        ],
+        "edited_queries": [
+          "loose hair hanging to her shoulders"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00002_T2_0004",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 76
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 77,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older florist with silver-streaked hair tied back, wearing a green canvas apron"
+      }
+    ],
+    "key_objects": [
+      "bunch of pink peonies",
+      "brown kraft paper",
+      "thin twine"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the florist's green canvas apron to a soft pastel-yellow canvas apron in every shot.",
+      "target_phrase": "a florist wearing a pastel-yellow canvas apron",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "green canvas apron"
+        ],
+        "edited_queries": [
+          "soft pastel-yellow canvas apron"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00002_T2_0005",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 76
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 77,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older florist with silver-streaked hair tied back, wearing a green canvas apron"
+      }
+    ],
+    "key_objects": [
+      "bunch of pink peonies",
+      "brown kraft paper",
+      "thin twine"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Add a pair of round wire-rimmed reading glasses to the florist, resting on the bridge of her nose, in every shot.",
+      "target_phrase": "a florist wearing round wire-rimmed reading glasses",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [],
+        "edited_queries": [
+          "pair of round wire-rimmed reading glasses"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00003_T2_0006",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 40
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 41,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "magician in a black vest, white shirt, and slim black tie"
+      },
+      {
+        "id": "C2",
+        "desc": "audience member in a red blouse, hair in a side braid"
+      }
+    ],
+    "key_objects": [
+      "red-backed deck of cards",
+      "small round table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the magician's slim black tie with a deep red satin bowtie in every shot at the card table.",
+      "target_phrase": "a magician wearing a deep red satin bowtie",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "slim black tie"
+        ],
+        "edited_queries": [
+          "deep red satin bowtie"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00003_T2_0007",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 40
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 41,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "magician in a black vest, white shirt, and slim black tie"
+      },
+      {
+        "id": "C2",
+        "desc": "audience member in a red blouse, hair in a side braid"
+      }
+    ],
+    "key_objects": [
+      "red-backed deck of cards",
+      "small round table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the audience woman's red blouse to a navy-blue blouse in every shot of the card trick.",
+      "target_phrase": "an audience member wearing a navy-blue blouse",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "red blouse"
+        ],
+        "edited_queries": [
+          "navy-blue blouse"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00004_T2_0008",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 114
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 115,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "reader in a deep purple shawl with long dark hair and silver rings"
+      },
+      {
+        "id": "C2",
+        "desc": "young man in a charcoal sweater leaning forward across the table"
+      }
+    ],
+    "key_objects": [
+      "candle in a glass holder",
+      "tarot deck on velvet cloth"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the reader's deep purple shawl to an emerald-green shawl in every shot of the tarot reading.",
+      "target_phrase": "a tarot reader wearing an emerald-green shawl",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "deep purple shawl"
+        ],
+        "edited_queries": [
+          "emerald-green shawl"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00004_T2_0009",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 114
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 115,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "reader in a deep purple shawl with long dark hair and silver rings"
+      },
+      {
+        "id": "C2",
+        "desc": "young man in a charcoal sweater leaning forward across the table"
+      }
+    ],
+    "key_objects": [
+      "candle in a glass holder",
+      "tarot deck on velvet cloth"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the young man's charcoal sweater to a cream cable-knit sweater in every shot.",
+      "target_phrase": "a young man in a cream cable-knit sweater",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "charcoal sweater"
+        ],
+        "edited_queries": [
+          "cream cable-knit sweater"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00005_T2_0010",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "astronaut in a navy blue mission polo with a name tag, hair floating slightly"
+      }
+    ],
+    "key_objects": [
+      "silver drink pouch with straw",
+      "instrument panel with switches"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the astronaut's navy mission polo to a bright red mission polo in every shot aboard the station.",
+      "target_phrase": "an astronaut in a bright red mission polo",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "navy mission polo"
+        ],
+        "edited_queries": [
+          "bright red mission polo"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00005_T2_0011",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "astronaut in a navy blue mission polo with a name tag, hair floating slightly"
+      }
+    ],
+    "key_objects": [
+      "silver drink pouch with straw",
+      "instrument panel with switches"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the astronaut's hair from its current style to a closely-shaved buzz cut, visible in every shot.",
+      "target_phrase": "an astronaut with a closely-shaved buzz cut",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "hair"
+        ],
+        "edited_queries": [
+          "closely-shaved buzz cut"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00006_T2_0012",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 46
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 47,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 200,
+        "frame_end": 212
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 213,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "teen skater in a baggy white tee and black cargo shorts"
+      },
+      {
+        "id": "C2",
+        "desc": "friend in a backwards red cap watching from a bench"
+      }
+    ],
+    "key_objects": [
+      "skateboard",
+      "concrete quarter pipe"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the skater's baggy white tee to a black tee with a large white skull graphic in every shot at the park.",
+      "target_phrase": "a teen skater in a black tee with a white skull graphic",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "baggy white tee"
+        ],
+        "edited_queries": [
+          "black tee with a large white skull graphic"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00006_T2_0013",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 46
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 47,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 200,
+        "frame_end": 212
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 213,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "teen skater in a baggy white tee and black cargo shorts"
+      },
+      {
+        "id": "C2",
+        "desc": "friend in a backwards red cap watching from a bench"
+      }
+    ],
+    "key_objects": [
+      "skateboard",
+      "concrete quarter pipe"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Swap the friend's backwards red cap for a yellow knit beanie in every shot.",
+      "target_phrase": "a friend wearing a yellow knit beanie",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "backwards red cap"
+        ],
+        "edited_queries": [
+          "yellow knit beanie"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00007_T2_0014",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 81
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 82,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones"
+      }
+    ],
+    "key_objects": [
+      "DJ controller deck",
+      "stage lasers",
+      "raised crowd hands"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the DJ's silver chain necklace with a thick gold Cuban-link chain in every shot on stage.",
+      "target_phrase": "a DJ wearing a thick gold Cuban-link chain",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "silver chain necklace"
+        ],
+        "edited_queries": [
+          "thick gold Cuban-link chain"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00007_T2_0015",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 81
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 82,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones"
+      }
+    ],
+    "key_objects": [
+      "DJ controller deck",
+      "stage lasers",
+      "raised crowd hands"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the DJ's black t-shirt to a crisp white tank top in every shot of the concert.",
+      "target_phrase": "a DJ in a crisp white tank top",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black t-shirt"
+        ],
+        "edited_queries": [
+          "crisp white tank top"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00008_T2_0016",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 83,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 216
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 217,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair"
+      }
+    ],
+    "key_objects": [
+      "white surfboard with green stripe",
+      "ocean wave"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the surfer's sun-bleached blond hair to long dark brown hair tied in a low bun in every shot.",
+      "target_phrase": "a surfer with long dark brown hair tied in a low bun",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "sun-bleached blond hair"
+        ],
+        "edited_queries": [
+          "long dark brown hair tied in a low bun"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00008_T2_0017",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 83,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 216
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 217,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair"
+      }
+    ],
+    "key_objects": [
+      "white surfboard with green stripe",
+      "ocean wave"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the surfboard's green stripe to a bright red stripe in every shot.",
+      "target_phrase": "a white surfboard with a bright red stripe",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "green stripe"
+        ],
+        "edited_queries": [
+          "bright red stripe"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00009_T2_0018",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 41
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 42,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 142,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "snowboarder in an orange jacket and black helmet with mirrored goggles"
+      }
+    ],
+    "key_objects": [
+      "red snowboard",
+      "powder snow slope"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the snowboarder's orange jacket to a sky-blue jacket in every shot on the mountain.",
+      "target_phrase": "a snowboarder in a sky-blue jacket",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "orange jacket"
+        ],
+        "edited_queries": [
+          "sky-blue jacket"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00009_T2_0019",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 41
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 42,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 141
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 142,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "snowboarder in an orange jacket and black helmet with mirrored goggles"
+      }
+    ],
+    "key_objects": [
+      "red snowboard",
+      "powder snow slope"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the mirrored goggles with clear-lens goggles showing the rider's eyes in every shot.",
+      "target_phrase": "a snowboarder wearing clear-lens goggles",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "mirrored goggles"
+        ],
+        "edited_queries": [
+          "clear-lens goggles showing the rider's eyes"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00010_T2_0020",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 81,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"
+      },
+      {
+        "id": "C2",
+        "desc": "client in a sleeveless tank top with arm extended on the padded rest"
+      }
+    ],
+    "key_objects": [
+      "tattoo machine",
+      "small ink cup",
+      "tracing stencil on forearm"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the tattoo artist's black t-shirt to a deep burgundy t-shirt in every shot.",
+      "target_phrase": "a tattoo artist in a deep burgundy t-shirt",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black t-shirt"
+        ],
+        "edited_queries": [
+          "deep burgundy t-shirt"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00010_T2_0021",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 81,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"
+      },
+      {
+        "id": "C2",
+        "desc": "client in a sleeveless tank top with arm extended on the padded rest"
+      }
+    ],
+    "key_objects": [
+      "tattoo machine",
+      "small ink cup",
+      "tracing stencil on forearm"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the client's plain tank top to a white ribbed tank top in every shot.",
+      "target_phrase": "a client in a white ribbed tank top",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain tank top"
+        ],
+        "edited_queries": [
+          "white ribbed tank top"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00011_T2_0022",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "glass blower in a white t-shirt and black gloves, sweat on his forehead"
+      }
+    ],
+    "key_objects": [
+      "long blowpipe",
+      "molten glass blob",
+      "open furnace"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the glass blower's white t-shirt to a faded charcoal-gray t-shirt in every shot at the furnace.",
+      "target_phrase": "a glass blower in a faded charcoal t-shirt",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white t-shirt"
+        ],
+        "edited_queries": [
+          "faded charcoal-gray t-shirt"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00011_T2_0023",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 59
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 60,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "glass blower in a white t-shirt and black gloves, sweat on his forehead"
+      }
+    ],
+    "key_objects": [
+      "long blowpipe",
+      "molten glass blob",
+      "open furnace"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the black nitrile gloves with heavy brown leather workshop gloves in every shot.",
+      "target_phrase": "a glass blower wearing heavy brown leather gloves",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black nitrile gloves"
+        ],
+        "edited_queries": [
+          "heavy brown leather workshop gloves"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00012_T2_0024",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"
+      }
+    ],
+    "key_objects": [
+      "bamboo brush",
+      "ink stone with black ink",
+      "rice paper sheet"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the charcoal mandarin-collar shirt to a cream-colored mandarin shirt in every shot.",
+      "target_phrase": "a calligrapher in a cream-colored mandarin shirt",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "charcoal mandarin-collar shirt"
+        ],
+        "edited_queries": [
+          "cream-colored mandarin shirt"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00012_T2_0025",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 178
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 179,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"
+      }
+    ],
+    "key_objects": [
+      "bamboo brush",
+      "ink stone with black ink",
+      "rice paper sheet"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the calligrapher's silver hair to jet-black hair still tied in the same low knot in every shot.",
+      "target_phrase": "a calligrapher with jet-black hair in a low knot",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "silver hair"
+        ],
+        "edited_queries": [
+          "jet-black hair still tied in the same low knot"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00013_T2_0026",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 100
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "locksmith in a navy jumpsuit with a tool roll over one shoulder"
+      }
+    ],
+    "key_objects": [
+      "tension wrench",
+      "pick set",
+      "brass deadbolt door"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the locksmith's navy jumpsuit to a rust-orange jumpsuit in every shot.",
+      "target_phrase": "a locksmith in a rust-orange jumpsuit",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "navy jumpsuit"
+        ],
+        "edited_queries": [
+          "rust-orange jumpsuit"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00013_T2_0027",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 100
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "locksmith in a navy jumpsuit with a tool roll over one shoulder"
+      }
+    ],
+    "key_objects": [
+      "tension wrench",
+      "pick set",
+      "brass deadbolt door"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Add a black knit beanie to the locksmith's head in every shot of the hallway.",
+      "target_phrase": "a locksmith wearing a black knit beanie",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [],
+        "edited_queries": [
+          "black knit beanie"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00014_T2_0028",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck"
+      },
+      {
+        "id": "C2",
+        "desc": "small golden retriever puppy with floppy ears"
+      }
+    ],
+    "key_objects": [
+      "stainless steel exam table",
+      "stethoscope",
+      "small treat"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the vet's blond hair to a short dark-brown pixie cut in every shot at the clinic.",
+      "target_phrase": "a vet with a short dark-brown pixie cut",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blond hair"
+        ],
+        "edited_queries": [
+          "short dark-brown pixie cut"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00014_T2_0029",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck"
+      },
+      {
+        "id": "C2",
+        "desc": "small golden retriever puppy with floppy ears"
+      }
+    ],
+    "key_objects": [
+      "stainless steel exam table",
+      "stethoscope",
+      "small treat"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the golden retriever puppy's coat color from golden to solid black in every shot.",
+      "target_phrase": "a small black labrador puppy with floppy ears",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "golden retriever puppy"
+        ],
+        "edited_queries": [
+          "small black labrador puppy"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00015_T2_0030",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 12
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 13,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+      }
+    ],
+    "key_objects": [
+      "disassembled mechanical watch",
+      "tweezers",
+      "tiny brass screw"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the watchmaker's fawn vest to a deep forest-green vest in every shot at the bench.",
+      "target_phrase": "a watchmaker in a deep forest-green vest",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "fawn vest"
+        ],
+        "edited_queries": [
+          "deep forest-green vest"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00015_T2_0031",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 12
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 13,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+      }
+    ],
+    "key_objects": [
+      "disassembled mechanical watch",
+      "tweezers",
+      "tiny brass screw"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the magnifying loupe with thick round wire-rimmed glasses in every shot.",
+      "target_phrase": "a watchmaker wearing thick round wire-rimmed glasses",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "magnifying loupe"
+        ],
+        "edited_queries": [
+          "thick round wire-rimmed glasses"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00016_T2_0032",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 163
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 164,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"
+      }
+    ],
+    "key_objects": [
+      "round white plate",
+      "piping bag of cream",
+      "raspberry coulis bottle"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the white skull cap with a tall traditional white toque in every shot at the pass.",
+      "target_phrase": "a chef wearing a tall white toque",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white skull cap"
+        ],
+        "edited_queries": [
+          "tall traditional white toque"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00016_T2_0033",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 163
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 164,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"
+      }
+    ],
+    "key_objects": [
+      "round white plate",
+      "piping bag of cream",
+      "raspberry coulis bottle"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the chef's white jacket to a navy-blue chef jacket with brass buttons in every shot.",
+      "target_phrase": "a chef in a navy-blue jacket with brass buttons",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white jacket"
+        ],
+        "edited_queries": [
+          "navy-blue chef jacket with brass buttons"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00017_T2_0034",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 117
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 118,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman in a teal tank top with a long french braid"
+      },
+      {
+        "id": "C2",
+        "desc": "woman in a black sports bra and gray leggings, hair in a top knot"
+      }
+    ],
+    "key_objects": [
+      "wooden floor",
+      "two purple yoga mats"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the teal tank top to a bright coral tank top in every shot of the yoga session.",
+      "target_phrase": "a woman in a bright coral tank top",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "teal tank top"
+        ],
+        "edited_queries": [
+          "bright coral tank top"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00017_T2_0035",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 117
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 118,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "woman in a teal tank top with a long french braid"
+      },
+      {
+        "id": "C2",
+        "desc": "woman in a black sports bra and gray leggings, hair in a top knot"
+      }
+    ],
+    "key_objects": [
+      "wooden floor",
+      "two purple yoga mats"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the black sports bra and gray leggings to a matching white set in every shot.",
+      "target_phrase": "a woman in a white sports bra and white leggings",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black sports bra and gray leggings"
+        ],
+        "edited_queries": [
+          "white sports bra and white leggings"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00018_T2_0036",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 107
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 108,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "groomer with curly red hair, in a pink smock and grooming arm bands"
+      }
+    ],
+    "key_objects": [
+      "small white poodle",
+      "metal grooming table",
+      "grooming shears"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the groomer's curly red hair to long straight brown hair in a ponytail in every shot.",
+      "target_phrase": "a groomer with long straight brown hair in a ponytail",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "curly red hair"
+        ],
+        "edited_queries": [
+          "long straight brown hair in a ponytail"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00018_T2_0037",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 56
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 57,
+        "frame_end": 107
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 108,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "groomer with curly red hair, in a pink smock and grooming arm bands"
+      }
+    ],
+    "key_objects": [
+      "small white poodle",
+      "metal grooming table",
+      "grooming shears"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the pink smock to a sky-blue smock in every shot of the grooming salon.",
+      "target_phrase": "a groomer in a sky-blue smock",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "pink smock"
+        ],
+        "edited_queries": [
+          "sky-blue smock"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00019_T2_0038",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron"
+      }
+    ],
+    "key_objects": [
+      "smoking charcoal grill",
+      "tongs",
+      "thick burger patty on a sesame bun"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the backwards baseball cap with a wide-brim straw sun hat in every shot in the backyard.",
+      "target_phrase": "a man grilling wearing a wide-brim straw sun hat",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "backwards baseball cap"
+        ],
+        "edited_queries": [
+          "wide-brim straw sun hat"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00019_T2_0039",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron"
+      }
+    ],
+    "key_objects": [
+      "smoking charcoal grill",
+      "tongs",
+      "thick burger patty on a sesame bun"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the striped grilling apron to a solid forest-green apron in every shot.",
+      "target_phrase": "a man wearing a solid forest-green grilling apron",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "striped grilling apron"
+        ],
+        "edited_queries": [
+          "solid forest-green apron"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00020_T2_0040",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older man in a faded green vest and brown wide-brim hat, with a short gray beard"
+      }
+    ],
+    "key_objects": [
+      "fishing rod",
+      "tackle box",
+      "wooden lake dock"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the fisherman's faded green vest to a faded mustard-yellow vest in every shot on the dock.",
+      "target_phrase": "an older man in a faded mustard-yellow fishing vest",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "faded green vest"
+        ],
+        "edited_queries": [
+          "faded mustard-yellow vest"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00020_T2_0041",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "older man in a faded green vest and brown wide-brim hat, with a short gray beard"
+      }
+    ],
+    "key_objects": [
+      "fishing rod",
+      "tackle box",
+      "wooden lake dock"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the brown wide-brim hat with a navy-blue baseball cap in every shot.",
+      "target_phrase": "an older man wearing a navy-blue baseball cap",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "brown wide-brim hat"
+        ],
+        "edited_queries": [
+          "navy-blue baseball cap"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00021_T2_0042",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 25
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 26,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"
+      },
+      {
+        "id": "C2",
+        "desc": "patient lying face-down on a treatment table, towel draped over the lower back"
+      }
+    ],
+    "key_objects": [
+      "thin acupuncture needles",
+      "small wooden tray",
+      "treatment table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the acupuncturist's beige tunic to a deep navy tunic in every shot.",
+      "target_phrase": "an acupuncturist in a deep navy tunic",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "beige tunic"
+        ],
+        "edited_queries": [
+          "deep navy tunic"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00021_T2_0043",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 25
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 26,
+        "frame_end": 128
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 167
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 168,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"
+      },
+      {
+        "id": "C2",
+        "desc": "patient lying face-down on a treatment table, towel draped over the lower back"
+      }
+    ],
+    "key_objects": [
+      "thin acupuncture needles",
+      "small wooden tray",
+      "treatment table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the patient's white towel to a sage-green towel in every shot.",
+      "target_phrase": "a patient with a sage-green towel across the lower back",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white towel"
+        ],
+        "edited_queries": [
+          "sage-green towel"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00022_T2_0044",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 99
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 182
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 183,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window"
+      },
+      {
+        "id": "C2",
+        "desc": "small boy in a green dinosaur t-shirt with messy brown hair"
+      }
+    ],
+    "key_objects": [
+      "pink ice cream truck",
+      "waffle cone",
+      "scoop of strawberry ice cream"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the server's striped shirt to a solid red shirt in every shot at the truck window.",
+      "target_phrase": "an ice cream server in a solid red shirt",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "striped shirt"
+        ],
+        "edited_queries": [
+          "solid red shirt"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00022_T2_0045",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 99
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 101,
+        "frame_end": 182
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 183,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window"
+      },
+      {
+        "id": "C2",
+        "desc": "small boy in a green dinosaur t-shirt with messy brown hair"
+      }
+    ],
+    "key_objects": [
+      "pink ice cream truck",
+      "waffle cone",
+      "scoop of strawberry ice cream"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the boy's green dinosaur t-shirt with a yellow bumblebee t-shirt in every shot.",
+      "target_phrase": "a small boy in a yellow bumblebee t-shirt",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "green dinosaur t-shirt"
+        ],
+        "edited_queries": [
+          "yellow bumblebee t-shirt"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00023_T2_0046",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 162
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 163,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young busker in a beat-up brown leather jacket with a stubbled chin"
+      },
+      {
+        "id": "C2",
+        "desc": "commuter in a long beige coat with a leather briefcase"
+      }
+    ],
+    "key_objects": [
+      "acoustic guitar",
+      "open guitar case",
+      "subway tile wall"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the busker's beat-up brown leather jacket to a faded denim jacket in every shot.",
+      "target_phrase": "a busker in a faded denim jacket",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "beat-up brown leather jacket"
+        ],
+        "edited_queries": [
+          "faded denim jacket"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00023_T2_0047",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 125
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 126,
+        "frame_end": 162
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 163,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "young busker in a beat-up brown leather jacket with a stubbled chin"
+      },
+      {
+        "id": "C2",
+        "desc": "commuter in a long beige coat with a leather briefcase"
+      }
+    ],
+    "key_objects": [
+      "acoustic guitar",
+      "open guitar case",
+      "subway tile wall"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the commuter's long beige coat to a charcoal-gray coat in every shot.",
+      "target_phrase": "a commuter in a charcoal-gray coat",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "long beige coat"
+        ],
+        "edited_queries": [
+          "charcoal-gray coat"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00024_T2_0048",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 78
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 79,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"
+      }
+    ],
+    "key_objects": [
+      "raised car hood",
+      "ratchet wrench",
+      "alternator"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the mechanic's navy jumpsuit to a charcoal-gray jumpsuit in every shot in the garage.",
+      "target_phrase": "a mechanic in a charcoal-gray jumpsuit",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "navy jumpsuit"
+        ],
+        "edited_queries": [
+          "charcoal-gray jumpsuit"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00024_T2_0049",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 78
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 79,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"
+      }
+    ],
+    "key_objects": [
+      "raised car hood",
+      "ratchet wrench",
+      "alternator"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Let the mechanic's low ponytail down so her hair hangs loose past her shoulders in every shot.",
+      "target_phrase": "a mechanic with loose hair hanging past her shoulders",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "low ponytail"
+        ],
+        "edited_queries": [
+          "loose hair hanging past her shoulders"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00025_T2_0050",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 177
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 178,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "pilot in a beige flight suit and aviator sunglasses, gloves on hands"
+      },
+      {
+        "id": "C2",
+        "desc": "passenger in a chunky red sweater with a knit beanie"
+      },
+      {
+        "id": "C3",
+        "desc": "ground crew member in an orange high-visibility vest"
+      }
+    ],
+    "key_objects": [
+      "wicker basket",
+      "rainbow-striped balloon envelope",
+      "propane burner"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the passenger's chunky red sweater to a chunky cream-colored sweater in every shot of the launch.",
+      "target_phrase": "a passenger in a chunky cream sweater",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "chunky red sweater"
+        ],
+        "edited_queries": [
+          "chunky cream-colored sweater"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00025_T2_0051",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 177
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 178,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "pilot in a beige flight suit and aviator sunglasses, gloves on hands"
+      },
+      {
+        "id": "C2",
+        "desc": "passenger in a chunky red sweater with a knit beanie"
+      },
+      {
+        "id": "C3",
+        "desc": "ground crew member in an orange high-visibility vest"
+      }
+    ],
+    "key_objects": [
+      "wicker basket",
+      "rainbow-striped balloon envelope",
+      "propane burner"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the pilot's aviator sunglasses with round wire-rimmed glasses in every shot.",
+      "target_phrase": "a pilot wearing round wire-rimmed glasses",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "aviator sunglasses"
+        ],
+        "edited_queries": [
+          "round wire-rimmed glasses"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00026_T2_0052",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 64
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 65,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 109,
+        "frame_end": 156
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 157,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bride in a half-fastened ivory wedding gown, hair in soft loose waves"
+      },
+      {
+        "id": "C2",
+        "desc": "seamstress with reading glasses and a measuring tape around her neck"
+      },
+      {
+        "id": "C3",
+        "desc": "older mother in a sky-blue blazer, watching from a velvet sofa"
+      }
+    ],
+    "key_objects": [
+      "circular pedestal",
+      "tall three-panel mirror",
+      "lace veil"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the bride's soft loose waves to a sleek updo in every shot at the fitting.",
+      "target_phrase": "a bride with hair in a sleek updo",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "soft loose waves"
+        ],
+        "edited_queries": [
+          "sleek updo"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00026_T2_0053",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 28
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 29,
+        "frame_end": 64
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 65,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 109,
+        "frame_end": 156
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 157,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bride in a half-fastened ivory wedding gown, hair in soft loose waves"
+      },
+      {
+        "id": "C2",
+        "desc": "seamstress with reading glasses and a measuring tape around her neck"
+      },
+      {
+        "id": "C3",
+        "desc": "older mother in a sky-blue blazer, watching from a velvet sofa"
+      }
+    ],
+    "key_objects": [
+      "circular pedestal",
+      "tall three-panel mirror",
+      "lace veil"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the mother's sky-blue blazer to a soft champagne blazer in every shot.",
+      "target_phrase": "a mother in a soft champagne blazer",
+      "target_entity": "C3",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "sky-blue blazer"
+        ],
+        "edited_queries": [
+          "soft champagne blazer"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00027_T2_0054",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 73,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 193,
+        "frame_end": 224
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 225,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "stern female judge in a black robe with reading glasses on a chain"
+      },
+      {
+        "id": "C2",
+        "desc": "young defendant in a charcoal suit, standing at the table"
+      },
+      {
+        "id": "C3",
+        "desc": "jury foreperson in a beige cardigan, reading from a folded paper"
+      }
+    ],
+    "key_objects": [
+      "wooden gavel",
+      "judge's bench",
+      "folded jury verdict paper"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the defendant's charcoal suit to a navy-blue suit in every shot in the courtroom.",
+      "target_phrase": "a defendant in a navy-blue suit",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "charcoal suit"
+        ],
+        "edited_queries": [
+          "navy-blue suit"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00027_T2_0055",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 73,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 133,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 193,
+        "frame_end": 224
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 225,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "stern female judge in a black robe with reading glasses on a chain"
+      },
+      {
+        "id": "C2",
+        "desc": "young defendant in a charcoal suit, standing at the table"
+      },
+      {
+        "id": "C3",
+        "desc": "jury foreperson in a beige cardigan, reading from a folded paper"
+      }
+    ],
+    "key_objects": [
+      "wooden gavel",
+      "judge's bench",
+      "folded jury verdict paper"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the jury foreperson's beige cardigan to a forest-green cardigan in every shot.",
+      "target_phrase": "a jury foreperson in a forest-green cardigan",
+      "target_entity": "C3",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "beige cardigan"
+        ],
+        "edited_queries": [
+          "forest-green cardigan"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00028_T2_0056",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 37
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 38,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 160
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 161,
+        "frame_end": 204
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 205,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "storyteller with a wide-brim hat, holding a long stick toward the fire"
+      },
+      {
+        "id": "C2",
+        "desc": "young woman in a chunky knit sweater hugging her knees"
+      },
+      {
+        "id": "C3",
+        "desc": "young man in a denim jacket holding a marshmallow on a skewer"
+      }
+    ],
+    "key_objects": [
+      "crackling campfire",
+      "log seats",
+      "marshmallow on skewer"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the storyteller's wide-brim hat with a dark knit beanie in every shot at the campfire.",
+      "target_phrase": "a storyteller wearing a dark knit beanie",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "wide-brim hat"
+        ],
+        "edited_queries": [
+          "dark knit beanie"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00028_T2_0057",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 37
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 38,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 160
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 161,
+        "frame_end": 204
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 205,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "storyteller with a wide-brim hat, holding a long stick toward the fire"
+      },
+      {
+        "id": "C2",
+        "desc": "young woman in a chunky knit sweater hugging her knees"
+      },
+      {
+        "id": "C3",
+        "desc": "young man in a denim jacket holding a marshmallow on a skewer"
+      }
+    ],
+    "key_objects": [
+      "crackling campfire",
+      "log seats",
+      "marshmallow on skewer"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Recolor the woman's chunky knit sweater to a deep burgundy knit sweater in every shot.",
+      "target_phrase": "a woman in a deep burgundy chunky knit sweater",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "chunky knit sweater"
+        ],
+        "edited_queries": [
+          "deep burgundy knit sweater"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00029_T2_0058",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 145
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 196
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 197,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bartender in a tight white shirt, black vest, and slim suspenders"
+      },
+      {
+        "id": "C2",
+        "desc": "customer in a sleek black dress sitting at the bar with chin on hand"
+      }
+    ],
+    "key_objects": [
+      "metal cocktail shaker",
+      "coupe glass",
+      "small kitchen torch"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Replace the bartender's slim suspenders with a thin black bowtie in every shot behind the bar.",
+      "target_phrase": "a bartender in a white shirt and black vest with a black bowtie",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "slim suspenders"
+        ],
+        "edited_queries": [
+          "thin black bowtie"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  },
+  {
+    "sample_id": "00029_T2_0059",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 145
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 146,
+        "frame_end": 196
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 197,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "bartender in a tight white shirt, black vest, and slim suspenders"
+      },
+      {
+        "id": "C2",
+        "desc": "customer in a sleek black dress sitting at the bar with chin on hand"
+      }
+    ],
+    "key_objects": [
+      "metal cocktail shaker",
+      "coupe glass",
+      "small kitchen torch"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change the customer's sleek black dress to a sleek emerald-green dress in every shot.",
+      "target_phrase": "a customer in a sleek emerald-green dress",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "sleek black dress"
+        ],
+        "edited_queries": [
+          "sleek emerald-green dress"
+        ],
+        "combine": "union"
+      },
+      "author": "claude-handwritten-v2-10s"
+    }
+  }
+]

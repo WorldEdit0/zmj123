@@ -53,52 +53,166 @@ def _maybe_per_shot_frames(video_path: str, shots: list[dict], stride: int, max_
 _IDENTITY_CHANGING_TASKS = {"T1"}
 
 
-# SAM-3 minimum mask area (pixels). Below this, treat as miss and fall through
-# to whole-frame metrics — but log the miss so we know it happened.
+# SAM-3 minimum mask area (pixels). Below this, treat as a miss. For local
+# NEP, miss shots are skipped instead of falling back to whole-frame scoring.
 _MASK_MIN_PIXELS = 100
 
 
-def _get_mask_query(sample: dict) -> str | None:
-    """Pick the phrase to query SAM-3 with for per-shot mask localisation.
+def _as_query_list(x) -> list[str]:
+    if x is None:
+        return []
+    if isinstance(x, str):
+        return [x] if x else []
+    return [str(v) for v in x if v]
 
-    Why not just `target_phrase`?
-      - For T1 char-replace, target_phrase describes the *post-edit* entity
-        (e.g. "a female android with chrome cheekbones"). SAM-3 is run on the
-        edit frames; if the editor failed, the android is not there → mask
-        misses → silent fallthrough to whole-frame EE.
-      - The right anchor is the *source* entity description, which exists in
-        the source video regardless of edit success. The same mask is then
-        applied to both source and edit frames.
 
-    Returns None for tasks where masking doesn't make semantic sense:
-      T3 global style    — change is everywhere
-      T5 structural      — operates on shot ordering
-      T6 cinematic       — re-frames whole shot
-      T7 transition      — operates between shots
-    """
+def _legacy_mask_spec(sample: dict) -> dict:
+    """Best-effort mask spec for older prompt JSONs without mask_queries."""
     edit = sample["edit"]
     task_id = edit["task_id"]
 
     if task_id in {"T3", "T5", "T6", "T7"}:
-        return None
+        return {
+            "nep_applicable": False,
+            "edit_scope": "global_or_structural",
+            "edit_type": task_id,
+            "source_queries": [],
+            "edited_queries": [],
+            "combine": "none",
+            "reason": f"task {task_id} has no local edit-region mask policy",
+        }
 
-    # T1 / T2: mask the SOURCE entity by its character desc (stable pre-edit)
     target_entity = edit.get("target_entity")
     if target_entity:
         for c in sample.get("characters", []):
             if c.get("id") == target_entity:
                 desc = c.get("desc")
                 if desc:
-                    return desc
+                    return {
+                        "nep_applicable": True,
+                        "edit_scope": "local",
+                        "edit_type": "legacy_entity",
+                        "source_queries": [desc],
+                        "edited_queries": [],
+                        "combine": "union",
+                    }
 
-    # T4: mask the anchor object (existing in source, stable pre-edit)
     if task_id == "T4":
-        anchor = (edit.get("extra") or {}).get("anchor")
-        if anchor:
-            return anchor
+        extra = edit.get("extra") or {}
+        op = extra.get("op")
+        old_object = extra.get("old_object")
+        new_object = extra.get("new_object")
+        if op == "add":
+            source_queries, edited_queries = [], [new_object] if new_object else []
+        elif op == "replace":
+            source_queries = [old_object] if old_object else []
+            edited_queries = [new_object] if new_object else []
+        elif op in {"delete", "remove"}:
+            source_queries, edited_queries = [old_object] if old_object else [], []
+        else:
+            source_queries, edited_queries = [], []
+        return {
+            "nep_applicable": True,
+            "edit_scope": "local",
+            "edit_type": f"legacy_object_{op}" if op else "legacy_object",
+            "source_queries": source_queries,
+            "edited_queries": edited_queries,
+            "combine": "union",
+        }
 
-    # Fallback: whatever target_phrase the prompt declared
-    return edit.get("target_phrase")
+    return {
+        "nep_applicable": True,
+        "edit_scope": "local",
+        "edit_type": "legacy_target_phrase",
+        "source_queries": [],
+        "edited_queries": [edit.get("target_phrase")] if edit.get("target_phrase") else [],
+        "combine": "union",
+    }
+
+
+def _get_mask_spec(sample: dict) -> dict:
+    """Return structured source/edit mask queries for NEP.
+
+    Prompt JSONs may now provide edit.mask_queries with separate queries for
+    source frames and edited frames. NEP masks the union of those regions and
+    evaluates only the complement. This is essential for add/delete/replace:
+    an anchor object is not necessarily the edited region.
+    """
+    spec = sample["edit"].get("mask_queries") or _legacy_mask_spec(sample)
+    return {
+        "nep_applicable": bool(spec.get("nep_applicable")),
+        "edit_scope": spec.get("edit_scope"),
+        "edit_type": spec.get("edit_type"),
+        "source_queries": _as_query_list(spec.get("source_queries")),
+        "edited_queries": _as_query_list(spec.get("edited_queries")),
+        "combine": spec.get("combine", "union"),
+        "reason": spec.get("reason"),
+    }
+
+
+def _mask_one_frame(mask_backend, frame: np.ndarray, query: str) -> tuple[np.ndarray | None, bool]:
+    m3 = mask_backend(frame[None, ...], query)  # [1,H,W]
+    m = m3[0]
+    hit = bool(m.sum() >= _MASK_MIN_PIXELS)
+    return (m if hit else None), hit
+
+
+def _build_nep_masks(
+    sample: dict,
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    applicable: list[int],
+    mask_backend,
+    mask_spec: dict,
+) -> tuple[dict[int, np.ndarray] | None, dict]:
+    """Build union edit-region masks from source-side and edit-side queries."""
+    mask_hits: dict[str, dict] = {}
+    if mask_backend is None or not mask_spec.get("nep_applicable"):
+        return None, mask_hits
+
+    source_queries = mask_spec.get("source_queries") or []
+    edited_queries = mask_spec.get("edited_queries") or []
+    if not source_queries and not edited_queries:
+        return None, mask_hits
+
+    edit_masks: dict[int, np.ndarray] = {}
+    for k, src in src_frames.items():
+        if applicable and k not in applicable:
+            continue
+        shot_hits = {"source": {}, "edited": {}, "used": False}
+        masks = []
+
+        if len(src):
+            frame = src[len(src) // 2]
+            for query in source_queries:
+                try:
+                    m, hit = _mask_one_frame(mask_backend, frame, query)
+                    shot_hits["source"][query] = hit
+                    if m is not None:
+                        masks.append(m)
+                except Exception as e:
+                    print(f"[mask] sid={sample['sample_id']} shot={k} source {query!r}: {e}")
+                    shot_hits["source"][query] = False
+
+        edt = edt_frames.get(k)
+        if edt is not None and len(edt):
+            frame = edt[len(edt) // 2]
+            for query in edited_queries:
+                try:
+                    m, hit = _mask_one_frame(mask_backend, frame, query)
+                    shot_hits["edited"][query] = hit
+                    if m is not None:
+                        masks.append(m)
+                except Exception as e:
+                    print(f"[mask] sid={sample['sample_id']} shot={k} edited {query!r}: {e}")
+                    shot_hits["edited"][query] = False
+
+        if masks:
+            edit_masks[k] = np.maximum.reduce(masks).astype(np.uint8)
+            shot_hits["used"] = True
+        mask_hits[str(k)] = shot_hits
+
+    return (edit_masks or None), mask_hits
 
 
 def _largest_face_embedding(frame: np.ndarray, face_backend) -> np.ndarray | None:
@@ -256,40 +370,13 @@ def score_one(
         src_frames = _maybe_per_shot_frames(src_path, shots, stride, max_frames_per_shot)
     edt_frames = _maybe_per_shot_frames(edited_video_path, shots, stride, max_frames_per_shot)
 
-    # Per-shot 2D mask for entity-localised preservation.
-    # Anchored on the *source* mid-frame using the source-entity desc — see
-    # _get_mask_query() for rationale. In the current v3 pipeline this mask is
-    # used by NEP to compare the non-edited complement region. EE_v3/CSEP_v3
-    # are VLM full-frame image/frame-set judgments and do not consume masks.
-    # Misses fall through to whole-frame NEP; we record mask_hits so reports can
-    # audit the fallthrough rate.
-    edit_masks = None
-    mask_query = _get_mask_query(sample)
-    mask_hits: dict[int, bool] = {}
-    if mask_backend is not None and mask_query:
-        edit_masks = {}
-        for k, frames in src_frames.items():
-            if applicable and k not in applicable:
-                continue
-            T = len(frames)
-            if T == 0:
-                mask_hits[k] = False
-                continue
-            anchor = frames[T // 2 : T // 2 + 1]    # [1,H,W,3] from SOURCE
-            try:
-                m3 = mask_backend(anchor, mask_query)   # [1,H,W]
-                m = m3[0]
-                # 中文注释：mask 太小通常表示 SAM3 没找到目标；
-                # 此时不使用 mask，后续 NEP 退回整帧比较，并在 extra.mask_hits 中记录 miss。
-                hit = bool(m.sum() >= _MASK_MIN_PIXELS)
-                mask_hits[k] = hit
-                if hit:
-                    edit_masks[k] = m
-            except Exception as e:
-                print(f"[mask] sid={sample['sample_id']} shot={k}: {e}")
-                mask_hits[k] = False
-        if not edit_masks:
-            edit_masks = None  # all misses → whole-frame fallthrough
+    # Per-shot 2D masks for local NEP. Prompt JSON declares source-side and
+    # edit-side queries separately; their union is the allowed edit region.
+    # EE_v3/CSEP_v3 are VLM full-frame judgments and do not consume masks.
+    mask_spec = _get_mask_spec(sample)
+    edit_masks, mask_hits = _build_nep_masks(
+        sample, src_frames, edt_frames, applicable, mask_backend, mask_spec
+    )
 
     psq_kwargs = {} if psq_fn is None else {"musiq_fn": psq_fn}
     # 中文注释：PSQ 只看编辑后视频的视觉质量，不依赖 source。
@@ -302,9 +389,25 @@ def score_one(
               "per_shot_e_tilde": {}}
 
     # 中文注释：NEP 比较 source/edit 在非编辑区域的 DINO 相似度。
-    # 如果有 SAM mask，则只比较 mask 外；如果没有 mask 或 mask miss，则比较整帧。
-    nep_r = M.nep(src_frames, edt_frames, dino_backend=dino_backend,
-                  per_shot_edit_masks=edit_masks)
+    # 全局/结构/转场任务没有局部非编辑区域，直接返回 None。局部任务必须
+    # 有有效 mask；缺 mask 的 shot 会被 nep(require_masks=True) 跳过。
+    if mask_spec.get("nep_applicable"):
+        nep_r = M.nep(
+            src_frames,
+            edt_frames,
+            dino_backend=dino_backend,
+            per_shot_edit_masks=edit_masks,
+            require_masks=True,
+        )
+    else:
+        nep_r = {
+            "nep": None,
+            "per_shot_nep": {},
+            "n_scored": 0,
+            "n_skipped": 0,
+            "n_mask_missing": 0,
+            "reason": mask_spec.get("reason") or "NEP not applicable for this task",
+        }
 
     # v2 (CLIP-T directional) — also DEPRECATED. Kept None.
     ee2_r = {"ee": None, "per_shot": {}, "n_applicable": 0}
@@ -349,6 +452,9 @@ def score_one(
     if face_backend is not None and task_id not in _IDENTITY_CHANGING_TASKS:
         id_drift = _compute_id_drift(src_frames, edt_frames, face_backend)
     ses_r = M.ses(id_drift=id_drift, off_target_mean=off["off_target_mean"])
+    legacy_mask_query = "; ".join(
+        (mask_spec.get("source_queries") or []) + (mask_spec.get("edited_queries") or [])
+    ) or None
 
     return {
         "sample_id": sample["sample_id"],
@@ -388,7 +494,12 @@ def score_one(
             },
             "csep_v3_pair_scores": csep3_r.get("pair_scores") or {},
             "nep_per_shot": nep_r["per_shot_nep"],
-            "mask_query": mask_query,
+            "nep_n_scored": nep_r.get("n_scored"),
+            "nep_n_skipped": nep_r.get("n_skipped"),
+            "nep_n_mask_missing": nep_r.get("n_mask_missing"),
+            "nep_reason": nep_r.get("reason"),
+            "mask_queries": mask_spec,
+            "mask_query": legacy_mask_query,
             "mask_hits": mask_hits,
         },
     }
@@ -407,8 +518,8 @@ def main():
     ap.add_argument("--backend_face", default="mock", choices=["mock", "insightface"])
     ap.add_argument("--backend_vlm", default="mock", choices=["mock", "seed", "qwen3vl", "qwen"])
     ap.add_argument("--backend_mask", default="none", choices=["none", "sam3"],
-                    help="If set, run SAM-3 per shot to localize the target region. "
-                         "Current v3 uses the mask for NEP complement preservation; "
+                    help="If set, run SAM-3 per shot on edit.mask_queries to localize "
+                         "the local edit region for NEP complement preservation; "
                          "EE_v3/CSEP_v3 remain VLM full-frame judgments. Default off.")
     ap.add_argument("--backend_psq", default="mock", choices=["mock", "pyiqa"],
                     help="MUSIQ + LAION-Aes via pyiqa, or deterministic hash mock.")

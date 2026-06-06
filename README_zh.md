@@ -126,7 +126,7 @@ python -m mseditbench.eval.t5_track \
 | **PSQ** | 编辑帧的感知质量 | pyiqa MUSIQ + LAION-Aes | [0, 1] ↑ |
 | **EE_v3** | 编辑是否执行了指令？ | Seed VLM 对每个镜头给出 0-5 评分 | [0, 1] ↑ |
 | **CSEP_v3** | 编辑是否在镜头之间一致传播？ | √(coverage × consistency)；两者均由 VLM 评分 | [0, 1] ↑ |
-| **NEP** | 未编辑区域是否被保留？ | SAM-3 mask 外部的 DINOv2 cos sim | [0, 1] ↑ |
+| **NEP** | 局部任务的未编辑区域是否被保留？ | `edit.mask_queries` 的 SAM-3 union mask 外部 DINOv2 cos sim | [0, 1] ↑ / 不适用返回 None |
 | **SES** | 编辑是否被安全限制在目标范围内（没有非目标损伤 / 身份漂移）？ | 1 − max(IDdrift, OffTarget)；ArcFace + CLIP-T | [0, 1] ↑ |
 | **TSF** (T5) | 请求的镜头顺序是否完成？ | OmniShotCut 镜头检测 + 按顺序 DINOv2 内容对齐 | [0, 1] ↑ |
 

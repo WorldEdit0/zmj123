@@ -1,0 +1,183 @@
+{
+  "video_id": "00009",
+  "video_path": "data/source_videos/videos/00009.mp4",
+  "fps": 24.0,
+  "total_frames": 361,
+  "width": 1280,
+  "height": 720,
+  "duration_sec": 15.042,
+  "expected_shots": 4,
+  "omnishotcut": {
+    "n_shots": 4,
+    "backend": "omnishotcut",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 69,
+        "duration_frames": 70,
+        "t_start": 0.0,
+        "t_end": 2.917,
+        "duration_sec": 2.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 70,
+        "frame_end": 128,
+        "duration_frames": 59,
+        "t_start": 2.917,
+        "t_end": 5.375,
+        "duration_sec": 2.458
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 256,
+        "duration_frames": 128,
+        "t_start": 5.375,
+        "t_end": 10.708,
+        "duration_sec": 5.333
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 257,
+        "frame_end": 360,
+        "duration_frames": 104,
+        "t_start": 10.708,
+        "t_end": 15.042,
+        "duration_sec": 4.333
+      }
+    ]
+  },
+  "transnetv2": {
+    "n_shots": 4,
+    "backend": "transnetv2_pytorch",
+    "threshold": 0.5,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68,
+        "duration_frames": 69,
+        "t_start": 0.0,
+        "t_end": 2.875,
+        "duration_sec": 2.875
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 127,
+        "duration_frames": 59,
+        "t_start": 2.875,
+        "t_end": 5.333,
+        "duration_sec": 2.458
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 128,
+        "frame_end": 255,
+        "duration_frames": 128,
+        "t_start": 5.333,
+        "t_end": 10.667,
+        "duration_sec": 5.333
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 256,
+        "frame_end": 360,
+        "duration_frames": 105,
+        "t_start": 10.667,
+        "t_end": 15.042,
+        "duration_sec": 4.375
+      }
+    ]
+  },
+  "pyscenedetect": {
+    "n_shots": 4,
+    "threshold": 27.0,
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 69,
+        "duration_frames": 70,
+        "t_start": 0.0,
+        "t_end": 2.917,
+        "duration_sec": 2.917
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 70,
+        "frame_end": 128,
+        "duration_frames": 59,
+        "t_start": 2.917,
+        "t_end": 5.375,
+        "duration_sec": 2.458
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 129,
+        "frame_end": 256,
+        "duration_frames": 128,
+        "t_start": 5.375,
+        "t_end": 10.708,
+        "duration_sec": 5.333
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 257,
+        "frame_end": 360,
+        "duration_frames": 104,
+        "t_start": 10.708,
+        "t_end": 15.042,
+        "duration_sec": 4.333
+      }
+    ]
+  },
+  "agreement": {
+    "shot_count_match": true,
+    "boundaries_within_tolerance": true,
+    "tolerance_sec": 0.25
+  },
+  "consensus_shots": [
+    {
+      "shot_id": 1,
+      "frame_start": 0,
+      "frame_end": 69,
+      "duration_frames": 70,
+      "t_start": 0.0,
+      "t_end": 2.917,
+      "duration_sec": 2.917
+    },
+    {
+      "shot_id": 2,
+      "frame_start": 70,
+      "frame_end": 128,
+      "duration_frames": 59,
+      "t_start": 2.917,
+      "t_end": 5.375,
+      "duration_sec": 2.458
+    },
+    {
+      "shot_id": 3,
+      "frame_start": 129,
+      "frame_end": 256,
+      "duration_frames": 128,
+      "t_start": 5.375,
+      "t_end": 10.708,
+      "duration_sec": 5.333
+    },
+    {
+      "shot_id": 4,
+      "frame_start": 257,
+      "frame_end": 360,
+      "duration_frames": 104,
+      "t_start": 10.708,
+      "t_end": 15.042,
+      "duration_sec": 4.333
+    }
+  ],
+  "consensus_n_shots": 4,
+  "consensus_backend": "omnishotcut",
+  "matches_expected": true
+}

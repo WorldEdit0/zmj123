@@ -1,0 +1,51 @@
+{
+  "sample_id": "00010_T8_0021",
+  "video_id": "00010",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00010_T8_0021_k2.mp4",
+  "psq": 0.5515583582719167,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.9866868108510971,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.936175525188446,
+  "off_target": 0.0,
+  "id_drift": 0.06382447481155396,
+  "dps": 0.16666666666666666,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 0.3333333333333333,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9871203899383545,
+      "2": 0.9827961325645447,
+      "3": 0.994202733039856,
+      "4": 0.9826279878616333
+    },
+    "mask_query": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves",
+    "mask_hits": {
+      "4": false
+    }
+  },
+  "k": 2
+}

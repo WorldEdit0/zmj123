@@ -1,0 +1,55 @@
+{
+  "sample_id": "00007_T8_0015",
+  "video_id": "00007",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00007_T8_0015_k1.mp4",
+  "psq": 0.5106067474683126,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.5,
+  "nep": 0.9818011969327927,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.6324555320336759,
+  "csep_v3_coverage": 0.5,
+  "csep_v3_consistency": 0.8,
+  "ses": 0.6940244436264038,
+  "off_target": 0.0,
+  "id_drift": 0.3059755563735962,
+  "dps": 0.25,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.8,
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9736182689666748,
+      "2": 0.9902464151382446,
+      "3": 0.9779792428016663,
+      "4": 0.985360860824585
+    },
+    "mask_query": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones",
+    "mask_hits": {
+      "3": true,
+      "4": true
+    }
+  },
+  "k": 1
+}

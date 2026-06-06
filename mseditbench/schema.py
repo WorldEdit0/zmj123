@@ -98,6 +98,7 @@ class EditSpec:
     applicable_shots: list[int]
     target_entity: Optional[str] = None
     target_reference: Optional[str] = None
+    mask_queries: dict = field(default_factory=dict)
     extra: dict = field(default_factory=dict)
 
 

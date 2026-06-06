@@ -93,7 +93,7 @@ source video prompts
 | PSQ | `mseditbench/metrics/psq.py` | Perceptual / aesthetic quality，当前真实后端用 pyiqa 的 MUSIQ + LAION-Aes。 |
 | EE v3 | `mseditbench/metrics/ee_v3.py` | Edit Effectiveness，用 VLM 判断每个相关 shot 是否完成编辑。当前应优先看 v3。 |
 | CSEP v3 | `mseditbench/metrics/csep_v3.py` | Cross-Shot Edit Propagation，看相关 shot 的编辑覆盖率和一致性。当前应优先看 v3。 |
-| NEP | `mseditbench/metrics/nep.py` | Non-Edit Preservation，不该改的区域是否保留。真实流程可结合 SAM-3 mask。 |
+| NEP | `mseditbench/metrics/nep.py` | Non-Edit Preservation，只对局部编辑任务启用；用 `edit.mask_queries` 的 source/edit union mask 外区域衡量保留。 |
 | SES | `mseditbench/metrics/ses.py` | Side Effect Safety，综合身份漂移和 off-target 改动。 |
 | TSF | `mseditbench/eval/t5_track.py` | T5 Structural Fidelity，看编辑后镜头内容是否按 `new_order` 和源 shot 对齐。 |
 
@@ -438,7 +438,7 @@ CUDA_VISIBLE_DEVICES=0 VLM_MAX_WORKERS=4 python3 -m mseditbench.eval.run_eval \
 
 ### 14.4 T5 单独评测
 
-T5 改变 shot 结构，不能直接用源视频的 shot 边界做 per-shot EE/NEP/CSEP，所以用：
+T5 改变 shot 结构，不能直接用源视频的 shot 边界做 per-shot EE/NEP/CSEP；NEP 对 T5 返回 None，结构评测用：
 
 ```bash
 cd /home/xujiayang/projects/Multi-shot-bench/multi_shot_bench

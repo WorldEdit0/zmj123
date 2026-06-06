@@ -1,0 +1,71 @@
+{
+  "sample_id": "00028_T1_0057",
+  "video_id": "00028",
+  "task_id": "T1",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T1/00028_T1_0057_k2.mp4",
+  "psq": 0.530246926943461,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.31999999999999995,
+  "nep": 0.918138837814331,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.17888543819998315,
+  "csep_v3_coverage": 0.31999999999999995,
+  "csep_v3_consistency": 0.1,
+  "ses": 1.0,
+  "off_target": 0.0,
+  "id_drift": null,
+  "dps": null,
+  "dps_p_persist": null,
+  "dps_p_absent": null,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "1": 0.6,
+      "2": 0.4,
+      "3": 0.2,
+      "4": 0.2,
+      "5": 0.2
+    },
+    "csep_v3_pair_scores": {
+      "1-2": 1.0,
+      "1-3": 0.0,
+      "1-4": 0.0,
+      "1-5": 0.0,
+      "2-3": 0.0,
+      "2-4": 0.0,
+      "2-5": 0.0,
+      "3-4": 0.0,
+      "3-5": 0.0,
+      "4-5": 0.0
+    },
+    "nep_per_shot": {
+      "1": 0.8612921833992004,
+      "2": 0.9704093933105469,
+      "3": 0.8116333484649658,
+      "4": 0.9724582433700562,
+      "5": 0.974901020526886
+    },
+    "mask_query": "young woman in a chunky knit sweater hugging her knees",
+    "mask_hits": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "4": false,
+      "5": true
+    }
+  },
+  "k": 2
+}

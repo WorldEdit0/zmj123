@@ -1,0 +1,51 @@
+{
+  "sample_id": "00006_T8_0013",
+  "video_id": "00006",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00006_T8_0013_k1.mp4",
+  "psq": 0.5664903646707535,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.9791398048400879,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.6441866457462311,
+  "off_target": 0.0,
+  "id_drift": 0.3558133542537689,
+  "dps": 0.5,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 1.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9921925663948059,
+      "2": 0.9919633865356445,
+      "3": 0.9469378590583801,
+      "4": 0.985465407371521
+    },
+    "mask_query": "friend in a backwards red cap watching from a bench",
+    "mask_hits": {
+      "4": false
+    }
+  },
+  "k": 1
+}

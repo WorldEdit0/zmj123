@@ -1,0 +1,59 @@
+{
+  "sample_id": "00017_T8_0034",
+  "video_id": "00017",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00017_T8_0034_k1.mp4",
+  "psq": 0.6206043010950089,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.13333333333333333,
+  "nep": 0.9906229972839355,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.32659863237109044,
+  "csep_v3_coverage": 0.13333333333333333,
+  "csep_v3_consistency": 0.8000000000000002,
+  "ses": 0.9148833006620407,
+  "off_target": 0.0,
+  "id_drift": 0.08511669933795929,
+  "dps": 0.5,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "2": 0.0,
+      "3": 0.2,
+      "4": 0.2
+    },
+    "csep_v3_pair_scores": {
+      "2-3": 0.8,
+      "2-4": 0.8,
+      "3-4": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9906380772590637,
+      "2": 0.9913749098777771,
+      "3": 0.9883404970169067,
+      "4": 0.9921385049819946
+    },
+    "mask_query": "woman in a teal tank top with a long french braid",
+    "mask_hits": {
+      "2": false,
+      "3": false,
+      "4": false
+    }
+  },
+  "k": 1
+}

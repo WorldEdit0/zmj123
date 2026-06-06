@@ -1,0 +1,50 @@
+{
+  "sample_id": "00003_T8_0007",
+  "video_id": "00003",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00003_T8_0007_k0.mp4",
+  "psq": 0.5591025998857286,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.0,
+  "nep": 0.9798716306686401,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.8767453730106354,
+  "off_target": 0.0,
+  "id_drift": 0.12325462698936462,
+  "dps": 0.0,
+  "dps_p_persist": 0.0,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "3": 0.0
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9892454743385315,
+      "2": 0.9720715284347534,
+      "3": 0.9782978892326355
+    },
+    "mask_query": "audience member in a red blouse, hair in a side braid",
+    "mask_hits": {
+      "3": false
+    }
+  },
+  "k": 0
+}

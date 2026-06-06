@@ -1,0 +1,56 @@
+{
+  "sample_id": "00024_T8_0049",
+  "video_id": "00024",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00024_T8_0049_k0.mp4",
+  "psq": 0.5975036767323813,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.7,
+  "nep": 0.992764151096344,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.8366600265340756,
+  "csep_v3_coverage": 0.7,
+  "csep_v3_consistency": 1.0,
+  "ses": 0.8382296562194824,
+  "off_target": 0.0,
+  "id_drift": 0.16177034378051758,
+  "dps": 0.5,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "4": 0.8,
+      "5": 0.6
+    },
+    "csep_v3_pair_scores": {
+      "4-5": 1.0
+    },
+    "nep_per_shot": {
+      "1": 0.9940752983093262,
+      "2": 0.9932475090026855,
+      "3": 0.996644914150238,
+      "4": 0.984610915184021,
+      "5": 0.9952421188354492
+    },
+    "mask_query": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail",
+    "mask_hits": {
+      "4": true,
+      "5": true
+    }
+  },
+  "k": 0
+}

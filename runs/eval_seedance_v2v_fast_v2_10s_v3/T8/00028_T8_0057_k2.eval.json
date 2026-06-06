@@ -1,0 +1,52 @@
+{
+  "sample_id": "00028_T8_0057",
+  "video_id": "00028",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_fast_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_fast_edit_v2_10s/videos/T8/00028_T8_0057_k2.mp4",
+  "psq": 0.5306294314066569,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.9770984888076782,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": null,
+  "csep_v3_coverage": null,
+  "csep_v3_consistency": null,
+  "ses": 0.748100109398365,
+  "off_target": 0.0,
+  "id_drift": 0.251899890601635,
+  "dps": 0.875,
+  "dps_p_persist": 1.0,
+  "dps_p_absent": 0.75,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "5": 0.2
+    },
+    "csep_v3_pair_scores": {},
+    "nep_per_shot": {
+      "1": 0.9870730638504028,
+      "2": 0.9483530521392822,
+      "3": 0.9798200130462646,
+      "4": 0.9839458465576172,
+      "5": 0.9863004684448242
+    },
+    "mask_query": "young man in a denim jacket holding a marshmallow on a skewer",
+    "mask_hits": {
+      "5": false
+    }
+  },
+  "k": 2
+}

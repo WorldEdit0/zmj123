@@ -1,0 +1,54 @@
+{
+  "sample_id": "00000_T8_0000",
+  "video_id": "00000",
+  "task_id": "T8",
+  "baseline": "seedance_v2v_pro_v2_10s",
+  "snapshot_id": "pilot_v2_10s_v3",
+  "edited_video_path": "runs/seedance_v2v_edit_v2_10s/videos/T8/00000_T8_0000_k2.mp4",
+  "psq": 0.621241793897417,
+  "ee": null,
+  "ee_v2": null,
+  "ee_v3": 0.2,
+  "nep": 0.9874934554100037,
+  "csep": null,
+  "csep_coverage": null,
+  "csep_consistency": null,
+  "csep_v2": null,
+  "csep_v2_coverage": null,
+  "csep_v2_consistency": null,
+  "csep_v3": 0.4,
+  "csep_v3_coverage": 0.2,
+  "csep_v3_consistency": 0.8,
+  "ses": 0.9071660935878754,
+  "off_target": 0.0,
+  "id_drift": 0.09283390641212463,
+  "dps": 0.25,
+  "dps_p_persist": 0.5,
+  "dps_p_absent": 0.0,
+  "extra": {
+    "ee_indicators": {},
+    "csep_per_shot": {},
+    "ee_v2_per_shot": {},
+    "ee_v2_src_text": null,
+    "ee_v2_tgt_text": null,
+    "csep_v2_pair_similarities": [],
+    "ee_v3_per_shot": {
+      "2": 0.4,
+      "3": 0.0
+    },
+    "csep_v3_pair_scores": {
+      "2-3": 0.8
+    },
+    "nep_per_shot": {
+      "1": 0.9881408214569092,
+      "2": 0.9787655472755432,
+      "3": 0.9955739974975586
+    },
+    "mask_query": "young male barista in a black apron, hair tucked under a beanie",
+    "mask_hits": {
+      "2": true,
+      "3": false
+    }
+  },
+  "k": 2
+}
