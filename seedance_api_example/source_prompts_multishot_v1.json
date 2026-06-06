@@ -1,0 +1,403 @@
+[
+  {
+    "global_index": 0,
+    "scene_id": "kitchen_morning_dialogue",
+    "category": "dialogue_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "young woman with long brown hair, wearing a red knit sweater"},
+      {"id": "C2", "desc": "older man with short grey hair, wearing a navy blue shirt"}
+    ],
+    "key_objects": ["white ceramic coffee cup", "wooden kitchen counter"],
+    "caption": "[wide] In a sunlit kitchen with soft morning light through the window, a young woman with long brown hair, wearing a red knit sweater, walks in, looks around curiously, and runs her fingers along the wooden counter. [medium close-up] She picks up a white ceramic coffee cup from the counter, turns it slowly in her hands, and examines a small painting on its side with careful attention. [over-the-shoulder] An older man with short grey hair, wearing a navy blue shirt, steps into the doorway behind her, leans against the frame, smiles warmly at her, and gives a small wave."
+  },
+  {
+    "global_index": 1,
+    "scene_id": "office_meeting_quiet",
+    "category": "dialogue_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "man in his thirties with black hair, wearing a grey suit jacket"},
+      {"id": "C2", "desc": "woman in her twenties with blonde hair, wearing a white blouse"}
+    ],
+    "key_objects": ["laptop", "glass conference table"],
+    "caption": "[wide] In a modern glass-walled office, a man in a grey suit jacket sits across from a woman in a white blouse at a long glass conference table, both leaning forward toward a laptop between them. [close-up] On the laptop screen, fingers point at a chart as a hand traces a rising line across the data. [medium] The woman looks up thoughtfully, taps her chin once, then nods slowly toward the man. [reverse] The man breaks into a relieved smile, sits back in his chair, and clasps his hands together."
+  },
+  {
+    "global_index": 2,
+    "scene_id": "street_cafe_evening",
+    "category": "dialogue_2person_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "woman with curly red hair, wearing a black leather jacket"},
+      {"id": "C2", "desc": "man with a short beard, wearing a beige cardigan"}
+    ],
+    "key_objects": ["espresso cup", "small round metal table"],
+    "caption": "[wide, establishing] At golden hour, a small Parisian-style street cafe with two people seated at a round metal table outside, warm evening light glowing on the ivy-covered building behind them. [medium close-up] The woman with curly red hair in a black leather jacket laughs gently and tucks her hair behind her ear. [over-the-shoulder] The man with a short beard in a beige cardigan smiles back at her and lifts a small espresso cup toward her in a quiet toast. [close-up] The small white cup tilts slightly and a thin curl of steam rises from the dark espresso surface."
+  },
+  {
+    "global_index": 3,
+    "scene_id": "bedroom_morning_solo",
+    "category": "daily_life_solo",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "young man with messy dark hair, wearing a white t-shirt"}
+    ],
+    "key_objects": ["smartphone", "wooden nightstand", "white linen bedsheet"],
+    "caption": "[wide] In a sunlit bedroom with curtains gently moving, a young man with messy dark hair in a white t-shirt lies on a bed with white linen sheets, eyes half closed, slowly turning his head toward the window where soft morning light pours in. [close-up] His hand fumbles across the wooden nightstand surface, finds a smartphone, and lifts it toward his face as the screen lights up. [medium close-up] He squints at the bright screen, blinks several times, then sighs deeply and slowly pushes himself up to sit on the edge of the bed."
+  },
+  {
+    "global_index": 4,
+    "scene_id": "library_studying_solo",
+    "category": "daily_life_solo",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "girl in her late teens, dark ponytail, wearing a green hoodie"}
+    ],
+    "key_objects": ["open textbook", "yellow highlighter", "wooden library desk"],
+    "caption": "[wide] In a quiet library with tall wooden shelves stretching to the ceiling, a girl in her late teens with a dark ponytail and green hoodie sits at a wooden desk surrounded by open books and stacked notebooks, completely absorbed in reading. [close-up] On the textbook, a yellow highlighter draws a clean steady line under a paragraph of text, then pauses and underlines a single word twice. [medium] The girl leans back in her chair, rubs her tired eyes with both hands, glances at the clock on the wall, then turns to stare thoughtfully out the window."
+  },
+  {
+    "global_index": 5,
+    "scene_id": "park_jogging_evening",
+    "category": "action_solo_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "athletic woman with short black hair, wearing a light blue running jacket"}
+    ],
+    "key_objects": ["running shoes", "park path with autumn leaves"],
+    "caption": "[wide, tracking] At sunset, an athletic woman with short black hair in a light blue running jacket jogs steadily along a park path covered in autumn leaves. [close-up] Her running shoes step rhythmically over orange and red leaves on the path. [medium close-up] She breathes evenly with a focused expression, sweat on her forehead, eyes fixed ahead. [low-angle, tracking] Her legs pump steadily as she rounds a corner in the path, leaves kicking up behind her. [wide] She emerges into a clearing, slows to a brisk walk, places her hands on her hips, and breathes out a long visible breath."
+  },
+  {
+    "global_index": 6,
+    "scene_id": "kitchen_cooking_solo",
+    "category": "action_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "man with a trimmed black beard, wearing a navy apron over a white shirt"}
+    ],
+    "key_objects": ["chef's knife", "fresh red tomato", "wooden cutting board", "iron skillet"],
+    "caption": "[wide] In a bright modern kitchen, a man with a trimmed black beard, wearing a navy apron, stands at a kitchen island chopping vegetables with focused energy. [close-up, overhead] On the wooden cutting board, a chef's knife rocks rhythmically through a fresh red tomato. [medium close-up] His hands scoop the tomato slices with the flat of the knife and slide them off the board. [close-up] Tomato slices land in a hot iron skillet on the stove, sizzling instantly and releasing a small cloud of steam. [medium] He stirs the pan once, lifts a wooden spoon for a quick taste, nods with approval, then smiles softly."
+  },
+  {
+    "global_index": 7,
+    "scene_id": "garage_repair_solo",
+    "category": "action_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "mechanic woman with brown braided hair, wearing greasy blue overalls"}
+    ],
+    "key_objects": ["red toolbox", "wrench", "car engine"],
+    "caption": "[wide] Inside a workshop garage, a mechanic woman with brown braided hair in blue overalls leans over the open hood of a car, inspecting the engine carefully. [close-up] Her hand reaches into a red toolbox, sifts through metal tools, picks up a silver wrench, and lifts it free of the tray. [medium] She fits the wrench inside the engine compartment and turns it with steady focused effort, her arm muscles tightening. [close-up, low-angle] She frowns in concentration, gives one final hard turn, then breaks into a satisfied grin as she pulls back."
+  },
+  {
+    "global_index": 8,
+    "scene_id": "restaurant_waiter_dinner",
+    "category": "dialogue_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "waiter in a black vest and white shirt, slim build"},
+      {"id": "C2", "desc": "elderly woman with silver hair, wearing a purple shawl"}
+    ],
+    "key_objects": ["white dinner plate", "wine glass", "white tablecloth"],
+    "caption": "[wide] In a dimly lit restaurant with candles on tables, a waiter in a black vest carries a white dinner plate carefully toward a table where an elderly woman in a purple shawl waits patiently. [close-up] The white dinner plate in his hand holds a beautifully arranged dish, garnished with fresh herbs. [medium close-up] He places the plate gently in front of her and gestures with an open hand toward the dish. [over-the-shoulder] The elderly woman looks down at the plate with delight, then up at him with a wide grateful smile. [close-up] Her wrinkled hand lifts a wine glass and raises it slightly in a gentle toast."
+  },
+  {
+    "global_index": 9,
+    "scene_id": "beach_walking_couple",
+    "category": "outdoor_couple",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "young woman with long blonde hair, wearing a yellow summer dress"},
+      {"id": "C2", "desc": "young man with tanned skin, wearing a white linen shirt and beige shorts"}
+    ],
+    "key_objects": ["seashell", "footprints in wet sand"],
+    "caption": "[wide] At sunset on an empty beach, a young woman in a yellow dress and a young man in a white linen shirt walk along the shoreline barefoot, hand in hand, silhouetted against the orange sky. [close-up] Two pairs of feet leave fresh footprints in the wet sand as a thin wave washes over them and recedes. [medium] The woman bends down to the sand, picks up a small spiral seashell, and holds it up to show the man. [close-up] The pink and white seashell rests in her open palm, with tiny grains of sand still clinging to its surface."
+  },
+  {
+    "global_index": 10,
+    "scene_id": "rooftop_phonecall_night",
+    "category": "daily_life_solo_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "man in a charcoal grey overcoat, short dark hair, late twenties"}
+    ],
+    "key_objects": ["smartphone", "city skyline"],
+    "caption": "[wide] On a city rooftop at night, a man in a charcoal grey overcoat stands at the edge of a rooftop, holding a smartphone to his ear, with a bright city skyline glittering behind him. [close-up, profile] He listens intently to the call, jaw tightening, then closes his eyes briefly as if hearing difficult news. [medium, from behind] He lowers the phone slowly from his ear, stares down at the screen for a long moment, and exhales a visible cloud of breath into the cold night air. [close-up] The phone screen in his hand shows a now-ended call, then dims and goes black as his fingers loosen around the device."
+  },
+  {
+    "global_index": 11,
+    "scene_id": "subway_commute_morning",
+    "category": "daily_life_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "woman in her thirties, brown bob haircut, wearing a tan trench coat"}
+    ],
+    "key_objects": ["paperback book", "metal handrail"],
+    "caption": "[wide] Inside a moving subway car, a woman with a brown bob haircut in a tan trench coat stands holding a metal handrail, swaying gently with the rhythm of the train, surrounded by other commuters all absorbed in their phones. [close-up] Her free hand holds an open paperback book against her chest, thumb keeping the page open at a worn dog-eared corner. [medium close-up] She glances up from the book briefly, looks out the dark tunnel window, watches lights flicker past for a moment, then returns to reading with a small private smile playing at her lips."
+  },
+  {
+    "global_index": 12,
+    "scene_id": "forest_hiking_solo",
+    "category": "outdoor_solo_nature",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "hiker with grey beanie and orange backpack, mid-forties"}
+    ],
+    "key_objects": ["wooden walking stick", "stream", "moss-covered rocks"],
+    "caption": "[wide, tracking] In a dense green forest, a hiker in a grey beanie with an orange backpack walks along a narrow trail, dappled sunlight filtering through tall trees onto the forest floor. [close-up] His hand tightens around the worn wooden walking stick as he steps carefully over a moss-covered rock. [medium, low-angle] He stops at the edge of a small clear stream, kneels down on one knee, and cups his hand into the cold water. [close-up] He lifts the water to his lips, takes a slow refreshing sip, then closes his eyes briefly with a quiet smile of contentment."
+  },
+  {
+    "global_index": 13,
+    "scene_id": "bookstore_browsing_couple",
+    "category": "daily_life_couple_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "woman with short pink hair, wearing round glasses and a denim jacket"},
+      {"id": "C2", "desc": "man with curly black hair, wearing a maroon sweater"}
+    ],
+    "key_objects": ["hardcover book with blue spine", "wooden bookshelf"],
+    "caption": "[wide] In a cozy independent bookstore with warm yellow lighting, a woman with short pink hair and round glasses in a denim jacket browses a tall wooden bookshelf next to a man with curly black hair in a maroon sweater. [close-up] Her hand traces along book spines on the shelf, then pulls a hardcover book with a deep blue spine free. [medium, two-shot] She turns toward the man and holds the book up, showing him the cover with an excited expression. [close-up] He leans in to read the title carefully, his eyes widening in genuine interest, then he nods with an enthusiastic smile."
+  },
+  {
+    "global_index": 14,
+    "scene_id": "playground_kid_solo",
+    "category": "daily_life_solo_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "girl about eight years old, ginger hair in pigtails, wearing a pink jacket"}
+    ],
+    "key_objects": ["red plastic swing", "playground sand"],
+    "caption": "[wide] In an empty neighborhood playground in autumn, a small girl with ginger pigtails in a pink jacket sits alone on a red plastic swing, gently pushing herself with her toes in the sand. [close-up] Her small sneakers drag through playground sand, drawing curved lines back and forth. [medium close-up] She smiles slightly to herself, then tilts her head back to look up at the autumn sky, pigtails swinging. [low-angle] She is suddenly swinging higher now against the sky, kicking her legs out gleefully, laughing softly as the swing arcs against the orange autumn trees behind her."
+  },
+  {
+    "global_index": 15,
+    "scene_id": "train_station_farewell",
+    "category": "dialogue_2person_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "woman in her sixties with short grey hair, wearing a long green coat"},
+      {"id": "C2", "desc": "man in his thirties with brown hair, wearing a dark wool coat"}
+    ],
+    "key_objects": ["leather suitcase", "train platform"],
+    "caption": "[wide] On a busy train station platform, a woman in her sixties in a green coat and a man in his thirties in a wool coat stand close together beside a leather suitcase, other travelers moving around them. [medium close-up] The older woman's hands clasp the younger man's hand tightly between both of hers, holding on as if reluctant to let go. [over-the-shoulder] The older woman looks up at him with watery eyes and gives a brave encouraging smile, blinking back tears. [medium, profile] He gently pulls her into a tight hug, eyes closed, holding her for a long quiet moment as a train whistle sounds in the distance."
+  },
+  {
+    "global_index": 16,
+    "scene_id": "art_studio_painting_solo",
+    "category": "action_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "elderly woman with white hair in a bun, wearing a paint-stained grey apron"}
+    ],
+    "key_objects": ["large canvas", "wooden palette with red and blue paint", "paintbrush"],
+    "caption": "[wide] In a sunlit artist's studio with large windows, an elderly woman with white hair in a bun and a paint-stained grey apron stands before a large white canvas, holding a wooden palette loaded with paint. [close-up] On the wooden palette, a brush dips into a thick swirl of red and blue paint mixing together into a deep purple. [medium, profile] She makes a slow deliberate sweeping stroke across the canvas, leaving a bold curved purple line. [wide, from behind] She steps back from the canvas, places one hand on her hip, tilts her head to study her work, then nods approvingly to herself."
+  },
+  {
+    "global_index": 17,
+    "scene_id": "gym_workout_solo",
+    "category": "action_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "muscular man with shaved head, wearing a black tank top and grey shorts"}
+    ],
+    "key_objects": ["dumbbell", "mirror wall", "gym mat"],
+    "caption": "[wide] In a modern gym with mirror walls, a muscular man with a shaved head in a black tank top stands on a grey gym mat, preparing to lift dumbbells with focused intent. [close-up] His hand grips a heavy black dumbbell firmly, knuckles white from the tension. [medium] In the mirror reflection, he lifts the dumbbell with steady controlled effort, his bicep flexing visibly. [close-up, low-angle] His jaw is clenched, sweat beads on his temple, eyes narrowed in concentration. [wide] He sets the dumbbell down with a solid thud on the floor, wipes his forehead with the back of his arm, and exhales sharply."
+  },
+  {
+    "global_index": 18,
+    "scene_id": "garden_planting_solo",
+    "category": "action_solo_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "older man with grey ponytail, wearing a brown gardening vest and straw hat"}
+    ],
+    "key_objects": ["small green plant in pot", "metal trowel", "rich brown soil"],
+    "caption": "[wide] In a backyard vegetable garden in afternoon light, an older man with a grey ponytail and straw hat kneels in the dirt of a garden bed, gardening tools spread out beside him. [close-up] His hands gently lift a small green plant from a black plastic pot, careful not to disturb the roots. [medium, overhead] He places the plant into a freshly dug hole in the brown soil. [close-up] His gloved hands pat the soil firmly and gently around the plant base. [medium] He sits back on his heels, looks up smiling at the sun, wipes his forehead with the back of his glove, and surveys the garden with quiet satisfaction."
+  },
+  {
+    "global_index": 19,
+    "scene_id": "studio_recording_solo",
+    "category": "action_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "young woman with shoulder-length purple hair, wearing oversized black headphones and a denim shirt"}
+    ],
+    "key_objects": ["silver studio microphone", "music sheet on stand"],
+    "caption": "[wide] In a dimly lit recording studio, a young woman with purple hair and oversized headphones stands behind a silver studio microphone, eyes closed, breathing deeply before her take. [close-up] She opens her mouth and begins to sing, breath visible on the microphone foam. [medium, profile] She sways gently to the rhythm of music only she can hear, raises one hand expressively to her ear. [wide] She opens her eyes, looks toward a glowing control room window, smiles, and gives a small confident thumbs-up."
+  },
+  {
+    "global_index": 20,
+    "scene_id": "classroom_teacher_lesson",
+    "category": "dialogue_groupchild_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "female teacher in her forties, dark hair in a bun, wearing a cream blouse"}
+    ],
+    "key_objects": ["whiteboard with math equations", "blue marker"],
+    "caption": "[wide] In a bright classroom, a female teacher in a cream blouse stands at a whiteboard partly covered in math equations, facing a group of young students sitting at desks who watch attentively. [close-up] Her hand writes a clean new equation in blue marker on the whiteboard, the marker squeaking lightly. [medium] She turns toward the students, smiles warmly, and points to a raised hand in the second row. [reverse] A young student lowers his hand and begins to speak shyly, while other students turn to listen."
+  },
+  {
+    "global_index": 21,
+    "scene_id": "hospital_corridor_walk",
+    "category": "dialogue_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "female doctor in a white coat, blonde hair tied back, holding a clipboard"},
+      {"id": "C2", "desc": "concerned middle-aged woman with brown shoulder-length hair, wearing a beige cardigan"}
+    ],
+    "key_objects": ["clipboard with medical chart", "hospital corridor"],
+    "caption": "[wide, tracking] In a quiet white-walled hospital corridor, a female doctor in a white coat walks beside a concerned middle-aged woman in a beige cardigan. [close-up] On the clipboard, the doctor's finger traces along a line on a medical chart, then taps a number gently. [medium, two-shot] The doctor stops, turns to the woman, and speaks softly with a kind explanation. [close-up] The woman listens intently, her brow furrowed at first, then she takes a deep breath and her expression softens into cautious relief."
+  },
+  {
+    "global_index": 22,
+    "scene_id": "cafe_writing_solo",
+    "category": "daily_life_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "man with round wire glasses, light brown hair, wearing a forest green sweater"}
+    ],
+    "key_objects": ["open notebook", "fountain pen", "ceramic cup of black coffee"],
+    "caption": "[wide] In a quiet cafe corner by a rainy window, a man with round glasses in a green sweater sits alone at a small wooden table, an open notebook spread before him and a ceramic cup of black coffee at his side, the window streaked with rain. [close-up] A black fountain pen in his hand glides slowly across the lined paper of the notebook, leaving neat handwritten words, then pauses thoughtfully. [medium] He stops writing, gazes out the rainy window for a long contemplative moment, slowly lifts the ceramic cup of black coffee to his lips, sips, and returns to writing with renewed purpose."
+  },
+  {
+    "global_index": 23,
+    "scene_id": "alley_cat_observation",
+    "category": "outdoor_solo_observation",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "young man with messy blond hair, wearing a faded grey hoodie"}
+    ],
+    "key_objects": ["orange tabby cat", "brick alley wall", "cardboard box"],
+    "caption": "[wide] In a narrow brick alley, a young man with messy blond hair in a grey hoodie crouches partway down the alley, watching something on the ground with quiet curiosity. [close-up] An orange tabby cat sits on a flattened cardboard box, blinking slowly with intelligent green eyes. [medium] The man slowly extends one hand toward the cat, palm open and steady, careful not to startle it. [close-up] The cat leans forward cautiously, sniffs his fingers with tiny twitches of its nose, then nudges its head gently against his hand."
+  },
+  {
+    "global_index": 24,
+    "scene_id": "office_late_night_solo",
+    "category": "daily_life_solo_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "tired woman in her thirties, dark hair pulled into a messy bun, wearing a wrinkled white shirt"}
+    ],
+    "key_objects": ["computer monitor", "coffee mug", "desk lamp", "scattered papers"],
+    "caption": "[wide] In a darkened open-plan office with only one desk lamp lit, a tired woman in a wrinkled white shirt sits alone at a cluttered desk surrounded by scattered papers, illuminated only by her monitor glow and a small desk lamp. [close-up] On the monitor, lines of code scroll slowly past on a dark screen, reflecting in her tired eyes. [close-up] She rubs her eyes with both hands, exhausted, then drops her hands into her lap. [medium] She picks up an empty white coffee mug, peers inside it hopefully, sighs deeply, and sets it back down. [wide] She stands up slowly, stretches her arms overhead, looks at the dark windows reflecting only her workspace, then sinks back into her chair to resume typing."
+  },
+  {
+    "global_index": 25,
+    "scene_id": "barbershop_haircut",
+    "category": "action_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "barber with a handlebar mustache, wearing a black apron over a white shirt"},
+      {"id": "C2", "desc": "young man with long shaggy brown hair, wearing a grey t-shirt"}
+    ],
+    "key_objects": ["silver scissors", "barber chair", "large mirror"],
+    "caption": "[wide] In a vintage barbershop with a checkerboard floor, a barber with a handlebar mustache in a black apron stands behind a young man with long shaggy brown hair sitting in a barber chair facing a large mirror. [close-up] The silver scissors snip cleanly through a lock of brown hair which falls slowly toward the floor. [medium] In the mirror reflection, the young man watches himself with cautious curiosity as the barber works steadily behind him. [close-up] The barber narrows his eyes in concentration, makes one careful final cut, then steps back nodding with quiet professional satisfaction."
+  },
+  {
+    "global_index": 26,
+    "scene_id": "rainy_street_umbrella",
+    "category": "outdoor_solo_observation",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "woman in her forties with chin-length black hair, wearing a long black raincoat"}
+    ],
+    "key_objects": ["red umbrella", "wet city street", "neon shop signs"],
+    "caption": "[wide] On a rainy city street at night with neon shop signs reflected in dark puddles, a woman in a long black raincoat with chin-length black hair walks alone holding a bright red umbrella, the street empty around her except for distant pedestrians blurred by rain. [close-up] Her black leather boots step carefully through a shallow puddle reflecting pink and blue neon light, sending small ripples outward across the colored reflections. [medium, low-angle] She pauses beneath a glowing neon shop sign, slowly lowers the red umbrella enough to look up at the colorful letters above her, and a small private smile spreads slowly across her face."
+  },
+  {
+    "global_index": 27,
+    "scene_id": "music_lesson_child",
+    "category": "dialogue_2person_indoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "kind older man with bushy white eyebrows, wearing a brown tweed vest"},
+      {"id": "C2", "desc": "small girl about ten years old with two long black braids, wearing a pale yellow dress"}
+    ],
+    "key_objects": ["upright piano", "sheet music", "metronome"],
+    "caption": "[wide] In a music room with a black upright piano, an older man in a brown tweed vest sits beside a small girl in a pale yellow dress on a piano bench, with sheet music propped open in front of them. [close-up] Two small hands press piano keys carefully, hitting one wrong note that hangs in the air. [medium] The older man gently moves the girl's index finger to the correct key, smiles warmly at her, and nods encouragingly for her to try again. [close-up] The girl bites her lower lip in concentration, looks up at the teacher for a brief reassuring glance, then turns back to the piano with new determination."
+  },
+  {
+    "global_index": 28,
+    "scene_id": "beach_storm_dog",
+    "category": "outdoor_solo_dynamic",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "man with red windbreaker and dark stubble, mid-thirties"},
+      {"id": "C2", "desc": "large golden retriever dog with wet fur"}
+    ],
+    "key_objects": ["wooden stick", "stormy grey ocean waves"],
+    "caption": "[wide] On a stormy grey beach with crashing waves, a man in a red windbreaker walks along the shore with a large golden retriever bounding excitedly beside him. [close-up] His hand grips a long wet wooden stick tightly. [medium] He throws the stick far down the beach with a strong overhand motion, and the dog bursts into a full sprint to chase it. [wide] The dog leaps over a shallow wave with all four legs in the air and grabs the stick mid-flight in its jaws. [medium, low-angle] The dog runs proudly back toward the man through the surf, stick clamped firmly in its mouth, tail wagging vigorously as it approaches."
+  },
+  {
+    "global_index": 29,
+    "scene_id": "rooftop_morning_yoga",
+    "category": "action_solo_outdoor",
+    "duration_sec": 15,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "athletic woman with auburn hair tied in a ponytail, wearing light grey yoga clothes"}
+    ],
+    "key_objects": ["purple yoga mat", "city sunrise skyline"],
+    "caption": "[wide] On a rooftop terrace at sunrise overlooking a city skyline, a woman with auburn hair in light grey yoga clothes stands on a purple yoga mat, eyes closed, facing the rising orange sun. [close-up] Her hands slowly press together at her chest in a prayer pose. [medium, profile] She inhales deeply, raises both arms overhead in a graceful sweeping motion. [wide, from behind] She folds forward bringing her hands down to her feet, silhouetted against the bright sunrise. [close-up] She rises back up slowly, opens her eyes to face the sun, and smiles peacefully as warm orange light bathes her face."
+  }
+]

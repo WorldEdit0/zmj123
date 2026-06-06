@@ -1,0 +1,16 @@
+{
+  "snapshot_id": "msb_pilot_v2",
+  "models": {
+    "aleph": {
+      "model": "runwayml/aleph-2.0",
+      "captured_at": "2026-05-20"
+    },
+    "seedance": {
+      "model": "bytedance/seedance-1.0-pro",
+      "captured_at": "2026-05-20"
+    }
+  },
+  "k_samples_no_seed": 3,
+  "prompt_rewriting_disabled": true,
+  "archive_uri": ""
+}

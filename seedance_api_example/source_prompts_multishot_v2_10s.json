@@ -1,0 +1,410 @@
+[
+  {
+    "global_index": 0,
+    "scene_id": "coffee_barista_latte_art",
+    "category": "service_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "young male barista in a black apron, hair tucked under a beanie"}
+    ],
+    "key_objects": ["white ceramic latte cup", "stainless steel milk pitcher", "espresso machine"],
+    "caption": "[wide] Behind the counter of a bright cafe, a young male barista in a black apron lifts a white ceramic cup under the espresso machine and pulls a shot. [medium close-up] He swirls a stainless steel milk pitcher in his right hand and pours steamed milk into the cup with a steady rocking motion. [close-up] The pour finishes with a quick wiggle that draws a clean white leaf design across the brown crema."
+  },
+  {
+    "global_index": 1,
+    "scene_id": "potter_centering_clay",
+    "category": "craft_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "woman with hair in a tight bun, wearing a clay-streaked navy apron"}
+    ],
+    "key_objects": ["spinning pottery wheel", "wet lump of brown clay", "wooden tool"],
+    "caption": "[wide] In a sunlit pottery studio, a woman in a clay-streaked navy apron sits at a spinning pottery wheel and slaps a wet lump of brown clay onto the center. [overhead] The wheel spins as her wet hands cup and squeeze the clay into a smooth dome, water sluicing off her fingers. [close-up] She presses both thumbs into the dome and slowly lifts the walls upward, opening the clay into a tall cylinder."
+  },
+  {
+    "global_index": 2,
+    "scene_id": "florist_bouquet_wrap",
+    "category": "service_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "older florist with silver-streaked hair tied back, wearing a green canvas apron"}
+    ],
+    "key_objects": ["bunch of pink peonies", "brown kraft paper", "thin twine"],
+    "caption": "[wide] In a flower shop crowded with buckets of blooms, an older florist in a green canvas apron gathers a bunch of pink peonies in her left hand and trims the stems with shears. [medium] She lays the bouquet diagonally on a sheet of brown kraft paper, folds the corners up, and rolls it into a cone. [close-up] Her hands wrap thin twine twice around the stems and tie a small bow with a single brisk pull."
+  },
+  {
+    "global_index": 3,
+    "scene_id": "magician_card_reveal",
+    "category": "performance_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "magician in a black vest, white shirt, and slim black tie"},
+      {"id": "C2", "desc": "audience member in a red blouse, hair in a side braid"}
+    ],
+    "key_objects": ["red-backed deck of cards", "small round table"],
+    "caption": "[wide] At a small round table on a low stage, a magician in a black vest fans a red-backed deck of cards toward an audience member in a red blouse. [medium] She picks a card, glances at it, and slides it back into the fan without showing him. [close-up] He shuffles, snaps the deck once, and flips a single card face up — it's exactly her chosen one."
+  },
+  {
+    "global_index": 4,
+    "scene_id": "tarot_card_reading",
+    "category": "lifestyle_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "reader in a deep purple shawl with long dark hair and silver rings"},
+      {"id": "C2", "desc": "young man in a charcoal sweater leaning forward across the table"}
+    ],
+    "key_objects": ["candle in a glass holder", "tarot deck on velvet cloth"],
+    "caption": "[wide] In a small candlelit room, a reader in a deep purple shawl shuffles a tarot deck on a velvet cloth while a young man in a charcoal sweater watches. [overhead] Her hands deal three cards face down in a row across the cloth and she taps each one. [medium close-up] She turns the middle card over slowly, glances up at him, and her expression hardens."
+  },
+  {
+    "global_index": 5,
+    "scene_id": "astronaut_zero_gravity_drink",
+    "category": "lifestyle_special_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 3,
+    "characters": [
+      {"id": "C1", "desc": "astronaut in a navy blue mission polo with a name tag, hair floating slightly"}
+    ],
+    "key_objects": ["silver drink pouch with straw", "instrument panel with switches"],
+    "caption": "[wide] Inside a space station module, an astronaut in a navy mission polo floats gently in front of a wall of instrument panels and unzips a silver drink pouch. [medium close-up] He squeezes the pouch and a wobbling sphere of water drifts out into the air. [close-up] He leans forward and swallows the floating sphere whole, then grins at the camera with droplets stuck to his cheek."
+  },
+  {
+    "global_index": 6,
+    "scene_id": "skater_kickflip_park",
+    "category": "sport_outdoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "teen skater in a baggy white tee and black cargo shorts"},
+      {"id": "C2", "desc": "friend in a backwards red cap watching from a bench"}
+    ],
+    "key_objects": ["skateboard", "concrete quarter pipe"],
+    "caption": "[wide] In an empty concrete skatepark, a teen skater in a white tee pushes off the ground and rolls toward a quarter pipe. [medium tracking] The camera follows him from the side as he ollies, kicks the board, and the deck flips beneath his feet mid-air. [low-angle] His shoes catch the grip tape cleanly and he lands rolling. [medium] His friend in a red cap stands up from a bench and throws both hands in the air, cheering."
+  },
+  {
+    "global_index": 7,
+    "scene_id": "dj_concert_set",
+    "category": "performance_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones"}
+    ],
+    "key_objects": ["DJ controller deck", "stage lasers", "raised crowd hands"],
+    "caption": "[wide] On a club stage drenched in red and blue light, a DJ in a black t-shirt leans over a controller deck and twists a knob. [medium close-up] He bites his lip in concentration, slides one hand on the crossfader, and the other adjusts a headphone cup. [low-angle] He punches a fist into the air, lasers cutting bright lines above the crowd. [over-the-shoulder] From behind him, the silhouettes of jumping fans fill the frame, hands raised."
+  },
+  {
+    "global_index": 8,
+    "scene_id": "surfer_dawn_patrol",
+    "category": "sport_outdoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair"}
+    ],
+    "key_objects": ["white surfboard with green stripe", "ocean wave"],
+    "caption": "[wide] On a quiet ocean at dawn, a surfer in a half-rolled black wetsuit lies flat on a white surfboard and paddles steadily toward a forming wave. [medium tracking] The wave lifts him; he springs from prone to standing in one motion. [low-angle] From below the wave's lip, he carves a smooth turn across the green-blue water as spray flies behind him. [close-up] His feet shift on the wax-textured deck, knees bent, balance steady."
+  },
+  {
+    "global_index": 9,
+    "scene_id": "snowboarder_mountain_run",
+    "category": "sport_outdoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "snowboarder in an orange jacket and black helmet with mirrored goggles"}
+    ],
+    "key_objects": ["red snowboard", "powder snow slope"],
+    "caption": "[wide] On a snowy mountain peak under a pale blue sky, a snowboarder in an orange jacket stands at the edge of a powder slope, then drops in. [medium tracking] The camera follows from the side as he carves a sweeping turn, snow spray fountaining off the heel edge. [low-angle] From below, he launches off a small lip and tucks into a brief grab before landing. [wide] He slides to a stop in a swirl of powder and lifts both fists toward the sky."
+  },
+  {
+    "global_index": 10,
+    "scene_id": "tattoo_artist_session",
+    "category": "service_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"},
+      {"id": "C2", "desc": "client in a sleeveless tank top with arm extended on the padded rest"}
+    ],
+    "key_objects": ["tattoo machine", "small ink cup", "tracing stencil on forearm"],
+    "caption": "[wide] In a tattoo studio with neon signs on the wall, a heavily tattooed artist in black gloves leans over a client's outstretched arm laid on a padded rest. [medium close-up] He dips the tattoo machine's needle into a small ink cup and taps once on the rim. [close-up] The needle hums against the skin, drawing a thin black line over a stencil of a bird wing. [medium] He pulls the machine back, wipes the line gently with gauze, and inspects his work."
+  },
+  {
+    "global_index": 11,
+    "scene_id": "glass_blower_vase",
+    "category": "craft_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "glass blower in a white t-shirt and black gloves, sweat on his forehead"}
+    ],
+    "key_objects": ["long blowpipe", "molten glass blob", "open furnace"],
+    "caption": "[wide] In a hot workshop, a glass blower in a white t-shirt rotates a long blowpipe with a glowing orange blob of molten glass at its end, drawing it from a furnace. [medium] He sits on a bench, rests the pipe across the rails, and turns it steadily as he shapes the glass with a wet wooden block. [close-up] He puts his lips to the pipe and exhales steadily; the glass swells outward into a hollow bulb. [medium close-up] He reaches in with metal jaws and pinches the bulb's neck into a graceful curve."
+  },
+  {
+    "global_index": 12,
+    "scene_id": "calligrapher_brush_stroke",
+    "category": "craft_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"}
+    ],
+    "key_objects": ["bamboo brush", "ink stone with black ink", "rice paper sheet"],
+    "caption": "[wide] At a low wooden desk in a serene tatami room, an older Asian woman in a charcoal mandarin-collar shirt kneels and unrolls a sheet of rice paper. [medium close-up] She dips a bamboo brush into a black ink stone, pulls the bristles to a fine point, and lifts the brush above the page. [close-up] The brush touches the paper and pulls a single bold downward stroke that fattens, then tapers to a pinpoint. [medium] She sets the brush back, holds the page up at arm's length, and nods once."
+  },
+  {
+    "global_index": 13,
+    "scene_id": "locksmith_picking_lock",
+    "category": "work_outdoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "locksmith in a navy jumpsuit with a tool roll over one shoulder"}
+    ],
+    "key_objects": ["tension wrench", "pick set", "brass deadbolt door"],
+    "caption": "[wide] In a quiet apartment hallway, a locksmith in a navy jumpsuit kneels in front of a brass deadbolt and unrolls a small tool kit on the floor beside him. [medium close-up] He inserts a tension wrench into the bottom of the keyway, then slides a thin pick along the top. [close-up] His pick rakes the pins gently while his other hand applies steady torque. [medium] The lock clicks audibly, he turns the wrench, and the door swings inward with a soft creak."
+  },
+  {
+    "global_index": 14,
+    "scene_id": "veterinarian_puppy_checkup",
+    "category": "service_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck"},
+      {"id": "C2", "desc": "small golden retriever puppy with floppy ears"}
+    ],
+    "key_objects": ["stainless steel exam table", "stethoscope", "small treat"],
+    "caption": "[wide] In a bright veterinary clinic, a veterinarian in a white coat lifts a small golden retriever puppy onto a stainless steel exam table. [medium close-up] She places the stethoscope chestpiece against the puppy's ribs and listens with closed eyes. [close-up] The puppy's eyes follow her hands; she gently lifts each floppy ear to check inside. [medium] She produces a small treat from her pocket, the puppy sits and takes it, and she smiles."
+  },
+  {
+    "global_index": 15,
+    "scene_id": "watch_repair_workshop",
+    "category": "craft_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"}
+    ],
+    "key_objects": ["disassembled mechanical watch", "tweezers", "tiny brass screw"],
+    "caption": "[wide] At a wooden workbench under a focused desk lamp, a watchmaker in a tan vest leans over a disassembled mechanical watch laid out on a small green pad. [medium close-up] He fits a magnifying loupe over his right eye and selects a fine pair of tweezers. [extreme close-up] The tweezers lift a tiny brass gear and place it precisely onto a center spindle. [medium] He tightens a small screw with a watchmaker's screwdriver, snaps the case back, and lifts the watch to his ear."
+  },
+  {
+    "global_index": 16,
+    "scene_id": "chef_dessert_plating",
+    "category": "service_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"}
+    ],
+    "key_objects": ["round white plate", "piping bag of cream", "raspberry coulis bottle"],
+    "caption": "[wide] At a bustling kitchen pass, a chef in a white jacket places a round white plate down on the steel counter and lifts a piping bag. [medium close-up] He pipes three small white domes of cream in a triangle onto the plate. [close-up] He tilts a squeeze bottle and dots raspberry coulis between the cream domes with quick precise pulses. [medium] He picks up a sprig of fresh mint with tweezers, sets it on top, and rings the service bell."
+  },
+  {
+    "global_index": 17,
+    "scene_id": "yoga_partner_stretch",
+    "category": "sport_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "woman in a teal tank top with a long french braid"},
+      {"id": "C2", "desc": "woman in a black sports bra and gray leggings, hair in a top knot"}
+    ],
+    "key_objects": ["wooden floor", "two purple yoga mats"],
+    "caption": "[wide] In a sun-filled yoga studio with wooden floors, two women face each other on purple mats; the one in teal sits with legs in a wide V, the other in black mirrors her. [medium] They reach forward, hands meeting in the middle, and gently pull each other deeper into the stretch. [close-up] Their fingers interlace; both faces are calm with closed eyes. [medium close-up] They release, lean back together with a long exhale, and laugh softly."
+  },
+  {
+    "global_index": 18,
+    "scene_id": "dog_grooming_salon",
+    "category": "service_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "groomer with curly red hair, in a pink smock and grooming arm bands"}
+    ],
+    "key_objects": ["small white poodle", "metal grooming table", "grooming shears"],
+    "caption": "[wide] In a pet grooming salon, a groomer in a pink smock lifts a small white poodle onto a metal grooming table and pats its head. [medium] She brushes through the dog's curls with a wide-tooth comb, holding it steady by the chin. [close-up] Sharp grooming shears snip a clean line of fluff above the dog's eye. [medium close-up] She pulls a small pink bow from the counter and clips it onto the poodle's topknot, then kisses it on the nose."
+  },
+  {
+    "global_index": 19,
+    "scene_id": "backyard_bbq_grill",
+    "category": "lifestyle_outdoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron"}
+    ],
+    "key_objects": ["smoking charcoal grill", "tongs", "thick burger patty on a sesame bun"],
+    "caption": "[wide] In a sunny backyard with patio chairs, a man in a striped grilling apron lifts the lid of a smoking charcoal grill with metal tongs. [medium close-up] He flips a thick burger patty on the grates; smoke and flame puff briefly. [close-up] He brushes a thick brown sauce across the top of the patty with a basting brush. [medium] He lifts the patty onto a sesame bun, presses the lid down with his thumb, and takes a huge first bite."
+  },
+  {
+    "global_index": 20,
+    "scene_id": "fishing_on_dock",
+    "category": "lifestyle_outdoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "older man in a faded green vest and brown wide-brim hat, with a short gray beard"}
+    ],
+    "key_objects": ["fishing rod", "tackle box", "wooden lake dock"],
+    "caption": "[wide] On a quiet wooden dock at dawn, an older man in a faded green vest stands at the edge of a still lake and casts a fishing line in a long arc. [medium] He sits down on the dock, rod balanced across his knees, and watches the bobber. [close-up] The bobber dips suddenly under the water surface. [medium tracking] He stands, reels rapidly with one hand, and lifts a flapping silver fish out of the water at the end of the line."
+  },
+  {
+    "global_index": 21,
+    "scene_id": "acupuncture_session",
+    "category": "service_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"},
+      {"id": "C2", "desc": "patient lying face-down on a treatment table, towel draped over the lower back"}
+    ],
+    "key_objects": ["thin acupuncture needles", "small wooden tray", "treatment table"],
+    "caption": "[wide] In a softly lit treatment room, an acupuncturist in a beige tunic stands beside a patient who lies face-down on a treatment table with a towel across the lower back. [medium close-up] She picks up a thin acupuncture needle from a small wooden tray and aligns it carefully along the spine. [close-up] Her fingers tap the needle into the skin with a single quick motion; only the handle remains visible. [medium] She places three more needles along the back in a row, the patient's breath slowing and shoulders softening."
+  },
+  {
+    "global_index": 22,
+    "scene_id": "ice_cream_truck",
+    "category": "service_outdoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window"},
+      {"id": "C2", "desc": "small boy in a green dinosaur t-shirt with messy brown hair"}
+    ],
+    "key_objects": ["pink ice cream truck", "waffle cone", "scoop of strawberry ice cream"],
+    "caption": "[wide] On a sunny suburban street, a small boy in a dinosaur t-shirt stands on tiptoes at the window of a pink ice cream truck, holding a few crumpled bills up. [medium] The server in a striped shirt smiles, takes the bills, and reaches into a freezer below the window. [close-up] A metal scoop pulls a perfect pink ball of strawberry ice cream onto a waffle cone. [medium close-up] The server hands the cone over the counter; the boy beams and licks the top."
+  },
+  {
+    "global_index": 23,
+    "scene_id": "busker_subway_musician",
+    "category": "performance_outdoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 4,
+    "characters": [
+      {"id": "C1", "desc": "young busker in a beat-up brown leather jacket with a stubbled chin"},
+      {"id": "C2", "desc": "commuter in a long beige coat with a leather briefcase"}
+    ],
+    "key_objects": ["acoustic guitar", "open guitar case", "subway tile wall"],
+    "caption": "[wide] In a tiled subway station passage, a young busker in a brown leather jacket sits on a small amp and tunes an acoustic guitar; an open guitar case sits in front of him. [medium] He starts strumming a slow pattern, head tilted to one side, eyes half closed. [medium close-up] A passing commuter in a long beige coat slows, pauses, and drops a few coins into the open case. [close-up] The busker nods at the case, mouths thank you, and resumes the song."
+  },
+  {
+    "global_index": 24,
+    "scene_id": "car_mechanic_engine_swap",
+    "category": "work_indoor_solo",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"}
+    ],
+    "key_objects": ["raised car hood", "ratchet wrench", "alternator"],
+    "caption": "[wide] In a busy garage, a mechanic in a grease-streaked navy jumpsuit pops the hood of a sedan and props it open with the support rod. [medium close-up] She fits a ratchet wrench onto a bolt deep in the engine bay and cranks it loose. [close-up] Her gloved hands lift an old alternator out from between the hoses. [medium] She lowers a fresh alternator into the same slot and tightens its mounting bolts. [wide] She wipes her brow with the back of her glove, slams the hood shut, and gives it a satisfied tap."
+  },
+  {
+    "global_index": 25,
+    "scene_id": "hot_air_balloon_launch",
+    "category": "lifestyle_outdoor_3person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "pilot in a beige flight suit and aviator sunglasses, gloves on hands"},
+      {"id": "C2", "desc": "passenger in a chunky red sweater with a knit beanie"},
+      {"id": "C3", "desc": "ground crew member in an orange high-visibility vest"}
+    ],
+    "key_objects": ["wicker basket", "rainbow-striped balloon envelope", "propane burner"],
+    "caption": "[wide] In a grassy field at dawn, a colorful balloon envelope lies stretched flat on the ground while the ground crew member in an orange vest holds the open mouth into a roaring fan. [medium] The fabric inflates, billowing upward; the wicker basket slowly rights itself and the pilot in a flight suit climbs in. [close-up] The pilot fires the propane burner; a column of orange flame shoots upward into the envelope. [medium] The passenger in a red sweater steps into the basket and grabs the leather rim. [wide] The basket lifts off the grass and the ground crew member waves both arms as the balloon rises into the orange dawn sky."
+  },
+  {
+    "global_index": 26,
+    "scene_id": "wedding_dress_fitting",
+    "category": "lifestyle_indoor_3person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "bride in a half-fastened ivory wedding gown, hair in soft loose waves"},
+      {"id": "C2", "desc": "seamstress with reading glasses and a measuring tape around her neck"},
+      {"id": "C3", "desc": "older mother in a sky-blue blazer, watching from a velvet sofa"}
+    ],
+    "key_objects": ["circular pedestal", "tall three-panel mirror", "lace veil"],
+    "caption": "[wide] In a bridal salon with rose-gold lighting, the bride in an ivory gown steps onto a circular pedestal in front of a tall three-panel mirror. [medium close-up] The seamstress kneels behind her and slowly zips the back of the dress upward. [medium] The bride's mother in a sky-blue blazer rises from a velvet sofa and approaches with a lace veil. [close-up] The mother lifts the veil and pins it gently into the bride's hair. [wide] The bride turns toward the mirror, takes in the full-length reflection, and her eyes well up as both other women watch."
+  },
+  {
+    "global_index": 27,
+    "scene_id": "courtroom_verdict",
+    "category": "drama_indoor_3person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "stern female judge in a black robe with reading glasses on a chain"},
+      {"id": "C2", "desc": "young defendant in a charcoal suit, standing at the table"},
+      {"id": "C3", "desc": "jury foreperson in a beige cardigan, reading from a folded paper"}
+    ],
+    "key_objects": ["wooden gavel", "judge's bench", "folded jury verdict paper"],
+    "caption": "[wide] In a wood-paneled courtroom, a stern female judge in a black robe takes her seat behind the bench as the gallery hushes. [medium] The young defendant in a charcoal suit stands slowly at the defense table, hands clasped in front of him. [medium close-up] The jury foreperson in a beige cardigan unfolds a paper and reads the verdict in a steady voice. [close-up] The defendant's jaw tightens and his eyes drop briefly. [medium] The judge raises the wooden gavel and brings it down with a single sharp crack."
+  },
+  {
+    "global_index": 28,
+    "scene_id": "campfire_ghost_story",
+    "category": "lifestyle_outdoor_3person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "storyteller with a wide-brim hat, holding a long stick toward the fire"},
+      {"id": "C2", "desc": "young woman in a chunky knit sweater hugging her knees"},
+      {"id": "C3", "desc": "young man in a denim jacket holding a marshmallow on a skewer"}
+    ],
+    "key_objects": ["crackling campfire", "log seats", "marshmallow on skewer"],
+    "caption": "[wide] In a forest clearing at night, three friends sit on log seats around a crackling campfire; the storyteller in a wide-brim hat leans forward. [medium] He widens his eyes and gestures sharply with his stick, lowering his voice. [close-up] The young woman in the chunky sweater hugs her knees tighter and her eyes go wide. [medium] The young man in denim jerks suddenly when an ember pops; his marshmallow falls into the fire. [wide] All three burst into laughter; sparks rise into the dark sky between them."
+  },
+  {
+    "global_index": 29,
+    "scene_id": "bartender_cocktail_show",
+    "category": "performance_indoor_2person",
+    "duration_sec": 10,
+    "fps": 24,
+    "expected_shots": 5,
+    "characters": [
+      {"id": "C1", "desc": "bartender in a tight white shirt, black vest, and slim suspenders"},
+      {"id": "C2", "desc": "customer in a sleek black dress sitting at the bar with chin on hand"}
+    ],
+    "key_objects": ["metal cocktail shaker", "coupe glass", "small kitchen torch"],
+    "caption": "[wide] Behind a polished wooden bar, a bartender in a black vest pours measured liquid from a jigger into a metal cocktail shaker. [medium] He clamps the lid on, lifts the shaker overhead with both hands, and rattles it in fast rhythmic shakes. [close-up] He strains a clear amber liquid into a chilled coupe glass set on the bar. [medium close-up] He picks up a small kitchen torch and runs the blue flame over an orange peel held above the glass; the oils flare with a brief golden burst. [medium] He slides the glass to the customer in the black dress, who lifts it with a small smile."
+  }
+]
