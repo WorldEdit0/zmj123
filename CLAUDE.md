@@ -35,8 +35,9 @@
 
 ### 2026-06-07 T5 JSON 清理记录
 - T5 最终生产文件固定为 `runs/edit_prompts_v2_10s/T5.json`；pipeline、handoff 和文档均只引用这个标准路径。
-- 已删除重复/草稿变体 `T5_1.json` 和 `T5_new.json`。
-- `T5.json` 保留 60 条 reorder，并显式设置 `mask_queries.nep_applicable=false`，避免新 NEP fallback 把 shot-reorder 当成 spatial local edit。
+- 已按用户要求把原 `T5_new.json` 的场景化 rewrite 内容恢复为最终 `T5.json`，并同步 `all_edit_handoff.json` 的 60 条 T5 prompt。
+- 已删除重复变体 `T5_1.json`；`T5_new.json` 不再单独保留，避免生产目录出现多个 T5 入口。
+- `T5.json` 保留 60 条场景化 reorder，并显式设置 `mask_queries.nep_applicable=false`，避免新 NEP fallback 把 shot-reorder 当成 spatial local edit。
 
 ### 2026-06-07 指标重写记录
 - **SES 删除并更名为 USP**：去掉 face/ArcFace ID 识别和 CLIP-T off-target，只保留未被编辑 shot 的 DINOv2 内容相似度；如果所有 shot 都被编辑，USP 返回 `None`。

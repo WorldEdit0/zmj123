@@ -1302,7 +1302,7 @@
   {
     "filename": "00000_T5_0000.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00000.mp4",
-    "edit_prompt": "Reorder the video to shot order 2, 1, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 1 and shot 2 in the cafe scene; the milk-pouring action plays first, then the wider setup, and the leaf-design close-up follows last."
   },
   {
     "filename": "00000_T5_0001.mp4",
@@ -1312,7 +1312,7 @@
   {
     "filename": "00001_T5_0002.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00001.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 3, 2. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 3 in the pottery studio; the close-up of the walls being lifted plays before the overhead centering shot."
   },
   {
     "filename": "00001_T5_0003.mp4",
@@ -1332,7 +1332,7 @@
   {
     "filename": "00003_T5_0006.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00003.mp4",
-    "edit_prompt": "Reorder the video to shot order 2, 1, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 1 and shot 2 in the magic act; the audience picking and returning the card plays before the magician fans the deck."
   },
   {
     "filename": "00003_T5_0007.mp4",
@@ -1342,7 +1342,7 @@
   {
     "filename": "00004_T5_0008.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00004.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 3, 2. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 3 in the tarot reading; the reader turning the middle card plays before the deal of three cards."
   },
   {
     "filename": "00004_T5_0009.mp4",
@@ -1352,7 +1352,7 @@
   {
     "filename": "00005_T5_0010.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00005.mp4",
-    "edit_prompt": "Reorder the video to shot order 3, 2, 1. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 1 and shot 3 in the space-station scene; the astronaut's grin with droplets plays first, the unzipping plays last."
   },
   {
     "filename": "00005_T5_0011.mp4",
@@ -1382,7 +1382,7 @@
   {
     "filename": "00008_T5_0016.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00008.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 4, 3, 2. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 4 in the surfing sequence; the close-up of feet on the wax-textured deck plays where the pop-up was, and the pop-up plays last."
   },
   {
     "filename": "00008_T5_0017.mp4",
@@ -1407,7 +1407,7 @@
   {
     "filename": "00010_T5_0021.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00010.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the tattoo studio; the wipe and inspect plays before the close-up of the needle drawing the line."
   },
   {
     "filename": "00011_T5_0022.mp4",
@@ -1417,7 +1417,7 @@
   {
     "filename": "00011_T5_0023.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00011.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the glass-blowing workshop; the pinch of the neck plays before the swell of the bulb from blowing."
   },
   {
     "filename": "00012_T5_0024.mp4",
@@ -1432,7 +1432,7 @@
   {
     "filename": "00013_T5_0026.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00013.mp4",
-    "edit_prompt": "Reorder the video to shot order 2, 1, 3, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 1 and shot 2 in the lock-picking scene; the close-up of inserting the wrench plays before the wide kneeling-and-unrolling."
   },
   {
     "filename": "00013_T5_0027.mp4",
@@ -1447,7 +1447,7 @@
   {
     "filename": "00014_T5_0029.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00014.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 3 in the vet clinic; the ear check plays before the stethoscope listen."
   },
   {
     "filename": "00015_T5_0030.mp4",
@@ -1467,7 +1467,7 @@
   {
     "filename": "00016_T5_0033.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00016.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 3 in the chef-plating sequence; the coulis dots are placed before the cream domes are piped."
   },
   {
     "filename": "00017_T5_0034.mp4",
@@ -1477,7 +1477,7 @@
   {
     "filename": "00017_T5_0035.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00017.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the yoga studio; the release with laughter plays before the close-up of interlaced fingers."
   },
   {
     "filename": "00018_T5_0036.mp4",
@@ -1502,7 +1502,7 @@
   {
     "filename": "00020_T5_0040.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00020.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 2 and shot 3 in the dock-fishing scene; the bobber dipping plays before the calm sit-and-watch."
   },
   {
     "filename": "00020_T5_0041.mp4",
@@ -1532,7 +1532,7 @@
   {
     "filename": "00023_T5_0046.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00023.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the subway-busker scene; the busker nods thanks before the commuter drops the coins."
   },
   {
     "filename": "00023_T5_0047.mp4",
@@ -1547,7 +1547,7 @@
   {
     "filename": "00024_T5_0049.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00024.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3, 5. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the garage scene; the new alternator is lowered in before the old one is lifted out."
   },
   {
     "filename": "00025_T5_0050.mp4",
@@ -1567,7 +1567,7 @@
   {
     "filename": "00026_T5_0053.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00026.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 3, 5, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 4 and shot 5 in the bridal salon; the bride's full mirror reaction with welling eyes plays before the close-up of the veil being pinned."
   },
   {
     "filename": "00027_T5_0054.mp4",
@@ -1577,7 +1577,7 @@
   {
     "filename": "00027_T5_0055.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00027.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 3, 5, 4. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 4 and shot 5 in the courtroom; the gavel comes down before the defendant's reaction."
   },
   {
     "filename": "00028_T5_0056.mp4",
@@ -1597,7 +1597,7 @@
   {
     "filename": "00029_T5_0059.mp4",
     "source_url": "https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/00029.mp4",
-    "edit_prompt": "Reorder the video to shot order 1, 2, 4, 3, 5. Preserve each original shot's content while playing the shots in that order."
+    "edit_prompt": "Swap shot 3 and shot 4 in the cocktail bar; the orange peel torch flare plays before the strain into the glass."
   },
   {
     "filename": "00000_T6_0000.mp4",

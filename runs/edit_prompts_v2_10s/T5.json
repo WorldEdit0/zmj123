@@ -33,11 +33,11 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 2, 1, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 1 and shot 2 in the cafe scene; the milk-pouring action plays first, then the wider setup, and the leaf-design close-up follows last.",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
-        2,
         1,
+        2,
         3
       ],
       "extra": {
@@ -48,6 +48,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -56,8 +57,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -97,9 +97,9 @@
       "instruction": "Reorder the cafe scene to shot order 3, 1, 2. The edited video should play as: the latte-art close-up with the white leaf forming in the cup, then the wider barista setup at the espresso machine, then the medium shot of the barista pouring milk from the metal pitcher.",
       "target_phrase": "the cafe scene reordered as latte art, espresso setup, milk pour",
       "applicable_shots": [
-        3,
         1,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -109,6 +109,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -117,8 +118,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -155,12 +155,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 3, 2. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 3 in the pottery studio; the close-up of the walls being lifted plays before the overhead centering shot.",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
-        3,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -170,6 +170,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -178,8 +179,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -219,9 +219,9 @@
       "instruction": "Reorder the pottery studio to shot order 2, 3, 1. The edited video should play as: the overhead view of wet hands centering clay on the spinning wheel, then the close-up of thumbs lifting the clay into a cylinder, then the wide studio shot of the woman seated at the wheel.",
       "target_phrase": "the pottery studio reordered as overhead clay shaping, cylinder close-up, wide wheel setup",
       "applicable_shots": [
+        1,
         2,
-        3,
-        1
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -231,6 +231,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -239,8 +240,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -280,9 +280,9 @@
       "instruction": "Reorder the florist scene to shot order 3, 2, 1. The edited video should play as: the close-up of hands tying twine around the wrapped stems, then the bouquet being folded into brown paper on the counter, then the wide flower-shop shot of the florist gathering and trimming the pink flowers.",
       "target_phrase": "the florist scene reordered as twine tie, bouquet wrap, flower trimming",
       "applicable_shots": [
-        3,
+        1,
         2,
-        1
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -292,6 +292,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -300,8 +301,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -341,8 +341,8 @@
       "instruction": "Reorder the florist scene to shot order 2, 1, 3. The edited video should play as: the florist folding the bouquet into brown wrapping paper, then the wide shot of her gathering and trimming flowers among the buckets, then the close-up of twine being tied around the stems.",
       "target_phrase": "the florist scene reordered as bouquet wrap, flower trimming, twine tie",
       "applicable_shots": [
-        2,
         1,
+        2,
         3
       ],
       "extra": {
@@ -353,6 +353,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -361,8 +362,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -402,11 +402,11 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 2, 1, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 1 and shot 2 in the magic act; the audience picking and returning the card plays before the magician fans the deck.",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
-        2,
         1,
+        2,
         3
       ],
       "extra": {
@@ -417,6 +417,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -425,8 +426,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -469,9 +469,9 @@
       "instruction": "Reorder the magic act to shot order 3, 2, 1. The edited video should play as: the close-up card reveal on the table and the magician reacting, then the audience member choosing and returning a card, then the wide stage setup with the magician and audience seated across the round table.",
       "target_phrase": "the magic act reordered as card reveal, card selection, wide table setup",
       "applicable_shots": [
-        3,
+        1,
         2,
-        1
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -481,6 +481,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -489,8 +490,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -530,12 +530,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 3, 2. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 3 in the tarot reading; the reader turning the middle card plays before the deal of three cards.",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
-        3,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -545,6 +545,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -553,8 +554,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -598,8 +598,8 @@
       "target_phrase": "the tarot reading reordered as wide table, card reading, overhead card layout",
       "applicable_shots": [
         1,
-        3,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -609,6 +609,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -617,8 +618,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -654,12 +654,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 3, 2, 1. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 1 and shot 3 in the space-station scene; the astronaut's grin with droplets plays first, the unzipping plays last.",
       "target_phrase": "shots reordered to 3, 2, 1",
       "applicable_shots": [
-        3,
+        1,
         2,
-        1
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -669,6 +669,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -677,8 +678,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -717,8 +717,8 @@
       "instruction": "Reorder the space-station scene to shot order 2, 1, 3. The edited video should play as: the astronaut opening the drink pouch and reacting in medium close-up, then the wide cabin shot of him floating in place, then the tight face shot with floating droplets and a small grin.",
       "target_phrase": "the space-station scene reordered as drink pouch, wide cabin, floating droplets",
       "applicable_shots": [
-        2,
         1,
+        2,
         3
       ],
       "extra": {
@@ -729,6 +729,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -737,8 +738,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -786,10 +786,9 @@
       "instruction": "Reorder the skatepark scene to shot order 2, 3, 1, 4. The edited video should play as: the skater crouching into the kickflip, then the close-up landing and board control, then the wide approach across the skatepark, then the friend celebrating with raised arms.",
       "target_phrase": "the skatepark scene reordered as kickflip setup, landing close-up, wide approach, friend celebration",
       "applicable_shots": [
-        2,
-        3,
         1,
-        4
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -800,6 +799,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -808,8 +808,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -858,9 +857,9 @@
       "target_phrase": "the skatepark scene reordered as wide approach, friend celebration, kickflip setup, landing close-up",
       "applicable_shots": [
         1,
-        4,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -871,6 +870,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -879,8 +879,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -925,10 +924,9 @@
       "instruction": "Reorder the DJ stage scene to shot order 2, 1, 4, 3. The edited video should play as: the close-up of the DJ working the controller, then the wide red-lit stage setup, then the rear crowd-facing stage view with bright lights, then the DJ fist-pump under crossing laser beams.",
       "target_phrase": "the DJ stage scene reordered as controller close-up, red stage, crowd view, fist-pump",
       "applicable_shots": [
-        2,
         1,
-        4,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -939,6 +937,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -947,8 +946,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -993,10 +991,10 @@
       "instruction": "Reorder the DJ stage scene to shot order 4, 2, 1, 3. The edited video should play as: the rear view of the DJ facing the crowd and stage lights, then the close-up of hands on the controller, then the wide red-lit stage setup, then the fist-pump under the lasers.",
       "target_phrase": "the DJ stage scene reordered as crowd view, controller close-up, red stage, fist-pump",
       "applicable_shots": [
-        4,
-        2,
         1,
-        3
+        2,
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1007,6 +1005,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1015,8 +1014,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1057,13 +1055,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 4, 3, 2. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 4 in the surfing sequence; the close-up of feet on the wax-textured deck plays where the pop-up was, and the pop-up plays last.",
       "target_phrase": "shots reordered to 1, 4, 3, 2",
       "applicable_shots": [
         1,
-        4,
+        2,
         3,
-        2
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1074,6 +1072,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1082,8 +1081,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1127,10 +1125,9 @@
       "instruction": "Reorder the surfing sequence to shot order 3, 1, 4, 2. The edited video should play as: the surfer carving along the wave face, then the distant paddle-in as the wave forms, then the close-up of feet planted on the board, then the surfer popping up on the breaking wave.",
       "target_phrase": "the surfing sequence reordered as wave carve, paddle-in, board feet close-up, pop-up",
       "applicable_shots": [
-        3,
         1,
-        4,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -1141,6 +1138,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1149,8 +1147,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1194,10 +1191,9 @@
       "instruction": "Reorder the snowboard run to shot order 3, 4, 1, 2. The edited video should play as: the airborne grab over the snowy ridge, then the celebratory stop with arms raised, then the long slope-entry shot, then the close carving shot across the snow.",
       "target_phrase": "the snowboard run reordered as airborne grab, celebration, slope entry, carving",
       "applicable_shots": [
-        3,
-        4,
         1,
-        2
+        2,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1208,6 +1204,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1216,8 +1213,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1261,10 +1257,10 @@
       "instruction": "Reorder the snowboard run to shot order 4, 1, 2, 3. The edited video should play as: the celebratory stop with arms raised, then the long slope-entry shot, then the close carving shot, then the airborne grab over the snowy ridge.",
       "target_phrase": "the snowboard run reordered as celebration, slope entry, carving, airborne grab",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1275,6 +1271,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1283,8 +1280,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1333,10 +1329,9 @@
       "instruction": "Reorder the tattoo studio to shot order 3, 2, 4, 1. The edited video should play as: the extreme close-up of the tattoo needle drawing lines on skin, then the artist preparing the machine, then the artist wiping and inspecting the arm, then the wide studio setup with the client lying on the table.",
       "target_phrase": "the tattoo studio reordered as needle close-up, machine prep, wipe inspection, wide setup",
       "applicable_shots": [
+        1,
         3,
-        2,
-        4,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1347,6 +1342,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1355,8 +1351,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1402,13 +1397,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the tattoo studio; the wipe and inspect plays before the close-up of the needle drawing the line.",
       "target_phrase": "shots reordered to 1, 2, 4, 3",
       "applicable_shots": [
         1,
         2,
-        4,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1419,6 +1414,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1427,8 +1423,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1473,10 +1468,10 @@
       "instruction": "Reorder the glass-blowing workshop to shot order 2, 4, 1, 3. The edited video should play as: the glassblower working the rod near the furnace, then the shaping and neck-pinching of the molten glass, then the wide hot-shop setup, then the close-up orange glass bulb swelling as it is blown.",
       "target_phrase": "the glass-blowing workshop reordered as furnace work, neck shaping, hot-shop wide, blown bulb",
       "applicable_shots": [
-        2,
-        4,
         1,
-        3
+        2,
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1487,6 +1482,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1495,8 +1491,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1538,13 +1533,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the glass-blowing workshop; the pinch of the neck plays before the swell of the bulb from blowing.",
       "target_phrase": "shots reordered to 1, 2, 4, 3",
       "applicable_shots": [
         1,
         2,
-        4,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1555,6 +1550,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1563,8 +1559,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1609,10 +1604,9 @@
       "instruction": "Reorder the calligraphy room to shot order 3, 4, 2, 1. The edited video should play as: the close-up brush making a bold black downstroke, then the calligrapher holding up the finished page, then the ink-and-brush preparation at the table, then the wide room setup.",
       "target_phrase": "the calligraphy room reordered as brush stroke, finished page, brush prep, wide setup",
       "applicable_shots": [
+        1,
         3,
-        4,
-        2,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1623,6 +1617,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1631,8 +1626,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1677,10 +1671,10 @@
       "instruction": "Reorder the calligraphy room to shot order 4, 1, 2, 3. The edited video should play as: the calligrapher holding up the finished page, then the wide room setup, then the ink-and-brush preparation at the table, then the close-up brush making the bold black downstroke.",
       "target_phrase": "the calligraphy room reordered as finished page, wide setup, brush prep, brush stroke",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1691,6 +1685,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1699,8 +1694,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1742,11 +1736,11 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 2, 1, 3, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 1 and shot 2 in the lock-picking scene; the close-up of inserting the wrench plays before the wide kneeling-and-unrolling.",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
-        2,
         1,
+        2,
         3,
         4
       ],
@@ -1759,6 +1753,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1767,8 +1762,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1813,10 +1807,10 @@
       "instruction": "Reorder the lock-picking scene to shot order 4, 2, 3, 1. The edited video should play as: the locksmith working the door hardware in close view, then the closer shot of his hands inserting the tool at the lock, then the extreme close-up of the pick inside the keyway, then the wide hallway shot of him kneeling by the door.",
       "target_phrase": "the lock-picking scene reordered as door hardware, tool insertion, lock close-up, wide hallway",
       "applicable_shots": [
-        4,
+        1,
         2,
         3,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -1827,6 +1821,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1835,8 +1830,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1885,9 +1879,8 @@
       "instruction": "Reorder the vet clinic to shot order 3, 1, 2, 4. The edited video should play as: the close-up ear check on the golden puppy, then the wide exam-table setup, then the vet listening with a stethoscope, then the final table-side shot with the puppy sitting calmly.",
       "target_phrase": "the vet clinic reordered as ear check, exam table setup, stethoscope listen, calm puppy",
       "applicable_shots": [
-        3,
         1,
-        2,
+        3,
         4
       ],
       "extra": {
@@ -1899,6 +1892,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1907,8 +1901,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -1954,12 +1947,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 3 in the vet clinic; the ear check plays before the stethoscope listen.",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
-        3,
         2,
+        3,
         4
       ],
       "extra": {
@@ -1971,6 +1964,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -1979,8 +1973,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2025,10 +2018,9 @@
       "instruction": "Reorder the watch-repair workshop to shot order 2, 4, 3, 1. The edited video should play as: the watchmaker working at the bench, then him closing the case and listening closely, then the macro view of placing the gear inside the watch, then the wide workshop setup.",
       "target_phrase": "the watch-repair workshop reordered as bench work, case close, gear macro, wide setup",
       "applicable_shots": [
-        2,
-        4,
+        1,
         3,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2039,6 +2031,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2047,8 +2040,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2093,10 +2085,10 @@
       "instruction": "Reorder the watch-repair workshop to shot order 4, 1, 2, 3. The edited video should play as: the watchmaker closing the case and listening closely, then the wide workshop setup, then him working at the bench, then the macro view of placing the gear inside the watch.",
       "target_phrase": "the watch-repair workshop reordered as case close, wide setup, bench work, gear macro",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2107,6 +2099,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2115,8 +2108,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2161,10 +2153,9 @@
       "instruction": "Reorder the chef-plating sequence to shot order 3, 4, 1, 2. The edited video should play as: the close-up of coulis dots on the plated dessert, then the chef adding the mint garnish and ringing the service bell, then the wide stainless-kitchen setup, then the piping of cream domes onto the plate.",
       "target_phrase": "the chef-plating sequence reordered as coulis dots, garnish finish, kitchen wide, cream piping",
       "applicable_shots": [
-        3,
-        4,
         1,
-        2
+        2,
+        3
       ],
       "extra": {
         "op": "reorder",
@@ -2175,6 +2166,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2183,8 +2175,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2226,12 +2217,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 3 in the chef-plating sequence; the coulis dots are placed before the cream domes are piped.",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
-        3,
         2,
+        3,
         4
       ],
       "extra": {
@@ -2243,6 +2234,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2251,8 +2243,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2300,10 +2291,10 @@
       "instruction": "Reorder the yoga studio scene to shot order 4, 2, 1, 3. The edited video should play as: the two partners releasing the pose with a laugh and extended arms, then the partner adjustment while they lean together, then the wide seated pose setup on the mats, then the close-up of their interlaced hands.",
       "target_phrase": "the yoga studio scene reordered as pose release, partner adjustment, wide mats, interlaced hands",
       "applicable_shots": [
-        4,
-        2,
         1,
-        3
+        2,
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2314,6 +2305,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2322,8 +2314,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2368,13 +2359,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the yoga studio; the release with laughter plays before the close-up of interlaced fingers.",
       "target_phrase": "shots reordered to 1, 2, 4, 3",
       "applicable_shots": [
         1,
         2,
-        4,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2385,6 +2376,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2393,8 +2385,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2439,10 +2430,9 @@
       "instruction": "Reorder the grooming salon to shot order 2, 3, 4, 1. The edited video should play as: the groomer trimming and handling the white dog on the table, then the close-up shears cutting fur, then the bow-clip finish and kiss, then the wide shot of the dog being lifted onto the grooming table.",
       "target_phrase": "the grooming salon reordered as table trim, shears close-up, bow finish, wide lift",
       "applicable_shots": [
-        2,
+        1,
         3,
-        4,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2453,6 +2443,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2461,8 +2452,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2507,10 +2497,10 @@
       "instruction": "Reorder the grooming salon to shot order 4, 1, 2, 3. The edited video should play as: the bow-clip finish and kiss, then the wide shot of the dog being lifted onto the grooming table, then the groomer trimming the dog, then the close-up shears cutting fur.",
       "target_phrase": "the grooming salon reordered as bow finish, wide lift, table trim, shears close-up",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2521,6 +2511,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2529,8 +2520,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2575,10 +2565,9 @@
       "instruction": "Reorder the backyard BBQ to shot order 2, 4, 1, 3. The edited video should play as: the smoky grill close-up with food cooking, then the man pressing the burger bun and taking a bite, then the wide backyard grill setup, then the close-up of the charred grilled patty.",
       "target_phrase": "the backyard BBQ reordered as smoky grill, burger bite, wide grill, patty close-up",
       "applicable_shots": [
-        2,
-        4,
         1,
-        3
+        2,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2589,6 +2578,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2597,8 +2587,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2643,10 +2632,10 @@
       "instruction": "Reorder the backyard BBQ to shot order 4, 1, 3, 2. The edited video should play as: the man pressing the burger bun and taking a bite, then the wide backyard grill setup, then the close-up of the charred grilled patty, then the smoky grill close-up with food cooking.",
       "target_phrase": "the backyard BBQ reordered as burger bite, wide grill, patty close-up, smoky grill",
       "applicable_shots": [
-        4,
         1,
+        2,
         3,
-        2
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2657,6 +2646,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2665,8 +2655,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2708,12 +2697,12 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 3, 2, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 2 and shot 3 in the dock-fishing scene; the bobber dipping plays before the calm sit-and-watch.",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
-        3,
         2,
+        3,
         4
       ],
       "extra": {
@@ -2725,6 +2714,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2733,8 +2723,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2779,10 +2768,9 @@
       "instruction": "Reorder the dock-fishing scene to shot order 3, 1, 4, 2. The edited video should play as: the red bobber dipping and rippling on the water, then the long misty dock-and-lake establishing shot, then the fisherman handling the rod at the dock, then the closer shot of him preparing and watching the line.",
       "target_phrase": "the dock-fishing scene reordered as bobber ripple, misty dock, rod handling, line watch",
       "applicable_shots": [
-        3,
         1,
-        4,
-        2
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2793,6 +2781,7 @@
           2
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2801,8 +2790,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2851,9 +2839,9 @@
       "instruction": "Reorder the acupuncture room to shot order 2, 3, 1, 4. The edited video should play as: the close-up of hands placing needles, then the tighter needle detail on the patient's skin, then the wide treatment-room setup with the patient on the table, then the row of needles with the patient relaxing.",
       "target_phrase": "the acupuncture room reordered as needle placement, needle detail, room setup, relaxed patient",
       "applicable_shots": [
+        1,
         2,
         3,
-        1,
         4
       ],
       "extra": {
@@ -2865,6 +2853,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2873,8 +2862,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2923,10 +2911,10 @@
       "instruction": "Reorder the acupuncture room to shot order 4, 1, 2, 3. The edited video should play as: the row of needles with the patient relaxing, then the wide treatment-room setup, then the close-up of hands placing needles, then the tighter needle detail on the patient's skin.",
       "target_phrase": "the acupuncture room reordered as relaxed patient, room setup, needle placement, needle detail",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -2937,6 +2925,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -2945,8 +2934,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -2995,10 +2983,9 @@
       "instruction": "Reorder the ice-cream-truck scene to shot order 3, 2, 4, 1. The edited video should play as: the close-up scoop pulling pink ice cream into the cone, then the boy paying at the truck window, then the boy smiling and licking the cone, then the wide park view with the pink ice-cream truck.",
       "target_phrase": "the ice-cream-truck scene reordered as scoop close-up, boy paying, boy eating, truck wide",
       "applicable_shots": [
+        1,
         3,
-        2,
-        4,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -3009,6 +2996,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3017,8 +3005,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3067,10 +3054,10 @@
       "instruction": "Reorder the ice-cream-truck scene to shot order 4, 1, 2, 3. The edited video should play as: the boy smiling and licking the cone, then the wide park view with the pink ice-cream truck, then the boy paying at the truck window, then the close-up scoop pulling pink ice cream into the cone.",
       "target_phrase": "the ice-cream-truck scene reordered as boy eating, truck wide, boy paying, scoop close-up",
       "applicable_shots": [
-        4,
         1,
         2,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -3081,6 +3068,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3089,8 +3077,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3136,13 +3123,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the subway-busker scene; the busker nods thanks before the commuter drops the coins.",
       "target_phrase": "shots reordered to 1, 2, 4, 3",
       "applicable_shots": [
         1,
         2,
-        4,
-        3
+        3,
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -3153,6 +3140,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3161,8 +3149,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3211,10 +3198,10 @@
       "instruction": "Reorder the subway-busker scene to shot order 2, 4, 3, 1. The edited video should play as: the busker singing and playing guitar in medium shot, then his close-up nod of thanks, then the commuter dropping coins into the case, then the wide tiled subway passage performance.",
       "target_phrase": "the subway-busker scene reordered as guitar song, thanks nod, coin drop, subway wide",
       "applicable_shots": [
+        1,
         2,
-        4,
         3,
-        1
+        4
       ],
       "extra": {
         "op": "reorder",
@@ -3225,6 +3212,7 @@
           1
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3233,8 +3221,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3284,10 +3271,9 @@
       "instruction": "Reorder the garage scene to shot order 4, 3, 1, 2, 5. The edited video should play as: the mechanic lowering the alternator into the engine bay, then the close-up of the alternator and belt area, then the wide hood-pop setup in the garage, then the mechanic leaning over the engine to work, then the final wider check under the open hood.",
       "target_phrase": "the garage scene reordered as alternator install, engine close-up, hood-pop setup, engine work, final check",
       "applicable_shots": [
-        4,
-        3,
         1,
-        2,
+        3,
+        4,
         5
       ],
       "extra": {
@@ -3300,6 +3286,7 @@
           5
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3308,8 +3295,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3356,13 +3342,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3, 5. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the garage scene; the new alternator is lowered in before the old one is lifted out.",
       "target_phrase": "shots reordered to 1, 2, 4, 3, 5",
       "applicable_shots": [
         1,
         2,
-        4,
         3,
+        4,
         5
       ],
       "extra": {
@@ -3375,6 +3361,7 @@
           5
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3383,8 +3370,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3442,11 +3428,10 @@
       "instruction": "Reorder the balloon launch to shot order 4, 5, 1, 2, 3. The edited video should play as: the basket and balloon fabric being readied upright, then the hot-air balloon lifting off at sunset, then the fabric laid out across the grass, then the burner flame filling the balloon, then the basket standing beneath the inflated canopy.",
       "target_phrase": "the balloon launch reordered as basket prep, lift-off, fabric layout, burner flame, upright canopy",
       "applicable_shots": [
-        4,
-        5,
         1,
         2,
-        3
+        3,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3458,6 +3443,7 @@
           3
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3466,8 +3452,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3525,11 +3510,11 @@
       "instruction": "Reorder the balloon launch to shot order 5, 1, 2, 3, 4. The edited video should play as: the hot-air balloon lifting off at sunset, then the fabric laid out across the grass, then the burner flame filling the balloon, then the basket standing beneath the inflated canopy, then the basket and balloon fabric being readied upright.",
       "target_phrase": "the balloon launch reordered as lift-off, fabric layout, burner flame, upright canopy, basket prep",
       "applicable_shots": [
-        5,
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3541,6 +3526,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3549,8 +3535,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3608,11 +3593,10 @@
       "instruction": "Reorder the bridal salon to shot order 3, 1, 2, 5, 4. The edited video should play as: the attendant bringing the veil behind the bride, then the wide salon mirror setup, then the close-up of the veil being prepared, then the full mirror reaction with the bride and companion, then the side-profile close-up of the veil being pinned.",
       "target_phrase": "the bridal salon reordered as veil approach, salon wide, veil prep, mirror reaction, veil pinning",
       "applicable_shots": [
-        3,
         1,
-        2,
-        5,
-        4
+        3,
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3624,6 +3608,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3632,8 +3617,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3688,14 +3672,14 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 3, 5, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 4 and shot 5 in the bridal salon; the bride's full mirror reaction with welling eyes plays before the close-up of the veil being pinned.",
       "target_phrase": "shots reordered to 1, 2, 3, 5, 4",
       "applicable_shots": [
         1,
         2,
         3,
-        5,
-        4
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3707,6 +3691,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3715,8 +3700,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3774,11 +3758,11 @@
       "instruction": "Reorder the courtroom scene to shot order 5, 2, 1, 3, 4. The edited video should play as: the judge at the bench with the gavel, then the suited man standing in court, then the wide courtroom view, then the witness or attorney at the stand, then the defendant's close reaction shot.",
       "target_phrase": "the courtroom scene reordered as judge gavel, standing man, courtroom wide, witness stand, defendant reaction",
       "applicable_shots": [
-        5,
-        2,
         1,
+        2,
         3,
-        4
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3790,6 +3774,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3798,8 +3783,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3854,14 +3838,14 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 3, 5, 4. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 4 and shot 5 in the courtroom; the gavel comes down before the defendant's reaction.",
       "target_phrase": "shots reordered to 1, 2, 3, 5, 4",
       "applicable_shots": [
         1,
         2,
         3,
-        5,
-        4
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -3873,6 +3857,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3881,8 +3866,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -3940,10 +3924,9 @@
       "instruction": "Reorder the campfire scene to shot order 3, 1, 4, 2, 5. The edited video should play as: the close-up of the blonde woman reacting with a marshmallow stick, then the wide campfire setup in the woods, then the young man reacting by the fire, then the older storyteller speaking, then the group laughing around the rising sparks.",
       "target_phrase": "the campfire scene reordered as marshmallow reaction, campfire wide, young man reaction, storyteller, group laughter",
       "applicable_shots": [
-        3,
         1,
+        3,
         4,
-        2,
         5
       ],
       "extra": {
@@ -3956,6 +3939,7 @@
           5
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -3964,8 +3948,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -4023,11 +4006,11 @@
       "instruction": "Reorder the campfire scene to shot order 5, 1, 2, 3, 4. The edited video should play as: the group laughing around the rising sparks, then the wide campfire setup in the woods, then the older storyteller speaking, then the blonde woman reacting with a marshmallow stick, then the young man reacting by the fire.",
       "target_phrase": "the campfire scene reordered as group laughter, campfire wide, storyteller, marshmallow reaction, young man reaction",
       "applicable_shots": [
-        5,
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "extra": {
         "op": "reorder",
@@ -4039,6 +4022,7 @@
           4
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -4047,8 +4031,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -4102,7 +4085,6 @@
       "instruction": "Reorder the cocktail bar to shot order 4, 1, 2, 3, 5. The edited video should play as: the orange-peel torch flare over the drink, then the bartender mixing at the backlit bar, then the close-up cocktail shake, then the strain into the chilled glass, then the drink being served to the customer.",
       "target_phrase": "the cocktail bar reordered as torch flare, bar mixing, cocktail shake, glass strain, customer serve",
       "applicable_shots": [
-        4,
         1,
         2,
         3,
@@ -4118,6 +4100,7 @@
           5
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -4126,8 +4109,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   },
   {
@@ -4178,13 +4160,13 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the video to shot order 1, 2, 4, 3, 5. Preserve each original shot's content while playing the shots in that order.",
+      "instruction": "Swap shot 3 and shot 4 in the cocktail bar; the orange peel torch flare plays before the strain into the glass.",
       "target_phrase": "shots reordered to 1, 2, 4, 3, 5",
       "applicable_shots": [
         1,
         2,
-        4,
         3,
+        4,
         5
       ],
       "extra": {
@@ -4197,6 +4179,7 @@
           5
         ]
       },
+      "author": "claude-handwritten-v2-10s",
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "shot_reorder",
@@ -4205,8 +4188,7 @@
         "edited_queries": [],
         "combine": "none",
         "reason": "Shot-order edits are temporal/structural rather than spatial local edits."
-      },
-      "author": "claude-handwritten-v2-10s"
+      }
     }
   }
 ]
