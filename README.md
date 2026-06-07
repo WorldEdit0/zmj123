@@ -1,9 +1,9 @@
 # MSEdit-Bench v1
 
 > **The first benchmark for multi-shot video editing.**
-> 30 multi-shot videos × 7 task types = 440 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and identity safety.
+> 30 multi-shot videos × 7 task types = 440 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
 
-[![Tests](https://img.shields.io/badge/tests-13%2F13-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
+[![Tests](https://img.shields.io/badge/tests-16%2F16-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
 ---
 
@@ -28,7 +28,7 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 | **Source videos** | 30 mp4s, 10 s each, 720p @ 24 fps, ModelScope-hosted |
 | **Shot detection** | OmniShotCut (primary) + TransNetV2 + PySceneDetect (consensus); 30 / 30 (100 %) hit rate after retry |
 | **Edit prompts** | 440 hand-written by Claude (T1/T2/T3/T5/T6/T7 = 60 each, T4 = 80) |
-| **Evaluation** | Mask-aware (SAM-3) + pyiqa + InsightFace + Seed VLM 2.0 Lite as judge |
+| **Evaluation** | Mask-aware (SAM-3) + DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite as judge |
 | **K-sample protocol** | K = 3 per prompt; report mean ± std |
 | **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 440 prompts |
 
@@ -46,7 +46,7 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 | **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
 | **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with warm dusk window light." |
 
-T5 has its own track (TSF — Task-Specific Fidelity) since per-shot pixel metrics don't apply to structural reorders.
+T5 now runs through the same evaluation entry point as the other tasks. TAC uses the requested `new_order` to build the expected post-edit timeline before comparing shot time anchors.
 
 ---
 
@@ -57,7 +57,7 @@ T5 has its own track (TSF — Task-Specific Fidelity) since per-shot pixel metri
 ```bash
 git clone <this-repo>
 cd multi_shot_bench
-bash install.sh        # installs Python deps + pre-fetches CLIP / DINOv2 / SAM-3 / InsightFace / pyiqa weights
+bash install.sh        # installs Python deps + pre-fetches DINOv2 / SAM-3 / OmniShotCut / pyiqa weights
 ```
 
 You will need:
@@ -96,7 +96,7 @@ BASELINE_NAME=my_baseline \
 BASELINE_VIDEOS_ROOT=runs/my_baseline/videos \
 EVAL_OUT_ROOT=runs/eval_my_baseline_v3 \
 SNAPSHOT_ID=my_baseline_v1 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7
 ```
 
 This shards across 8 GPUs, computes all metrics with mask-aware backends + Seed VLM judge, and writes:
@@ -106,15 +106,6 @@ runs/eval_my_baseline_v3/
 ├── T1/aggregate.json        # task-level mean ± std for every metric
 ├── T1/<sample_id>.eval.json # per-prompt × per-K detailed scores
 └── ...
-```
-
-For the structural T5 track:
-```bash
-python -m mseditbench.eval.t5_track \
-    --prompts_json runs/edit_prompts_v2_10s/T5.json \
-    --baseline_dir runs/my_baseline/videos/T5 \
-    --videos_root /abs/path/to/source_videos_10s/videos \
-    --output_dir runs/eval_t5_track/my_baseline
 ```
 
 ---
@@ -127,8 +118,8 @@ python -m mseditbench.eval.t5_track \
 | **EE_v3** | Did the edit apply the instruction? | Seed VLM 0-5 rating per shot | [0, 1] ↑ |
 | **CSEP_v3** | Does the edit propagate consistently across shots? | √(coverage × consistency); both VLM-rated | [0, 1] ↑ |
 | **NEP** | Is the un-edited region preserved for local edits? | DINOv2 cos sim outside the SAM-3 union mask from `edit.mask_queries` | [0, 1] ↑ / None when inapplicable |
-| **SES** | Is editing safely contained (no off-target damage / identity drift)? | 1 − max(IDdrift, OffTarget); ArcFace + CLIP-T | [0, 1] ↑ |
-| **TSF** (T5) | Did the requested shot order happen? | OmniShotCut shot detection + ordered DINOv2 content alignment | [0, 1] ↑ |
+| **USP** | Are source shots not targeted by the edit preserved? | DINOv2 cos sim on shots outside `edit.applicable_shots` | [0, 1] ↑ / None when all shots are edited |
+| **TAC** | Did edited-video shot boundaries preserve expected time anchors? | OmniShotCut shot detection; shot-count mismatch gives 0, matched shots are penalized by start/end drift | [0, 1] ↑ |
 
 **Each metric has its own file under `mseditbench/metrics/`** with a docstring carrying the formula. v1/v2 versions are retained marked `DEPRECATED` for ablation.
 
@@ -148,7 +139,7 @@ Full design rationale: top of `mseditbench/metrics/ee_v3.py`.
 
 Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 440-prompt task set:
 
-| Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | SES Pro | SES Fast |
+| Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | retired SES Pro | retired SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
 | T1 char | **0.596** | 0.576 | 0.523 | 0.543 | 0.531 | 0.537 | 0.855 | 0.893 | 1.000 | 1.000 |
 | T2 attr | **0.598** | 0.573 | 0.567 | 0.627 | 0.681 | 0.717 | 0.950 | 0.972 | 0.797 | 0.822 |
@@ -158,7 +149,7 @@ Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-promp
 
 Bold = single-task winner.
 
-**5-task means** over T1/T2/T3/T4/T6: Pro wins PSQ, is slightly behind on EE_v3/CSEP_v3, and tied on SES. T6 is the standout where Pro beats Fast on edit quality. The picture matches the qualitative story: *Pro produces sharper, more polished edits; Fast does smaller more targeted edits and looks cleaner under VLM judgment*.
+**5-task means** over T1/T2/T3/T4/T6: Pro wins PSQ and is slightly behind on EE_v3/CSEP_v3. The archived SES columns are from the retired face/CLIP metric and are kept only to make the old table interpretable. The current metric set requires a rerun to report USP/TAC.
 
 ---
 
@@ -185,21 +176,21 @@ multi_shot_bench/
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video entity tubes
 │   ├── identity/             # InsightFace face DB
 │   ├── edit_prompts/         # task templates + 440 hand-written prompts
-│   ├── metrics/              # PSQ / EE / CSEP / NEP / SES / TSF
+│   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge (headline)
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge pairwise
 │   │   ├── ee.py             # v1 EE (DEPRECATED, kept for ablation)
 │   │   ├── ee_v2.py          # v2 EE (DEPRECATED, kept for ablation)
 │   │   ├── csep.py / csep_v2.py     # v1 / v2 CSEP (DEPRECATED)
-│   │   ├── nep.py / psq.py / ses.py / cxs_id.py
-│   │   └── backends.py       # CLIP / DINOv2 / SAM-3 / pyiqa / InsightFace / Seed VLM
+│   │   ├── nep.py / psq.py / usp.py / tac.py / cxs_id.py
+│   │   └── backends.py       # DINOv2 / SAM-3 / pyiqa / OmniShotCut / Seed VLM
 │   ├── baselines/            # editor baseline interface (Aleph reference impl)
-│   ├── eval/                 # orchestrator + leaderboard + T5 TSF track
-│   └── tests/                # 15 unit tests on synthetic data, all backends mocked
+│   ├── eval/                 # orchestrator + leaderboard + recompute tools
+│   └── tests/                # 16 unit tests on synthetic data, all backends mocked
 │
 ├── scripts/                  # top-level launchers
 │   ├── run_eval_parallel.sh           # 8-GPU parallel mask-aware eval
-│   ├── recompute_ses_parallel.sh      # SES-only recompute (when face backend changes)
+│   ├── recompute_usp_parallel.sh      # USP/TAC-only recompute
 │   └── recompute_psq_parallel.sh      # PSQ-only recompute
 │
 └── runs/                     # all pipeline outputs land here

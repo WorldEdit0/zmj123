@@ -7,11 +7,8 @@
 ```text
 scripts/eval_suite.sh
   |
-  |-- 普通任务 T1/T2/T3/T4/T6/T7
+  |-- 所有任务 T1/T2/T3/T4/T5/T6/T7
   |     -> python -m mseditbench.eval.run_eval
-  |
-  |-- 结构任务 T5
-  |     -> python -m mseditbench.eval.t5_track
   |
   |-- 多 GPU 分片
   |     -> python -m mseditbench.eval.merge_shards
@@ -23,8 +20,7 @@ scripts/eval_suite.sh
 对应文件：
 
 - 启动脚本：`scripts/eval_suite.sh`
-- 普通任务总入口：`mseditbench/eval/run_eval.py`
-- T5 特殊入口：`mseditbench/eval/t5_track.py`
+- 评测总入口：`mseditbench/eval/run_eval.py`
 - 分片合并：`mseditbench/eval/merge_shards.py`
 - 最终汇总：`mseditbench/eval/summarize.py`
 - 后端加载：`mseditbench/metrics/backends.py`
@@ -51,7 +47,8 @@ run_eval.py
   |-- EE_v3   source/edit 对应帧对 -> Qwen3-VL 评分
   |-- NEP     局部任务 source/edit DINO 相似度，edit.mask_queries union mask 外区域
   |-- CSEP_v3 edited shot 两两比较 -> Qwen3-VL 一致性
-  |-- SES     OffTarget + IDdrift
+  |-- USP     未编辑 shot 的 DINOv2 内容保持相似度
+  |-- TAC     OmniShotCut 检测编辑后 shot，比较时间锚点
   v
 {sample_id}_k{k}.eval.json
   |
@@ -248,89 +245,86 @@ CSEP_v3 = sqrt(coverage * consistency)
 
 返回 `None` 的情况：有效 applicable shots 少于 2 个，无法定义跨 shot 一致性。
 
-## SES
+## USP
 
-源码：`mseditbench/metrics/ses.py`，ID drift 在 `mseditbench/eval/run_eval.py`
+源码：`mseditbench/metrics/usp.py`
 
-含义：Side-Effect Score，衡量不该被改的东西有没有被破坏。
+含义：Unedited Shot Preservation，衡量编辑指令没有覆盖到的 source shot 是否仍保持内容一致。
 
-SES 由两部分副作用组成：
+USP 是旧 SES 的替代指标，但定义更窄、更直接：
+
+- 不做人脸 / ArcFace 身份识别；
+- 不做 CLIP-T off-target 文本相似度；
+- 只对 `edit.applicable_shots` 之外的 shot 算 DINOv2 内容相似度。
 
 ```text
-IDdrift
-  |
-  |-- 每个 shot 取 source 中间帧最大人脸
-  |-- 每个 shot 取 edited 中间帧最大人脸
-  |-- InsightFace embedding
-  |-- drift = 1 - cosine(source_face, edited_face)
-  v
-id_drift = mean(所有可检测 face 的 drift)
+source per-shot frames          edited per-shot frames
+          |                              |
+          +---- unedited_shots ----------+
+                       |
+                       v
+DINOv2 embed source shot -> source_embedding
+DINOv2 embed edited shot -> edited_embedding
+                       |
+                       v
+shot_usp = cosine(source_embedding, edited_embedding)
+                       |
+                       v
+USP = mean(所有 unedited shot 的 shot_usp)
 ```
 
-```text
-OffTarget
-  |
-  |-- absent_shots = 不应该出现目标编辑的 shots
-  |-- CLIP(source shot, target_phrase)
-  |-- CLIP(edited shot, target_phrase)
-  |-- delta = max(0, edited_score - source_score - tau)
-  v
-off_target_mean = mean(所有 absent shot delta)
-```
+返回 `None` 的情况：
 
-最终：
+- 当前 prompt 的所有 shot 都在 `applicable_shots` 内，没有可评估的未编辑 shot。
+- 未编辑 shot 缺帧或无法读取。
 
-```text
-worst = max(id_drift, off_target_mean)
-SES = 1 - worst
-裁剪到 [0,1]
-```
+## TAC
 
-- T1 现在混合动态替换和静态替换：动态实体替换会跳过 IDdrift，静态物体替换仍然计算 IDdrift。
-- T4 中动态实体添加 / 删除也会跳过 IDdrift；静态物体添加 / 删除仍然计算 IDdrift。
-- 如果没有可检测人脸，`id_drift=None`，SES 只看 OffTarget。
+源码：`mseditbench/metrics/tac.py`
 
-## TSF
+含义：Temporal Anchor Consistency，衡量编辑前后各 shot 的时间锚点是否保持一致。
 
-源码：`mseditbench/eval/t5_track.py`
-
-含义：T5 Structural Fidelity，用于只包含 reorder 的镜头顺序任务。
-
-T5 不走普通 `run_eval.py`，因为它改变 shot 结构，源视频 shot 边界不再能对齐 edited video。
+TAC 的前置条件是 shot 数一致：
 
 ```text
-T5 instruction
+edited video
   |
   v
-读取 edit.extra.new_order
-```
-
-```text
-source shots middle frames -> DINO embeddings
-edited shots middle frames -> DINO embeddings
+OmniShotCut 检测 edited shots
   |
   v
-对每个期望位置 i：
-  edited shot i 对齐 source shot new_order[i]
-  |
-  v
-content_alignment = mean(cosine)
+如果 edited shot 数 != expected shot 数：
+  TAC = 0
 ```
 
-最终：
+shot 数一致时，逐 shot 比较起止时间：
 
 ```text
-TSF = content_alignment
+expected shot i: start=s0, end=s1
+edited shot i:   start=e0, end=e1
+
+edge_error = (|e0 - s0| + |e1 - s1|) / 2
+duration = s1 - s0
+shot_tac = max(0, 1 - edge_error / duration)
+
+TAC = mean(所有 shot_tac)
 ```
 
-注意：T5 现在没有 insert/delete，shot 数不再作为单独指标奖励或惩罚。输出 JSON 仍记录 `edit_shot_count` 便于排查，但聚合只看 `tsf_mean` / `content_alignment_mean`。
+例子：原第一个 shot 是 0-2s，编辑后变成 0-3s：
+
+```text
+edge_error = (|0-0| + |3-2|) / 2 = 0.5
+duration = 2
+shot_tac = 1 - 0.5 / 2 = 0.75
+```
+
+T5 reorder 的特殊点：`run_eval.py` 会读取 `edit.extra.new_order`，先按该顺序排列源 shot 时长，得到“编辑后应该出现的时间线”，再和 OmniShotCut 检测出的 edited shots 比较。因此 T5 不再需要单独的 TSF 入口。
 
 ## 聚合逻辑
 
 源码：
 
 - K 内聚合和任务聚合：`mseditbench/eval/run_eval.py`
-- T5 聚合：`mseditbench/eval/t5_track.py`
 - 分片合并：`mseditbench/eval/merge_shards.py`
 - 最终表格：`mseditbench/eval/summarize.py`
 
@@ -365,11 +359,7 @@ None = 不可评估 / 被任务规则跳过
 源码：`mseditbench/eval/summarize.py`
 
 ```text
-默认任务：
-task_score = mean(PSQ, EE_v3, NEP, CSEP_v3, SES 中非 None 的项)
-
-T5：
-task_score = TSF
+task_score = mean(PSQ, EE_v3, NEP, CSEP_v3, USP, TAC 中非 None 的项)
 ```
 
 注意：`task_score` 是快速比较用的单数汇总，不应替代每个指标的逐列分析。

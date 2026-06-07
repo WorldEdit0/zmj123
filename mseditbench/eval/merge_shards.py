@@ -64,7 +64,7 @@ def main():
         "n_prompts": len(per_sample_aggs),
         "k_samples": k_samples,
     }
-    for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses"):
+    for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
         # 中文注释：None 表示指标不可评估/被任务规则跳过，合并时跳过 None。
         xs = [a[f"{metric}_mean"] for a in per_sample_aggs
               if a.get(f"{metric}_mean") is not None]
@@ -86,7 +86,7 @@ def main():
     print(f"Merged {len(per_sample_aggs)} per-prompt aggs from {len(shard_aggs)} shards "
           f"→ {out / 'aggregate.json'}")
     print(f"  baseline={baseline} task={task_id} n_prompts={agg['n_prompts']} K={k_samples}")
-    for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses"):
+    for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
         mn = agg.get(f"{m}_mean"); sd = agg.get(f"{m}_std")
         mn_s = f"{mn:.3f}" if isinstance(mn, float) else "—"
         sd_s = f"±{sd:.3f}" if isinstance(sd, float) else ""

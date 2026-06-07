@@ -3,7 +3,7 @@
 Why a separate script: PSQ is independent of source frames / target phrase /
 VLM votes — it only depends on edit-video frames and the chosen image-quality
 model. So we can fix the (previously mock) PSQ in place without re-doing the
-expensive CLIP / DINO / VLM passes.
+expensive DINO / VLM / shot-detection passes.
 
 Reads every {sid}_k{k}.eval.json in --output_dir, recomputes psq from the
 edit video pointed to by `edited_video_path`, rewrites the eval json, then
@@ -32,7 +32,7 @@ def _aggregate_per_prompt(eval_jsons: list[dict]) -> dict:
     sid = eval_jsons[0]["sample_id"]
     task_id = eval_jsons[0]["task_id"]
     agg = {"sample_id": sid, "task_id": task_id, "k_count": len(eval_jsons)}
-    for metric in ("psq", "ee", "nep", "csep", "ses"):
+    for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
         xs = [r[metric] for r in eval_jsons if r.get(metric) is not None]
         if xs:
             mu = sum(xs) / len(xs)
@@ -58,7 +58,7 @@ def _aggregate_task(per_sample_aggs: list[dict], baseline: str, snapshot_id: str
         "n_prompts": len(per_sample_aggs),
         "k_samples": k_samples,
     }
-    for metric in ("psq", "ee", "nep", "csep", "ses"):
+    for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
         xs = [a[f"{metric}_mean"] for a in per_sample_aggs
               if a.get(f"{metric}_mean") is not None]
         if xs:
@@ -166,7 +166,7 @@ def main():
         with open(out / "aggregate.json", "w") as f:
             json.dump(ag, f, indent=2)
         print(f"\nRe-aggregated → {out / 'aggregate.json'}")
-        for m in ("psq", "ee", "nep", "csep", "ses"):
+        for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
             mn = ag.get(f"{m}_mean"); sd = ag.get(f"{m}_std")
             mn_s = f"{mn:.3f}" if isinstance(mn, float) else "—"
             sd_s = f"±{sd:.3f}" if isinstance(sd, float) else ""

@@ -4,7 +4,7 @@ Subpackages:
     preprocess     shot detection (TransNetV2 + PySceneDetect)
     tracking       per-shot entity tubes (Grounded-SAM2 + DEVA)
     identity       cross-shot character DB (InsightFace + cluster)
-    metrics        PSQ / EE / NEP / CSEP / SES / CXS-ID
+    metrics        PSQ / EE / NEP / CSEP / USP / TAC / CXS-ID
     edit_prompts   T1-T7 task templates + per-video instantiation
     baselines      editor API clients (Aleph, ...)
     eval           orchestrator: score one (video, edit, baseline) tuple

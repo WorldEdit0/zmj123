@@ -1,7 +1,7 @@
 """Summarize MSEdit-Bench aggregate.json files.
 
-Reads standard run_eval aggregates and T5 TSF aggregates from one eval root,
-writes a CSV + Markdown table, and prints a compact final score.
+Reads standard run_eval aggregates from one eval root, writes a CSV + Markdown
+table, and prints a compact final score.
 """
 
 from __future__ import annotations
@@ -18,18 +18,13 @@ METRICS = [
     "ee_v3_mean",
     "nep_mean",
     "csep_v3_mean",
-    "ses_mean",
-    "tsf_mean",
-    "content_alignment_mean",
+    "usp_mean",
+    "tac_mean",
 ]
 
-PRIMARY_METRICS = {
-    # 中文注释：T5 不用普通逐 shot 指标，最终只纳入 reorder 内容对齐 TSF。
-    "T5": ["tsf_mean"],
-}
-# 中文注释：默认任务的 task_score 是这五个 headline 指标的简单平均。
+# 中文注释：task_score 是这些 headline 指标的简单平均。
 # 如果某个指标为 None，会在 _task_score 中被跳过，而不是按 0 处理。
-DEFAULT_PRIMARY = ["psq_mean", "ee_v3_mean", "nep_mean", "csep_v3_mean", "ses_mean"]
+DEFAULT_PRIMARY = ["psq_mean", "ee_v3_mean", "nep_mean", "csep_v3_mean", "usp_mean", "tac_mean"]
 
 
 def _fmt(v):
@@ -44,7 +39,7 @@ def _task_score(row: dict) -> float | None:
     # 中文注释：task_score 是为了快速看一个任务的单数总分；
     # 正式分析仍建议同时查看每个 metric 的列，因为它们含义不同。
     task = row.get("task_id")
-    keys = PRIMARY_METRICS.get(task, DEFAULT_PRIMARY)
+    keys = DEFAULT_PRIMARY
     vals = [row.get(k) for k in keys if isinstance(row.get(k), (int, float))]
     if not vals:
         return None
@@ -54,8 +49,8 @@ def _task_score(row: dict) -> float | None:
 def _read_rows(eval_root: Path) -> list[dict]:
     rows = []
     for agg_path in sorted(eval_root.rglob("aggregate.json")):
-        # 中文注释：run_eval.py 和 t5_track.py 都会输出 aggregate.json，
-        # summarize 只认这个任务级文件，不读取单个 {sid}_k*.eval.json。
+        # 中文注释：summarize 只认任务级 aggregate.json，
+        # 不读取单个 {sid}_k*.eval.json。
         data = json.load(open(agg_path))
         task_id = data.get("task_id") or agg_path.parent.name
         row = {
@@ -90,7 +85,7 @@ def _write_md(rows: list[dict], output_md: Path) -> None:
     output_md.parent.mkdir(parents=True, exist_ok=True)
     cols = [
         "task_id", "n_prompts", "k_samples", "psq_mean", "ee_v3_mean",
-        "nep_mean", "csep_v3_mean", "ses_mean", "tsf_mean",
+        "nep_mean", "csep_v3_mean", "usp_mean", "tac_mean",
         "task_score",
     ]
     lines = []
@@ -126,7 +121,7 @@ def main() -> None:
     print(f"CSV: {output_csv}")
     print(f"Markdown: {output_md}")
     print("")
-    print("task   n   K   PSQ    EE_v3  NEP    CSEP   SES    TSF    task_score")
+    print("task   n   K   PSQ    EE_v3  NEP    CSEP   USP    TAC    task_score")
     for row in rows:
         print(
             f"{str(row.get('task_id')):5s} "
@@ -136,8 +131,8 @@ def main() -> None:
             f"{_fmt(row.get('ee_v3_mean')):6s} "
             f"{_fmt(row.get('nep_mean')):6s} "
             f"{_fmt(row.get('csep_v3_mean')):6s} "
-            f"{_fmt(row.get('ses_mean')):6s} "
-            f"{_fmt(row.get('tsf_mean')):6s} "
+            f"{_fmt(row.get('usp_mean')):6s} "
+            f"{_fmt(row.get('tac_mean')):6s} "
             f"{_fmt(row.get('task_score')):6s}"
         )
     scores = [r["task_score"] for r in rows if isinstance(r.get("task_score"), float)]

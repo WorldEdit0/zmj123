@@ -114,19 +114,58 @@ def test_nep_requires_masks_when_requested():
     assert r["nep"] is not None and r["n_scored"] == 2, f"n_scored={r['n_scored']}"
 
 
-def test_ses_perfect_when_no_drift():
-    r = M.ses(id_drift=0.0, off_target_mean=0.0)
-    assert r["ses"] == 1.0, f"ses={r['ses']}"
+def test_usp_identity_is_one():
+    """If an unedited shot is unchanged, USP DINO similarity is 1."""
+    src = {1: _make_frames(0), 2: _make_frames(1)}
+    r = M.usp(src, src, [2])
+    assert r["usp"] is not None and r["usp"] > 0.999, f"usp={r['usp']}"
+    assert r["n_scored"] == 1, f"n_scored={r['n_scored']}"
 
 
-def test_ses_clipped_when_huge_drift():
-    r = M.ses(id_drift=2.0, off_target_mean=0.0)
-    assert r["ses"] == 0.0, f"ses={r['ses']}"
+def test_usp_none_when_no_unedited_shots():
+    r = M.usp({1: _make_frames(0)}, {1: _make_frames(0)}, [])
+    assert r["usp"] is None, f"usp should be None, got {r['usp']}"
+    assert r["reason"] == "no unedited shots for this prompt"
 
 
-def test_ses_takes_max_component():
-    r = M.ses(id_drift=0.1, off_target_mean=0.3)
-    assert abs(r["ses"] - 0.7) < 1e-6, f"ses={r['ses']}"
+def test_tac_perfect_when_boundaries_match():
+    src_shots = [
+        {"shot_id": 1, "t_start": 0.0, "t_end": 2.0, "duration_sec": 2.0},
+        {"shot_id": 2, "t_start": 2.0, "t_end": 5.0, "duration_sec": 3.0},
+    ]
+    edited_shots = [
+        {"frame_start": 0, "frame_end": 47},
+        {"frame_start": 48, "frame_end": 119},
+    ]
+    r = M.temporal_anchor_consistency(
+        src_shots, edited_shots=edited_shots, source_fps=24.0, edited_fps=24.0
+    )
+    assert r["tac"] is not None and r["tac"] > 0.999, f"tac={r['tac']}"
+
+
+def test_tac_zero_when_count_mismatch():
+    src_shots = [
+        {"shot_id": 1, "t_start": 0.0, "t_end": 2.0, "duration_sec": 2.0},
+        {"shot_id": 2, "t_start": 2.0, "t_end": 4.0, "duration_sec": 2.0},
+    ]
+    r = M.temporal_anchor_consistency(
+        src_shots,
+        edited_shots=[{"frame_start": 0, "frame_end": 95}],
+        source_fps=24.0,
+        edited_fps=24.0,
+    )
+    assert r["tac"] == 0.0, f"tac={r['tac']}"
+    assert r["shot_count_match"] is False
+
+
+def test_tac_penalizes_anchor_drift():
+    src_shots = [{"shot_id": 1, "t_start": 0.0, "t_end": 2.0, "duration_sec": 2.0}]
+    edited_shots = [{"frame_start": 0, "frame_end": 71}]  # 0-3s at 24 fps
+    r = M.temporal_anchor_consistency(
+        src_shots, edited_shots=edited_shots, source_fps=24.0, edited_fps=24.0
+    )
+    assert r["tac"] is not None and 0.0 < r["tac"] < 1.0, f"tac={r['tac']}"
+    assert r["mean_anchor_error_sec"] > 0.0
 
 
 def test_cxs_id_acp_floor_kicks_in():

@@ -123,7 +123,7 @@ class PerShotEval:
     ee_continuous: Optional[float]
     ee_indicator: Optional[int]
     nep: Optional[float]
-    off_target_delta: Optional[float]
+    usp: Optional[float]
 
 
 @dataclass
@@ -143,7 +143,8 @@ class EvalResult:
     csep: Optional[float]
     csep_coverage: Optional[float]
     csep_consistency: Optional[float]
-    ses: Optional[float]
+    usp: Optional[float]
+    tac: Optional[float]
 
     per_shot: list[PerShotEval]
     extra: dict = field(default_factory=dict)

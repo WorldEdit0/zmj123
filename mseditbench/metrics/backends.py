@@ -2,27 +2,25 @@
 
 Each backend exposes a small functional interface. The default constructor
 returns a mock backend that takes float arrays and behaves deterministically;
-real backends (CLIP, DINOv2, ArcFace, VLM) wrap heavy models and are loaded
+real backends (CLIP, DINOv2, VLM, etc.) wrap heavy models and are loaded
 lazily so unit tests never pay the import cost.
 
 Usage:
     from mseditbench.metrics import backends as B
-    clip = B.get_clip()              # mock by default
-    clip = B.get_clip("siglip")      # real, requires open_clip
-    sim = clip.score_video_text(frames, "a coffee cup")
+    dino = B.get_dino()              # mock by default
+    emb = dino.embed_frames(frames)
 
 中文说明：
     这个文件不直接定义指标公式，而是把指标需要的重模型统一包装成
-    小接口。run_eval.py 只关心 get_clip/get_dino/get_vlm/get_face/get_psq/
-    get_mask 返回的对象是否有约定方法，不关心具体模型怎么加载。
+    小接口。run_eval.py 只关心 get_dino/get_vlm/get_psq/get_mask 返回的
+    对象是否有约定方法，不关心具体模型怎么加载。
 
     当前真实后端角色：
-      CLIP        -> SES.off_target 中的图文相似度变化
-      DINOv2      -> NEP/T5 TSF 中的视觉保持相似度
-      InsightFace -> SES.id_drift 中的人脸身份漂移
+      DINOv2      -> NEP/USP 中的视觉保持相似度
       Qwen3-VL    -> EE_v3/CSEP_v3 的 VLM 裁判
       pyiqa       -> PSQ 的 MUSIQ + LAION-Aes 质量评分
       SAM3        -> NEP 的目标区域 mask，最终比较 mask 外区域
+      OmniShotCut -> TAC 的编辑后镜头边界检测
 """
 
 from __future__ import annotations
@@ -56,7 +54,7 @@ def _metric_ckpt_path(*parts: str) -> Path:
 
 class ClipBackend(abc.ABC):
     # 中文注释：CLIP 后端只用于“文本和图像/视频的相似度”；
-    # 当前 headline 指标里主要服务 SES.off_target。
+    # 当前 headline 指标不再使用 CLIP，保留接口是为了旧版 EE/CSEP 消融。
     @abc.abstractmethod
     def score_video_text(self, frames: np.ndarray, text: str) -> float:
         """frames: [T,H,W,3] uint8.  Returns scalar similarity in [0,1]."""
@@ -389,8 +387,7 @@ def _make_real_face():
         str(_metric_ckpt_path("insightface")),
     )
     # Prefer CUDA; fall back to CPU silently (onnxruntime-gpu may be missing).
-    # 中文注释：这里请求 CUDAExecutionProvider，但如果环境没有 onnxruntime-gpu，
-    # InsightFace/ORT 会退回 CPUExecutionProvider；SES 仍能算，只是 face 部分不用 GPU。
+    # 中文注释：Face backend 仅保留给历史身份相关模块；当前主评测不再调用。
     try:
         app = FaceAnalysis(name="buffalo_l",
                            root=root,

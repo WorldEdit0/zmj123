@@ -35,7 +35,7 @@
   - `runs/eval_seedance_v2v_v2_10s_v3/`
   - `runs/eval_seedance_v2v_fast_v2_10s_v3/`
   - `runs/eval_wan_v2v_2.7_v2_10s_v3/`
-  - `runs/eval_t5_track/`
+  - `runs/eval_t5_track/`（历史 TSF 结果，当前主线已停用）
 
 注意：`scripts/*.sh`、`install.sh`、`HOWTO.md` 的可运行路径已经适配到当前本地 v2_10s 布局；`CLAUDE.md` 仍包含历史 HDFS 路径，只当作时间线记录，不当作当前运行配置。
 
@@ -46,10 +46,9 @@
 3. `CLAUDE.md` 的状态总结：了解哪些决策已经定稿、哪些是历史背景。
 4. `mseditbench/schema.py`：先看核心 JSON schema。
 5. `mseditbench/eval/run_eval.py`：理解主评测入口。
-6. `mseditbench/metrics/ee_v3.py`、`csep_v3.py`、`nep.py`、`ses.py`、`psq.py`：理解指标。
-7. `mseditbench/eval/t5_track.py`：理解 T5 为什么单独评测。
-8. `DEEP_DIVE.md`、`RESEARCH_PLAN.md`、`SURVEY_REPORT.md`、`RELATED_WORK_SURVEY.md`：论文动机和 related work。
-9. `AGENT_BENCH_DESIGN.md`：agent 扩展轨的早期方案，不属于当前稳定主线。
+6. `mseditbench/metrics/ee_v3.py`、`csep_v3.py`、`nep.py`、`usp.py`、`tac.py`、`psq.py`：理解指标。
+7. `DEEP_DIVE.md`、`RESEARCH_PLAN.md`、`SURVEY_REPORT.md`、`RELATED_WORK_SURVEY.md`：论文动机和 related work。
+8. `AGENT_BENCH_DESIGN.md`：agent 扩展轨的早期方案，不属于当前稳定主线。
 
 ## 4. 总体数据流
 
@@ -59,7 +58,7 @@ source video prompts
   -> shot detection / manual QA
   -> 生成或手写 T1-T7 编辑 prompt
   -> 各视频编辑模型输出 edited videos
-  -> run_eval.py / t5_track.py 计算指标
+  -> run_eval.py 计算指标
   -> aggregate.json / leaderboard.csv
 ```
 
@@ -80,7 +79,7 @@ source video prompts
 | T2 | Cross-Shot Attribute Edit | 改角色颜色、材质、服装类型、发型、配饰等属性，要求所有相关 shot 都改到位。 |
 | T3 | Global Style | 全片视觉风格重渲染，使用像素风格、新海诚风格、宫崎骏风格、JoJo 漫画风格、赛博朋克风格、水墨画风格、油画风格、美式漫画风格、3D 写实动画风格、粘土定格动画等明确大类风格。 |
 | T4 | Cross-Shot Static/Dynamic Add/Delete | 静态物体、动态实体的添加和删除各 20 条，共 80 条，重点看是否漏 shot、是否误伤其他区域。 |
-| T5 | Shot Reorder | 改变镜头顺序，单独走 T5 structural track。 |
+| T5 | Shot Reorder | 改变镜头顺序；TAC 根据 `extra.new_order` 重建期望时间线后评分。 |
 | T6 | Cinematic Re-shoot | 改某个 shot 的景别、构图或相机运动，重点看目标 shot 是否被正确重拍。 |
 | T7 | Global Lighting | 全片光照重渲染，例如黄昏窗光、霓虹灯、凌晨蓝光、篝火光等。 |
 
@@ -94,8 +93,8 @@ source video prompts
 | EE v3 | `mseditbench/metrics/ee_v3.py` | Edit Effectiveness，用 VLM 判断每个相关 shot 是否完成编辑。当前应优先看 v3。 |
 | CSEP v3 | `mseditbench/metrics/csep_v3.py` | Cross-Shot Edit Propagation，看相关 shot 的编辑覆盖率和一致性。当前应优先看 v3。 |
 | NEP | `mseditbench/metrics/nep.py` | Non-Edit Preservation，只对局部编辑任务启用；用 `edit.mask_queries` 的 source/edit union mask 外区域衡量保留。 |
-| SES | `mseditbench/metrics/ses.py` | Side Effect Safety，综合身份漂移和 off-target 改动。 |
-| TSF | `mseditbench/eval/t5_track.py` | T5 Structural Fidelity，看编辑后镜头内容是否按 `new_order` 和源 shot 对齐。 |
+| USP | `mseditbench/metrics/usp.py` | Unedited Shot Preservation，只对未被编辑的 shot 计算 DINOv2 内容保持相似度；不再做人脸 ID 或 CLIP off-target。 |
+| TAC | `mseditbench/metrics/tac.py` | Temporal Anchor Consistency，用 OmniShotCut 检测编辑后 shot，先检查 shot 数，再按起止时间锚点漂移扣分。 |
 
 历史指标 `ee.py`、`ee_v2.py`、`csep.py`、`csep_v2.py` 还在代码里，但接手当前 v2_10s 结果时优先看 `ee_v3_mean` 和 `csep_v3_mean`。
 
@@ -161,7 +160,7 @@ data/
 | `runs/eval_seedance_v2v_v2_10s_v3/` | Seedance Pro 的 v3 评测结果。 |
 | `runs/eval_seedance_v2v_fast_v2_10s_v3/` | Seedance Fast 的 v3 评测结果。 |
 | `runs/eval_wan_v2v_2.7_v2_10s_v3/` | WAN 2.7 的 v3 评测结果，当前只有部分任务。 |
-| `runs/eval_t5_track/` | T5 结构评测结果。 |
+| `runs/eval_t5_track/` | 历史 T5 TSF 评测结果；当前主线使用 `run_eval.py` 的 TAC。 |
 
 编辑视频文件布局是：
 
@@ -203,7 +202,7 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 |---|---|
 | `preprocess/README.md` | 旧 pilot 的 shot detection 操作说明。 |
 | `shot_detect.py` | 对源视频检测 shot 边界，组合 OmniShotCut、TransNetV2、PySceneDetect 等后端。 |
-| `omnishot_backend.py` | OmniShotCut 推理封装，T5 track 也会用它检测编辑后视频的 shot。 |
+| `omnishot_backend.py` | OmniShotCut 推理封装，TAC 用它检测编辑后视频的 shot。 |
 | `contact_sheet.py` | 把每个视频的 shot 关键帧拼成 QA 图。 |
 | `pilot_report.py` | 汇总 shot detection 命中率和失败情况。 |
 | `loop_until_match.py` | 生成源视频时循环重试，直到生成视频的 shot 数符合预期。 |
@@ -268,13 +267,15 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 
 | 文件 | 作用 |
 |---|---|
-| `backends.py` | CLIP、DINOv2、InsightFace、Seed VLM、SAM-3、pyiqa 等后端工厂。 |
+| `backends.py` | DINOv2、Seed VLM、SAM-3、pyiqa 等当前主评测后端工厂；CLIP/Face 接口保留给旧消融代码。 |
 | `frame_io.py` | 从视频按 shot / stride 取帧。 |
 | `psq.py` | 画质和美学分。 |
 | `ee.py`、`ee_v2.py`、`ee_v3.py` | 编辑完成度，当前看 v3。 |
 | `csep.py`、`csep_v2.py`、`csep_v3.py` | 跨 shot 编辑传播一致性，当前看 v3。 |
 | `nep.py` | 非编辑区域保留。 |
-| `ses.py` | 副作用安全性。 |
+| `usp.py` | 未编辑 shot 的 DINOv2 内容保持。 |
+| `tac.py` | 编辑前后 shot 时间锚点一致性。 |
+| `ses.py` | 已退役 SES 的兼容 shim；当前主评测不再使用。 |
 | `cxs_id.py` | 早期 cross-shot identity 相关指标。 |
 
 `run_eval.py` 会把这些指标组合起来，每个 sample 输出一个 `*.eval.json`，每个 prompt 的 K 次输出一个 `*.agg.json`，每个任务输出 `aggregate.json`。
@@ -285,12 +286,11 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 
 | 文件 | 作用 |
 |---|---|
-| `run_eval.py` | 主评测入口，适合 T1/T2/T3/T4/T6/T7 等任务。 |
-| `t5_track.py` | T5 专用 structural fidelity 评测。 |
+| `run_eval.py` | 主评测入口，适合 T1/T2/T3/T4/T5/T6/T7 等任务。 |
 | `merge_shards.py` | 多 shard 评测后合并 `aggregate.json`。 |
 | `recompute_psq.py` | 在已有 eval 结果上重算 PSQ。 |
-| `recompute_ses.py` | 在已有 eval 结果上重算 SES。 |
-| `leaderboard.py` | 从 `aggregate.json` 生成 CSV。注意它的列还是偏旧版，当前 v3 指标可能需要扩展。 |
+| `recompute_usp.py` | 在已有 eval 结果上重算 USP，并可选重算 TAC。 |
+| `leaderboard.py` | 从 `aggregate.json` 生成 CSV，当前列包含 PSQ/EE_v3/NEP/CSEP_v3/USP/TAC。 |
 
 ### 10.7 `identity/`
 
@@ -302,7 +302,7 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 | `face_cluster.py` | 聚类同一角色的脸。 |
 | `run_batch.py` | 批量处理入口。 |
 
-当前主评测中身份漂移更多通过 `metrics/ses.py` 和 face backend 使用。
+当前主评测不再使用人脸身份漂移；这些文件主要保留为历史/辅助模块。
 
 ### 10.8 `tracking/`
 
@@ -335,7 +335,7 @@ python3 -m mseditbench.tests.test_metrics
 |---|---|---|
 | `run_eval_parallel.sh` | 8 GPU 并行评测多个 task。 | 默认指向本地 `runs/edit_prompts_v2_10s`、`data/source_videos_10s/videos` 和 v2_10s baseline 输出；可用环境变量覆盖。 |
 | `recompute_psq_parallel.sh` | 对已有 eval 目录并行重算 PSQ。 | 默认 prompt 目录为 `runs/edit_prompts_v2_10s`；可用 `PROMPTS_DIR` 覆盖。 |
-| `recompute_ses_parallel.sh` | 对已有 eval 目录重算 SES。 | 默认只处理 T2/T3/T4/T6/T7，因为 T1 本身是 identity-changing，T5 单独评测。 |
+| `recompute_usp_parallel.sh` | 对已有 eval 目录重算 USP/TAC。 | 默认处理 T1-T7；TAC 需要 OmniShotCut 权重。 |
 
 本机直接跑评测时，推荐先不用这些 shell 脚本，先用下一节的显式命令。
 
@@ -356,7 +356,7 @@ python3 -m mseditbench.tests.test_metrics
 - Python 3.11+
 - CUDA 和 NVIDIA GPU，真实后端会用到 GPU
 - `ARK_API_KEY`，用于 Seed VLM 后端
-- pyiqa、InsightFace、OpenAI CLIP、DINOv2、SAM-3 等模型依赖
+- pyiqa、DINOv2、SAM-3、OmniShotCut 等模型依赖；历史消融代码仍可能需要 CLIP/InsightFace
 
 安装脚本：
 
@@ -393,10 +393,9 @@ python3 -m mseditbench.eval.run_eval \
   --output_dir /tmp/msb_smoke_T1 \
   --baseline seedance_v2v_pro_v2_10s \
   --snapshot_id local_smoke \
-  --backend_clip mock \
   --backend_dino mock \
-  --backend_face mock \
   --backend_vlm mock \
+  --backend_shot none \
   --backend_mask none \
   --backend_psq mock \
   --num_samples 3 \
@@ -413,7 +412,7 @@ python3 -m mseditbench.eval.run_eval \
 
 ### 14.3 跑真实 v3 评测
 
-真实评测需要 `ARK_API_KEY`、DINOv2、CLIP、SAM-3、pyiqa、InsightFace 等依赖都能用。下面是单任务直跑版本：
+真实评测需要 `ARK_API_KEY`、DINOv2、SAM-3、pyiqa、OmniShotCut 等依赖都能用。下面是单任务直跑版本：
 
 ```bash
 cd /home/xujiayang/projects/Multi-shot-bench/multi_shot_bench
@@ -425,10 +424,9 @@ CUDA_VISIBLE_DEVICES=0 VLM_MAX_WORKERS=4 python3 -m mseditbench.eval.run_eval \
   --output_dir runs/eval_seedance_v2v_v2_10s_v3/T2 \
   --baseline seedance_v2v_pro_v2_10s \
   --snapshot_id v2_10s_v3 \
-  --backend_clip openai \
   --backend_dino v2s \
   --backend_vlm seed \
-  --backend_face insightface \
+  --backend_shot omnishotcut \
   --backend_mask sam3 \
   --backend_psq pyiqa \
   --num_samples 3
@@ -436,22 +434,9 @@ CUDA_VISIBLE_DEVICES=0 VLM_MAX_WORKERS=4 python3 -m mseditbench.eval.run_eval \
 
 多 GPU 时可以参考 `scripts/run_eval_parallel.sh`，但先把里面的 `cd`、`PROMPTS_DIR`、`SOURCE_VIDEOS_ROOT`、`BASELINE_VIDEOS_ROOT`、`EVAL_OUT_ROOT` 改成当前路径。
 
-### 14.4 T5 单独评测
+### 14.4 T5 评测
 
-T5 改变 shot 结构，不能直接用源视频的 shot 边界做 per-shot EE/NEP/CSEP；NEP 对 T5 返回 None，结构评测用：
-
-```bash
-cd /home/xujiayang/projects/Multi-shot-bench/multi_shot_bench
-python3 -m mseditbench.eval.t5_track \
-  --prompts_json runs/edit_prompts_v2_10s/T5.json \
-  --baseline_dir runs/seedance_v2v_edit_v2_10s/videos/T5 \
-  --videos_root data/source_videos_10s/videos \
-  --output_dir runs/eval_t5_track/seedance_v2v \
-  --baseline seedance_v2v \
-  --snapshot_id v2_10s_t5 \
-  --backend_dino v2s \
-  --num_samples 3
-```
+T5 改变 shot 顺序，EE_v3/NEP/CSEP_v3 会按任务规则跳过或返回 None；结构保持由 TAC 负责。运行方式仍然是 `run_eval.py`，只要传入 `T5.json` 和 T5 输出目录即可。
 
 ## 15. 接入一个新 baseline
 
@@ -491,16 +476,15 @@ python3 -m mseditbench.eval.run_eval \
   --output_dir runs/eval_my_editor_v2_10s_v3/T1 \
   --baseline my_editor \
   --snapshot_id v2_10s_v3 \
-  --backend_clip openai \
   --backend_dino v2s \
   --backend_vlm seed \
-  --backend_face insightface \
+  --backend_shot omnishotcut \
   --backend_mask sam3 \
   --backend_psq pyiqa \
   --num_samples 3
 ```
 
-对 T1/T2/T3/T4/T6/T7 分别跑。T5 用 `t5_track.py`。
+对 T1/T2/T3/T4/T5/T6/T7 分别跑。
 
 ### 15.3 读结果
 
@@ -517,19 +501,8 @@ runs/eval_my_editor_v2_10s_v3/T1/aggregate.json
 - `ee_v3_mean`
 - `csep_v3_mean`
 - `nep_mean`
-- `ses_mean`
-
-T5 看：
-
-```text
-runs/eval_t5_track/my_editor/aggregate.json
-```
-
-重点字段：
-
-- `tsf_mean`
-- `content_alignment_mean`
-- `by_op`
+- `usp_mean`
+- `tac_mean`
 
 ### 15.4 生成 leaderboard
 
@@ -541,7 +514,7 @@ python3 -m mseditbench.eval.leaderboard \
   --output_csv runs/eval_my_editor_v2_10s_v3/leaderboard.csv
 ```
 
-注意：`leaderboard.py` 默认列里没有 `ee_v3_mean` 和 `csep_v3_mean`，如果要做当前论文表格，应扩展 `LEADERBOARD_COLUMNS` 或直接从各 `aggregate.json` 汇总。
+`leaderboard.py` 当前默认列已经包含 `ee_v3_mean`、`csep_v3_mean`、`usp_mean` 和 `tac_mean`。
 
 ## 16. 已有 baseline 结果怎么读
 
@@ -552,12 +525,12 @@ python3 -m mseditbench.eval.leaderboard \
 | Seedance Pro | `runs/eval_seedance_v2v_v2_10s_v3/` | T1/T2/T3/T4/T6 |
 | Seedance Fast | `runs/eval_seedance_v2v_fast_v2_10s_v3/` | T1/T2/T3/T4/T6 |
 | WAN 2.7 | `runs/eval_wan_v2v_2.7_v2_10s_v3/` | T1/T2/T3/T4 |
-| T5 Seedance Pro/Fast | `runs/eval_t5_track/` | T5 |
+| T5 Seedance Pro/Fast | `runs/eval_t5_track/` | T5 历史 TSF 结果 |
 
 快速查看：
 
 ```bash
-jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep_mean, .ses_mean' \
+jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep_mean, .usp_mean, .tac_mean' \
   runs/eval_seedance_v2v_v2_10s_v3/T1/aggregate.json
 ```
 
@@ -566,9 +539,9 @@ jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep
 1. **版本混淆**：当前用 `runs/edit_prompts_v2_10s`，不是旧的 `runs/edit_prompts_v1.2`。
 2. **源视频目录**：当前本机源视频在 `data/source_videos_10s/videos`，不是 `data/source_videos/videos`。
 3. **外部模型路径**：OmniShotCut、SAM-3 等大模型权重默认按本地 `checkpoints/` 或相邻 checkout 查找；缺失时用 `OMNISHOTCUT_REPO`、`OMNISHOTCUT_CKPT`、`SAM3_ROOT`、`SAM3_CKPT` 覆盖。
-4. **T5 不能套普通 per-shot 指标**：T5 改 shot 顺序，必须用 `eval/t5_track.py`；TSF 只看按 `new_order` 的内容对齐。
+4. **T5 的普通 per-shot 指标会部分跳过**：T5 改 shot 顺序，当前结构评测看 `tac_mean`；TAC 会按 `new_order` 重建期望时间线。
 5. **K-sample 命名要一致**：`--num_samples 3` 找 `_k0/_k1/_k2`；`--num_samples 1` 找无 `_k` 的 `<sample_id>.mp4`。
-6. **T1/T4 的 SES 按 prompt 类型判断**：动态实体替换、添加、删除会跳过 IDdrift；静态物体编辑仍然计算 IDdrift。
+6. **SES 已停用**：当前保留性指标看 `nep_mean` 和 `usp_mean`，时间结构看 `tac_mean`。
 7. **SAM-3 权重路径**：真实 mask backend 依赖本机权重路径，迁移机器时最容易坏。
 8. **VLM 调用成本和并发**：`backend_vlm seed` 需要 `ARK_API_KEY`，`VLM_MAX_WORKERS` 设置过大可能触发限流。
 9. **旧文档规模不是当前规模**：`RESEARCH_PLAN.md` 提过 930 prompt，但当前已落地的是 440 prompt。
@@ -581,7 +554,7 @@ jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep
 1. 打开 `runs/edit_prompts_v2_10s/T1.json`，理解一条 prompt 的 `sample_id`、`source_video`、`shots`、`edit.instruction`。
 2. 在 `runs/<baseline>_edit_v2_10s/videos/T1/` 找同名 edited video。
 3. 用 `mseditbench.eval.run_eval` 对这个 task 打分。
-4. 打开 `aggregate.json`，读 `ee_v3_mean`、`csep_v3_mean`、`nep_mean`、`ses_mean`。
-5. 对 T5 单独用 `mseditbench.eval.t5_track`，读 `tsf_mean`。
+4. 打开 `aggregate.json`，读 `ee_v3_mean`、`csep_v3_mean`、`nep_mean`、`usp_mean`、`tac_mean`。
+5. 对 T5 同样使用 `mseditbench.eval.run_eval`，重点读 `tac_mean`。
 
 能跑通这 5 步，就已经掌握了这个项目最核心的使用方式。

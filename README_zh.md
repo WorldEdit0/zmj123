@@ -1,9 +1,9 @@
 # MSEdit-Bench v1
 
 > **首个用于多镜头视频编辑的基准。**
-> 30 个多镜头视频 × 7 种任务类型 = 440 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和身份安全性。
+> 30 个多镜头视频 × 7 种任务类型 = 440 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和时间结构。
 
-[![Tests](https://img.shields.io/badge/tests-13%2F13-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
+[![Tests](https://img.shields.io/badge/tests-16%2F16-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
 ---
 
@@ -28,7 +28,7 @@
 | **源视频** | 30 个 mp4，每个 10 秒，720p @ 24 fps，由 ModelScope 托管 |
 | **镜头检测** | OmniShotCut（主）+ TransNetV2 + PySceneDetect（一致性投票）；重试后 30 / 30（100 %）命中率 |
 | **编辑提示词** | Claude 手写生成 440 条（T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条） |
-| **评估** | Mask-aware（SAM-3）+ pyiqa + InsightFace + Seed VLM 2.0 Lite 作为裁判 |
+| **评估** | Mask-aware（SAM-3）+ DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite 作为裁判 |
 | **K 样本协议** | 每条提示词 K = 3；报告 mean ± std |
 | **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 440 条 prompt 需要重新跑 |
 
@@ -46,7 +46,7 @@
 | **T6** | 电影化重拍 | 单镜头构图 / 摄影机运动变化 | “将镜头 1 重拍为低角度镜头，并带有缓慢上仰。” |
 | **T7** | 全局光照 | 具有明显特征、与场景关联的整体光照重渲染 | “将咖啡馆场景重新打成黄昏窗光。” |
 
-T5 有自己的评测轨道（TSF，即 Task-Specific Fidelity），因为逐镜头像素指标不适用于结构重排。
+T5 现在也走统一评测入口。TAC 会根据 `new_order` 重建期望的编辑后时间线，再比较 shot 时间锚点。
 
 ---
 
@@ -57,7 +57,7 @@ T5 有自己的评测轨道（TSF，即 Task-Specific Fidelity），因为逐镜
 ```bash
 git clone <this-repo>
 cd multi_shot_bench
-bash install.sh        # 安装 Python 依赖，并预取 CLIP / DINOv2 / SAM-3 / InsightFace / pyiqa 权重
+bash install.sh        # 安装 Python 依赖，并预取 DINOv2 / SAM-3 / OmniShotCut / pyiqa 权重
 ```
 
 你需要：
@@ -96,7 +96,7 @@ BASELINE_NAME=my_baseline \
 BASELINE_VIDEOS_ROOT=runs/my_baseline/videos \
 EVAL_OUT_ROOT=runs/eval_my_baseline_v3 \
 SNAPSHOT_ID=my_baseline_v1 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7
 ```
 
 该脚本会切分到 8 张 GPU 上并行运行，使用 mask-aware 后端 + Seed VLM 裁判计算所有指标，并写入：
@@ -106,15 +106,6 @@ runs/eval_my_baseline_v3/
 ├── T1/aggregate.json        # 每个指标的任务级 mean ± std
 ├── T1/<sample_id>.eval.json # 每条提示词 × 每个 K 的详细分数
 └── ...
-```
-
-对于结构类 T5 轨道：
-```bash
-python -m mseditbench.eval.t5_track \
-    --prompts_json runs/edit_prompts_v2_10s/T5.json \
-    --baseline_dir runs/my_baseline/videos/T5 \
-    --videos_root /abs/path/to/source_videos_10s/videos \
-    --output_dir runs/eval_t5_track/my_baseline
 ```
 
 ---
@@ -127,8 +118,8 @@ python -m mseditbench.eval.t5_track \
 | **EE_v3** | 编辑是否执行了指令？ | Seed VLM 对每个镜头给出 0-5 评分 | [0, 1] ↑ |
 | **CSEP_v3** | 编辑是否在镜头之间一致传播？ | √(coverage × consistency)；两者均由 VLM 评分 | [0, 1] ↑ |
 | **NEP** | 局部任务的未编辑区域是否被保留？ | `edit.mask_queries` 的 SAM-3 union mask 外部 DINOv2 cos sim | [0, 1] ↑ / 不适用返回 None |
-| **SES** | 编辑是否被安全限制在目标范围内（没有非目标损伤 / 身份漂移）？ | 1 − max(IDdrift, OffTarget)；ArcFace + CLIP-T | [0, 1] ↑ |
-| **TSF** (T5) | 请求的镜头顺序是否完成？ | OmniShotCut 镜头检测 + 按顺序 DINOv2 内容对齐 | [0, 1] ↑ |
+| **USP** | 未被编辑指令覆盖的源 shot 是否保持？ | 对 `edit.applicable_shots` 之外的 shot 算 DINOv2 cos sim | [0, 1] ↑ / 所有 shot 都被编辑时返回 None |
+| **TAC** | 编辑后视频的 shot 边界是否保持期望时间锚点？ | OmniShotCut 检测；shot 数不一致为 0，一致时按起止时间漂移扣分 | [0, 1] ↑ |
 
 **每个指标在 `mseditbench/metrics/` 下都有自己的文件**，文件 docstring 中包含公式。v1/v2 版本仍被保留，并标注为 `DEPRECATED`，用于消融。
 
@@ -148,7 +139,7 @@ python -m mseditbench.eval.t5_track \
 
 Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 440-prompt 任务集重跑：
 
-| Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | SES Pro | SES Fast |
+| Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | 已退役 SES Pro | 已退役 SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
 | T1 char | **0.596** | 0.576 | 0.523 | 0.543 | 0.531 | 0.537 | 0.855 | 0.893 | 1.000 | 1.000 |
 | T2 attr | **0.598** | 0.573 | 0.567 | 0.627 | 0.681 | 0.717 | 0.950 | 0.972 | 0.797 | 0.822 |
@@ -158,7 +149,7 @@ Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上�
 
 粗体 = 单任务胜出者。
 
-**5 任务均值**（T1/T2/T3/T4/T6）：Pro 赢得 PSQ，在 EE_v3/CSEP_v3 上略低，在 SES 上持平。T6 是 Pro 在编辑质量上超过 Fast 的突出任务。整体图景与定性观察一致：*Pro 生成更锐利、更精细的编辑；Fast 做出更小、更有针对性的编辑，在 VLM 判断下看起来更干净*。
+**5 任务均值**（T1/T2/T3/T4/T6）：Pro 赢得 PSQ，在 EE_v3/CSEP_v3 上略低。表中的 SES 是已退役的 face/CLIP 旧指标，只用于解释旧结果；当前指标集需要重跑后才能报告 USP/TAC。
 
 ---
 
@@ -185,21 +176,21 @@ multi_shot_bench/
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video 实体轨迹管
 │   ├── identity/             # InsightFace 人脸库
 │   ├── edit_prompts/         # 任务模板 + 440 条手写提示词
-│   ├── metrics/              # PSQ / EE / CSEP / NEP / SES / TSF
+│   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge（主指标）
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge 成对评估
 │   │   ├── ee.py             # v1 EE（DEPRECATED，保留用于消融）
 │   │   ├── ee_v2.py          # v2 EE（DEPRECATED，保留用于消融）
 │   │   ├── csep.py / csep_v2.py     # v1 / v2 CSEP（DEPRECATED）
-│   │   ├── nep.py / psq.py / ses.py / cxs_id.py
-│   │   └── backends.py       # CLIP / DINOv2 / SAM-3 / pyiqa / InsightFace / Seed VLM
+│   │   ├── nep.py / psq.py / usp.py / tac.py / cxs_id.py
+│   │   └── backends.py       # DINOv2 / SAM-3 / pyiqa / OmniShotCut / Seed VLM
 │   ├── baselines/            # 编辑器基线接口（Aleph 参考实现）
-│   ├── eval/                 # 编排器 + leaderboard + T5 TSF 轨道
-│   └── tests/                # 基于合成数据的 15 个单元测试，所有后端均 mock
+│   ├── eval/                 # 编排器 + leaderboard + 重算工具
+│   └── tests/                # 基于合成数据的 16 个单元测试，所有后端均 mock
 │
 ├── scripts/                  # 顶层启动脚本
 │   ├── run_eval_parallel.sh           # 8-GPU 并行 mask-aware 评估
-│   ├── recompute_ses_parallel.sh      # 仅重新计算 SES（人脸后端变化时）
+│   ├── recompute_usp_parallel.sh      # 仅重新计算 USP/TAC
 │   └── recompute_psq_parallel.sh      # 仅重新计算 PSQ
 │
 └── runs/                     # 所有流水线输出都落在这里

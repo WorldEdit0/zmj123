@@ -10,7 +10,7 @@
 >
 > 三者互相补充：README 给外人看，HOWTO 给跑 pipeline 的人看，CLAUDE.md 给下次接手的 Claude 看。
 
-最后更新：2026-06-07（T1/T4/T3/T7 task rebalance）
+最后更新：2026-06-07（task rebalance + metric rewrite）
 
 ---
 
@@ -19,11 +19,17 @@
 ### v1 已就绪 ★ — 准备 push GitHub
 - 数据：30 个 10s 多镜头源视频 + 440 条手写 edit prompts（T1/T2/T3/T5/T6/T7 各 60，T4=80）；T8 已停用
 - 2026-06-07 任务重构：T1=30 动态替换 + 30 静态替换；T4=静态/动态 add/delete 各 20；T3=纯 style（像素、新海诚、宫崎骏、JoJo、赛博朋克、水墨、油画、美式漫画、3D 写实动画、粘土定格动画等明确大类）；T7=纯 lighting
-- T5 当前只保留 reorder；TSF = 按 `extra.new_order` 的内容对齐，不再包含 shot-count 分
-- 评测：v3 metrics 全部上线（VLM-as-Judge 替代废弃的 v1/v2 CLIP-T 指标）
+- T5 当前只保留 reorder；不再单独走 TSF，统一进入 `run_eval.py`，TAC 会按 `extra.new_order` 重建期望时间线
+- 评测：当前 headline metrics = PSQ / EE_v3 / CSEP_v3 / NEP / USP / TAC；SES/TSF 已退役
 - 参照 baseline：Seedance 2.0 Pro & Fast 全 6 任务 K=3 数字已出，但这些结果对应 2026-06-07 前的 420-prompt snapshot；新 440-prompt 任务集需要重新跑编辑和评测
 - 文档：README.md、CLAUDE.md、HOWTO.md、4 份 design docs (DEEP_DIVE / RESEARCH_PLAN / SURVEY / RELATED_WORK)、AGENT_BENCH_DESIGN.md
-- 测试：`python3 -m mseditbench.tests.test_metrics` → 13/13 PASS
+- 测试：`python3 -m mseditbench.tests.test_metrics` → 16/16 PASS（本次修改后应验证）
+
+### 2026-06-07 指标重写记录
+- **SES 删除并更名为 USP**：去掉 face/ArcFace ID 识别和 CLIP-T off-target，只保留未被编辑 shot 的 DINOv2 内容相似度；如果所有 shot 都被编辑，USP 返回 `None`。
+- **TSF 删除**：T5 不再走 `mseditbench/eval/t5_track.py`；T5 通过统一 `run_eval.py` 评测，结构保持由 TAC 覆盖。
+- **新增 TAC**：用 OmniShotCut 检测 edited video shot 边界；先检查 expected/edited shot 数是否一致，不一致给 0；一致时按 start/end 时间锚点漂移除以原 shot 时长扣分。
+- **入口/脚本同步**：`run_eval.py`、`merge_shards.py`、`summarize.py`、`leaderboard.py`、`run_eval_parallel.sh`、`eval_suite.sh` 都已切到 USP/TAC；`recompute_ses.py`/`t5_track.py` 删除，新增 `recompute_usp.py` 和 `scripts/recompute_usp_parallel.sh`。
 
 ### v2 = agent 方向（**用户后续在另一个目录做**）
 - 设计文档已写：`AGENT_BENCH_DESIGN.md`（715 行）
@@ -39,7 +45,7 @@
 
 - **核心任务**：在 multi-shot 源视频上给出 7 类编辑指令；评测商用编辑 API、开源编辑 baseline 和 agentic baseline 的表现
 - **生成轨副榜**：同一套 prompt 去掉 source video → 评测 8 个商用 + 5 个开源生成器
-- **核心指标**：PSQ / EE_v3 / CSEP_v3 / NEP / SES，T5 另走 TSF
+- **核心指标**：PSQ / EE_v3 / CSEP_v3 / NEP / USP / TAC
 - **关键差异化**：现有 multi-shot bench 全是 gen-only（MovieBench / MSVBench / EntityBench / Cine250K / ShotWeaver40K 等 15+ 个）；现有 video edit bench 全是 single-clip；唯一交集 UniVBench 只有 ~50 multi-shot edit 例。这是 pre-VBench 时刻
 
 完整设计见 `DEEP_DIVE.md` §1-7、`RESEARCH_PLAN.md` 全文。
@@ -69,7 +75,7 @@
   - `tracking/` Grounded-DINO + SAM-2-Video（mock + real）
   - `identity/` InsightFace + 单链聚类
   - `edit_prompts/` T1-T7 templates / banks / **3 个版本生成器**（v1=template, v1.1=Seed Lite rewrite, v1.2=Claude handwritten）
-  - `metrics/` PSQ / EE / NEP / CSEP / SES / CXS-ID + ACP-floor，全部带公式 docstring
+  - `metrics/` PSQ / EE / NEP / CSEP / USP / TAC / CXS-ID + ACP-floor，全部带公式 docstring
   - `baselines/` editor 接口 + Aleph client + Snapshot Protocol
   - `eval/` orchestrator + leaderboard CSV，**支持 K-sample 聚合（mean ± std）**
   - `tests/` 15 个合成数据 metric 测试
@@ -458,23 +464,22 @@ multi_shot_bench/
 │   │   ├── handwritten_t{1..8}.py         ★ v1.2 我亲手写的 536 条字面量
 │   │   ├── build_v1_2_handwritten.py      v1.2 builder
 │   │   └── judge_3way.py                  v1 vs v1.1 vs v1.2 盲评
-│   ├── metrics/                           PSQ/EE/NEP/CSEP/SES/CXS-ID
-│   │   ├── backends.py                    CLIP/DINO/Face/VLM/SAM-3/pyiqa（mock+real，含 Seed VLM）
+│   ├── metrics/                           PSQ/EE/NEP/CSEP/USP/TAC/CXS-ID
+│   │   ├── backends.py                    DINO/VLM/SAM-3/pyiqa 等当前后端；CLIP/Face 保留给旧消融
 │   │   └── frame_io.py
 │   ├── baselines/                         editor API client
 │   │   ├── aleph.py / snapshot.py / run_baseline.py
 │   ├── eval/                              run_eval.py + leaderboard.py
-│   │   ├── run_eval.py                    ★ 主评测脚本（mask + IDdrift）
+│   │   ├── run_eval.py                    ★ 主评测脚本（PSQ/EE_v3/NEP/CSEP_v3/USP/TAC）
 │   │   ├── recompute_psq.py               ★ 单点修：从 mock PSQ → pyiqa
-│   │   ├── recompute_ses.py               ★ 单点修：加 IDdrift 的 SES
-│   │   ├── t5_track.py                    ★ T5 单独 TSF 指标轨
+│   │   ├── recompute_usp.py               ★ 单点修：重算 USP/TAC
 │   │   └── merge_shards.py                shard agg → final aggregate
-│   └── tests/test_metrics.py              15 个 unit test
+│   └── tests/test_metrics.py              16 个 unit test
 │
 ├── scripts/                              ★ 顶层 launcher
-│   ├── run_eval_parallel.sh              8-GPU 并行评测（默认 sam3+pyiqa+insightface）
+│   ├── run_eval_parallel.sh              8-GPU 并行评测（默认 sam3+pyiqa+omnishotcut）
 │   ├── recompute_psq_parallel.sh         PSQ 重算并行
-│   ├── recompute_ses_parallel.sh         SES 重算并行（加 IDdrift）
+│   ├── recompute_usp_parallel.sh         USP/TAC 重算并行
 │   ├── run_vace_one.sh                   ★ VACE 14B 单 prompt（preprocess + 16-GPU 推理）
 │   ├── run_vace_arnold.sh                ★ VACE 14B Arnold 多机批量 launcher
 │   └── run_vace_single.sh / run_vace_all.sh  VACE 1.3B 单卡版（备用）
@@ -815,7 +820,7 @@ ls README.md CLAUDE.md HOWTO.md AGENT_BENCH_DESIGN.md
 ls mseditbench/ runs/ data/
 
 # 2. Python 包完整 / 测试通过？
-python3 -m mseditbench.tests.test_metrics    # 应输出 15/15 passed
+python3 -m mseditbench.tests.test_metrics    # 应输出 16/16 passed
 
 # 3. v2_10s 源视频齐？
 ls data/source_videos_10s/videos/ | wc -l                # 应 = 30

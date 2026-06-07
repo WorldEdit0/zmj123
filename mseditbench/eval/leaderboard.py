@@ -17,7 +17,7 @@ from pathlib import Path
 
 LEADERBOARD_COLUMNS = [
     "snapshot_id", "task_id", "baseline", "n",
-    "psq_mean", "ee_mean", "nep_mean", "csep_mean", "ses_mean",
+    "psq_mean", "ee_v3_mean", "nep_mean", "csep_v3_mean", "usp_mean", "tac_mean",
 ]
 
 

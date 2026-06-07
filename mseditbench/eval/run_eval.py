@@ -4,9 +4,7 @@ Given:
     sample (EditPromptSample dict from edit_prompts/) — has source_video, shots, edit
     edited_video_path                              — output from a baseline
 Compute:
-    PSQ, EE_v3, NEP, CSEP_v3, SES
-    T5 is handled by mseditbench.eval.t5_track because structural edits
-    change shot boundaries.
+    PSQ, EE_v3, NEP, CSEP_v3, USP, TAC
 
 Outputs are saved as one EvalResult JSON per (sample, baseline) pair.
 
@@ -17,12 +15,12 @@ CLI:
         --videos_root data/source_videos_10s/videos \
         --output_dir runs/eval_seedance_v2v_v2_10s_v3/T1 \
         --baseline seedance_v2v \
-        --backend_clip mock --backend_dino mock --backend_vlm mock \
+        --backend_dino mock --backend_vlm mock --backend_shot none \
         --limit 5
 
 The default mock backends produce deterministic [0,1] scores so the
 orchestrator can be exercised without GPU. Swap in real backends with
---backend_clip openai etc when ready.
+--backend_dino v2s, --backend_vlm seed, etc when ready.
 """
 
 from __future__ import annotations
@@ -40,21 +38,9 @@ from mseditbench.metrics import backends as B
 
 def _maybe_per_shot_frames(video_path: str, shots: list[dict], stride: int, max_frames: int):
     # 中文注释：把一个视频按 prompt JSON 中的源视频 shot 边界切开，
-    # 每个 shot 内按 stride 抽帧，最多 max_frames 帧。普通 T1/T2/T3/T4/T6/T7
-    # 都用“源 shot 边界”对齐 source/edit；T5 结构编辑另走 t5_track.py。
+    # 每个 shot 内按 stride 抽帧，最多 max_frames 帧。普通逐 shot 指标使用
+    # 源 shot 边界对齐 source/edit；编辑后真实边界由 TAC 单独检测。
     return M.per_shot_frames(video_path, shots, stride=stride, max_frames=max_frames)
-
-
-# Legacy task-level identity-changing set. New v2_10s prompts mix dynamic and
-# static replacements inside T1, so scoring uses _is_identity_changing_edit()
-# below. Keep this set for old prompt JSONs that lack edit_type metadata.
-_IDENTITY_CHANGING_TASKS = {"T1"}
-_IDENTITY_CHANGING_EDIT_TYPES = {
-    "character_replace",
-    "dynamic_replace",
-    "dynamic_delete",
-    "dynamic_add",
-}
 
 
 # SAM-3 minimum mask area (pixels). Below this, treat as a miss. For local
@@ -154,33 +140,6 @@ def _get_mask_spec(sample: dict) -> dict:
     }
 
 
-def _is_identity_changing_edit(sample: dict) -> bool:
-    """Whether IDdrift should be excluded from SES for this prompt.
-
-    T1 now contains both dynamic replacements and static object replacements.
-    Static T1 prompts should still be penalized if they accidentally alter a
-    face. Dynamic add/delete/replace prompts intentionally change the actor set,
-    so largest-face IDdrift is not a side-effect signal for those prompts.
-    """
-    edit = sample.get("edit") or {}
-    mask_spec = edit.get("mask_queries") or {}
-    edit_type = mask_spec.get("edit_type")
-    if edit_type in _IDENTITY_CHANGING_EDIT_TYPES:
-        return True
-
-    extra = edit.get("extra") or {}
-    if extra.get("replace_kind") == "dynamic":
-        return True
-    if extra.get("object_kind") == "dynamic" and extra.get("op") in {"add", "delete", "remove"}:
-        return True
-
-    # Historical T1 prompt JSONs were all character replacements and did not
-    # have replace_kind/edit_type metadata.
-    if edit.get("task_id") in _IDENTITY_CHANGING_TASKS and not extra.get("replace_kind"):
-        return True
-    return False
-
-
 def _mask_one_frame(mask_backend, frame: np.ndarray, query: str) -> tuple[np.ndarray | None, bool]:
     m3 = mask_backend(frame[None, ...], query)  # [1,H,W]
     m = m3[0]
@@ -244,31 +203,6 @@ def _build_nep_masks(
         mask_hits[str(k)] = shot_hits
 
     return (edit_masks or None), mask_hits
-
-
-def _largest_face_embedding(frame: np.ndarray, face_backend) -> np.ndarray | None:
-    """Detect faces in a single RGB frame; return the largest face's
-    L2-normalised embedding, or None if no face detected. Internally converts
-    RGB → BGR because InsightFace expects BGR."""
-    bgr = frame[..., ::-1] if frame.shape[-1] == 3 else frame
-    bgr = np.ascontiguousarray(bgr)
-    try:
-        faces = face_backend.detect_and_embed(bgr)
-    except Exception as e:
-        print(f"[face] detect failed: {type(e).__name__}: {e}")
-        return None
-    if not faces:
-        return None
-    def _area(f):
-        x1, y1, x2, y2 = f["bbox"]
-        return max(0, x2 - x1) * max(0, y2 - y1)
-    f = max(faces, key=_area)
-    e = f.get("embedding")
-    if e is None:
-        return None
-    e = np.asarray(e, dtype=np.float32)
-    n = np.linalg.norm(e) + 1e-8
-    return e / n
 
 
 def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
@@ -350,46 +284,19 @@ _DELTA_MAX_PER_TASK = {
 }
 
 
-def _compute_id_drift(
-    per_shot_source_frames: dict[int, np.ndarray],
-    per_shot_edit_frames: dict[int, np.ndarray],
-    face_backend,
-) -> float | None:
-    """Per-shot largest-face cosine distance between source and edit, averaged.
-    Returns None if face detection fails on every shot."""
-    # 中文注释：ID drift 只取每个 shot 中间帧的最大人脸 embedding，
-    # 用 1-cosine 表示身份变化幅度；越大说明身份越可能被非预期改坏。
-    drifts = []
-    for k, sf in per_shot_source_frames.items():
-        if k not in per_shot_edit_frames:
-            continue
-        ef = per_shot_edit_frames[k]
-        # Anchor = middle frame
-        s_anchor = sf[len(sf) // 2]
-        e_anchor = ef[len(ef) // 2]
-        es = _largest_face_embedding(s_anchor, face_backend)
-        ee = _largest_face_embedding(e_anchor, face_backend)
-        if es is None or ee is None:
-            continue
-        cos = float(np.clip(np.dot(es, ee), -1.0, 1.0))
-        drifts.append(max(0.0, 1.0 - cos))
-    if not drifts:
-        return None
-    return float(np.mean(drifts))
-
-
 def score_one(
     sample: dict,
     edited_video_path: str,
     videos_root: str,
     baseline_name: str,
     snapshot_id: str,
-    clip_backend, dino_backend, face_backend, vlm_backends,
+    dino_backend, vlm_backends,
     stride: int = 4,
     max_frames_per_shot: int = 6,
     src_frames_cached: dict | None = None,  # avoid re-reading source per K
     mask_backend=None,                      # callable (frames, phrase) -> mask, or None
     psq_fn=None,                            # callable frames -> (musiq,laion), or None for default mock
+    shot_backend: str = "none",             # "omnishotcut" computes TAC; "none" leaves TAC=None
 ) -> dict:
     # 中文注释：score_one 是最核心的单个视频样本评分函数。
     # 输入是一条 prompt sample 和某个 baseline 生成的一个视频文件，
@@ -401,7 +308,7 @@ def score_one(
     target_phrase = edit["target_phrase"]
     instruction = edit["instruction"]
     applicable = edit.get("applicable_shots", [s["shot_id"] for s in shots])
-    absent = [s["shot_id"] for s in shots if s["shot_id"] not in applicable]
+    unedited = [s["shot_id"] for s in shots if s["shot_id"] not in applicable]
 
     # 中文注释：source frames 对同一个 prompt 的 K 个输出完全相同，
     # 所以 main() 会缓存一次传进来，避免每个 k 都重复读源视频。
@@ -483,17 +390,46 @@ def score_one(
             vlm_backend=vlm,
         )
 
-    # 中文注释：OffTarget 看 absent shots 是否错误地朝 target_phrase 变化。
-    off = M.off_target(src_frames, edt_frames, absent, target_phrase,
-                       clip_backend=clip_backend)
-    # IDdrift: only meaningful for prompts that do not intentionally change the
-    # actor set. T1 now mixes dynamic and static replacement, so this is decided
-    # per prompt by edit_type / extra, not solely by task_id. T3/T7 keep IDdrift
-    # because style/lighting should preserve identity.
-    id_drift = None
-    if face_backend is not None and not _is_identity_changing_edit(sample):
-        id_drift = _compute_id_drift(src_frames, edt_frames, face_backend)
-    ses_r = M.ses(id_drift=id_drift, off_target_mean=off["off_target_mean"])
+    # USP replaces the old SES. It measures DINOv2 content preservation only
+    # on source shots that are not edited by the prompt; no face ID and no CLIP.
+    usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino_backend)
+
+    # TAC compares expected source shot time anchors with edited-video shot
+    # boundaries detected by OmniShotCut. T5 reorder uses the requested order
+    # to build the expected output timeline.
+    if task_id == "T5":
+        order = (edit.get("extra") or {}).get("new_order")
+        expected_order = [int(x) for x in order] if isinstance(order, list) else None
+    else:
+        expected_order = None
+    if shot_backend == "omnishotcut":
+        try:
+            tac_r = M.temporal_anchor_consistency(
+                shots,
+                edited_video_path,
+                source_video_path=src_path,
+                expected_order=expected_order,
+            )
+        except Exception as e:
+            tac_r = {
+                "tac": None,
+                "shot_count_match": False,
+                "expected_count": len(shots),
+                "edited_count": None,
+                "per_shot_tac": {},
+                "mean_anchor_error_sec": None,
+                "reason": f"shot detection failed: {type(e).__name__}: {e}",
+            }
+    else:
+        tac_r = {
+            "tac": None,
+            "shot_count_match": False,
+            "expected_count": len(shots),
+            "edited_count": None,
+            "per_shot_tac": {},
+            "mean_anchor_error_sec": None,
+            "reason": "shot backend disabled",
+        }
     legacy_mask_query = "; ".join(
         (mask_spec.get("source_queries") or []) + (mask_spec.get("edited_queries") or [])
     ) or None
@@ -519,9 +455,8 @@ def score_one(
         "csep_v3": csep3_r.get("csep"),        # ★ v3 headline (VLM-judge)
         "csep_v3_coverage": csep3_r.get("coverage"),
         "csep_v3_consistency": csep3_r.get("consistency"),
-        "ses": ses_r["ses"],
-        "off_target": ses_r["off_target"],
-        "id_drift": id_drift,
+        "usp": usp_r["usp"],
+        "tac": tac_r["tac"],
         "extra": {
             "ee_indicators": ee_r["per_shot_indicators"],
             "csep_per_shot": csep_r["per_shot_e_tilde"],
@@ -540,6 +475,17 @@ def score_one(
             "nep_n_skipped": nep_r.get("n_skipped"),
             "nep_n_mask_missing": nep_r.get("n_mask_missing"),
             "nep_reason": nep_r.get("reason"),
+            "usp_per_shot": usp_r["per_shot_usp"],
+            "usp_n_scored": usp_r.get("n_scored"),
+            "usp_n_unedited": usp_r.get("n_unedited"),
+            "usp_n_missing": usp_r.get("n_missing"),
+            "usp_reason": usp_r.get("reason"),
+            "tac_per_shot": tac_r.get("per_shot_tac") or {},
+            "tac_shot_count_match": tac_r.get("shot_count_match"),
+            "tac_expected_count": tac_r.get("expected_count"),
+            "tac_edited_count": tac_r.get("edited_count"),
+            "tac_mean_anchor_error_sec": tac_r.get("mean_anchor_error_sec"),
+            "tac_reason": tac_r.get("reason"),
             "mask_queries": mask_spec,
             "mask_query": legacy_mask_query,
             "mask_hits": mask_hits,
@@ -555,10 +501,10 @@ def main():
     ap.add_argument("--output_dir", required=True)
     ap.add_argument("--baseline", required=True)
     ap.add_argument("--snapshot_id", default="ad-hoc")
-    ap.add_argument("--backend_clip", default="mock", choices=["mock", "openai", "siglip"])
     ap.add_argument("--backend_dino", default="mock", choices=["mock", "v2s", "v2b"])
-    ap.add_argument("--backend_face", default="mock", choices=["mock", "insightface"])
     ap.add_argument("--backend_vlm", default="mock", choices=["mock", "seed", "qwen3vl", "qwen"])
+    ap.add_argument("--backend_shot", default="none", choices=["none", "omnishotcut"],
+                    help="Shot detector for TAC. Production uses omnishotcut; none leaves TAC unset.")
     ap.add_argument("--backend_mask", default="none", choices=["none", "sam3"],
                     help="If set, run SAM-3 per shot on edit.mask_queries to localize "
                          "the local edit region for NEP complement preservation; "
@@ -586,9 +532,7 @@ def main():
     if args.limit:
         prompts = prompts[: args.limit]
 
-    clip = B.get_clip(args.backend_clip)
     dino = B.get_dino(args.backend_dino)
-    face = B.get_face(args.backend_face) if args.backend_face != "mock" else None
     vlms = [B.get_vlm(args.backend_vlm)]
     mask_backend = B.get_mask(args.backend_mask)
     psq_fn = B.get_psq(args.backend_psq)
@@ -632,11 +576,12 @@ def main():
             try:
                 r = score_one(
                     sample, ev, args.videos_root, args.baseline, args.snapshot_id,
-                    clip, dino, face, vlms,
+                    dino, vlms,
                     stride=args.stride, max_frames_per_shot=args.max_frames_per_shot,
                     src_frames_cached=src_cache,
                     mask_backend=mask_backend,
                     psq_fn=psq_fn,
+                    shot_backend=args.backend_shot,
                 )
                 r["k"] = k
             except Exception as e:
@@ -652,7 +597,7 @@ def main():
             # 中文注释：先在同一个 prompt 内对 K 个生成样本求平均。
             # 这一步生成 {sid}.agg.json，代表“这个 prompt 的模型表现”。
             agg_p = {"sample_id": sid, "task_id": sample_rs[0]["task_id"], "k_count": len(sample_rs)}
-            for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses"):
+            for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
                 xs = [r[metric] for r in sample_rs if r.get(metric) is not None]
                 # 中文注释：None 表示该指标对该样本不可评估/被任务规则跳过，
                 # 聚合时会被排除；不要把 None 当作 0。
@@ -675,7 +620,7 @@ def main():
         agg = {"baseline": args.baseline, "snapshot_id": args.snapshot_id,
                "task_id": per_sample_aggs[0]["task_id"], "n_prompts": len(per_sample_aggs),
                "k_samples": args.num_samples}
-        for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses"):
+        for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
             # collect per-prompt mean (across K)
             xs = [a[f"{metric}_mean"] for a in per_sample_aggs if a.get(f"{metric}_mean") is not None]
             if xs:
@@ -694,7 +639,7 @@ def main():
             json.dump(agg, f, indent=2)
         print(f"\n{args.baseline} {agg['task_id']} shard {args.shard_id}/{args.num_shards}: "
               f"n_prompts={len(per_sample_aggs)} K={args.num_samples}")
-        for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses"):
+        for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
             mn = agg.get(f"{m}_mean")
             sd = agg.get(f"{m}_std")
             mn_str = f"{mn:.3f}" if isinstance(mn, float) else "—"

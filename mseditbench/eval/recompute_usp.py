@@ -1,27 +1,14 @@
-"""Re-compute SES on existing eval results by adding the IDdrift signal.
+"""Re-compute USP/TAC on existing eval result directories.
 
-Why a separate script: when SES was first computed, `run_eval.py:97` hard-coded
-`id_drift=None`, so SES was effectively `1 - OffTarget`. After we wired
-IDdrift (face detection + cosine drift) on 2026-05-25, the existing eval
-JSONs still hold the broken SES. This script:
+USP replaces the old SES metric. It is DINOv2 similarity on source shots that
+the prompt did not ask to edit. This script updates existing ``*.eval.json``
+files in place, then re-aggregates prompt-level and task-level JSONs.
 
-  1. Reads every {sid}_k{k}.eval.json in --output_dir
-  2. Skips entries whose edit type intentionally changes the actor set
-  3. For all others, computes IDdrift (largest face per shot, source vs edit,
-     mean cosine distance) using InsightFace
-  4. Updates `id_drift`, recomputes `ses = 1 - max(IDdrift, off_target)`
-  5. Re-aggregates {sid}.agg.json and aggregate.json
-
-CSV / DINO / CLIP / VLM / SAM-3 / pyiqa results are untouched.
-
-CLI:
-    python -m mseditbench.eval.recompute_ses \
-        --output_dir runs/eval_seedance_v2v_v2_10s_v3/T2 \
-        --prompts_json runs/edit_prompts_v2_10s/T2.json \
-        --videos_root data/source_videos_10s/videos
+Optionally pass ``--backend_shot omnishotcut`` to recompute TAC as well.
 """
 
 from __future__ import annotations
+
 import argparse
 import json
 import os
@@ -32,12 +19,9 @@ from tqdm import tqdm
 
 from mseditbench import metrics as M
 from mseditbench.metrics import backends as B
-from mseditbench.eval.run_eval import (
-    _compute_id_drift, _is_identity_changing_edit,
-)
 
 
-RUN_EVAL_METRICS = ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses")
+RUN_EVAL_METRICS = ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac")
 
 
 def _aggregate_per_prompt(eval_jsons: list[dict]) -> dict:
@@ -49,11 +33,9 @@ def _aggregate_per_prompt(eval_jsons: list[dict]) -> dict:
         if xs:
             mu = sum(xs) / len(xs)
             agg[f"{metric}_mean"] = mu
-            if len(xs) >= 2:
-                var = sum((x - mu) ** 2 for x in xs) / (len(xs) - 1)
-                agg[f"{metric}_std"] = var ** 0.5
-            else:
-                agg[f"{metric}_std"] = None
+            agg[f"{metric}_std"] = (
+                float(np.std(xs, ddof=1)) if len(xs) >= 2 else None
+            )
         else:
             agg[f"{metric}_mean"] = None
             agg[f"{metric}_std"] = None
@@ -76,23 +58,36 @@ def _aggregate_task(per_sample_aggs, baseline, snapshot_id, k_samples):
         if xs:
             mu = sum(xs) / len(xs)
             agg[f"{metric}_mean"] = mu
-            if len(xs) >= 2:
-                var = sum((x - mu) ** 2 for x in xs) / (len(xs) - 1)
-                agg[f"{metric}_std"] = var ** 0.5
-            else:
-                agg[f"{metric}_std"] = None
+            agg[f"{metric}_std"] = (
+                float(np.std(xs, ddof=1)) if len(xs) >= 2 else None
+            )
         else:
             agg[f"{metric}_mean"] = None
             agg[f"{metric}_std"] = None
     return agg
 
 
+def _expected_order_for_tac(sample: dict) -> list[int] | None:
+    edit = sample.get("edit") or {}
+    if edit.get("task_id") != "T5":
+        return None
+    order = (edit.get("extra") or {}).get("new_order")
+    if not isinstance(order, list):
+        return None
+    try:
+        return [int(x) for x in order]
+    except (TypeError, ValueError):
+        return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output_dir", required=True,
-                    help="Per-task eval output dir (contains *_k*.eval.json)")
+                    help="Per-task eval output dir containing *_k*.eval.json")
     ap.add_argument("--prompts_json", required=True)
     ap.add_argument("--videos_root", required=True)
+    ap.add_argument("--backend_dino", default="v2s", choices=["mock", "v2s", "v2b"])
+    ap.add_argument("--backend_shot", default="none", choices=["none", "omnishotcut"])
     ap.add_argument("--stride", type=int, default=4)
     ap.add_argument("--max_frames_per_shot", type=int, default=6)
     ap.add_argument("--num_shards", type=int, default=1)
@@ -107,60 +102,75 @@ def main():
 
     prompts = json.load(open(args.prompts_json))
     by_sid = {p["sample_id"]: p for p in prompts}
-
     if args.num_shards > 1:
         eval_files = eval_files[args.shard_id::args.num_shards]
 
-    fb = B.get_face("insightface")
-    print(f"Loaded InsightFace; processing {len(eval_files)} eval files")
+    dino = B.get_dino(args.backend_dino)
+    print(f"Loaded DINO backend {args.backend_dino}; processing {len(eval_files)} eval files")
 
     n_updated = 0
-    n_skipped_ic = 0   # identity-changing prompt -> leave SES alone
-    n_skipped_no_face = 0
-    for ef in tqdm(eval_files, desc=f"ses shard {args.shard_id}"):
+    for ef in tqdm(eval_files, desc=f"usp shard {args.shard_id}"):
         d = json.load(open(ef))
-        sid = d["sample_id"]
-        sample = by_sid.get(sid)
+        sample = by_sid.get(d["sample_id"])
         if not sample:
-            continue
-        if _is_identity_changing_edit(sample):
-            n_skipped_ic += 1
             continue
         src_path = os.path.join(args.videos_root, sample["source_video"])
         edited = d.get("edited_video_path")
         if not edited or not os.path.exists(edited) or not os.path.exists(src_path):
             continue
         try:
-            src_frames = M.per_shot_frames(src_path, sample["shots"],
-                                           stride=args.stride,
-                                           max_frames=args.max_frames_per_shot)
-            edt_frames = M.per_shot_frames(edited, sample["shots"],
-                                           stride=args.stride,
-                                           max_frames=args.max_frames_per_shot)
+            src_frames = M.per_shot_frames(
+                src_path, sample["shots"],
+                stride=args.stride,
+                max_frames=args.max_frames_per_shot,
+            )
+            edt_frames = M.per_shot_frames(
+                edited, sample["shots"],
+                stride=args.stride,
+                max_frames=args.max_frames_per_shot,
+            )
         except Exception as e:
             print(f"[err] {ef.name}: {e}")
             continue
 
-        id_drift = _compute_id_drift(src_frames, edt_frames, fb)
-        if id_drift is None:
-            n_skipped_no_face += 1
-            # Leave the file as-is (id_drift stays None, ses stays = 1-OffTarget)
-            continue
+        applicable = sample["edit"].get("applicable_shots", [s["shot_id"] for s in sample["shots"]])
+        unedited = [s["shot_id"] for s in sample["shots"] if s["shot_id"] not in applicable]
+        usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino)
+        d["usp"] = usp_r["usp"]
+        extra = d.setdefault("extra", {})
+        extra["usp_per_shot"] = usp_r["per_shot_usp"]
+        extra["usp_n_scored"] = usp_r.get("n_scored")
+        extra["usp_n_unedited"] = usp_r.get("n_unedited")
+        extra["usp_n_missing"] = usp_r.get("n_missing")
+        extra["usp_reason"] = usp_r.get("reason")
 
-        # Recompute SES. ses() takes the max of (id_drift, off_target_mean).
-        off_target = float(d.get("off_target") or 0.0)
-        new_ses = M.ses(id_drift=id_drift, off_target_mean=off_target)
-        d["id_drift"] = id_drift
-        d["ses"] = new_ses["ses"]
+        if args.backend_shot == "omnishotcut":
+            try:
+                tac_r = M.temporal_anchor_consistency(
+                    sample["shots"],
+                    edited,
+                    source_video_path=src_path,
+                    expected_order=_expected_order_for_tac(sample),
+                )
+            except Exception as e:
+                tac_r = {"tac": None, "reason": f"shot detection failed: {type(e).__name__}: {e}"}
+            d["tac"] = tac_r.get("tac")
+            extra["tac_per_shot"] = tac_r.get("per_shot_tac") or {}
+            extra["tac_shot_count_match"] = tac_r.get("shot_count_match")
+            extra["tac_expected_count"] = tac_r.get("expected_count")
+            extra["tac_edited_count"] = tac_r.get("edited_count")
+            extra["tac_mean_anchor_error_sec"] = tac_r.get("mean_anchor_error_sec")
+            extra["tac_reason"] = tac_r.get("reason")
+
+        d.pop("ses", None)
+        d.pop("off_target", None)
+        d.pop("id_drift", None)
         with open(ef, "w") as f:
             json.dump(d, f, indent=2)
         n_updated += 1
 
-    print(f"Updated SES in {n_updated}/{len(eval_files)} files "
-          f"(skipped: {n_skipped_ic} identity-changing, "
-          f"{n_skipped_no_face} no-face)")
+    print(f"Updated USP in {n_updated}/{len(eval_files)} files")
 
-    # Re-aggregate (idempotent — always re-derive from .eval.json on disk)
     if args.num_shards > 1 and args.shard_id != 0:
         return
 
@@ -191,11 +201,11 @@ def main():
         ag = _aggregate_task(per_sample_aggs, baseline, snapshot_id, k_samples)
         with open(out / "aggregate.json", "w") as f:
             json.dump(ag, f, indent=2)
-        print(f"\nRe-aggregated → {out / 'aggregate.json'}")
+        print(f"\nRe-aggregated -> {out / 'aggregate.json'}")
         for m in RUN_EVAL_METRICS:
             mn = ag.get(f"{m}_mean")
             sd = ag.get(f"{m}_std")
-            mn_s = f"{mn:.3f}" if isinstance(mn, float) else "—"
+            mn_s = f"{mn:.3f}" if isinstance(mn, float) else "-"
             sd_s = f"±{sd:.3f}" if isinstance(sd, float) else ""
             print(f"  {m.upper():6} {mn_s} {sd_s}")
 
