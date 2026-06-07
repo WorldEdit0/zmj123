@@ -27,56 +27,56 @@ class TaskDef:
     requires: list[str]
 
 
-# T1 — character replacement: swap one character for a different one
+# T1 — replacement: dynamic entities and static objects
 T1 = TaskDef(
     task_id="T1",
-    description="Cross-Shot Character Replacement",
+    description="Cross-Shot Replacement (dynamic entities + static objects)",
     instruction_templates=[
         "Replace {character_desc} with {target_desc} in every shot they appear.",
         "Change {character_desc} into {target_desc}, keeping all actions identical.",
         "Swap {character_desc} for {target_desc}; preserve clothing position and posture.",
+        "Replace the {old_object} with {new_object} wherever it appears.",
     ],
     target_phrase_template="{target_desc}",
-    requires=["characters"],
+    requires=["characters", "key_objects"],
 )
 
-# T2 — attribute change: clothing / hair / accessory
+# T2 — attribute change: color / material / clothing / hair / accessory
 T2 = TaskDef(
     task_id="T2",
-    description="Cross-Shot Attribute Edit (clothing/hair/accessory)",
+    description="Cross-Shot Attribute Edit (color/material/clothing/hair/accessory)",
     instruction_templates=[
         "Change {character_desc}'s {attribute_kind} to {new_value} in every shot.",
         "Make {character_desc} wear {new_value} instead of {old_value} throughout.",
         "Recolor {character_desc}'s {attribute_kind} to {new_value} across all shots.",
     ],
-    target_phrase_template="a person with {new_value} {attribute_kind}",
+    target_phrase_template="a person with {new_value}",
     requires=["characters"],
 )
 
-# T3 — global style/lighting
+# T3 — global style only
 T3 = TaskDef(
     task_id="T3",
-    description="Global Style + Lighting Re-rendering",
+    description="Global Style Re-rendering",
     instruction_templates=[
         "Re-render the entire video in {style} style.",
-        "Change the lighting throughout to {style}, keeping characters and actions intact.",
+        "Restyle every shot as {style}, keeping characters and actions intact.",
         "Apply a {style} look to every shot of the video.",
     ],
     target_phrase_template="{style} look",
     requires=[],
 )
 
-# T4 — object add / remove / replace
+# T4 — object/entity add / delete only
 T4 = TaskDef(
     task_id="T4",
-    description="Cross-Shot Object Add/Remove/Replace",
+    description="Cross-Shot Static/Dynamic Add/Delete",
     instruction_templates=[
-        "Replace the {old_object} with {new_object} wherever it appears.",
         "Add {new_object} next to {anchor} in every shot where {anchor} is visible.",
-        "Remove {old_object} from every shot.",
+        "Delete {old_object} from every shot.",
     ],
     target_phrase_template="{new_object}",
-    requires=["key_objects"],
+    requires=["characters", "key_objects"],
 )
 
 # T5 — shot reorder
@@ -105,15 +105,15 @@ T6 = TaskDef(
     requires=[],
 )
 
-# T7 — transition style
+# T7 — global lighting only
 T7 = TaskDef(
     task_id="T7",
-    description="Transition Style Edit",
+    description="Global Lighting Re-rendering",
     instruction_templates=[
-        "Replace all hard cuts with {transition_style} transitions.",
-        "Use a {transition_style} between shot {a} and shot {b}.",
+        "Re-light the entire video with {lighting}, keeping characters and actions intact.",
+        "Apply {lighting} across every shot of the video.",
     ],
-    target_phrase_template="{transition_style} transition",
+    target_phrase_template="{lighting} look",
     requires=[],
 )
 

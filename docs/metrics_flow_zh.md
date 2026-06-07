@@ -164,7 +164,7 @@ source per-shot frames          edited per-shot frames
 跳过情况：
 
 - T5：shot 结构改变，不适合按源 shot 对齐算 EE。
-- T7：转场类任务，不适合用“每个原始 shot 是否完成编辑”定义 EE。
+- 历史旧版 T7 transition prompt：如果 `edit.mask_queries.edit_type == "transition_style"`，也会跳过。当前 v2_10s 的 T7 是光照任务，会正常计算 EE_v3/CSEP_v3。
 
 返回 `None` 的情况：没有有效 applicable shot 或 source/edit 缺帧。
 
@@ -199,7 +199,7 @@ NEP = mean(所有可评分 shot_nep)
 注意：
 
 - SAM3 mask 当前只用于 NEP 的非编辑区域比较。
-- NEP 只对局部编辑任务启用；T3/T5/T6/T7 这类全局、结构或转场任务返回 `None`。
+- NEP 只对局部编辑任务启用；T3/T7 是全局重渲染，T5 是结构任务，T6 是单镜头重拍，这些任务返回 `None`。
 - 对局部任务，mask miss 的 shot 会跳过，不再退回整帧 NEP；miss 细节记录在 `extra.mask_hits`。
 - T4 的 anchor 只表示空间关系，不再作为 NEP 的编辑区域 mask query。
 
@@ -286,9 +286,8 @@ SES = 1 - worst
 裁剪到 [0,1]
 ```
 
-特殊情况：
-
-- T1 是主动替换人物身份，IDdrift 不参与 SES，只用 OffTarget。
+- T1 现在混合动态替换和静态替换：动态实体替换会跳过 IDdrift，静态物体替换仍然计算 IDdrift。
+- T4 中动态实体添加 / 删除也会跳过 IDdrift；静态物体添加 / 删除仍然计算 IDdrift。
 - 如果没有可检测人脸，`id_drift=None`，SES 只看 OffTarget。
 
 ## TSF

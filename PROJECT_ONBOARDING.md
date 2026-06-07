@@ -25,7 +25,7 @@
 接手时优先以这套为准：
 
 - 源视频：`data/source_videos_10s/videos/`，30 条 10 秒左右的 multi-shot 源视频。
-- 编辑 prompt：`runs/edit_prompts_v2_10s/T1.json` 到 `T7.json`，每个任务 60 条，共 420 条；T8 已停用。
+- 编辑 prompt：`runs/edit_prompts_v2_10s/T1.json` 到 `T7.json`，共 440 条；T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条；T8 已停用。
 - 当前生产评测：`v2_10s + v3 metrics`。
 - 已有 baseline 输出：
   - `runs/seedance_v2v_edit_v2_10s/videos/`
@@ -76,15 +76,15 @@ source video prompts
 
 | 任务 | 名称 | 要测什么 |
 |---|---|---|
-| T1 | Cross-Shot Character Replacement | 把某个角色在所有出现的 shot 中替换成另一个角色，重点看跨镜头身份一致性。 |
-| T2 | Cross-Shot Attribute Edit | 改角色服装、头发、配饰等属性，要求所有相关 shot 都改到位。 |
-| T3 | Global Style + Lighting | 全片风格或光照重渲染，要求风格统一且结构不要崩。 |
-| T4 | Cross-Shot Object Add/Remove/Replace | 添加、删除、替换物体，重点看是否漏 shot、是否误伤其他区域。 |
+| T1 | Cross-Shot Replacement | 30 条动态实体替换 + 30 条静态物体替换，重点看跨镜头一致性和局部替换质量。 |
+| T2 | Cross-Shot Attribute Edit | 改角色颜色、材质、服装类型、发型、配饰等属性，要求所有相关 shot 都改到位。 |
+| T3 | Global Style | 全片视觉风格重渲染，使用像素风格、新海诚风格、宫崎骏风格、JoJo 漫画风格、赛博朋克风格、水墨画风格、油画风格、美式漫画风格、3D 写实动画风格、粘土定格动画等明确大类风格。 |
+| T4 | Cross-Shot Static/Dynamic Add/Delete | 静态物体、动态实体的添加和删除各 20 条，共 80 条，重点看是否漏 shot、是否误伤其他区域。 |
 | T5 | Shot Reorder | 改变镜头顺序，单独走 T5 structural track。 |
 | T6 | Cinematic Re-shoot | 改某个 shot 的景别、构图或相机运动，重点看目标 shot 是否被正确重拍。 |
-| T7 | Transition Style | 改 shot 之间的转场风格。当前 prompt 存在，但主结果里 T7 不是重点评测目录。 |
+| T7 | Global Lighting | 全片光照重渲染，例如黄昏窗光、霓虹灯、凌晨蓝光、篝火光等。 |
 
-任务定义代码在 `mseditbench/edit_prompts/tasks.py`，当前手写 prompt 在 `mseditbench/edit_prompts/handwritten_t*.py` 和 `runs/edit_prompts_v2_10s/T*.json`。
+任务定义代码在 `mseditbench/edit_prompts/tasks.py`，当前正式手写 prompt 以 `runs/edit_prompts_v2_10s/T*.json` 为准；`mseditbench/edit_prompts/handwritten_t*.py` 主要保留旧 v1/v1.2 构建历史。
 
 ## 6. 核心指标
 
@@ -108,7 +108,7 @@ source video prompts
 | `CLAUDE.md` | 原开发过程中的内部状态文档。 | 记录当前稳定版本、关键技术决策和后续 agent 方向。 |
 | `HOWTO.md` | 旧流程操作手册。 | 多数流程仍有参考价值，但默认路径和版本偏旧。 |
 | `DEEP_DIVE.md` | benchmark 设计深挖。 | 解释为什么要做 multi-shot edit，以及任务空间如何确定。 |
-| `RESEARCH_PLAN.md` | 早期研究计划。 | 有论文 framing 和原始规模设想，当前实际版本已收敛到 30 视频、420 prompt。 |
+| `RESEARCH_PLAN.md` | 早期研究计划。 | 有论文 framing 和原始规模设想，当前实际版本已收敛到 30 视频、440 prompt。 |
 | `SURVEY_REPORT.md` | 综述报告。 | 写 related work 和 motivation 时使用。 |
 | `RELATED_WORK_SURVEY.md` | 方法卡片库。 | 更细的 related work 素材。 |
 | `AGENT_BENCH_DESIGN.md` | agent 扩展轨设计。 | 不是当前稳定主线，适合作为下一阶段方向。 |
@@ -150,7 +150,7 @@ data/
 
 | 路径 | 作用 |
 |---|---|
-| `runs/edit_prompts_v2_10s/T1.json` 到 `T7.json` | 当前正式编辑 prompt，每个任务 60 条；T8 已停用并删除。 |
+| `runs/edit_prompts_v2_10s/T1.json` 到 `T7.json` | 当前正式编辑 prompt，共 440 条；T4 为 80 条，其余任务各 60 条；T8 已停用并删除。 |
 | `runs/edit_prompts_v2_10s/all_edit_handoff.json` | 所有任务 prompt 的合并 handoff 文件。 |
 | `runs/pilot_v2_10s/shots/` | 10 秒源视频的 shot detection 结果。 |
 | `runs/pilot_v2_10s/contact_sheets/` | 人工 QA 用 contact sheet。 |
@@ -568,10 +568,10 @@ jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep
 3. **外部模型路径**：OmniShotCut、SAM-3 等大模型权重默认按本地 `checkpoints/` 或相邻 checkout 查找；缺失时用 `OMNISHOTCUT_REPO`、`OMNISHOTCUT_CKPT`、`SAM3_ROOT`、`SAM3_CKPT` 覆盖。
 4. **T5 不能套普通 per-shot 指标**：T5 改 shot 顺序，必须用 `eval/t5_track.py`；TSF 只看按 `new_order` 的内容对齐。
 5. **K-sample 命名要一致**：`--num_samples 3` 找 `_k0/_k1/_k2`；`--num_samples 1` 找无 `_k` 的 `<sample_id>.mp4`。
-6. **T1 的 SES 特殊**：T1 本身要求改身份，所以身份漂移不能按普通任务理解。
+6. **T1/T4 的 SES 按 prompt 类型判断**：动态实体替换、添加、删除会跳过 IDdrift；静态物体编辑仍然计算 IDdrift。
 7. **SAM-3 权重路径**：真实 mask backend 依赖本机权重路径，迁移机器时最容易坏。
 8. **VLM 调用成本和并发**：`backend_vlm seed` 需要 `ARK_API_KEY`，`VLM_MAX_WORKERS` 设置过大可能触发限流。
-9. **旧文档规模不是当前规模**：`RESEARCH_PLAN.md` 提过 930 prompt，但当前已落地的是 420 prompt。
+9. **旧文档规模不是当前规模**：`RESEARCH_PLAN.md` 提过 930 prompt，但当前已落地的是 440 prompt。
 10. **缓存文件不用读**：`.DS_Store`、`__pycache__`、`.pyc` 都不是项目逻辑。
 
 ## 18. 你真正需要掌握的最小闭环

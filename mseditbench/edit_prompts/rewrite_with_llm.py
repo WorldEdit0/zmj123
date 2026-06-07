@@ -47,13 +47,13 @@ You will receive:
   - extra: any task-specific structured fields
 
 TASK_GUIDE:
-  T1 — replace one character with a different character across all shots
-  T2 — change one character's attribute (hair / clothes / glasses / hat)
-  T3 — global style or lighting re-render
-  T4 — replace / add / remove a specific object
+  T1 — replace either a dynamic entity or a static object across all shots
+  T2 — change one character's attribute (color / material / clothing type / hairstyle / accessory)
+  T3 — global visual style re-render only
+  T4 — add or delete static/dynamic objects or entities, no replacement
   T5 — structural: reorder shots
   T6 — re-shoot a specific shot with a different framing or camera move
-  T7 — change transition style between shots
+  T7 — global lighting re-render only
 
 Rules:
   1. Preserve every visual descriptor (colors, materials, named clothing,
@@ -90,9 +90,9 @@ def _get_client(api_key: str, base_url: str) -> Ark:
 
 def _build_user_message(edit: dict) -> str:
     extra = edit.get("extra", {}) or {}
-    extra_keys = ["op", "old_object", "new_object", "anchor",
-                  "transition_style", "target_framing", "camera_move",
-                  "new_order"]
+    extra_keys = ["op", "object_kind", "replace_kind", "old_object", "new_object",
+                  "old_entity", "new_entity", "anchor", "style", "lighting",
+                  "target_framing", "camera_move", "new_order"]
     extra_compact = {k: extra.get(k) for k in extra_keys if extra.get(k) is not None}
     payload = {
         "task_id": edit.get("task_id"),

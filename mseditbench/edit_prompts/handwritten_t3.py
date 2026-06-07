@@ -1,4 +1,7 @@
-"""Hand-written T3 — global style/lighting. Authored by Claude.
+"""Historical v1/v1.2 hand-written T3 — global style/lighting.
+
+Current v2_10s production T3 is style-only; lighting moved to T7. The current
+source of truth is `runs/edit_prompts_v2_10s/T3.json` plus `tasks.py`/`banks.py`.
 
 For each (scene, style) pair I picked phrasing that anchors the style to
 something specific in the scene (kitchen, library, beach, etc.) so the

@@ -10,23 +10,24 @@
 >
 > 三者互相补充：README 给外人看，HOWTO 给跑 pipeline 的人看，CLAUDE.md 给下次接手的 Claude 看。
 
-最后更新：2026-06-06（T5 reorder-only / T8 retired）
+最后更新：2026-06-07（T1/T4/T3/T7 task rebalance）
 
 ---
 
 ## 0. 当前 release 状态（每次 session 开头先看这里）
 
 ### v1 已就绪 ★ — 准备 push GitHub
-- 数据：30 个 10s 多镜头源视频 + 420 条手写 edit prompts (T1-T7 各 60)；T8 已停用
+- 数据：30 个 10s 多镜头源视频 + 440 条手写 edit prompts（T1/T2/T3/T5/T6/T7 各 60，T4=80）；T8 已停用
+- 2026-06-07 任务重构：T1=30 动态替换 + 30 静态替换；T4=静态/动态 add/delete 各 20；T3=纯 style（像素、新海诚、宫崎骏、JoJo、赛博朋克、水墨、油画、美式漫画、3D 写实动画、粘土定格动画等明确大类）；T7=纯 lighting
 - T5 当前只保留 reorder；TSF = 按 `extra.new_order` 的内容对齐，不再包含 shot-count 分
 - 评测：v3 metrics 全部上线（VLM-as-Judge 替代废弃的 v1/v2 CLIP-T 指标）
-- 参照 baseline：Seedance 2.0 Pro & Fast 全 6 任务 K=3 数字已出
+- 参照 baseline：Seedance 2.0 Pro & Fast 全 6 任务 K=3 数字已出，但这些结果对应 2026-06-07 前的 420-prompt snapshot；新 440-prompt 任务集需要重新跑编辑和评测
 - 文档：README.md、CLAUDE.md、HOWTO.md、4 份 design docs (DEEP_DIVE / RESEARCH_PLAN / SURVEY / RELATED_WORK)、AGENT_BENCH_DESIGN.md
 - 测试：`python3 -m mseditbench.tests.test_metrics` → 13/13 PASS
 
 ### v2 = agent 方向（**用户后续在另一个目录做**）
 - 设计文档已写：`AGENT_BENCH_DESIGN.md`（715 行）
-- 复用 v1 的 30 视频 + 420 prompts + v3 metrics
+- 复用 v1 的 30 视频 + 440 prompts + v3 metrics
 - 新增 T9-T11 复合任务 + trajectory metrics + agent baselines
 - ⚠️ **v1 这个目录冻结**作为 stable benchmark；agent 方向在新目录开（避免污染 v1）
 
@@ -181,7 +182,7 @@
 - **★ 生产默认 backend（2026-05-25）**：`scripts/run_eval_parallel.sh` 现在默认 `BACKEND_MASK=sam3 BACKEND_PSQ=pyiqa BACKEND_FACE=insightface`。之前要手动 export，现在直接 `bash run_eval_parallel.sh T1 T2 ...` 就是 paper-quality 跑法
 - **★ install.sh 写好（2026-05-25）**：从 0 配置一台机器到能跑完整 pipeline 的脚本。装 Python 包 + pre-fetch CLIP/DINOv2/SAM-3/InsightFace/MUSIQ/LAION 全部 weights + 单元测试 + 1-prompt 真后端 smoke。详见 `install.sh` 顶部 docstring
 - **★ T5 单独 track + 任务标签纠错（2026-05-25）**：审计发现两个 bug：
-  1. **Leaderboard 任务名几次都写错了**。canonical（`tasks.py`）：T1=Char Replace / T2=Attribute / T3=Style+Lighting / T4=Object / **T5=Shot Insert/Delete/Reorder** / T6=Cinematic Re-shoot (camera) / T7=Transition / T8=Diegetic。之前误写 T5=action / T6=style / T7=cam 等
+  1. **Leaderboard 任务名几次都写错了**。当时的 canonical（2026-05-25，已被 2026-06-07 新任务表替换；当前见 §4.4）：T1=Char Replace / T2=Attribute / T3=Style+Lighting / T4=Object / **T5=Shot Insert/Delete/Reorder** / T6=Cinematic Re-shoot (camera) / T7=Transition / T8=Diegetic。之前误写 T5=action / T6=style / T7=cam 等
   2. **T5 的 EE/NEP/CSEP 数字基本是噪声**：per-shot frame extraction 用源视频的 shot 边界切编辑后视频。T5 操作（swap/insert/delete/reorder）改变了 shot 结构 → 边界对不上 → 拿到的是错位的内容。CLAUDE 之前 leaderboard 那行 T5 的数字读不出有意义信号
   - **解决**：写 `mseditbench/eval/t5_track.py`，T5 单独走 **TSF (T5 Structural Fidelity)** 指标轨：
     - `count_correct ∈ {0,1}`：编辑后用 OmniShotCut 检 shot 数，看是否等于预期（insert: src+1, delete: src-1, swap/reorder: src）
@@ -240,20 +241,20 @@
 - **★ v2_10s 全 pipeline stand-up 完成（2026-05-28）**——这是 v2 主轨；v1 (15s) 仍保留作 Seedance-only 参照。
   - **30 个 10s 源视频**：`data/source_videos_10s/videos/{00..29}.mp4`（24fps × 240 帧 × 720p × 16:9）。源 prompt：`seedance_api_example/source_prompts_multishot_v2_10s.json`（30 条全新 10s scene，分布 6×3-shot + 18×4-shot + 6×5-shot），3 个文件因 shot 数错位被 retry：00019 (BBQ, 5→4), 00023 (busker, 5→4), 00024 (mechanic, 6→5)
   - **OmniShotCut shot detection: 30/30 (100%)** —— `runs/pilot_v2_10s/shots/`，consensus_backend=omnishotcut。`runs/pilot_v2_10s/contact_sheets/` 30 张 QA 图，`pilot_report.md` 含每视频 grid + match/miss 标注
-  - **420 条 edit prompts 全部由 Claude 手写完成**：`runs/edit_prompts_v2_10s/T{1..7}.json`，每 task 60 条 = 30 视频 × 2 entries。author 标 `claude-handwritten-v2-10s`。**T5 op 分布**：60 reorder；T8 已停用并删除。
+  - **440 条 edit prompts 全部由 Claude 手写完成**：`runs/edit_prompts_v2_10s/T{1..7}.json`。T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条。2026-06-07 新分布：T1=30 dynamic replacement + 30 static replacement；T4=static add/delete + dynamic add/delete 各 20；T3=style-only；T7=lighting-only。**T5 op 分布**：60 reorder；T8 已停用并删除。
   - **shots 字段已替换为真实边界**（`mseditbench/preprocess/contact_sheet.py` consensus → `T{1..7}.json` 的 `shots`，覆盖占位值）。下游 metric eval 切 source frames 不再错位
-  - **all_edit_handoff.json**（`runs/edit_prompts_v2_10s/all_edit_handoff.json`）整合所有 420 条为 `{filename, source_url, edit_prompt}` 三字段平铺给外部协作方跑别的 v2v 模型。每条 source_url 用 ModelScope `inLine013/videobed_10s/{vid}.mp4`
+  - **all_edit_handoff.json**（`runs/edit_prompts_v2_10s/all_edit_handoff.json`）整合所有 440 条为 `{filename, source_url, edit_prompt}` 三字段平铺给外部协作方跑别的 v2v 模型。每条 source_url 用 ModelScope `inLine013/videobed_10s/{vid}.mp4`
   - **ModelScope 镜像**（`https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/{video_name}`）含全部 30 个最新源视频（00019/00023/00024 已 reupload 替换）。无 24h TTL，是 v2_10s 的 source_url 真相源
   - **Seedance Pro / Fast edit launcher 就绪**：
     - `seedance2.0/scripts/infer_v2_mutilshot_edit_v2_10s_all.sh` (Pro: `doubao-seedance-2-0-260128`)
     - `seedance2.0/scripts/infer_v2_fast_mutilshot_edit_v2_10s_all.sh` (Fast: `doubao-seedance-2-0-fast-260128`)
     - 都用 `--source_url_template` ModelScope 直链，`--duration 10`，`--num_samples 3`（K=3）
     - 输出：`runs/seedance_v2v_edit_v2_10s/` 和 `runs/seedance_v2v_fast_edit_v2_10s/`（与 v1 平行结构，可直接复用 eval pipeline）
-    - 工作量：420 prompts × 3 K = 1260 calls；ARNOLD_WORKER_NUM=64 时 Pro ~3h, Fast ~1.8h
+    - 新 prompt 集工作量：440 prompts × 3 K = 1320 calls；ARNOLD_WORKER_NUM=64 时 Pro/Fast 预计与旧 420-prompt 集接近
   - **Python infer 脚本不动**——`seedance2.0/pyscripts/infer_v2_mutilshot_edit.py` 已支持 `--source_url_template` / `--duration` / `--model`，新 shell 只是路径换皮
 
-- **★ v2_10s Seedance Pro / Fast 编辑跑完 + mask-aware leaderboard 出炉（2026-05-28）**：
-  - **Edit 出片量**：Pro 1437/1440（缺 sample 00028_T4_0057 三个 K，Seedance API 拒）；Fast 1440/1440（100%）
+- **★ v2_10s Seedance Pro / Fast 编辑跑完 + mask-aware leaderboard 出炉（2026-05-28，旧 420-prompt snapshot）**：
+  - **Edit 出片量（旧 420-prompt snapshot）**：Pro 1437/1440（缺 sample 00028_T4_0057 三个 K，Seedance API 拒）；Fast 1440/1440（100%）
   - **Eval 协议**：`scripts/run_eval_parallel.sh` 通过 env vars 驱动（已 generalize：`PROMPTS_DIR / SOURCE_VIDEOS_ROOT / BASELINE_NAME / BASELINE_VIDEOS_ROOT / EVAL_OUT_ROOT / SNAPSHOT_ID` 都可 override；不再需要 fork 脚本）。SAM-3 mask + pyiqa MUSIQ+LAION-Aes PSQ + InsightFace IDdrift 全开
   - **Pro 8-task eval ≈ 2h**（4:02 PM → 6:06 PM），**Fast 8-task ≈ 2h**（6:09 PM → 8:10 PM）。8-GPU 并行 sequential per-task
   - **Pro v2_10s mask-aware leaderboard**（K=3 mean ± std, n_prompts=60 each）：
@@ -485,15 +486,15 @@ multi_shot_bench/
     │   ├── contact_sheets/                30 张 QA 图
     │   └── pilot_report.{md,json}
 
-    ├── edit_prompts_v2_10s/               ★ v2_10s: 420 条 Claude 手写（**当前主轨**）
-    │   ├── T{1..7}.json                   各 60 条，shots 已是 OmniShot 真实边界
-    │   └── all_edit_handoff.json          整合给外部协作的 420 条平铺 JSON
+    ├── edit_prompts_v2_10s/               ★ v2_10s: 440 条 Claude 手写（**当前主轨**）
+    │   ├── T{1..7}.json                   T4=80，其余各 60；shots 已是 OmniShot 真实边界
+    │   └── all_edit_handoff.json          整合给外部协作的 440 条平铺 JSON
     ├── eval_3way/                         v1/v1.1/v1.2 盲评结果
 
-    ├── seedance_v2v_edit_v2_10s/          ★ v2_10s Pro 编辑结果（1437/1440）
-    ├── seedance_v2v_fast_edit_v2_10s/     ★ v2_10s Fast 编辑结果（1440/1440）
-    ├── eval_seedance_v2v_v2_10s_v3/       ★ v2_10s Pro v3 leaderboard（当前 headline）
-    ├── eval_seedance_v2v_fast_v2_10s_v3/  ★ v2_10s Fast v3 leaderboard
+    ├── seedance_v2v_edit_v2_10s/          旧 420-prompt Pro 编辑结果（1437/1440）
+    ├── seedance_v2v_fast_edit_v2_10s/     旧 420-prompt Fast 编辑结果（1440/1440）
+    ├── eval_seedance_v2v_v2_10s_v3/       旧 420-prompt Pro v3 leaderboard
+    ├── eval_seedance_v2v_fast_v2_10s_v3/  旧 420-prompt Fast v3 leaderboard
     ├── eval_wan_v2v_2.7_v2_10s_v3/        ★ Wan 2.7 v3 leaderboard（T1-T4）
 
     ├── eval_t5_track/                     ★ v1 T5 TSF 指标（Pro+Fast）
@@ -546,14 +547,15 @@ symlinks（VACE runtime 使用 <repo>/models/ 下的 symlink）:
 
 | Task ID | Canonical name | 简写 | 描述 |
 |---|---|---|---|
-| T1 | Cross-Shot Character Replacement | char | 把角色换成另一个人 |
+| T1 | Cross-Shot Replacement | repl | 30 动态实体替换 + 30 静态物体替换 |
 | T2 | Cross-Shot Attribute Edit | attr | 换衣服/发色/配饰 |
-| T3 | Global Style + Lighting | style | 全片风格重渲 |
-| T4 | Cross-Shot Object Add/Remove/Replace | obj | 加/删/换物体 |
+| T3 | Global Style | style | 全片视觉风格重渲 |
+| T4 | Cross-Shot Static/Dynamic Add/Delete | obj | 静态/动态 add/delete 各 20 |
 | T5 | Shot Reorder | struct | 改镜头顺序（★per-shot eval 不适用，需 TSF 单独轨） |
 | T6 | Cinematic Re-shoot | cam | 改单 shot 运镜/构图 |
-| T7 | Transition Style | trans | 换场方式（淡入/虹膜等） |
+| T7 | Global Lighting | light | 全片光照重渲 |
 
+⚠️ **2026-06-07 更新**：T1/T4/T3/T7 已按新定义重构；旧 420-prompt baseline/eval 结果只能作为历史 snapshot。
 ⚠️ **2026-06-06 更新**：T8 已停用；T5 只保留 reorder，TSF 不再使用 shot-count 分。
 ⚠️ **2026-05-25 之前 CLAUDE.md / leaderboard 表里的 T3="char" T5="act" T6="style" T7="cam" 全部是错标。正确标签见上表。数字不受影响（按 task_id 索引无错位），文字已修正。**
 
@@ -821,8 +823,8 @@ ls data/source_videos_10s/videos/ | wc -l                # 应 = 30
 # 4. v2_10s shot detection 100%？
 python3 -c "import json; r=json.load(open('runs/pilot_v2_10s/pilot_report.json')); print(f\"{r['summary']['n_exact_match']}/{r['summary']['n_total']} match\")"
 
-# 5. v2_10s 420 条 prompts 齐？
-for t in T1 T2 T3 T4 T5 T6 T7; do echo -n "$t: "; python3 -c "import json; print(len(json.load(open(f'runs/edit_prompts_v2_10s/$t.json'))))"; done
+# 5. v2_10s 440 条 prompts 齐？T4 应为 80，其余任务应为 60
+python3 -c "import json; exp={'T1':60,'T2':60,'T3':60,'T4':80,'T5':60,'T6':60,'T7':60}; [print(t, len(json.load(open(f'runs/edit_prompts_v2_10s/{t}.json'))), 'expected', n) for t,n in exp.items()]"
 
 # 6. v3 leaderboard 出炉？
 ls runs/eval_seedance_v2v_v2_10s_v3/*/aggregate.json | wc -l           # 应 = 6
@@ -837,7 +839,7 @@ v1 release 期望状态：
 - `mseditbench/` 50+ 个 .py 文件（含 ee_v3.py / csep_v3.py，v1/v2 已加 DEPRECATED 标）
 - `data/source_videos_10s/videos/` 30 个 mp4
 - `runs/pilot_v2_10s/` 30/30 shot detection
-- `runs/edit_prompts_v2_10s/T{1..7}.json` 各 60 条 = 420 总
+- `runs/edit_prompts_v2_10s/T{1..7}.json` 共 440 条（T4=80，其余各 60）
 - `runs/eval_seedance_v2v_{,fast_}v2_10s_v3/` 6 任务 aggregate.json 完整
 - 当前阶段：v1 准备 push GitHub；user 后续在另一目录开 agent 方向（v2）
 

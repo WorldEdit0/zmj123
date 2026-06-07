@@ -1,4 +1,8 @@
-"""v1.2 — Claude-authored edit prompts.
+"""Historical v1.2 — Claude-authored edit prompts.
+
+This script rewrites the old v1/v1.2 prompt snapshot. Current v2_10s production
+tasks are defined by `runs/edit_prompts_v2_10s/T*.json`, `tasks.py`, and
+`banks.py`; notably T7 is now global lighting rather than transition style.
 
 Reads v1's edit JSON to inherit (sample_id, target_entity, applicable_shots,
 extra) and re-authors `instruction` + `target_phrase` per task with

@@ -34,21 +34,59 @@ def _load_shots(shots_dir: str, video_id: str) -> list[dict]:
     return json.load(open(p)).get("consensus_shots") or []
 
 
+def _mask_queries(nep: bool, scope: str, edit_type: str,
+                  source=None, edited=None, reason: str | None = None) -> dict:
+    spec = {
+        "nep_applicable": nep,
+        "edit_scope": scope,
+        "edit_type": edit_type,
+        "source_queries": list(source or []),
+        "edited_queries": list(edited or []),
+        "combine": "union" if nep else "none",
+    }
+    if reason:
+        spec["reason"] = reason
+    return spec
+
+
 def _sample_t1(item: dict, shots: list[dict], rng: random.Random, n: int) -> list[dict]:
     out = []
-    for ch in item.get("characters", []):
-        targets = rng.sample(banks.T1_TARGETS, k=min(n, len(banks.T1_TARGETS)))
-        for tgt in targets:
-            tpl = rng.choice(ALL_TASKS["T1"].instruction_templates)
-            instr = tpl.format(character_desc=ch["desc"], target_desc=tgt)
-            target_phrase = ALL_TASKS["T1"].target_phrase_template.format(target_desc=tgt)
-            out.append({
-                "task_id": "T1",
-                "instruction": instr,
-                "target_phrase": target_phrase,
-                "target_entity": ch["id"],
-                "applicable_shots": [s["shot_id"] for s in shots],
-            })
+    characters = item.get("characters", [])
+    key_objects = item.get("key_objects", [])
+    if characters:
+        ch = rng.choice(characters)
+        tgt = rng.choice(banks.T1_DYNAMIC_TARGETS)
+        tpl = rng.choice(ALL_TASKS["T1"].instruction_templates[:3])
+        instr = tpl.format(character_desc=ch["desc"], target_desc=tgt)
+        out.append({
+            "task_id": "T1",
+            "instruction": instr,
+            "target_phrase": tgt,
+            "target_entity": ch["id"],
+            "applicable_shots": [s["shot_id"] for s in shots],
+            "extra": {"replace_kind": "dynamic", "old_entity": ch["desc"], "new_entity": tgt},
+            "mask_queries": _mask_queries(True, "local", "dynamic_replace", [ch["desc"]], [tgt]),
+        })
+    if key_objects:
+        old_object = rng.choice(key_objects)
+        new_object = rng.choice(banks.T1_STATIC_REPLACEMENTS)
+        instr = ALL_TASKS["T1"].instruction_templates[3].format(
+            old_object=old_object, new_object=new_object
+        )
+        out.append({
+            "task_id": "T1",
+            "instruction": instr,
+            "target_phrase": new_object,
+            "applicable_shots": [s["shot_id"] for s in shots],
+            "extra": {
+                "replace_kind": "static",
+                "op": "replace",
+                "old_object": old_object,
+                "new_object": new_object,
+                "anchor": old_object,
+            },
+            "mask_queries": _mask_queries(True, "local", "static_replace", [old_object], [new_object]),
+        })
     return out
 
 
@@ -59,15 +97,22 @@ def _sample_t2(item: dict, shots: list[dict], rng: random.Random, n: int) -> lis
         for kind, olds, news in attrs:
             new_value = rng.choice(news)
             old_value = rng.choice(olds)
+            attribute_label = kind.replace("_", " ")
             tpl = rng.choice(ALL_TASKS["T2"].instruction_templates)
-            instr = tpl.format(character_desc=ch["desc"], attribute_kind=kind,
+            instr = tpl.format(character_desc=ch["desc"], attribute_kind=attribute_label,
                                new_value=new_value, old_value=old_value)
             target_phrase = ALL_TASKS["T2"].target_phrase_template.format(
-                new_value=new_value, attribute_kind=kind)
+                new_value=new_value, attribute_kind=attribute_label)
             out.append({
                 "task_id": "T2", "instruction": instr, "target_phrase": target_phrase,
                 "target_entity": ch["id"],
                 "applicable_shots": [s["shot_id"] for s in shots],
+                "extra": {"attribute_category": kind, "old_value": old_value, "new_value": new_value},
+                "mask_queries": _mask_queries(
+                    True, "local", "attribute_edit",
+                    [] if old_value.startswith("original") else [old_value],
+                    [new_value],
+                ),
             })
     return out
 
@@ -82,6 +127,11 @@ def _sample_t3(item: dict, shots: list[dict], rng: random.Random, n: int) -> lis
             "instruction": tpl.format(style=st),
             "target_phrase": ALL_TASKS["T3"].target_phrase_template.format(style=st),
             "applicable_shots": [s["shot_id"] for s in shots],
+            "extra": {"render_axis": "style", "style": st},
+            "mask_queries": _mask_queries(
+                False, "global", "style_transfer",
+                reason="Whole-frame style edits can legitimately affect the entire frame.",
+            ),
         })
     return out
 
@@ -114,25 +164,29 @@ def _t4_op_matches(op: str, conds: dict, key_objects: list[str]) -> tuple[str | 
             if matched_anchor:
                 break
 
-    if op == "replace" and matched_target is None: return None, None
     if op == "add" and matched_anchor is None:     return None, None
-    if op == "remove" and matched_target is None:  return None, None
+    if op == "delete" and matched_target is None:  return None, None
     return matched_target, matched_anchor
 
 
 def _sample_t4(item: dict, shots: list[dict], rng: random.Random, n: int) -> list[dict]:
     out = []
     obj_keywords = item.get("key_objects", [])
-    if not obj_keywords:
+    characters = item.get("characters", [])
+    if not obj_keywords and not characters:
         return out
 
     # Pre-filter: keep only ops that can fire on this video.
     applicable = []
     for op, new_obj, conds in banks.T4_OPS:
+        object_kind = conds.get("object_kind", "static")
+        if object_kind == "dynamic" and op == "delete" and characters:
+            ch = rng.choice(characters)
+            applicable.append((op, new_obj, conds, ch["desc"], ch["desc"]))
+            continue
         target, anchor = _t4_op_matches(op, conds, obj_keywords)
-        if op == "replace" and target is None: continue
         if op == "add" and anchor is None:     continue
-        if op == "remove" and target is None:  continue
+        if op == "delete" and target is None:  continue
         applicable.append((op, new_obj, conds, target, anchor))
 
     if not applicable:
@@ -140,20 +194,36 @@ def _sample_t4(item: dict, shots: list[dict], rng: random.Random, n: int) -> lis
 
     chosen = rng.sample(applicable, k=min(n, len(applicable)))
     for op, new_obj, conds, old_object, anchor_obj in chosen:
-        if op == "replace":
-            instr = ALL_TASKS["T4"].instruction_templates[0].format(old_object=old_object, new_object=new_obj)
+        object_kind = conds.get("object_kind", "static")
+        if op == "add":
+            instr = ALL_TASKS["T4"].instruction_templates[0].format(new_object=new_obj, anchor=anchor_obj)
             target_phrase = new_obj
-        elif op == "add":
-            instr = ALL_TASKS["T4"].instruction_templates[1].format(new_object=new_obj, anchor=anchor_obj)
-            target_phrase = new_obj
-        else:  # remove
-            instr = ALL_TASKS["T4"].instruction_templates[2].format(old_object=old_object)
-            target_phrase = f"no {old_object}"
-        out.append({
+            source_queries, edited_queries = [], [new_obj]
+        else:  # delete
+            instr = ALL_TASKS["T4"].instruction_templates[1].format(old_object=old_object)
+            target_phrase = f"a scene without {old_object}"
+            source_queries, edited_queries = [old_object], []
+        prompt = {
             "task_id": "T4", "instruction": instr, "target_phrase": target_phrase,
             "applicable_shots": [s["shot_id"] for s in shots],
-            "extra": {"op": op, "old_object": old_object, "new_object": new_obj, "anchor": anchor_obj},
-        })
+            "extra": {
+                "op": op,
+                "object_kind": object_kind,
+                "old_object": old_object,
+                "new_object": new_obj,
+                "anchor": anchor_obj or old_object,
+            },
+            "mask_queries": _mask_queries(
+                True, "local", f"{object_kind}_{op}",
+                source_queries, edited_queries,
+            ),
+        }
+        if object_kind == "dynamic" and op == "delete":
+            for ch in characters:
+                if ch.get("desc") == old_object:
+                    prompt["target_entity"] = ch.get("id")
+                    break
+        out.append(prompt)
     return out
 
 
@@ -211,15 +281,18 @@ def _sample_t6(item: dict, shots: list[dict], rng: random.Random, n: int) -> lis
 
 def _sample_t7(item: dict, shots: list[dict], rng: random.Random, n: int) -> list[dict]:
     out = []
-    if len(shots) < 2: return out
-    transitions = rng.sample(banks.T7_TRANSITIONS, k=min(n, len(banks.T7_TRANSITIONS)))
-    for tr in transitions:
-        instr = ALL_TASKS["T7"].instruction_templates[0].format(transition_style=tr)
+    lightings = rng.sample(banks.T7_LIGHTING, k=min(n, len(banks.T7_LIGHTING)))
+    for lighting in lightings:
+        instr = ALL_TASKS["T7"].instruction_templates[0].format(lighting=lighting)
         out.append({
             "task_id": "T7", "instruction": instr,
-            "target_phrase": ALL_TASKS["T7"].target_phrase_template.format(transition_style=tr),
+            "target_phrase": ALL_TASKS["T7"].target_phrase_template.format(lighting=lighting),
             "applicable_shots": [s["shot_id"] for s in shots],
-            "extra": {"transition_style": tr},
+            "extra": {"render_axis": "lighting", "lighting": lighting},
+            "mask_queries": _mask_queries(
+                False, "global", "lighting_edit",
+                reason="Whole-frame lighting edits can legitimately affect the entire frame.",
+            ),
         })
     return out
 

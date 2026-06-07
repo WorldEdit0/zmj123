@@ -45,12 +45,16 @@ def _maybe_per_shot_frames(video_path: str, shots: list[dict], stride: int, max_
     return M.per_shot_frames(video_path, shots, stride=stride, max_frames=max_frames)
 
 
-# Tasks where the edit instruction itself changes the protagonist's identity.
-# IDdrift is undefined / penalises intentional behaviour for these.
-# T1 = Cross-Shot Character Replacement (the only task that intentionally
-# replaces the person). T3 (style re-render) does NOT change identity even
-# though heavy stylisation may drift the face embedding — we keep that signal.
+# Legacy task-level identity-changing set. New v2_10s prompts mix dynamic and
+# static replacements inside T1, so scoring uses _is_identity_changing_edit()
+# below. Keep this set for old prompt JSONs that lack edit_type metadata.
 _IDENTITY_CHANGING_TASKS = {"T1"}
+_IDENTITY_CHANGING_EDIT_TYPES = {
+    "character_replace",
+    "dynamic_replace",
+    "dynamic_delete",
+    "dynamic_add",
+}
 
 
 # SAM-3 minimum mask area (pixels). Below this, treat as a miss. For local
@@ -148,6 +152,33 @@ def _get_mask_spec(sample: dict) -> dict:
         "combine": spec.get("combine", "union"),
         "reason": spec.get("reason"),
     }
+
+
+def _is_identity_changing_edit(sample: dict) -> bool:
+    """Whether IDdrift should be excluded from SES for this prompt.
+
+    T1 now contains both dynamic replacements and static object replacements.
+    Static T1 prompts should still be penalized if they accidentally alter a
+    face. Dynamic add/delete/replace prompts intentionally change the actor set,
+    so largest-face IDdrift is not a side-effect signal for those prompts.
+    """
+    edit = sample.get("edit") or {}
+    mask_spec = edit.get("mask_queries") or {}
+    edit_type = mask_spec.get("edit_type")
+    if edit_type in _IDENTITY_CHANGING_EDIT_TYPES:
+        return True
+
+    extra = edit.get("extra") or {}
+    if extra.get("replace_kind") == "dynamic":
+        return True
+    if extra.get("object_kind") == "dynamic" and extra.get("op") in {"add", "delete", "remove"}:
+        return True
+
+    # Historical T1 prompt JSONs were all character replacements and did not
+    # have replace_kind/edit_type metadata.
+    if edit.get("task_id") in _IDENTITY_CHANGING_TASKS and not extra.get("replace_kind"):
+        return True
+    return False
 
 
 def _mask_one_frame(mask_backend, frame: np.ndarray, query: str) -> tuple[np.ndarray | None, bool]:
@@ -249,10 +280,11 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
 
       T1 char-replace : characters[target_entity].desc → target_phrase
       T2 attribute    : characters[target_entity].desc → target_phrase
-      T3 global style : "the original natural realistic scene" → target_phrase
-                        (no source entity exists — use a generic anchor)
-      T4 object       : extra.anchor (object class) → target_phrase
-      T5 / T6 / T7    : not directional-friendly — return ("", "") and let
+      T3 global style : "the original natural realistic scene" -> target_phrase
+                        (no source entity exists, use a generic anchor)
+      T7 global light : "the original natural realistic lighting" -> target_phrase
+      T4 object       : extra.anchor (object class) -> target_phrase
+      T5 / T6         : not directional-friendly, return ("", "") and let
                         ee_v2 short-circuit to None
     """
     edit = sample["edit"]
@@ -260,11 +292,14 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
     tgt = edit.get("target_phrase", "") or ""
 
     # Tasks where directional EE doesn't apply
-    if task_id in {"T5", "T7"}:
+    if task_id in {"T5"}:
         return "", ""
 
     if task_id == "T3":
         return "the original natural realistic scene", tgt
+
+    if task_id == "T7":
+        return "the original natural realistic lighting", tgt
 
     if task_id == "T6":
         # T6 = cinematic re-shoot of one shot. target_phrase is e.g. "an
@@ -281,9 +316,13 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
                 if desc:
                     return desc, tgt
 
-    # T4: anchor on the source object name
-    if task_id == "T4":
-        anchor = (edit.get("extra") or {}).get("anchor")
+    # T1 static replace / T4 object edits: anchor on the source object name
+    if task_id in {"T1", "T4"}:
+        extra = edit.get("extra") or {}
+        old_object = extra.get("old_object")
+        if old_object:
+            return old_object, tgt
+        anchor = extra.get("anchor")
         if anchor:
             return anchor, tgt
 
@@ -297,15 +336,17 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
 #   T1 char-replace  : large entity swap → ~0.05 typical for a strong edit
 #   T2 attribute     : subtle apron/hair change → ~0.02 typical
 #   T3 style         : whole-frame re-render → ~0.05 typical
-#   T4 object        : small object add/replace → ~0.02 typical
+#   T4 object        : small object/entity add/delete → ~0.02 typical
 #   T6 cinematic     : framing change → ~0.03 typical
-# T5 / T7: handled outside EE_v2 (shot-structural / transition).
+#   T7 lighting      : whole-frame relighting -> ~0.04 typical
+# T5: handled outside EE_v2 (shot-structural).
 _DELTA_MAX_PER_TASK = {
     "T1": 0.05,
     "T2": 0.02,
     "T3": 0.05,
     "T4": 0.02,
     "T6": 0.03,
+    "T7": 0.04,
 }
 
 
@@ -389,7 +430,7 @@ def score_one(
               "per_shot_e_tilde": {}}
 
     # 中文注释：NEP 比较 source/edit 在非编辑区域的 DINO 相似度。
-    # 全局/结构/转场任务没有局部非编辑区域，直接返回 None。局部任务必须
+    # 全局/结构任务没有局部非编辑区域，直接返回 None。局部任务必须
     # 有有效 mask；缺 mask 的 shot 会被 nep(require_masks=True) 跳过。
     if mask_spec.get("nep_applicable"):
         nep_r = M.nep(
@@ -415,9 +456,10 @@ def score_one(
 
     # v3 EE / CSEP — VLM-as-judge headline metrics.
     # Skip for tasks where per-shot VLM rating doesn't make semantic sense.
-    if task_id in {"T5", "T7"}:
-        # 中文注释：T5 改变 shot 结构，T7 主要是转场操作；这两类不适合
-        # 用“每个原始 shot 是否完成编辑”来定义 EE/CSEP，所以显式跳过。
+    if task_id in {"T5"} or mask_spec.get("edit_type") == "transition_style":
+        # 中文注释：T5 改变 shot 结构，不适合用“每个原始 shot 是否完成编辑”
+        # 来定义 EE/CSEP，所以显式跳过。历史 T7 transition JSON 也跳过；
+        # 当前 T7 是全局光照任务，继续走普通 per-shot VLM 判断。
         ee3_r = {"ee": None, "per_shot": {}, "n_applicable": 0,
                  "reason": f"task {task_id} not v3-applicable"}
         csep3_r = {"csep": None, "coverage": None, "consistency": None,
@@ -444,12 +486,12 @@ def score_one(
     # 中文注释：OffTarget 看 absent shots 是否错误地朝 target_phrase 变化。
     off = M.off_target(src_frames, edt_frames, absent, target_phrase,
                        clip_backend=clip_backend)
-    # IDdrift: only meaningful for tasks that *don't* intentionally change
-    # the protagonist's identity. T1 intentionally replaces the character, so
-    # it uses OffTarget-only SES. T3 keeps IDdrift because style transfer should
-    # preserve identity even if the style is global.
+    # IDdrift: only meaningful for prompts that do not intentionally change the
+    # actor set. T1 now mixes dynamic and static replacement, so this is decided
+    # per prompt by edit_type / extra, not solely by task_id. T3/T7 keep IDdrift
+    # because style/lighting should preserve identity.
     id_drift = None
-    if face_backend is not None and task_id not in _IDENTITY_CHANGING_TASKS:
+    if face_backend is not None and not _is_identity_changing_edit(sample):
         id_drift = _compute_id_drift(src_frames, edt_frames, face_backend)
     ses_r = M.ses(id_drift=id_drift, off_target_mean=off["off_target_mean"])
     legacy_mask_query = "; ".join(

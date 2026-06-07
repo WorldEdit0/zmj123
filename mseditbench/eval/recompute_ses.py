@@ -6,7 +6,7 @@ IDdrift (face detection + cosine drift) on 2026-05-25, the existing eval
 JSONs still hold the broken SES. This script:
 
   1. Reads every {sid}_k{k}.eval.json in --output_dir
-  2. Skips entries whose task is in _IDENTITY_CHANGING_TASKS (= {T1})
+  2. Skips entries whose edit type intentionally changes the actor set
   3. For all others, computes IDdrift (largest face per shot, source vs edit,
      mean cosine distance) using InsightFace
   4. Updates `id_drift`, recomputes `ses = 1 - max(IDdrift, off_target)`
@@ -33,15 +33,18 @@ from tqdm import tqdm
 from mseditbench import metrics as M
 from mseditbench.metrics import backends as B
 from mseditbench.eval.run_eval import (
-    _compute_id_drift, _IDENTITY_CHANGING_TASKS,
+    _compute_id_drift, _is_identity_changing_edit,
 )
+
+
+RUN_EVAL_METRICS = ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "ses")
 
 
 def _aggregate_per_prompt(eval_jsons: list[dict]) -> dict:
     sid = eval_jsons[0]["sample_id"]
     task_id = eval_jsons[0]["task_id"]
     agg = {"sample_id": sid, "task_id": task_id, "k_count": len(eval_jsons)}
-    for metric in ("psq", "ee", "nep", "csep", "ses"):
+    for metric in RUN_EVAL_METRICS:
         xs = [r[metric] for r in eval_jsons if r.get(metric) is not None]
         if xs:
             mu = sum(xs) / len(xs)
@@ -67,7 +70,7 @@ def _aggregate_task(per_sample_aggs, baseline, snapshot_id, k_samples):
         "n_prompts": len(per_sample_aggs),
         "k_samples": k_samples,
     }
-    for metric in ("psq", "ee", "nep", "csep", "ses"):
+    for metric in RUN_EVAL_METRICS:
         xs = [a[f"{metric}_mean"] for a in per_sample_aggs
               if a.get(f"{metric}_mean") is not None]
         if xs:
@@ -112,17 +115,16 @@ def main():
     print(f"Loaded InsightFace; processing {len(eval_files)} eval files")
 
     n_updated = 0
-    n_skipped_ic = 0   # identity-changing task → leave SES alone
+    n_skipped_ic = 0   # identity-changing prompt -> leave SES alone
     n_skipped_no_face = 0
     for ef in tqdm(eval_files, desc=f"ses shard {args.shard_id}"):
         d = json.load(open(ef))
         sid = d["sample_id"]
-        task = d["task_id"]
-        if task in _IDENTITY_CHANGING_TASKS:
-            n_skipped_ic += 1
-            continue
         sample = by_sid.get(sid)
         if not sample:
+            continue
+        if _is_identity_changing_edit(sample):
+            n_skipped_ic += 1
             continue
         src_path = os.path.join(args.videos_root, sample["source_video"])
         edited = d.get("edited_video_path")
@@ -190,7 +192,7 @@ def main():
         with open(out / "aggregate.json", "w") as f:
             json.dump(ag, f, indent=2)
         print(f"\nRe-aggregated → {out / 'aggregate.json'}")
-        for m in ("psq", "ee", "nep", "csep", "ses"):
+        for m in RUN_EVAL_METRICS:
             mn = ag.get(f"{m}_mean")
             sd = ag.get(f"{m}_std")
             mn_s = f"{mn:.3f}" if isinstance(mn, float) else "—"

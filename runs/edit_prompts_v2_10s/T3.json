@@ -33,8 +33,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire cafe scene as a midday neon-lit cyberpunk diner: keep the latte-art motions intact but every chrome surface glows with saturated neon signage.",
-      "target_phrase": "a midday neon-lit cyberpunk diner look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -43,13 +43,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -86,8 +90,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the whole barista sequence as a watercolor wash with visible paper grain across every shot.",
-      "target_phrase": "a watercolor wash look with paper grain",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -96,13 +100,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -139,8 +147,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-light the entire pottery studio scene as warm golden-hour sunset light streaming through a high window onto the wheel, throughout every shot.",
-      "target_phrase": "a warm golden-hour sunset light look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -149,13 +157,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -192,8 +204,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the pottery sequence as stop-motion clay animation with visible thumbprint texture, throughout the video.",
-      "target_phrase": "a stop-motion clay animation look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -202,13 +214,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -245,8 +261,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the flower-shop sequence as an oil painting with visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with visible brush strokes",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -255,13 +271,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -298,8 +318,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the entire bouquet-wrapping scene as anime cel-shaded animation with bold black outlines.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -308,13 +328,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -354,8 +378,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire magic-act sequence as 1930s black-and-white silent film with film-grain and high contrast, throughout every shot.",
-      "target_phrase": "a 1930s black-and-white silent film look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -364,13 +388,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -410,8 +438,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the magic act in film-noir black-and-white with deep shadows and a single hard key light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -420,13 +448,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -466,8 +498,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire tarot reading as a cold, blue moonlit night scene; the candle becomes a pale silver pinpoint, throughout every shot.",
-      "target_phrase": "a cold blue moonlit night look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -476,13 +508,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -522,8 +558,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the tarot reading as a charcoal hand-drawing on rough paper, throughout the video.",
-      "target_phrase": "a charcoal hand-drawing look on rough paper",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -532,13 +568,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -574,8 +614,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire space-station scene as 1990s VHS camcorder footage with chromatic noise and tracking lines.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -584,13 +624,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -626,8 +670,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the zero-gravity sequence as pixel-art 16-bit animation, throughout every shot.",
-      "target_phrase": "a pixel-art 16-bit animation look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -636,13 +680,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -687,8 +735,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire skatepark sequence as a midday neon-lit cyberpunk look: saturated neon and reflective concrete.",
-      "target_phrase": "a midday neon-lit cyberpunk look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -698,13 +746,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -749,8 +801,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the skatepark scene as anime cel-shaded animation with bold black outlines and speed lines, every shot.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -760,13 +812,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -808,8 +864,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire DJ stage scene as 1990s VHS camcorder footage with chromatic noise and tracking lines, throughout the video.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -819,13 +875,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -867,8 +927,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the DJ club sequence as an infrared thermal-camera view; warm bodies glow bright, the equipment stays cold and dark.",
-      "target_phrase": "an infrared thermal-camera look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -878,13 +938,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -925,8 +989,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-light the entire surfing sequence as a cold, blue moonlit night, the dawn ocean turning silver and dark.",
-      "target_phrase": "a cold blue moonlit night look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -936,13 +1000,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -983,8 +1051,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the surfer dawn-patrol scene as an oil painting with visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with visible brush strokes",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -994,13 +1062,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1041,8 +1113,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the entire snowboard run as anime cel-shaded animation with bold black outlines and speed lines.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1052,13 +1124,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1099,8 +1175,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the snowboard sequence as a charcoal hand-drawing on rough paper, throughout every shot.",
-      "target_phrase": "a charcoal hand-drawing look on rough paper",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1110,13 +1186,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1162,8 +1242,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire tattoo-studio sequence as a midday neon-lit cyberpunk parlor: chrome equipment and saturated neon signage in every shot.",
-      "target_phrase": "a midday neon-lit cyberpunk parlor look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -1173,13 +1253,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1225,8 +1309,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the tattoo session in film-noir black-and-white with deep shadows and harsh side light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -1236,13 +1320,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1284,8 +1372,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire glass-blowing workshop as an infrared thermal-camera view; the molten glass glows brightest while everything else stays cold.",
-      "target_phrase": "an infrared thermal-camera look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -1295,13 +1383,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1343,8 +1435,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the glass-blowing sequence as an oil painting with thick visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with thick visible brush strokes",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -1354,13 +1446,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1402,8 +1498,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire calligraphy sequence as a watercolor wash with paper grain, throughout every shot.",
-      "target_phrase": "a watercolor wash look with paper grain",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -1413,13 +1509,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1461,8 +1561,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the calligraphy room as a pencil sketch with fine crosshatching, throughout the video.",
-      "target_phrase": "a pencil-sketch look with crosshatching",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -1472,13 +1572,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1520,8 +1624,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire lock-picking sequence in film-noir black-and-white with deep shadows and a single hard light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -1531,13 +1635,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1579,8 +1687,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the lock-picking scene as 1990s VHS camcorder footage with chromatic noise and tracking lines.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -1590,13 +1698,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1642,8 +1754,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire vet-clinic visit as anime cel-shaded animation with bold black outlines, throughout every shot.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1653,13 +1765,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1705,8 +1821,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the puppy checkup as stop-motion clay animation, throughout the video.",
-      "target_phrase": "a stop-motion clay animation look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1716,13 +1832,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1764,8 +1884,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the entire watch-repair sequence as a charcoal hand-drawing on rough paper, throughout every shot.",
-      "target_phrase": "a charcoal hand-drawing look on rough paper",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -1775,13 +1895,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1823,8 +1947,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the watch-repair workshop as 1930s black-and-white silent film with film-grain and high contrast, throughout the video.",
-      "target_phrase": "a 1930s black-and-white silent film look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -1834,13 +1958,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1882,8 +2010,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire chef-plating sequence as an oil painting with visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with visible brush strokes",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -1893,13 +2021,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1941,8 +2073,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the dessert-plating scene as a pencil sketch with fine crosshatching, throughout the video.",
-      "target_phrase": "a pencil-sketch look with crosshatching",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -1952,13 +2084,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2003,8 +2139,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-light the entire yoga-studio scene as warm golden-hour sunset light, throughout every shot.",
-      "target_phrase": "a warm golden-hour sunset light look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -2014,13 +2150,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2065,8 +2205,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the yoga partner-stretch sequence as a watercolor wash with paper grain, throughout the video.",
-      "target_phrase": "a watercolor wash look with paper grain",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2076,13 +2216,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2124,8 +2268,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire grooming-salon scene as anime cel-shaded animation with bold black outlines, throughout every shot.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2135,13 +2279,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2183,8 +2331,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the dog-grooming sequence as a midday neon-lit cyberpunk salon, saturated neon and chrome.",
-      "target_phrase": "a midday neon-lit cyberpunk salon look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -2194,13 +2342,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2242,8 +2394,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-light the entire backyard BBQ scene as a cold blue moonlit night, throughout every shot.",
-      "target_phrase": "a cold blue moonlit night look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2253,13 +2405,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2301,8 +2457,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the BBQ sequence as an infrared thermal-camera view; the grill and patty glow brightest.",
-      "target_phrase": "an infrared thermal-camera look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2312,13 +2468,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2360,8 +2520,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire dock-fishing scene as an oil painting with visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with visible brush strokes",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -2371,13 +2531,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2419,8 +2583,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the lake-fishing sequence as a charcoal hand-drawing on rough paper, throughout the video.",
-      "target_phrase": "a charcoal hand-drawing look on rough paper",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -2430,13 +2594,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2482,8 +2650,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire acupuncture-room scene as a watercolor wash with paper grain, throughout every shot.",
-      "target_phrase": "a watercolor wash look with paper grain",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -2493,13 +2661,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2545,8 +2717,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the acupuncture session in film-noir black-and-white with deep shadows and a single hard light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -2556,13 +2728,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2608,8 +2784,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire ice-cream-truck scene as 1990s VHS camcorder footage with chromatic noise and tracking lines.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -2619,13 +2795,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2671,8 +2851,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the ice-cream-truck sequence as pixel-art 16-bit animation, every shot.",
-      "target_phrase": "a pixel-art 16-bit animation look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2682,13 +2862,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2734,8 +2918,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire subway-busker scene as a midday neon-lit cyberpunk underground: saturated neon signage on the tile walls, throughout the video.",
-      "target_phrase": "a midday neon-lit cyberpunk underground look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2745,13 +2929,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2797,8 +2985,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the subway busker in film-noir black-and-white with deep shadows and a single hard overhead light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -2808,13 +2996,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2861,8 +3053,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire garage scene as 1990s VHS camcorder footage with chromatic noise and tracking lines.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2873,13 +3065,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2926,8 +3122,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the engine-swap sequence as anime cel-shaded animation with bold black outlines, throughout every shot.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2938,13 +3134,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2999,8 +3199,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire balloon-launch sequence as an oil painting with visible brush strokes, throughout every shot.",
-      "target_phrase": "an oil painting look with visible brush strokes",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -3011,13 +3211,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "pixel art style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3072,8 +3276,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the hot-air-balloon launch as stop-motion clay animation, throughout the video.",
-      "target_phrase": "a stop-motion clay animation look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -3084,13 +3288,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Makoto Shinkai style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3145,8 +3353,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire bridal-salon scene as a charcoal hand-drawing on rough paper, throughout every shot.",
-      "target_phrase": "a charcoal hand-drawing look on rough paper",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -3157,13 +3365,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "Hayao Miyazaki style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3218,8 +3430,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the wedding-dress fitting as a watercolor wash with paper grain, throughout the video.",
-      "target_phrase": "a watercolor wash look with paper grain",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -3230,13 +3442,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "JoJo manga style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3291,8 +3507,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire courtroom scene in film-noir black-and-white with deep shadows and harsh overhead light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -3303,13 +3519,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "cyberpunk style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3364,8 +3584,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the courtroom verdict as anime cel-shaded animation with bold black outlines and ink-line shading, throughout every shot.",
-      "target_phrase": "an anime cel-shaded look with bold black outlines",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -3376,13 +3596,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "traditional Chinese ink-wash painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3437,8 +3661,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-light the entire campfire scene as warm golden-hour sunset light filtering through the trees, throughout every shot.",
-      "target_phrase": "a warm golden-hour sunset light look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -3449,13 +3673,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "oil painting style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3510,8 +3738,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the campfire ghost-story sequence as 1990s VHS camcorder footage with chromatic noise and tracking lines.",
-      "target_phrase": "a 1990s VHS camcorder footage look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -3522,13 +3750,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "American comic-book style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3579,8 +3811,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire cocktail-bar scene as a midday neon-lit cyberpunk lounge: saturated neon backbar and chrome, throughout the video.",
-      "target_phrase": "a midday neon-lit cyberpunk lounge look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3591,13 +3823,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "3D realistic animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3648,8 +3884,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Render the bartender cocktail show in film-noir black-and-white with deep shadows and a single side key light, throughout the video.",
-      "target_phrase": "a film-noir black-and-white look with deep shadows",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3660,13 +3896,17 @@
       "mask_queries": {
         "nep_applicable": false,
         "edit_scope": "global",
-        "edit_type": "style_lighting",
+        "edit_type": "style_transfer",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Global style/lighting edits can legitimately affect the whole frame."
+        "reason": "Whole-frame style edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "extra": {
+        "render_axis": "style",
+        "style": "stop-motion clay animation style"
+      },
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   }
 ]

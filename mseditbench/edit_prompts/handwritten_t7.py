@@ -1,4 +1,8 @@
-"""Hand-written T7 — transition style. Authored by Claude.
+"""Historical v1/v1.2 hand-written T7 — transition style.
+
+Current v2_10s production T7 is global lighting, defined in
+`runs/edit_prompts_v2_10s/T7.json`, `tasks.py`, and `banks.py`. This module is
+kept only for regenerating the old v1.2 prompt snapshot.
 
 Avoids the v1 bug "use iris-outs" (plural noun on a transition name) and the
 'a' vs 'an' issue.

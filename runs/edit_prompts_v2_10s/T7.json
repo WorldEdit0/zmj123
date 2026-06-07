@@ -33,26 +33,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the cafe scene with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with warm dusk window light across the cafe counter, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm dusk window light across the cafe counter look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "warm dusk window light across the cafe counter"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -89,26 +90,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the cafe scene with a slow whip-pan.",
-      "target_phrase": "a slow whip-pan transition",
+      "instruction": "Re-light the entire scene with soft early-morning cafe light with pale blue shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft early-morning cafe light with pale blue shadows look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "slow whip-pan"
+        "render_axis": "lighting",
+        "lighting": "soft early-morning cafe light with pale blue shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -145,26 +147,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the pottery studio with a slow iris-out transition.",
-      "target_phrase": "a slow iris-out transition",
+      "instruction": "Re-light the entire scene with low amber pottery-studio bulb light focused on the wheel, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "low amber pottery-studio bulb light focused on the wheel look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "slow iris-out"
+        "render_axis": "lighting",
+        "lighting": "low amber pottery-studio bulb light focused on the wheel"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -201,26 +204,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the pottery studio with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with golden-hour sunset light streaming through a high studio window, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "golden-hour sunset light streaming through a high studio window look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "golden-hour sunset light streaming through a high studio window"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -257,26 +261,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the florist scene with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with cool rainy-day window light in the flower shop, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "cool rainy-day window light in the flower shop look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "cool rainy-day window light in the flower shop"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -313,26 +318,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the florist scene with a page-turn wipe.",
-      "target_phrase": "a page-turn wipe transition",
+      "instruction": "Re-light the entire scene with soft florist-shop skylight after dawn, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft florist-shop skylight after dawn look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "page-turn wipe"
+        "render_axis": "lighting",
+        "lighting": "soft florist-shop skylight after dawn"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -372,26 +378,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the magic act with an iris-out transition.",
-      "target_phrase": "an iris-out transition",
+      "instruction": "Re-light the entire scene with single hard stage spotlight on the magic table, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "single hard stage spotlight on the magic table look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "iris-out"
+        "render_axis": "lighting",
+        "lighting": "single hard stage spotlight on the magic table"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -431,26 +438,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the magic act with a brief light flash.",
-      "target_phrase": "a brief light-flash transition",
+      "instruction": "Re-light the entire scene with dim cabaret footlights with warm pools of light, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "dim cabaret footlights with warm pools of light look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "brief light flash"
+        "render_axis": "lighting",
+        "lighting": "dim cabaret footlights with warm pools of light"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -490,26 +498,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the tarot reading with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with midnight blue moonlight mixed with the candle glow, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "midnight blue moonlight mixed with the candle glow look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "midnight blue moonlight mixed with the candle glow"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -549,26 +558,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the tarot reading with a smoke-curl wipe.",
-      "target_phrase": "a smoke-curl wipe transition",
+      "instruction": "Re-light the entire scene with flickering candlelight as the dominant room illumination, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "flickering candlelight as the dominant room illumination look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "smoke-curl wipe"
+        "render_axis": "lighting",
+        "lighting": "flickering candlelight as the dominant room illumination"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -604,26 +614,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the space-station scene with a brief glitch corruption.",
-      "target_phrase": "a brief glitch-corruption transition",
+      "instruction": "Re-light the entire scene with cold spacecraft instrument-panel glow, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "cold spacecraft instrument-panel glow look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "brief glitch corruption"
+        "render_axis": "lighting",
+        "lighting": "cold spacecraft instrument-panel glow"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -659,26 +670,27 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the space-station scene with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with emergency red warning light pulsing through the cabin, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "emergency red warning light pulsing through the cabin look",
       "applicable_shots": [
         1,
         2,
         3
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "emergency red warning light pulsing through the cabin"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -723,8 +735,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the skatepark scene with a fast whip-pan.",
-      "target_phrase": "a fast whip-pan transition",
+      "instruction": "Re-light the entire scene with late-afternoon skatepark sunlight with long shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "late-afternoon skatepark sunlight with long shadows look",
       "applicable_shots": [
         1,
         2,
@@ -732,18 +744,19 @@
         4
       ],
       "extra": {
-        "transition_style": "fast whip-pan"
+        "render_axis": "lighting",
+        "lighting": "late-afternoon skatepark sunlight with long shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -788,8 +801,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the skatepark scene with a brief light flash.",
-      "target_phrase": "a brief light-flash transition",
+      "instruction": "Re-light the entire scene with harsh overhead streetlamp light at a night skatepark, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "harsh overhead streetlamp light at a night skatepark look",
       "applicable_shots": [
         1,
         2,
@@ -797,18 +810,19 @@
         4
       ],
       "extra": {
-        "transition_style": "brief light flash"
+        "render_axis": "lighting",
+        "lighting": "harsh overhead streetlamp light at a night skatepark"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -850,8 +864,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the DJ stage scene with a brief strobe-flash transition.",
-      "target_phrase": "a brief strobe-flash transition",
+      "instruction": "Re-light the entire scene with saturated neon club lighting from magenta and cyan stage lights, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "saturated neon club lighting from magenta and cyan stage lights look",
       "applicable_shots": [
         1,
         2,
@@ -859,18 +873,19 @@
         4
       ],
       "extra": {
-        "transition_style": "brief strobe flash"
+        "render_axis": "lighting",
+        "lighting": "saturated neon club lighting from magenta and cyan stage lights"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -912,8 +927,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the DJ stage scene with a brief glitch corruption.",
-      "target_phrase": "a brief glitch-corruption transition",
+      "instruction": "Re-light the entire scene with rapid white strobe lighting across the DJ stage, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "rapid white strobe lighting across the DJ stage look",
       "applicable_shots": [
         1,
         2,
@@ -921,18 +936,19 @@
         4
       ],
       "extra": {
-        "transition_style": "brief glitch corruption"
+        "render_axis": "lighting",
+        "lighting": "rapid white strobe lighting across the DJ stage"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -973,8 +989,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the surfing sequence with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with bright noon beach sunlight reflected from the water, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "bright noon beach sunlight reflected from the water look",
       "applicable_shots": [
         1,
         2,
@@ -982,18 +998,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "bright noon beach sunlight reflected from the water"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1034,8 +1051,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the surfing sequence with a slow water-ripple wipe.",
-      "target_phrase": "a slow water-ripple wipe transition",
+      "instruction": "Re-light the entire scene with orange sunset light over the ocean waves, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "orange sunset light over the ocean waves look",
       "applicable_shots": [
         1,
         2,
@@ -1043,18 +1060,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow water-ripple wipe"
+        "render_axis": "lighting",
+        "lighting": "orange sunset light over the ocean waves"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1095,8 +1113,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the snowboard run with a fast whip-pan.",
-      "target_phrase": "a fast whip-pan transition",
+      "instruction": "Re-light the entire scene with blue alpine dawn light on the snow slope, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "blue alpine dawn light on the snow slope look",
       "applicable_shots": [
         1,
         2,
@@ -1104,18 +1122,19 @@
         4
       ],
       "extra": {
-        "transition_style": "fast whip-pan"
+        "render_axis": "lighting",
+        "lighting": "blue alpine dawn light on the snow slope"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1156,8 +1175,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the snowboard run with a snow-flurry wipe.",
-      "target_phrase": "a snow-flurry wipe transition",
+      "instruction": "Re-light the entire scene with flat overcast snowfield light with soft shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "flat overcast snowfield light with soft shadows look",
       "applicable_shots": [
         1,
         2,
@@ -1165,18 +1184,19 @@
         4
       ],
       "extra": {
-        "transition_style": "snow-flurry wipe"
+        "render_axis": "lighting",
+        "lighting": "flat overcast snowfield light with soft shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1222,8 +1242,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the tattoo studio with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with focused white task lamp light over the tattoo workstation, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "focused white task lamp light over the tattoo workstation look",
       "applicable_shots": [
         1,
         2,
@@ -1231,18 +1251,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "focused white task lamp light over the tattoo workstation"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1288,8 +1309,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the tattoo studio with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with red neon parlor sign glow across the tattoo room, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "red neon parlor sign glow across the tattoo room look",
       "applicable_shots": [
         1,
         2,
@@ -1297,18 +1318,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "red neon parlor sign glow across the tattoo room"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1350,8 +1372,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the glass-blowing workshop with a slow heat-shimmer wipe.",
-      "target_phrase": "a slow heat-shimmer wipe transition",
+      "instruction": "Re-light the entire scene with intense orange furnace light dominating the glassblowing workshop, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "intense orange furnace light dominating the glassblowing workshop look",
       "applicable_shots": [
         1,
         2,
@@ -1359,18 +1381,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow heat-shimmer wipe"
+        "render_axis": "lighting",
+        "lighting": "intense orange furnace light dominating the glassblowing workshop"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1412,8 +1435,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the glass-blowing workshop with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with dim workshop light with the furnace as the only warm source, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "dim workshop light with the furnace as the only warm source look",
       "applicable_shots": [
         1,
         2,
@@ -1421,18 +1444,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "dim workshop light with the furnace as the only warm source"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1474,8 +1498,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the calligraphy room with an ink-bloom wipe.",
-      "target_phrase": "an ink-bloom wipe transition",
+      "instruction": "Re-light the entire scene with soft paper-lantern light over the calligraphy table, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft paper-lantern light over the calligraphy table look",
       "applicable_shots": [
         1,
         2,
@@ -1483,18 +1507,19 @@
         4
       ],
       "extra": {
-        "transition_style": "ink-bloom wipe"
+        "render_axis": "lighting",
+        "lighting": "soft paper-lantern light over the calligraphy table"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1536,8 +1561,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the calligraphy room with a slow page-turn wipe.",
-      "target_phrase": "a slow page-turn wipe transition",
+      "instruction": "Re-light the entire scene with quiet morning window light across the rice paper, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "quiet morning window light across the rice paper look",
       "applicable_shots": [
         1,
         2,
@@ -1545,18 +1570,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow page-turn wipe"
+        "render_axis": "lighting",
+        "lighting": "quiet morning window light across the rice paper"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1598,8 +1624,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the lock-picking scene with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with narrow flashlight beam on the brass deadbolt, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "narrow flashlight beam on the brass deadbolt look",
       "applicable_shots": [
         1,
         2,
@@ -1607,18 +1633,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "narrow flashlight beam on the brass deadbolt"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1660,8 +1687,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the lock-picking scene with an iris-out transition.",
-      "target_phrase": "an iris-out transition",
+      "instruction": "Re-light the entire scene with greenish hallway fluorescent lighting around the locksmith, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "greenish hallway fluorescent lighting around the locksmith look",
       "applicable_shots": [
         1,
         2,
@@ -1669,18 +1696,19 @@
         4
       ],
       "extra": {
-        "transition_style": "iris-out"
+        "render_axis": "lighting",
+        "lighting": "greenish hallway fluorescent lighting around the locksmith"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1726,8 +1754,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the vet clinic with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with clean bright veterinary exam-room fluorescent light, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "clean bright veterinary exam-room fluorescent light look",
       "applicable_shots": [
         1,
         2,
@@ -1735,18 +1763,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "clean bright veterinary exam-room fluorescent light"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1792,8 +1821,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the vet clinic with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with gentle afternoon window light across the exam table, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "gentle afternoon window light across the exam table look",
       "applicable_shots": [
         1,
         2,
@@ -1801,18 +1830,19 @@
         4
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "gentle afternoon window light across the exam table"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1854,8 +1884,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the watch-repair workshop with a slow gear-spin wipe.",
-      "target_phrase": "a slow gear-spin wipe transition",
+      "instruction": "Re-light the entire scene with small warm desk-lamp light on the watchmaker bench, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "small warm desk-lamp light on the watchmaker bench look",
       "applicable_shots": [
         1,
         2,
@@ -1863,18 +1893,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow gear-spin wipe"
+        "render_axis": "lighting",
+        "lighting": "small warm desk-lamp light on the watchmaker bench"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1916,8 +1947,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the watch-repair workshop with a slow iris-out transition.",
-      "target_phrase": "a slow iris-out transition",
+      "instruction": "Re-light the entire scene with cool magnifying workbench light with crisp shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "cool magnifying workbench light with crisp shadows look",
       "applicable_shots": [
         1,
         2,
@@ -1925,18 +1956,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow iris-out"
+        "render_axis": "lighting",
+        "lighting": "cool magnifying workbench light with crisp shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -1978,8 +2010,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the chef-plating sequence with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with bright professional kitchen pass lighting over the plate, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "bright professional kitchen pass lighting over the plate look",
       "applicable_shots": [
         1,
         2,
@@ -1987,18 +2019,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "bright professional kitchen pass lighting over the plate"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2040,8 +2073,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the chef-plating sequence with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with warm restaurant service light on the dessert station, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm restaurant service light on the dessert station look",
       "applicable_shots": [
         1,
         2,
@@ -2049,18 +2082,19 @@
         4
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "warm restaurant service light on the dessert station"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2105,8 +2139,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the yoga studio with a slow soft-focus crossfade.",
-      "target_phrase": "a slow soft-focus crossfade transition",
+      "instruction": "Re-light the entire scene with soft sunrise light across the yoga studio floor, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft sunrise light across the yoga studio floor look",
       "applicable_shots": [
         1,
         2,
@@ -2114,18 +2148,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow soft-focus crossfade"
+        "render_axis": "lighting",
+        "lighting": "soft sunrise light across the yoga studio floor"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2170,8 +2205,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the yoga studio with a slow fade through white.",
-      "target_phrase": "a slow fade-through-white transition",
+      "instruction": "Re-light the entire scene with muted indoor ceiling-panel light in the yoga room, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "muted indoor ceiling-panel light in the yoga room look",
       "applicable_shots": [
         1,
         2,
@@ -2179,18 +2214,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow fade through white"
+        "render_axis": "lighting",
+        "lighting": "muted indoor ceiling-panel light in the yoga room"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2232,8 +2268,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the grooming salon with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with warm grooming-salon bulb light over the table, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm grooming-salon bulb light over the table look",
       "applicable_shots": [
         1,
         2,
@@ -2241,18 +2277,19 @@
         4
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "warm grooming-salon bulb light over the table"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2294,8 +2331,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the grooming salon with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with cool daylight from the grooming-salon front window, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "cool daylight from the grooming-salon front window look",
       "applicable_shots": [
         1,
         2,
@@ -2303,18 +2340,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "cool daylight from the grooming-salon front window"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2356,8 +2394,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the backyard BBQ with a brief film-burn transition.",
-      "target_phrase": "a brief film-burn transition",
+      "instruction": "Re-light the entire scene with golden backyard evening light around the grill, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "golden backyard evening light around the grill look",
       "applicable_shots": [
         1,
         2,
@@ -2365,18 +2403,19 @@
         4
       ],
       "extra": {
-        "transition_style": "brief film burn"
+        "render_axis": "lighting",
+        "lighting": "golden backyard evening light around the grill"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2418,8 +2457,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the backyard BBQ with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with glowing charcoal firelight as the main light source, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "glowing charcoal firelight as the main light source look",
       "applicable_shots": [
         1,
         2,
@@ -2427,18 +2466,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "glowing charcoal firelight as the main light source"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2480,8 +2520,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the fishing-dock scene with a slow water-ripple wipe.",
-      "target_phrase": "a slow water-ripple wipe transition",
+      "instruction": "Re-light the entire scene with misty pre-dawn blue light over the lake dock, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "misty pre-dawn blue light over the lake dock look",
       "applicable_shots": [
         1,
         2,
@@ -2489,18 +2529,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow water-ripple wipe"
+        "render_axis": "lighting",
+        "lighting": "misty pre-dawn blue light over the lake dock"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2542,8 +2583,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the fishing-dock scene with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with warm sunset light reflecting off the lake, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm sunset light reflecting off the lake look",
       "applicable_shots": [
         1,
         2,
@@ -2551,18 +2592,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "warm sunset light reflecting off the lake"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2608,8 +2650,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the acupuncture room with a slow fade through white.",
-      "target_phrase": "a slow fade-through-white transition",
+      "instruction": "Re-light the entire scene with dim spa-room lamp light around the treatment table, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "dim spa-room lamp light around the treatment table look",
       "applicable_shots": [
         1,
         2,
@@ -2617,18 +2659,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow fade through white"
+        "render_axis": "lighting",
+        "lighting": "dim spa-room lamp light around the treatment table"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2674,8 +2717,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the acupuncture room with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with soft clinical overhead lighting with minimal shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft clinical overhead lighting with minimal shadows look",
       "applicable_shots": [
         1,
         2,
@@ -2683,18 +2726,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "soft clinical overhead lighting with minimal shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2740,8 +2784,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the ice-cream-truck scene with a colorful spin wipe.",
-      "target_phrase": "a colorful spin-wipe transition",
+      "instruction": "Re-light the entire scene with bright summer afternoon light at the ice cream truck, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "bright summer afternoon light at the ice cream truck look",
       "applicable_shots": [
         1,
         2,
@@ -2749,18 +2793,19 @@
         4
       ],
       "extra": {
-        "transition_style": "colorful spin wipe"
+        "render_axis": "lighting",
+        "lighting": "bright summer afternoon light at the ice cream truck"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2806,8 +2851,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the ice-cream-truck scene with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with colorful carnival bulb light around the truck window, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "colorful carnival bulb light around the truck window look",
       "applicable_shots": [
         1,
         2,
@@ -2815,18 +2860,19 @@
         4
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "colorful carnival bulb light around the truck window"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2872,8 +2918,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the subway-busker scene with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with greenish subway fluorescent light on the platform wall, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "greenish subway fluorescent light on the platform wall look",
       "applicable_shots": [
         1,
         2,
@@ -2881,18 +2927,19 @@
         4
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "greenish subway fluorescent light on the platform wall"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -2938,8 +2985,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the subway-busker scene with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with warm busker spotlight pooling around the open guitar case, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm busker spotlight pooling around the open guitar case look",
       "applicable_shots": [
         1,
         2,
@@ -2947,18 +2994,19 @@
         4
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "warm busker spotlight pooling around the open guitar case"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3005,8 +3053,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the garage scene with a brief sparks-flash transition.",
-      "target_phrase": "a brief sparks-flash transition",
+      "instruction": "Re-light the entire scene with cool garage fluorescent strip lighting under the raised hood, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "cool garage fluorescent strip lighting under the raised hood look",
       "applicable_shots": [
         1,
         2,
@@ -3015,18 +3063,19 @@
         5
       ],
       "extra": {
-        "transition_style": "brief sparks-flash"
+        "render_axis": "lighting",
+        "lighting": "cool garage fluorescent strip lighting under the raised hood"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3073,8 +3122,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the garage scene with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with small handheld work-light beam inside the engine bay, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "small handheld work-light beam inside the engine bay look",
       "applicable_shots": [
         1,
         2,
@@ -3083,18 +3132,19 @@
         5
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "small handheld work-light beam inside the engine bay"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3149,8 +3199,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the balloon launch with a soft fade through white.",
-      "target_phrase": "a soft fade-through-white transition",
+      "instruction": "Re-light the entire scene with clear sunrise light over the balloon basket, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "clear sunrise light over the balloon basket look",
       "applicable_shots": [
         1,
         2,
@@ -3159,18 +3209,19 @@
         5
       ],
       "extra": {
-        "transition_style": "soft fade through white"
+        "render_axis": "lighting",
+        "lighting": "clear sunrise light over the balloon basket"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3225,8 +3276,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the balloon launch with a slow iris-out transition.",
-      "target_phrase": "a slow iris-out transition",
+      "instruction": "Re-light the entire scene with warm propane-burner glow lighting the balloon crew, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm propane-burner glow lighting the balloon crew look",
       "applicable_shots": [
         1,
         2,
@@ -3235,18 +3286,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow iris-out"
+        "render_axis": "lighting",
+        "lighting": "warm propane-burner glow lighting the balloon crew"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3301,8 +3353,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the bridal salon with a slow soft-focus crossfade.",
-      "target_phrase": "a slow soft-focus crossfade transition",
+      "instruction": "Re-light the entire scene with soft bridal-salon window light around the mirror, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "soft bridal-salon window light around the mirror look",
       "applicable_shots": [
         1,
         2,
@@ -3311,18 +3363,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow soft-focus crossfade"
+        "render_axis": "lighting",
+        "lighting": "soft bridal-salon window light around the mirror"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3377,8 +3430,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the bridal salon with a slow fade through white.",
-      "target_phrase": "a slow fade-through-white transition",
+      "instruction": "Re-light the entire scene with warm chandelier light reflecting in the three-panel mirror, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "warm chandelier light reflecting in the three-panel mirror look",
       "applicable_shots": [
         1,
         2,
@@ -3387,18 +3440,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow fade through white"
+        "render_axis": "lighting",
+        "lighting": "warm chandelier light reflecting in the three-panel mirror"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3453,8 +3507,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the courtroom with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with stern overhead courtroom lighting with crisp shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "stern overhead courtroom lighting with crisp shadows look",
       "applicable_shots": [
         1,
         2,
@@ -3463,18 +3517,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "stern overhead courtroom lighting with crisp shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3529,8 +3584,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the courtroom with an iris-out transition.",
-      "target_phrase": "an iris-out transition",
+      "instruction": "Re-light the entire scene with late-afternoon sunbeams through high courtroom windows, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "late-afternoon sunbeams through high courtroom windows look",
       "applicable_shots": [
         1,
         2,
@@ -3539,18 +3594,19 @@
         5
       ],
       "extra": {
-        "transition_style": "iris-out"
+        "render_axis": "lighting",
+        "lighting": "late-afternoon sunbeams through high courtroom windows"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3605,8 +3661,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the campfire scene with a slow ember-flicker wipe.",
-      "target_phrase": "a slow ember-flicker wipe transition",
+      "instruction": "Re-light the entire scene with campfire light flickering across the faces and log seats, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "campfire light flickering across the faces and log seats look",
       "applicable_shots": [
         1,
         2,
@@ -3615,18 +3671,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow ember-flicker wipe"
+        "render_axis": "lighting",
+        "lighting": "campfire light flickering across the faces and log seats"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3681,8 +3738,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the campfire scene with a slow fade to black and back.",
-      "target_phrase": "a slow fade-to-black-and-back transition",
+      "instruction": "Re-light the entire scene with deep midnight light with only faint fire embers, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "deep midnight light with only faint fire embers look",
       "applicable_shots": [
         1,
         2,
@@ -3691,18 +3748,19 @@
         5
       ],
       "extra": {
-        "transition_style": "slow fade to black"
+        "render_axis": "lighting",
+        "lighting": "deep midnight light with only faint fire embers"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3753,8 +3811,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the cocktail bar with a brief light-flash transition.",
-      "target_phrase": "a brief light-flash transition",
+      "instruction": "Re-light the entire scene with neon cocktail-bar lighting in pink and teal, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "neon cocktail-bar lighting in pink and teal look",
       "applicable_shots": [
         1,
         2,
@@ -3763,18 +3821,19 @@
         5
       ],
       "extra": {
-        "transition_style": "brief light flash"
+        "render_axis": "lighting",
+        "lighting": "neon cocktail-bar lighting in pink and teal"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   },
   {
@@ -3825,8 +3884,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Replace every hard cut between shots in the cocktail bar with a smooth crossfade.",
-      "target_phrase": "a smooth crossfade transition",
+      "instruction": "Re-light the entire scene with small blue bar-back shelf lights reflecting on the glassware, preserving the original actions, objects, camera framing, and shot order.",
+      "target_phrase": "small blue bar-back shelf lights reflecting on the glassware look",
       "applicable_shots": [
         1,
         2,
@@ -3835,18 +3894,19 @@
         5
       ],
       "extra": {
-        "transition_style": "smooth crossfade"
+        "render_axis": "lighting",
+        "lighting": "small blue bar-back shelf lights reflecting on the glassware"
       },
       "mask_queries": {
         "nep_applicable": false,
-        "edit_scope": "transition",
-        "edit_type": "transition_style",
+        "edit_scope": "global",
+        "edit_type": "lighting_edit",
         "source_queries": [],
         "edited_queries": [],
         "combine": "none",
-        "reason": "Transition edits operate between shots rather than on a spatial object region."
+        "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "claude-handwritten-v2-10s"
+      "author": "claude-handwritten-v2-10s-task-rebalance"
     }
   }
 ]

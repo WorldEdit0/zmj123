@@ -1,4 +1,9 @@
-"""Hand-written T4 — object add / remove / replace. Authored by Claude."""
+"""Historical v1/v1.2 hand-written T4 — object add / remove / replace.
+
+Current v2_10s production T4 is add/delete only, with 20 prompts each for
+static add, static delete, dynamic add, and dynamic delete. The current source
+of truth is `runs/edit_prompts_v2_10s/T4.json` plus `tasks.py`/`banks.py`.
+"""
 
 HAND_T4 = {
 "00000_T4_0000": ("Place a brass desk bell on the wooden kitchen counter, in every shot the counter is visible.", "a brass desk bell on the kitchen counter"),

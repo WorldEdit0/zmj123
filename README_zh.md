@@ -1,7 +1,7 @@
 # MSEdit-Bench v1
 
 > **首个用于多镜头视频编辑的基准。**
-> 30 个多镜头视频 × 7 种任务类型 × 60 条提示词 = 420 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和身份安全性。
+> 30 个多镜头视频 × 7 种任务类型 = 440 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和身份安全性。
 
 [![Tests](https://img.shields.io/badge/tests-13%2F13-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
@@ -14,7 +14,7 @@
 **MSEdit-Bench** 是首个做到以下几点的基准：
 
 1. 将多镜头视频作为一等对象来处理（逐镜头标注、跨镜头指标）
-2. 覆盖 **7 类不同的编辑任务**（角色 / 属性 / 风格 / 物体 / 结构重排 / 电影化 / 转场）
+2. 覆盖 **7 类不同的编辑任务**（替换 / 属性 / 风格 / 添加删除 / 结构重排 / 电影化 / 光照）
 3. 用经过校准、且与人类判断一致的 **VLM-as-Judge** 评估，替代脆弱的 CLIP-T 代理指标
 
 更完整的版本见 `RESEARCH_PLAN.md` 和 `DEEP_DIVE.md`。
@@ -27,10 +27,10 @@
 |---|---|
 | **源视频** | 30 个 mp4，每个 10 秒，720p @ 24 fps，由 ModelScope 托管 |
 | **镜头检测** | OmniShotCut（主）+ TransNetV2 + PySceneDetect（一致性投票）；重试后 30 / 30（100 %）命中率 |
-| **编辑提示词** | Claude 手写生成 420 条（7 个任务 × 每类 60 条） |
+| **编辑提示词** | Claude 手写生成 440 条（T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条） |
 | **评估** | Mask-aware（SAM-3）+ pyiqa + InsightFace + Seed VLM 2.0 Lite 作为裁判 |
 | **K 样本协议** | 每条提示词 K = 3；报告 mean ± std |
-| **参考基线** | Seedance 2.0 Pro 和 Fast（数值见下文） |
+| **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 440 条 prompt 需要重新跑 |
 
 ---
 
@@ -38,13 +38,13 @@
 
 | ID | 名称 | 测试内容 | 示例指令 |
 |---|---|---|---|
-| **T1** | 跨镜头角色替换 | 跨镜头传播的身份替换 | “在每个镜头中，将男咖啡师替换为一位有铬合金颧骨的女性安卓机器人。” |
-| **T2** | 跨镜头属性编辑 | 局部外观变化（服装 / 头发 / 配饰） | “在每个镜头中，把咖啡师的黑色围裙改成深栗色围裙。” |
-| **T3** | 全局风格 + 光照 | 将整帧重新渲染为新的风格 / 光照 | “将咖啡馆场景重新渲染为正午霓虹灯照明的赛博朋克餐馆。” |
-| **T4** | 跨镜头物体添加 / 删除 / 替换 | 物体级插入 / 替换 | “在白色陶瓷拿铁杯旁边放一个小黄铜桌铃。” |
+| **T1** | 跨镜头替换 | 动态实体替换 + 静态物体替换 | “将咖啡师替换为银发女咖啡师。”/“将拿铁杯替换为玻璃杯。” |
+| **T2** | 跨镜头属性编辑 | 涵盖颜色、材质、服装类型、发型、配饰等局部外观变化 | “在每个镜头中，把咖啡师的黑色围裙改成深栗色围裙。” |
+| **T3** | 全局风格 | 将整帧重新渲染为明确的大类视觉风格 | “将咖啡馆场景重新渲染为像素风格。” |
+| **T4** | 跨镜头添加 / 删除 | 静态物体和动态实体的添加、删除，各类别 20 条 | “在白色陶瓷拿铁杯旁边放一个小黄铜桌铃。” |
 | **T5** | 镜头重排 | 符号化镜头顺序编辑 | “将视频重排为镜头顺序 3, 1, 2。” |
 | **T6** | 电影化重拍 | 单镜头构图 / 摄影机运动变化 | “将镜头 1 重拍为低角度镜头，并带有缓慢上仰。” |
-| **T7** | 转场风格 | 替换镜头之间的硬切 | “将每个硬切替换为平滑的交叉淡化。” |
+| **T7** | 全局光照 | 具有明显特征、与场景关联的整体光照重渲染 | “将咖啡馆场景重新打成黄昏窗光。” |
 
 T5 有自己的评测轨道（TSF，即 Task-Specific Fidelity），因为逐镜头像素指标不适用于结构重排。
 
@@ -146,7 +146,7 @@ python -m mseditbench.eval.t5_track \
 
 ## 参考结果
 
-Seedance 2.0 Pro 与 Fast 在 v2_10s 上的结果（mask-aware，K=3，n=60 / task）：
+Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 440-prompt 任务集重跑：
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | SES Pro | SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -184,7 +184,7 @@ multi_shot_bench/
 │   ├── preprocess/           # OmniShotCut + TN/PS 镜头检测、contact sheets
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video 实体轨迹管
 │   ├── identity/             # InsightFace 人脸库
-│   ├── edit_prompts/         # 任务模板 + 420 条手写提示词
+│   ├── edit_prompts/         # 任务模板 + 440 条手写提示词
 │   ├── metrics/              # PSQ / EE / CSEP / NEP / SES / TSF
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge（主指标）
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge 成对评估
@@ -204,11 +204,11 @@ multi_shot_bench/
 │
 └── runs/                     # 所有流水线输出都落在这里
     ├── pilot_v2_10s/                    # ★ 镜头检测 30/30（当前）
-    ├── edit_prompts_v2_10s/             # ★ 420 条生产提示词
-    ├── seedance_v2v_edit_v2_10s/        # Seedance Pro 参考输出
-    ├── seedance_v2v_fast_edit_v2_10s/   # Seedance Fast 参考输出
-    ├── eval_seedance_v2v_v2_10s_v3/     # ★ Pro v3 leaderboard
-    └── eval_seedance_v2v_fast_v2_10s_v3/ # ★ Fast v3 leaderboard
+    ├── edit_prompts_v2_10s/             # ★ 440 条生产提示词
+    ├── seedance_v2v_edit_v2_10s/        # 旧 420-prompt Seedance Pro 归档输出
+    ├── seedance_v2v_fast_edit_v2_10s/   # 旧 420-prompt Seedance Fast 归档输出
+    ├── eval_seedance_v2v_v2_10s_v3/     # 旧 420-prompt Pro v3 leaderboard
+    └── eval_seedance_v2v_fast_v2_10s_v3/ # 旧 420-prompt Fast v3 leaderboard
 ```
 
 ---
@@ -247,7 +247,7 @@ python -m mseditbench.preprocess.pilot_report \
     --output_md runs/pilot_v2_10s/pilot_report.md \
     --output_json runs/pilot_v2_10s/pilot_report.json
 
-# 3. 预生成的 Seedance Pro / Fast 参考输出位于
+# 3. 旧 420-prompt Seedance Pro / Fast 归档输出位于
 #    runs/seedance_v2v_{edit,fast_edit}_v2_10s/videos/
 
 # 4. 运行 v3 评估
@@ -269,7 +269,7 @@ bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
 
 ## 路线图
 
-**v1（本次发布）**：30 个源视频，420 条提示词，Pro/Fast 参考，VLM-as-Judge 指标。
+**v1（本次发布）**：30 个源视频，440 条提示词，VLM-as-Judge 指标；归档 Pro/Fast 参考结果早于 2026-06-07 prompt 重构，需要按当前任务集重跑。
 
 **v1.x 后续步骤**（按优先级排序）：
 1. VLM ensemble 多样化：添加 Gemini 2.5 Pro 和 GPT-4o 后端，避免裁判信号来自单一供应商
