@@ -33,6 +33,11 @@
 - 相关入口已同步：`tasks.py`/`banks.py`/`generate.py`、`run_eval_parallel.sh`、`eval_suite.sh`、`recompute_usp_parallel.sh`、README/README_zh/PROJECT_ONBOARDING/docs。
 - 已验证：T8 JSON 60 条 / 30 视频 / 每视频 2 条 / 60 个 unique new_background；`all_edit_handoff.json` 500 条；`compileall` 通过；metric tests 17/17；T8 单样本 mock `run_eval.py` smoke 通过且 `nep_mask_mode="inside"`。
 
+### 2026-06-07 T5 JSON 清理记录
+- T5 最终生产文件固定为 `runs/edit_prompts_v2_10s/T5.json`；pipeline、handoff 和文档均只引用这个标准路径。
+- 已删除重复/草稿变体 `T5_1.json` 和 `T5_new.json`。
+- `T5.json` 保留 60 条 reorder，并显式设置 `mask_queries.nep_applicable=false`，避免新 NEP fallback 把 shot-reorder 当成 spatial local edit。
+
 ### 2026-06-07 指标重写记录
 - **SES 删除并更名为 USP**：去掉 face/ArcFace ID 识别和 CLIP-T off-target，只保留未被编辑 shot 的 DINOv2 内容相似度；如果所有 shot 都被编辑，USP 返回 `None`。
 - **TSF 删除**：T5 不再走 `mseditbench/eval/t5_track.py`；T5 通过统一 `run_eval.py` 评测，结构保持由 TAC 覆盖。
