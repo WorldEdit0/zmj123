@@ -13,7 +13,7 @@ CLI:
     python -m mseditbench.edit_prompts.rewrite_with_llm \
         --input_dir runs/edit_prompts_v1 \
         --output_dir runs/edit_prompts_v1.1 \
-        --tasks T1,T2,T3,T4,T5,T6,T7 \
+        --tasks T1,T2,T3,T4,T5,T6,T7,T8 \
         --max_workers 32 \
         --model doubao-seed-2-0-lite-260215
 
@@ -41,7 +41,7 @@ from volcenginesdkarkruntime import Ark
 SYSTEM_PROMPT = """You are improving a video editing instruction. The instruction will be sent verbatim to a video editing model. Your job is to make it natural fluent English without changing what it asks for.
 
 You will receive:
-  - task_id: one of T1..T7 (kind of edit, see TASK_GUIDE below)
+  - task_id: one of T1..T8 (kind of edit, see TASK_GUIDE below)
   - instruction: original (sometimes awkward) instruction
   - target_phrase: short noun phrase used downstream for CLIP-T matching
   - extra: any task-specific structured fields
@@ -54,6 +54,7 @@ TASK_GUIDE:
   T5 — structural: reorder shots
   T6 — re-shoot a specific shot with a different framing or camera move
   T7 — global lighting re-render only
+  T8 — replace the global background while preserving foreground entities and objects
 
 Rules:
   1. Preserve every visual descriptor (colors, materials, named clothing,
@@ -229,7 +230,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input_dir", required=True)
     ap.add_argument("--output_dir", required=True)
-    ap.add_argument("--tasks", default="T1,T2,T3,T4,T5,T6,T7")
+    ap.add_argument("--tasks", default="T1,T2,T3,T4,T5,T6,T7,T8")
     ap.add_argument("--model", default="doubao-seed-2-0-lite-260215")
     ap.add_argument("--api_key", default=os.environ.get("ARK_API_KEY",
                     "bca56c77-9f9b-4568-a4bc-5311fb678e7c"))

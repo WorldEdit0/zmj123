@@ -114,6 +114,26 @@ def test_nep_requires_masks_when_requested():
     assert r["nep"] is not None and r["n_scored"] == 2, f"n_scored={r['n_scored']}"
 
 
+def test_nep_inside_mask_for_foreground_preservation():
+    """T8-style NEP can score only the preserve foreground mask."""
+    src = np.zeros((2, 8, 8, 3), dtype=np.uint8)
+    edit = src.copy()
+    src[:, :4, :4, :] = 180
+    edit[:, :4, :4, :] = 180
+    edit[:, 4:, 4:, :] = 240  # background changes outside the preserve mask
+    mask = np.zeros((8, 8), dtype=np.uint8)
+    mask[:4, :4] = 1
+    r = M.nep(
+        {1: src},
+        {1: edit},
+        per_shot_edit_masks={1: mask},
+        require_masks=True,
+        mask_mode="inside",
+    )
+    assert r["nep"] is not None and r["nep"] > 0.999, f"nep={r['nep']}"
+    assert r["mask_mode"] == "inside"
+
+
 def test_usp_identity_is_one():
     """If an unedited shot is unchanged, USP DINO similarity is 1."""
     src = {1: _make_frames(0), 2: _make_frames(1)}

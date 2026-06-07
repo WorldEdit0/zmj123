@@ -1,7 +1,9 @@
 """Non-Edit Preservation (NEP).  RESEARCH_PLAN.md §4.4
 
-Source-aligned per-shot DINO similarity over the *complement* of the edit
-mask. Per-shot, never cross-shot — that's the whole point of this design:
+Source-aligned per-shot DINO similarity over a mask-derived region. The
+default is the *complement* of the edit mask. T8 background replacement uses
+the foreground preserve mask itself. Per-shot, never cross-shot — that's the
+whole point of this design:
 cross-cut DINO is meaningless since the next shot is intentionally different.
 
 If a caller has known non-comparable shots, pass shot_id in skip_shots so
@@ -23,8 +25,14 @@ def nep(
     skip_shots: list[int] | None = None,
     dino_backend=None,
     require_masks: bool = False,
+    mask_mode: str = "complement",
 ) -> dict:
-    """Returns dict {nep, per_shot_nep, n_scored, n_skipped}."""
+    """Returns dict {nep, per_shot_nep, n_scored, n_skipped}.
+
+    mask_mode:
+        "complement" scores outside the mask, for ordinary local edits.
+        "inside" scores inside the mask, for foreground-preservation tasks.
+    """
     # 中文注释：NEP 衡量“没有被要求编辑的区域是否保留”。
     # 它按同一个 shot 内的 source/edit 对齐比较，不跨 shot 比较，
     # 因为多镜头视频中相邻 shot 本来就是不同画面。
@@ -50,11 +58,16 @@ def nep(
             n_mask_missing += 1
             continue
         if m is not None:
-            # 中文注释：mask 表示编辑目标区域；NEP 要评估非目标区域，
-            # 所以取反 mask，只比较 mask 外的背景/未编辑区域。
-            inv = 1.0 - m
-            sf = (sf * inv[..., None]).astype(np.uint8)
-            ef = (ef * inv[..., None]).astype(np.uint8)
+            if mask_mode == "inside":
+                region = m
+            elif mask_mode == "complement":
+                # 中文注释：默认情况下 mask 表示编辑目标区域；NEP 要评估
+                # 非目标区域，所以取反 mask，只比较 mask 外的背景/未编辑区域。
+                region = 1.0 - m
+            else:
+                raise ValueError(f"unknown NEP mask_mode: {mask_mode}")
+            sf = (sf * region[..., None]).astype(np.uint8)
+            ef = (ef * region[..., None]).astype(np.uint8)
         # 中文注释：每帧先提 DINO embedding，再对一个 shot 内所有帧求平均，
         # 得到该 shot 的语义/视觉表示，最后和源 shot 做 cosine similarity。
         es = dino_backend.embed_frames(sf).mean(axis=0)
@@ -72,6 +85,7 @@ def nep(
             "n_scored": 0,
             "n_skipped": n_skipped,
             "n_mask_missing": n_mask_missing,
+            "mask_mode": mask_mode,
             "reason": reason,
         }
 
@@ -82,4 +96,5 @@ def nep(
         "n_scored": len(per_shot),
         "n_skipped": n_skipped,
         "n_mask_missing": n_mask_missing,
+        "mask_mode": mask_mode,
     }

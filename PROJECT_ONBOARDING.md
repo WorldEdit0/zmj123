@@ -25,7 +25,7 @@
 接手时优先以这套为准：
 
 - 源视频：`data/source_videos_10s/videos/`，30 条 10 秒左右的 multi-shot 源视频。
-- 编辑 prompt：`runs/edit_prompts_v2_10s/T1.json` 到 `T7.json`，共 440 条；T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条；T8 已停用。
+- 编辑 prompt：`runs/edit_prompts_v2_10s/T1.json` 到 `T8.json`，共 500 条；T1/T2/T3/T5/T6/T7/T8 各 60 条，T4 80 条。
 - 当前生产评测：`v2_10s + v3 metrics`。
 - 已有 baseline 输出：
   - `runs/seedance_v2v_edit_v2_10s/videos/`
@@ -56,7 +56,7 @@
 source video prompts
   -> Seedance 生成 30 条源视频
   -> shot detection / manual QA
-  -> 生成或手写 T1-T7 编辑 prompt
+  -> 生成或手写 T1-T8 编辑 prompt
   -> 各视频编辑模型输出 edited videos
   -> run_eval.py 计算指标
   -> aggregate.json / leaderboard.csv
@@ -71,7 +71,7 @@ source video prompts
   -> 对比已有 baseline
 ```
 
-## 5. T1 到 T7 任务
+## 5. T1 到 T8 任务
 
 | 任务 | 名称 | 要测什么 |
 |---|---|---|
@@ -82,6 +82,7 @@ source video prompts
 | T5 | Shot Reorder | 改变镜头顺序；TAC 根据 `extra.new_order` 重建期望时间线后评分。 |
 | T6 | Cinematic Re-shoot | 改某个 shot 的景别、构图或相机运动，重点看目标 shot 是否被正确重拍。 |
 | T7 | Global Lighting | 全片光照重渲染，例如黄昏窗光、霓虹灯、凌晨蓝光、篝火光等。 |
+| T8 | Global Background Replacement | 全片背景替换，例如把咖啡厅、工作室、街角等背景替换成山谷、森林、海滩等，同时保留前景主体、主要人物、关键物体和动作。 |
 
 任务定义代码在 `mseditbench/edit_prompts/tasks.py`，当前正式手写 prompt 以 `runs/edit_prompts_v2_10s/T*.json` 为准；`mseditbench/edit_prompts/handwritten_t*.py` 主要保留旧 v1/v1.2 构建历史。
 
@@ -92,7 +93,7 @@ source video prompts
 | PSQ | `mseditbench/metrics/psq.py` | Perceptual / aesthetic quality，当前真实后端用 pyiqa 的 MUSIQ + LAION-Aes。 |
 | EE v3 | `mseditbench/metrics/ee_v3.py` | Edit Effectiveness，用 VLM 判断每个相关 shot 是否完成编辑。当前应优先看 v3。 |
 | CSEP v3 | `mseditbench/metrics/csep_v3.py` | Cross-Shot Edit Propagation，看相关 shot 的编辑覆盖率和一致性。当前应优先看 v3。 |
-| NEP | `mseditbench/metrics/nep.py` | Non-Edit Preservation，只对局部编辑任务启用；用 `edit.mask_queries` 的 source/edit union mask 外区域衡量保留。 |
+| NEP | `mseditbench/metrics/nep.py` | Non-Edit Preservation；局部编辑默认用 `edit.mask_queries` 的 source/edit union mask 外区域衡量保留，T8 用前景保留 mask 内区域衡量主体保持。 |
 | USP | `mseditbench/metrics/usp.py` | Unedited Shot Preservation，只对未被编辑的 shot 计算 DINOv2 内容保持相似度；不再做人脸 ID 或 CLIP off-target。 |
 | TAC | `mseditbench/metrics/tac.py` | Temporal Anchor Consistency，用 OmniShotCut 检测编辑后 shot，先检查 shot 数，再按起止时间锚点漂移扣分。 |
 
@@ -107,7 +108,7 @@ source video prompts
 | `CLAUDE.md` | 原开发过程中的内部状态文档。 | 记录当前稳定版本、关键技术决策和后续 agent 方向。 |
 | `HOWTO.md` | 旧流程操作手册。 | 多数流程仍有参考价值，但默认路径和版本偏旧。 |
 | `DEEP_DIVE.md` | benchmark 设计深挖。 | 解释为什么要做 multi-shot edit，以及任务空间如何确定。 |
-| `RESEARCH_PLAN.md` | 早期研究计划。 | 有论文 framing 和原始规模设想，当前实际版本已收敛到 30 视频、440 prompt。 |
+| `RESEARCH_PLAN.md` | 早期研究计划。 | 有论文 framing 和原始规模设想，当前实际版本已收敛到 30 视频、500 prompt。 |
 | `SURVEY_REPORT.md` | 综述报告。 | 写 related work 和 motivation 时使用。 |
 | `RELATED_WORK_SURVEY.md` | 方法卡片库。 | 更细的 related work 素材。 |
 | `AGENT_BENCH_DESIGN.md` | agent 扩展轨设计。 | 不是当前稳定主线，适合作为下一阶段方向。 |
@@ -149,7 +150,7 @@ data/
 
 | 路径 | 作用 |
 |---|---|
-| `runs/edit_prompts_v2_10s/T1.json` 到 `T7.json` | 当前正式编辑 prompt，共 440 条；T4 为 80 条，其余任务各 60 条；T8 已停用并删除。 |
+| `runs/edit_prompts_v2_10s/T1.json` 到 `T8.json` | 当前正式编辑 prompt，共 500 条；T4 为 80 条，其余任务各 60 条。 |
 | `runs/edit_prompts_v2_10s/all_edit_handoff.json` | 所有任务 prompt 的合并 handoff 文件。 |
 | `runs/pilot_v2_10s/shots/` | 10 秒源视频的 shot detection 结果。 |
 | `runs/pilot_v2_10s/contact_sheets/` | 人工 QA 用 contact sheet。 |
@@ -210,11 +211,11 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 
 ### 10.3 `edit_prompts/`
 
-负责定义和生成 T1-T7 prompt。
+负责定义和生成 T1-T8 prompt。
 
 | 文件 | 作用 |
 |---|---|
-| `tasks.py` | T1-T7 的任务定义、模板、依赖字段。 |
+| `tasks.py` | T1-T8 的任务定义、模板、依赖字段。 |
 | `banks.py` | prompt 生成用的候选属性、风格、对象等 bank。 |
 | `generate.py` | 早期自动实例化 prompt 的 CLI。 |
 | `build_v1_2_handwritten.py` | 构建旧版手写 prompt。 |
@@ -286,7 +287,7 @@ runs/seedance_v2v_edit_v2_10s/videos/T1/00000_T1_0000_k0.mp4
 
 | 文件 | 作用 |
 |---|---|
-| `run_eval.py` | 主评测入口，适合 T1/T2/T3/T4/T5/T6/T7 等任务。 |
+| `run_eval.py` | 主评测入口，适合 T1/T2/T3/T4/T5/T6/T7/T8 等任务。 |
 | `merge_shards.py` | 多 shard 评测后合并 `aggregate.json`。 |
 | `recompute_psq.py` | 在已有 eval 结果上重算 PSQ。 |
 | `recompute_usp.py` | 在已有 eval 结果上重算 USP，并可选重算 TAC。 |
@@ -335,7 +336,7 @@ python3 -m mseditbench.tests.test_metrics
 |---|---|---|
 | `run_eval_parallel.sh` | 8 GPU 并行评测多个 task。 | 默认指向本地 `runs/edit_prompts_v2_10s`、`data/source_videos_10s/videos` 和 v2_10s baseline 输出；可用环境变量覆盖。 |
 | `recompute_psq_parallel.sh` | 对已有 eval 目录并行重算 PSQ。 | 默认 prompt 目录为 `runs/edit_prompts_v2_10s`；可用 `PROMPTS_DIR` 覆盖。 |
-| `recompute_usp_parallel.sh` | 对已有 eval 目录重算 USP/TAC。 | 默认处理 T1-T7；TAC 需要 OmniShotCut 权重。 |
+| `recompute_usp_parallel.sh` | 对已有 eval 目录重算 USP/TAC。 | 默认处理 T1-T8；TAC 需要 OmniShotCut 权重。 |
 
 本机直接跑评测时，推荐先不用这些 shell 脚本，先用下一节的显式命令。
 
@@ -484,7 +485,7 @@ python3 -m mseditbench.eval.run_eval \
   --num_samples 3
 ```
 
-对 T1/T2/T3/T4/T5/T6/T7 分别跑。
+对 T1/T2/T3/T4/T5/T6/T7/T8 分别跑。
 
 ### 15.3 读结果
 
@@ -544,7 +545,7 @@ jq '.baseline, .task_id, .n_prompts, .psq_mean, .ee_v3_mean, .csep_v3_mean, .nep
 6. **SES 已停用**：当前保留性指标看 `nep_mean` 和 `usp_mean`，时间结构看 `tac_mean`。
 7. **SAM-3 权重路径**：真实 mask backend 依赖本机权重路径，迁移机器时最容易坏。
 8. **VLM 调用成本和并发**：`backend_vlm seed` 需要 `ARK_API_KEY`，`VLM_MAX_WORKERS` 设置过大可能触发限流。
-9. **旧文档规模不是当前规模**：`RESEARCH_PLAN.md` 提过 930 prompt，但当前已落地的是 440 prompt。
+9. **旧文档规模不是当前规模**：`RESEARCH_PLAN.md` 提过 930 prompt，但当前已落地的是 500 prompt。
 10. **缓存文件不用读**：`.DS_Store`、`__pycache__`、`.pyc` 都不是项目逻辑。
 
 ## 18. 你真正需要掌握的最小闭环

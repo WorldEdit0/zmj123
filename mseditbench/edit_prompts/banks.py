@@ -99,3 +99,19 @@ T7_LIGHTING = [
     "moonlit blue night light",
     "small handheld work-light beam",
 ]
+
+# T8 global background replacements. The production T8 prompts are hand-written
+# in runs/edit_prompts_v2_10s/T8.json; this bank is only for future generation
+# experiments.
+T8_BACKGROUNDS = [
+    "a sunlit mountain valley with distant pine ridges",
+    "a bright tropical beach with pale sand and turquoise water",
+    "a quiet redwood forest clearing with mossy ground",
+    "a clean white marble sculpture gallery",
+    "a misty alpine meadow full of wildflowers",
+    "a glass greenhouse surrounded by dense jungle leaves",
+    "an ancient stone amphitheater at sunset",
+    "a sleek futuristic theater with dark chrome walls",
+    "a moonlit desert oasis with low palms",
+    "a gothic library lined with tall arched bookshelves",
+]

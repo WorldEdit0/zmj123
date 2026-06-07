@@ -1,9 +1,9 @@
 # MSEdit-Bench v1
 
 > **首个用于多镜头视频编辑的基准。**
-> 30 个多镜头视频 × 7 种任务类型 = 440 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和时间结构。
+> 30 个多镜头视频 × 8 种任务类型 = 500 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和时间结构。
 
-[![Tests](https://img.shields.io/badge/tests-16%2F16-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
+[![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
 ---
 
@@ -14,7 +14,7 @@
 **MSEdit-Bench** 是首个做到以下几点的基准：
 
 1. 将多镜头视频作为一等对象来处理（逐镜头标注、跨镜头指标）
-2. 覆盖 **7 类不同的编辑任务**（替换 / 属性 / 风格 / 添加删除 / 结构重排 / 电影化 / 光照）
+2. 覆盖 **8 类不同的编辑任务**（替换 / 属性 / 风格 / 添加删除 / 结构重排 / 电影化 / 光照 / 背景替换）
 3. 用经过校准、且与人类判断一致的 **VLM-as-Judge** 评估，替代脆弱的 CLIP-T 代理指标
 
 更完整的版本见 `RESEARCH_PLAN.md` 和 `DEEP_DIVE.md`。
@@ -27,14 +27,14 @@
 |---|---|
 | **源视频** | 30 个 mp4，每个 10 秒，720p @ 24 fps，由 ModelScope 托管 |
 | **镜头检测** | OmniShotCut（主）+ TransNetV2 + PySceneDetect（一致性投票）；重试后 30 / 30（100 %）命中率 |
-| **编辑提示词** | Claude 手写生成 440 条（T1/T2/T3/T5/T6/T7 各 60 条，T4 80 条） |
+| **编辑提示词** | Claude 手写生成 500 条（T1/T2/T3/T5/T6/T7/T8 各 60 条，T4 80 条） |
 | **评估** | Mask-aware（SAM-3）+ DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite 作为裁判 |
 | **K 样本协议** | 每条提示词 K = 3；报告 mean ± std |
-| **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 440 条 prompt 需要重新跑 |
+| **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 500 条 prompt 需要重新跑 |
 
 ---
 
-## 7 类任务
+## 8 类任务
 
 | ID | 名称 | 测试内容 | 示例指令 |
 |---|---|---|---|
@@ -45,6 +45,7 @@
 | **T5** | 镜头重排 | 符号化镜头顺序编辑 | “将视频重排为镜头顺序 3, 1, 2。” |
 | **T6** | 电影化重拍 | 单镜头构图 / 摄影机运动变化 | “将镜头 1 重拍为低角度镜头，并带有缓慢上仰。” |
 | **T7** | 全局光照 | 具有明显特征、与场景关联的整体光照重渲染 | “将咖啡馆场景重新打成黄昏窗光。” |
+| **T8** | 全局背景替换 | 替换背景，同时保留前景主体、主要人物和关键物体 | “将咖啡馆背景替换成山谷，同时保留咖啡师、杯子和咖啡机。” |
 
 T5 现在也走统一评测入口。TAC 会根据 `new_order` 重建期望的编辑后时间线，再比较 shot 时间锚点。
 
@@ -70,7 +71,7 @@ bash install.sh        # 安装 Python 依赖，并预取 DINOv2 / SAM-3 / OmniS
 我们将编辑器视为一个**黑盒**。将编辑后的 mp4 放入任意目录，只要目录布局如下：
 
 ```
-runs/<your_baseline_name>/videos/T{1..7}/{sample_id}_k{0,1,2}.mp4
+runs/<your_baseline_name>/videos/T{1..8}/{sample_id}_k{0,1,2}.mp4
 ```
 
 其中 `sample_id` 需要匹配 `runs/edit_prompts_v2_10s/T*.json` 中的 `sample_id` 字段，`k` 表示该提示词下 K = 3 个样本的索引。
@@ -96,7 +97,7 @@ BASELINE_NAME=my_baseline \
 BASELINE_VIDEOS_ROOT=runs/my_baseline/videos \
 EVAL_OUT_ROOT=runs/eval_my_baseline_v3 \
 SNAPSHOT_ID=my_baseline_v1 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
 ```
 
 该脚本会切分到 8 张 GPU 上并行运行，使用 mask-aware 后端 + Seed VLM 裁判计算所有指标，并写入：
@@ -117,7 +118,7 @@ runs/eval_my_baseline_v3/
 | **PSQ** | 编辑帧的感知质量 | pyiqa MUSIQ + LAION-Aes | [0, 1] ↑ |
 | **EE_v3** | 编辑是否执行了指令？ | Seed VLM 对每个镜头给出 0-5 评分 | [0, 1] ↑ |
 | **CSEP_v3** | 编辑是否在镜头之间一致传播？ | √(coverage × consistency)；两者均由 VLM 评分 | [0, 1] ↑ |
-| **NEP** | 局部任务的未编辑区域是否被保留？ | `edit.mask_queries` 的 SAM-3 union mask 外部 DINOv2 cos sim | [0, 1] ↑ / 不适用返回 None |
+| **NEP** | 未编辑 / 需要保留的区域是否保持？ | 局部编辑算 mask 外 DINOv2；T8 背景替换算前景保留 mask 内 DINOv2 | [0, 1] ↑ / 不适用返回 None |
 | **USP** | 未被编辑指令覆盖的源 shot 是否保持？ | 对 `edit.applicable_shots` 之外的 shot 算 DINOv2 cos sim | [0, 1] ↑ / 所有 shot 都被编辑时返回 None |
 | **TAC** | 编辑后视频的 shot 边界是否保持期望时间锚点？ | OmniShotCut 检测；shot 数不一致为 0，一致时按起止时间漂移扣分 | [0, 1] ↑ |
 
@@ -137,7 +138,7 @@ runs/eval_my_baseline_v3/
 
 ## 参考结果
 
-Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 440-prompt 任务集重跑：
+Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 500-prompt 任务集重跑：
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | 已退役 SES Pro | 已退役 SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -175,7 +176,7 @@ multi_shot_bench/
 │   ├── preprocess/           # OmniShotCut + TN/PS 镜头检测、contact sheets
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video 实体轨迹管
 │   ├── identity/             # InsightFace 人脸库
-│   ├── edit_prompts/         # 任务模板 + 440 条手写提示词
+│   ├── edit_prompts/         # 任务模板 + 500 条手写提示词
 │   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge（主指标）
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge 成对评估
@@ -186,7 +187,7 @@ multi_shot_bench/
 │   │   └── backends.py       # DINOv2 / SAM-3 / pyiqa / OmniShotCut / Seed VLM
 │   ├── baselines/            # 编辑器基线接口（Aleph 参考实现）
 │   ├── eval/                 # 编排器 + leaderboard + 重算工具
-│   └── tests/                # 基于合成数据的 16 个单元测试，所有后端均 mock
+│   └── tests/                # 基于合成数据的 17 个单元测试，所有后端均 mock
 │
 ├── scripts/                  # 顶层启动脚本
 │   ├── run_eval_parallel.sh           # 8-GPU 并行 mask-aware 评估
@@ -195,7 +196,7 @@ multi_shot_bench/
 │
 └── runs/                     # 所有流水线输出都落在这里
     ├── pilot_v2_10s/                    # ★ 镜头检测 30/30（当前）
-    ├── edit_prompts_v2_10s/             # ★ 440 条生产提示词
+    ├── edit_prompts_v2_10s/             # ★ 500 条生产提示词
     ├── seedance_v2v_edit_v2_10s/        # 旧 420-prompt Seedance Pro 归档输出
     ├── seedance_v2v_fast_edit_v2_10s/   # 旧 420-prompt Seedance Fast 归档输出
     ├── eval_seedance_v2v_v2_10s_v3/     # 旧 420-prompt Pro v3 leaderboard
@@ -249,7 +250,7 @@ BASELINE_NAME=seedance_v2v_pro_v2_10s \
 BASELINE_VIDEOS_ROOT=runs/seedance_v2v_edit_v2_10s/videos \
 EVAL_OUT_ROOT=runs/eval_seedance_v2v_v2_10s_v3 \
 SNAPSHOT_ID=pilot_v2_10s_v3 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
 
 # 5. 聚合结果会在 K 样本噪声范围内匹配 README leaderboard。
 ```
@@ -260,7 +261,7 @@ bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
 
 ## 路线图
 
-**v1（本次发布）**：30 个源视频，440 条提示词，VLM-as-Judge 指标；归档 Pro/Fast 参考结果早于 2026-06-07 prompt 重构，需要按当前任务集重跑。
+**v1（本次发布）**：30 个源视频，500 条提示词，VLM-as-Judge 指标；归档 Pro/Fast 参考结果早于 2026-06-07 prompt 重构和 T8 新增，需要按当前任务集重跑。
 
 **v1.x 后续步骤**（按优先级排序）：
 1. VLM ensemble 多样化：添加 Gemini 2.5 Pro 和 GPT-4o 后端，避免裁判信号来自单一供应商

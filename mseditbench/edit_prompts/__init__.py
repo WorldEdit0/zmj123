@@ -1,4 +1,4 @@
-"""Edit prompt generation: T1-T7.
+"""Edit prompt generation: T1-T8.
 
     from mseditbench.edit_prompts.tasks import ALL_TASKS
     from mseditbench.edit_prompts.generate import generate_for_task

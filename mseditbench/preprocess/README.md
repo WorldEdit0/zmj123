@@ -111,4 +111,4 @@ python mseditbench/preprocess/pilot_report.py \
 1. **跑 150 条全量 prompt** → 重复 1-3 步，得到全量 shots.json
 2. **建立 entity tracking pipeline**：Grounded-SAM2 + DEVA 对每个视频抽 per-shot entity tube（角色/物体）
 3. **建立 character face DB**：InsightFace + cluster 跨 shot 同一角色 → entity_id
-4. **开始写 T1-T7 edit prompt**（基于 source JSON 的 characters + key_objects + 实际检测到的 shot 数）
+4. **开始写 T1-T8 edit prompt**（基于 source JSON 的 characters + key_objects + 实际检测到的 shot 数）

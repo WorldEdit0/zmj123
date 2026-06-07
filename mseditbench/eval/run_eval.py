@@ -125,10 +125,15 @@ def _get_mask_spec(sample: dict) -> dict:
 
     Prompt JSONs may now provide edit.mask_queries with separate queries for
     source frames and edited frames. NEP masks the union of those regions and
-    evaluates only the complement. This is essential for add/delete/replace:
-    an anchor object is not necessarily the edited region.
+    normally evaluates the complement. T8 background replacement sets
+    score_region="mask" so NEP evaluates the preserved foreground mask itself.
+    This is essential for add/delete/replace: an anchor object is not
+    necessarily the edited region.
     """
     spec = sample["edit"].get("mask_queries") or _legacy_mask_spec(sample)
+    score_region = spec.get("score_region", "complement")
+    if score_region == "mask":
+        score_region = "inside"
     return {
         "nep_applicable": bool(spec.get("nep_applicable")),
         "edit_scope": spec.get("edit_scope"),
@@ -136,6 +141,7 @@ def _get_mask_spec(sample: dict) -> dict:
         "source_queries": _as_query_list(spec.get("source_queries")),
         "edited_queries": _as_query_list(spec.get("edited_queries")),
         "combine": spec.get("combine", "union"),
+        "score_region": score_region,
         "reason": spec.get("reason"),
     }
 
@@ -217,6 +223,7 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
       T3 global style : "the original natural realistic scene" -> target_phrase
                         (no source entity exists, use a generic anchor)
       T7 global light : "the original natural realistic lighting" -> target_phrase
+      T8 background   : "the original background" -> target_phrase
       T4 object       : extra.anchor (object class) -> target_phrase
       T5 / T6         : not directional-friendly, return ("", "") and let
                         ee_v2 short-circuit to None
@@ -234,6 +241,9 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
 
     if task_id == "T7":
         return "the original natural realistic lighting", tgt
+
+    if task_id == "T8":
+        return "the original background", tgt
 
     if task_id == "T6":
         # T6 = cinematic re-shoot of one shot. target_phrase is e.g. "an
@@ -273,6 +283,7 @@ def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
 #   T4 object        : small object/entity add/delete → ~0.02 typical
 #   T6 cinematic     : framing change → ~0.03 typical
 #   T7 lighting      : whole-frame relighting -> ~0.04 typical
+#   T8 background    : whole-background replacement -> ~0.05 typical
 # T5: handled outside EE_v2 (shot-structural).
 _DELTA_MAX_PER_TASK = {
     "T1": 0.05,
@@ -281,6 +292,7 @@ _DELTA_MAX_PER_TASK = {
     "T4": 0.02,
     "T6": 0.03,
     "T7": 0.04,
+    "T8": 0.05,
 }
 
 
@@ -336,9 +348,10 @@ def score_one(
     csep_r = {"csep": None, "coverage": None, "consistency": None,
               "per_shot_e_tilde": {}}
 
-    # 中文注释：NEP 比较 source/edit 在非编辑区域的 DINO 相似度。
-    # 全局/结构任务没有局部非编辑区域，直接返回 None。局部任务必须
-    # 有有效 mask；缺 mask 的 shot 会被 nep(require_masks=True) 跳过。
+    # 中文注释：NEP 比较 source/edit 的保留区域 DINO 相似度。
+    # 普通局部任务用 edit mask 的 complement；T8 背景替换用 foreground
+    # preserve mask 内部区域。缺 mask 的 shot 会被 nep(require_masks=True)
+    # 跳过，避免回退到整帧相似度。
     if mask_spec.get("nep_applicable"):
         nep_r = M.nep(
             src_frames,
@@ -346,6 +359,7 @@ def score_one(
             dino_backend=dino_backend,
             per_shot_edit_masks=edit_masks,
             require_masks=True,
+            mask_mode=mask_spec.get("score_region", "complement"),
         )
     else:
         nep_r = {
@@ -474,6 +488,7 @@ def score_one(
             "nep_n_scored": nep_r.get("n_scored"),
             "nep_n_skipped": nep_r.get("n_skipped"),
             "nep_n_mask_missing": nep_r.get("n_mask_missing"),
+            "nep_mask_mode": nep_r.get("mask_mode") or mask_spec.get("score_region"),
             "nep_reason": nep_r.get("reason"),
             "usp_per_shot": usp_r["per_shot_usp"],
             "usp_n_scored": usp_r.get("n_scored"),
@@ -507,7 +522,9 @@ def main():
                     help="Shot detector for TAC. Production uses omnishotcut; none leaves TAC unset.")
     ap.add_argument("--backend_mask", default="none", choices=["none", "sam3"],
                     help="If set, run SAM-3 per shot on edit.mask_queries to localize "
-                         "the local edit region for NEP complement preservation; "
+                         "the mask region for NEP. Ordinary local edits score the "
+                         "mask complement; T8 background replacement scores the "
+                         "foreground preserve mask itself. "
                          "EE_v3/CSEP_v3 remain VLM full-frame judgments. Default off.")
     ap.add_argument("--backend_psq", default="mock", choices=["mock", "pyiqa"],
                     help="MUSIQ + LAION-Aes via pyiqa, or deterministic hash mock.")

@@ -15,7 +15,7 @@ PROMPTS_DIR="${PROMPTS_DIR:-runs/edit_prompts_v2_10s}"
 SOURCE_VIDEOS_ROOT="${SOURCE_VIDEOS_ROOT:-data/source_videos_10s/videos}"
 BACKEND_DINO="${BACKEND_DINO:-v2s}"
 BACKEND_SHOT="${BACKEND_SHOT:-omnishotcut}"
-TASKS=(T1 T2 T3 T4 T5 T6 T7)
+TASKS=(T1 T2 T3 T4 T5 T6 T7 T8)
 
 cd "${REPO_ROOT}"
 
@@ -48,7 +48,7 @@ echo ""
 echo "================ Updated USP/TAC summary ================"
 for ROOT in "$PRO_ROOT" "$FAST_ROOT"; do
     echo "--- $ROOT ---"
-    for T in T1 T2 T3 T4 T5 T6 T7; do
+    for T in T1 T2 T3 T4 T5 T6 T7 T8; do
         if [ -f "$ROOT/$T/aggregate.json" ]; then
             python3 -c "
 import json

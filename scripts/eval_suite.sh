@@ -7,7 +7,7 @@
 # Modes:
 #   smoke [TASK...]   Run a 1-prompt end-to-end smoke test. Defaults to all tasks.
 #   task TASK...      Run full eval for the listed tasks.
-#   all              Run full eval for T1..T7.
+#   all              Run full eval for T1..T8.
 #   summary          Rebuild summary.csv and summary.md from aggregate.json files.
 #
 # Common overrides:
@@ -112,7 +112,7 @@ else
   EVAL_OUT_ROOT="${EVAL_OUT_ROOT:-runs/eval_${BASELINE_NAME}_${SNAPSHOT_ID}}"
 fi
 
-DEFAULT_TASKS=(T1 T2 T3 T4 T5 T6 T7)
+DEFAULT_TASKS=(T1 T2 T3 T4 T5 T6 T7 T8)
 
 case "${MODE}" in
   smoke)

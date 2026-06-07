@@ -7,7 +7,7 @@
 ```text
 scripts/eval_suite.sh
   |
-  |-- 所有任务 T1/T2/T3/T4/T5/T6/T7
+  |-- 所有任务 T1/T2/T3/T4/T5/T6/T7/T8
   |     -> python -m mseditbench.eval.run_eval
   |
   |-- 多 GPU 分片
@@ -45,7 +45,7 @@ run_eval.py
   |
   |-- PSQ     只看 edited frames
   |-- EE_v3   source/edit 对应帧对 -> Qwen3-VL 评分
-  |-- NEP     局部任务 source/edit DINO 相似度，edit.mask_queries union mask 外区域
+  |-- NEP     局部任务算 mask 外 DINO；T8 背景替换算前景 preserve mask 内 DINO
   |-- CSEP_v3 edited shot 两两比较 -> Qwen3-VL 一致性
   |-- USP     未编辑 shot 的 DINOv2 内容保持相似度
   |-- TAC     OmniShotCut 检测编辑后 shot，比较时间锚点
@@ -176,11 +176,11 @@ source per-shot frames          edited per-shot frames
           |                              |
           |                              |
           +------ edit.mask_queries ------+
-          | source_queries / edited_queries
+          | source_queries / edited_queries / score_region
           |                              |
           v                              v
 SAM3 分别在 source / edited 查询目标区域
-取 source mask 与 edited mask 的 union 外区域
+默认取 source mask 与 edited mask 的 union 外区域
           |
           v
 DINOv2 embed source frames -> shot source embedding
@@ -195,10 +195,11 @@ NEP = mean(所有可评分 shot_nep)
 
 注意：
 
-- SAM3 mask 当前只用于 NEP 的非编辑区域比较。
-- NEP 只对局部编辑任务启用；T3/T7 是全局重渲染，T5 是结构任务，T6 是单镜头重拍，这些任务返回 `None`。
+- SAM3 mask 当前只用于 NEP 的保留区域比较。
+- NEP 只对有明确保留/编辑区域的任务启用；T3/T7 是全局重渲染，T5 是结构任务，T6 是单镜头重拍，这些任务返回 `None`。
 - 对局部任务，mask miss 的 shot 会跳过，不再退回整帧 NEP；miss 细节记录在 `extra.mask_hits`。
 - T4 的 anchor 只表示空间关系，不再作为 NEP 的编辑区域 mask query。
+- T8 背景替换会在 prompt JSON 里设置 `score_region="mask"`，此时 NEP 不取 mask 外，而是直接在前景 preserve mask 内算 DINOv2 相似度，用来衡量人物/关键物体是否被保留。
 
 ## CSEP_v3
 

@@ -1,4 +1,4 @@
-"""T1-T7 task templates and per-video prompt instantiation.
+"""T1-T8 task templates and per-video prompt instantiation.
 
 Each task is a small dataclass with:
 - a textual instruction template (Jinja-style {placeholders})
@@ -117,4 +117,16 @@ T7 = TaskDef(
     requires=[],
 )
 
-ALL_TASKS = {t.task_id: t for t in [T1, T2, T3, T4, T5, T6, T7]}
+# T8 — global background replacement with foreground preservation
+T8 = TaskDef(
+    task_id="T8",
+    description="Global Background Replacement with Foreground Preservation",
+    instruction_templates=[
+        "Replace the {old_background} with {new_background}, preserving {preserve_foreground} and the original actions.",
+        "Move the scene into {new_background} while keeping {preserve_foreground} unchanged.",
+    ],
+    target_phrase_template="{new_background} background",
+    requires=["characters", "key_objects"],
+)
+
+ALL_TASKS = {t.task_id: t for t in [T1, T2, T3, T4, T5, T6, T7, T8]}

@@ -9,7 +9,7 @@ CLI:
         --source_json seedance_api_example/source_prompts_multishot_v2_10s.json \
         --shots_dir runs/pilot_v2_10s/shots \
         --output_dir runs/edit_prompts_v2_10s \
-        --tasks T1,T2,T3,T4,T5,T6,T7 \
+        --tasks T1,T2,T3,T4,T5,T6,T7,T8 \
         --max_per_video 2 \
         --seed 0
 
@@ -297,9 +297,45 @@ def _sample_t7(item: dict, shots: list[dict], rng: random.Random, n: int) -> lis
     return out
 
 
+def _sample_t8(item: dict, shots: list[dict], rng: random.Random, n: int) -> list[dict]:
+    out = []
+    preserve_queries = [
+        c["desc"] for c in item.get("characters", [])
+    ] + list(item.get("key_objects", []))
+    if not preserve_queries:
+        return out
+    backgrounds = rng.sample(banks.T8_BACKGROUNDS, k=min(n, len(banks.T8_BACKGROUNDS)))
+    preserve_foreground = ", ".join(preserve_queries[:4])
+    old_background = item.get("scene", "original background")
+    for bg in backgrounds:
+        instr = ALL_TASKS["T8"].instruction_templates[0].format(
+            old_background=old_background,
+            new_background=bg,
+            preserve_foreground=preserve_foreground,
+        )
+        out.append({
+            "task_id": "T8",
+            "instruction": instr,
+            "target_phrase": ALL_TASKS["T8"].target_phrase_template.format(new_background=bg),
+            "applicable_shots": [s["shot_id"] for s in shots],
+            "extra": {
+                "render_axis": "background",
+                "old_background": old_background,
+                "new_background": bg,
+                "preserve_queries": preserve_queries,
+            },
+            "mask_queries": _mask_queries(
+                True, "global_background", "background_replace",
+                preserve_queries, preserve_queries,
+                reason="T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask.",
+            ) | {"score_region": "mask"},
+        })
+    return out
+
+
 SAMPLERS = {
     "T1": _sample_t1, "T2": _sample_t2, "T3": _sample_t3, "T4": _sample_t4,
-    "T5": _sample_t5, "T6": _sample_t6, "T7": _sample_t7,
+    "T5": _sample_t5, "T6": _sample_t6, "T7": _sample_t7, "T8": _sample_t8,
 }
 
 
@@ -334,11 +370,11 @@ def generate_for_task(
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Generate per-video T1-T7 edit prompts")
+    ap = argparse.ArgumentParser(description="Generate per-video T1-T8 edit prompts")
     ap.add_argument("--source_json", required=True)
     ap.add_argument("--shots_dir", required=True)
     ap.add_argument("--output_dir", required=True)
-    ap.add_argument("--tasks", default="T1,T2,T3,T4,T5,T6,T7")
+    ap.add_argument("--tasks", default="T1,T2,T3,T4,T5,T6,T7,T8")
     ap.add_argument("--max_per_video", type=int, default=2)
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()

@@ -18,7 +18,7 @@ set -euo pipefail
 
 TASKS=("$@")
 if [ ${#TASKS[@]} -eq 0 ]; then
-    TASKS=(T1 T2 T3 T4 T5 T6 T7)
+    TASKS=(T1 T2 T3 T4 T5 T6 T7 T8)
 fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

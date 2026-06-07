@@ -1,9 +1,9 @@
 # MSEdit-Bench v1
 
 > **The first benchmark for multi-shot video editing.**
-> 30 multi-shot videos × 7 task types = 440 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
+> 30 multi-shot videos × 8 task types = 500 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
 
-[![Tests](https://img.shields.io/badge/tests-16%2F16-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
+[![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
 ---
 
@@ -14,7 +14,7 @@ Existing video-edit benchmarks (TGVE, EditBoard, etc.) all target **single-clip*
 **MSEdit-Bench** is the first benchmark to:
 
 1. Target multi-shot videos as a first-class object (per-shot annotations, cross-shot metrics)
-2. Cover **7 distinct edit families** (replacement / attribute / style / object add-delete / structural reorder / cinematic / lighting)
+2. Cover **8 distinct edit families** (replacement / attribute / style / object add-delete / structural reorder / cinematic / lighting / background replacement)
 3. Replace fragile CLIP-T proxy metrics with a calibrated **VLM-as-Judge** evaluation that aligns with human judgment
 
 See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
@@ -27,14 +27,14 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 |---|---|
 | **Source videos** | 30 mp4s, 10 s each, 720p @ 24 fps, ModelScope-hosted |
 | **Shot detection** | OmniShotCut (primary) + TransNetV2 + PySceneDetect (consensus); 30 / 30 (100 %) hit rate after retry |
-| **Edit prompts** | 440 hand-written by Claude (T1/T2/T3/T5/T6/T7 = 60 each, T4 = 80) |
+| **Edit prompts** | 500 hand-written by Claude (T1/T2/T3/T5/T6/T7/T8 = 60 each, T4 = 80) |
 | **Evaluation** | Mask-aware (SAM-3) + DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite as judge |
 | **K-sample protocol** | K = 3 per prompt; report mean ± std |
-| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 440 prompts |
+| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 500 prompts |
 
 ---
 
-## The 7 task families
+## The 8 task families
 
 | ID | Name | What it tests | Example instruction |
 |---|---|---|---|
@@ -45,6 +45,7 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 | **T5** | Shot Reorder | Symbolic shot-order edit | "Reorder the video to shot order 3, 1, 2." |
 | **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
 | **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with warm dusk window light." |
+| **T8** | Global Background Replacement | Replace the background while preserving foreground subjects and key objects | "Replace the cafe background with a mountain valley while preserving the barista, cup, and espresso machine." |
 
 T5 now runs through the same evaluation entry point as the other tasks. TAC uses the requested `new_order` to build the expected post-edit timeline before comparing shot time anchors.
 
@@ -70,7 +71,7 @@ You will need:
 We treat the editor as a **black box**. Drop your edited mp4s under any directory in this layout:
 
 ```
-runs/<your_baseline_name>/videos/T{1..7}/{sample_id}_k{0,1,2}.mp4
+runs/<your_baseline_name>/videos/T{1..8}/{sample_id}_k{0,1,2}.mp4
 ```
 
 Where `sample_id` matches the `sample_id` field in `runs/edit_prompts_v2_10s/T*.json`, and `k` indexes the K = 3 samples for that prompt.
@@ -96,7 +97,7 @@ BASELINE_NAME=my_baseline \
 BASELINE_VIDEOS_ROOT=runs/my_baseline/videos \
 EVAL_OUT_ROOT=runs/eval_my_baseline_v3 \
 SNAPSHOT_ID=my_baseline_v1 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
 ```
 
 This shards across 8 GPUs, computes all metrics with mask-aware backends + Seed VLM judge, and writes:
@@ -117,7 +118,7 @@ runs/eval_my_baseline_v3/
 | **PSQ** | Perceptual quality of edited frames | pyiqa MUSIQ + LAION-Aes | [0, 1] ↑ |
 | **EE_v3** | Did the edit apply the instruction? | Seed VLM 0-5 rating per shot | [0, 1] ↑ |
 | **CSEP_v3** | Does the edit propagate consistently across shots? | √(coverage × consistency); both VLM-rated | [0, 1] ↑ |
-| **NEP** | Is the un-edited region preserved for local edits? | DINOv2 cos sim outside the SAM-3 union mask from `edit.mask_queries` | [0, 1] ↑ / None when inapplicable |
+| **NEP** | Is the un-edited / preserved region kept intact? | DINOv2 cos sim outside local edit masks; for T8, inside the foreground preserve mask from `edit.mask_queries` | [0, 1] ↑ / None when inapplicable |
 | **USP** | Are source shots not targeted by the edit preserved? | DINOv2 cos sim on shots outside `edit.applicable_shots` | [0, 1] ↑ / None when all shots are edited |
 | **TAC** | Did edited-video shot boundaries preserve expected time anchors? | OmniShotCut shot detection; shot-count mismatch gives 0, matched shots are penalized by start/end drift | [0, 1] ↑ |
 
@@ -137,7 +138,7 @@ Full design rationale: top of `mseditbench/metrics/ee_v3.py`.
 
 ## Reference results
 
-Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 440-prompt task set:
+Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 500-prompt task set:
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | retired SES Pro | retired SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -175,7 +176,7 @@ multi_shot_bench/
 │   ├── preprocess/           # OmniShotCut + TN/PS shot detection, contact sheets
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video entity tubes
 │   ├── identity/             # InsightFace face DB
-│   ├── edit_prompts/         # task templates + 440 hand-written prompts
+│   ├── edit_prompts/         # task templates + 500 hand-written prompts
 │   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge (headline)
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge pairwise
@@ -186,7 +187,7 @@ multi_shot_bench/
 │   │   └── backends.py       # DINOv2 / SAM-3 / pyiqa / OmniShotCut / Seed VLM
 │   ├── baselines/            # editor baseline interface (Aleph reference impl)
 │   ├── eval/                 # orchestrator + leaderboard + recompute tools
-│   └── tests/                # 16 unit tests on synthetic data, all backends mocked
+│   └── tests/                # 17 unit tests on synthetic data, all backends mocked
 │
 ├── scripts/                  # top-level launchers
 │   ├── run_eval_parallel.sh           # 8-GPU parallel mask-aware eval
@@ -195,7 +196,7 @@ multi_shot_bench/
 │
 └── runs/                     # all pipeline outputs land here
     ├── pilot_v2_10s/                    # ★ shot detection 30/30 (current)
-    ├── edit_prompts_v2_10s/             # ★ 440 production prompts
+    ├── edit_prompts_v2_10s/             # ★ 500 production prompts
     ├── seedance_v2v_edit_v2_10s/        # archived old 420-prompt Seedance Pro outputs
     ├── seedance_v2v_fast_edit_v2_10s/   # archived old 420-prompt Seedance Fast outputs
     ├── eval_seedance_v2v_v2_10s_v3/     # archived old 420-prompt Pro v3 leaderboard
@@ -249,7 +250,7 @@ BASELINE_NAME=seedance_v2v_pro_v2_10s \
 BASELINE_VIDEOS_ROOT=runs/seedance_v2v_edit_v2_10s/videos \
 EVAL_OUT_ROOT=runs/eval_seedance_v2v_v2_10s_v3 \
 SNAPSHOT_ID=pilot_v2_10s_v3 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T6 T7
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
 
 # 5. Aggregate matches the README leaderboard within K-sample noise.
 ```
@@ -260,7 +261,7 @@ Approximate runtime: 8-GPU parallel + 64-way VLM concurrency, ~150 min per basel
 
 ## Roadmap
 
-**v1 (this release)**: 30 source videos, 440 prompts, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and need rerun for the current task set.
+**v1 (this release)**: 30 source videos, 500 prompts, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
 
 **v1.x next steps** (in priority order):
 1. VLM ensemble diversification: add Gemini 2.5 Pro and GPT-4o backends so the judge isn't a single-vendor signal
