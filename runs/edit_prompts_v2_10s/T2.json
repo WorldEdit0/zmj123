@@ -95,8 +95,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the barista's beanie with a tall white pleated chef hat throughout the cafe scene.",
-      "target_phrase": "young male barista in a black apron, hair tucked under a beanie with tall white pleated chef hat",
+      "instruction": "Change the barista's dark beanie to a bright red ribbed knit beanie throughout the cafe scene.",
+      "target_phrase": "barista wearing a bright red ribbed knit beanie",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -111,14 +111,14 @@
           "beanie"
         ],
         "edited_queries": [
-          "tall white pleated chef hat"
+          "bright red ribbed knit beanie"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
-        "old_value": "beanie",
-        "new_value": "tall white pleated chef hat"
+        "attribute_category": "pattern",
+        "old_value": "dark beanie",
+        "new_value": "bright red ribbed knit beanie"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -343,8 +343,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Add round wire-rimmed reading glasses to the florist in every shot.",
-      "target_phrase": "older florist with silver-streaked hair tied back, wearing a green canvas apron with round wire-rimmed reading glasses",
+      "instruction": "Change the florist's tied-back silver-streaked hair to loose shoulder-length hair in every shot.",
+      "target_phrase": "older florist with loose shoulder-length silver-streaked hair",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -355,16 +355,18 @@
         "nep_applicable": true,
         "edit_scope": "local",
         "edit_type": "attribute_edit",
-        "source_queries": [],
+        "source_queries": [
+          "silver-streaked hair tied back"
+        ],
         "edited_queries": [
-          "round wire-rimmed reading glasses"
+          "loose shoulder-length silver-streaked hair"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
-        "old_value": "no glasses",
-        "new_value": "round wire-rimmed reading glasses"
+        "attribute_category": "hairstyle",
+        "old_value": "silver-streaked hair tied back",
+        "new_value": "loose shoulder-length silver-streaked hair"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -406,8 +408,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the magician's slim black tie with a deep red satin bowtie across the magic act.",
-      "target_phrase": "magician in a black vest, white shirt, and slim black tie with deep red satin bowtie",
+      "instruction": "Make the magician's slim black tie show bold red diagonal stripes across the magic act.",
+      "target_phrase": "magician wearing a slim black tie with bold red diagonal stripes",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -422,14 +424,14 @@
           "slim black tie"
         ],
         "edited_queries": [
-          "deep red satin bowtie"
+          "slim black tie with bold red diagonal stripes"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "pattern",
         "old_value": "slim black tie",
-        "new_value": "deep red satin bowtie"
+        "new_value": "slim black tie with bold red diagonal stripes"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -723,8 +725,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the astronaut's name tag with a glowing blue mission badge in every shot.",
-      "target_phrase": "astronaut in a navy blue mission polo with a name tag, hair floating slightly with glowing blue mission badge",
+      "instruction": "Change the astronaut's plain name tag to a bright orange name tag in every shot.",
+      "target_phrase": "astronaut wearing a bright orange name tag",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -739,14 +741,14 @@
           "name tag"
         ],
         "edited_queries": [
-          "glowing blue mission badge"
+          "bright orange name tag"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
-        "old_value": "name tag",
-        "new_value": "glowing blue mission badge"
+        "attribute_category": "color",
+        "old_value": "plain name tag",
+        "new_value": "bright orange name tag"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -793,8 +795,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the skater's baggy white tee with a sleeveless black skate jersey across the skatepark scene.",
-      "target_phrase": "teen skater in a baggy white tee and black cargo shorts with sleeveless black skate jersey",
+      "instruction": "Make the skater's baggy white tee show thick black horizontal stripes across the skatepark scene.",
+      "target_phrase": "skater wearing a baggy white tee with thick black horizontal stripes",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -810,14 +812,14 @@
           "baggy white tee"
         ],
         "edited_queries": [
-          "sleeveless black skate jersey"
+          "baggy white tee with thick black horizontal stripes"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "pattern",
         "old_value": "baggy white tee",
-        "new_value": "sleeveless black skate jersey"
+        "new_value": "baggy white tee with thick black horizontal stripes"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -1000,8 +1002,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the DJ's silver chain with a chunky gold chain in every shot.",
-      "target_phrase": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones with chunky gold chain",
+      "instruction": "Change the DJ's silver chain to a chunky gold chain in every shot.",
+      "target_phrase": "DJ wearing a chunky gold chain",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1022,7 +1024,7 @@
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "color",
         "old_value": "silver chain",
         "new_value": "chunky gold chain"
       },
@@ -1268,8 +1270,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the mirrored goggles with rose-tinted ski goggles in every shot.",
-      "target_phrase": "snowboarder in an orange jacket and black helmet with mirrored goggles with rose-tinted ski goggles",
+      "instruction": "Tint the snowboarder's mirrored goggles rose pink in every shot.",
+      "target_phrase": "snowboarder wearing rose-tinted mirrored goggles",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1285,14 +1287,14 @@
           "mirrored goggles"
         ],
         "edited_queries": [
-          "rose-tinted ski goggles"
+          "rose-tinted mirrored goggles"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "color",
         "old_value": "mirrored goggles",
-        "new_value": "rose-tinted ski goggles"
+        "new_value": "rose-tinted mirrored goggles"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -1412,8 +1414,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the client's sleeveless tank top with a loose black mesh top in every shot.",
-      "target_phrase": "client in a sleeveless tank top with arm extended on the padded rest with loose black mesh top",
+      "instruction": "Change the client's sleeveless tank top into a sleeveless black mesh tank top in every shot.",
+      "target_phrase": "client wearing a sleeveless black mesh tank top",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -1429,14 +1431,14 @@
           "sleeveless tank top"
         ],
         "edited_queries": [
-          "loose black mesh top"
+          "sleeveless black mesh tank top"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "material",
         "old_value": "sleeveless tank top",
-        "new_value": "loose black mesh top"
+        "new_value": "sleeveless black mesh tank top"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -1548,8 +1550,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the glass blower's black gloves with thick tan heat-resistant gloves in every shot.",
-      "target_phrase": "glass blower in a white t-shirt and black gloves, sweat on his forehead with thick tan heat-resistant gloves",
+      "instruction": "Change the glass blower's black gloves into thick tan heat-resistant gloves in every shot.",
+      "target_phrase": "glass blower wearing thick tan heat-resistant gloves",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1570,7 +1572,7 @@
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "material",
         "old_value": "black gloves",
         "new_value": "thick tan heat-resistant gloves"
       },
@@ -1752,8 +1754,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the locksmith's navy jumpsuit with an olive utility vest over a black long-sleeve shirt throughout the scene.",
-      "target_phrase": "locksmith in a navy jumpsuit with a tool roll over one shoulder with olive utility vest over a black long-sleeve shirt",
+      "instruction": "Change the locksmith's navy jumpsuit into a creased olive canvas jumpsuit throughout the scene.",
+      "target_phrase": "locksmith wearing a creased olive canvas jumpsuit",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1769,14 +1771,14 @@
           "navy jumpsuit"
         ],
         "edited_queries": [
-          "olive utility vest over a black long-sleeve shirt"
+          "creased olive canvas jumpsuit"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "texture",
         "old_value": "navy jumpsuit",
-        "new_value": "olive utility vest over a black long-sleeve shirt"
+        "new_value": "creased olive canvas jumpsuit"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -1820,8 +1822,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the tool roll over the locksmith's shoulder with a brown leather crossbody tool satchel in every shot.",
-      "target_phrase": "locksmith in a navy jumpsuit with a tool roll over one shoulder with brown leather crossbody tool satchel",
+      "instruction": "Change the locksmith's canvas tool roll into a brown leather tool roll in every shot.",
+      "target_phrase": "locksmith carrying a brown leather tool roll over one shoulder",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1837,14 +1839,14 @@
           "tool roll over one shoulder"
         ],
         "edited_queries": [
-          "brown leather crossbody tool satchel"
+          "brown leather tool roll over one shoulder"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
-        "old_value": "tool roll over one shoulder",
-        "new_value": "brown leather crossbody tool satchel"
+        "attribute_category": "material",
+        "old_value": "canvas tool roll over one shoulder",
+        "new_value": "brown leather tool roll over one shoulder"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -1964,8 +1966,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Add a tiny red collar with a silver tag to the puppy in every shot.",
-      "target_phrase": "small golden retriever puppy with floppy ears with tiny red collar with a silver tag",
+      "instruction": "Make the puppy's short golden fur visibly longer and fluffier in every shot.",
+      "target_phrase": "small golden retriever puppy with long fluffy golden fur",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -1977,16 +1979,18 @@
         "nep_applicable": true,
         "edit_scope": "local",
         "edit_type": "attribute_edit",
-        "source_queries": [],
+        "source_queries": [
+          "small golden retriever puppy"
+        ],
         "edited_queries": [
-          "tiny red collar with a silver tag"
+          "long fluffy golden retriever fur"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
-        "old_value": "no collar",
-        "new_value": "tiny red collar with a silver tag"
+        "attribute_category": "texture",
+        "old_value": "short golden retriever fur",
+        "new_value": "long fluffy golden retriever fur"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -2030,8 +2034,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the watchmaker's magnifying loupe with a round brass monocle on a chain throughout the repair scene.",
-      "target_phrase": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye with round brass monocle on a chain",
+      "instruction": "Change the watchmaker's magnifying loupe to have a bright brass rim throughout the repair scene.",
+      "target_phrase": "watchmaker wearing a magnifying loupe with a bright brass rim",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2047,14 +2051,14 @@
           "magnifying loupe over one eye"
         ],
         "edited_queries": [
-          "round brass monocle on a chain"
+          "magnifying loupe with a bright brass rim"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "material",
         "old_value": "magnifying loupe over one eye",
-        "new_value": "round brass monocle on a chain"
+        "new_value": "magnifying loupe with a bright brass rim"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -2166,8 +2170,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the chef's starched white jacket with a short-sleeved black chef jacket throughout plating.",
-      "target_phrase": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap with short-sleeved black chef jacket",
+      "instruction": "Change the chef's starched white jacket into a wrinkled matte black chef jacket throughout plating.",
+      "target_phrase": "chef wearing a wrinkled matte black chef jacket",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2183,14 +2187,14 @@
           "starched white jacket"
         ],
         "edited_queries": [
-          "short-sleeved black chef jacket"
+          "wrinkled matte black chef jacket"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "texture",
         "old_value": "starched white jacket",
-        "new_value": "short-sleeved black chef jacket"
+        "new_value": "wrinkled matte black chef jacket"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -2234,8 +2238,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the white skull cap with a tall striped pastry chef hat in every shot.",
-      "target_phrase": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap with tall striped pastry chef hat",
+      "instruction": "Make the chef's white skull cap show bold red polka dots in every shot.",
+      "target_phrase": "chef wearing a white skull cap with bold red polka dots",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2251,14 +2255,14 @@
           "white skull cap"
         ],
         "edited_queries": [
-          "tall striped pastry chef hat"
+          "white skull cap with bold red polka dots"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "pattern",
         "old_value": "white skull cap",
-        "new_value": "tall striped pastry chef hat"
+        "new_value": "white skull cap with bold red polka dots"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -2648,8 +2652,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the backwards baseball cap with a wide straw barbecue hat in every shot.",
-      "target_phrase": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron with wide straw barbecue hat",
+      "instruction": "Change the backwards baseball cap into a faded denim baseball cap in every shot.",
+      "target_phrase": "grill cook wearing a faded denim backwards baseball cap",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2665,14 +2669,14 @@
           "backwards baseball cap"
         ],
         "edited_queries": [
-          "wide straw barbecue hat"
+          "faded denim backwards baseball cap"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "material",
         "old_value": "backwards baseball cap",
-        "new_value": "wide straw barbecue hat"
+        "new_value": "faded denim backwards baseball cap"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -2856,8 +2860,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the acupuncturist's soft beige tunic with a white medical scrub top throughout the treatment scene.",
-      "target_phrase": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic with white medical scrub top",
+      "instruction": "Change the acupuncturist's soft beige tunic to a soft white tunic with blue trim throughout the treatment scene.",
+      "target_phrase": "acupuncturist wearing a soft white tunic with blue trim",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2873,14 +2877,14 @@
           "soft beige tunic"
         ],
         "edited_queries": [
-          "white medical scrub top"
+          "soft white tunic with blue trim"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "pattern",
         "old_value": "soft beige tunic",
-        "new_value": "white medical scrub top"
+        "new_value": "soft white tunic with blue trim"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -3000,8 +3004,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the server's white paper hat with a red-and-white striped paper hat across the truck-window shots.",
-      "target_phrase": "ice cream server in a striped shirt and white paper hat, leaning out of the truck window with red-and-white striped paper hat",
+      "instruction": "Make the server's white paper hat red-and-white striped across the truck-window shots.",
+      "target_phrase": "server wearing a red-and-white striped paper hat",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3022,7 +3026,7 @@
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "pattern",
         "old_value": "white paper hat",
         "new_value": "red-and-white striped paper hat"
       },
@@ -3216,8 +3220,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the commuter's leather briefcase with a canvas messenger bag in every shot.",
-      "target_phrase": "commuter in a long beige coat with a leather briefcase with canvas messenger bag",
+      "instruction": "Change the commuter's leather briefcase into a scuffed navy leather briefcase in every shot.",
+      "target_phrase": "commuter carrying a scuffed navy leather briefcase",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3233,14 +3237,14 @@
           "leather briefcase"
         ],
         "edited_queries": [
-          "canvas messenger bag"
+          "scuffed navy leather briefcase"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "texture",
         "old_value": "leather briefcase",
-        "new_value": "canvas messenger bag"
+        "new_value": "scuffed navy leather briefcase"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -3289,8 +3293,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the mechanic's navy jumpsuit with gray mechanic coveralls tied at the waist throughout the repair scene.",
-      "target_phrase": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail with gray mechanic coveralls tied at the waist",
+      "instruction": "Change the mechanic's navy jumpsuit into a wrinkled gray canvas jumpsuit throughout the repair scene.",
+      "target_phrase": "mechanic wearing a wrinkled gray canvas jumpsuit",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3307,14 +3311,14 @@
           "navy jumpsuit"
         ],
         "edited_queries": [
-          "gray mechanic coveralls tied at the waist"
+          "wrinkled gray canvas jumpsuit"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "texture",
         "old_value": "navy jumpsuit",
-        "new_value": "gray mechanic coveralls tied at the waist"
+        "new_value": "wrinkled gray canvas jumpsuit"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -3445,8 +3449,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the pilot's aviator sunglasses with round wire-rimmed glasses throughout the balloon launch.",
-      "target_phrase": "pilot in a beige flight suit and aviator sunglasses, gloves on hands with round wire-rimmed glasses",
+      "instruction": "Change the pilot's aviator sunglasses to blue-mirrored aviator sunglasses throughout the balloon launch.",
+      "target_phrase": "pilot wearing blue-mirrored aviator sunglasses",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3463,14 +3467,14 @@
           "aviator sunglasses"
         ],
         "edited_queries": [
-          "round wire-rimmed glasses"
+          "blue-mirrored aviator sunglasses"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "color",
         "old_value": "aviator sunglasses",
-        "new_value": "round wire-rimmed glasses"
+        "new_value": "blue-mirrored aviator sunglasses"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -3937,8 +3941,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the storyteller's wide-brim hat with a dark knit beanie across the campfire scene.",
-      "target_phrase": "storyteller with a wide-brim hat, holding a long stick toward the fire with dark knit beanie",
+      "instruction": "Change the storyteller's wide-brim hat into a weathered dark felt wide-brim hat across the campfire scene.",
+      "target_phrase": "storyteller wearing a weathered dark felt wide-brim hat",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3955,14 +3959,14 @@
           "wide-brim hat"
         ],
         "edited_queries": [
-          "dark knit beanie"
+          "weathered dark felt wide-brim hat"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory",
+        "attribute_category": "material",
         "old_value": "wide-brim hat",
-        "new_value": "dark knit beanie"
+        "new_value": "weathered dark felt wide-brim hat"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }
@@ -4097,8 +4101,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Replace the bartender's black vest and slim suspenders with a white dinner jacket with black lapels throughout the bar scene.",
-      "target_phrase": "bartender in a tight white shirt, black vest, and slim suspenders with white dinner jacket with black lapels",
+      "instruction": "Change the bartender's black vest and slim suspenders to a white pinstriped vest with black suspenders throughout the bar scene.",
+      "target_phrase": "bartender wearing a white pinstriped vest with black suspenders",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4115,14 +4119,14 @@
           "black vest and slim suspenders"
         ],
         "edited_queries": [
-          "white dinner jacket with black lapels"
+          "white pinstriped vest with black suspenders"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_type",
+        "attribute_category": "pattern",
         "old_value": "black vest and slim suspenders",
-        "new_value": "white dinner jacket with black lapels"
+        "new_value": "white pinstriped vest with black suspenders"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
     }

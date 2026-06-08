@@ -47,8 +47,8 @@ You will receive:
   - extra: any task-specific structured fields
 
 TASK_GUIDE:
-  T1 — replace either a dynamic entity or a static object across all shots
-  T2 — change one character's attribute (color / material / clothing type / hairstyle / accessory)
+  T1 — replace either a dynamic entity or a static object category across all shots
+  T2 — change a same-object attribute only (color / material / pattern / texture / hairstyle / hair or fur length)
   T3 — global visual style re-render only
   T4 — add or delete static/dynamic objects or entities, no replacement
   T5 — structural: reorder shots

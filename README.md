@@ -38,13 +38,13 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 
 | ID | Name | What it tests | Example instruction |
 |---|---|---|---|
-| **T1** | Cross-Shot Replacement | Dynamic entity replacement plus static object replacement | "Replace the barista with a silver-haired female barista." / "Replace the latte cup with a glass mug." |
-| **T2** | Cross-Shot Attribute Edit | Localized changes across color, material, clothing type, hairstyle, and accessories | "Change the barista's black apron to a deep maroon apron in every shot." |
+| **T1** | Cross-Shot Replacement | Dynamic entity replacement plus category-level static object replacement | "Replace the barista with a silver-haired female barista." / "Replace the latte cup with a potted cactus." |
+| **T2** | Cross-Shot Attribute Edit | Localized same-object changes in color, material, pattern, texture, hairstyle, and fur/hair length | "Change the barista's black apron to a deep maroon apron in every shot." |
 | **T3** | Global Style | Whole-frame re-render to a broad, explicit visual style | "Re-render the cafe scene in pixel art style." |
 | **T4** | Cross-Shot Add/Delete | Static and dynamic add/delete operations, 20 prompts per category | "Place a small brass desk bell next to the white ceramic latte cup." |
 | **T5** | Shot Reorder | Symbolic shot-order edit | "Reorder the video to shot order 3, 1, 2." |
 | **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
-| **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with warm dusk window light." |
+| **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with a narrow flashlight beam." |
 | **T8** | Global Background Replacement | Replace the background while preserving foreground subjects and key objects | "Replace the cafe background with a mountain valley while preserving the barista, cup, and espresso machine." |
 
 T5 now runs through the same evaluation entry point as the other tasks. TAC uses the requested `new_order` to build the expected post-edit timeline before comparing shot time anchors.

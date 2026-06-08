@@ -1,4 +1,10 @@
-"""Hand-written T2 — attribute change. Authored by Claude."""
+"""Historical v1/v1.2 hand-written T2 — attribute change.
+
+Current v2_10s production T2 is defined in
+`runs/edit_prompts_v2_10s/T2.json`, `tasks.py`, and `banks.py`. This module is
+kept only for regenerating the old v1.2 prompt snapshot, whose attribute scope
+included accessory and clothing-type changes.
+"""
 
 HAND_T2 = {
 "00000_T2_0000": ("Add round gold-rimmed glasses to the young woman in the red knit sweater, in every shot of the kitchen.", "a person wearing round gold-rimmed glasses"),

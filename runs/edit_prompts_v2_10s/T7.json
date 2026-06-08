@@ -33,8 +33,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm dusk window light across the cafe counter, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm dusk window light across the cafe counter look",
+      "instruction": "Re-light the scene with low golden dusk light; keep actions and framing unchanged.",
+      "target_phrase": "low golden dusk light look",
       "applicable_shots": [
         1,
         2,
@@ -42,7 +42,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm dusk window light across the cafe counter"
+        "lighting": "low golden dusk light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -90,8 +90,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft early-morning cafe light with pale blue shadows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft early-morning cafe light with pale blue shadows look",
+      "instruction": "Re-light the scene with narrow flashlight beam across the cafe counter; keep actions and framing unchanged.",
+      "target_phrase": "narrow flashlight beam across the cafe counter look",
       "applicable_shots": [
         1,
         2,
@@ -99,7 +99,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft early-morning cafe light with pale blue shadows"
+        "lighting": "narrow flashlight beam across the cafe counter"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -147,8 +147,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with low amber pottery-studio bulb light focused on the wheel, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "low amber pottery-studio bulb light focused on the wheel look",
+      "instruction": "Re-light the scene with single amber overhead bulb on the pottery wheel; keep actions and framing unchanged.",
+      "target_phrase": "single amber overhead bulb on the pottery wheel look",
       "applicable_shots": [
         1,
         2,
@@ -156,7 +156,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "low amber pottery-studio bulb light focused on the wheel"
+        "lighting": "single amber overhead bulb on the pottery wheel"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -204,8 +204,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with golden-hour sunset light streaming through a high studio window, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "golden-hour sunset light streaming through a high studio window look",
+      "instruction": "Re-light the scene with flickering kiln firelight; keep actions and framing unchanged.",
+      "target_phrase": "flickering kiln firelight look",
       "applicable_shots": [
         1,
         2,
@@ -213,7 +213,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "golden-hour sunset light streaming through a high studio window"
+        "lighting": "flickering kiln firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -261,8 +261,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with cool rainy-day window light in the flower shop, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "cool rainy-day window light in the flower shop look",
+      "instruction": "Re-light the scene with green neon flower-shop sign glow; keep actions and framing unchanged.",
+      "target_phrase": "green neon flower-shop sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -270,7 +270,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool rainy-day window light in the flower shop"
+        "lighting": "green neon flower-shop sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -318,8 +318,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft florist-shop skylight after dawn, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft florist-shop skylight after dawn look",
+      "instruction": "Re-light the scene with deep blue moonlight through the florist window; keep actions and framing unchanged.",
+      "target_phrase": "deep blue moonlight through the florist window look",
       "applicable_shots": [
         1,
         2,
@@ -327,7 +327,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft florist-shop skylight after dawn"
+        "lighting": "deep blue moonlight through the florist window"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -378,7 +378,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with single hard stage spotlight on the magic table, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with single hard stage spotlight on the magic table; keep actions and framing unchanged.",
       "target_phrase": "single hard stage spotlight on the magic table look",
       "applicable_shots": [
         1,
@@ -438,8 +438,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with dim cabaret footlights with warm pools of light, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "dim cabaret footlights with warm pools of light look",
+      "instruction": "Re-light the scene with warm cabaret footlights; keep actions and framing unchanged.",
+      "target_phrase": "warm cabaret footlights look",
       "applicable_shots": [
         1,
         2,
@@ -447,7 +447,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dim cabaret footlights with warm pools of light"
+        "lighting": "warm cabaret footlights"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -498,8 +498,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with midnight blue moonlight mixed with the candle glow, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "midnight blue moonlight mixed with the candle glow look",
+      "instruction": "Re-light the scene with midnight blue moonlight mixed with candle glow; keep actions and framing unchanged.",
+      "target_phrase": "midnight blue moonlight mixed with candle glow look",
       "applicable_shots": [
         1,
         2,
@@ -507,7 +507,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "midnight blue moonlight mixed with the candle glow"
+        "lighting": "midnight blue moonlight mixed with candle glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -558,8 +558,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with flickering candlelight as the dominant room illumination, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "flickering candlelight as the dominant room illumination look",
+      "instruction": "Re-light the scene with flickering candlelight as the main source; keep actions and framing unchanged.",
+      "target_phrase": "flickering candlelight as the main source look",
       "applicable_shots": [
         1,
         2,
@@ -567,7 +567,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "flickering candlelight as the dominant room illumination"
+        "lighting": "flickering candlelight as the main source"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -614,7 +614,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with cold spacecraft instrument-panel glow, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with cold spacecraft instrument-panel glow; keep actions and framing unchanged.",
       "target_phrase": "cold spacecraft instrument-panel glow look",
       "applicable_shots": [
         1,
@@ -670,8 +670,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with emergency red warning light pulsing through the cabin, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "emergency red warning light pulsing through the cabin look",
+      "instruction": "Re-light the scene with pulsing red emergency cabin light; keep actions and framing unchanged.",
+      "target_phrase": "pulsing red emergency cabin light look",
       "applicable_shots": [
         1,
         2,
@@ -679,7 +679,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "emergency red warning light pulsing through the cabin"
+        "lighting": "pulsing red emergency cabin light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -735,8 +735,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with late-afternoon skatepark sunlight with long shadows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "late-afternoon skatepark sunlight with long shadows look",
+      "instruction": "Re-light the scene with blue moonlight over the skatepark; keep actions and framing unchanged.",
+      "target_phrase": "blue moonlight over the skatepark look",
       "applicable_shots": [
         1,
         2,
@@ -745,7 +745,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "late-afternoon skatepark sunlight with long shadows"
+        "lighting": "blue moonlight over the skatepark"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -801,8 +801,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with harsh overhead streetlamp light at a night skatepark, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "harsh overhead streetlamp light at a night skatepark look",
+      "instruction": "Re-light the scene with harsh overhead streetlamp light; keep actions and framing unchanged.",
+      "target_phrase": "harsh overhead streetlamp light look",
       "applicable_shots": [
         1,
         2,
@@ -811,7 +811,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "harsh overhead streetlamp light at a night skatepark"
+        "lighting": "harsh overhead streetlamp light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -864,8 +864,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with saturated neon club lighting from magenta and cyan stage lights, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "saturated neon club lighting from magenta and cyan stage lights look",
+      "instruction": "Re-light the scene with magenta and cyan neon club lighting; keep actions and framing unchanged.",
+      "target_phrase": "magenta and cyan neon club lighting look",
       "applicable_shots": [
         1,
         2,
@@ -874,7 +874,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "saturated neon club lighting from magenta and cyan stage lights"
+        "lighting": "magenta and cyan neon club lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -927,8 +927,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with rapid white strobe lighting across the DJ stage, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "rapid white strobe lighting across the DJ stage look",
+      "instruction": "Re-light the scene with rapid white strobe lighting; keep actions and framing unchanged.",
+      "target_phrase": "rapid white strobe lighting look",
       "applicable_shots": [
         1,
         2,
@@ -937,7 +937,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "rapid white strobe lighting across the DJ stage"
+        "lighting": "rapid white strobe lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -989,8 +989,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with bright noon beach sunlight reflected from the water, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "bright noon beach sunlight reflected from the water look",
+      "instruction": "Re-light the scene with silver moonlight over the ocean waves; keep actions and framing unchanged.",
+      "target_phrase": "silver moonlight over the ocean waves look",
       "applicable_shots": [
         1,
         2,
@@ -999,7 +999,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright noon beach sunlight reflected from the water"
+        "lighting": "silver moonlight over the ocean waves"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1051,8 +1051,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with orange sunset light over the ocean waves, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "orange sunset light over the ocean waves look",
+      "instruction": "Re-light the scene with deep orange sunset light over the water; keep actions and framing unchanged.",
+      "target_phrase": "deep orange sunset light over the water look",
       "applicable_shots": [
         1,
         2,
@@ -1061,7 +1061,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "orange sunset light over the ocean waves"
+        "lighting": "deep orange sunset light over the water"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1113,8 +1113,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with blue alpine dawn light on the snow slope, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "blue alpine dawn light on the snow slope look",
+      "instruction": "Re-light the scene with icy blue moonlight on the snow slope; keep actions and framing unchanged.",
+      "target_phrase": "icy blue moonlight on the snow slope look",
       "applicable_shots": [
         1,
         2,
@@ -1123,7 +1123,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "blue alpine dawn light on the snow slope"
+        "lighting": "icy blue moonlight on the snow slope"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1175,8 +1175,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with flat overcast snowfield light with soft shadows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "flat overcast snowfield light with soft shadows look",
+      "instruction": "Re-light the scene with helmet headlamp beams on the snow; keep actions and framing unchanged.",
+      "target_phrase": "helmet headlamp beams on the snow look",
       "applicable_shots": [
         1,
         2,
@@ -1185,7 +1185,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "flat overcast snowfield light with soft shadows"
+        "lighting": "helmet headlamp beams on the snow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1242,8 +1242,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with focused white task lamp light over the tattoo workstation, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "focused white task lamp light over the tattoo workstation look",
+      "instruction": "Re-light the scene with focused white task-lamp light over the tattoo station; keep actions and framing unchanged.",
+      "target_phrase": "focused white task-lamp light over the tattoo station look",
       "applicable_shots": [
         1,
         2,
@@ -1252,7 +1252,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "focused white task lamp light over the tattoo workstation"
+        "lighting": "focused white task-lamp light over the tattoo station"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1309,8 +1309,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with red neon parlor sign glow across the tattoo room, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "red neon parlor sign glow across the tattoo room look",
+      "instruction": "Re-light the scene with red neon parlor-sign glow; keep actions and framing unchanged.",
+      "target_phrase": "red neon parlor-sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -1319,7 +1319,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "red neon parlor sign glow across the tattoo room"
+        "lighting": "red neon parlor-sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1372,8 +1372,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with intense orange furnace light dominating the glassblowing workshop, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "intense orange furnace light dominating the glassblowing workshop look",
+      "instruction": "Re-light the scene with intense orange furnace firelight; keep actions and framing unchanged.",
+      "target_phrase": "intense orange furnace firelight look",
       "applicable_shots": [
         1,
         2,
@@ -1382,7 +1382,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "intense orange furnace light dominating the glassblowing workshop"
+        "lighting": "intense orange furnace firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1435,8 +1435,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with dim workshop light with the furnace as the only warm source, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "dim workshop light with the furnace as the only warm source look",
+      "instruction": "Re-light the scene with dim workshop lit only by furnace glow; keep actions and framing unchanged.",
+      "target_phrase": "dim workshop lit only by furnace glow look",
       "applicable_shots": [
         1,
         2,
@@ -1445,7 +1445,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dim workshop light with the furnace as the only warm source"
+        "lighting": "dim workshop lit only by furnace glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1498,8 +1498,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft paper-lantern light over the calligraphy table, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft paper-lantern light over the calligraphy table look",
+      "instruction": "Re-light the scene with red paper-lantern glow over the calligraphy table; keep actions and framing unchanged.",
+      "target_phrase": "red paper-lantern glow over the calligraphy table look",
       "applicable_shots": [
         1,
         2,
@@ -1508,7 +1508,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft paper-lantern light over the calligraphy table"
+        "lighting": "red paper-lantern glow over the calligraphy table"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1561,8 +1561,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with quiet morning window light across the rice paper, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "quiet morning window light across the rice paper look",
+      "instruction": "Re-light the scene with cold blue moonlight across the rice paper; keep actions and framing unchanged.",
+      "target_phrase": "cold blue moonlight across the rice paper look",
       "applicable_shots": [
         1,
         2,
@@ -1571,7 +1571,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "quiet morning window light across the rice paper"
+        "lighting": "cold blue moonlight across the rice paper"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1624,7 +1624,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with narrow flashlight beam on the brass deadbolt, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with narrow flashlight beam on the brass deadbolt; keep actions and framing unchanged.",
       "target_phrase": "narrow flashlight beam on the brass deadbolt look",
       "applicable_shots": [
         1,
@@ -1687,8 +1687,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with greenish hallway fluorescent lighting around the locksmith, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "greenish hallway fluorescent lighting around the locksmith look",
+      "instruction": "Re-light the scene with green fluorescent hallway light; keep actions and framing unchanged.",
+      "target_phrase": "green fluorescent hallway light look",
       "applicable_shots": [
         1,
         2,
@@ -1697,7 +1697,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "greenish hallway fluorescent lighting around the locksmith"
+        "lighting": "green fluorescent hallway light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1754,8 +1754,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with clean bright veterinary exam-room fluorescent light, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "clean bright veterinary exam-room fluorescent light look",
+      "instruction": "Re-light the scene with hard white surgical exam spotlight; keep actions and framing unchanged.",
+      "target_phrase": "hard white surgical exam spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -1764,7 +1764,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "clean bright veterinary exam-room fluorescent light"
+        "lighting": "hard white surgical exam spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1821,8 +1821,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with gentle afternoon window light across the exam table, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "gentle afternoon window light across the exam table look",
+      "instruction": "Re-light the scene with ultraviolet veterinary exam-lamp glow; keep actions and framing unchanged.",
+      "target_phrase": "ultraviolet veterinary exam-lamp glow look",
       "applicable_shots": [
         1,
         2,
@@ -1831,7 +1831,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "gentle afternoon window light across the exam table"
+        "lighting": "ultraviolet veterinary exam-lamp glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1884,8 +1884,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with small warm desk-lamp light on the watchmaker bench, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "small warm desk-lamp light on the watchmaker bench look",
+      "instruction": "Re-light the scene with small warm desk-lamp pool on the watch bench; keep actions and framing unchanged.",
+      "target_phrase": "small warm desk-lamp pool on the watch bench look",
       "applicable_shots": [
         1,
         2,
@@ -1894,7 +1894,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "small warm desk-lamp light on the watchmaker bench"
+        "lighting": "small warm desk-lamp pool on the watch bench"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1947,7 +1947,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with cool magnifying workbench light with crisp shadows, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with cool magnifying workbench light with crisp shadows; keep actions and framing unchanged.",
       "target_phrase": "cool magnifying workbench light with crisp shadows look",
       "applicable_shots": [
         1,
@@ -2010,8 +2010,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with bright professional kitchen pass lighting over the plate, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "bright professional kitchen pass lighting over the plate look",
+      "instruction": "Re-light the scene with orange heat-lamp glow over the plate; keep actions and framing unchanged.",
+      "target_phrase": "orange heat-lamp glow over the plate look",
       "applicable_shots": [
         1,
         2,
@@ -2020,7 +2020,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright professional kitchen pass lighting over the plate"
+        "lighting": "orange heat-lamp glow over the plate"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2073,8 +2073,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm restaurant service light on the dessert station, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm restaurant service light on the dessert station look",
+      "instruction": "Re-light the scene with blue neon strip light at the dessert station; keep actions and framing unchanged.",
+      "target_phrase": "blue neon strip light at the dessert station look",
       "applicable_shots": [
         1,
         2,
@@ -2083,7 +2083,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm restaurant service light on the dessert station"
+        "lighting": "blue neon strip light at the dessert station"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2139,8 +2139,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft sunrise light across the yoga studio floor, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft sunrise light across the yoga studio floor look",
+      "instruction": "Re-light the scene with full moonlight across the yoga studio floor; keep actions and framing unchanged.",
+      "target_phrase": "full moonlight across the yoga studio floor look",
       "applicable_shots": [
         1,
         2,
@@ -2149,7 +2149,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft sunrise light across the yoga studio floor"
+        "lighting": "full moonlight across the yoga studio floor"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2205,8 +2205,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with muted indoor ceiling-panel light in the yoga room, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "muted indoor ceiling-panel light in the yoga room look",
+      "instruction": "Re-light the scene with purple blacklight glow in the yoga room; keep actions and framing unchanged.",
+      "target_phrase": "purple blacklight glow in the yoga room look",
       "applicable_shots": [
         1,
         2,
@@ -2215,7 +2215,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "muted indoor ceiling-panel light in the yoga room"
+        "lighting": "purple blacklight glow in the yoga room"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2268,8 +2268,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm grooming-salon bulb light over the table, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm grooming-salon bulb light over the table look",
+      "instruction": "Re-light the scene with bright circular grooming ring light; keep actions and framing unchanged.",
+      "target_phrase": "bright circular grooming ring light look",
       "applicable_shots": [
         1,
         2,
@@ -2278,7 +2278,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm grooming-salon bulb light over the table"
+        "lighting": "bright circular grooming ring light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2331,8 +2331,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with cool daylight from the grooming-salon front window, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "cool daylight from the grooming-salon front window look",
+      "instruction": "Re-light the scene with pink neon salon-sign glow; keep actions and framing unchanged.",
+      "target_phrase": "pink neon salon-sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -2341,7 +2341,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool daylight from the grooming-salon front window"
+        "lighting": "pink neon salon-sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2394,8 +2394,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with golden backyard evening light around the grill, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "golden backyard evening light around the grill look",
+      "instruction": "Re-light the scene with low orange grill firelight; keep actions and framing unchanged.",
+      "target_phrase": "low orange grill firelight look",
       "applicable_shots": [
         1,
         2,
@@ -2404,7 +2404,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "golden backyard evening light around the grill"
+        "lighting": "low orange grill firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2457,8 +2457,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with glowing charcoal firelight as the main light source, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "glowing charcoal firelight as the main light source look",
+      "instruction": "Re-light the scene with glowing charcoal firelight; keep actions and framing unchanged.",
+      "target_phrase": "glowing charcoal firelight look",
       "applicable_shots": [
         1,
         2,
@@ -2467,7 +2467,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "glowing charcoal firelight as the main light source"
+        "lighting": "glowing charcoal firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2520,8 +2520,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with misty pre-dawn blue light over the lake dock, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "misty pre-dawn blue light over the lake dock look",
+      "instruction": "Re-light the scene with silver moonlight over the lake dock; keep actions and framing unchanged.",
+      "target_phrase": "silver moonlight over the lake dock look",
       "applicable_shots": [
         1,
         2,
@@ -2530,7 +2530,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "misty pre-dawn blue light over the lake dock"
+        "lighting": "silver moonlight over the lake dock"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2583,8 +2583,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm sunset light reflecting off the lake, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm sunset light reflecting off the lake look",
+      "instruction": "Re-light the scene with deep orange sunset reflected off the lake; keep actions and framing unchanged.",
+      "target_phrase": "deep orange sunset reflected off the lake look",
       "applicable_shots": [
         1,
         2,
@@ -2593,7 +2593,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm sunset light reflecting off the lake"
+        "lighting": "deep orange sunset reflected off the lake"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2650,8 +2650,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with dim spa-room lamp light around the treatment table, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "dim spa-room lamp light around the treatment table look",
+      "instruction": "Re-light the scene with red heat-lamp glow around the treatment table; keep actions and framing unchanged.",
+      "target_phrase": "red heat-lamp glow around the treatment table look",
       "applicable_shots": [
         1,
         2,
@@ -2660,7 +2660,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dim spa-room lamp light around the treatment table"
+        "lighting": "red heat-lamp glow around the treatment table"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2717,8 +2717,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft clinical overhead lighting with minimal shadows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft clinical overhead lighting with minimal shadows look",
+      "instruction": "Re-light the scene with green surgical overhead light; keep actions and framing unchanged.",
+      "target_phrase": "green surgical overhead light look",
       "applicable_shots": [
         1,
         2,
@@ -2727,7 +2727,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft clinical overhead lighting with minimal shadows"
+        "lighting": "green surgical overhead light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2784,8 +2784,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with bright summer afternoon light at the ice cream truck, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "bright summer afternoon light at the ice cream truck look",
+      "instruction": "Re-light the scene with flashing blue police light near the ice cream truck; keep actions and framing unchanged.",
+      "target_phrase": "flashing blue police light near the ice cream truck look",
       "applicable_shots": [
         1,
         2,
@@ -2794,7 +2794,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright summer afternoon light at the ice cream truck"
+        "lighting": "flashing blue police light near the ice cream truck"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2851,7 +2851,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with colorful carnival bulb light around the truck window, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with colorful carnival bulb light around the truck window; keep actions and framing unchanged.",
       "target_phrase": "colorful carnival bulb light around the truck window look",
       "applicable_shots": [
         1,
@@ -2918,8 +2918,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with greenish subway fluorescent light on the platform wall, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "greenish subway fluorescent light on the platform wall look",
+      "instruction": "Re-light the scene with green subway fluorescent light; keep actions and framing unchanged.",
+      "target_phrase": "green subway fluorescent light look",
       "applicable_shots": [
         1,
         2,
@@ -2928,7 +2928,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "greenish subway fluorescent light on the platform wall"
+        "lighting": "green subway fluorescent light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2985,8 +2985,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm busker spotlight pooling around the open guitar case, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm busker spotlight pooling around the open guitar case look",
+      "instruction": "Re-light the scene with warm busker spotlight around the guitar case; keep actions and framing unchanged.",
+      "target_phrase": "warm busker spotlight around the guitar case look",
       "applicable_shots": [
         1,
         2,
@@ -2995,7 +2995,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm busker spotlight pooling around the open guitar case"
+        "lighting": "warm busker spotlight around the guitar case"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3053,8 +3053,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with cool garage fluorescent strip lighting under the raised hood, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "cool garage fluorescent strip lighting under the raised hood look",
+      "instruction": "Re-light the scene with cool garage fluorescent strip lighting; keep actions and framing unchanged.",
+      "target_phrase": "cool garage fluorescent strip lighting look",
       "applicable_shots": [
         1,
         2,
@@ -3064,7 +3064,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool garage fluorescent strip lighting under the raised hood"
+        "lighting": "cool garage fluorescent strip lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3122,7 +3122,7 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with small handheld work-light beam inside the engine bay, preserving the original actions, objects, camera framing, and shot order.",
+      "instruction": "Re-light the scene with small handheld work-light beam inside the engine bay; keep actions and framing unchanged.",
       "target_phrase": "small handheld work-light beam inside the engine bay look",
       "applicable_shots": [
         1,
@@ -3199,8 +3199,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with clear sunrise light over the balloon basket, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "clear sunrise light over the balloon basket look",
+      "instruction": "Re-light the scene with silver moonlight over the balloon basket; keep actions and framing unchanged.",
+      "target_phrase": "silver moonlight over the balloon basket look",
       "applicable_shots": [
         1,
         2,
@@ -3210,7 +3210,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "clear sunrise light over the balloon basket"
+        "lighting": "silver moonlight over the balloon basket"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3276,8 +3276,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm propane-burner glow lighting the balloon crew, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm propane-burner glow lighting the balloon crew look",
+      "instruction": "Re-light the scene with warm propane-burner firelight; keep actions and framing unchanged.",
+      "target_phrase": "warm propane-burner firelight look",
       "applicable_shots": [
         1,
         2,
@@ -3287,7 +3287,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm propane-burner glow lighting the balloon crew"
+        "lighting": "warm propane-burner firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3353,8 +3353,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with soft bridal-salon window light around the mirror, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "soft bridal-salon window light around the mirror look",
+      "instruction": "Re-light the scene with white camera-flash bursts reflected in the mirrors; keep actions and framing unchanged.",
+      "target_phrase": "white camera-flash bursts reflected in the mirrors look",
       "applicable_shots": [
         1,
         2,
@@ -3364,7 +3364,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft bridal-salon window light around the mirror"
+        "lighting": "white camera-flash bursts reflected in the mirrors"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3430,8 +3430,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with warm chandelier light reflecting in the three-panel mirror, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "warm chandelier light reflecting in the three-panel mirror look",
+      "instruction": "Re-light the scene with warm chandelier light reflected in the mirrors; keep actions and framing unchanged.",
+      "target_phrase": "warm chandelier light reflected in the mirrors look",
       "applicable_shots": [
         1,
         2,
@@ -3441,7 +3441,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm chandelier light reflecting in the three-panel mirror"
+        "lighting": "warm chandelier light reflected in the mirrors"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3507,8 +3507,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with stern overhead courtroom lighting with crisp shadows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "stern overhead courtroom lighting with crisp shadows look",
+      "instruction": "Re-light the scene with single courtroom spotlight on the judge bench; keep actions and framing unchanged.",
+      "target_phrase": "single courtroom spotlight on the judge bench look",
       "applicable_shots": [
         1,
         2,
@@ -3518,7 +3518,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "stern overhead courtroom lighting with crisp shadows"
+        "lighting": "single courtroom spotlight on the judge bench"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3584,8 +3584,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with late-afternoon sunbeams through high courtroom windows, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "late-afternoon sunbeams through high courtroom windows look",
+      "instruction": "Re-light the scene with blue moonlight through high courtroom windows; keep actions and framing unchanged.",
+      "target_phrase": "blue moonlight through high courtroom windows look",
       "applicable_shots": [
         1,
         2,
@@ -3595,7 +3595,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "late-afternoon sunbeams through high courtroom windows"
+        "lighting": "blue moonlight through high courtroom windows"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3661,8 +3661,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with campfire light flickering across the faces and log seats, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "campfire light flickering across the faces and log seats look",
+      "instruction": "Re-light the scene with campfire light flickering across the faces; keep actions and framing unchanged.",
+      "target_phrase": "campfire light flickering across the faces look",
       "applicable_shots": [
         1,
         2,
@@ -3672,7 +3672,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "campfire light flickering across the faces and log seats"
+        "lighting": "campfire light flickering across the faces"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3738,8 +3738,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with deep midnight light with only faint fire embers, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "deep midnight light with only faint fire embers look",
+      "instruction": "Re-light the scene with deep midnight light with faint fire embers; keep actions and framing unchanged.",
+      "target_phrase": "deep midnight light with faint fire embers look",
       "applicable_shots": [
         1,
         2,
@@ -3749,7 +3749,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "deep midnight light with only faint fire embers"
+        "lighting": "deep midnight light with faint fire embers"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3811,8 +3811,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with neon cocktail-bar lighting in pink and teal, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "neon cocktail-bar lighting in pink and teal look",
+      "instruction": "Re-light the scene with pink and teal neon cocktail-bar lighting; keep actions and framing unchanged.",
+      "target_phrase": "pink and teal neon cocktail-bar lighting look",
       "applicable_shots": [
         1,
         2,
@@ -3822,7 +3822,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "neon cocktail-bar lighting in pink and teal"
+        "lighting": "pink and teal neon cocktail-bar lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3884,8 +3884,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the entire scene with small blue bar-back shelf lights reflecting on the glassware, preserving the original actions, objects, camera framing, and shot order.",
-      "target_phrase": "small blue bar-back shelf lights reflecting on the glassware look",
+      "instruction": "Re-light the scene with ultraviolet blacklight across the bar glassware; keep actions and framing unchanged.",
+      "target_phrase": "ultraviolet blacklight across the bar glassware look",
       "applicable_shots": [
         1,
         2,
@@ -3895,7 +3895,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "small blue bar-back shelf lights reflecting on the glassware"
+        "lighting": "ultraviolet blacklight across the bar glassware"
       },
       "mask_queries": {
         "nep_applicable": false,

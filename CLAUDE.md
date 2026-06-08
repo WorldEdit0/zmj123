@@ -10,7 +10,7 @@
 >
 > 三者互相补充：README 给外人看，HOWTO 给跑 pipeline 的人看，CLAUDE.md 给下次接手的 Claude 看。
 
-最后更新：2026-06-07（task rebalance + metric rewrite + T8 background）
+最后更新：2026-06-08（prompt boundary QA for T1/T2/T7）
 
 ---
 
@@ -19,6 +19,8 @@
 ### v1 已就绪 ★ — 准备 push GitHub
 - 数据：30 个 10s 多镜头源视频 + 500 条手写 edit prompts（T1/T2/T3/T5/T6/T7/T8 各 60，T4=80）
 - 2026-06-07 任务重构：T1=30 动态替换 + 30 静态替换；T4=静态/动态 add/delete 各 20；T3=纯 style（像素、新海诚、宫崎骏、JoJo、赛博朋克、水墨、油画、美式漫画、3D 写实动画、粘土定格动画等明确大类）；T7=纯 lighting
+- 2026-06-08 prompt boundary QA：T1 的 30 条 static replacement 已改成跨物体类别替换（不是杯子换材质/颜色这类浅层变体）；T2 不再使用 `accessory` / `clothing_type` 作为属性类别，保留同一物体的颜色、材质、图案、质感、发型/毛发长度等显著属性变化；T7 已换成月光、黄昏、霓虹、聚光、手电筒、火光、频闪、黑光、警灯/荧光等高辨识光源，并压缩 instruction。
+- 同步文件：`runs/edit_prompts_v2_10s/T1.json`、`T2.json`、`T7.json` 和 `all_edit_handoff.json`；外部 handoff 的 500 条 prompt 已从 T1-T8 重新生成。
 - 2026-06-07 新增 T8：Global Background Replacement，替换背景但保留前景主体/主要人物/关键物体；T8 的 `mask_queries.score_region="mask"`，NEP 直接在前景 preserve mask 内算 DINOv2
 - T5 当前只保留 reorder；不再单独走 TSF，统一进入 `run_eval.py`，TAC 会按 `extra.new_order` 重建期望时间线
 - 评测：当前 headline metrics = PSQ / EE_v3 / CSEP_v3 / NEP / USP / TAC；SES/TSF 已退役
@@ -261,7 +263,7 @@
 - **★ v2_10s 全 pipeline stand-up 完成（2026-05-28）**——这是 v2 主轨；v1 (15s) 仍保留作 Seedance-only 参照。
   - **30 个 10s 源视频**：`data/source_videos_10s/videos/{00..29}.mp4`（24fps × 240 帧 × 720p × 16:9）。源 prompt：`seedance_api_example/source_prompts_multishot_v2_10s.json`（30 条全新 10s scene，分布 6×3-shot + 18×4-shot + 6×5-shot），3 个文件因 shot 数错位被 retry：00019 (BBQ, 5→4), 00023 (busker, 5→4), 00024 (mechanic, 6→5)
   - **OmniShotCut shot detection: 30/30 (100%)** —— `runs/pilot_v2_10s/shots/`，consensus_backend=omnishotcut。`runs/pilot_v2_10s/contact_sheets/` 30 张 QA 图，`pilot_report.md` 含每视频 grid + match/miss 标注
-  - **500 条 edit prompts 全部由 Claude 手写完成**：`runs/edit_prompts_v2_10s/T{1..8}.json`。T1/T2/T3/T5/T6/T7/T8 各 60 条，T4 80 条。2026-06-07 新分布：T1=30 dynamic replacement + 30 static replacement；T4=static add/delete + dynamic add/delete 各 20；T3=style-only；T7=lighting-only；T8=background replacement with foreground preservation。**T5 op 分布**：60 reorder。
+  - **500 条 edit prompts 全部由 Claude 手写完成**：`runs/edit_prompts_v2_10s/T{1..8}.json`。T1/T2/T3/T5/T6/T7/T8 各 60 条，T4 80 条。2026-06-07 新分布：T1=30 dynamic replacement + 30 static replacement；T4=static add/delete + dynamic add/delete 各 20；T3=style-only；T7=lighting-only；T8=background replacement with foreground preservation。2026-06-08 QA 后，T1 static 必须是物体类别级替换，T2 必须是同一物体/主体的显著属性变化，T7 必须是视觉差异明确的光源类型。**T5 op 分布**：60 reorder。
   - **shots 字段已替换为真实边界**（`mseditbench/preprocess/contact_sheet.py` consensus → `T{1..8}.json` 的 `shots`，覆盖占位值）。下游 metric eval 切 source frames 不再错位
   - **all_edit_handoff.json**（`runs/edit_prompts_v2_10s/all_edit_handoff.json`）整合所有 500 条为 `{filename, source_url, edit_prompt}` 三字段平铺给外部协作方跑别的 v2v 模型。每条 source_url 用 ModelScope `inLine013/videobed_10s/{vid}.mp4`
   - **ModelScope 镜像**（`https://modelscope.cn/datasets/inLine013/videobed_10s/resolve/master/{video_name}`）含全部 30 个最新源视频（00019/00023/00024 已 reupload 替换）。无 24h TTL，是 v2_10s 的 source_url 真相源
@@ -566,16 +568,17 @@ symlinks（VACE runtime 使用 <repo>/models/ 下的 symlink）:
 
 | Task ID | Canonical name | 简写 | 描述 |
 |---|---|---|---|
-| T1 | Cross-Shot Replacement | repl | 30 动态实体替换 + 30 静态物体替换 |
-| T2 | Cross-Shot Attribute Edit | attr | 换衣服/发色/配饰 |
+| T1 | Cross-Shot Replacement | repl | 30 动态实体替换 + 30 静态物体类别级替换 |
+| T2 | Cross-Shot Attribute Edit | attr | 同一物体/主体的颜色、材质、图案、质感、发型/毛发长度 |
 | T3 | Global Style | style | 全片视觉风格重渲 |
 | T4 | Cross-Shot Static/Dynamic Add/Delete | obj | 静态/动态 add/delete 各 20 |
 | T5 | Shot Reorder | struct | 改镜头顺序（★per-shot eval 不适用，需 TSF 单独轨） |
 | T6 | Cinematic Re-shoot | cam | 改单 shot 运镜/构图 |
-| T7 | Global Lighting | light | 全片光照重渲 |
+| T7 | Global Lighting | light | 全片高辨识光源重渲 |
 | T8 | Global Background Replacement | bg | 替换背景并保留前景主体/物体 |
 
 ⚠️ **2026-06-07 更新**：T1/T4/T3/T7 已按新定义重构；旧 420-prompt baseline/eval 结果只能作为历史 snapshot。
+⚠️ **2026-06-08 更新**：T1 static 已从同类物体变体改为类别级替换；T2 已移除新增配饰/服装类型替换；T7 已替换为区分度强的光源类型。
 ⚠️ **2026-06-07 更新**：T8 已作为 background replacement 重新启用；NEP 对 T8 使用 foreground preserve mask 内部区域算 DINOv2。
 ⚠️ **2026-06-06 更新**：T5 只保留 reorder，TSF 不再使用 shot-count 分。
 ⚠️ **2026-05-25 之前 CLAUDE.md / leaderboard 表里的 T3="char" T5="act" T6="style" T7="cam" 全部是错标。正确标签见上表。数字不受影响（按 task_id 索引无错位），文字已修正。**

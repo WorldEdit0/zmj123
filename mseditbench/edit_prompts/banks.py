@@ -26,24 +26,25 @@ T1_DYNAMIC_TARGETS = [
 T1_TARGETS = T1_DYNAMIC_TARGETS
 
 T1_STATIC_REPLACEMENTS = [
-    "a clear double-walled glass mug",
-    "a pale gray porcelain clay lump",
-    "a bright yellow sunflower bouquet",
-    "a blue-backed deck of cards",
-    "a tall clear glass mixing pitcher",
-    "a black marble gavel",
-    "a dark walnut balloon basket",
-    "a square black slate serving plate",
+    "a small potted cactus",
+    "a stack of white domino tiles",
+    "an antique brass compass",
+    "a yellow rubber duck",
+    "a green-felt billiards table",
+    "a scrambled Rubik cube",
+    "a red rolling suitcase",
+    "a silver handheld microphone",
 ]
 
-# T2 (attribute_kind, old_value templates, new_value list). Keep categories
-# broad: color, material, clothing type, hairstyle, and accessories.
+# T2 same-object attributes only: color, material, pattern, texture, hairstyle,
+# and visible hair/fur length changes. Do not add accessories or change object
+# categories here; that belongs to T1/T4.
 T2_ATTRIBUTES = [
     ("color", ["original clothing color"], ["a deep maroon apron", "a teal jacket", "a coral tank top", "a navy-blue suit"]),
     ("material", ["original fabric"], ["a black leather jacket", "a dark denim apron", "a sheer lace shawl", "a cream cashmere cardigan"]),
-    ("clothing_type", ["original garment"], ["a sleeveless skate jersey", "a short-sleeved chef jacket", "a white medical scrub top", "a white dinner jacket"]),
+    ("pattern", ["plain fabric"], ["bold red diagonal stripes", "thick black horizontal stripes", "red-and-white paper-hat stripes", "white pinstripes"]),
+    ("texture", ["smooth fabric"], ["wrinkled matte fabric", "creased canvas", "scuffed leather", "long fluffy fur"]),
     ("hairstyle", ["original hairstyle"], ["a sleek high updo", "a short blunt bob haircut", "a long loose ponytail", "loose shoulder-length hair"]),
-    ("accessory", ["original accessory"], ["round wire-rimmed glasses", "a tall white pleated chef hat", "a chunky gold chain", "a red collar with a silver tag"]),
 ]
 
 # T3 global style only. Lighting-only edits live in T7.
@@ -86,17 +87,18 @@ T6_CAMERA_MOVES = ["slow dolly-in", "slow dolly-out", "left-to-right pan", "smoo
 
 # T7 global lighting only.
 T7_LIGHTING = [
-    "warm dusk window light",
+    "low golden dusk light",
     "neon cocktail-bar lighting in pink and teal",
-    "misty pre-dawn blue light",
-    "deep midnight light with faint practical sources",
-    "aurora-colored sky glow",
-    "weak indoor bulb light",
+    "narrow flashlight beam",
+    "single hard stage spotlight",
+    "magenta and cyan nightclub lighting",
+    "rapid white strobe lighting",
     "flickering campfire light",
-    "candlelight as the dominant illumination",
-    "cool fluorescent overhead light",
-    "golden-hour sunset light",
-    "moonlit blue night light",
+    "intense orange furnace firelight",
+    "ultraviolet blacklight",
+    "flashing blue police light",
+    "silver moonlight",
+    "deep orange sunset light",
     "small handheld work-light beam",
 ]
 

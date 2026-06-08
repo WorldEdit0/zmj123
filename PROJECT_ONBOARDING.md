@@ -75,13 +75,13 @@ source video prompts
 
 | 任务 | 名称 | 要测什么 |
 |---|---|---|
-| T1 | Cross-Shot Replacement | 30 条动态实体替换 + 30 条静态物体替换，重点看跨镜头一致性和局部替换质量。 |
-| T2 | Cross-Shot Attribute Edit | 改角色颜色、材质、服装类型、发型、配饰等属性，要求所有相关 shot 都改到位。 |
+| T1 | Cross-Shot Replacement | 30 条动态实体替换 + 30 条静态物体类别级替换，重点看跨镜头一致性和局部替换质量。 |
+| T2 | Cross-Shot Attribute Edit | 改同一物体/主体的颜色、材质、图案、质感、发型、毛发长度等显著属性，不做新增配饰或物体类型替换。 |
 | T3 | Global Style | 全片视觉风格重渲染，使用像素风格、新海诚风格、宫崎骏风格、JoJo 漫画风格、赛博朋克风格、水墨画风格、油画风格、美式漫画风格、3D 写实动画风格、粘土定格动画等明确大类风格。 |
 | T4 | Cross-Shot Static/Dynamic Add/Delete | 静态物体、动态实体的添加和删除各 20 条，共 80 条，重点看是否漏 shot、是否误伤其他区域。 |
 | T5 | Shot Reorder | 改变镜头顺序；TAC 根据 `extra.new_order` 重建期望时间线后评分。 |
 | T6 | Cinematic Re-shoot | 改某个 shot 的景别、构图或相机运动，重点看目标 shot 是否被正确重拍。 |
-| T7 | Global Lighting | 全片光照重渲染，例如黄昏窗光、霓虹灯、凌晨蓝光、篝火光等。 |
+| T7 | Global Lighting | 全片光照重渲染，只使用区分度强的光源类型，例如月光、黄昏、霓虹灯、手电筒、聚光灯、火光、黑光、频闪等。 |
 | T8 | Global Background Replacement | 全片背景替换，例如把咖啡厅、工作室、街角等背景替换成山谷、森林、海滩等，同时保留前景主体、主要人物、关键物体和动作。 |
 
 任务定义代码在 `mseditbench/edit_prompts/tasks.py`，当前正式手写 prompt 以 `runs/edit_prompts_v2_10s/T*.json` 为准；`mseditbench/edit_prompts/handwritten_t*.py` 主要保留旧 v1/v1.2 构建历史。

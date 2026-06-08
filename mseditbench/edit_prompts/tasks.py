@@ -41,13 +41,13 @@ T1 = TaskDef(
     requires=["characters", "key_objects"],
 )
 
-# T2 — attribute change: color / material / clothing / hair / accessory
+# T2 — same-object attribute change: color / material / pattern / texture / hair
 T2 = TaskDef(
     task_id="T2",
-    description="Cross-Shot Attribute Edit (color/material/clothing/hair/accessory)",
+    description="Cross-Shot Attribute Edit (same-object color/material/pattern/texture/hair)",
     instruction_templates=[
         "Change {character_desc}'s {attribute_kind} to {new_value} in every shot.",
-        "Make {character_desc} wear {new_value} instead of {old_value} throughout.",
+        "Change {old_value} on {character_desc} to {new_value} throughout.",
         "Recolor {character_desc}'s {attribute_kind} to {new_value} across all shots.",
     ],
     target_phrase_template="a person with {new_value}",
