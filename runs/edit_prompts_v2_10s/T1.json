@@ -95,8 +95,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the potter with an elderly ceramic master wearing a white linen headscarf and the same clay-streaked navy apron throughout the pottery sequence.",
-      "target_phrase": "an elderly ceramic master with a white linen headscarf and clay-streaked navy apron",
+      "instruction": "Replace the potter with an elderly male ceramic master in a white linen headscarf, keeping the clay-streaked navy apron and wheel-throwing action consistent.",
+      "target_phrase": "an elderly male ceramic master with a white linen headscarf and clay-streaked navy apron",
       "applicable_shots": [
         1,
         2,
@@ -110,14 +110,14 @@
           "woman with hair in a tight bun, wearing a clay-streaked navy apron"
         ],
         "edited_queries": [
-          "an elderly ceramic master with a white linen headscarf and clay-streaked navy apron"
+          "an elderly male ceramic master with a white linen headscarf and clay-streaked navy apron"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "woman with hair in a tight bun, wearing a clay-streaked navy apron",
-        "new_entity": "an elderly ceramic master with a white linen headscarf and clay-streaked navy apron"
+        "new_entity": "an elderly male ceramic master with a white linen headscarf and clay-streaked navy apron"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -222,8 +222,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the magician with a street magician in a burgundy velvet jacket and black gloves, preserving the card trick across all shots.",
-      "target_phrase": "a street magician with a burgundy velvet jacket and black gloves",
+      "instruction": "Replace the magician with an elderly female stage magician with white hair, preserving the card trick across all shots.",
+      "target_phrase": "an elderly female stage magician with white hair, black vest, and black gloves",
       "applicable_shots": [
         1,
         2,
@@ -237,14 +237,14 @@
           "magician in a black vest, white shirt, and slim black tie"
         ],
         "edited_queries": [
-          "a street magician with a burgundy velvet jacket and black gloves"
+          "an elderly female stage magician with white hair, black vest, and black gloves"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "magician in a black vest, white shirt, and slim black tie",
-        "new_entity": "a street magician with a burgundy velvet jacket and black gloves"
+        "new_entity": "an elderly female stage magician with white hair, black vest, and black gloves"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -287,8 +287,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tarot reader with a silver-haired fortune teller in a midnight-blue shawl and stacked rings in every shot of the reading.",
-      "target_phrase": "a silver-haired fortune teller in a midnight-blue shawl and stacked rings",
+      "instruction": "Replace the tarot reader with an older male fortune teller with silver hair, a midnight-blue shawl, and stacked rings in every shot of the reading.",
+      "target_phrase": "an older male fortune teller with silver hair, midnight-blue shawl, and stacked rings",
       "applicable_shots": [
         1,
         2,
@@ -302,14 +302,14 @@
           "reader in a deep purple shawl with long dark hair and silver rings"
         ],
         "edited_queries": [
-          "a silver-haired fortune teller in a midnight-blue shawl and stacked rings"
+          "an older male fortune teller with silver hair, midnight-blue shawl, and stacked rings"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "reader in a deep purple shawl with long dark hair and silver rings",
-        "new_entity": "a silver-haired fortune teller in a midnight-blue shawl and stacked rings"
+        "new_entity": "an older male fortune teller with silver hair, midnight-blue shawl, and stacked rings"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -348,8 +348,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the astronaut with a female astronaut with a cropped haircut, keeping the navy mission polo and zero-gravity motions consistent.",
-      "target_phrase": "a female astronaut with a cropped haircut in the same navy mission polo",
+      "instruction": "Replace the astronaut with a Black female astronaut with a cropped haircut, keeping the navy mission polo and zero-gravity motions consistent.",
+      "target_phrase": "a Black female astronaut with a cropped haircut in the same navy mission polo",
       "applicable_shots": [
         1,
         2,
@@ -363,14 +363,14 @@
           "astronaut in a navy blue mission polo with a name tag, hair floating slightly"
         ],
         "edited_queries": [
-          "a female astronaut with a cropped haircut in the same navy mission polo"
+          "a Black female astronaut with a cropped haircut in the same navy mission polo"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "astronaut in a navy blue mission polo with a name tag, hair floating slightly",
-        "new_entity": "a female astronaut with a cropped haircut in the same navy mission polo"
+        "new_entity": "a Black female astronaut with a cropped haircut in the same navy mission polo"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -418,8 +418,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the teen skater with a young BMX rider in an oversized white tee and black cargo shorts while preserving the same body motion across the skatepark shots.",
-      "target_phrase": "a young BMX rider in an oversized white tee and black cargo shorts",
+      "instruction": "Replace the teen skater with an adult female skateboarder with short black hair, preserving the skatepark trick across all shots.",
+      "target_phrase": "an adult female skateboarder with short black hair, baggy white tee, and black cargo shorts",
       "applicable_shots": [
         1,
         2,
@@ -434,14 +434,14 @@
           "teen skater in a baggy white tee and black cargo shorts"
         ],
         "edited_queries": [
-          "a young BMX rider in an oversized white tee and black cargo shorts"
+          "an adult female skateboarder with short black hair, baggy white tee, and black cargo shorts"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "teen skater in a baggy white tee and black cargo shorts",
-        "new_entity": "a young BMX rider in an oversized white tee and black cargo shorts"
+        "new_entity": "an adult female skateboarder with short black hair, baggy white tee, and black cargo shorts"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -620,8 +620,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the snowboarder with a snowboarder in a cobalt-blue jacket and the same black helmet with mirrored goggles across the snow sequence.",
-      "target_phrase": "a snowboarder in a cobalt-blue jacket and black helmet with mirrored goggles",
+      "instruction": "Replace the snowboarder with a Black female snowboarder with long braids, keeping the downhill snowboarding action consistent.",
+      "target_phrase": "a Black female snowboarder with long braids, an orange jacket, black helmet, and mirrored goggles",
       "applicable_shots": [
         1,
         2,
@@ -636,14 +636,14 @@
           "snowboarder in an orange jacket and black helmet with mirrored goggles"
         ],
         "edited_queries": [
-          "a snowboarder in a cobalt-blue jacket and black helmet with mirrored goggles"
+          "a Black female snowboarder with long braids, an orange jacket, black helmet, and mirrored goggles"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "snowboarder in an orange jacket and black helmet with mirrored goggles",
-        "new_entity": "a snowboarder in a cobalt-blue jacket and black helmet with mirrored goggles"
+        "new_entity": "a Black female snowboarder with long braids, an orange jacket, black helmet, and mirrored goggles"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -692,8 +692,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tattoo artist with a close-cropped white-haired tattoo artist with sleeve tattoos and black nitrile gloves in every shot.",
-      "target_phrase": "a tattoo artist with close-cropped white hair, sleeve tattoos, and black nitrile gloves",
+      "instruction": "Replace the tattoo artist with a chrome humanoid robot tattoo artist wearing black nitrile gloves in every shot.",
+      "target_phrase": "a chrome humanoid robot tattoo artist with black nitrile gloves",
       "applicable_shots": [
         1,
         2,
@@ -708,14 +708,14 @@
           "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves"
         ],
         "edited_queries": [
-          "a tattoo artist with close-cropped white hair, sleeve tattoos, and black nitrile gloves"
+          "a chrome humanoid robot tattoo artist with black nitrile gloves"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves",
-        "new_entity": "a tattoo artist with close-cropped white hair, sleeve tattoos, and black nitrile gloves"
+        "new_entity": "a chrome humanoid robot tattoo artist with black nitrile gloves"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -760,8 +760,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the glass blower with a female glass blower in a white t-shirt and black gloves, keeping the blowpipe work identical across all shots.",
-      "target_phrase": "a female glass blower in a white t-shirt and black gloves with a focused expression",
+      "instruction": "Replace the glass blower with a middle-aged female glass blower in a white t-shirt and black gloves, keeping the furnace work consistent.",
+      "target_phrase": "a middle-aged female glass blower in a white t-shirt and black gloves",
       "applicable_shots": [
         1,
         2,
@@ -776,14 +776,14 @@
           "glass blower in a white t-shirt and black gloves, sweat on his forehead"
         ],
         "edited_queries": [
-          "a female glass blower in a white t-shirt and black gloves with a focused expression"
+          "a middle-aged female glass blower in a white t-shirt and black gloves"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "glass blower in a white t-shirt and black gloves, sweat on his forehead",
-        "new_entity": "a female glass blower in a white t-shirt and black gloves with a focused expression"
+        "new_entity": "a middle-aged female glass blower in a white t-shirt and black gloves"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -828,8 +828,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the older Asian woman with an elderly calligraphy teacher with long silver hair, preserving the charcoal mandarin-collar shirt and brush motions.",
-      "target_phrase": "an elderly calligraphy teacher with long silver hair in a charcoal mandarin-collar shirt",
+      "instruction": "Replace the older Asian woman with a Black male calligraphy teacher in a charcoal mandarin-collar shirt, preserving the brush motions.",
+      "target_phrase": "a Black male calligraphy teacher with a shaved head in a charcoal mandarin-collar shirt",
       "applicable_shots": [
         1,
         2,
@@ -844,14 +844,14 @@
           "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot"
         ],
         "edited_queries": [
-          "an elderly calligraphy teacher with long silver hair in a charcoal mandarin-collar shirt"
+          "a Black male calligraphy teacher with a shaved head in a charcoal mandarin-collar shirt"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot",
-        "new_entity": "an elderly calligraphy teacher with long silver hair in a charcoal mandarin-collar shirt"
+        "new_entity": "a Black male calligraphy teacher with a shaved head in a charcoal mandarin-collar shirt"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -896,8 +896,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the locksmith with a female locksmith in the same navy jumpsuit and tool roll, keeping the lock-picking actions consistent.",
-      "target_phrase": "a female locksmith in a navy jumpsuit with a tool roll over one shoulder",
+      "instruction": "Replace the locksmith with an elderly female locksmith with a silver braid, keeping the navy jumpsuit, tool roll, and lock-picking actions consistent.",
+      "target_phrase": "an elderly female locksmith with a silver braid, navy jumpsuit, and tool roll",
       "applicable_shots": [
         1,
         2,
@@ -912,14 +912,14 @@
           "locksmith in a navy jumpsuit with a tool roll over one shoulder"
         ],
         "edited_queries": [
-          "a female locksmith in a navy jumpsuit with a tool roll over one shoulder"
+          "an elderly female locksmith with a silver braid, navy jumpsuit, and tool roll"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "locksmith in a navy jumpsuit with a tool roll over one shoulder",
-        "new_entity": "a female locksmith in a navy jumpsuit with a tool roll over one shoulder"
+        "new_entity": "an elderly female locksmith with a silver braid, navy jumpsuit, and tool roll"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1036,8 +1036,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the watchmaker with a young watchmaker wearing the same fawn-colored vest and loupe, preserving the precise repair motions.",
-      "target_phrase": "a young watchmaker in a fawn-colored vest with a magnifying loupe over one eye",
+      "instruction": "Replace the watchmaker with an elderly Black woman watchmaker wearing the same fawn-colored vest and loupe, preserving the repair motions.",
+      "target_phrase": "an elderly Black woman watchmaker in a fawn-colored vest with a magnifying loupe over one eye",
       "applicable_shots": [
         1,
         2,
@@ -1052,14 +1052,14 @@
           "watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
         ],
         "edited_queries": [
-          "a young watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+          "an elderly Black woman watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye",
-        "new_entity": "a young watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
+        "new_entity": "an elderly Black woman watchmaker in a fawn-colored vest with a magnifying loupe over one eye"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1104,8 +1104,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the chef with a pastry chef in a starched black jacket and white skull cap while keeping the plating motions unchanged.",
-      "target_phrase": "a pastry chef in a starched black jacket with rolled-up sleeves and a white skull cap",
+      "instruction": "Replace the chef with a chrome humanoid robot chef in a white jacket and skull cap, keeping the plating motions unchanged.",
+      "target_phrase": "a chrome humanoid robot chef in a starched white jacket and white skull cap",
       "applicable_shots": [
         1,
         2,
@@ -1120,14 +1120,14 @@
           "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap"
         ],
         "edited_queries": [
-          "a pastry chef in a starched black jacket with rolled-up sleeves and a white skull cap"
+          "a chrome humanoid robot chef in a starched white jacket and white skull cap"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "chef in a starched white jacket with rolled-up sleeves, wearing a white skull cap",
-        "new_entity": "a pastry chef in a starched black jacket with rolled-up sleeves and a white skull cap"
+        "new_entity": "a chrome humanoid robot chef in a starched white jacket and white skull cap"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1175,8 +1175,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the woman in the teal tank top with a yoga instructor in a rust-orange tank top and long french braid across every yoga shot.",
-      "target_phrase": "a yoga instructor in a rust-orange tank top with a long french braid",
+      "instruction": "Replace the woman in the teal tank top with an elderly male yoga instructor with a gray beard, preserving the yoga pose sequence.",
+      "target_phrase": "an elderly male yoga instructor with a gray beard, teal tank top, and long braid",
       "applicable_shots": [
         1,
         2,
@@ -1191,14 +1191,14 @@
           "woman in a teal tank top with a long french braid"
         ],
         "edited_queries": [
-          "a yoga instructor in a rust-orange tank top with a long french braid"
+          "an elderly male yoga instructor with a gray beard, teal tank top, and long braid"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "woman in a teal tank top with a long french braid",
-        "new_entity": "a yoga instructor in a rust-orange tank top with a long french braid"
+        "new_entity": "an elderly male yoga instructor with a gray beard, teal tank top, and long braid"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1450,8 +1450,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the acupuncturist with a male acupuncturist with tied-back black hair, keeping the soft beige tunic and treatment motions.",
-      "target_phrase": "a male acupuncturist with tied-back black hair in a soft beige tunic",
+      "instruction": "Replace the acupuncturist with a middle-aged male acupuncturist with tied-back black hair, keeping the soft beige tunic and treatment motions.",
+      "target_phrase": "a middle-aged male acupuncturist with tied-back black hair in a soft beige tunic",
       "applicable_shots": [
         1,
         2,
@@ -1466,14 +1466,14 @@
           "acupuncturist with hair in a low ponytail, wearing a soft beige tunic"
         ],
         "edited_queries": [
-          "a male acupuncturist with tied-back black hair in a soft beige tunic"
+          "a middle-aged male acupuncturist with tied-back black hair in a soft beige tunic"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "acupuncturist with hair in a low ponytail, wearing a soft beige tunic",
-        "new_entity": "a male acupuncturist with tied-back black hair in a soft beige tunic"
+        "new_entity": "a middle-aged male acupuncturist with tied-back black hair in a soft beige tunic"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1594,8 +1594,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the young busker with an elderly violin busker in a worn brown leather jacket and gray beard throughout the subway performance.",
-      "target_phrase": "an elderly violin busker in a worn brown leather jacket with a gray beard",
+      "instruction": "Replace the young busker with an elderly guitar busker in a worn brown leather jacket and gray beard throughout the subway performance.",
+      "target_phrase": "an elderly guitar busker in a worn brown leather jacket with a gray beard",
       "applicable_shots": [
         1,
         2,
@@ -1610,14 +1610,14 @@
           "young busker in a beat-up brown leather jacket with a stubbled chin"
         ],
         "edited_queries": [
-          "an elderly violin busker in a worn brown leather jacket with a gray beard"
+          "an elderly guitar busker in a worn brown leather jacket with a gray beard"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "young busker in a beat-up brown leather jacket with a stubbled chin",
-        "new_entity": "an elderly violin busker in a worn brown leather jacket with a gray beard"
+        "new_entity": "an elderly guitar busker in a worn brown leather jacket with a gray beard"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -1667,8 +1667,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the mechanic with a male mechanic in the same navy jumpsuit with grease-smeared sleeves across the car-repair scene.",
-      "target_phrase": "a male mechanic in a navy jumpsuit with grease smears on the sleeves",
+      "instruction": "Replace the mechanic with a middle-aged Black male mechanic in a navy jumpsuit, keeping the car-repair actions consistent.",
+      "target_phrase": "a middle-aged Black male mechanic in a navy jumpsuit with grease-smeared sleeves",
       "applicable_shots": [
         1,
         2,
@@ -1684,14 +1684,14 @@
           "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail"
         ],
         "edited_queries": [
-          "a male mechanic in a navy jumpsuit with grease smears on the sleeves"
+          "a middle-aged Black male mechanic in a navy jumpsuit with grease-smeared sleeves"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail",
-        "new_entity": "a male mechanic in a navy jumpsuit with grease smears on the sleeves"
+        "new_entity": "a middle-aged Black male mechanic in a navy jumpsuit with grease-smeared sleeves"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C1"
@@ -2073,8 +2073,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the customer in the black dress with a middle-aged customer in a sleek navy dress, keeping the same bar pose across every shot.",
-      "target_phrase": "a middle-aged customer in a sleek navy dress sitting at the bar with chin on hand",
+      "instruction": "Replace the customer in the black dress with an elderly male customer in a navy blazer, keeping the same bar pose across every shot.",
+      "target_phrase": "an elderly male customer in a navy blazer sitting at the bar with his chin on his hand",
       "applicable_shots": [
         1,
         2,
@@ -2090,14 +2090,14 @@
           "customer in a sleek black dress sitting at the bar with chin on hand"
         ],
         "edited_queries": [
-          "a middle-aged customer in a sleek navy dress sitting at the bar with chin on hand"
+          "an elderly male customer in a navy blazer sitting at the bar with his chin on his hand"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "customer in a sleek black dress sitting at the bar with chin on hand",
-        "new_entity": "a middle-aged customer in a sleek navy dress sitting at the bar with chin on hand"
+        "new_entity": "an elderly male customer in a navy blazer sitting at the bar with his chin on his hand"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance",
       "target_entity": "C2"
@@ -2137,8 +2137,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the white ceramic latte cup with a small potted cactus in a terra-cotta pot throughout the cafe scene.",
-      "target_phrase": "a small potted cactus in a terra-cotta pot",
+      "instruction": "Swap the white ceramic latte cup for a wide ceramic latte bowl, keeping the milk pour and latte-art placement consistent in every cafe shot.",
+      "target_phrase": "a wide ceramic latte bowl",
       "applicable_shots": [
         1,
         2,
@@ -2152,7 +2152,7 @@
           "white ceramic latte cup"
         ],
         "edited_queries": [
-          "a small potted cactus in a terra-cotta pot"
+          "a wide ceramic latte bowl"
         ],
         "combine": "union"
       },
@@ -2160,7 +2160,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white ceramic latte cup",
-        "new_object": "a small potted cactus in a terra-cotta pot",
+        "new_object": "a wide ceramic latte bowl",
         "anchor": "white ceramic latte cup"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2200,8 +2200,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wet lump of brown clay with a small chocolate cake on the spinning wheel in every shot.",
-      "target_phrase": "a small chocolate cake on the spinning wheel",
+      "instruction": "Use a soft dark sculpting-wax lump in place of the wet brown clay, keeping it centered on the spinning wheel through the pottery sequence.",
+      "target_phrase": "a soft dark sculpting-wax lump",
       "applicable_shots": [
         1,
         2,
@@ -2215,7 +2215,7 @@
           "wet lump of brown clay"
         ],
         "edited_queries": [
-          "a small chocolate cake on the spinning wheel"
+          "a soft dark sculpting-wax lump"
         ],
         "combine": "union"
       },
@@ -2223,7 +2223,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "wet lump of brown clay",
-        "new_object": "a small chocolate cake on the spinning wheel",
+        "new_object": "a soft dark sculpting-wax lump",
         "anchor": "wet lump of brown clay"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2263,8 +2263,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the bunch of pink peonies with a basket of ripe yellow lemons throughout the florist scene.",
-      "target_phrase": "a basket of ripe yellow lemons",
+      "instruction": "Change the pink peonies into long dried wheat stalks while preserving the wrapping, kraft paper, and twine actions.",
+      "target_phrase": "a bundle of long dried wheat stalks",
       "applicable_shots": [
         1,
         2,
@@ -2278,7 +2278,7 @@
           "bunch of pink peonies"
         ],
         "edited_queries": [
-          "a basket of ripe yellow lemons"
+          "a bundle of long dried wheat stalks"
         ],
         "combine": "union"
       },
@@ -2286,7 +2286,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "bunch of pink peonies",
-        "new_object": "a basket of ripe yellow lemons",
+        "new_object": "a bundle of long dried wheat stalks",
         "anchor": "bunch of pink peonies"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2329,8 +2329,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the red-backed deck of cards with a stack of white domino tiles in every magic-act shot.",
-      "target_phrase": "a stack of white domino tiles",
+      "instruction": "Have the magician handle a stack of white index cards instead of the red-backed playing-card deck throughout the act.",
+      "target_phrase": "a stack of white index cards",
       "applicable_shots": [
         1,
         2,
@@ -2344,7 +2344,7 @@
           "red-backed deck of cards"
         ],
         "edited_queries": [
-          "a stack of white domino tiles"
+          "a stack of white index cards"
         ],
         "combine": "union"
       },
@@ -2352,7 +2352,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "red-backed deck of cards",
-        "new_object": "a stack of white domino tiles",
+        "new_object": "a stack of white index cards",
         "anchor": "red-backed deck of cards"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2395,8 +2395,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tarot deck on the velvet cloth with an antique brass compass throughout the reading.",
-      "target_phrase": "an antique brass compass on the velvet cloth",
+      "instruction": "Turn the tarot deck on the velvet cloth into polished rune stones while keeping the fortune-reading layout consistent.",
+      "target_phrase": "a set of polished rune stones on the velvet cloth",
       "applicable_shots": [
         1,
         2,
@@ -2410,7 +2410,7 @@
           "tarot deck on velvet cloth"
         ],
         "edited_queries": [
-          "an antique brass compass on the velvet cloth"
+          "a set of polished rune stones on the velvet cloth"
         ],
         "combine": "union"
       },
@@ -2418,7 +2418,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "tarot deck on velvet cloth",
-        "new_object": "an antique brass compass on the velvet cloth",
+        "new_object": "a set of polished rune stones on the velvet cloth",
         "anchor": "tarot deck on velvet cloth"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2457,8 +2457,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the silver drink pouch with a yellow rubber duck with a red beak across the space-station scene.",
-      "target_phrase": "a yellow rubber duck with a red beak",
+      "instruction": "Give the astronaut a clear squeeze bottle with a straw instead of the silver drink pouch across the space-station shots.",
+      "target_phrase": "a clear squeeze bottle with a straw",
       "applicable_shots": [
         1,
         2,
@@ -2472,7 +2472,7 @@
           "silver drink pouch with straw"
         ],
         "edited_queries": [
-          "a yellow rubber duck with a red beak"
+          "a clear squeeze bottle with a straw"
         ],
         "combine": "union"
       },
@@ -2480,7 +2480,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "silver drink pouch with straw",
-        "new_object": "a yellow rubber duck with a red beak",
+        "new_object": "a clear squeeze bottle with a straw",
         "anchor": "silver drink pouch with straw"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2528,8 +2528,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the skateboard with a folding silver kick scooter in every skatepark shot.",
-      "target_phrase": "a folding silver kick scooter",
+      "instruction": "Change the skateboard into a blue longboard while preserving the ride, stance, and trick timing in the skatepark.",
+      "target_phrase": "a blue longboard",
       "applicable_shots": [
         1,
         2,
@@ -2544,7 +2544,7 @@
           "skateboard"
         ],
         "edited_queries": [
-          "a folding silver kick scooter"
+          "a blue longboard"
         ],
         "combine": "union"
       },
@@ -2552,7 +2552,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "skateboard",
-        "new_object": "a folding silver kick scooter",
+        "new_object": "a blue longboard",
         "anchor": "skateboard"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2597,8 +2597,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the DJ controller deck with an illuminated chessboard with oversized pieces throughout the stage sequence.",
-      "target_phrase": "an illuminated chessboard with oversized pieces",
+      "instruction": "Change the DJ controller deck into two vinyl turntables and a mixer, keeping the performance gestures aligned across shots.",
+      "target_phrase": "two vinyl turntables and a mixer",
       "applicable_shots": [
         1,
         2,
@@ -2613,7 +2613,7 @@
           "DJ controller deck"
         ],
         "edited_queries": [
-          "an illuminated chessboard with oversized pieces"
+          "two vinyl turntables and a mixer"
         ],
         "combine": "union"
       },
@@ -2621,7 +2621,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "DJ controller deck",
-        "new_object": "an illuminated chessboard with oversized pieces",
+        "new_object": "two vinyl turntables and a mixer",
         "anchor": "DJ controller deck"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2665,8 +2665,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the white surfboard with green stripe with a red inflatable kayak in every beach shot.",
-      "target_phrase": "a red inflatable kayak",
+      "instruction": "Swap the white surfboard with green stripe for a red stand-up paddleboard throughout the beach sequence.",
+      "target_phrase": "a red stand-up paddleboard",
       "applicable_shots": [
         1,
         2,
@@ -2681,7 +2681,7 @@
           "white surfboard with green stripe"
         ],
         "edited_queries": [
-          "a red inflatable kayak"
+          "a red stand-up paddleboard"
         ],
         "combine": "union"
       },
@@ -2689,7 +2689,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white surfboard with green stripe",
-        "new_object": "a red inflatable kayak",
+        "new_object": "a red stand-up paddleboard",
         "anchor": "white surfboard with green stripe"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2733,8 +2733,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the red snowboard with a red plastic sled across the snowboarding sequence.",
-      "target_phrase": "a red plastic sled",
+      "instruction": "Change the red snowboard into a single wide monoski while preserving the downhill snow action.",
+      "target_phrase": "a single wide monoski",
       "applicable_shots": [
         1,
         2,
@@ -2749,7 +2749,7 @@
           "red snowboard"
         ],
         "edited_queries": [
-          "a red plastic sled"
+          "a single wide monoski"
         ],
         "combine": "union"
       },
@@ -2757,7 +2757,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "red snowboard",
-        "new_object": "a red plastic sled",
+        "new_object": "a single wide monoski",
         "anchor": "red snowboard"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2806,8 +2806,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tattoo machine with a black electric toothbrush in every shot of the tattoo session.",
-      "target_phrase": "a black electric toothbrush",
+      "instruction": "Use a black henna applicator cone instead of the tattoo machine, keeping the body-art application focused on the same area.",
+      "target_phrase": "a black henna applicator cone",
       "applicable_shots": [
         1,
         2,
@@ -2822,7 +2822,7 @@
           "tattoo machine"
         ],
         "edited_queries": [
-          "a black electric toothbrush"
+          "a black henna applicator cone"
         ],
         "combine": "union"
       },
@@ -2830,7 +2830,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "tattoo machine",
-        "new_object": "a black electric toothbrush",
+        "new_object": "a black henna applicator cone",
         "anchor": "tattoo machine"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2875,8 +2875,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the long blowpipe with a brass saxophone throughout the furnace scene.",
-      "target_phrase": "a brass saxophone",
+      "instruction": "Use a long hollow copper tube in place of the blowpipe, keeping the glass gathered and turned at the furnace in every shot.",
+      "target_phrase": "a long hollow copper tube",
       "applicable_shots": [
         1,
         2,
@@ -2891,7 +2891,7 @@
           "long blowpipe"
         ],
         "edited_queries": [
-          "a brass saxophone"
+          "a long hollow copper tube"
         ],
         "combine": "union"
       },
@@ -2899,7 +2899,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "long blowpipe",
-        "new_object": "a brass saxophone",
+        "new_object": "a long hollow copper tube",
         "anchor": "long blowpipe"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -2944,8 +2944,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the bamboo brush with a red fountain pen in every calligraphy shot.",
-      "target_phrase": "a red fountain pen",
+      "instruction": "Change the bamboo brush into a broad black calligraphy marker while keeping the strokes on the paper consistent.",
+      "target_phrase": "a broad black calligraphy marker",
       "applicable_shots": [
         1,
         2,
@@ -2960,7 +2960,7 @@
           "bamboo brush"
         ],
         "edited_queries": [
-          "a red fountain pen"
+          "a broad black calligraphy marker"
         ],
         "combine": "union"
       },
@@ -2968,7 +2968,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "bamboo brush",
-        "new_object": "a red fountain pen",
+        "new_object": "a broad black calligraphy marker",
         "anchor": "bamboo brush"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3013,8 +3013,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tension wrench with a silver house key throughout the locksmith scene.",
-      "target_phrase": "a silver house key",
+      "instruction": "Use a small lock pick gun instead of the tension wrench, keeping the door-lock work continuous across the scene.",
+      "target_phrase": "a small lock pick gun",
       "applicable_shots": [
         1,
         2,
@@ -3029,7 +3029,7 @@
           "tension wrench"
         ],
         "edited_queries": [
-          "a silver house key"
+          "a small lock pick gun"
         ],
         "combine": "union"
       },
@@ -3037,7 +3037,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "tension wrench",
-        "new_object": "a silver house key",
+        "new_object": "a small lock pick gun",
         "anchor": "tension wrench"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3086,8 +3086,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the stainless steel exam table with a green-felt billiards table in all vet-clinic shots.",
-      "target_phrase": "a green-felt billiards table",
+      "instruction": "Change the stainless steel exam table into a padded grooming table while the puppy remains supported in the vet-clinic shots.",
+      "target_phrase": "a padded grooming table",
       "applicable_shots": [
         1,
         2,
@@ -3102,7 +3102,7 @@
           "stainless steel exam table"
         ],
         "edited_queries": [
-          "a green-felt billiards table"
+          "a padded grooming table"
         ],
         "combine": "union"
       },
@@ -3110,7 +3110,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "stainless steel exam table",
-        "new_object": "a green-felt billiards table",
+        "new_object": "a padded grooming table",
         "anchor": "stainless steel exam table"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3155,8 +3155,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the disassembled mechanical watch with a scrambled Rubik cube across the workbench scene.",
-      "target_phrase": "a scrambled Rubik cube",
+      "instruction": "Change the disassembled mechanical watch into a disassembled brass pocket compass, keeping the same close workbench repair setup.",
+      "target_phrase": "a disassembled brass pocket compass",
       "applicable_shots": [
         1,
         2,
@@ -3171,7 +3171,7 @@
           "disassembled mechanical watch"
         ],
         "edited_queries": [
-          "a scrambled Rubik cube"
+          "a disassembled brass pocket compass"
         ],
         "combine": "union"
       },
@@ -3179,7 +3179,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "disassembled mechanical watch",
-        "new_object": "a scrambled Rubik cube",
+        "new_object": "a disassembled brass pocket compass",
         "anchor": "disassembled mechanical watch"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3224,8 +3224,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the round white plate with a clear glass fishbowl throughout the plating sequence.",
-      "target_phrase": "a clear glass fishbowl",
+      "instruction": "Plate the dish in a shallow ceramic serving bowl instead of the round white plate throughout the kitchen sequence.",
+      "target_phrase": "a shallow ceramic serving bowl",
       "applicable_shots": [
         1,
         2,
@@ -3240,7 +3240,7 @@
           "round white plate"
         ],
         "edited_queries": [
-          "a clear glass fishbowl"
+          "a shallow ceramic serving bowl"
         ],
         "combine": "union"
       },
@@ -3248,7 +3248,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "round white plate",
-        "new_object": "a clear glass fishbowl",
+        "new_object": "a shallow ceramic serving bowl",
         "anchor": "round white plate"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3296,8 +3296,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the two purple yoga mats with two low wooden benches in every yoga-studio shot.",
-      "target_phrase": "two low wooden benches",
+      "instruction": "Change the two purple yoga mats into two padded exercise pads while preserving the yoga positions in the studio.",
+      "target_phrase": "two padded exercise pads",
       "applicable_shots": [
         1,
         2,
@@ -3312,7 +3312,7 @@
           "two purple yoga mats"
         ],
         "edited_queries": [
-          "two low wooden benches"
+          "two padded exercise pads"
         ],
         "combine": "union"
       },
@@ -3320,7 +3320,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "two purple yoga mats",
-        "new_object": "two low wooden benches",
+        "new_object": "two padded exercise pads",
         "anchor": "two purple yoga mats"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3365,8 +3365,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the metal grooming table with a vintage brown steamer trunk throughout the grooming scene.",
-      "target_phrase": "a vintage brown steamer trunk",
+      "instruction": "Put the poodle in a white plastic pet bath tub with a rubber floor instead of on the metal grooming table throughout the grooming scene.",
+      "target_phrase": "a white plastic pet bath tub with a rubber floor",
       "applicable_shots": [
         1,
         2,
@@ -3381,7 +3381,7 @@
           "metal grooming table"
         ],
         "edited_queries": [
-          "a vintage brown steamer trunk"
+          "a white plastic pet bath tub with a rubber floor"
         ],
         "combine": "union"
       },
@@ -3389,7 +3389,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "metal grooming table",
-        "new_object": "a vintage brown steamer trunk",
+        "new_object": "a white plastic pet bath tub with a rubber floor",
         "anchor": "metal grooming table"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3434,8 +3434,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the tongs with red garden shears across the barbecue scene.",
-      "target_phrase": "red garden shears",
+      "instruction": "Use a wide metal spatula instead of tongs while the food handling continues at the grill.",
+      "target_phrase": "a wide metal spatula",
       "applicable_shots": [
         1,
         2,
@@ -3450,7 +3450,7 @@
           "tongs"
         ],
         "edited_queries": [
-          "red garden shears"
+          "a wide metal spatula"
         ],
         "combine": "union"
       },
@@ -3458,7 +3458,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "tongs",
-        "new_object": "red garden shears",
+        "new_object": "a wide metal spatula",
         "anchor": "tongs"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3503,8 +3503,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the fishing rod with a blue rain umbrella throughout the dock scene.",
-      "target_phrase": "a blue rain umbrella",
+      "instruction": "Use a green handline fishing spool instead of the fishing rod, keeping the dockside fishing action coherent across shots.",
+      "target_phrase": "a green handline fishing spool",
       "applicable_shots": [
         1,
         2,
@@ -3519,7 +3519,7 @@
           "fishing rod"
         ],
         "edited_queries": [
-          "a blue rain umbrella"
+          "a green handline fishing spool"
         ],
         "combine": "union"
       },
@@ -3527,7 +3527,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "fishing rod",
-        "new_object": "a blue rain umbrella",
+        "new_object": "a green handline fishing spool",
         "anchor": "fishing rod"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3576,8 +3576,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the thin acupuncture needles with a bundle of colored pencils throughout the treatment scene.",
-      "target_phrase": "a bundle of colored pencils",
+      "instruction": "Use small adhesive acupressure patches instead of thin acupuncture needles while preserving the treatment placement on the patient.",
+      "target_phrase": "small adhesive acupressure patches",
       "applicable_shots": [
         1,
         2,
@@ -3592,7 +3592,7 @@
           "thin acupuncture needles"
         ],
         "edited_queries": [
-          "a bundle of colored pencils"
+          "small adhesive acupressure patches"
         ],
         "combine": "union"
       },
@@ -3600,7 +3600,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "thin acupuncture needles",
-        "new_object": "a bundle of colored pencils",
+        "new_object": "small adhesive acupressure patches",
         "anchor": "thin acupuncture needles"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3649,8 +3649,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the waffle cone with a red toy trumpet in every ice-cream-truck shot.",
-      "target_phrase": "a red toy trumpet",
+      "instruction": "Serve the ice cream in a small paper cup instead of the waffle cone at the truck window in every shot.",
+      "target_phrase": "a small paper ice-cream cup",
       "applicable_shots": [
         1,
         2,
@@ -3665,7 +3665,7 @@
           "waffle cone"
         ],
         "edited_queries": [
-          "a red toy trumpet"
+          "a small paper ice-cream cup"
         ],
         "combine": "union"
       },
@@ -3673,7 +3673,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "waffle cone",
-        "new_object": "a red toy trumpet",
+        "new_object": "a small paper ice-cream cup",
         "anchor": "waffle cone"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3722,8 +3722,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the acoustic guitar with a red rolling suitcase throughout the busking scene.",
-      "target_phrase": "a red rolling suitcase",
+      "instruction": "Change the acoustic guitar into a wooden ukulele while keeping the busker's strumming and subway performance continuous.",
+      "target_phrase": "a wooden ukulele",
       "applicable_shots": [
         1,
         2,
@@ -3738,7 +3738,7 @@
           "acoustic guitar"
         ],
         "edited_queries": [
-          "a red rolling suitcase"
+          "a wooden ukulele"
         ],
         "combine": "union"
       },
@@ -3746,7 +3746,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "acoustic guitar",
-        "new_object": "a red rolling suitcase",
+        "new_object": "a wooden ukulele",
         "anchor": "acoustic guitar"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3796,8 +3796,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the ratchet wrench with a ripe yellow banana in every mechanic shot.",
-      "target_phrase": "a ripe yellow banana",
+      "instruction": "Use a yellow-handled screwdriver instead of the ratchet wrench during the car-repair action.",
+      "target_phrase": "a yellow-handled screwdriver",
       "applicable_shots": [
         1,
         2,
@@ -3813,7 +3813,7 @@
           "ratchet wrench"
         ],
         "edited_queries": [
-          "a ripe yellow banana"
+          "a yellow-handled screwdriver"
         ],
         "combine": "union"
       },
@@ -3821,7 +3821,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "ratchet wrench",
-        "new_object": "a ripe yellow banana",
+        "new_object": "a yellow-handled screwdriver",
         "anchor": "ratchet wrench"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3879,8 +3879,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wicker basket with a glossy red clawfoot bathtub across the balloon-launch scene.",
-      "target_phrase": "a glossy red clawfoot bathtub",
+      "instruction": "Change the wicker balloon basket into a rectangular metal passenger gondola while preserving the launch setup.",
+      "target_phrase": "a rectangular metal passenger gondola",
       "applicable_shots": [
         1,
         2,
@@ -3896,7 +3896,7 @@
           "wicker basket"
         ],
         "edited_queries": [
-          "a glossy red clawfoot bathtub"
+          "a rectangular metal passenger gondola"
         ],
         "combine": "union"
       },
@@ -3904,7 +3904,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "wicker basket",
-        "new_object": "a glossy red clawfoot bathtub",
+        "new_object": "a rectangular metal passenger gondola",
         "anchor": "wicker basket"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -3962,8 +3962,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the lace veil with a large red feather fan throughout the bridal fitting.",
-      "target_phrase": "a large red feather fan",
+      "instruction": "Change the lace veil into a pearl-beaded bridal cape, keeping the fitting pose and mirror setup intact.",
+      "target_phrase": "a pearl-beaded bridal cape",
       "applicable_shots": [
         1,
         2,
@@ -3979,7 +3979,7 @@
           "lace veil"
         ],
         "edited_queries": [
-          "a large red feather fan"
+          "a pearl-beaded bridal cape"
         ],
         "combine": "union"
       },
@@ -3987,7 +3987,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "lace veil",
-        "new_object": "a large red feather fan",
+        "new_object": "a pearl-beaded bridal cape",
         "anchor": "lace veil"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -4045,8 +4045,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wooden gavel with a silver handheld microphone throughout the courtroom scene.",
-      "target_phrase": "a silver handheld microphone",
+      "instruction": "Use a small brass judge's bell instead of the wooden gavel while the courtroom signaling action remains the same.",
+      "target_phrase": "a small brass judge's bell",
       "applicable_shots": [
         1,
         2,
@@ -4062,7 +4062,7 @@
           "wooden gavel"
         ],
         "edited_queries": [
-          "a silver handheld microphone"
+          "a small brass judge's bell"
         ],
         "combine": "union"
       },
@@ -4070,7 +4070,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "wooden gavel",
-        "new_object": "a silver handheld microphone",
+        "new_object": "a small brass judge's bell",
         "anchor": "wooden gavel"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -4128,8 +4128,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the marshmallow on the skewer with a glowing paper lantern on a stick across the campfire scene.",
-      "target_phrase": "a glowing paper lantern on a stick",
+      "instruction": "Roast a hot dog on the skewer instead of the marshmallow across the campfire shots.",
+      "target_phrase": "a hot dog on a skewer",
       "applicable_shots": [
         1,
         2,
@@ -4145,7 +4145,7 @@
           "marshmallow on skewer"
         ],
         "edited_queries": [
-          "a glowing paper lantern on a stick"
+          "a hot dog on a skewer"
         ],
         "combine": "union"
       },
@@ -4153,7 +4153,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "marshmallow on skewer",
-        "new_object": "a glowing paper lantern on a stick",
+        "new_object": "a hot dog on a skewer",
         "anchor": "marshmallow on skewer"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"
@@ -4207,8 +4207,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the metal cocktail shaker with a small brass handbell throughout the cocktail-bar scene.",
-      "target_phrase": "a small brass handbell",
+      "instruction": "Mix the drink with a clear mixing glass and bar spoon instead of the metal cocktail shaker throughout the bar scene.",
+      "target_phrase": "a clear mixing glass with a bar spoon",
       "applicable_shots": [
         1,
         2,
@@ -4224,7 +4224,7 @@
           "metal cocktail shaker"
         ],
         "edited_queries": [
-          "a small brass handbell"
+          "a clear mixing glass with a bar spoon"
         ],
         "combine": "union"
       },
@@ -4232,7 +4232,7 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "metal cocktail shaker",
-        "new_object": "a small brass handbell",
+        "new_object": "a clear mixing glass with a bar spoon",
         "anchor": "metal cocktail shaker"
       },
       "author": "claude-handwritten-v2-10s-task-rebalance"

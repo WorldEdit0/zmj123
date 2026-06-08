@@ -25,15 +25,18 @@ T1_DYNAMIC_TARGETS = [
 # Backward-compatible alias for older generation code.
 T1_TARGETS = T1_DYNAMIC_TARGETS
 
+# T1 static replacements must change the object category while preserving the
+# original action affordance and scene logic.
 T1_STATIC_REPLACEMENTS = [
-    "a small potted cactus",
-    "a stack of white domino tiles",
-    "an antique brass compass",
-    "a yellow rubber duck",
-    "a green-felt billiards table",
-    "a scrambled Rubik cube",
-    "a red rolling suitcase",
-    "a silver handheld microphone",
+    "a wide ceramic latte bowl",
+    "a soft dark sculpting-wax lump",
+    "a bundle of long dried wheat stalks",
+    "a clear squeeze bottle with a straw",
+    "two vinyl turntables and a mixer",
+    "a black henna applicator cone",
+    "a long hollow copper tube",
+    "a shallow ceramic serving bowl",
+    "a clear mixing glass with a bar spoon",
 ]
 
 # T2 same-object attributes only: color, material, pattern, texture, hairstyle,

@@ -27,10 +27,10 @@ class TaskDef:
     requires: list[str]
 
 
-# T1 — replacement: dynamic entities and static objects
+# T1 — replacement: individual-level dynamic entities and function-compatible static objects
 T1 = TaskDef(
     task_id="T1",
-    description="Cross-Shot Replacement (dynamic entities + static objects)",
+    description="Cross-Shot Replacement (individual-level dynamic entities + function-compatible static objects)",
     instruction_templates=[
         "Replace {character_desc} with {target_desc} in every shot they appear.",
         "Change {character_desc} into {target_desc}, keeping all actions identical.",

@@ -34,7 +34,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the barista's black apron to a deep maroon apron in every cafe shot.",
-      "target_phrase": "young male barista in a black apron, hair tucked under a beanie with deep maroon apron",
+      "target_phrase": "deep maroon apron",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -96,7 +96,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the barista's dark beanie to a bright red ribbed knit beanie throughout the cafe scene.",
-      "target_phrase": "barista wearing a bright red ribbed knit beanie",
+      "target_phrase": "bright red ribbed knit beanie",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -158,7 +158,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Untie the potter's tight bun so her hair hangs loose to her shoulders in every shot.",
-      "target_phrase": "woman with hair in a tight bun, wearing a clay-streaked navy apron with loose shoulder-length hair",
+      "target_phrase": "loose shoulder-length hair",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -220,7 +220,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the potter's navy apron into a rubberized waterproof navy apron while keeping the clay streaks visible.",
-      "target_phrase": "woman with hair in a tight bun, wearing a clay-streaked navy apron with navy rubberized waterproof apron",
+      "target_phrase": "navy rubberized waterproof apron",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -282,7 +282,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the florist's green canvas apron to a pastel-yellow canvas apron throughout the wrapping scene.",
-      "target_phrase": "older florist with silver-streaked hair tied back, wearing a green canvas apron with pastel-yellow canvas apron",
+      "target_phrase": "pastel-yellow canvas apron",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -344,7 +344,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the florist's tied-back silver-streaked hair to loose shoulder-length hair in every shot.",
-      "target_phrase": "older florist with loose shoulder-length silver-streaked hair",
+      "target_phrase": "loose shoulder-length silver-streaked hair",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -409,7 +409,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Make the magician's slim black tie show bold red diagonal stripes across the magic act.",
-      "target_phrase": "magician wearing a slim black tie with bold red diagonal stripes",
+      "target_phrase": "slim black tie with bold red diagonal stripes",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -474,7 +474,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the audience member's side braid into a short blunt bob haircut in every shot.",
-      "target_phrase": "audience member in a red blouse, hair in a side braid with short blunt bob haircut",
+      "target_phrase": "short blunt bob haircut",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -539,7 +539,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the reader's deep purple shawl into a sheer black lace shawl throughout the tarot reading.",
-      "target_phrase": "reader in a deep purple shawl with long dark hair and silver rings with sheer black lace shawl",
+      "target_phrase": "sheer black lace shawl",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -604,7 +604,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the young man's charcoal sweater to a cream cable-knit sweater in every shot.",
-      "target_phrase": "young man in a charcoal sweater leaning forward across the table with cream cable-knit sweater",
+      "target_phrase": "cream cable-knit sweater",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -665,7 +665,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the astronaut's navy mission polo to a bright red mission polo throughout the space-station scene.",
-      "target_phrase": "astronaut in a navy blue mission polo with a name tag, hair floating slightly with bright red mission polo",
+      "target_phrase": "bright red mission polo",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -726,7 +726,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the astronaut's plain name tag to a bright orange name tag in every shot.",
-      "target_phrase": "astronaut wearing a bright orange name tag",
+      "target_phrase": "bright orange name tag",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -796,7 +796,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Make the skater's baggy white tee show thick black horizontal stripes across the skatepark scene.",
-      "target_phrase": "skater wearing a baggy white tee with thick black horizontal stripes",
+      "target_phrase": "baggy white tee with thick black horizontal stripes",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -867,7 +867,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the friend's backwards red cap to a backwards lime-green cap in every shot.",
-      "target_phrase": "friend in a backwards red cap watching from a bench with backwards lime-green cap",
+      "target_phrase": "backwards lime-green cap",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -935,7 +935,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the DJ's black t-shirt into a glossy black vinyl t-shirt throughout the stage sequence.",
-      "target_phrase": "DJ in a black t-shirt and silver chain, with closely cropped hair and large headphones with glossy black vinyl t-shirt",
+      "target_phrase": "glossy black vinyl t-shirt",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1003,7 +1003,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the DJ's silver chain to a chunky gold chain in every shot.",
-      "target_phrase": "DJ wearing a chunky gold chain",
+      "target_phrase": "chunky gold chain",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1070,7 +1070,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the surfer's sun-bleached blond hair to wet shoulder-length dark hair across the beach sequence.",
-      "target_phrase": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair with wet shoulder-length dark hair",
+      "target_phrase": "wet shoulder-length dark hair",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1137,7 +1137,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the surfer's black wetsuit into a matte charcoal neoprene wetsuit in every shot.",
-      "target_phrase": "surfer in a black wetsuit with the upper half peeled down, sun-bleached blond hair with matte charcoal neoprene wetsuit",
+      "target_phrase": "matte charcoal neoprene wetsuit",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1204,7 +1204,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the snowboarder's orange jacket to teal throughout the snowboarding scene.",
-      "target_phrase": "snowboarder in an orange jacket and black helmet with mirrored goggles with teal jacket",
+      "target_phrase": "teal jacket",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1271,7 +1271,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Tint the snowboarder's mirrored goggles rose pink in every shot.",
-      "target_phrase": "snowboarder wearing rose-tinted mirrored goggles",
+      "target_phrase": "rose-tinted mirrored goggles",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1343,7 +1343,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the tattoo artist's black nitrile gloves into transparent latex gloves throughout the session.",
-      "target_phrase": "tattoo artist with full sleeve tattoos in a black t-shirt and black nitrile gloves with transparent latex gloves",
+      "target_phrase": "transparent latex gloves",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1415,7 +1415,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the client's sleeveless tank top into a sleeveless black mesh tank top in every shot.",
-      "target_phrase": "client wearing a sleeveless black mesh tank top",
+      "target_phrase": "sleeveless black mesh tank top",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -1483,7 +1483,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the glass blower's white t-shirt to charcoal gray throughout the furnace scene.",
-      "target_phrase": "glass blower in a white t-shirt and black gloves, sweat on his forehead with charcoal gray t-shirt",
+      "target_phrase": "charcoal gray t-shirt",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1551,7 +1551,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the glass blower's black gloves into thick tan heat-resistant gloves in every shot.",
-      "target_phrase": "glass blower wearing thick tan heat-resistant gloves",
+      "target_phrase": "thick tan heat-resistant gloves",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1619,7 +1619,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the calligrapher's low knot into a high silver bun throughout the ink-painting scene.",
-      "target_phrase": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot with high silver bun",
+      "target_phrase": "high silver bun",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1687,7 +1687,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the charcoal mandarin-collar shirt into a charcoal silk mandarin-collar shirt in every shot.",
-      "target_phrase": "older Asian woman in a charcoal mandarin-collar shirt, silver hair in a low knot with charcoal silk mandarin-collar shirt",
+      "target_phrase": "charcoal silk mandarin-collar shirt",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1755,7 +1755,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the locksmith's navy jumpsuit into a creased olive canvas jumpsuit throughout the scene.",
-      "target_phrase": "locksmith wearing a creased olive canvas jumpsuit",
+      "target_phrase": "creased olive canvas jumpsuit",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1823,7 +1823,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the locksmith's canvas tool roll into a brown leather tool roll in every shot.",
-      "target_phrase": "locksmith carrying a brown leather tool roll over one shoulder",
+      "target_phrase": "brown leather tool roll over one shoulder",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1895,7 +1895,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the veterinarian's white coat to a mint-green veterinary coat across the exam-room scene.",
-      "target_phrase": "veterinarian with shoulder-length blond hair in a white coat, stethoscope around neck with mint-green veterinary coat",
+      "target_phrase": "mint-green veterinary coat",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1967,7 +1967,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Make the puppy's short golden fur visibly longer and fluffier in every shot.",
-      "target_phrase": "small golden retriever puppy with long fluffy golden fur",
+      "target_phrase": "long fluffy golden retriever fur",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -2035,7 +2035,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the watchmaker's magnifying loupe to have a bright brass rim throughout the repair scene.",
-      "target_phrase": "watchmaker wearing a magnifying loupe with a bright brass rim",
+      "target_phrase": "magnifying loupe with a bright brass rim",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2103,7 +2103,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the watchmaker's fawn-colored vest into a dark brown suede vest in every shot.",
-      "target_phrase": "watchmaker in a fawn-colored vest with a magnifying loupe over one eye with dark brown suede vest",
+      "target_phrase": "dark brown suede vest",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2171,7 +2171,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the chef's starched white jacket into a wrinkled matte black chef jacket throughout plating.",
-      "target_phrase": "chef wearing a wrinkled matte black chef jacket",
+      "target_phrase": "wrinkled matte black chef jacket",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2239,7 +2239,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Make the chef's white skull cap show bold red polka dots in every shot.",
-      "target_phrase": "chef wearing a white skull cap with bold red polka dots",
+      "target_phrase": "white skull cap with bold red polka dots",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2310,7 +2310,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the woman's teal tank top to coral throughout the yoga sequence.",
-      "target_phrase": "woman in a teal tank top with a long french braid with coral tank top",
+      "target_phrase": "coral tank top",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2381,7 +2381,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the second woman's top knot into a long loose ponytail in every shot.",
-      "target_phrase": "woman in a black sports bra and gray leggings, hair in a top knot with long loose ponytail",
+      "target_phrase": "long loose ponytail",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -2449,7 +2449,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the groomer's pink smock to sky blue throughout the grooming scene.",
-      "target_phrase": "groomer with curly red hair, in a pink smock and grooming arm bands with sky-blue smock",
+      "target_phrase": "sky-blue smock",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2517,7 +2517,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the groomer's curly red hair into a straight black bob haircut across all shots.",
-      "target_phrase": "groomer with curly red hair, in a pink smock and grooming arm bands with straight black bob haircut",
+      "target_phrase": "straight black bob haircut",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2585,7 +2585,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the striped grilling apron into a dark denim grilling apron throughout the barbecue scene.",
-      "target_phrase": "man in a backwards baseball cap, white t-shirt, and a striped grilling apron with dark denim grilling apron",
+      "target_phrase": "dark denim grilling apron",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2653,7 +2653,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the backwards baseball cap into a faded denim baseball cap in every shot.",
-      "target_phrase": "grill cook wearing a faded denim backwards baseball cap",
+      "target_phrase": "faded denim backwards baseball cap",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2721,7 +2721,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the fisherman's faded green vest to a rust-red fishing vest throughout the dock scene.",
-      "target_phrase": "older man in a faded green vest and brown wide-brim hat, with a short gray beard with rust-red fishing vest",
+      "target_phrase": "rust-red fishing vest",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2789,7 +2789,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the fisherman's short gray beard into a long braided gray beard in every shot.",
-      "target_phrase": "older man in a faded green vest and brown wide-brim hat, with a short gray beard with long braided gray beard",
+      "target_phrase": "long braided gray beard",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2861,7 +2861,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the acupuncturist's soft beige tunic to a soft white tunic with blue trim throughout the treatment scene.",
-      "target_phrase": "acupuncturist wearing a soft white tunic with blue trim",
+      "target_phrase": "soft white tunic with blue trim",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2933,7 +2933,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the patient's towel into a soft terry-cloth blue towel in every shot.",
-      "target_phrase": "patient lying face-down on a treatment table, towel draped over the lower back with soft terry-cloth blue towel over the lower back",
+      "target_phrase": "soft terry-cloth blue towel over the lower back",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3005,7 +3005,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Make the server's white paper hat red-and-white striped across the truck-window shots.",
-      "target_phrase": "server wearing a red-and-white striped paper hat",
+      "target_phrase": "red-and-white striped paper hat",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3077,7 +3077,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the boy's green dinosaur t-shirt to purple in every shot.",
-      "target_phrase": "small boy in a green dinosaur t-shirt with messy brown hair with purple dinosaur t-shirt",
+      "target_phrase": "purple dinosaur t-shirt",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3149,7 +3149,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the busker's beat-up brown leather jacket into a faded blue denim jacket throughout the subway scene.",
-      "target_phrase": "young busker in a beat-up brown leather jacket with a stubbled chin with faded blue denim jacket",
+      "target_phrase": "faded blue denim jacket",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3221,7 +3221,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the commuter's leather briefcase into a scuffed navy leather briefcase in every shot.",
-      "target_phrase": "commuter carrying a scuffed navy leather briefcase",
+      "target_phrase": "scuffed navy leather briefcase",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3294,7 +3294,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the mechanic's navy jumpsuit into a wrinkled gray canvas jumpsuit throughout the repair scene.",
-      "target_phrase": "mechanic wearing a wrinkled gray canvas jumpsuit",
+      "target_phrase": "wrinkled gray canvas jumpsuit",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3368,7 +3368,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the mechanic's low ponytail into a short pixie haircut in every shot.",
-      "target_phrase": "mechanic in a navy jumpsuit with grease smears on the sleeves, hair in a low ponytail with short pixie haircut",
+      "target_phrase": "short pixie haircut",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3450,7 +3450,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the pilot's aviator sunglasses to blue-mirrored aviator sunglasses throughout the balloon launch.",
-      "target_phrase": "pilot wearing blue-mirrored aviator sunglasses",
+      "target_phrase": "blue-mirrored aviator sunglasses",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3532,7 +3532,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the passenger's chunky red sweater to mustard yellow in every shot.",
-      "target_phrase": "passenger in a chunky red sweater with a knit beanie with chunky mustard-yellow sweater",
+      "target_phrase": "chunky mustard-yellow sweater",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3614,7 +3614,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the bride's soft loose waves into a sleek high updo throughout the fitting.",
-      "target_phrase": "bride in a half-fastened ivory wedding gown, hair in soft loose waves with sleek high updo",
+      "target_phrase": "sleek high updo",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3696,7 +3696,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the mother's sky-blue blazer to soft champagne in every shot.",
-      "target_phrase": "older mother in a sky-blue blazer, watching from a velvet sofa with soft champagne blazer",
+      "target_phrase": "soft champagne blazer",
       "target_entity": "C3",
       "applicable_shots": [
         1,
@@ -3778,7 +3778,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the defendant's charcoal suit to a navy-blue suit throughout the courtroom scene.",
-      "target_phrase": "young defendant in a charcoal suit, standing at the table with navy-blue suit",
+      "target_phrase": "navy-blue suit",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -3860,7 +3860,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the jury foreperson's beige cardigan into a cream cashmere cardigan in every shot.",
-      "target_phrase": "jury foreperson in a beige cardigan, reading from a folded paper with cream cashmere cardigan",
+      "target_phrase": "cream cashmere cardigan",
       "target_entity": "C3",
       "applicable_shots": [
         1,
@@ -3942,7 +3942,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the storyteller's wide-brim hat into a weathered dark felt wide-brim hat across the campfire scene.",
-      "target_phrase": "storyteller wearing a weathered dark felt wide-brim hat",
+      "target_phrase": "weathered dark felt wide-brim hat",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4024,7 +4024,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the woman's chunky knit sweater into a cable-knit wool sweater throughout the campfire scene.",
-      "target_phrase": "young woman in a chunky knit sweater hugging her knees with chunky cable-knit wool sweater",
+      "target_phrase": "chunky cable-knit wool sweater",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -4102,7 +4102,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Change the bartender's black vest and slim suspenders to a white pinstriped vest with black suspenders throughout the bar scene.",
-      "target_phrase": "bartender wearing a white pinstriped vest with black suspenders",
+      "target_phrase": "white pinstriped vest with black suspenders",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4180,7 +4180,7 @@
     "edit": {
       "task_id": "T2",
       "instruction": "Recolor the customer's sleek black dress to emerald green in every shot.",
-      "target_phrase": "customer in a sleek black dress sitting at the bar with chin on hand with sleek emerald-green dress",
+      "target_phrase": "sleek emerald-green dress",
       "target_entity": "C2",
       "applicable_shots": [
         1,

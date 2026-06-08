@@ -38,7 +38,7 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 
 | ID | Name | What it tests | Example instruction |
 |---|---|---|---|
-| **T1** | Cross-Shot Replacement | Dynamic entity replacement plus category-level static object replacement | "Replace the barista with a silver-haired female barista." / "Replace the latte cup with a potted cactus." |
+| **T1** | Cross-Shot Replacement | Individual-level dynamic entity replacement plus function-compatible category-level static object replacement | "Replace the barista with a silver-haired female barista." / "Swap the latte cup for a wide ceramic latte bowl." |
 | **T2** | Cross-Shot Attribute Edit | Localized same-object changes in color, material, pattern, texture, hairstyle, and fur/hair length | "Change the barista's black apron to a deep maroon apron in every shot." |
 | **T3** | Global Style | Whole-frame re-render to a broad, explicit visual style | "Re-render the cafe scene in pixel art style." |
 | **T4** | Cross-Shot Add/Delete | Static and dynamic add/delete operations, 20 prompts per category | "Place a small brass desk bell next to the white ceramic latte cup." |
