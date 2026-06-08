@@ -67,10 +67,10 @@ T3 = TaskDef(
     requires=[],
 )
 
-# T4 — object/entity add / delete only
+# T4 — static add/delete + dynamic add only
 T4 = TaskDef(
     task_id="T4",
-    description="Cross-Shot Static/Dynamic Add/Delete",
+    description="Cross-Shot Static Add/Delete and Dynamic Add",
     instruction_templates=[
         "Add {new_object} next to {anchor} in every shot where {anchor} is visible.",
         "Delete {old_object} from every shot.",

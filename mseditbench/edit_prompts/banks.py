@@ -64,7 +64,8 @@ T3_STYLES = [
     "stop-motion clay animation style",
 ]
 
-# T4 add/delete operations.
+# T4 operations. Production T4 excludes dynamic deletion because removing
+# people/animals often breaks the remaining scene narrative.
 #
 # Schema: (op, new_object_or_None, conditions_dict)
 #   op:        "add" | "delete"
@@ -81,7 +82,6 @@ T4_OPS = [
     ("delete", None,                          {"object_kind": "static", "match_any": ["surfboard", "snowboard", "rod", "wrench", "watch", "plate", "tongs"]}),
     ("add", "a small calm dog",              {"object_kind": "dynamic", "anchor_any": ["table", "mat", "dock", "campfire", "case"]}),
     ("add", "a quiet assistant standing nearby", {"object_kind": "dynamic", "anchor_any": ["bench", "furnace", "truck", "basket", "bar"]}),
-    ("delete", None,                          {"object_kind": "dynamic", "match_any": ["person", "character", "dog", "puppy", "poodle"]}),
 ]
 
 # T6 cinematic re-shoot

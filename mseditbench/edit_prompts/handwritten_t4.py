@@ -1,8 +1,9 @@
 """Historical v1/v1.2 hand-written T4 — object add / remove / replace.
 
-Current v2_10s production T4 is add/delete only, with 20 prompts each for
-static add, static delete, dynamic add, and dynamic delete. The current source
-of truth is `runs/edit_prompts_v2_10s/T4.json` plus `tasks.py`/`banks.py`.
+Current v2_10s production T4 has 60 prompts: 20 static add, 20 static delete,
+and 20 dynamic add. Dynamic delete is excluded because deleting people/animals
+often breaks the remaining scene narrative. The current source of truth is
+`runs/edit_prompts_v2_10s/T4.json` plus `tasks.py`/`banks.py`.
 """
 
 HAND_T4 = {

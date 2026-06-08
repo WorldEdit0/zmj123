@@ -1,7 +1,7 @@
 # MSEdit-Bench v1
 
 > **The first benchmark for multi-shot video editing.**
-> 30 multi-shot videos × 8 task types = 500 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
+> 30 multi-shot videos, 8 task types, and 480 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
 
 [![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
@@ -27,10 +27,10 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 |---|---|
 | **Source videos** | 30 mp4s, 10 s each, 720p @ 24 fps, ModelScope-hosted |
 | **Shot detection** | OmniShotCut (primary) + TransNetV2 + PySceneDetect (consensus); 30 / 30 (100 %) hit rate after retry |
-| **Edit prompts** | 500 hand-written by Claude (T1/T2/T3/T5/T6/T7/T8 = 60 each, T4 = 80) |
+| **Edit prompts** | 480 hand-written by Claude (T1-T8 = 60 each) |
 | **Evaluation** | Mask-aware (SAM-3) + DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite as judge |
 | **K-sample protocol** | K = 3 per prompt; report mean ± std |
-| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 500 prompts |
+| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 480 prompts |
 
 ---
 
@@ -41,7 +41,7 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 | **T1** | Cross-Shot Replacement | Individual-level dynamic entity replacement plus function-compatible category-level static object replacement | "Replace the barista with a silver-haired female barista." / "Swap the latte cup for a wide ceramic latte bowl." |
 | **T2** | Cross-Shot Attribute Edit | Localized same-object changes in color, material, pattern, texture, hairstyle, and fur/hair length | "Change the barista's black apron to a deep maroon apron in every shot." |
 | **T3** | Global Style | Whole-frame re-render to a broad, explicit visual style | "Re-render the cafe scene in pixel art style." |
-| **T4** | Cross-Shot Add/Delete | Static and dynamic add/delete operations, 20 prompts per category | "Place a small brass desk bell next to the white ceramic latte cup." |
+| **T4** | Cross-Shot Add/Delete | Static add, static delete, and dynamic add operations, 20 prompts each; dynamic delete is excluded to preserve narrative continuity | "Place a small brass desk bell next to the white ceramic latte cup." |
 | **T5** | Shot Reorder | Symbolic shot-order edit | "Reorder the video to shot order 3, 1, 2." |
 | **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
 | **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with a narrow flashlight beam." |
@@ -138,7 +138,7 @@ Full design rationale: top of `mseditbench/metrics/ee_v3.py`.
 
 ## Reference results
 
-Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 500-prompt task set:
+Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 480-prompt task set:
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | retired SES Pro | retired SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -176,7 +176,7 @@ multi_shot_bench/
 │   ├── preprocess/           # OmniShotCut + TN/PS shot detection, contact sheets
 │   ├── tracking/             # Grounded-DINO + SAM-2-Video entity tubes
 │   ├── identity/             # InsightFace face DB
-│   ├── edit_prompts/         # task templates + 500 hand-written prompts
+│   ├── edit_prompts/         # task templates + 480 hand-written prompts
 │   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
 │   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge (headline)
 │   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge pairwise
@@ -196,7 +196,7 @@ multi_shot_bench/
 │
 └── runs/                     # all pipeline outputs land here
     ├── pilot_v2_10s/                    # ★ shot detection 30/30 (current)
-    ├── edit_prompts_v2_10s/             # ★ 500 production prompts
+    ├── edit_prompts_v2_10s/             # ★ 480 production prompts
     ├── seedance_v2v_edit_v2_10s/        # archived old 420-prompt Seedance Pro outputs
     ├── seedance_v2v_fast_edit_v2_10s/   # archived old 420-prompt Seedance Fast outputs
     ├── eval_seedance_v2v_v2_10s_v3/     # archived old 420-prompt Pro v3 leaderboard
@@ -261,7 +261,7 @@ Approximate runtime: 8-GPU parallel + 64-way VLM concurrency, ~150 min per basel
 
 ## Roadmap
 
-**v1 (this release)**: 30 source videos, 500 prompts, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
+**v1 (this release)**: 30 source videos, 480 prompts, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
 
 **v1.x next steps** (in priority order):
 1. VLM ensemble diversification: add Gemini 2.5 Pro and GPT-4o backends so the judge isn't a single-vendor signal
