@@ -10,7 +10,7 @@
 >
 > 三者互相补充：README 给外人看，HOWTO 给跑 pipeline 的人看，CLAUDE.md 给下次接手的 Claude 看。
 
-最后更新：2026-06-08（T4 dynamic-delete pruning）
+最后更新：2026-06-11（v3 VLM-grounded edit prompts）
 
 ---
 
@@ -22,11 +22,12 @@
 - 2026-06-08 prompt boundary QA：T1 的 30 条 static replacement 已改成跨物体类别替换（不是杯子换材质/颜色这类浅层变体）；T2 不再使用 `accessory` / `clothing_type` 作为属性类别，保留同一物体的颜色、材质、图案、质感、发型/毛发长度等显著属性变化；T7 已换成月光、黄昏、霓虹、聚光、手电筒、火光、频闪、黑光、警灯/荧光等高辨识光源，并压缩 instruction。
 - 2026-06-08 second pass：T1 dynamic 已逐条手审为人物/动物个体级替换（性别、年龄、族裔、职业身份或机器人等主体变化），不再把同一人物的表面属性变化当 replacement；T1 static 已手写收紧为“类别不同但功能兼容”的替换，必须继续承接原动作/叙事；T2 的 `target_phrase` 已清成 edited attribute phrase，不再混入 old+new 对照。T5/T6 本轮未改。
 - 2026-06-08 T4 pruning：删除 20 条 dynamic delete prompts，原因是删除人物/动物主体容易破坏后续剧情动作；T4 现在为 60 条，分布为 static add=20、static delete=20、dynamic add=20。
-- 同步文件：`runs/edit_prompts_v2_10s/T1.json`、`T2.json`、`T4.json`、`T7.json` 和 `all_edit_handoff.json`；外部 handoff 当前为 480 条。本轮实际改动集中在 T4 和 handoff 同步。
+- 2026-06-11 v3 VLM-grounded prompt set：基于 `source_prompts_multishot_v3_cn_flexible_draft.json`、`runs/pilot_v3/vlm_reannotation/` 和 `data/source_videos_v3_unpacked/home/tiger/pilot_v3/shots/` 重新手写 T1-T8，输出在 `runs/edit_prompts_v3_vlm/`。计数：T1=60、T2=60、T3=60、T4=80、T5=60、T6=60、T7=60、T8=60，总计 500；同步 `all_edit_handoff.json` 和 `manifest.json`。T4 已恢复 `dynamic_delete`（static_add/static_delete/dynamic_add/dynamic_delete 各 20），但强因果视频只删除背景/非核心实体或物体；T5 只使用弱因果/无因果视频；T6 继续使用旧版逐 shot `[EDIT]`/`[KEEP]` 指令格式。
+- v2 同步文件：`runs/edit_prompts_v2_10s/T1.json`、`T2.json`、`T4.json`、`T7.json` 和 `all_edit_handoff.json`；外部 v2 handoff 为 480 条。本轮实际改动集中在 T4 和 handoff 同步。
 - 2026-06-07 新增 T8：Global Background Replacement，替换背景但保留前景主体/主要人物/关键物体；T8 的 `mask_queries.score_region="mask"`，NEP 直接在前景 preserve mask 内算 DINOv2
 - T5 当前只保留 reorder；不再单独走 TSF，统一进入 `run_eval.py`，TAC 会按 `extra.new_order` 重建期望时间线
 - 评测：当前 headline metrics = PSQ / EE_v3 / CSEP_v3 / NEP / USP / TAC；SES/TSF 已退役
-- 参照 baseline：Seedance 2.0 Pro & Fast 全 6 任务 K=3 数字已出，但这些结果对应 2026-06-07 前的 420-prompt snapshot；新 480-prompt 任务集需要重新跑编辑和评测
+- 参照 baseline：Seedance 2.0 Pro & Fast 全 6 任务 K=3 数字已出，但这些结果对应 2026-06-07 前的 420-prompt snapshot；v2 480-prompt 任务集和 v3 500-prompt 任务集都需要重新跑编辑和评测
 - 文档：README.md、CLAUDE.md、HOWTO.md、4 份 design docs (DEEP_DIVE / RESEARCH_PLAN / SURVEY / RELATED_WORK)、AGENT_BENCH_DESIGN.md
 - 测试：`python3 -m mseditbench.tests.test_metrics` → 17/17 PASS
 

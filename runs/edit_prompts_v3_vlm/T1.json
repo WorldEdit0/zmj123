@@ -1,0 +1,4885 @@
+[
+  {
+    "sample_id": "00000_T1_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the barista with an elderly woman barista with short silver hair, while keeping the white shirt, black apron, latte-art motions, and cup interactions consistent.",
+      "target_phrase": "elderly woman barista with silver hair, white shirt, and black apron",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "barista in white shirt and black apron"
+        ],
+        "edited_queries": [
+          "elderly woman barista with silver hair, white shirt, and black apron"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "barista in white shirt and black apron",
+        "new_entity": "elderly woman barista with silver hair, white shirt, and black apron"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "C1"
+    }
+  },
+  {
+    "sample_id": "00001_T1_0001",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the black-and-white Border Collie with a golden retriever wearing a red collar, preserving every jump, tunnel run, seesaw finish, and reward reaction.",
+      "target_phrase": "golden retriever with a red collar",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "black-and-white Border Collie"
+        ],
+        "edited_queries": [
+          "golden retriever with a red collar"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "black-and-white Border Collie",
+        "new_entity": "golden retriever with a red collar"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A1"
+    }
+  },
+  {
+    "sample_id": "00002_T1_0002",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the small green wind-up robot with a tiny silver clockwork robot with blue eyes in the toy city shots where it appears.",
+      "target_phrase": "tiny silver clockwork robot with blue eyes",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "small green wind-up robot with yellow eyes"
+        ],
+        "edited_queries": [
+          "tiny silver clockwork robot with blue eyes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "small green wind-up robot with yellow eyes",
+        "new_entity": "tiny silver clockwork robot with blue eyes"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00003_T1_0003",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the two hallway students with two students in pale yellow raincoats, keeping them as distant background passersby.",
+      "target_phrase": "two hallway students in pale yellow raincoats",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "two hallway students in dark blue uniforms"
+        ],
+        "edited_queries": [
+          "two hallway students in pale yellow raincoats"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "two hallway students in dark blue uniforms",
+        "new_entity": "two hallway students in pale yellow raincoats"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00004_T1_0004",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the small black bee with a small orange butterfly circling the sunflower seedling in the watering shot.",
+      "target_phrase": "small orange butterfly",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "small black bee"
+        ],
+        "edited_queries": [
+          "small orange butterfly"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "small black bee",
+        "new_entity": "small orange butterfly"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00005_T1_0005",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the white-uniformed nurse with a hospital volunteer in a teal vest, keeping the medical cart motion in the background.",
+      "target_phrase": "hospital volunteer in a teal vest pushing the same medical cart",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "nurse in white uniform pushing a medical cart"
+        ],
+        "edited_queries": [
+          "hospital volunteer in a teal vest pushing the same medical cart"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "nurse in white uniform pushing a medical cart",
+        "new_entity": "hospital volunteer in a teal vest pushing the same medical cart"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00006_T1_0006",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the gray raccoon with a round brown beaver with a flat tail, preserving the berry-washing action and the final group pose.",
+      "target_phrase": "round brown beaver with a flat tail",
+      "applicable_shots": [
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "chubby gray raccoon with black facial markings"
+        ],
+        "edited_queries": [
+          "round brown beaver with a flat tail"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "chubby gray raccoon with black facial markings",
+        "new_entity": "round brown beaver with a flat tail"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A2"
+    }
+  },
+  {
+    "sample_id": "00007_T1_0007",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the large white boat with a long red cargo barge moving below the bridge, leaving the drone inspection unchanged.",
+      "target_phrase": "long red cargo barge on the river",
+      "applicable_shots": [
+        3,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "large white commercial boat on the river"
+        ],
+        "edited_queries": [
+          "long red cargo barge on the river"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "large white commercial boat on the river",
+        "new_entity": "long red cargo barge on the river"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00008_T1_0008",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the orange cat with a small black-and-white market dog, keeping it as a background animal near the delivery route.",
+      "target_phrase": "small black-and-white market dog",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "orange cat in the market"
+        ],
+        "edited_queries": [
+          "small black-and-white market dog"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "orange cat in the market",
+        "new_entity": "small black-and-white market dog"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A1"
+    }
+  },
+  {
+    "sample_id": "00009_T1_0009",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the gray-black pigeons with a small group of white doves around the street painter.",
+      "target_phrase": "small group of white doves",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "gray-black pigeon group"
+        ],
+        "edited_queries": [
+          "small group of white doves"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "gray-black pigeon group",
+        "new_entity": "small group of white doves"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A1"
+    }
+  },
+  {
+    "sample_id": "00010_T1_0010",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the passerby outside the bakery with a person in a mint green hoodie, keeping them outside the glass door.",
+      "target_phrase": "person in a mint green hoodie outside the bakery",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "person in pink shirt outside the bakery"
+        ],
+        "edited_queries": [
+          "person in a mint green hoodie outside the bakery"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "person in pink shirt outside the bakery",
+        "new_entity": "person in a mint green hoodie outside the bakery"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00011_T1_0011",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the small green alien ball with a small purple one-eyed alien ball beside the clay rocket setup.",
+      "target_phrase": "small purple spherical alien with one large eye",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "small green spherical alien with googly eyes"
+        ],
+        "edited_queries": [
+          "small purple spherical alien with one large eye"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "small green spherical alien with googly eyes",
+        "new_entity": "small purple spherical alien with one large eye"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "G1"
+    }
+  },
+  {
+    "sample_id": "00012_T1_0012",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the yellow-jacket scooter rider with a food-delivery cyclist in an orange rain poncho in the bus-stop shot.",
+      "target_phrase": "food-delivery cyclist in an orange rain poncho",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "food-delivery scooter rider in bright yellow jacket"
+        ],
+        "edited_queries": [
+          "food-delivery cyclist in an orange rain poncho"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "food-delivery scooter rider in bright yellow jacket",
+        "new_entity": "food-delivery cyclist in an orange rain poncho"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00013_T1_0013",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the head chef with a female pastry chef wearing a black headscarf and white uniform, preserving all dessert-plating hand motions.",
+      "target_phrase": "female pastry chef with a black headscarf and white uniform",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "head chef in white uniform"
+        ],
+        "edited_queries": [
+          "female pastry chef with a black headscarf and white uniform"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "head chef in white uniform",
+        "new_entity": "female pastry chef with a black headscarf and white uniform"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "C1"
+    }
+  },
+  {
+    "sample_id": "00014_T1_0014",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the blue dragonfly with a red dragonfly hovering beside the bamboo water spout.",
+      "target_phrase": "red dragonfly with transparent wings",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "blue dragonfly with transparent wings"
+        ],
+        "edited_queries": [
+          "red dragonfly with transparent wings"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "blue dragonfly with transparent wings",
+        "new_entity": "red dragonfly with transparent wings"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A2"
+    }
+  },
+  {
+    "sample_id": "00015_T1_0015",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the second mechanic with a young apprentice mechanic in a navy hoodie in the garage establishing shot.",
+      "target_phrase": "young apprentice mechanic in a navy hoodie",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "second mechanic wearing gray clothing"
+        ],
+        "edited_queries": [
+          "young apprentice mechanic in a navy hoodie"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "second mechanic wearing gray clothing",
+        "new_entity": "young apprentice mechanic in a navy hoodie"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "C2"
+    }
+  },
+  {
+    "sample_id": "00016_T1_0016",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the glowing blue tree with a glowing pink crystal tree while preserving the shrine-like fantasy woodland and floating-island setting.",
+      "target_phrase": "glowing pink crystal tree",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "glowing blue tree"
+        ],
+        "edited_queries": [
+          "glowing pink crystal tree"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "glowing blue tree",
+        "new_entity": "glowing pink crystal tree"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "P1"
+    }
+  },
+  {
+    "sample_id": "00017_T1_0017",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the flower girl with a young page boy in a cream suit carrying the same light pink basket.",
+      "target_phrase": "young page boy in a cream suit carrying the same pink basket",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "young flower girl in white dress with pink basket"
+        ],
+        "edited_queries": [
+          "young page boy in a cream suit carrying the same pink basket"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "young flower girl in white dress with pink basket",
+        "new_entity": "young page boy in a cream suit carrying the same pink basket"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00018_T1_0018",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the blue tin toy car with a green tin toy tractor, preserving the race timing against the wind-up duck.",
+      "target_phrase": "green tin toy tractor with expressive eyes",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "blue tin toy car with expressive eyes"
+        ],
+        "edited_queries": [
+          "green tin toy tractor with expressive eyes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "blue tin toy car with expressive eyes",
+        "new_entity": "green tin toy tractor with expressive eyes"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "T2"
+    }
+  },
+  {
+    "sample_id": "00019_T1_0019",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the background pony with a small gray donkey led by the same staff member around the arena edge.",
+      "target_phrase": "staff member leading a small gray donkey",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "staff member leading a brown and white pony"
+        ],
+        "edited_queries": [
+          "staff member leading a small gray donkey"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "staff member leading a brown and white pony",
+        "new_entity": "staff member leading a small gray donkey"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00020_T1_0020",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the visitor in the brown coat with a visitor in a navy coat and yellow scarf near the bronze mask case.",
+      "target_phrase": "visitor in a navy coat with a yellow scarf",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "visitor in brown coat and red scarf"
+        ],
+        "edited_queries": [
+          "visitor in a navy coat with a yellow scarf"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "visitor in brown coat and red scarf",
+        "new_entity": "visitor in a navy coat with a yellow scarf"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00021_T1_0021",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the seagulls and small white boat with dark cormorants and a small blue boat across the coastline montage.",
+      "target_phrase": "flock of dark cormorants and a small blue boat",
+      "applicable_shots": [
+        1,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "flock of seagulls and small white boat"
+        ],
+        "edited_queries": [
+          "flock of dark cormorants and a small blue boat"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "flock of seagulls and small white boat",
+        "new_entity": "flock of dark cormorants and a small blue boat"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00022_T1_0022",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the bright orbiter point with a small blinking blue satellite point in the rover arm shot.",
+      "target_phrase": "small blinking blue satellite point",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "bright orbiter point in the sky"
+        ],
+        "edited_queries": [
+          "small blinking blue satellite point"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "bright orbiter point in the sky",
+        "new_entity": "small blinking blue satellite point"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B2"
+    }
+  },
+  {
+    "sample_id": "00023_T1_0023",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the two reflected background dancers with two dancers in burgundy leotards while keeping them in the mirrors.",
+      "target_phrase": "two reflected dancers in burgundy leotards",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "two reflected dancers in dark blue leotards"
+        ],
+        "edited_queries": [
+          "two reflected dancers in burgundy leotards"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "two reflected dancers in dark blue leotards",
+        "new_entity": "two reflected dancers in burgundy leotards"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00024_T1_0024",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the older ramen master with an elderly woman ramen master in a cream kimono jacket, preserving her supervisory role.",
+      "target_phrase": "elderly woman ramen master in a cream kimono jacket",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "gray-haired older ramen master in gray traditional clothing"
+        ],
+        "edited_queries": [
+          "elderly woman ramen master in a cream kimono jacket"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "gray-haired older ramen master in gray traditional clothing",
+        "new_entity": "elderly woman ramen master in a cream kimono jacket"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "C2"
+    }
+  },
+  {
+    "sample_id": "00025_T1_0025",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the three brown ducks with three black-and-white coots swimming through the wetland water.",
+      "target_phrase": "three black-and-white coots",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "three brown ducks"
+        ],
+        "edited_queries": [
+          "three black-and-white coots"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "three brown ducks",
+        "new_entity": "three black-and-white coots"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "A3"
+    }
+  },
+  {
+    "sample_id": "00026_T1_0026",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the rolling red cherry tomato with a small yellow lemon in both clay kitchen shots.",
+      "target_phrase": "small yellow lemon",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "red cherry tomato"
+        ],
+        "edited_queries": [
+          "small yellow lemon"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "red cherry tomato",
+        "new_entity": "small yellow lemon"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00027_T1_0027",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the red-clothed cyclist outside the window with a cyclist in a bright yellow jacket.",
+      "target_phrase": "cyclist in a bright yellow jacket outside the workshop",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "cyclist in red clothing outside the workshop"
+        ],
+        "edited_queries": [
+          "cyclist in a bright yellow jacket outside the workshop"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "cyclist in red clothing outside the workshop",
+        "new_entity": "cyclist in a bright yellow jacket outside the workshop"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00028_T1_0028",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the black delivery drone with a white quadcopter drone in the rooftop sky.",
+      "target_phrase": "white quadcopter delivery drone",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "black delivery drone in the rooftop sky"
+        ],
+        "edited_queries": [
+          "white quadcopter delivery drone"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "black delivery drone in the rooftop sky",
+        "new_entity": "white quadcopter delivery drone"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "B1"
+    }
+  },
+  {
+    "sample_id": "00029_T1_0029",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the wall-mounted white cleaning robot with an orange hovering cleaning robot in the luggage-belt shot.",
+      "target_phrase": "orange hovering cleaning robot with blue eyes",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "dynamic_replace",
+        "source_queries": [
+          "white round cleaning robot with blue eyes"
+        ],
+        "edited_queries": [
+          "orange hovering cleaning robot with blue eyes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "dynamic",
+        "old_entity": "white round cleaning robot with blue eyes",
+        "new_entity": "orange hovering cleaning robot with blue eyes"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611",
+      "target_entity": "R2"
+    }
+  },
+  {
+    "sample_id": "00000_T1_0030",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the white ceramic latte cup for a clear double-walled glass latte cup while keeping the coffee extraction, milk pour, and handle placement consistent.",
+      "target_phrase": "clear double-walled glass latte cup",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "white ceramic latte cup"
+        ],
+        "edited_queries": [
+          "clear double-walled glass latte cup"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "white ceramic latte cup",
+        "new_object": "clear double-walled glass latte cup",
+        "anchor": "white ceramic latte cup"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00001_T1_0031",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the blue jump bar for a red-and-white striped jump bar across the agility course shots where the jump appears.",
+      "target_phrase": "red-and-white striped jump bar",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "blue jump bar"
+        ],
+        "edited_queries": [
+          "red-and-white striped jump bar"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "blue jump bar",
+        "new_object": "red-and-white striped jump bar",
+        "anchor": "blue jump bar"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00002_T1_0032",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the green train carriage with a yellow passenger carriage while keeping it coupled behind the red toy train.",
+      "target_phrase": "yellow passenger carriage",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "green train carriage"
+        ],
+        "edited_queries": [
+          "yellow passenger carriage"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "green train carriage",
+        "new_object": "yellow passenger carriage",
+        "anchor": "green train carriage"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00003_T1_0033",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the robot's small red flag for a tiny blue pennant flag after the table-line run.",
+      "target_phrase": "tiny blue pennant flag on the robot",
+      "applicable_shots": [
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "small red flag on the robot"
+        ],
+        "edited_queries": [
+          "tiny blue pennant flag on the robot"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "small red flag on the robot",
+        "new_object": "tiny blue pennant flag on the robot",
+        "anchor": "small red flag on the robot"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00004_T1_0034",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the terracotta pot with a matte white ceramic flower pot in the wider sunflower shots.",
+      "target_phrase": "matte white ceramic flower pot",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "terracotta orange pot"
+        ],
+        "edited_queries": [
+          "matte white ceramic flower pot"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "terracotta orange pot",
+        "new_object": "matte white ceramic flower pot",
+        "anchor": "terracotta orange pot"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00005_T1_0035",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the blue stretcher mattress with an orange stretcher mattress while preserving the folded metal frame and wheels.",
+      "target_phrase": "orange stretcher mattress",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "blue stretcher mattress"
+        ],
+        "edited_queries": [
+          "orange stretcher mattress"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "blue stretcher mattress",
+        "new_object": "orange stretcher mattress",
+        "anchor": "blue stretcher mattress"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00006_T1_0036",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the squirrel's acorn basket for a small green leaf basket in the forest montage.",
+      "target_phrase": "small green leaf basket",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "acorn basket"
+        ],
+        "edited_queries": [
+          "small green leaf basket"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "acorn basket",
+        "new_object": "small green leaf basket",
+        "anchor": "acorn basket"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00007_T1_0037",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the yellow drone landing pad with a blue square landing pad at the bridgehead.",
+      "target_phrase": "blue square drone landing pad",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "yellow drone landing pad"
+        ],
+        "edited_queries": [
+          "blue square drone landing pad"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "yellow drone landing pad",
+        "new_object": "blue square drone landing pad",
+        "anchor": "yellow drone landing pad"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00008_T1_0038",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the brown paper package for a white insulated delivery box while preserving the delivery handoff.",
+      "target_phrase": "white insulated delivery box",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "brown paper package"
+        ],
+        "edited_queries": [
+          "white insulated delivery box"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "brown paper package",
+        "new_object": "white insulated delivery box",
+        "anchor": "brown paper package"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00009_T1_0039",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the wooden easel with a black metal easel throughout the street-painting scene.",
+      "target_phrase": "black metal easel",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "wooden easel"
+        ],
+        "edited_queries": [
+          "black metal easel"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "wooden easel",
+        "new_object": "black metal easel",
+        "anchor": "wooden easel"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00010_T1_0040",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the brown paper baguette bag with a striped cloth bread bag near the bakery cat.",
+      "target_phrase": "striped cloth bread bag",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "brown paper bag holding the baguette"
+        ],
+        "edited_queries": [
+          "striped cloth bread bag"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "brown paper bag holding the baguette",
+        "new_object": "striped cloth bread bag",
+        "anchor": "brown paper bag holding the baguette"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00011_T1_0041",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the bright blue wrench for a red plastic wrench in the clay astronaut repair shots.",
+      "target_phrase": "red plastic wrench",
+      "applicable_shots": [
+        1,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "blue plastic wrench"
+        ],
+        "edited_queries": [
+          "red plastic wrench"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "blue plastic wrench",
+        "new_object": "red plastic wrench",
+        "anchor": "blue plastic wrench"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00012_T1_0042",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the commuters' dark umbrellas with transparent dome umbrellas in the rainy transit montage.",
+      "target_phrase": "transparent dome umbrellas",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "dark umbrellas"
+        ],
+        "edited_queries": [
+          "transparent dome umbrellas"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "dark umbrellas",
+        "new_object": "transparent dome umbrellas",
+        "anchor": "dark umbrellas"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00013_T1_0043",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the dark purple squeeze bottle with a clear squeeze bottle filled with red sauce.",
+      "target_phrase": "clear squeeze bottle with red sauce",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "dark purple squeeze bottle"
+        ],
+        "edited_queries": [
+          "clear squeeze bottle with red sauce"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "dark purple squeeze bottle",
+        "new_object": "clear squeeze bottle with red sauce",
+        "anchor": "dark purple squeeze bottle"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00014_T1_0044",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the gray stone lantern with a small bronze garden lantern at the koi pond edge.",
+      "target_phrase": "small bronze garden lantern",
+      "applicable_shots": [
+        1,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "traditional gray stone lantern"
+        ],
+        "edited_queries": [
+          "small bronze garden lantern"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "traditional gray stone lantern",
+        "new_object": "small bronze garden lantern",
+        "anchor": "traditional gray stone lantern"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00015_T1_0045",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the car's chrome side mirror with a brushed brass side mirror during the polishing close-up.",
+      "target_phrase": "brushed brass side mirror",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "chrome side mirror"
+        ],
+        "edited_queries": [
+          "brushed brass side mirror"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "chrome side mirror",
+        "new_object": "brushed brass side mirror",
+        "anchor": "chrome side mirror"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00016_T1_0046",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the blue crystal stones around the glowing tree roots with transparent pink crystals.",
+      "target_phrase": "transparent pink crystal stones",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "transparent blue crystal stones"
+        ],
+        "edited_queries": [
+          "transparent pink crystal stones"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "transparent blue crystal stones",
+        "new_object": "transparent pink crystal stones",
+        "anchor": "transparent blue crystal stones"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00017_T1_0047",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the bride's silver beaded headpiece for a pearl floral headpiece while keeping the veil attached.",
+      "target_phrase": "pearl floral headpiece",
+      "applicable_shots": [
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "silver beaded headpiece"
+        ],
+        "edited_queries": [
+          "pearl floral headpiece"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "silver beaded headpiece",
+        "new_object": "pearl floral headpiece",
+        "anchor": "silver beaded headpiece"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00018_T1_0048",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the red finish flags with blue checkered finish flags on the toy racetrack.",
+      "target_phrase": "blue checkered finish flags",
+      "applicable_shots": [
+        1,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "red finish flags"
+        ],
+        "edited_queries": [
+          "blue checkered finish flags"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "red finish flags",
+        "new_object": "blue checkered finish flags",
+        "anchor": "red finish flags"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00019_T1_0049",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the green markers on the white jump rails for red markers while keeping the jump shape unchanged.",
+      "target_phrase": "white jump rails with red markers",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "white jump rails with green markers"
+        ],
+        "edited_queries": [
+          "white jump rails with red markers"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "white jump rails with green markers",
+        "new_object": "white jump rails with red markers",
+        "anchor": "white jump rails with green markers"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00020_T1_0050",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the black barrier ropes around the marble sculpture with deep red velvet ropes.",
+      "target_phrase": "deep red velvet barrier ropes",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "black barrier ropes"
+        ],
+        "edited_queries": [
+          "deep red velvet barrier ropes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "black barrier ropes",
+        "new_object": "deep red velvet barrier ropes",
+        "anchor": "black barrier ropes"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00021_T1_0051",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the small white fishing boat with a small orange fishing boat on the coastline horizon.",
+      "target_phrase": "small orange fishing boat on the horizon",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "small white boat on the horizon"
+        ],
+        "edited_queries": [
+          "small orange fishing boat on the horizon"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "small white boat on the horizon",
+        "new_object": "small orange fishing boat on the horizon",
+        "anchor": "small white boat on the horizon"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00022_T1_0052",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the transparent sample tube with a brushed metal sample canister with a glass window.",
+      "target_phrase": "brushed metal sample canister with a glass window",
+      "applicable_shots": [
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "transparent glass sample tube"
+        ],
+        "edited_queries": [
+          "brushed metal sample canister with a glass window"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "transparent glass sample tube",
+        "new_object": "brushed metal sample canister with a glass window",
+        "anchor": "transparent glass sample tube"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00023_T1_0053",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the blue water bottle by the mirror with a transparent pink water bottle.",
+      "target_phrase": "transparent pink water bottle",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "blue plastic water bottle"
+        ],
+        "edited_queries": [
+          "transparent pink water bottle"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "blue plastic water bottle",
+        "new_object": "transparent pink water bottle",
+        "anchor": "blue plastic water bottle"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00024_T1_0054",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Swap the white ramen bowl with a red rim for a black bowl with a gold rim while preserving the toppings and presentation.",
+      "target_phrase": "black ramen bowl with a gold rim",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "white ramen bowl with red rim"
+        ],
+        "edited_queries": [
+          "black ramen bowl with a gold rim"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "white ramen bowl with red rim",
+        "new_object": "black ramen bowl with a gold rim",
+        "anchor": "white ramen bowl with red rim"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00025_T1_0055",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the kingfisher's dead gray-brown perch with a curved pale driftwood branch.",
+      "target_phrase": "curved pale driftwood branch",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "dead gray-brown branch"
+        ],
+        "edited_queries": [
+          "curved pale driftwood branch"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "dead gray-brown branch",
+        "new_object": "curved pale driftwood branch",
+        "anchor": "dead gray-brown branch"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00026_T1_0056",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the glossy blue bowl with a glossy white ceramic bowl with a red rim.",
+      "target_phrase": "glossy white ceramic bowl with red rim",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "glossy blue ceramic bowl"
+        ],
+        "edited_queries": [
+          "glossy white ceramic bowl with red rim"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "glossy blue ceramic bowl",
+        "new_object": "glossy white ceramic bowl with red rim",
+        "anchor": "glossy blue ceramic bowl"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00027_T1_0057",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the white chain lube bottle with a small blue chain lube bottle in the drivetrain close-up.",
+      "target_phrase": "small blue chain lube bottle",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "white chain lube bottle"
+        ],
+        "edited_queries": [
+          "small blue chain lube bottle"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "white chain lube bottle",
+        "new_object": "small blue chain lube bottle",
+        "anchor": "white chain lube bottle"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00028_T1_0058",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the wicker tomato basket with a round metal harvest bowl in the rooftop harvest shot.",
+      "target_phrase": "round metal harvest bowl",
+      "applicable_shots": [
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "wicker tomato basket"
+        ],
+        "edited_queries": [
+          "round metal harvest bowl"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "wicker tomato basket",
+        "new_object": "round metal harvest bowl",
+        "anchor": "wicker tomato basket"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  },
+  {
+    "sample_id": "00029_T1_0059",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T1",
+      "instruction": "Replace the gray round suitcase with a transparent bubble suitcase for the blue alien traveler.",
+      "target_phrase": "transparent bubble suitcase",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "static_replace",
+        "source_queries": [
+          "gray round suitcase"
+        ],
+        "edited_queries": [
+          "transparent bubble suitcase"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "replace_kind": "static",
+        "op": "replace",
+        "old_object": "gray round suitcase",
+        "new_object": "transparent bubble suitcase",
+        "anchor": "gray round suitcase"
+      },
+      "author": "codex-handwritten-v3-vlm-20260611"
+    }
+  }
+]
