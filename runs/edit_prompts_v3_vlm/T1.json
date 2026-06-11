@@ -81,7 +81,7 @@
         "old_entity": "barista in white shirt and black apron",
         "new_entity": "elderly woman barista with silver hair, white shirt, and black apron"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "C1"
     }
   },
@@ -166,7 +166,7 @@
         "old_entity": "black-and-white Border Collie",
         "new_entity": "golden retriever with a red collar"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A1"
     }
   },
@@ -217,8 +217,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the small green wind-up robot with a tiny silver clockwork robot with blue eyes in the toy city shots where it appears.",
-      "target_phrase": "tiny silver clockwork robot with blue eyes",
+      "instruction": "Replace the small green wind-up robot with a small brass toy soldier marching behind the train in the toy city shots where it appears.",
+      "target_phrase": "small brass toy soldier marching behind the train",
       "applicable_shots": [
         1,
         2
@@ -231,16 +231,16 @@
           "small green wind-up robot with yellow eyes"
         ],
         "edited_queries": [
-          "tiny silver clockwork robot with blue eyes"
+          "small brass toy soldier marching behind the train"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "small green wind-up robot with yellow eyes",
-        "new_entity": "tiny silver clockwork robot with blue eyes"
+        "new_entity": "small brass toy soldier marching behind the train"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -298,8 +298,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the two hallway students with two students in pale yellow raincoats, keeping them as distant background passersby.",
-      "target_phrase": "two hallway students in pale yellow raincoats",
+      "instruction": "Replace the two hallway students with two elderly school janitors pushing a cleaning cart, keeping them as distant background passersby.",
+      "target_phrase": "two elderly school janitors pushing a cleaning cart",
       "applicable_shots": [
         1
       ],
@@ -311,16 +311,16 @@
           "two hallway students in dark blue uniforms"
         ],
         "edited_queries": [
-          "two hallway students in pale yellow raincoats"
+          "two elderly school janitors pushing a cleaning cart"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "two hallway students in dark blue uniforms",
-        "new_entity": "two hallway students in pale yellow raincoats"
+        "new_entity": "two elderly school janitors pushing a cleaning cart"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -390,7 +390,7 @@
         "old_entity": "small black bee",
         "new_entity": "small orange butterfly"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -455,8 +455,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the white-uniformed nurse with a hospital volunteer in a teal vest, keeping the medical cart motion in the background.",
-      "target_phrase": "hospital volunteer in a teal vest pushing the same medical cart",
+      "instruction": "Replace the white-uniformed nurse with a hospital security guard pushing the same medical cart in the background.",
+      "target_phrase": "hospital security guard pushing the same medical cart",
       "applicable_shots": [
         1,
         5
@@ -469,16 +469,16 @@
           "nurse in white uniform pushing a medical cart"
         ],
         "edited_queries": [
-          "hospital volunteer in a teal vest pushing the same medical cart"
+          "hospital security guard pushing the same medical cart"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "nurse in white uniform pushing a medical cart",
-        "new_entity": "hospital volunteer in a teal vest pushing the same medical cart"
+        "new_entity": "hospital security guard pushing the same medical cart"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -566,7 +566,7 @@
         "old_entity": "chubby gray raccoon with black facial markings",
         "new_entity": "round brown beaver with a flat tail"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A2"
     }
   },
@@ -649,7 +649,7 @@
         "old_entity": "large white commercial boat on the river",
         "new_entity": "long red cargo barge on the river"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -742,7 +742,7 @@
         "old_entity": "orange cat in the market",
         "new_entity": "small black-and-white market dog"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A1"
     }
   },
@@ -819,7 +819,7 @@
         "old_entity": "gray-black pigeon group",
         "new_entity": "small group of white doves"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A1"
     }
   },
@@ -872,8 +872,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the passerby outside the bakery with a person in a mint green hoodie, keeping them outside the glass door.",
-      "target_phrase": "person in a mint green hoodie outside the bakery",
+      "instruction": "Replace the passerby outside the bakery with a street musician carrying a violin case, keeping the figure outside the glass door.",
+      "target_phrase": "street musician carrying a violin case outside the bakery",
       "applicable_shots": [
         1,
         4
@@ -886,16 +886,16 @@
           "person in pink shirt outside the bakery"
         ],
         "edited_queries": [
-          "person in a mint green hoodie outside the bakery"
+          "street musician carrying a violin case outside the bakery"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "person in pink shirt outside the bakery",
-        "new_entity": "person in a mint green hoodie outside the bakery"
+        "new_entity": "street musician carrying a violin case outside the bakery"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -952,8 +952,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the small green alien ball with a small purple one-eyed alien ball beside the clay rocket setup.",
-      "target_phrase": "small purple spherical alien with one large eye",
+      "instruction": "Replace the small green alien ball with a tiny silver rolling repair robot beside the clay rocket setup.",
+      "target_phrase": "tiny silver rolling repair robot",
       "applicable_shots": [
         1,
         5
@@ -966,16 +966,16 @@
           "small green spherical alien with googly eyes"
         ],
         "edited_queries": [
-          "small purple spherical alien with one large eye"
+          "tiny silver rolling repair robot"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "small green spherical alien with googly eyes",
-        "new_entity": "small purple spherical alien with one large eye"
+        "new_entity": "tiny silver rolling repair robot"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "G1"
     }
   },
@@ -1054,7 +1054,7 @@
         "old_entity": "food-delivery scooter rider in bright yellow jacket",
         "new_entity": "food-delivery cyclist in an orange rain poncho"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -1130,7 +1130,7 @@
         "old_entity": "head chef in white uniform",
         "new_entity": "female pastry chef with a black headscarf and white uniform"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "C1"
     }
   },
@@ -1181,8 +1181,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the blue dragonfly with a red dragonfly hovering beside the bamboo water spout.",
-      "target_phrase": "red dragonfly with transparent wings",
+      "instruction": "Replace the blue dragonfly with a small hummingbird hovering beside the bamboo water spout.",
+      "target_phrase": "small hummingbird with iridescent wings",
       "applicable_shots": [
         2
       ],
@@ -1194,16 +1194,16 @@
           "blue dragonfly with transparent wings"
         ],
         "edited_queries": [
-          "red dragonfly with transparent wings"
+          "small hummingbird with iridescent wings"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "blue dragonfly with transparent wings",
-        "new_entity": "red dragonfly with transparent wings"
+        "new_entity": "small hummingbird with iridescent wings"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A2"
     }
   },
@@ -1294,7 +1294,7 @@
         "old_entity": "second mechanic wearing gray clothing",
         "new_entity": "young apprentice mechanic in a navy hoodie"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "C2"
     }
   },
@@ -1344,12 +1344,9 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the glowing blue tree with a glowing pink crystal tree while preserving the shrine-like fantasy woodland and floating-island setting.",
-      "target_phrase": "glowing pink crystal tree",
+      "instruction": "Replace the white sparks released by the hollow glowing tree with a swarm of tiny golden fireflies, preserving the magical release action.",
+      "target_phrase": "swarm of tiny golden fireflies",
       "applicable_shots": [
-        1,
-        2,
-        3,
         4
       ],
       "mask_queries": {
@@ -1357,20 +1354,20 @@
         "edit_scope": "local",
         "edit_type": "dynamic_replace",
         "source_queries": [
-          "glowing blue tree"
+          "white sparks released by the hollow glowing tree"
         ],
         "edited_queries": [
-          "glowing pink crystal tree"
+          "swarm of tiny golden fireflies"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
-        "old_entity": "glowing blue tree",
-        "new_entity": "glowing pink crystal tree"
+        "old_entity": "white sparks released by the hollow glowing tree",
+        "new_entity": "swarm of tiny golden fireflies"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
-      "target_entity": "P1"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
+      "target_entity": "VFX1"
     }
   },
   {
@@ -1448,7 +1445,7 @@
         "old_entity": "young flower girl in white dress with pink basket",
         "new_entity": "young page boy in a cream suit carrying the same pink basket"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -1523,7 +1520,7 @@
         "old_entity": "blue tin toy car with expressive eyes",
         "new_entity": "green tin toy tractor with expressive eyes"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "T2"
     }
   },
@@ -1604,7 +1601,7 @@
         "old_entity": "staff member leading a brown and white pony",
         "new_entity": "staff member leading a small gray donkey"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -1645,8 +1642,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the visitor in the brown coat with a visitor in a navy coat and yellow scarf near the bronze mask case.",
-      "target_phrase": "visitor in a navy coat with a yellow scarf",
+      "instruction": "Replace the visitor in the brown coat and red scarf with a museum photographer wearing a camera vest near the bronze mask case.",
+      "target_phrase": "museum photographer with a camera vest",
       "applicable_shots": [
         2
       ],
@@ -1658,16 +1655,16 @@
           "visitor in brown coat and red scarf"
         ],
         "edited_queries": [
-          "visitor in a navy coat with a yellow scarf"
+          "museum photographer with a camera vest"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "visitor in brown coat and red scarf",
-        "new_entity": "visitor in a navy coat with a yellow scarf"
+        "new_entity": "museum photographer with a camera vest"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -1744,7 +1741,7 @@
         "old_entity": "flock of seagulls and small white boat",
         "new_entity": "flock of dark cormorants and a small blue boat"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -1820,8 +1817,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the bright orbiter point with a small blinking blue satellite point in the rover arm shot.",
-      "target_phrase": "small blinking blue satellite point",
+      "instruction": "Replace the bright orbiter point with a small meteor streak crossing the sky in the rover arm shot.",
+      "target_phrase": "small meteor streak crossing the sky",
       "applicable_shots": [
         3
       ],
@@ -1833,16 +1830,16 @@
           "bright orbiter point in the sky"
         ],
         "edited_queries": [
-          "small blinking blue satellite point"
+          "small meteor streak crossing the sky"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "bright orbiter point in the sky",
-        "new_entity": "small blinking blue satellite point"
+        "new_entity": "small meteor streak crossing the sky"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B2"
     }
   },
@@ -1898,8 +1895,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the two reflected background dancers with two dancers in burgundy leotards while keeping them in the mirrors.",
-      "target_phrase": "two reflected dancers in burgundy leotards",
+      "instruction": "Replace the two reflected background dancers with two reflected male tap dancers in black suits while keeping them in the mirrors.",
+      "target_phrase": "two reflected male tap dancers in black suits",
       "applicable_shots": [
         1,
         2,
@@ -1914,16 +1911,16 @@
           "two reflected dancers in dark blue leotards"
         ],
         "edited_queries": [
-          "two reflected dancers in burgundy leotards"
+          "two reflected male tap dancers in black suits"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "two reflected dancers in dark blue leotards",
-        "new_entity": "two reflected dancers in burgundy leotards"
+        "new_entity": "two reflected male tap dancers in black suits"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -2005,7 +2002,7 @@
         "old_entity": "gray-haired older ramen master in gray traditional clothing",
         "new_entity": "elderly woman ramen master in a cream kimono jacket"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "C2"
     }
   },
@@ -2081,7 +2078,7 @@
         "old_entity": "three brown ducks",
         "new_entity": "three black-and-white coots"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "A3"
     }
   },
@@ -2149,7 +2146,7 @@
         "old_entity": "red cherry tomato",
         "new_entity": "small yellow lemon"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -2203,8 +2200,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the red-clothed cyclist outside the window with a cyclist in a bright yellow jacket.",
-      "target_phrase": "cyclist in a bright yellow jacket outside the workshop",
+      "instruction": "Replace the red-clothed cyclist outside the window with a skateboard courier passing outside the workshop.",
+      "target_phrase": "skateboard courier passing outside the workshop",
       "applicable_shots": [
         1,
         4
@@ -2217,16 +2214,16 @@
           "cyclist in red clothing outside the workshop"
         ],
         "edited_queries": [
-          "cyclist in a bright yellow jacket outside the workshop"
+          "skateboard courier passing outside the workshop"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "cyclist in red clothing outside the workshop",
-        "new_entity": "cyclist in a bright yellow jacket outside the workshop"
+        "new_entity": "skateboard courier passing outside the workshop"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -2284,8 +2281,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the black delivery drone with a white quadcopter drone in the rooftop sky.",
-      "target_phrase": "white quadcopter delivery drone",
+      "instruction": "Replace the black delivery drone with a small blue delivery blimp in the rooftop sky.",
+      "target_phrase": "small blue delivery blimp",
       "applicable_shots": [
         1,
         5
@@ -2298,16 +2295,16 @@
           "black delivery drone in the rooftop sky"
         ],
         "edited_queries": [
-          "white quadcopter delivery drone"
+          "small blue delivery blimp"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "black delivery drone in the rooftop sky",
-        "new_entity": "white quadcopter delivery drone"
+        "new_entity": "small blue delivery blimp"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "B1"
     }
   },
@@ -2401,8 +2398,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wall-mounted white cleaning robot with an orange hovering cleaning robot in the luggage-belt shot.",
-      "target_phrase": "orange hovering cleaning robot with blue eyes",
+      "instruction": "Replace the wall-mounted white cleaning robot with a small floating luggage drone in the luggage-belt shot.",
+      "target_phrase": "small floating luggage drone",
       "applicable_shots": [
         2
       ],
@@ -2414,16 +2411,16 @@
           "white round cleaning robot with blue eyes"
         ],
         "edited_queries": [
-          "orange hovering cleaning robot with blue eyes"
+          "small floating luggage drone"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
         "old_entity": "white round cleaning robot with blue eyes",
-        "new_entity": "orange hovering cleaning robot with blue eyes"
+        "new_entity": "small floating luggage drone"
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "target_entity": "R2"
     }
   },
@@ -2484,8 +2481,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the white ceramic latte cup for a clear double-walled glass latte cup while keeping the coffee extraction, milk pour, and handle placement consistent.",
-      "target_phrase": "clear double-walled glass latte cup",
+      "instruction": "Replace the white ceramic latte cup with a shallow white ceramic latte bowl that can still receive the espresso and milk pour.",
+      "target_phrase": "shallow white ceramic latte bowl",
       "applicable_shots": [
         1,
         2,
@@ -2500,7 +2497,7 @@
           "white ceramic latte cup"
         ],
         "edited_queries": [
-          "clear double-walled glass latte cup"
+          "shallow white ceramic latte bowl"
         ],
         "combine": "union"
       },
@@ -2508,10 +2505,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white ceramic latte cup",
-        "new_object": "clear double-walled glass latte cup",
+        "new_object": "shallow white ceramic latte bowl",
         "anchor": "white ceramic latte cup"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2570,8 +2567,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the blue jump bar for a red-and-white striped jump bar across the agility course shots where the jump appears.",
-      "target_phrase": "red-and-white striped jump bar",
+      "instruction": "Replace the blue jump bar with a low rope hurdle that the dog can still clear during the agility run.",
+      "target_phrase": "low rope hurdle",
       "applicable_shots": [
         1,
         2,
@@ -2585,7 +2582,7 @@
           "blue jump bar"
         ],
         "edited_queries": [
-          "red-and-white striped jump bar"
+          "low rope hurdle"
         ],
         "combine": "union"
       },
@@ -2593,10 +2590,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "blue jump bar",
-        "new_object": "red-and-white striped jump bar",
+        "new_object": "low rope hurdle",
         "anchor": "blue jump bar"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2646,8 +2643,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the green train carriage with a yellow passenger carriage while keeping it coupled behind the red toy train.",
-      "target_phrase": "yellow passenger carriage",
+      "instruction": "Replace the green train carriage with a small wooden cargo wagon while keeping it coupled behind the red toy train.",
+      "target_phrase": "small wooden cargo wagon",
       "applicable_shots": [
         2,
         3
@@ -2660,7 +2657,7 @@
           "green train carriage"
         ],
         "edited_queries": [
-          "yellow passenger carriage"
+          "small wooden cargo wagon"
         ],
         "combine": "union"
       },
@@ -2668,10 +2665,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "green train carriage",
-        "new_object": "yellow passenger carriage",
+        "new_object": "small wooden cargo wagon",
         "anchor": "green train carriage"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2728,8 +2725,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the robot's small red flag for a tiny blue pennant flag after the table-line run.",
-      "target_phrase": "tiny blue pennant flag on the robot",
+      "instruction": "Replace the robot's small red flag with a tiny blinking signal beacon after the table-line run.",
+      "target_phrase": "tiny blinking signal beacon on the robot",
       "applicable_shots": [
         3,
         4
@@ -2742,7 +2739,7 @@
           "small red flag on the robot"
         ],
         "edited_queries": [
-          "tiny blue pennant flag on the robot"
+          "tiny blinking signal beacon on the robot"
         ],
         "combine": "union"
       },
@@ -2750,10 +2747,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "small red flag on the robot",
-        "new_object": "tiny blue pennant flag on the robot",
+        "new_object": "tiny blinking signal beacon on the robot",
         "anchor": "small red flag on the robot"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2800,8 +2797,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the terracotta pot with a matte white ceramic flower pot in the wider sunflower shots.",
-      "target_phrase": "matte white ceramic flower pot",
+      "instruction": "Replace the terracotta pot with a small rectangular wooden planter box in the wider sunflower shots.",
+      "target_phrase": "small rectangular wooden planter box",
       "applicable_shots": [
         2,
         3
@@ -2814,7 +2811,7 @@
           "terracotta orange pot"
         ],
         "edited_queries": [
-          "matte white ceramic flower pot"
+          "small rectangular wooden planter box"
         ],
         "combine": "union"
       },
@@ -2822,10 +2819,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "terracotta orange pot",
-        "new_object": "matte white ceramic flower pot",
+        "new_object": "small rectangular wooden planter box",
         "anchor": "terracotta orange pot"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2889,8 +2886,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the blue stretcher mattress with an orange stretcher mattress while preserving the folded metal frame and wheels.",
-      "target_phrase": "orange stretcher mattress",
+      "instruction": "Replace the blue stretcher mattress with an orange rescue backboard while preserving the stretcher support function.",
+      "target_phrase": "orange rescue backboard",
       "applicable_shots": [
         1,
         2,
@@ -2905,7 +2902,7 @@
           "blue stretcher mattress"
         ],
         "edited_queries": [
-          "orange stretcher mattress"
+          "orange rescue backboard"
         ],
         "combine": "union"
       },
@@ -2913,10 +2910,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "blue stretcher mattress",
-        "new_object": "orange stretcher mattress",
+        "new_object": "orange rescue backboard",
         "anchor": "blue stretcher mattress"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2980,8 +2977,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the squirrel's acorn basket for a small green leaf basket in the forest montage.",
-      "target_phrase": "small green leaf basket",
+      "instruction": "Replace the squirrel's acorn basket with a small canvas foraging satchel in the forest montage.",
+      "target_phrase": "small canvas foraging satchel",
       "applicable_shots": [
         1,
         4
@@ -2994,7 +2991,7 @@
           "acorn basket"
         ],
         "edited_queries": [
-          "small green leaf basket"
+          "small canvas foraging satchel"
         ],
         "combine": "union"
       },
@@ -3002,10 +2999,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "acorn basket",
-        "new_object": "small green leaf basket",
+        "new_object": "small canvas foraging satchel",
         "anchor": "acorn basket"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3064,8 +3061,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the yellow drone landing pad with a blue square landing pad at the bridgehead.",
-      "target_phrase": "blue square drone landing pad",
+      "instruction": "Replace the yellow drone landing pad with a folding metal drone docking stand at the bridgehead.",
+      "target_phrase": "folding metal drone docking stand",
       "applicable_shots": [
         1,
         5
@@ -3078,7 +3075,7 @@
           "yellow drone landing pad"
         ],
         "edited_queries": [
-          "blue square drone landing pad"
+          "folding metal drone docking stand"
         ],
         "combine": "union"
       },
@@ -3086,10 +3083,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "yellow drone landing pad",
-        "new_object": "blue square drone landing pad",
+        "new_object": "folding metal drone docking stand",
         "anchor": "yellow drone landing pad"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3158,8 +3155,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the brown paper package for a white insulated delivery box while preserving the delivery handoff.",
-      "target_phrase": "white insulated delivery box",
+      "instruction": "Replace the brown paper package with a white insulated delivery cooler while preserving the delivery handoff.",
+      "target_phrase": "white insulated delivery cooler",
       "applicable_shots": [
         1,
         4
@@ -3172,7 +3169,7 @@
           "brown paper package"
         ],
         "edited_queries": [
-          "white insulated delivery box"
+          "white insulated delivery cooler"
         ],
         "combine": "union"
       },
@@ -3180,10 +3177,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "brown paper package",
-        "new_object": "white insulated delivery box",
+        "new_object": "white insulated delivery cooler",
         "anchor": "brown paper package"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3236,8 +3233,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wooden easel with a black metal easel throughout the street-painting scene.",
-      "target_phrase": "black metal easel",
+      "instruction": "Replace the wooden easel with a portable tripod display stand throughout the street-painting scene.",
+      "target_phrase": "portable tripod display stand",
       "applicable_shots": [
         1,
         2,
@@ -3251,7 +3248,7 @@
           "wooden easel"
         ],
         "edited_queries": [
-          "black metal easel"
+          "portable tripod display stand"
         ],
         "combine": "union"
       },
@@ -3259,10 +3256,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "wooden easel",
-        "new_object": "black metal easel",
+        "new_object": "portable tripod display stand",
         "anchor": "wooden easel"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3314,8 +3311,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the brown paper baguette bag with a striped cloth bread bag near the bakery cat.",
-      "target_phrase": "striped cloth bread bag",
+      "instruction": "Replace the brown paper baguette bag with a small wicker bread basket near the bakery cat.",
+      "target_phrase": "small wicker bread basket",
       "applicable_shots": [
         1,
         2,
@@ -3329,7 +3326,7 @@
           "brown paper bag holding the baguette"
         ],
         "edited_queries": [
-          "striped cloth bread bag"
+          "small wicker bread basket"
         ],
         "combine": "union"
       },
@@ -3337,10 +3334,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "brown paper bag holding the baguette",
-        "new_object": "striped cloth bread bag",
+        "new_object": "small wicker bread basket",
         "anchor": "brown paper bag holding the baguette"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3396,8 +3393,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the bright blue wrench for a red plastic wrench in the clay astronaut repair shots.",
-      "target_phrase": "red plastic wrench",
+      "instruction": "Replace the bright blue wrench with a yellow toy screwdriver in the clay astronaut repair shots.",
+      "target_phrase": "yellow toy screwdriver",
       "applicable_shots": [
         1,
         3
@@ -3410,7 +3407,7 @@
           "blue plastic wrench"
         ],
         "edited_queries": [
-          "red plastic wrench"
+          "yellow toy screwdriver"
         ],
         "combine": "union"
       },
@@ -3418,10 +3415,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "blue plastic wrench",
-        "new_object": "red plastic wrench",
+        "new_object": "yellow toy screwdriver",
         "anchor": "blue plastic wrench"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3477,8 +3474,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the commuters' dark umbrellas with transparent dome umbrellas in the rainy transit montage.",
-      "target_phrase": "transparent dome umbrellas",
+      "instruction": "Replace the commuters' dark umbrellas with clear plastic rain ponchos in the rainy transit montage.",
+      "target_phrase": "clear plastic rain ponchos",
       "applicable_shots": [
         1,
         4
@@ -3491,7 +3488,7 @@
           "dark umbrellas"
         ],
         "edited_queries": [
-          "transparent dome umbrellas"
+          "clear plastic rain ponchos"
         ],
         "combine": "union"
       },
@@ -3499,10 +3496,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "dark umbrellas",
-        "new_object": "transparent dome umbrellas",
+        "new_object": "clear plastic rain ponchos",
         "anchor": "dark umbrellas"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3552,8 +3549,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the dark purple squeeze bottle with a clear squeeze bottle filled with red sauce.",
-      "target_phrase": "clear squeeze bottle with red sauce",
+      "instruction": "Replace the dark purple squeeze bottle with a glass sauce dropper pipette for placing the sauce dots.",
+      "target_phrase": "glass sauce dropper pipette",
       "applicable_shots": [
         3
       ],
@@ -3565,7 +3562,7 @@
           "dark purple squeeze bottle"
         ],
         "edited_queries": [
-          "clear squeeze bottle with red sauce"
+          "glass sauce dropper pipette"
         ],
         "combine": "union"
       },
@@ -3573,10 +3570,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "dark purple squeeze bottle",
-        "new_object": "clear squeeze bottle with red sauce",
+        "new_object": "glass sauce dropper pipette",
         "anchor": "dark purple squeeze bottle"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3626,8 +3623,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the gray stone lantern with a small bronze garden lantern at the koi pond edge.",
-      "target_phrase": "small bronze garden lantern",
+      "instruction": "Replace the gray stone lantern with a small wooden torii marker at the koi pond edge.",
+      "target_phrase": "small wooden torii marker",
       "applicable_shots": [
         1,
         3
@@ -3640,7 +3637,7 @@
           "traditional gray stone lantern"
         ],
         "edited_queries": [
-          "small bronze garden lantern"
+          "small wooden torii marker"
         ],
         "combine": "union"
       },
@@ -3648,10 +3645,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "traditional gray stone lantern",
-        "new_object": "small bronze garden lantern",
+        "new_object": "small wooden torii marker",
         "anchor": "traditional gray stone lantern"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3719,8 +3716,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the car's chrome side mirror with a brushed brass side mirror during the polishing close-up.",
-      "target_phrase": "brushed brass side mirror",
+      "instruction": "Replace the car's chrome side mirror with a chrome hood ornament during the polishing close-up.",
+      "target_phrase": "chrome hood ornament",
       "applicable_shots": [
         2
       ],
@@ -3732,7 +3729,7 @@
           "chrome side mirror"
         ],
         "edited_queries": [
-          "brushed brass side mirror"
+          "chrome hood ornament"
         ],
         "combine": "union"
       },
@@ -3740,10 +3737,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "chrome side mirror",
-        "new_object": "brushed brass side mirror",
+        "new_object": "chrome hood ornament",
         "anchor": "chrome side mirror"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3792,8 +3789,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the blue crystal stones around the glowing tree roots with transparent pink crystals.",
-      "target_phrase": "transparent pink crystal stones",
+      "instruction": "Replace the blue crystal stones around the glowing tree roots with a cluster of glowing blue mushrooms.",
+      "target_phrase": "cluster of glowing blue mushrooms",
       "applicable_shots": [
         2
       ],
@@ -3805,7 +3802,7 @@
           "transparent blue crystal stones"
         ],
         "edited_queries": [
-          "transparent pink crystal stones"
+          "cluster of glowing blue mushrooms"
         ],
         "combine": "union"
       },
@@ -3813,10 +3810,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "transparent blue crystal stones",
-        "new_object": "transparent pink crystal stones",
+        "new_object": "cluster of glowing blue mushrooms",
         "anchor": "transparent blue crystal stones"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3872,8 +3869,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the bride's silver beaded headpiece for a pearl floral headpiece while keeping the veil attached.",
-      "target_phrase": "pearl floral headpiece",
+      "instruction": "Replace the bride's silver beaded headpiece with a fresh white floral crown while keeping the veil attached.",
+      "target_phrase": "fresh white floral crown",
       "applicable_shots": [
         3,
         4
@@ -3886,7 +3883,7 @@
           "silver beaded headpiece"
         ],
         "edited_queries": [
-          "pearl floral headpiece"
+          "fresh white floral crown"
         ],
         "combine": "union"
       },
@@ -3894,10 +3891,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "silver beaded headpiece",
-        "new_object": "pearl floral headpiece",
+        "new_object": "fresh white floral crown",
         "anchor": "silver beaded headpiece"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3947,8 +3944,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the red finish flags with blue checkered finish flags on the toy racetrack.",
-      "target_phrase": "blue checkered finish flags",
+      "instruction": "Replace the red finish flags with a small striped finish arch on the toy racetrack.",
+      "target_phrase": "small striped finish arch",
       "applicable_shots": [
         1,
         3
@@ -3961,7 +3958,7 @@
           "red finish flags"
         ],
         "edited_queries": [
-          "blue checkered finish flags"
+          "small striped finish arch"
         ],
         "combine": "union"
       },
@@ -3969,10 +3966,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "red finish flags",
-        "new_object": "blue checkered finish flags",
+        "new_object": "small striped finish arch",
         "anchor": "red finish flags"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4029,8 +4026,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the green markers on the white jump rails for red markers while keeping the jump shape unchanged.",
-      "target_phrase": "white jump rails with red markers",
+      "instruction": "Replace the white jump rails with stacked hay-bale jump blocks while keeping a jumpable obstacle in the arena.",
+      "target_phrase": "stacked hay-bale jump blocks",
       "applicable_shots": [
         1,
         2,
@@ -4045,7 +4042,7 @@
           "white jump rails with green markers"
         ],
         "edited_queries": [
-          "white jump rails with red markers"
+          "stacked hay-bale jump blocks"
         ],
         "combine": "union"
       },
@@ -4053,10 +4050,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white jump rails with green markers",
-        "new_object": "white jump rails with red markers",
+        "new_object": "stacked hay-bale jump blocks",
         "anchor": "white jump rails with green markers"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4096,8 +4093,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the black barrier ropes around the marble sculpture with deep red velvet ropes.",
-      "target_phrase": "deep red velvet barrier ropes",
+      "instruction": "Replace the black barrier ropes around the marble sculpture with a low glass safety barrier.",
+      "target_phrase": "low glass safety barrier",
       "applicable_shots": [
         1
       ],
@@ -4109,7 +4106,7 @@
           "black barrier ropes"
         ],
         "edited_queries": [
-          "deep red velvet barrier ropes"
+          "low glass safety barrier"
         ],
         "combine": "union"
       },
@@ -4117,10 +4114,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "black barrier ropes",
-        "new_object": "deep red velvet barrier ropes",
+        "new_object": "low glass safety barrier",
         "anchor": "black barrier ropes"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4172,8 +4169,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the small white fishing boat with a small orange fishing boat on the coastline horizon.",
-      "target_phrase": "small orange fishing boat on the horizon",
+      "instruction": "Replace the small white fishing boat with a red sea kayak on the coastline horizon.",
+      "target_phrase": "red sea kayak on the horizon",
       "applicable_shots": [
         3
       ],
@@ -4185,7 +4182,7 @@
           "small white boat on the horizon"
         ],
         "edited_queries": [
-          "small orange fishing boat on the horizon"
+          "red sea kayak on the horizon"
         ],
         "combine": "union"
       },
@@ -4193,10 +4190,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "small white boat on the horizon",
-        "new_object": "small orange fishing boat on the horizon",
+        "new_object": "red sea kayak on the horizon",
         "anchor": "small white boat on the horizon"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4271,8 +4268,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the transparent sample tube with a brushed metal sample canister with a glass window.",
-      "target_phrase": "brushed metal sample canister with a glass window",
+      "instruction": "Replace the transparent sample tube with a sealed metal sample pod with a window.",
+      "target_phrase": "sealed metal sample pod with a window",
       "applicable_shots": [
         5
       ],
@@ -4284,7 +4281,7 @@
           "transparent glass sample tube"
         ],
         "edited_queries": [
-          "brushed metal sample canister with a glass window"
+          "sealed metal sample pod with a window"
         ],
         "combine": "union"
       },
@@ -4292,10 +4289,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "transparent glass sample tube",
-        "new_object": "brushed metal sample canister with a glass window",
+        "new_object": "sealed metal sample pod with a window",
         "anchor": "transparent glass sample tube"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4350,8 +4347,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the blue water bottle by the mirror with a transparent pink water bottle.",
-      "target_phrase": "transparent pink water bottle",
+      "instruction": "Replace the blue water bottle by the mirror with a rolled white towel.",
+      "target_phrase": "rolled white towel",
       "applicable_shots": [
         2
       ],
@@ -4363,7 +4360,7 @@
           "blue plastic water bottle"
         ],
         "edited_queries": [
-          "transparent pink water bottle"
+          "rolled white towel"
         ],
         "combine": "union"
       },
@@ -4371,10 +4368,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "blue plastic water bottle",
-        "new_object": "transparent pink water bottle",
+        "new_object": "rolled white towel",
         "anchor": "blue plastic water bottle"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4432,8 +4429,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Swap the white ramen bowl with a red rim for a black bowl with a gold rim while preserving the toppings and presentation.",
-      "target_phrase": "black ramen bowl with a gold rim",
+      "instruction": "Replace the white ramen bowl with a red rim with a black ceramic donburi pot that can still hold the ramen and toppings.",
+      "target_phrase": "black ceramic donburi pot",
       "applicable_shots": [
         1,
         2,
@@ -4448,7 +4445,7 @@
           "white ramen bowl with red rim"
         ],
         "edited_queries": [
-          "black ramen bowl with a gold rim"
+          "black ceramic donburi pot"
         ],
         "combine": "union"
       },
@@ -4456,10 +4453,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white ramen bowl with red rim",
-        "new_object": "black ramen bowl with a gold rim",
+        "new_object": "black ceramic donburi pot",
         "anchor": "white ramen bowl with red rim"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4511,8 +4508,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the kingfisher's dead gray-brown perch with a curved pale driftwood branch.",
-      "target_phrase": "curved pale driftwood branch",
+      "instruction": "Replace the kingfisher's dead gray-brown branch with a thin bamboo perch.",
+      "target_phrase": "thin bamboo perch",
       "applicable_shots": [
         2
       ],
@@ -4524,7 +4521,7 @@
           "dead gray-brown branch"
         ],
         "edited_queries": [
-          "curved pale driftwood branch"
+          "thin bamboo perch"
         ],
         "combine": "union"
       },
@@ -4532,10 +4529,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "dead gray-brown branch",
-        "new_object": "curved pale driftwood branch",
+        "new_object": "thin bamboo perch",
         "anchor": "dead gray-brown branch"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4579,8 +4576,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the glossy blue bowl with a glossy white ceramic bowl with a red rim.",
-      "target_phrase": "glossy white ceramic bowl with red rim",
+      "instruction": "Replace the glossy blue bowl with a shallow white mixing dish that can still receive the sugar cube.",
+      "target_phrase": "shallow white mixing dish",
       "applicable_shots": [
         2
       ],
@@ -4592,7 +4589,7 @@
           "glossy blue ceramic bowl"
         ],
         "edited_queries": [
-          "glossy white ceramic bowl with red rim"
+          "shallow white mixing dish"
         ],
         "combine": "union"
       },
@@ -4600,10 +4597,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "glossy blue ceramic bowl",
-        "new_object": "glossy white ceramic bowl with red rim",
+        "new_object": "shallow white mixing dish",
         "anchor": "glossy blue ceramic bowl"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4656,8 +4653,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the white chain lube bottle with a small blue chain lube bottle in the drivetrain close-up.",
-      "target_phrase": "small blue chain lube bottle",
+      "instruction": "Replace the white chain lube bottle with a small metal squeeze oil can in the drivetrain close-up.",
+      "target_phrase": "small metal squeeze oil can",
       "applicable_shots": [
         2
       ],
@@ -4669,7 +4666,7 @@
           "white chain lube bottle"
         ],
         "edited_queries": [
-          "small blue chain lube bottle"
+          "small metal squeeze oil can"
         ],
         "combine": "union"
       },
@@ -4677,10 +4674,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "white chain lube bottle",
-        "new_object": "small blue chain lube bottle",
+        "new_object": "small metal squeeze oil can",
         "anchor": "white chain lube bottle"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4737,8 +4734,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the wicker tomato basket with a round metal harvest bowl in the rooftop harvest shot.",
-      "target_phrase": "round metal harvest bowl",
+      "instruction": "Replace the wicker tomato basket with a green plastic harvest crate in the rooftop harvest shot.",
+      "target_phrase": "green plastic harvest crate",
       "applicable_shots": [
         5
       ],
@@ -4750,7 +4747,7 @@
           "wicker tomato basket"
         ],
         "edited_queries": [
-          "round metal harvest bowl"
+          "green plastic harvest crate"
         ],
         "combine": "union"
       },
@@ -4758,10 +4755,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "wicker tomato basket",
-        "new_object": "round metal harvest bowl",
+        "new_object": "green plastic harvest crate",
         "anchor": "wicker tomato basket"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4854,8 +4851,8 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the gray round suitcase with a transparent bubble suitcase for the blue alien traveler.",
-      "target_phrase": "transparent bubble suitcase",
+      "instruction": "Replace the gray round suitcase with a floating transparent luggage pod for the blue alien traveler.",
+      "target_phrase": "floating transparent luggage pod",
       "applicable_shots": [
         1,
         5
@@ -4868,7 +4865,7 @@
           "gray round suitcase"
         ],
         "edited_queries": [
-          "transparent bubble suitcase"
+          "floating transparent luggage pod"
         ],
         "combine": "union"
       },
@@ -4876,10 +4873,10 @@
         "replace_kind": "static",
         "op": "replace",
         "old_object": "gray round suitcase",
-        "new_object": "transparent bubble suitcase",
+        "new_object": "floating transparent luggage pod",
         "anchor": "gray round suitcase"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   }
 ]

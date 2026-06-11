@@ -56,8 +56,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in warm 1990s Japanese cafe anime, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "warm 1990s Japanese cafe anime look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -75,9 +75,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "warm 1990s Japanese cafe anime"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -137,8 +137,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "pixel art style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -156,9 +156,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "pixel art style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -217,8 +217,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in sports documentary slow-shutter photography, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "sports documentary slow-shutter photography look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -236,9 +236,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "sports documentary slow-shutter photography"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -297,8 +297,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in bright claymation miniature style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "bright claymation miniature style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -316,9 +316,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "bright claymation miniature style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -368,8 +368,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in stop-motion felt craft style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "stop-motion felt craft style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -386,9 +386,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "stop-motion felt craft style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -438,8 +438,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in isometric pixel toy diorama style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "isometric pixel toy diorama style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -456,9 +456,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "isometric pixel toy diorama style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -515,8 +515,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in retro 1980s anime cel style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "retro 1980s anime cel style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -534,9 +534,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "retro 1980s anime cel style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -593,8 +593,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in clean 3D educational animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "clean 3D educational animation style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -612,9 +612,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "clean 3D educational animation style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -661,8 +661,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in BBC macro nature documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "BBC macro nature documentary style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -679,9 +679,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "BBC macro nature documentary style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -728,8 +728,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in delicate botanical watercolor style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "delicate botanical watercolor style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -746,9 +746,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "delicate botanical watercolor style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -812,8 +812,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in gritty handheld emergency-room documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "gritty handheld emergency-room documentary style look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -832,9 +832,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "gritty handheld emergency-room documentary style"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -898,8 +898,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in high-contrast graphic novel style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "high-contrast graphic novel style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -918,9 +918,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "high-contrast graphic novel style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -984,8 +984,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in storybook watercolor illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "storybook watercolor illustration style look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -1003,9 +1003,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "storybook watercolor illustration style"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1069,8 +1069,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in soft felt puppet animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "soft felt puppet animation style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -1088,9 +1088,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "soft felt puppet animation style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1149,8 +1149,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in technical engineering inspection documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "technical engineering inspection documentary style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -1169,9 +1169,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "technical engineering inspection documentary style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1230,8 +1230,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in near-future holographic UI style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "near-future holographic UI style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -1250,9 +1250,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "near-future holographic UI style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1321,8 +1321,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in cozy European market illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "cozy European market illustration style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -1340,9 +1340,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "cozy European market illustration style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1411,8 +1411,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in clean Pixar-like 3D animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "clean Pixar-like 3D animation style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -1430,9 +1430,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "clean Pixar-like 3D animation style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1485,8 +1485,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in French impressionist oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "French impressionist oil painting style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1503,9 +1503,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "French impressionist oil painting style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1558,8 +1558,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in ink-and-wash travel sketch style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "ink-and-wash travel sketch style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -1576,9 +1576,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "ink-and-wash travel sketch style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1630,8 +1630,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in cozy bakery storybook style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "cozy bakery storybook style look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -1649,9 +1649,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "cozy bakery storybook style"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1703,8 +1703,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in photoreal macro cat documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "photoreal macro cat documentary style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -1722,9 +1722,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "photoreal macro cat documentary style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1780,8 +1780,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in handmade stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "handmade stop-motion clay animation style look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -1800,9 +1800,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "handmade stop-motion clay animation style"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1858,8 +1858,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in cardboard toy theater style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "cardboard toy theater style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -1878,9 +1878,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "cardboard toy theater style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1936,8 +1936,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in neo-noir cyberpunk rain style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "neo-noir cyberpunk rain style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -1955,9 +1955,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "neo-noir cyberpunk rain style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2013,8 +2013,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in monochrome film noir style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "monochrome film noir style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2032,9 +2032,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "monochrome film noir style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2084,8 +2084,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in high-end chef's table cinematography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "high-end chef's table cinematography style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2103,9 +2103,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "high-end chef's table cinematography style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2155,8 +2155,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in minimalist magazine food photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "minimalist magazine food photography style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -2174,9 +2174,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "minimalist magazine food photography style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2226,8 +2226,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in Ghibli-inspired pond animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "Ghibli-inspired pond animation style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2244,9 +2244,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "Ghibli-inspired pond animation style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2296,8 +2296,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in Japanese woodblock print style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "Japanese woodblock print style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -2314,9 +2314,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "Japanese woodblock print style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2384,8 +2384,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in 1970s garage film photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "1970s garage film photography style look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -2404,9 +2404,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "1970s garage film photography style"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2474,8 +2474,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in chrome-heavy advertising render style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "chrome-heavy advertising render style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -2494,9 +2494,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "chrome-heavy advertising render style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2545,8 +2545,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in fantasy oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "fantasy oil painting style look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -2564,9 +2564,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "fantasy oil painting style"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2615,8 +2615,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in glowing stained-glass illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "glowing stained-glass illustration style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -2634,9 +2634,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "glowing stained-glass illustration style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2692,8 +2692,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in soft bridal magazine photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "soft bridal magazine photography style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -2711,9 +2711,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "soft bridal magazine photography style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2769,8 +2769,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in romantic pastel animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "romantic pastel animation style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2788,9 +2788,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "romantic pastel animation style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2840,8 +2840,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in Saturday-morning toy cartoon style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "Saturday-morning toy cartoon style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -2858,9 +2858,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "Saturday-morning toy cartoon style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2910,8 +2910,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in glossy 3D toy commercial style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "glossy 3D toy commercial style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -2928,9 +2928,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "glossy 3D toy commercial style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2987,8 +2987,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in equestrian sports broadcast style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "equestrian sports broadcast style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3006,9 +3006,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "equestrian sports broadcast style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3065,8 +3065,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in classic oil-painted horse portrait style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "classic oil-painted horse portrait style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3084,9 +3084,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "classic oil-painted horse portrait style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3126,8 +3126,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in museum catalog photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "museum catalog photography style look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2
@@ -3143,9 +3143,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "museum catalog photography style"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3185,8 +3185,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in charcoal sketchbook documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "charcoal sketchbook documentary style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2
@@ -3202,9 +3202,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "charcoal sketchbook documentary style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3256,8 +3256,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in dramatic National Geographic coastal photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "dramatic National Geographic coastal photography style look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2,
@@ -3275,9 +3275,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "dramatic National Geographic coastal photography style"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3329,8 +3329,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in minimalist Japanese ink landscape style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "minimalist Japanese ink landscape style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2,
@@ -3348,9 +3348,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "minimalist Japanese ink landscape style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3425,8 +3425,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in NASA mission documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "NASA mission documentary style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -3446,9 +3446,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "NASA mission documentary style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3523,8 +3523,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in retro pulp sci-fi illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "retro pulp sci-fi illustration style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -3544,9 +3544,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "retro pulp sci-fi illustration style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3601,8 +3601,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in modern dance rehearsal documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "modern dance rehearsal documentary style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -3621,9 +3621,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "modern dance rehearsal documentary style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3678,8 +3678,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in high-fashion editorial photography style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "high-fashion editorial photography style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -3698,9 +3698,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "high-fashion editorial photography style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3758,8 +3758,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in late-night ramen anime style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "late-night ramen anime style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3777,9 +3777,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "late-night ramen anime style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3837,8 +3837,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in woodblock-print food illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "woodblock-print food illustration style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -3856,9 +3856,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "woodblock-print food illustration style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3910,8 +3910,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in wildlife telephoto documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "wildlife telephoto documentary style look",
+      "instruction": "Re-render the entire scene in pixel art style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "pixel art style look",
       "applicable_shots": [
         1,
         2,
@@ -3928,9 +3928,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "wildlife telephoto documentary style"
+        "style": "pixel art style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3982,8 +3982,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in soft pastel wetland illustration style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "soft pastel wetland illustration style look",
+      "instruction": "Re-render the entire scene in Makoto Shinkai style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Makoto Shinkai style look",
       "applicable_shots": [
         1,
         2,
@@ -4000,9 +4000,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "soft pastel wetland illustration style"
+        "style": "Makoto Shinkai style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4046,8 +4046,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in handmade clay stop-motion style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "handmade clay stop-motion style look",
+      "instruction": "Re-render the entire scene in Hayao Miyazaki style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "Hayao Miyazaki style look",
       "applicable_shots": [
         1,
         2
@@ -4063,9 +4063,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "handmade clay stop-motion style"
+        "style": "Hayao Miyazaki style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4109,8 +4109,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in children's picture-book kitchen style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "children's picture-book kitchen style look",
+      "instruction": "Re-render the entire scene in JoJo manga style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "JoJo manga style look",
       "applicable_shots": [
         1,
         2
@@ -4126,9 +4126,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "children's picture-book kitchen style"
+        "style": "JoJo manga style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4181,8 +4181,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in practical workshop documentary style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "practical workshop documentary style look",
+      "instruction": "Re-render the entire scene in cyberpunk style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "cyberpunk style look",
       "applicable_shots": [
         1,
         2,
@@ -4200,9 +4200,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "practical workshop documentary style"
+        "style": "cyberpunk style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4255,8 +4255,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in sleek cycling brand commercial style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "sleek cycling brand commercial style look",
+      "instruction": "Re-render the entire scene in traditional Chinese ink-wash painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "traditional Chinese ink-wash painting style look",
       "applicable_shots": [
         1,
         2,
@@ -4274,9 +4274,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "sleek cycling brand commercial style"
+        "style": "traditional Chinese ink-wash painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4333,8 +4333,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in near-future lifestyle magazine style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "near-future lifestyle magazine style look",
+      "instruction": "Re-render the entire scene in oil painting style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "oil painting style look",
       "applicable_shots": [
         1,
         2,
@@ -4353,9 +4353,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "near-future lifestyle magazine style"
+        "style": "oil painting style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4412,8 +4412,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in botanical sci-fi animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "botanical sci-fi animation style look",
+      "instruction": "Re-render the entire scene in American comic-book style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "American comic-book style look",
       "applicable_shots": [
         1,
         2,
@@ -4432,9 +4432,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "botanical sci-fi animation style"
+        "style": "American comic-book style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4527,8 +4527,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in retro American space cartoon style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "retro American space cartoon style look",
+      "instruction": "Re-render the entire scene in 3D realistic animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "3D realistic animation style look",
       "applicable_shots": [
         1,
         2,
@@ -4548,9 +4548,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "retro American space cartoon style"
+        "style": "3D realistic animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4643,8 +4643,8 @@
     ],
     "edit": {
       "task_id": "T3",
-      "instruction": "Re-render the entire scene in clean neon vector animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
-      "target_phrase": "clean neon vector animation style look",
+      "instruction": "Re-render the entire scene in stop-motion clay animation style, preserving the original actions, shot order, character identities, object layout, and camera framing across every shot.",
+      "target_phrase": "stop-motion clay animation style look",
       "applicable_shots": [
         1,
         2,
@@ -4664,9 +4664,9 @@
       },
       "extra": {
         "render_axis": "style",
-        "style": "clean neon vector animation style"
+        "style": "stop-motion clay animation style"
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   }
 ]

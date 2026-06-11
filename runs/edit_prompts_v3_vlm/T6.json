@@ -75,7 +75,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the busy_cafe_latte_with_passersby scene as an over-the-shoulder view from behind the espresso machine, with slow dolly-in."
     }
   },
@@ -155,7 +155,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the busy_cafe_latte_with_passersby scene as a low counter-level close shot of the finished latte sliding forward, with slow push-in."
     }
   },
@@ -234,7 +234,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the rescue_dog_agility_course scene as a ground-level tracking shot beside the dog as it clears the jump, with fast lateral follow."
     }
   },
@@ -313,7 +313,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the rescue_dog_agility_course scene as a tight reaction shot on the trainer's hand giving the treat, with gentle push-in."
     }
   },
@@ -383,7 +383,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the miniature_toy_train_city scene as a side-on macro shot mounted beside the bridge track, with smooth parallel tracking move."
     }
   },
@@ -453,7 +453,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the miniature_toy_train_city scene as a high top-down map shot of the full circular toy layout, with slow clockwise rotation."
     }
   },
@@ -530,7 +530,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the anime_school_robot_demo scene as a low tabletop angle looking past the robot toward the two students, with slow rack-focus push."
     }
   },
@@ -607,7 +607,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the anime_school_robot_demo scene as a robot-eye-level tracking shot along the white table line, with steady forward dolly."
     }
   },
@@ -674,7 +674,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the greenhouse_sunflower_growth scene as an extreme soil-level macro shot from between the water droplets, with slow creeping push-in."
     }
   },
@@ -741,7 +741,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the greenhouse_sunflower_growth scene as a rotating overhead botanical plate shot of the leaves and bud, with slow clockwise orbit."
     }
   },
@@ -825,7 +825,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the paramedic_stretcher_prep scene as a low-angle shot from the stretcher wheel looking toward the ambulance doors, with slow dolly-forward."
     }
   },
@@ -909,7 +909,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the paramedic_stretcher_prep scene as an overhead insert shot looking directly into the open emergency kit, with slow vertical lift."
     }
   },
@@ -993,7 +993,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the cartoon_forest_animals_montage scene as a water-level close shot beside the raccoon's paws and berries, with gentle sideways drift."
     }
   },
@@ -1077,7 +1077,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the cartoon_forest_animals_montage scene as a wide storybook tableau of all animals around the flower, with slow pull-back."
     }
   },
@@ -1156,7 +1156,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the drone_bridge_inspection scene as a drone-camera POV tight on the cracked bridge girder, with slow forward glide."
     }
   },
@@ -1235,7 +1235,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 5 of the drone_bridge_inspection scene as a high aerial return shot following the drone back to the landing pad, with descending arc."
     }
   },
@@ -1324,7 +1324,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the delivery_robot_market scene as a low robot-eye view of the QR code on the cobblestones, with slow tilt-down."
     }
   },
@@ -1413,7 +1413,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the delivery_robot_market scene as an over-the-shoulder shot from behind the recipient's hand at the pickup window, with slow push-in."
     }
   },
@@ -1486,7 +1486,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the street_painter_plaza scene as an extreme close-up of the brush touching wet watercolor near the fountain sketch, with small diagonal slide."
     }
   },
@@ -1559,7 +1559,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the street_painter_plaza scene as a reveal shot starting on the painting and tilting up to the plaza behind it, with slow tilt-up."
     }
   },
@@ -1631,7 +1631,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the bakery_cat_exploration scene as a floor-level shot from under the bakery table looking at the cat, with slow push-in."
     }
   },
@@ -1703,7 +1703,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the bakery_cat_exploration scene as an extreme close-up on the flour paw pressing into the surface, with slow motion push-in."
     }
   },
@@ -1779,7 +1779,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the clay_astronaut_toy_repair scene as a close side angle on silver tape smoothing over the cardboard rocket crack, with slow left-to-right slide."
     }
   },
@@ -1855,7 +1855,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the clay_astronaut_toy_repair scene as a dramatic low-angle shot on the astronaut pressing the red launch button, with quick push-in."
     }
   },
@@ -1931,7 +1931,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the city_night_transit_montage scene as a low puddle-reflection shot of the umbrella commuters, with slow forward glide."
     }
   },
@@ -2007,7 +2007,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the city_night_transit_montage scene as a high-angle intersection shot over the colorful umbrella crossing, with slow crane down."
     }
   },
@@ -2077,7 +2077,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the chef_dessert_pass_with_runner scene as an overhead macro shot centered on the cream domes forming, with slow vertical lift."
     }
   },
@@ -2147,7 +2147,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the chef_dessert_pass_with_runner scene as a shallow-focus close shot on the bell press beside the plated dessert, with slow rack focus."
     }
   },
@@ -2217,7 +2217,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the anime_koi_pond_day scene as a water-surface macro shot of the dragonfly and bamboo spout ripples, with slow lateral drift."
     }
   },
@@ -2287,7 +2287,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the anime_koi_pond_day scene as an overhead pond shot following the koi around the lotus stems, with slow circular track."
     }
   },
@@ -2375,7 +2375,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the classic_car_restoration scene as a reflection-heavy close-up inside the chrome side mirror, with slow push-in."
     }
   },
@@ -2463,7 +2463,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the classic_car_restoration scene as a low wheel-level shot tracking along the whitewall tire and chrome hubcap, with slow sideways dolly."
     }
   },
@@ -2532,7 +2532,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the floating_island_blossom_montage scene as a sweeping aerial shot around the floating island and glowing tree, with slow 180-degree orbit."
     }
   },
@@ -2601,7 +2601,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the floating_island_blossom_montage scene as a close shot from inside the hollow tree as sparks drift outward, with slow pull-back."
     }
   },
@@ -2677,7 +2677,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the bridal_seamstress_fitting scene as a close shoulder-level shot of the seamstress working the button closure, with slow push-in."
     }
   },
@@ -2753,7 +2753,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the bridal_seamstress_fitting scene as a mirror-reflection shot showing bride and seamstress from three angles, with slow lateral slide."
     }
   },
@@ -2823,7 +2823,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the cartoon_windup_toy_race scene as a toy-wheel-level race shot between the duck and car, with fast tracking move."
     }
   },
@@ -2893,7 +2893,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the cartoon_windup_toy_race scene as a celebratory close-up on the duck crossing the finish flags, with quick push-in."
     }
   },
@@ -2970,7 +2970,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the horse_arena_training scene as a low-angle jump shot from beneath the rail as the horse takes off, with slow upward tilt."
     }
   },
@@ -3047,7 +3047,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the horse_arena_training scene as an extreme close-up of hooves landing and sand particles flying, with slow motion push-in."
     }
   },
@@ -3107,7 +3107,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the museum_texture_montage scene as a high skylight view looking down on the crowd circling the marble sculpture, with slow crane descent."
     }
   },
@@ -3167,7 +3167,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the museum_texture_montage scene as a tight glass-reflection shot on the bronze mask and passing visitor, with slow sideways slide."
     }
   },
@@ -3239,7 +3239,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the coastline_weather_montage scene as a wave-level shot looking up as spray bursts over the black rocks, with slow tilt-up."
     }
   },
@@ -3311,7 +3311,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the coastline_weather_montage scene as a long-lens shot following the lighthouse beam across shells and water, with slow pan."
     }
   },
@@ -3406,7 +3406,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the mars_rover_sample_collection scene as a close robotic-arm POV approaching the target rock, with slow mechanical push-in."
     }
   },
@@ -3501,7 +3501,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 5 of the mars_rover_sample_collection scene as an extreme close-up of the sample tube sealing with the indicator light, with slow rack focus."
     }
   },
@@ -3576,7 +3576,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the dance_rehearsal_layers scene as a floor-level close-up tracking the pink ballet shoes over tape marks, with smooth sideways track."
     }
   },
@@ -3651,7 +3651,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 5 of the dance_rehearsal_layers scene as a wide mirrored studio shot ending with the dancer framed by window light, with slow pull-back."
     }
   },
@@ -3729,7 +3729,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the anime_ramen_apprentice scene as a steam-level close-up looking across the noodle pot toward the apprentice, with slow push-through."
     }
   },
@@ -3807,7 +3807,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the anime_ramen_apprentice scene as an overhead ramen bowl shot as each topping lands in place, with slow vertical lift."
     }
   },
@@ -3879,7 +3879,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the wetland_birds_montage scene as a waterline telephoto shot following the egret's foot through shallow water, with slow lateral pan."
     }
   },
@@ -3951,7 +3951,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the wetland_birds_montage scene as a tight perch close-up on the kingfisher turning its head, with slow push-in."
     }
   },
@@ -4015,7 +4015,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 1 of the clay_living_kitchen_tools scene as a low tabletop shot facing the teapot as flour puffs outward, with short dolly-in."
     }
   },
@@ -4079,7 +4079,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the clay_living_kitchen_tools scene as an overhead bowl shot of the spoon lifting the sugar cube, with slow clockwise rotation."
     }
   },
@@ -4152,7 +4152,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the bicycle_mechanic_chain scene as an extreme drivetrain close-up following the lube along the chain, with slow macro track."
     }
   },
@@ -4225,7 +4225,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 4 of the bicycle_mechanic_chain scene as a side tracking shot along the spinning chain as the mechanic tests shifting, with steady lateral follow."
     }
   },
@@ -4302,7 +4302,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 2 of the rooftop_garden_robot_helper scene as a close diagnostic shot through the robot scanner over the tomato leaf, with slow push-in."
     }
   },
@@ -4379,7 +4379,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 5 of the rooftop_garden_robot_helper scene as a warm harvest close-up on the tomato entering the basket, with gentle push-in."
     }
   },
@@ -4492,7 +4492,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 3 of the cartoon_spaceport_montage scene as a low-angle close shot under the spacecraft landing gear as sparks fly, with slow push-in."
     }
   },
@@ -4605,7 +4605,7 @@
         "combine": "none",
         "reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot."
       },
-      "author": "codex-handwritten-v3-vlm-20260611",
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
       "instruction_original": "Re-shoot shot 6 of the cartoon_spaceport_montage scene as a wide runway shot that tracks the spacecraft lifting into the windowed sky, with slow pull-back."
     }
   }

@@ -56,8 +56,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with narrow morning sunbeams through the cafe windows; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "narrow morning sunbeams through the cafe windows look",
+      "instruction": "Re-light the scene with low golden dusk light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "low golden dusk light look",
       "applicable_shots": [
         1,
         2,
@@ -66,7 +66,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "narrow morning sunbeams through the cafe windows"
+        "lighting": "low golden dusk light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -77,7 +77,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -137,8 +137,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool blue rainy-window light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool blue rainy-window light look",
+      "instruction": "Re-light the scene with narrow flashlight beam; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "narrow flashlight beam look",
       "applicable_shots": [
         1,
         2,
@@ -147,7 +147,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool blue rainy-window light"
+        "lighting": "narrow flashlight beam"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -158,7 +158,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -217,8 +217,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with low golden sunset light across the grass course; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "low golden sunset light across the grass course look",
+      "instruction": "Re-light the scene with single amber overhead bulb light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "single amber overhead bulb light look",
       "applicable_shots": [
         1,
         2,
@@ -227,7 +227,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "low golden sunset light across the grass course"
+        "lighting": "single amber overhead bulb light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -238,7 +238,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -297,8 +297,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with overcast gray training-field light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "overcast gray training-field light look",
+      "instruction": "Re-light the scene with flickering firelight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "flickering firelight look",
       "applicable_shots": [
         1,
         2,
@@ -307,7 +307,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "overcast gray training-field light"
+        "lighting": "flickering firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -318,7 +318,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -368,8 +368,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm bedside-lamp toy-room light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm bedside-lamp toy-room light look",
+      "instruction": "Re-light the scene with green neon sign glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "green neon sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -377,7 +377,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm bedside-lamp toy-room light"
+        "lighting": "green neon sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -388,7 +388,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -438,8 +438,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with colorful carnival string-light glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "colorful carnival string-light glow look",
+      "instruction": "Re-light the scene with deep blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -447,7 +447,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "colorful carnival string-light glow"
+        "lighting": "deep blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -458,7 +458,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -515,8 +515,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with orange late-afternoon classroom light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "orange late-afternoon classroom light look",
+      "instruction": "Re-light the scene with single hard stage spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "single hard stage spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -525,7 +525,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "orange late-afternoon classroom light"
+        "lighting": "single hard stage spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -536,7 +536,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -593,8 +593,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool fluorescent club-room light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool fluorescent club-room light look",
+      "instruction": "Re-light the scene with warm cabaret footlights; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm cabaret footlights look",
       "applicable_shots": [
         1,
         2,
@@ -603,7 +603,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool fluorescent club-room light"
+        "lighting": "warm cabaret footlights"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -614,7 +614,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -661,8 +661,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with bright greenhouse backlight with leaf rim highlights; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "bright greenhouse backlight with leaf rim highlights look",
+      "instruction": "Re-light the scene with midnight blue moonlight mixed with candle glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "midnight blue moonlight mixed with candle glow look",
       "applicable_shots": [
         1,
         2,
@@ -670,7 +670,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright greenhouse backlight with leaf rim highlights"
+        "lighting": "midnight blue moonlight mixed with candle glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -681,7 +681,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -728,8 +728,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with soft cloudy greenhouse light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "soft cloudy greenhouse light look",
+      "instruction": "Re-light the scene with flickering candlelight as the main source; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "flickering candlelight as the main source look",
       "applicable_shots": [
         1,
         2,
@@ -737,7 +737,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft cloudy greenhouse light"
+        "lighting": "flickering candlelight as the main source"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -748,7 +748,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -812,8 +812,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with flashing red-and-blue ambulance emergency light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "flashing red-and-blue ambulance emergency light look",
+      "instruction": "Re-light the scene with cold instrument-panel glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cold instrument-panel glow look",
       "applicable_shots": [
         1,
         2,
@@ -823,7 +823,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "flashing red-and-blue ambulance emergency light"
+        "lighting": "cold instrument-panel glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -834,7 +834,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -898,8 +898,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cold hospital entrance floodlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cold hospital entrance floodlight look",
+      "instruction": "Re-light the scene with pulsing red emergency light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "pulsing red emergency light look",
       "applicable_shots": [
         1,
         2,
@@ -909,7 +909,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cold hospital entrance floodlight"
+        "lighting": "pulsing red emergency light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -920,7 +920,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -984,8 +984,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with dappled forest sunlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "dappled forest sunlight look",
+      "instruction": "Re-light the scene with blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -994,7 +994,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dappled forest sunlight"
+        "lighting": "blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1005,7 +1005,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1069,8 +1069,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with moonlit blue forest glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "moonlit blue forest glow look",
+      "instruction": "Re-light the scene with harsh overhead streetlamp light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "harsh overhead streetlamp light look",
       "applicable_shots": [
         1,
         2,
@@ -1079,7 +1079,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "moonlit blue forest glow"
+        "lighting": "harsh overhead streetlamp light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1090,7 +1090,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1149,8 +1149,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with hard noon engineering-site light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "hard noon engineering-site light look",
+      "instruction": "Re-light the scene with magenta and cyan neon lighting; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "magenta and cyan neon lighting look",
       "applicable_shots": [
         1,
         2,
@@ -1160,7 +1160,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "hard noon engineering-site light"
+        "lighting": "magenta and cyan neon lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1171,7 +1171,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1230,8 +1230,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with stormy gray bridge-inspection light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "stormy gray bridge-inspection light look",
+      "instruction": "Re-light the scene with rapid white strobe lighting; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "rapid white strobe lighting look",
       "applicable_shots": [
         1,
         2,
@@ -1241,7 +1241,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "stormy gray bridge-inspection light"
+        "lighting": "rapid white strobe lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1252,7 +1252,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1321,8 +1321,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm market lantern light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm market lantern light look",
+      "instruction": "Re-light the scene with silver moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "silver moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -1331,7 +1331,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm market lantern light"
+        "lighting": "silver moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1342,7 +1342,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1411,8 +1411,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with soft cloudy market-day light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "soft cloudy market-day light look",
+      "instruction": "Re-light the scene with deep orange sunset light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep orange sunset light look",
       "applicable_shots": [
         1,
         2,
@@ -1421,7 +1421,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft cloudy market-day light"
+        "lighting": "deep orange sunset light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1432,7 +1432,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1485,8 +1485,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with golden plaza sunset light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "golden plaza sunset light look",
+      "instruction": "Re-light the scene with icy blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "icy blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -1494,7 +1494,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "golden plaza sunset light"
+        "lighting": "icy blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1505,7 +1505,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1558,8 +1558,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool early-morning plaza light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool early-morning plaza light look",
+      "instruction": "Re-light the scene with helmet headlamp beams; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "helmet headlamp beams look",
       "applicable_shots": [
         1,
         2,
@@ -1567,7 +1567,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool early-morning plaza light"
+        "lighting": "helmet headlamp beams"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1578,7 +1578,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1630,8 +1630,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm bakery display-case light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm bakery display-case light look",
+      "instruction": "Re-light the scene with focused white task-lamp light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "focused white task-lamp light look",
       "applicable_shots": [
         1,
         2,
@@ -1640,7 +1640,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm bakery display-case light"
+        "lighting": "focused white task-lamp light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1651,7 +1651,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1703,8 +1703,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with rainy blue storefront light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "rainy blue storefront light look",
+      "instruction": "Re-light the scene with red neon sign glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "red neon sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -1713,7 +1713,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "rainy blue storefront light"
+        "lighting": "red neon sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1724,7 +1724,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1780,8 +1780,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with desk-lamp stop-motion workshop light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "desk-lamp stop-motion workshop light look",
+      "instruction": "Re-light the scene with intense orange furnace firelight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "intense orange furnace firelight look",
       "applicable_shots": [
         1,
         2,
@@ -1791,7 +1791,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "desk-lamp stop-motion workshop light"
+        "lighting": "intense orange furnace firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1802,7 +1802,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1858,8 +1858,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with dramatic launch-button red light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "dramatic launch-button red light look",
+      "instruction": "Re-light the scene with dim workshop fire glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "dim workshop fire glow look",
       "applicable_shots": [
         1,
         2,
@@ -1869,7 +1869,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dramatic launch-button red light"
+        "lighting": "dim workshop fire glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1880,7 +1880,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1936,8 +1936,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with neon magenta-and-cyan rain light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "neon magenta-and-cyan rain light look",
+      "instruction": "Re-light the scene with red paper-lantern glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "red paper-lantern glow look",
       "applicable_shots": [
         1,
         2,
@@ -1946,7 +1946,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "neon magenta-and-cyan rain light"
+        "lighting": "red paper-lantern glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -1957,7 +1957,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2013,8 +2013,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with sodium-vapor streetlamp light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "sodium-vapor streetlamp light look",
+      "instruction": "Re-light the scene with cold blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cold blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -2023,7 +2023,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "sodium-vapor streetlamp light"
+        "lighting": "cold blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2034,7 +2034,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2084,8 +2084,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with crisp white pass-counter spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "crisp white pass-counter spotlight look",
+      "instruction": "Re-light the scene with narrow flashlight beam; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "narrow flashlight beam look",
       "applicable_shots": [
         1,
         2,
@@ -2094,7 +2094,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "crisp white pass-counter spotlight"
+        "lighting": "narrow flashlight beam"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2105,7 +2105,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2155,8 +2155,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm chef's-table candlelit light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm chef's-table candlelit light look",
+      "instruction": "Re-light the scene with green fluorescent hallway light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "green fluorescent hallway light look",
       "applicable_shots": [
         1,
         2,
@@ -2165,7 +2165,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm chef's-table candlelit light"
+        "lighting": "green fluorescent hallway light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2176,7 +2176,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2226,8 +2226,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with soft spring morning pond light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "soft spring morning pond light look",
+      "instruction": "Re-light the scene with hard white surgical exam spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "hard white surgical exam spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -2235,7 +2235,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft spring morning pond light"
+        "lighting": "hard white surgical exam spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2246,7 +2246,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2296,8 +2296,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool moonlit koi pond light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool moonlit koi pond light look",
+      "instruction": "Re-light the scene with ultraviolet exam-lamp glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "ultraviolet exam-lamp glow look",
       "applicable_shots": [
         1,
         2,
@@ -2305,7 +2305,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool moonlit koi pond light"
+        "lighting": "ultraviolet exam-lamp glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2316,7 +2316,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2384,8 +2384,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with bright fluorescent garage work light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "bright fluorescent garage work light look",
+      "instruction": "Re-light the scene with small warm desk-lamp pool; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "small warm desk-lamp pool look",
       "applicable_shots": [
         1,
         2,
@@ -2395,7 +2395,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright fluorescent garage work light"
+        "lighting": "small warm desk-lamp pool"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2406,7 +2406,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2474,8 +2474,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with late-afternoon light through the open garage door; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "late-afternoon light through the open garage door look",
+      "instruction": "Re-light the scene with cool magnifying workbench light with crisp shadows; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool magnifying workbench light with crisp shadows look",
       "applicable_shots": [
         1,
         2,
@@ -2485,7 +2485,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "late-afternoon light through the open garage door"
+        "lighting": "cool magnifying workbench light with crisp shadows"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2496,7 +2496,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2545,8 +2545,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with blue bioluminescent fantasy glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "blue bioluminescent fantasy glow look",
+      "instruction": "Re-light the scene with orange heat-lamp glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "orange heat-lamp glow look",
       "applicable_shots": [
         1,
         2,
@@ -2555,7 +2555,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "blue bioluminescent fantasy glow"
+        "lighting": "orange heat-lamp glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2566,7 +2566,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2615,8 +2615,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with pink dawn cloudlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "pink dawn cloudlight look",
+      "instruction": "Re-light the scene with blue neon strip light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue neon strip light look",
       "applicable_shots": [
         1,
         2,
@@ -2625,7 +2625,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "pink dawn cloudlight"
+        "lighting": "blue neon strip light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2636,7 +2636,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2692,8 +2692,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with soft bridal boutique window light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "soft bridal boutique window light look",
+      "instruction": "Re-light the scene with full moonlight across the floor; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "full moonlight across the floor look",
       "applicable_shots": [
         1,
         2,
@@ -2702,7 +2702,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft bridal boutique window light"
+        "lighting": "full moonlight across the floor"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2713,7 +2713,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2769,8 +2769,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm chandelier fitting-room light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm chandelier fitting-room light look",
+      "instruction": "Re-light the scene with purple blacklight glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "purple blacklight glow look",
       "applicable_shots": [
         1,
         2,
@@ -2779,7 +2779,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm chandelier fitting-room light"
+        "lighting": "purple blacklight glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2790,7 +2790,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2840,8 +2840,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with sunny playroom window light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "sunny playroom window light look",
+      "instruction": "Re-light the scene with bright circular ring light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "bright circular ring light look",
       "applicable_shots": [
         1,
         2,
@@ -2849,7 +2849,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "sunny playroom window light"
+        "lighting": "bright circular ring light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2860,7 +2860,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2910,8 +2910,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with colorful toy-box party lights; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "colorful toy-box party lights look",
+      "instruction": "Re-light the scene with pink neon sign glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "pink neon sign glow look",
       "applicable_shots": [
         1,
         2,
@@ -2919,7 +2919,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "colorful toy-box party lights"
+        "lighting": "pink neon sign glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -2930,7 +2930,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2987,8 +2987,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with clear midday arena sunlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "clear midday arena sunlight look",
+      "instruction": "Re-light the scene with low orange grill firelight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "low orange grill firelight look",
       "applicable_shots": [
         1,
         2,
@@ -2997,7 +2997,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "clear midday arena sunlight"
+        "lighting": "low orange grill firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3008,7 +3008,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3065,8 +3065,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with low sunset arena backlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "low sunset arena backlight look",
+      "instruction": "Re-light the scene with glowing charcoal firelight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "glowing charcoal firelight look",
       "applicable_shots": [
         1,
         2,
@@ -3075,7 +3075,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "low sunset arena backlight"
+        "lighting": "glowing charcoal firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3086,7 +3086,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3126,15 +3126,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool skylight museum illumination; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool skylight museum illumination look",
+      "instruction": "Re-light the scene with silver moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "silver moonlight look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool skylight museum illumination"
+        "lighting": "silver moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3145,7 +3145,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3185,15 +3185,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with dramatic single-gallery spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "dramatic single-gallery spotlight look",
+      "instruction": "Re-light the scene with deep orange sunset reflected light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep orange sunset reflected light look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "dramatic single-gallery spotlight"
+        "lighting": "deep orange sunset reflected light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3204,7 +3204,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3256,8 +3256,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with stormy coastal gray light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "stormy coastal gray light look",
+      "instruction": "Re-light the scene with red heat-lamp glow; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "red heat-lamp glow look",
       "applicable_shots": [
         1,
         2,
@@ -3266,7 +3266,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "stormy coastal gray light"
+        "lighting": "red heat-lamp glow"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3277,7 +3277,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3329,8 +3329,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with orange dusk lighthouse beam light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "orange dusk lighthouse beam light look",
+      "instruction": "Re-light the scene with green surgical overhead light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "green surgical overhead light look",
       "applicable_shots": [
         1,
         2,
@@ -3339,7 +3339,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "orange dusk lighthouse beam light"
+        "lighting": "green surgical overhead light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3350,7 +3350,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3425,8 +3425,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with harsh white Martian noon light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "harsh white Martian noon light look",
+      "instruction": "Re-light the scene with flashing blue police light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "flashing blue police light look",
       "applicable_shots": [
         1,
         2,
@@ -3437,7 +3437,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "harsh white Martian noon light"
+        "lighting": "flashing blue police light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3448,7 +3448,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3523,8 +3523,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with red dust-storm filtered light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "red dust-storm filtered light look",
+      "instruction": "Re-light the scene with colorful carnival bulb light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "colorful carnival bulb light look",
       "applicable_shots": [
         1,
         2,
@@ -3535,7 +3535,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "red dust-storm filtered light"
+        "lighting": "colorful carnival bulb light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3546,7 +3546,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3601,8 +3601,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with soft north-window dance-studio light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "soft north-window dance-studio light look",
+      "instruction": "Re-light the scene with green fluorescent light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "green fluorescent light look",
       "applicable_shots": [
         1,
         2,
@@ -3612,7 +3612,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "soft north-window dance-studio light"
+        "lighting": "green fluorescent light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3623,7 +3623,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3678,8 +3678,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with theatrical rehearsal spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "theatrical rehearsal spotlight look",
+      "instruction": "Re-light the scene with warm busker spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm busker spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -3689,7 +3689,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "theatrical rehearsal spotlight"
+        "lighting": "warm busker spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3700,7 +3700,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3758,8 +3758,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm ramen-shop lantern light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm ramen-shop lantern light look",
+      "instruction": "Re-light the scene with cool garage fluorescent strip lighting; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool garage fluorescent strip lighting look",
       "applicable_shots": [
         1,
         2,
@@ -3768,7 +3768,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm ramen-shop lantern light"
+        "lighting": "cool garage fluorescent strip lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3779,7 +3779,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3837,8 +3837,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool rainy-night shopfront light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool rainy-night shopfront light look",
+      "instruction": "Re-light the scene with small handheld work-light beam; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "small handheld work-light beam look",
       "applicable_shots": [
         1,
         2,
@@ -3847,7 +3847,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool rainy-night shopfront light"
+        "lighting": "small handheld work-light beam"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3858,7 +3858,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3910,8 +3910,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with golden wetland sunset light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "golden wetland sunset light look",
+      "instruction": "Re-light the scene with silver moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "silver moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -3919,7 +3919,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "golden wetland sunset light"
+        "lighting": "silver moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -3930,7 +3930,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3982,8 +3982,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with misty dawn birdwatching light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "misty dawn birdwatching light look",
+      "instruction": "Re-light the scene with warm propane-burner firelight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm propane-burner firelight look",
       "applicable_shots": [
         1,
         2,
@@ -3991,7 +3991,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "misty dawn birdwatching light"
+        "lighting": "warm propane-burner firelight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4002,7 +4002,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4046,15 +4046,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm handmade kitchen lamp light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm handmade kitchen lamp light look",
+      "instruction": "Re-light the scene with white camera-flash bursts; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "white camera-flash bursts look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm handmade kitchen lamp light"
+        "lighting": "white camera-flash bursts"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4065,7 +4065,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4109,15 +4109,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool blue moonlit kitchen light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool blue moonlit kitchen light look",
+      "instruction": "Re-light the scene with warm chandelier light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm chandelier light look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool blue moonlit kitchen light"
+        "lighting": "warm chandelier light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4128,7 +4128,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4181,8 +4181,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with bright workshop window light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "bright workshop window light look",
+      "instruction": "Re-light the scene with single courtroom spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "single courtroom spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -4191,7 +4191,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright workshop window light"
+        "lighting": "single courtroom spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4202,7 +4202,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4255,8 +4255,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with focused mechanic's task-light beam; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "focused mechanic's task-light beam look",
+      "instruction": "Re-light the scene with blue moonlight through high windows; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue moonlight through high windows look",
       "applicable_shots": [
         1,
         2,
@@ -4265,7 +4265,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "focused mechanic's task-light beam"
+        "lighting": "blue moonlight through high windows"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4276,7 +4276,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4333,8 +4333,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with golden rooftop sunset light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "golden rooftop sunset light look",
+      "instruction": "Re-light the scene with campfire light flickering across the scene; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "campfire light flickering across the scene look",
       "applicable_shots": [
         1,
         2,
@@ -4344,7 +4344,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "golden rooftop sunset light"
+        "lighting": "campfire light flickering across the scene"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4355,7 +4355,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4412,8 +4412,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with clean white greenhouse grow-light illumination; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "clean white greenhouse grow-light illumination look",
+      "instruction": "Re-light the scene with deep midnight light with faint fire embers; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep midnight light with faint fire embers look",
       "applicable_shots": [
         1,
         2,
@@ -4423,7 +4423,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "clean white greenhouse grow-light illumination"
+        "lighting": "deep midnight light with faint fire embers"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4434,7 +4434,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4527,8 +4527,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with neon blue spaceport floor glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "neon blue spaceport floor glow look",
+      "instruction": "Re-light the scene with pink and teal neon cocktail-bar lighting; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "pink and teal neon cocktail-bar lighting look",
       "applicable_shots": [
         1,
         2,
@@ -4539,7 +4539,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "neon blue spaceport floor glow"
+        "lighting": "pink and teal neon cocktail-bar lighting"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4550,7 +4550,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4643,8 +4643,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm retro terminal marquee light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm retro terminal marquee light look",
+      "instruction": "Re-light the scene with ultraviolet blacklight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "ultraviolet blacklight look",
       "applicable_shots": [
         1,
         2,
@@ -4655,7 +4655,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm retro terminal marquee light"
+        "lighting": "ultraviolet blacklight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -4666,7 +4666,7 @@
         "combine": "none",
         "reason": "Whole-frame lighting edits can legitimately affect the entire frame."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   }
 ]

@@ -95,7 +95,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -194,7 +194,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -295,7 +295,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -396,7 +396,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -484,7 +484,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -572,7 +572,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -668,7 +668,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -764,7 +764,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -849,7 +849,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -934,7 +934,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1038,7 +1038,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1142,7 +1142,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1248,7 +1248,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1354,7 +1354,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1453,7 +1453,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1552,7 +1552,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1660,7 +1660,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1768,7 +1768,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1859,7 +1859,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -1950,7 +1950,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2041,7 +2041,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2132,7 +2132,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2228,7 +2228,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2324,7 +2324,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2419,7 +2419,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2514,7 +2514,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2606,7 +2606,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2698,7 +2698,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2786,7 +2786,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2874,7 +2874,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -2982,7 +2982,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3090,7 +3090,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3178,7 +3178,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3266,7 +3266,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3361,7 +3361,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3456,7 +3456,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3544,7 +3544,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3632,7 +3632,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3728,7 +3728,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3824,7 +3824,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3901,7 +3901,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -3978,7 +3978,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4072,7 +4072,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4166,7 +4166,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4282,7 +4282,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4398,7 +4398,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4493,7 +4493,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4588,7 +4588,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4685,7 +4685,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4782,7 +4782,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4875,7 +4875,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -4968,7 +4968,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5052,7 +5052,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5136,7 +5136,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5228,7 +5228,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5320,7 +5320,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5417,7 +5417,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5514,7 +5514,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5648,7 +5648,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   },
   {
@@ -5782,7 +5782,7 @@
         "score_region": "mask",
         "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
       },
-      "author": "codex-handwritten-v3-vlm-20260611"
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
   }
 ]
