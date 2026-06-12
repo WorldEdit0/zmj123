@@ -455,10 +455,12 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the white-uniformed nurse with a hospital security guard pushing the same medical cart in the background.",
-      "target_phrase": "hospital security guard pushing the same medical cart",
+      "instruction": "Replace the dark-haired female paramedic with a middle-aged male emergency doctor wearing the same dark blue paramedic uniform with yellow reflective stripes, preserving the stretcher preparation, ambulance-door interaction, first-aid handling, and final loading actions.",
+      "target_phrase": "middle-aged male emergency doctor in the same dark blue paramedic uniform with yellow reflective stripes",
       "applicable_shots": [
         1,
+        3,
+        4,
         5
       ],
       "mask_queries": {
@@ -466,20 +468,20 @@
         "edit_scope": "local",
         "edit_type": "dynamic_replace",
         "source_queries": [
-          "nurse in white uniform pushing a medical cart"
+          "dark-haired female paramedic in a dark blue uniform with yellow reflective sleeve stripes"
         ],
         "edited_queries": [
-          "hospital security guard pushing the same medical cart"
+          "middle-aged male emergency doctor in the same dark blue paramedic uniform with yellow reflective stripes"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
-        "old_entity": "nurse in white uniform pushing a medical cart",
-        "new_entity": "hospital security guard pushing the same medical cart"
+        "old_entity": "dark-haired female paramedic in a dark blue uniform with yellow reflective sleeve stripes",
+        "new_entity": "middle-aged male emergency doctor in the same dark blue paramedic uniform with yellow reflective stripes"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
-      "target_entity": "B1"
+      "target_entity": "C1"
     }
   },
   {
@@ -872,10 +874,12 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the passerby outside the bakery with a street musician carrying a violin case, keeping the figure outside the glass door.",
-      "target_phrase": "street musician carrying a violin case outside the bakery",
+      "instruction": "Replace the long-haired orange-and-white bakery cat with a seal-point Siamese cat with cream fur, dark ears, dark paws, and blue eyes, preserving every bakery exploration action, paw-print movement, counter interaction, and final doorway pose.",
+      "target_phrase": "seal-point Siamese cat with cream fur, dark ears, dark paws, and blue eyes",
       "applicable_shots": [
         1,
+        2,
+        3,
         4
       ],
       "mask_queries": {
@@ -883,20 +887,20 @@
         "edit_scope": "local",
         "edit_type": "dynamic_replace",
         "source_queries": [
-          "person in pink shirt outside the bakery"
+          "long-haired orange-and-white bakery cat with distinct facial markings"
         ],
         "edited_queries": [
-          "street musician carrying a violin case outside the bakery"
+          "seal-point Siamese cat with cream fur, dark ears, dark paws, and blue eyes"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
-        "old_entity": "person in pink shirt outside the bakery",
-        "new_entity": "street musician carrying a violin case outside the bakery"
+        "old_entity": "long-haired orange-and-white bakery cat with distinct facial markings",
+        "new_entity": "seal-point Siamese cat with cream fur, dark ears, dark paws, and blue eyes"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
-      "target_entity": "B1"
+      "target_entity": "A1"
     }
   },
   {
@@ -1032,30 +1036,31 @@
     ],
     "edit": {
       "task_id": "T1",
-      "instruction": "Replace the yellow-jacket scooter rider with a food-delivery cyclist in an orange rain poncho in the bus-stop shot.",
-      "target_phrase": "food-delivery cyclist in an orange rain poncho",
+      "instruction": "Replace the nighttime commuter group with a group of hospital night-shift nurses in light blue scrubs holding dark umbrellas, preserving the rainy transit timing, bus-stop spacing, umbrella positions, and crosswalk movement.",
+      "target_phrase": "group of hospital night-shift nurses in light blue scrubs holding dark umbrellas",
       "applicable_shots": [
-        2
+        1,
+        4
       ],
       "mask_queries": {
         "nep_applicable": true,
         "edit_scope": "local",
         "edit_type": "dynamic_replace",
         "source_queries": [
-          "food-delivery scooter rider in bright yellow jacket"
+          "group of nighttime commuters with dark umbrellas"
         ],
         "edited_queries": [
-          "food-delivery cyclist in an orange rain poncho"
+          "group of hospital night-shift nurses in light blue scrubs holding dark umbrellas"
         ],
         "combine": "union"
       },
       "extra": {
         "replace_kind": "dynamic",
-        "old_entity": "food-delivery scooter rider in bright yellow jacket",
-        "new_entity": "food-delivery cyclist in an orange rain poncho"
+        "old_entity": "group of nighttime commuters with dark umbrellas",
+        "new_entity": "group of hospital night-shift nurses in light blue scrubs holding dark umbrellas"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611",
-      "target_entity": "B1"
+      "target_entity": "G1"
     }
   },
   {
