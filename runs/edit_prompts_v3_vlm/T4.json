@@ -3287,8 +3287,8 @@
     ],
     "edit": {
       "task_id": "T4",
-      "instruction": "Add a small tabby cafe cat sitting quietly under the wooden counter in the wider cafe shots.",
-      "target_phrase": "small tabby cafe cat sitting under the counter",
+      "instruction": "Add a woman in a red coat sitting at the background table in the wider cafe shots.",
+      "target_phrase": "woman in a red coat sitting at the background table",
       "applicable_shots": [
         1,
         4
@@ -3297,8 +3297,8 @@
         "op": "add",
         "object_kind": "dynamic",
         "old_object": null,
-        "new_object": "small tabby cafe cat sitting under the counter",
-        "anchor": "wooden bar counter"
+        "new_object": "woman in a red coat sitting at the background table",
+        "anchor": "background table"
       },
       "mask_queries": {
         "nep_applicable": true,
@@ -3306,7 +3306,7 @@
         "edit_type": "dynamic_add",
         "source_queries": [],
         "edited_queries": [
-          "small tabby cafe cat sitting under the counter"
+          "woman in a red coat sitting at the background table"
         ],
         "combine": "union"
       },
@@ -3920,8 +3920,8 @@
     ],
     "edit": {
       "task_id": "T4",
-      "instruction": "Add a runner in a silver rain jacket crossing behind the umbrella crowd.",
-      "target_phrase": "runner in a silver rain jacket crossing behind the umbrellas",
+      "instruction": "Add a helicopter with a bright searchlight in the city sky above the traffic intersection.",
+      "target_phrase": "helicopter with a bright searchlight in the city sky above the traffic intersection",
       "applicable_shots": [
         4
       ],
@@ -3929,8 +3929,8 @@
         "op": "add",
         "object_kind": "dynamic",
         "old_object": null,
-        "new_object": "runner in a silver rain jacket crossing behind the umbrellas",
-        "anchor": "rainy intersection"
+        "new_object": "helicopter with a bright searchlight in the city sky above the traffic intersection",
+        "anchor": "city sky above the traffic intersection"
       },
       "mask_queries": {
         "nep_applicable": true,
@@ -3938,7 +3938,7 @@
         "edit_type": "dynamic_add",
         "source_queries": [],
         "edited_queries": [
-          "runner in a silver rain jacket crossing behind the umbrellas"
+          "helicopter with a bright searchlight in the city sky above the traffic intersection"
         ],
         "combine": "union"
       },
@@ -3996,6 +3996,7 @@
       "target_phrase": "small turtle resting on a mossy rock",
       "applicable_shots": [
         1,
+        2,
         3
       ],
       "extra": {

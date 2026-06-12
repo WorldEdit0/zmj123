@@ -46,7 +46,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the miniature_toy_train_city scene to shot order 2, 1, 3. The edited video should play as: The train crosses the blue arch bridge while the green wind-up robot passes behind it., then The red toy train starts from the striped block station on the wooden floor., then The train circles the plaza with lamps and stops at the second station..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The train crosses the blue arch bridge while the green wind-up robot passes behind it., then The red toy train starts from the striped block station on the wooden floor., then The train circles the plaza with lamps and stops at the second station..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -120,7 +120,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the miniature_toy_train_city scene to shot order 3, 1, 2. The edited video should play as: The train circles the plaza with lamps and stops at the second station., then The red toy train starts from the striped block station on the wooden floor., then The train crosses the blue arch bridge while the green wind-up robot passes behind it..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The train circles the plaza with lamps and stops at the second station., then The red toy train starts from the striped block station on the wooden floor., then The train crosses the blue arch bridge while the green wind-up robot passes behind it..",
       "target_phrase": "shots reordered to 3, 1, 2",
       "applicable_shots": [
         1,
@@ -191,7 +191,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the greenhouse_sunflower_growth scene to shot order 2, 1, 3. The edited video should play as: The seedling is misted in its terracotta pot while a bee circles nearby., then The sunflower seedling emerges from dark moist soil with water droplets glistening., then The overhead pot view shows four green leaves and a central bud as sunlight moves across them..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The seedling is misted in its terracotta pot while a bee circles nearby., then The sunflower seedling emerges from dark moist soil with water droplets glistening., then The overhead pot view shows four green leaves and a central bud as sunlight moves across them..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -262,7 +262,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the greenhouse_sunflower_growth scene to shot order 3, 2, 1. The edited video should play as: The overhead pot view shows four green leaves and a central bud as sunlight moves across them., then The seedling is misted in its terracotta pot while a bee circles nearby., then The sunflower seedling emerges from dark moist soil with water droplets glistening..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The overhead pot view shows four green leaves and a central bud as sunlight moves across them., then The seedling is misted in its terracotta pot while a bee circles nearby., then The sunflower seedling emerges from dark moist soil with water droplets glistening..",
       "target_phrase": "shots reordered to 3, 2, 1",
       "applicable_shots": [
         1,
@@ -350,7 +350,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_forest_animals_montage scene to shot order 2, 1, 3, 4. The edited video should play as: The gray raccoon washes red berries in the blue stream., then The squirrel catches an acorn near the tree hollow and basket., then The spotted fawn lowers its head to smell the white wildflower., then The forest animals gather around the flower and wave together..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The gray raccoon washes red berries in the blue stream., then The squirrel catches an acorn near the tree hollow and basket., then The spotted fawn lowers its head to smell the white wildflower., then The forest animals gather around the flower and wave together..",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
         1,
@@ -440,7 +440,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_forest_animals_montage scene to shot order 3, 2, 1, 4. The edited video should play as: The spotted fawn lowers its head to smell the white wildflower., then The gray raccoon washes red berries in the blue stream., then The squirrel catches an acorn near the tree hollow and basket., then The forest animals gather around the flower and wave together..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The spotted fawn lowers its head to smell the white wildflower., then The gray raccoon washes red berries in the blue stream., then The squirrel catches an acorn near the tree hollow and basket., then The forest animals gather around the flower and wave together..",
       "target_phrase": "shots reordered to 3, 2, 1, 4",
       "applicable_shots": [
         1,
@@ -530,7 +530,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_forest_animals_montage scene to shot order 4, 1, 2, 3. The edited video should play as: The forest animals gather around the flower and wave together., then The squirrel catches an acorn near the tree hollow and basket., then The gray raccoon washes red berries in the blue stream., then The spotted fawn lowers its head to smell the white wildflower..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The forest animals gather around the flower and wave together., then The squirrel catches an acorn near the tree hollow and basket., then The gray raccoon washes red berries in the blue stream., then The spotted fawn lowers its head to smell the white wildflower..",
       "target_phrase": "shots reordered to 4, 1, 2, 3",
       "applicable_shots": [
         1,
@@ -609,7 +609,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the street_painter_plaza scene to shot order 2, 1, 3. The edited video should play as: The painter adds watercolor detail near the fountain while pigeons move on the cobblestones., then The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter presents the finished plaza painting against the classical building backdrop..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The painter adds watercolor detail near the fountain while pigeons move on the cobblestones., then The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter presents the finished plaza painting against the classical building backdrop..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -686,7 +686,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the street_painter_plaza scene to shot order 3, 1, 2. The edited video should play as: The painter presents the finished plaza painting against the classical building backdrop., then The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter adds watercolor detail near the fountain while pigeons move on the cobblestones..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The painter presents the finished plaza painting against the classical building backdrop., then The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter adds watercolor detail near the fountain while pigeons move on the cobblestones..",
       "target_phrase": "shots reordered to 3, 1, 2",
       "applicable_shots": [
         1,
@@ -766,7 +766,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the city_night_transit_montage scene to shot order 2, 1, 3, 4. The edited video should play as: A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Night commuters with umbrellas move through the wet neon transit entrance., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then Pedestrians with colorful umbrellas cross the reflective night street..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Night commuters with umbrellas move through the wet neon transit entrance., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then Pedestrians with colorful umbrellas cross the reflective night street..",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
         1,
@@ -848,7 +848,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the city_night_transit_montage scene to shot order 3, 1, 2, 4. The edited video should play as: Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then Night commuters with umbrellas move through the wet neon transit entrance., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Pedestrians with colorful umbrellas cross the reflective night street..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then Night commuters with umbrellas move through the wet neon transit entrance., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Pedestrians with colorful umbrellas cross the reflective night street..",
       "target_phrase": "shots reordered to 3, 1, 2, 4",
       "applicable_shots": [
         1,
@@ -930,7 +930,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the city_night_transit_montage scene to shot order 4, 1, 2, 3. The edited video should play as: Pedestrians with colorful umbrellas cross the reflective night street., then Night commuters with umbrellas move through the wet neon transit entrance., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Pedestrians with colorful umbrellas cross the reflective night street., then Night commuters with umbrellas move through the wet neon transit entrance., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection..",
       "target_phrase": "shots reordered to 4, 1, 2, 3",
       "applicable_shots": [
         1,
@@ -1006,7 +1006,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the anime_koi_pond_day scene to shot order 2, 1, 3. The edited video should play as: The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond., then The golden-red koi swims under lotus leaves near the stone bridge and lantern., then The koi circles under petals, lotus stems, and mossy rocks in the overhead view..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond., then The golden-red koi swims under lotus leaves near the stone bridge and lantern., then The koi circles under petals, lotus stems, and mossy rocks in the overhead view..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -1080,7 +1080,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the anime_koi_pond_day scene to shot order 3, 2, 1. The edited video should play as: The koi circles under petals, lotus stems, and mossy rocks in the overhead view., then The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond., then The golden-red koi swims under lotus leaves near the stone bridge and lantern..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The koi circles under petals, lotus stems, and mossy rocks in the overhead view., then The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond., then The golden-red koi swims under lotus leaves near the stone bridge and lantern..",
       "target_phrase": "shots reordered to 3, 2, 1",
       "applicable_shots": [
         1,
@@ -1172,7 +1172,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the classic_car_restoration scene to shot order 2, 1, 3, 4, 5. The edited video should play as: A mechanic polishes the chrome side mirror with a cloth., then The red classic car is established in the garage with mechanics and tool shelves., then The wrench tightens a bolt inside the engine bay., then The whitewall tire and chrome hubcap are shown in detail., then The restored car gleams under the work lights as the mechanic checks the finish..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: A mechanic polishes the chrome side mirror with a cloth., then The red classic car is established in the garage with mechanics and tool shelves., then The wrench tightens a bolt inside the engine bay., then The whitewall tire and chrome hubcap are shown in detail., then The restored car gleams under the work lights as the mechanic checks the finish..",
       "target_phrase": "shots reordered to 2, 1, 3, 4, 5",
       "applicable_shots": [
         1,
@@ -1268,7 +1268,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the classic_car_restoration scene to shot order 3, 2, 1, 4, 5. The edited video should play as: The wrench tightens a bolt inside the engine bay., then A mechanic polishes the chrome side mirror with a cloth., then The red classic car is established in the garage with mechanics and tool shelves., then The whitewall tire and chrome hubcap are shown in detail., then The restored car gleams under the work lights as the mechanic checks the finish..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The wrench tightens a bolt inside the engine bay., then A mechanic polishes the chrome side mirror with a cloth., then The red classic car is established in the garage with mechanics and tool shelves., then The whitewall tire and chrome hubcap are shown in detail., then The restored car gleams under the work lights as the mechanic checks the finish..",
       "target_phrase": "shots reordered to 3, 2, 1, 4, 5",
       "applicable_shots": [
         1,
@@ -1364,7 +1364,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the classic_car_restoration scene to shot order 4, 1, 2, 3, 5. The edited video should play as: The whitewall tire and chrome hubcap are shown in detail., then The red classic car is established in the garage with mechanics and tool shelves., then A mechanic polishes the chrome side mirror with a cloth., then The wrench tightens a bolt inside the engine bay., then The restored car gleams under the work lights as the mechanic checks the finish..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The whitewall tire and chrome hubcap are shown in detail., then The red classic car is established in the garage with mechanics and tool shelves., then A mechanic polishes the chrome side mirror with a cloth., then The wrench tightens a bolt inside the engine bay., then The restored car gleams under the work lights as the mechanic checks the finish..",
       "target_phrase": "shots reordered to 4, 1, 2, 3, 5",
       "applicable_shots": [
         1,
@@ -1460,7 +1460,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the classic_car_restoration scene to shot order 5, 1, 2, 3, 4. The edited video should play as: The restored car gleams under the work lights as the mechanic checks the finish., then The red classic car is established in the garage with mechanics and tool shelves., then A mechanic polishes the chrome side mirror with a cloth., then The wrench tightens a bolt inside the engine bay., then The whitewall tire and chrome hubcap are shown in detail..",
+      "instruction": "Reorder the scene to shot order 5, 1, 2, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The restored car gleams under the work lights as the mechanic checks the finish., then The red classic car is established in the garage with mechanics and tool shelves., then A mechanic polishes the chrome side mirror with a cloth., then The wrench tightens a bolt inside the engine bay., then The whitewall tire and chrome hubcap are shown in detail..",
       "target_phrase": "shots reordered to 5, 1, 2, 3, 4",
       "applicable_shots": [
         1,
@@ -1537,7 +1537,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the floating_island_blossom_montage scene to shot order 2, 1, 3, 4. The edited video should play as: Large blue crystals and glowing flowers surround the tree roots., then The floating island with the glowing blue tree hangs over purple cloud seas., then Waterfalls fall from the island edge into the cloud layer., then The hollow glowing tree releases white sparks among tall grass leaves..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Large blue crystals and glowing flowers surround the tree roots., then The floating island with the glowing blue tree hangs over purple cloud seas., then Waterfalls fall from the island edge into the cloud layer., then The hollow glowing tree releases white sparks among tall grass leaves..",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
         1,
@@ -1612,7 +1612,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the floating_island_blossom_montage scene to shot order 3, 2, 1, 4. The edited video should play as: Waterfalls fall from the island edge into the cloud layer., then Large blue crystals and glowing flowers surround the tree roots., then The floating island with the glowing blue tree hangs over purple cloud seas., then The hollow glowing tree releases white sparks among tall grass leaves..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Waterfalls fall from the island edge into the cloud layer., then Large blue crystals and glowing flowers surround the tree roots., then The floating island with the glowing blue tree hangs over purple cloud seas., then The hollow glowing tree releases white sparks among tall grass leaves..",
       "target_phrase": "shots reordered to 3, 2, 1, 4",
       "applicable_shots": [
         1,
@@ -1687,7 +1687,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the floating_island_blossom_montage scene to shot order 4, 1, 2, 3. The edited video should play as: The hollow glowing tree releases white sparks among tall grass leaves., then The floating island with the glowing blue tree hangs over purple cloud seas., then Large blue crystals and glowing flowers surround the tree roots., then Waterfalls fall from the island edge into the cloud layer..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The hollow glowing tree releases white sparks among tall grass leaves., then The floating island with the glowing blue tree hangs over purple cloud seas., then Large blue crystals and glowing flowers surround the tree roots., then Waterfalls fall from the island edge into the cloud layer..",
       "target_phrase": "shots reordered to 4, 1, 2, 3",
       "applicable_shots": [
         1,
@@ -1763,7 +1763,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_windup_toy_race scene to shot order 2, 1, 3. The edited video should play as: The duck and car race between colorful blocks under sunlight., then The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck wins by the finish flags as cartoon stars appear above it..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The duck and car race between colorful blocks under sunlight., then The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck wins by the finish flags as cartoon stars appear above it..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -1837,7 +1837,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_windup_toy_race scene to shot order 3, 1, 2. The edited video should play as: The duck wins by the finish flags as cartoon stars appear above it., then The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck and car race between colorful blocks under sunlight..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The duck wins by the finish flags as cartoon stars appear above it., then The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck and car race between colorful blocks under sunlight..",
       "target_phrase": "shots reordered to 3, 1, 2",
       "applicable_shots": [
         1,
@@ -1901,7 +1901,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the museum_texture_montage scene to shot order 2, 1. The edited video should play as: A visitor in a brown coat walks past the bronze mask inside the glass display case., then Museum visitors circle the marble sculpture under the skylight in the exhibition hall..",
+      "instruction": "Reorder the scene to shot order 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: A visitor in a brown coat walks past the bronze mask inside the glass display case., then Museum visitors circle the marble sculpture under the skylight in the exhibition hall..",
       "target_phrase": "shots reordered to 2, 1",
       "applicable_shots": [
         1,
@@ -1975,7 +1975,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the coastline_weather_montage scene to shot order 4, 3, 2, 1. The edited video should play as: The lighthouse beam sweeps across shells, wet sand, and the evening sea., then The small fishing boat sits near the horizon beyond the rocks and water., then Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse..",
+      "instruction": "Reorder the scene to shot order 4, 3, 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The lighthouse beam sweeps across shells, wet sand, and the evening sea., then The small fishing boat sits near the horizon beyond the rocks and water., then Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse..",
       "target_phrase": "shots reordered to 4, 3, 2, 1",
       "applicable_shots": [
         1,
@@ -2053,7 +2053,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the coastline_weather_montage scene to shot order 2, 1, 3, 4. The edited video should play as: Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
         1,
@@ -2131,7 +2131,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the coastline_weather_montage scene to shot order 3, 1, 2, 4. The edited video should play as: The small fishing boat sits near the horizon beyond the rocks and water., then Waves crash over black reef rocks below the white lighthouse., then Orange-brown seaweed and a tide pool reflect the lighthouse., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The small fishing boat sits near the horizon beyond the rocks and water., then Waves crash over black reef rocks below the white lighthouse., then Orange-brown seaweed and a tide pool reflect the lighthouse., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
       "target_phrase": "shots reordered to 3, 1, 2, 4",
       "applicable_shots": [
         1,
@@ -2209,7 +2209,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the coastline_weather_montage scene to shot order 4, 2, 1, 3. The edited video should play as: The lighthouse beam sweeps across shells, wet sand, and the evening sea., then Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water..",
+      "instruction": "Reorder the scene to shot order 4, 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The lighthouse beam sweeps across shells, wet sand, and the evening sea., then Orange-brown seaweed and a tide pool reflect the lighthouse., then Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water..",
       "target_phrase": "shots reordered to 4, 2, 1, 3",
       "applicable_shots": [
         1,
@@ -2290,7 +2290,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the dance_rehearsal_layers scene to shot order 2, 1, 3, 4, 5. The edited video should play as: The dancer pauses near the blue water bottle at the mirror wall., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The dancer pauses near the blue water bottle at the mirror wall., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
       "target_phrase": "shots reordered to 2, 1, 3, 4, 5",
       "applicable_shots": [
         1,
@@ -2373,7 +2373,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the dance_rehearsal_layers scene to shot order 3, 2, 1, 4, 5. The edited video should play as: A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer pauses near the blue water bottle at the mirror wall., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer pauses near the blue water bottle at the mirror wall., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
       "target_phrase": "shots reordered to 3, 2, 1, 4, 5",
       "applicable_shots": [
         1,
@@ -2456,7 +2456,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the dance_rehearsal_layers scene to shot order 4, 1, 2, 3, 5. The edited video should play as: The dancer repeats the phrase while the mirror doubles the movement., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer pauses near the blue water bottle at the mirror wall., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer finishes the rehearsal sequence in the window light..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The dancer repeats the phrase while the mirror doubles the movement., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer pauses near the blue water bottle at the mirror wall., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer finishes the rehearsal sequence in the window light..",
       "target_phrase": "shots reordered to 4, 1, 2, 3, 5",
       "applicable_shots": [
         1,
@@ -2539,7 +2539,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the dance_rehearsal_layers scene to shot order 5, 1, 2, 3, 4. The edited video should play as: The dancer finishes the rehearsal sequence in the window light., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer pauses near the blue water bottle at the mirror wall., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer repeats the phrase while the mirror doubles the movement..",
+      "instruction": "Reorder the scene to shot order 5, 1, 2, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The dancer finishes the rehearsal sequence in the window light., then The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then The dancer pauses near the blue water bottle at the mirror wall., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer repeats the phrase while the mirror doubles the movement..",
       "target_phrase": "shots reordered to 5, 1, 2, 3, 4",
       "applicable_shots": [
         1,
@@ -2619,7 +2619,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the wetland_birds_montage scene to shot order 2, 1, 3. The edited video should play as: The blue-green and orange kingfisher perches on a dead branch., then The white egret steps through shallow wetland water near reeds and the boardwalk., then Three brown ducks swim through water framed by foreground leafy plants..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The blue-green and orange kingfisher perches on a dead branch., then The white egret steps through shallow wetland water near reeds and the boardwalk., then Three brown ducks swim through water framed by foreground leafy plants..",
       "target_phrase": "shots reordered to 2, 1, 3",
       "applicable_shots": [
         1,
@@ -2695,7 +2695,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the wetland_birds_montage scene to shot order 3, 1, 2. The edited video should play as: Three brown ducks swim through water framed by foreground leafy plants., then The white egret steps through shallow wetland water near reeds and the boardwalk., then The blue-green and orange kingfisher perches on a dead branch..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Three brown ducks swim through water framed by foreground leafy plants., then The white egret steps through shallow wetland water near reeds and the boardwalk., then The blue-green and orange kingfisher perches on a dead branch..",
       "target_phrase": "shots reordered to 3, 1, 2",
       "applicable_shots": [
         1,
@@ -2763,7 +2763,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the clay_living_kitchen_tools scene to shot order 2, 1. The edited video should play as: The wooden spoon lifts the brown sugar cube into the glossy blue bowl., then The red clay teapot with googly eyes puffs white flour on the wooden table..",
+      "instruction": "Reorder the scene to shot order 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The wooden spoon lifts the brown sugar cube into the glossy blue bowl., then The red clay teapot with googly eyes puffs white flour on the wooden table..",
       "target_phrase": "shots reordered to 2, 1",
       "applicable_shots": [
         1,
@@ -2878,7 +2878,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 6, 5, 4, 3, 2, 1. The edited video should play as: The round spacecraft lifts from the glowing runway with blue exhaust flames., then A robot arm taps the boarding screen while alien travelers wait near the gate., then Multicolored alien travelers sit in colorful seats under the space windows., then The maintenance robot welds the underside of the round spacecraft., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen..",
+      "instruction": "Reorder the scene to shot order 6, 5, 4, 3, 2, 1. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The round spacecraft lifts from the glowing runway with blue exhaust flames., then A robot arm taps the boarding screen while alien travelers wait near the gate., then Multicolored alien travelers sit in colorful seats under the space windows., then The maintenance robot welds the underside of the round spacecraft., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen..",
       "target_phrase": "shots reordered to 6, 5, 4, 3, 2, 1",
       "applicable_shots": [
         1,
@@ -2961,7 +2961,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the bicycle_mechanic_chain scene to shot order 2, 1, 3, 4. The edited video should play as: Chain lube is applied to the silver chain and cassette cogs., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The torque wrench tightens the rear derailleur bolt., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Chain lube is applied to the silver chain and cassette cogs., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The torque wrench tightens the rear derailleur bolt., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
       "target_phrase": "shots reordered to 2, 1, 3, 4",
       "applicable_shots": [
         1,
@@ -3040,7 +3040,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the bicycle_mechanic_chain scene to shot order 3, 2, 1, 4. The edited video should play as: The torque wrench tightens the rear derailleur bolt., then Chain lube is applied to the silver chain and cassette cogs., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The torque wrench tightens the rear derailleur bolt., then Chain lube is applied to the silver chain and cassette cogs., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
       "target_phrase": "shots reordered to 3, 2, 1, 4",
       "applicable_shots": [
         1,
@@ -3119,7 +3119,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the bicycle_mechanic_chain scene to shot order 4, 1, 2, 3. The edited video should play as: The mechanic pedals the bike to test the chain shift while the red cyclist passes again., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then Chain lube is applied to the silver chain and cassette cogs., then The torque wrench tightens the rear derailleur bolt..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The mechanic pedals the bike to test the chain shift while the red cyclist passes again., then The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then Chain lube is applied to the silver chain and cassette cogs., then The torque wrench tightens the rear derailleur bolt..",
       "target_phrase": "shots reordered to 4, 1, 2, 3",
       "applicable_shots": [
         1,
@@ -3202,7 +3202,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the rooftop_garden_robot_helper scene to shot order 2, 1, 3, 4, 5. The edited video should play as: The robot scans the tomato leaves with its extendable arm., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The robot scans the tomato leaves with its extendable arm., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
       "target_phrase": "shots reordered to 2, 1, 3, 4, 5",
       "applicable_shots": [
         1,
@@ -3287,7 +3287,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the rooftop_garden_robot_helper scene to shot order 3, 1, 2, 4, 5. The edited video should play as: The gardener adjusts the spray while the robot backs away from the water mist., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The robot scans the tomato leaves with its extendable arm., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
+      "instruction": "Reorder the scene to shot order 3, 1, 2, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The gardener adjusts the spray while the robot backs away from the water mist., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The robot scans the tomato leaves with its extendable arm., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
       "target_phrase": "shots reordered to 3, 1, 2, 4, 5",
       "applicable_shots": [
         1,
@@ -3372,7 +3372,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the rooftop_garden_robot_helper scene to shot order 4, 2, 1, 3, 5. The edited video should play as: The robot moves along the planter grid as the gardener supports the bamboo stakes., then The robot scans the tomato leaves with its extendable arm., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
+      "instruction": "Reorder the scene to shot order 4, 2, 1, 3, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The robot moves along the planter grid as the gardener supports the bamboo stakes., then The robot scans the tomato leaves with its extendable arm., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
       "target_phrase": "shots reordered to 4, 2, 1, 3, 5",
       "applicable_shots": [
         1,
@@ -3457,7 +3457,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the rooftop_garden_robot_helper scene to shot order 5, 1, 2, 3, 4. The edited video should play as: The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The robot scans the tomato leaves with its extendable arm., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot moves along the planter grid as the gardener supports the bamboo stakes..",
+      "instruction": "Reorder the scene to shot order 5, 1, 2, 3, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky., then The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The robot scans the tomato leaves with its extendable arm., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot moves along the planter grid as the gardener supports the bamboo stakes..",
       "target_phrase": "shots reordered to 5, 1, 2, 3, 4",
       "applicable_shots": [
         1,
@@ -3578,7 +3578,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 2, 1, 3, 4, 5, 6. The edited video should play as: The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
+      "instruction": "Reorder the scene to shot order 2, 1, 3, 4, 5, 6. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
       "target_phrase": "shots reordered to 2, 1, 3, 4, 5, 6",
       "applicable_shots": [
         1,
@@ -3701,7 +3701,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 3, 2, 1, 4, 5, 6. The edited video should play as: The maintenance robot welds the underside of the round spacecraft., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
+      "instruction": "Reorder the scene to shot order 3, 2, 1, 4, 5, 6. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The maintenance robot welds the underside of the round spacecraft., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
       "target_phrase": "shots reordered to 3, 2, 1, 4, 5, 6",
       "applicable_shots": [
         1,
@@ -3824,7 +3824,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 4, 1, 2, 3, 5, 6. The edited video should play as: Multicolored alien travelers sit in colorful seats under the space windows., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
+      "instruction": "Reorder the scene to shot order 4, 1, 2, 3, 5, 6. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Multicolored alien travelers sit in colorful seats under the space windows., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then A robot arm taps the boarding screen while alien travelers wait near the gate., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
       "target_phrase": "shots reordered to 4, 1, 2, 3, 5, 6",
       "applicable_shots": [
         1,
@@ -3947,7 +3947,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 5, 1, 2, 3, 4, 6. The edited video should play as: A robot arm taps the boarding screen while alien travelers wait near the gate., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
+      "instruction": "Reorder the scene to shot order 5, 1, 2, 3, 4, 6. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: A robot arm taps the boarding screen while alien travelers wait near the gate., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then The round spacecraft lifts from the glowing runway with blue exhaust flames..",
       "target_phrase": "shots reordered to 5, 1, 2, 3, 4, 6",
       "applicable_shots": [
         1,
@@ -4070,7 +4070,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_spaceport_montage scene to shot order 6, 1, 2, 3, 4, 5. The edited video should play as: The round spacecraft lifts from the glowing runway with blue exhaust flames., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate..",
+      "instruction": "Reorder the scene to shot order 6, 1, 2, 3, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The round spacecraft lifts from the glowing runway with blue exhaust flames., then The blue alien traveler rolls the round suitcase through the spaceport under the boarding screen., then The green three-eyed alien opens a backpack at the luggage belt as star stickers fly out., then The maintenance robot welds the underside of the round spacecraft., then Multicolored alien travelers sit in colorful seats under the space windows., then A robot arm taps the boarding screen while alien travelers wait near the gate..",
       "target_phrase": "shots reordered to 6, 1, 2, 3, 4, 5",
       "applicable_shots": [
         1,
@@ -4150,7 +4150,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the miniature_toy_train_city scene to shot order 1, 3, 2. The edited video should play as: The red toy train starts from the striped block station on the wooden floor., then The train circles the plaza with lamps and stops at the second station., then The train crosses the blue arch bridge while the green wind-up robot passes behind it..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The red toy train starts from the striped block station on the wooden floor., then The train circles the plaza with lamps and stops at the second station., then The train crosses the blue arch bridge while the green wind-up robot passes behind it..",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
@@ -4221,7 +4221,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the greenhouse_sunflower_growth scene to shot order 1, 3, 2. The edited video should play as: The sunflower seedling emerges from dark moist soil with water droplets glistening., then The overhead pot view shows four green leaves and a central bud as sunlight moves across them., then The seedling is misted in its terracotta pot while a bee circles nearby..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The sunflower seedling emerges from dark moist soil with water droplets glistening., then The overhead pot view shows four green leaves and a central bud as sunlight moves across them., then The seedling is misted in its terracotta pot while a bee circles nearby..",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
@@ -4309,7 +4309,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_forest_animals_montage scene to shot order 1, 3, 2, 4. The edited video should play as: The squirrel catches an acorn near the tree hollow and basket., then The spotted fawn lowers its head to smell the white wildflower., then The gray raccoon washes red berries in the blue stream., then The forest animals gather around the flower and wave together..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The squirrel catches an acorn near the tree hollow and basket., then The spotted fawn lowers its head to smell the white wildflower., then The gray raccoon washes red berries in the blue stream., then The forest animals gather around the flower and wave together..",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
@@ -4388,7 +4388,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the street_painter_plaza scene to shot order 1, 3, 2. The edited video should play as: The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter presents the finished plaza painting against the classical building backdrop., then The painter adds watercolor detail near the fountain while pigeons move on the cobblestones..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The street painter works at the easel in the plaza with pigeons and distant pedestrians., then The painter presents the finished plaza painting against the classical building backdrop., then The painter adds watercolor detail near the fountain while pigeons move on the cobblestones..",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
@@ -4468,7 +4468,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the city_night_transit_montage scene to shot order 1, 3, 2, 4. The edited video should play as: Night commuters with umbrellas move through the wet neon transit entrance., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Pedestrians with colorful umbrellas cross the reflective night street..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Night commuters with umbrellas move through the wet neon transit entrance., then Rain falls across taxis, umbrellas, and glowing billboards in the intersection., then A yellow-jacket delivery scooter passes the bus stop as passengers move around the bus., then Pedestrians with colorful umbrellas cross the reflective night street..",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
@@ -4544,7 +4544,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the anime_koi_pond_day scene to shot order 1, 3, 2. The edited video should play as: The golden-red koi swims under lotus leaves near the stone bridge and lantern., then The koi circles under petals, lotus stems, and mossy rocks in the overhead view., then The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The golden-red koi swims under lotus leaves near the stone bridge and lantern., then The koi circles under petals, lotus stems, and mossy rocks in the overhead view., then The blue dragonfly hovers by the bamboo water spout as ripples spread across the pond..",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
@@ -4617,7 +4617,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the floating_island_blossom_montage scene to shot order 1, 3, 2, 4. The edited video should play as: The floating island with the glowing blue tree hangs over purple cloud seas., then Waterfalls fall from the island edge into the cloud layer., then Large blue crystals and glowing flowers surround the tree roots., then The hollow glowing tree releases white sparks among tall grass leaves..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The floating island with the glowing blue tree hangs over purple cloud seas., then Waterfalls fall from the island edge into the cloud layer., then Large blue crystals and glowing flowers surround the tree roots., then The hollow glowing tree releases white sparks among tall grass leaves..",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
@@ -4693,7 +4693,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the cartoon_windup_toy_race scene to shot order 1, 3, 2. The edited video should play as: The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck wins by the finish flags as cartoon stars appear above it., then The duck and car race between colorful blocks under sunlight..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The yellow wind-up duck and blue tin car line up on the toy racetrack., then The duck wins by the finish flags as cartoon stars appear above it., then The duck and car race between colorful blocks under sunlight..",
       "target_phrase": "shots reordered to 1, 3, 2",
       "applicable_shots": [
         1,
@@ -4769,7 +4769,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the coastline_weather_montage scene to shot order 1, 3, 2, 4. The edited video should play as: Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water., then Orange-brown seaweed and a tide pool reflect the lighthouse., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: Waves crash over black reef rocks below the white lighthouse., then The small fishing boat sits near the horizon beyond the rocks and water., then Orange-brown seaweed and a tide pool reflect the lighthouse., then The lighthouse beam sweeps across shells, wet sand, and the evening sea..",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
@@ -4850,7 +4850,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the dance_rehearsal_layers scene to shot order 1, 3, 2, 4, 5. The edited video should play as: The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer pauses near the blue water bottle at the mirror wall., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The dancer rehearses in the mirrored studio with the barre, windows, and reflected dancers., then A close-up shows the pink ballet shoes working on the marked wooden floor., then The dancer pauses near the blue water bottle at the mirror wall., then The dancer repeats the phrase while the mirror doubles the movement., then The dancer finishes the rehearsal sequence in the window light..",
       "target_phrase": "shots reordered to 1, 3, 2, 4, 5",
       "applicable_shots": [
         1,
@@ -4931,7 +4931,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the bicycle_mechanic_chain scene to shot order 1, 3, 2, 4. The edited video should play as: The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The torque wrench tightens the rear derailleur bolt., then Chain lube is applied to the silver chain and cassette cogs., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The bicycle mechanic checks the black road bike on the blue repair stand as the cyclist passes outside., then The torque wrench tightens the rear derailleur bolt., then Chain lube is applied to the silver chain and cassette cogs., then The mechanic pedals the bike to test the chain shift while the red cyclist passes again..",
       "target_phrase": "shots reordered to 1, 3, 2, 4",
       "applicable_shots": [
         1,
@@ -5014,7 +5014,7 @@
     ],
     "edit": {
       "task_id": "T5",
-      "instruction": "Reorder the rooftop_garden_robot_helper scene to shot order 1, 3, 2, 4, 5. The edited video should play as: The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot scans the tomato leaves with its extendable arm., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
+      "instruction": "Reorder the scene to shot order 1, 3, 2, 4, 5. Keep the content of each shot unchanged; only change the order of the shots. The edited video should play as: The gardener and small white gardening robot work among rooftop tomato planters while the drone passes., then The gardener adjusts the spray while the robot backs away from the water mist., then The robot scans the tomato leaves with its extendable arm., then The robot moves along the planter grid as the gardener supports the bamboo stakes., then The gardener places harvested tomatoes into the wicker basket as the drone crosses the sky..",
       "target_phrase": "shots reordered to 1, 3, 2, 4, 5",
       "applicable_shots": [
         1,
