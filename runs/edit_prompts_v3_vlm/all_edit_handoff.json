@@ -35775,8 +35775,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the wooden-floor toy city background with miniature tabletop desert town with painted cardboard mesas, while preserving red toy train, green wind-up robot, blue arch bridge, train tracks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "miniature tabletop desert town with painted cardboard mesas background",
+      "instruction": "Replace the wooden-floor toy city background with snowy toy mountain village, while preserving red toy train, green wind-up robot, blue arch bridge, train tracks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy toy mountain village background",
       "applicable_shots": [
         1,
         2,
@@ -35785,7 +35785,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "wooden-floor toy city background",
-        "new_background": "miniature tabletop desert town with painted cardboard mesas",
+        "new_background": "snowy toy mountain village",
         "preserve_queries": [
           "red toy train",
           "green wind-up robot",
@@ -37525,8 +37525,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the handmade cardboard workshop background with miniature moon-base craft table, while preserving clay astronaut, cardboard rocket, blue wrench, red button, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "miniature moon-base craft table background",
+      "instruction": "Replace the handmade cardboard workshop background with lunar crater base with silver domes, while preserving clay astronaut, cardboard rocket, blue wrench, red button, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "lunar crater base with silver domes background",
       "applicable_shots": [
         1,
         2,
@@ -37537,7 +37537,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "handmade cardboard workshop background",
-        "new_background": "miniature moon-base craft table",
+        "new_background": "lunar crater base with silver domes",
         "preserve_queries": [
           "clay astronaut",
           "cardboard rocket",
@@ -37897,8 +37897,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the stainless restaurant kitchen background with dark fine-dining pass with black tile walls, while preserving chef in white uniform, white plate, cream domes, raspberry sauce, service bell, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "dark fine-dining pass with black tile walls background",
+      "instruction": "Replace the stainless restaurant kitchen background with sunlit beachside dessert stand with blue ocean behind, while preserving chef in white uniform, white plate, cream domes, raspberry sauce, service bell, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit beachside dessert stand with blue ocean behind background",
       "applicable_shots": [
         1,
         2,
@@ -37908,7 +37908,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "stainless restaurant kitchen background",
-        "new_background": "dark fine-dining pass with black tile walls",
+        "new_background": "sunlit beachside dessert stand with blue ocean behind",
         "preserve_queries": [
           "chef in white uniform",
           "white plate",
@@ -38468,8 +38468,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the floating island cloud-sea background with sunset ocean of floating lantern clouds, while preserving glowing blue tree, blue crystals, waterfalls, glowing flowers, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "sunset ocean of floating lantern clouds background",
+      "instruction": "Replace the floating island cloud-sea background with snowy mountain valley at sunset, while preserving glowing blue tree, blue crystals, waterfalls, glowing flowers, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy mountain valley at sunset background",
       "applicable_shots": [
         1,
         2,
@@ -38479,7 +38479,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "floating island cloud-sea background",
-        "new_background": "sunset ocean of floating lantern clouds",
+        "new_background": "snowy mountain valley at sunset",
         "preserve_queries": [
           "glowing blue tree",
           "blue crystals",
@@ -38658,8 +38658,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the bridal fitting room background with minimal modern white bridal studio, while preserving bride, seamstress, ivory lace wedding dress, three-panel mirror, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "minimal modern white bridal studio background",
+      "instruction": "Replace the bridal fitting room background with sunlit garden wedding tent with flowers, while preserving bride, seamstress, ivory lace wedding dress, three-panel mirror, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit garden wedding tent with flowers background",
       "applicable_shots": [
         1,
         2,
@@ -38669,7 +38669,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "bridal fitting room background",
-        "new_background": "minimal modern white bridal studio",
+        "new_background": "sunlit garden wedding tent with flowers",
         "preserve_queries": [
           "bride",
           "seamstress",
@@ -39182,8 +39182,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the museum exhibition hall background with minimal white cube contemporary gallery, while preserving marble sculpture, museum visitors, bronze mask, glass display case, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "minimal white cube contemporary gallery background",
+      "instruction": "Replace the museum exhibition hall background with dark industrial art warehouse, while preserving marble sculpture, museum visitors, bronze mask, glass display case, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "dark industrial art warehouse background",
       "applicable_shots": [
         1,
         2
@@ -39191,7 +39191,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "museum exhibition hall background",
-        "new_background": "minimal white cube contemporary gallery",
+        "new_background": "dark industrial art warehouse",
         "preserve_queries": [
           "marble sculpture",
           "museum visitors",
@@ -39482,8 +39482,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the Mars desert background with icy Europa plain with Jupiter on the horizon, while preserving six-wheeled rover, mechanical arm, target rock, sample tube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "icy Europa plain with Jupiter on the horizon background",
+      "instruction": "Replace the Mars desert background with frozen alien plain with a giant ringed planet on the horizon, while preserving six-wheeled rover, mechanical arm, target rock, sample tube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "frozen alien plain with a giant ringed planet on the horizon background",
       "applicable_shots": [
         1,
         2,
@@ -39495,7 +39495,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "Mars desert background",
-        "new_background": "icy Europa plain with Jupiter on the horizon",
+        "new_background": "frozen alien plain with a giant ringed planet on the horizon",
         "preserve_queries": [
           "six-wheeled rover",
           "mechanical arm",
@@ -39984,8 +39984,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the cozy ramen shop background with modern stainless ramen counter, while preserving ramen apprentice, older ramen master, ramen bowl, noodle pot, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "modern stainless ramen counter background",
+      "instruction": "Replace the cozy ramen shop background with busy train station noodle stall, while preserving ramen apprentice, older ramen master, ramen bowl, noodle pot, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "busy train station noodle stall background",
       "applicable_shots": [
         1,
         2,
@@ -39995,7 +39995,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "cozy ramen shop background",
-        "new_background": "modern stainless ramen counter",
+        "new_background": "busy train station noodle stall",
         "preserve_queries": [
           "ramen apprentice",
           "older ramen master",
@@ -40253,8 +40253,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the clay kitchen tabletop background with miniature bakery workbench, while preserving red clay teapot, wooden spoon, blue bowl, flour, sugar cube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "miniature bakery workbench background",
+      "instruction": "Replace the clay kitchen tabletop background with colorful toy bakery storefront, while preserving red clay teapot, wooden spoon, blue bowl, flour, sugar cube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "colorful toy bakery storefront background",
       "applicable_shots": [
         1,
         2
@@ -40262,7 +40262,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "clay kitchen tabletop background",
-        "new_background": "miniature bakery workbench",
+        "new_background": "colorful toy bakery storefront",
         "preserve_queries": [
           "red clay teapot",
           "wooden spoon",
@@ -40618,8 +40618,8 @@
     ],
     "edit": {
       "task_id": "T8",
-      "instruction": "Replace the rooftop garden background with greenhouse balcony above the city, while preserving gardener, gardening robot, tomato plants, harvest basket, and the original foreground scale, actions, camera framing, and shot order across every shot.",
-      "target_phrase": "greenhouse balcony above the city background",
+      "instruction": "Replace the rooftop garden background with snowy mountain glass greenhouse with pine forest outside, while preserving gardener, gardening robot, tomato plants, harvest basket, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy mountain glass greenhouse with pine forest outside background",
       "applicable_shots": [
         1,
         2,
@@ -40630,7 +40630,7 @@
       "extra": {
         "render_axis": "background",
         "old_background": "rooftop garden background",
-        "new_background": "greenhouse balcony above the city",
+        "new_background": "snowy mountain glass greenhouse with pine forest outside",
         "preserve_queries": [
           "gardener",
           "gardening robot",
