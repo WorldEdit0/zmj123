@@ -56,8 +56,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain black apron to black apron with thin vertical pinstripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "black apron with thin vertical pinstripes",
+      "instruction": "Change plain black apron to black apron with large white polka dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black apron with large white polka dots",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -73,14 +73,14 @@
           "plain black apron"
         ],
         "edited_queries": [
-          "black apron with thin vertical pinstripes"
+          "black apron with large white polka dots"
         ],
         "combine": "union"
       },
       "extra": {
         "attribute_category": "pattern",
         "old_value": "plain black apron",
-        "new_value": "black apron with thin vertical pinstripes"
+        "new_value": "black apron with large white polka dots"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -225,8 +225,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change short black-and-white Border Collie fur to slightly shaggy black-and-white Border Collie fur in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "slightly shaggy black-and-white Border Collie fur",
+      "instruction": "Change black-and-white Border Collie fur to solid white Border Collie fur in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "solid white Border Collie fur",
       "target_entity": "A1",
       "applicable_shots": [
         1,
@@ -239,17 +239,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "short black-and-white Border Collie fur"
+          "black-and-white Border Collie fur"
         ],
         "edited_queries": [
-          "slightly shaggy black-and-white Border Collie fur"
+          "solid white Border Collie fur"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "fur_length",
-        "old_value": "short black-and-white Border Collie fur",
-        "new_value": "slightly shaggy black-and-white Border Collie fur"
+        "attribute_category": "coat_color",
+        "old_value": "black-and-white Border Collie fur",
+        "new_value": "solid white Border Collie fur"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -310,8 +310,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change solid blue jump bar to blue jump bar with white spiral tape markings in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "blue jump bar with white spiral tape markings",
+      "instruction": "Change solid blue jump bar to bright red jump bar in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright red jump bar",
       "target_entity": "O1",
       "applicable_shots": [
         1,
@@ -326,14 +326,14 @@
           "solid blue jump bar"
         ],
         "edited_queries": [
-          "blue jump bar with white spiral tape markings"
+          "bright red jump bar"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "pattern",
+        "attribute_category": "color",
         "old_value": "solid blue jump bar",
-        "new_value": "blue jump bar with white spiral tape markings"
+        "new_value": "bright red jump bar"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -385,8 +385,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change glossy red toy train body to matte red toy train body in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "matte red toy train body",
+      "instruction": "Change glossy red toy train body to red toy train body covered with large yellow star stickers in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red toy train body covered with large yellow star stickers",
       "target_entity": "T1",
       "applicable_shots": [
         1,
@@ -401,14 +401,14 @@
           "glossy red toy train body"
         ],
         "edited_queries": [
-          "matte red toy train body"
+          "red toy train body covered with large yellow star stickers"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "surface_finish",
+        "attribute_category": "large_sticker_pattern",
         "old_value": "glossy red toy train body",
-        "new_value": "matte red toy train body"
+        "new_value": "red toy train body covered with large yellow star stickers"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -695,10 +695,11 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth vibrant green sunflower leaves to veiny textured green sunflower leaves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "veiny textured green sunflower leaves",
-      "target_entity": "P1",
+      "instruction": "Change dark wet soil inside the flower pot to white soil inside the flower pot in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white soil inside the flower pot",
+      "target_entity": "O5",
       "applicable_shots": [
+        1,
         2,
         3
       ],
@@ -707,17 +708,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "smooth vibrant green sunflower leaves"
+          "dark wet soil inside the flower pot"
         ],
         "edited_queries": [
-          "veiny textured green sunflower leaves"
+          "white soil inside the flower pot"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "leaf_texture",
-        "old_value": "smooth vibrant green sunflower leaves",
-        "new_value": "veiny textured green sunflower leaves"
+        "attribute_category": "soil_color",
+        "old_value": "dark wet soil inside the flower pot",
+        "new_value": "white soil inside the flower pot"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -766,8 +767,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change matte terracotta flower pot to glossy terracotta flower pot in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "glossy terracotta flower pot",
+      "instruction": "Change plain matte terracotta flower pot to terracotta flower pot with a wide white painted band around the middle in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "terracotta flower pot with a wide white painted band around the middle",
       "target_entity": "O1",
       "applicable_shots": [
         2,
@@ -778,17 +779,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "matte terracotta flower pot"
+          "plain matte terracotta flower pot"
         ],
         "edited_queries": [
-          "glossy terracotta flower pot"
+          "terracotta flower pot with a wide white painted band around the middle"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "surface_finish",
-        "old_value": "matte terracotta flower pot",
-        "new_value": "glossy terracotta flower pot"
+        "attribute_category": "painted_band",
+        "old_value": "plain matte terracotta flower pot",
+        "new_value": "terracotta flower pot with a wide white painted band around the middle"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -944,8 +945,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth blue stretcher mattress to quilted blue stretcher mattress in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "quilted blue stretcher mattress",
+      "instruction": "Change smooth blue stretcher mattress to bright orange stretcher mattress in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright orange stretcher mattress",
       "target_entity": "O2",
       "applicable_shots": [
         1,
@@ -961,14 +962,14 @@
           "smooth blue stretcher mattress"
         ],
         "edited_queries": [
-          "quilted blue stretcher mattress"
+          "bright orange stretcher mattress"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "texture",
+        "attribute_category": "color",
         "old_value": "smooth blue stretcher mattress",
-        "new_value": "quilted blue stretcher mattress"
+        "new_value": "bright orange stretcher mattress"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1034,8 +1035,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain blue scarf on the squirrel to blue scarf with tiny white dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "blue scarf with tiny white dots",
+      "instruction": "Change plain blue scarf on the squirrel to red-and-white striped scarf on the squirrel in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red-and-white striped scarf on the squirrel",
       "target_entity": "A1",
       "applicable_shots": [
         1,
@@ -1049,14 +1050,14 @@
           "plain blue scarf on the squirrel"
         ],
         "edited_queries": [
-          "blue scarf with tiny white dots"
+          "red-and-white striped scarf on the squirrel"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "pattern",
+        "attribute_category": "stripe_pattern",
         "old_value": "plain blue scarf on the squirrel",
-        "new_value": "blue scarf with tiny white dots"
+        "new_value": "red-and-white striped scarf on the squirrel"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1205,8 +1206,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change flat yellow safety vest to mesh-textured yellow safety vest in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "mesh-textured yellow safety vest",
+      "instruction": "Change flat yellow safety vest to yellow safety vest with two wide silver reflective bands in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "yellow safety vest with two wide silver reflective bands",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1221,14 +1222,14 @@
           "flat yellow safety vest"
         ],
         "edited_queries": [
-          "mesh-textured yellow safety vest"
+          "yellow safety vest with two wide silver reflective bands"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "material_texture",
+        "attribute_category": "reflective_bands",
         "old_value": "flat yellow safety vest",
-        "new_value": "mesh-textured yellow safety vest"
+        "new_value": "yellow safety vest with two wide silver reflective bands"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1557,8 +1558,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth blue-green painter jacket to corduroy blue-green painter jacket in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "corduroy blue-green painter jacket",
+      "instruction": "Change smooth blue-green painter jacket to blue-green denim painter jacket in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue-green denim painter jacket",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -1573,14 +1574,14 @@
           "smooth blue-green painter jacket"
         ],
         "edited_queries": [
-          "corduroy blue-green painter jacket"
+          "blue-green denim painter jacket"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "material_texture",
+        "attribute_category": "material",
         "old_value": "smooth blue-green painter jacket",
-        "new_value": "corduroy blue-green painter jacket"
+        "new_value": "blue-green denim painter jacket"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1711,8 +1712,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change short orange-and-white cat fur to long fluffy orange-and-white cat fur in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "long fluffy orange-and-white cat fur",
+      "instruction": "Change orange-and-white bakery cat fur to calico bakery cat fur with orange, black, and white patches in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "calico bakery cat fur with orange, black, and white patches",
       "target_entity": "A1",
       "applicable_shots": [
         1,
@@ -1725,17 +1726,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "short orange-and-white cat fur"
+          "orange-and-white bakery cat fur"
         ],
         "edited_queries": [
-          "long fluffy orange-and-white cat fur"
+          "calico bakery cat fur with orange, black, and white patches"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "fur_length",
-        "old_value": "short orange-and-white cat fur",
-        "new_value": "long fluffy orange-and-white cat fur"
+        "attribute_category": "coat_color",
+        "old_value": "orange-and-white bakery cat fur",
+        "new_value": "calico bakery cat fur with orange, black, and white patches"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1868,8 +1869,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth white clay astronaut suit to ribbed white clay astronaut suit in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "ribbed white clay astronaut suit",
+      "instruction": "Change smooth white clay astronaut suit to white clay astronaut suit with a large red circular chest badge in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white clay astronaut suit with a large red circular chest badge",
       "target_entity": "T1",
       "applicable_shots": [
         1,
@@ -1886,14 +1887,14 @@
           "smooth white clay astronaut suit"
         ],
         "edited_queries": [
-          "ribbed white clay astronaut suit"
+          "white clay astronaut suit with a large red circular chest badge"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "surface_texture",
+        "attribute_category": "large_badge",
         "old_value": "smooth white clay astronaut suit",
-        "new_value": "ribbed white clay astronaut suit"
+        "new_value": "white clay astronaut suit with a large red circular chest badge"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -1951,8 +1952,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change soft round cotton-like smoke to thin spiral cotton-like smoke in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "thin spiral cotton-like smoke",
+      "instruction": "Change soft round cotton-like smoke to large dense puffy white smoke in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "large dense puffy white smoke",
       "target_entity": "O6",
       "applicable_shots": [
         4,
@@ -1966,14 +1967,14 @@
           "soft round cotton-like smoke"
         ],
         "edited_queries": [
-          "thin spiral cotton-like smoke"
+          "large dense puffy white smoke"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "effect_shape",
+        "attribute_category": "size_and_density",
         "old_value": "soft round cotton-like smoke",
-        "new_value": "thin spiral cotton-like smoke"
+        "new_value": "large dense puffy white smoke"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -2110,8 +2111,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain dark commuter umbrellas to dark commuter umbrellas with silver rims in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "dark commuter umbrellas with silver rims",
+      "instruction": "Change plain dark commuter umbrellas to transparent plastic commuter umbrellas in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "transparent plastic commuter umbrellas",
       "target_entity": "G1",
       "applicable_shots": [
         1,
@@ -2125,14 +2126,14 @@
           "plain dark commuter umbrellas"
         ],
         "edited_queries": [
-          "dark commuter umbrellas with silver rims"
+          "transparent plastic commuter umbrellas"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "trim_pattern",
+        "attribute_category": "material_transparency",
         "old_value": "plain dark commuter umbrellas",
-        "new_value": "dark commuter umbrellas with silver rims"
+        "new_value": "transparent plastic commuter umbrellas"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -2184,8 +2185,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth white chef uniform to white chef uniform with double-breasted black buttons in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "white chef uniform with double-breasted black buttons",
+      "instruction": "Change white chef uniform to black chef uniform in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black chef uniform",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -2198,17 +2199,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "smooth white chef uniform"
+          "white chef uniform"
         ],
         "edited_queries": [
-          "white chef uniform with double-breasted black buttons"
+          "black chef uniform"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_detail",
-        "old_value": "smooth white chef uniform",
-        "new_value": "white chef uniform with double-breasted black buttons"
+        "attribute_category": "clothing_color",
+        "old_value": "white chef uniform",
+        "new_value": "black chef uniform"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -2409,8 +2410,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change rounded pink cherry blossom petals to pointed pink cherry blossom petals in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "pointed pink cherry blossom petals",
+      "instruction": "Change small rounded pink cherry blossom petals to large broad pink cherry blossom petals in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "large broad pink cherry blossom petals",
       "target_entity": "O2",
       "applicable_shots": [
         1,
@@ -2422,17 +2423,17 @@
         "edit_scope": "local",
         "edit_type": "attribute_edit",
         "source_queries": [
-          "rounded pink cherry blossom petals"
+          "small rounded pink cherry blossom petals"
         ],
         "edited_queries": [
-          "pointed pink cherry blossom petals"
+          "large broad pink cherry blossom petals"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "shape",
-        "old_value": "rounded pink cherry blossom petals",
-        "new_value": "pointed pink cherry blossom petals"
+        "attribute_category": "petal_size_and_shape",
+        "old_value": "small rounded pink cherry blossom petals",
+        "new_value": "large broad pink cherry blossom petals"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -2597,8 +2598,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change whitewall tire stripe to cream-colored tire stripe in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "cream-colored tire stripe",
+      "instruction": "Change whitewall tire stripe to bright orange tire stripe in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright orange tire stripe",
       "target_entity": "O14",
       "applicable_shots": [
         4
@@ -2611,14 +2612,14 @@
           "whitewall tire stripe"
         ],
         "edited_queries": [
-          "cream-colored tire stripe"
+          "bright orange tire stripe"
         ],
         "combine": "union"
       },
       "extra": {
         "attribute_category": "color",
         "old_value": "whitewall tire stripe",
-        "new_value": "cream-colored tire stripe"
+        "new_value": "bright orange tire stripe"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -2824,8 +2825,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain blue seamstress shirt to blue seamstress shirt with small pearl buttons in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "blue seamstress shirt with small pearl buttons",
+      "instruction": "Change plain blue seamstress shirt to blue seamstress shirt with a white tailor apron over it in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue seamstress shirt with a white tailor apron over it",
       "target_entity": "C2",
       "applicable_shots": [
         1,
@@ -2841,14 +2842,14 @@
           "plain blue seamstress shirt"
         ],
         "edited_queries": [
-          "blue seamstress shirt with small pearl buttons"
+          "blue seamstress shirt with a white tailor apron over it"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_detail",
+        "attribute_category": "clothing_layer",
         "old_value": "plain blue seamstress shirt",
-        "new_value": "blue seamstress shirt with small pearl buttons"
+        "new_value": "blue seamstress shirt with a white tailor apron over it"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -3057,8 +3058,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change glossy blue tin toy car to scratched blue tin toy car in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "scratched blue tin toy car",
+      "instruction": "Change glossy blue tin toy car to blue tin toy car with a large white racing number on the side in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue tin toy car with a large white racing number on the side",
       "target_entity": "T2",
       "applicable_shots": [
         1,
@@ -3073,14 +3074,14 @@
           "glossy blue tin toy car"
         ],
         "edited_queries": [
-          "scratched blue tin toy car"
+          "blue tin toy car with a large white racing number on the side"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "surface_wear",
+        "attribute_category": "large_number_decal",
         "old_value": "glossy blue tin toy car",
-        "new_value": "scratched blue tin toy car"
+        "new_value": "blue tin toy car with a large white racing number on the side"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -3222,8 +3223,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain dark blue rider jacket to dark blue rider jacket with gold piping in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "dark blue rider jacket with gold piping",
+      "instruction": "Change plain dark blue rider jacket to dark blue rider jacket with wide white shoulder straps in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "dark blue rider jacket with wide white shoulder straps",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -3239,14 +3240,14 @@
           "plain dark blue rider jacket"
         ],
         "edited_queries": [
-          "dark blue rider jacket with gold piping"
+          "dark blue rider jacket with wide white shoulder straps"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "trim_pattern",
+        "attribute_category": "shoulder_straps",
         "old_value": "plain dark blue rider jacket",
-        "new_value": "dark blue rider jacket with gold piping"
+        "new_value": "dark blue rider jacket with wide white shoulder straps"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -3503,8 +3504,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change flat orange-brown seaweed to wet glossy orange-brown seaweed in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "wet glossy orange-brown seaweed",
+      "instruction": "Change flat orange-brown seaweed to thick long tangled orange-brown seaweed in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "thick long tangled orange-brown seaweed",
       "target_entity": "O5",
       "applicable_shots": [
         2,
@@ -3518,14 +3519,14 @@
           "flat orange-brown seaweed"
         ],
         "edited_queries": [
-          "wet glossy orange-brown seaweed"
+          "thick long tangled orange-brown seaweed"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "texture",
+        "attribute_category": "size_and_shape",
         "old_value": "flat orange-brown seaweed",
-        "new_value": "wet glossy orange-brown seaweed"
+        "new_value": "thick long tangled orange-brown seaweed"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -3864,8 +3865,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change pale pink ballet shoes to pale pink ballet shoes with crossed ankle ribbons in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "pale pink ballet shoes with crossed ankle ribbons",
+      "instruction": "Change pale pink ballet shoes to pale pink ballet shoes with long ribbons wrapped around the lower legs in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "pale pink ballet shoes with long ribbons wrapped around the lower legs",
       "target_entity": "O4",
       "applicable_shots": [
         3
@@ -3878,14 +3879,14 @@
           "pale pink ballet shoes"
         ],
         "edited_queries": [
-          "pale pink ballet shoes with crossed ankle ribbons"
+          "pale pink ballet shoes with long ribbons wrapped around the lower legs"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "accessory_detail",
+        "attribute_category": "long_ribbons",
         "old_value": "pale pink ballet shoes",
-        "new_value": "pale pink ballet shoes with crossed ankle ribbons"
+        "new_value": "pale pink ballet shoes with long ribbons wrapped around the lower legs"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4104,8 +4105,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change blue-green and orange kingfisher plumage to blue-green and orange kingfisher plumage with white cheek spots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "blue-green and orange kingfisher plumage with white cheek spots",
+      "instruction": "Change blue-green and orange kingfisher plumage to kingfisher with a prominent white head crest in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "kingfisher with a prominent white head crest",
       "target_entity": "A2",
       "applicable_shots": [
         2
@@ -4118,14 +4119,14 @@
           "blue-green and orange kingfisher plumage"
         ],
         "edited_queries": [
-          "blue-green and orange kingfisher plumage with white cheek spots"
+          "kingfisher with a prominent white head crest"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "plumage_pattern",
+        "attribute_category": "head_crest",
         "old_value": "blue-green and orange kingfisher plumage",
-        "new_value": "blue-green and orange kingfisher plumage with white cheek spots"
+        "new_value": "kingfisher with a prominent white head crest"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4179,8 +4180,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth green foreground leafy plants to jagged-edged green foreground leafy plants in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "jagged-edged green foreground leafy plants",
+      "instruction": "Change smooth green foreground leafy plants to taller wider green foreground reed leaves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "taller wider green foreground reed leaves",
       "target_entity": "O5",
       "applicable_shots": [
         3
@@ -4193,14 +4194,14 @@
           "smooth green foreground leafy plants"
         ],
         "edited_queries": [
-          "jagged-edged green foreground leafy plants"
+          "taller wider green foreground reed leaves"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "leaf_shape",
+        "attribute_category": "plant_size_and_shape",
         "old_value": "smooth green foreground leafy plants",
-        "new_value": "jagged-edged green foreground leafy plants"
+        "new_value": "taller wider green foreground reed leaves"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4313,8 +4314,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change glossy blue ceramic bowl to matte blue ceramic bowl in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "matte blue ceramic bowl",
+      "instruction": "Change glossy blue ceramic bowl to blue ceramic bowl with large white polka dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue ceramic bowl with large white polka dots",
       "target_entity": "O5",
       "applicable_shots": [
         2
@@ -4327,14 +4328,14 @@
           "glossy blue ceramic bowl"
         ],
         "edited_queries": [
-          "matte blue ceramic bowl"
+          "blue ceramic bowl with large white polka dots"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "surface_finish",
+        "attribute_category": "pattern",
         "old_value": "glossy blue ceramic bowl",
-        "new_value": "matte blue ceramic bowl"
+        "new_value": "blue ceramic bowl with large white polka dots"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4389,8 +4390,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain gray mechanic jacket to gray mechanic jacket with stitched elbow patches in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "gray mechanic jacket with stitched elbow patches",
+      "instruction": "Change plain gray mechanic jacket to gray mechanic jacket with black tool suspenders in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "gray mechanic jacket with black tool suspenders",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4406,14 +4407,14 @@
           "plain gray mechanic jacket"
         ],
         "edited_queries": [
-          "gray mechanic jacket with stitched elbow patches"
+          "gray mechanic jacket with black tool suspenders"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_detail",
+        "attribute_category": "clothing_accessory",
         "old_value": "plain gray mechanic jacket",
-        "new_value": "gray mechanic jacket with stitched elbow patches"
+        "new_value": "gray mechanic jacket with black tool suspenders"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4551,8 +4552,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change plain light blue gardener shirt to light blue gardener shirt with rolled sleeves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "light blue gardener shirt with rolled sleeves",
+      "instruction": "Change plain light blue gardener shirt to light blue gardener shirt with a green gardening apron over it in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "light blue gardener shirt with a green gardening apron over it",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4568,14 +4569,14 @@
           "plain light blue gardener shirt"
         ],
         "edited_queries": [
-          "light blue gardener shirt with rolled sleeves"
+          "light blue gardener shirt with a green gardening apron over it"
         ],
         "combine": "union"
       },
       "extra": {
-        "attribute_category": "clothing_detail",
+        "attribute_category": "clothing_layer",
         "old_value": "plain light blue gardener shirt",
-        "new_value": "light blue gardener shirt with rolled sleeves"
+        "new_value": "light blue gardener shirt with a green gardening apron over it"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
@@ -4754,8 +4755,8 @@
     ],
     "edit": {
       "task_id": "T2",
-      "instruction": "Change smooth blue alien traveler skin to blue alien traveler skin with small lavender freckles in the applicable shots, while preserving the same object identity, motion, and scene layout.",
-      "target_phrase": "blue alien traveler skin with small lavender freckles",
+      "instruction": "Change smooth blue alien traveler skin to blue alien traveler skin with bold purple stripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue alien traveler skin with bold purple stripes",
       "target_entity": "C1",
       "applicable_shots": [
         1,
@@ -4769,14 +4770,14 @@
           "smooth blue alien traveler skin"
         ],
         "edited_queries": [
-          "blue alien traveler skin with small lavender freckles"
+          "blue alien traveler skin with bold purple stripes"
         ],
         "combine": "union"
       },
       "extra": {
         "attribute_category": "skin_pattern",
         "old_value": "smooth blue alien traveler skin",
-        "new_value": "blue alien traveler skin with small lavender freckles"
+        "new_value": "blue alien traveler skin with bold purple stripes"
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
