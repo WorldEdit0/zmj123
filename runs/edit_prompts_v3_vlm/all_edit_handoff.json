@@ -31232,8 +31232,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with midnight blue moonlight mixed with candle glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "midnight blue moonlight mixed with candle glow look",
+      "instruction": "Re-light the scene with deep blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -31241,7 +31241,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "midnight blue moonlight mixed with candle glow"
+        "lighting": "deep blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -31383,8 +31383,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool blue screen light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool blue screen light look",
+      "instruction": "Re-light the scene with cool blue light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool blue light look",
       "applicable_shots": [
         1,
         2,
@@ -31394,7 +31394,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool blue screen light"
+        "lighting": "cool blue light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -31469,8 +31469,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with steady red warning light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "steady red warning light look",
+      "instruction": "Re-light the scene with steady red light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "steady red light look",
       "applicable_shots": [
         1,
         2,
@@ -31480,7 +31480,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "steady red warning light"
+        "lighting": "steady red light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -32201,8 +32201,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with focused white task light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "focused white task light look",
+      "instruction": "Re-light the scene with narrow white spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "narrow white spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -32211,7 +32211,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "focused white task light"
+        "lighting": "narrow white spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -32507,8 +32507,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with red paper-lantern glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "red paper-lantern glow look",
+      "instruction": "Re-light the scene with soft red light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "soft red light look",
       "applicable_shots": [
         1,
         2,
@@ -32517,7 +32517,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "red paper-lantern glow"
+        "lighting": "soft red light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -32955,8 +32955,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with small pool of warm light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "small pool of warm light look",
+      "instruction": "Re-light the scene with small warm yellow spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "small warm yellow spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -32966,7 +32966,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "small pool of warm light"
+        "lighting": "small warm yellow spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33045,8 +33045,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool white directional light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool white directional light look",
+      "instruction": "Re-light the scene with cool white side light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool white side light look",
       "applicable_shots": [
         1,
         2,
@@ -33056,7 +33056,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool white directional light"
+        "lighting": "cool white side light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33116,8 +33116,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with orange heat-lamp glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "orange heat-lamp glow look",
+      "instruction": "Re-light the scene with warm orange light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm orange light look",
       "applicable_shots": [
         1,
         2,
@@ -33126,7 +33126,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "orange heat-lamp glow"
+        "lighting": "warm orange light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33186,8 +33186,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with blue neon strip light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "blue neon strip light look",
+      "instruction": "Re-light the scene with blue neon light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue neon light look",
       "applicable_shots": [
         1,
         2,
@@ -33196,7 +33196,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "blue neon strip light"
+        "lighting": "blue neon light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33263,8 +33263,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with full moonlight across the floor; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "full moonlight across the floor look",
+      "instruction": "Re-light the scene with full moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "full moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -33273,7 +33273,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "full moonlight across the floor"
+        "lighting": "full moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33340,8 +33340,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with purple blacklight glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "purple blacklight glow look",
+      "instruction": "Re-light the scene with soft purple light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "soft purple light look",
       "applicable_shots": [
         1,
         2,
@@ -33350,7 +33350,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "purple blacklight glow"
+        "lighting": "soft purple light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33411,8 +33411,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with bright circular ring light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "bright circular ring light look",
+      "instruction": "Re-light the scene with bright white front light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "bright white front light look",
       "applicable_shots": [
         1,
         2,
@@ -33420,7 +33420,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright circular ring light"
+        "lighting": "bright white front light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33481,8 +33481,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with pink neon sign glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "pink neon sign glow look",
+      "instruction": "Re-light the scene with pink neon light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "pink neon light look",
       "applicable_shots": [
         1,
         2,
@@ -33490,7 +33490,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "pink neon sign glow"
+        "lighting": "pink neon light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33756,15 +33756,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with deep orange sunset reflected light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "deep orange sunset reflected light look",
+      "instruction": "Re-light the scene with deep orange sunset light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep orange sunset light look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "deep orange sunset reflected light"
+        "lighting": "deep orange sunset light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33827,8 +33827,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with red heat-lamp glow; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "red heat-lamp glow look",
+      "instruction": "Re-light the scene with deep red light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "deep red light look",
       "applicable_shots": [
         1,
         2,
@@ -33837,7 +33837,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "red heat-lamp glow"
+        "lighting": "deep red light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33900,8 +33900,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with green surgical overhead light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "green surgical overhead light look",
+      "instruction": "Re-light the scene with cool green overhead light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool green overhead light look",
       "applicable_shots": [
         1,
         2,
@@ -33910,7 +33910,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "green surgical overhead light"
+        "lighting": "cool green overhead light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -33996,8 +33996,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with steady blue warning light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "steady blue warning light look",
+      "instruction": "Re-light the scene with steady red light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "steady red light look",
       "applicable_shots": [
         1,
         2,
@@ -34008,7 +34008,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "steady blue warning light"
+        "lighting": "steady red light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34094,8 +34094,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with colorful carnival bulb light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "colorful carnival bulb light look",
+      "instruction": "Re-light the scene with colorful bulb light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "colorful bulb light look",
       "applicable_shots": [
         1,
         2,
@@ -34106,7 +34106,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "colorful carnival bulb light"
+        "lighting": "colorful bulb light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34249,8 +34249,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm street spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm street spotlight look",
+      "instruction": "Re-light the scene with warm yellow spotlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm yellow spotlight look",
       "applicable_shots": [
         1,
         2,
@@ -34260,7 +34260,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm street spotlight"
+        "lighting": "warm yellow spotlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34329,8 +34329,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with cool white fluorescent strip lighting; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "cool white fluorescent strip lighting look",
+      "instruction": "Re-light the scene with cool white fluorescent light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "cool white fluorescent light look",
       "applicable_shots": [
         1,
         2,
@@ -34339,7 +34339,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "cool white fluorescent strip lighting"
+        "lighting": "cool white fluorescent light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34553,8 +34553,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm blue-orange flame light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm blue-orange flame light look",
+      "instruction": "Re-light the scene with blue-orange flame light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue-orange flame light look",
       "applicable_shots": [
         1,
         2,
@@ -34562,7 +34562,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm blue-orange flame light"
+        "lighting": "blue-orange flame light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34617,15 +34617,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with bright white photography light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "bright white photography light look",
+      "instruction": "Re-light the scene with bright white floodlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "bright white floodlight look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "bright white photography light"
+        "lighting": "bright white floodlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34680,15 +34680,15 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with warm chandelier light; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "warm chandelier light look",
+      "instruction": "Re-light the scene with warm golden indoor light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "warm golden indoor light look",
       "applicable_shots": [
         1,
         2
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "warm chandelier light"
+        "lighting": "warm golden indoor light"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -34826,8 +34826,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with blue moonlight through high windows; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "blue moonlight through high windows look",
+      "instruction": "Re-light the scene with blue moonlight; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "blue moonlight look",
       "applicable_shots": [
         1,
         2,
@@ -34836,7 +34836,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "blue moonlight through high windows"
+        "lighting": "blue moonlight"
       },
       "mask_queries": {
         "nep_applicable": false,
@@ -35214,8 +35214,8 @@
     ],
     "edit": {
       "task_id": "T7",
-      "instruction": "Re-light the scene with ultraviolet blacklight; keep actions, identities, object layout, framing, and shot order unchanged.",
-      "target_phrase": "ultraviolet blacklight look",
+      "instruction": "Re-light the scene with ultraviolet light; keep actions, identities, object layout, framing, and shot order unchanged.",
+      "target_phrase": "ultraviolet light look",
       "applicable_shots": [
         1,
         2,
@@ -35226,7 +35226,7 @@
       ],
       "extra": {
         "render_axis": "lighting",
-        "lighting": "ultraviolet blacklight"
+        "lighting": "ultraviolet light"
       },
       "mask_queries": {
         "nep_applicable": false,
