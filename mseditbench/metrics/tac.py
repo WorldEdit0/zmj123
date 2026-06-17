@@ -53,6 +53,23 @@ def _anchors_from_shots(shots: list[dict], fps: float) -> list[tuple[float, floa
     return anchors
 
 
+def _with_reference_shot_ids(
+    detected_shots: list[dict],
+    reference_shots: list[dict],
+) -> list[dict]:
+    """Attach stable shot IDs to detector output for T5 reorder mapping."""
+    tagged = []
+    for i, sh in enumerate(detected_shots):
+        item = dict(sh)
+        if "shot_id" not in item:
+            if i < len(reference_shots) and "shot_id" in reference_shots[i]:
+                item["shot_id"] = int(reference_shots[i]["shot_id"])
+            else:
+                item["shot_id"] = i + 1
+        tagged.append(item)
+    return tagged
+
+
 def _expected_anchors(
     source_shots: list[dict],
     source_fps: float,
@@ -83,6 +100,7 @@ def temporal_anchor_consistency(
     edited_fps: float | None = None,
     expected_order: list[int] | None = None,
     detect_shots_fn: Callable[[str], list[dict]] | None = None,
+    detect_source_shots: bool | None = None,
 ) -> dict:
     """Compute temporal-anchor consistency.
 
@@ -93,7 +111,24 @@ def temporal_anchor_consistency(
     if source_fps is None:
         source_fps = _video_fps(source_video_path) if source_video_path else 24.0
 
-    expected = _expected_anchors(source_shots, source_fps, expected_order)
+    if detect_source_shots is None:
+        # Production callers provide both source and edited paths. In that case
+        # recompute source shot count and anchors instead of trusting prompt JSON.
+        detect_source_shots = bool(source_video_path and edited_video_path)
+
+    needs_detector = (detect_source_shots and source_video_path) or edited_shots is None
+    if needs_detector and detect_shots_fn is None:
+        from mseditbench.preprocess.omnishot_backend import predict_shots
+        detect_shots_fn = predict_shots
+
+    source_from_detection = False
+    source_for_expected = source_shots
+    if detect_source_shots and source_video_path:
+        detected_source = detect_shots_fn(source_video_path) if detect_shots_fn else []
+        source_for_expected = _with_reference_shot_ids(detected_source, source_shots)
+        source_from_detection = True
+
+    expected = _expected_anchors(source_for_expected, source_fps, expected_order)
     if not expected:
         return {
             "tac": None,
@@ -102,9 +137,14 @@ def temporal_anchor_consistency(
             "edited_count": 0,
             "per_shot_tac": {},
             "mean_anchor_error_sec": None,
+            "source_count_from_detection": source_from_detection,
+            "edited_count_from_detection": False,
+            "source_shots": source_for_expected,
+            "edited_shots": [],
             "reason": "no expected source shots",
         }
 
+    edited_from_detection = False
     if edited_shots is None:
         if not edited_video_path:
             return {
@@ -114,12 +154,14 @@ def temporal_anchor_consistency(
                 "edited_count": None,
                 "per_shot_tac": {},
                 "mean_anchor_error_sec": None,
+                "source_count_from_detection": source_from_detection,
+                "edited_count_from_detection": False,
+                "source_shots": source_for_expected,
+                "edited_shots": [],
                 "reason": "edited video path missing",
             }
-        if detect_shots_fn is None:
-            from mseditbench.preprocess.omnishot_backend import predict_shots
-            detect_shots_fn = predict_shots
         edited_shots = detect_shots_fn(edited_video_path)
+        edited_from_detection = True
 
     if edited_fps is None:
         edited_fps = _video_fps(edited_video_path) if edited_video_path else source_fps
@@ -133,6 +175,10 @@ def temporal_anchor_consistency(
             "edited_count": len(edited),
             "per_shot_tac": {},
             "mean_anchor_error_sec": None,
+            "source_count_from_detection": source_from_detection,
+            "edited_count_from_detection": edited_from_detection,
+            "source_shots": source_for_expected,
+            "edited_shots": edited_shots,
             "reason": "edited shot count differs from expected count",
         }
 
@@ -152,5 +198,9 @@ def temporal_anchor_consistency(
         "edited_count": len(edited),
         "per_shot_tac": per_shot,
         "mean_anchor_error_sec": float(np.mean(errors)) if errors else None,
+        "source_count_from_detection": source_from_detection,
+        "edited_count_from_detection": edited_from_detection,
+        "source_shots": source_for_expected,
+        "edited_shots": edited_shots,
         "reason": None,
     }

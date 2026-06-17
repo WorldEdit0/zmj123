@@ -961,7 +961,18 @@ def _make_sam3_mask(ckpt_path: str | None = None,
             "SAM-3 image backend requires CUDA in the installed sam3 package; "
             "run with a visible GPU or use --backend_mask none."
         )
-    model = build_sam3_image_model(checkpoint_path=ckpt_path, device=device).eval()
+    bpe_path = (
+        Path(__file__).resolve().parents[2]
+        / "sam3"
+        / "sam3"
+        / "assets"
+        / "bpe_simple_vocab_16e6.txt.gz"
+    )
+    model = build_sam3_image_model(
+        checkpoint_path=ckpt_path,
+        bpe_path=str(bpe_path),
+        device=device,
+    ).eval()
     processor = Sam3Processor(model, device=device)
 
     @torch.no_grad()
@@ -999,6 +1010,9 @@ def _make_sam3_mask(ckpt_path: str | None = None,
                 ms = np.asarray(masks)
             ms = ms.squeeze(1) if ms.ndim == 4 else ms
             union = ms[keep].astype(bool).any(axis=0).astype(np.uint8)
+            if union.shape != (H, W):
+                import cv2
+                union = cv2.resize(union, (W, H), interpolation=cv2.INTER_NEAREST)
             out[i] = union
         return out
 

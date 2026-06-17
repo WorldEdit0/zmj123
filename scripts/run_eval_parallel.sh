@@ -38,8 +38,14 @@ BACKEND_PSQ="${BACKEND_PSQ:-pyiqa}"
 BACKEND_VLM="${BACKEND_VLM:-seed}"
 BACKEND_DINO="${BACKEND_DINO:-v2s}"
 BACKEND_SHOT="${BACKEND_SHOT:-omnishotcut}"
+METRICS="${METRICS:-all}"
 
-if [[ "${BACKEND_VLM}" == "seed" && -z "${ARK_API_KEY:-}" ]]; then
+NEEDS_VLM=0
+if [[ "${METRICS}" == "all" || "${METRICS}" == *"ee_v3"* || "${METRICS}" == *"csep_v3"* ]]; then
+    NEEDS_VLM=1
+fi
+
+if [[ "${NEEDS_VLM}" == "1" && "${BACKEND_VLM}" == "seed" && -z "${ARK_API_KEY:-}" ]]; then
     echo "Set ARK_API_KEY env var first, or run with BACKEND_VLM=qwen3vl for local VLM."
     exit 1
 fi
@@ -76,6 +82,7 @@ for TASK_ID in "${TASKS[@]}"; do
             --backend_dino ${BACKEND_DINO} --backend_vlm ${BACKEND_VLM} \
             --backend_shot ${BACKEND_SHOT} \
             --backend_mask ${BACKEND_MASK} --backend_psq ${BACKEND_PSQ} \
+            --metrics ${METRICS} \
             --num_samples ${NUM_SAMPLES:-3} \
             --num_shards ${NUM_SHARDS} --shard_id ${SHARD} \
             > "${OUT_DIR}/shard_${SHARD}.log" 2>&1 &

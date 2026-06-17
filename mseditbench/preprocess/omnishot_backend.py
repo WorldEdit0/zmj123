@@ -68,12 +68,14 @@ def _ensure_loaded():
 
 
 def predict_shots(video_path: str, clean_shot: bool = True,
-                  num_context_frames: int = 0) -> list[dict]:
+                  num_context_frames: int = 20) -> list[dict]:
     """Run OmniShotCut on one video, return [{frame_start, frame_end}, ...].
 
-    `clean_shot=True` filters out predicted transitions (dissolve/fade/wipe),
-    keeping only general (hard-cut) shot ranges. For Seedance multi-shot
-    videos we only have hard cuts, so default True is correct.
+    `num_context_frames=20` matches OmniShotCut's official inference default
+    overlap window. `clean_shot=True` filters out predicted transitions
+    (dissolve/fade/wipe), keeping only general (hard-cut) shot ranges. For
+    Seedance multi-shot videos we only have hard cuts, so default True is
+    correct.
     """
     _ensure_loaded()
 

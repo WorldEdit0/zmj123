@@ -18,6 +18,25 @@ import numpy as np
 from . import backends as B
 
 
+def _resize_frames_to(frames: np.ndarray, shape_hw: tuple[int, int]) -> np.ndarray:
+    h, w = int(shape_hw[0]), int(shape_hw[1])
+    if frames.shape[1:3] == (h, w):
+        return frames
+    import cv2
+    return np.stack([
+        cv2.resize(f, (w, h), interpolation=cv2.INTER_AREA)
+        for f in frames
+    ]).astype(np.uint8)
+
+
+def _resize_mask_to(mask: np.ndarray, shape_hw: tuple[int, int]) -> np.ndarray:
+    h, w = int(shape_hw[0]), int(shape_hw[1])
+    if mask.shape[:2] == (h, w):
+        return mask.astype(np.uint8)
+    import cv2
+    return cv2.resize(mask.astype(np.uint8), (w, h), interpolation=cv2.INTER_NEAREST).astype(np.uint8)
+
+
 def nep(
     per_shot_source_frames: dict[int, np.ndarray],
     per_shot_edit_frames: dict[int, np.ndarray],
@@ -57,7 +76,11 @@ def nep(
             n_skipped += 1
             n_mask_missing += 1
             continue
+        if ef.shape[1:3] != sf.shape[1:3]:
+            ef = _resize_frames_to(ef, sf.shape[1:3])
         if m is not None:
+            if m.shape[:2] != sf.shape[1:3]:
+                m = _resize_mask_to(m, sf.shape[1:3])
             if mask_mode == "inside":
                 region = m
             elif mask_mode == "complement":

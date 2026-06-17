@@ -31,7 +31,11 @@ def read_frames(video_path: str, frame_start: int, frame_end: int,
         if not ok:
             break
         if cur in target_set:
-            frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            if frames and rgb.shape[:2] != frames[0].shape[:2]:
+                h, w = frames[0].shape[:2]
+                rgb = cv2.resize(rgb, (w, h), interpolation=cv2.INTER_AREA)
+            frames.append(rgb)
         cur += 1
     cap.release()
     if not frames:

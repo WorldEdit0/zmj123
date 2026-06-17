@@ -51,9 +51,11 @@ def main():
         baseline = first.get("baseline")
         snapshot_id = first.get("snapshot_id")
         k_samples = first.get("k_samples")
+        metrics = first.get("metrics")
     else:
         baseline = snapshot_id = None
         k_samples = per_sample_aggs[0].get("k_count")
+        metrics = None
 
     task_id = per_sample_aggs[0].get("task_id")
 
@@ -64,6 +66,8 @@ def main():
         "n_prompts": len(per_sample_aggs),
         "k_samples": k_samples,
     }
+    if metrics is not None:
+        agg["metrics"] = metrics
     for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
         # 中文注释：None 表示指标不可评估/被任务规则跳过，合并时跳过 None。
         xs = [a[f"{metric}_mean"] for a in per_sample_aggs

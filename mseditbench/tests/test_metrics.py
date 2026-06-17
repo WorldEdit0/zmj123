@@ -134,6 +134,21 @@ def test_nep_inside_mask_for_foreground_preservation():
     assert r["mask_mode"] == "inside"
 
 
+def test_nep_resizes_edit_frames_and_masks():
+    """Source/edit resolution mismatches should not make NEP fail."""
+    src = np.zeros((2, 8, 8, 3), dtype=np.uint8)
+    edit = np.zeros((2, 16, 16, 3), dtype=np.uint8)
+    mask = np.zeros((16, 16), dtype=np.uint8)
+    r = M.nep(
+        {1: src},
+        {1: edit},
+        per_shot_edit_masks={1: mask},
+        require_masks=True,
+    )
+    assert r["nep"] is not None and r["nep"] > 0.999, f"nep={r['nep']}"
+    assert r["n_scored"] == 1
+
+
 def test_usp_identity_is_one():
     """If an unedited shot is unchanged, USP DINO similarity is 1."""
     src = {1: _make_frames(0), 2: _make_frames(1)}
@@ -186,6 +201,66 @@ def test_tac_penalizes_anchor_drift():
     )
     assert r["tac"] is not None and 0.0 < r["tac"] < 1.0, f"tac={r['tac']}"
     assert r["mean_anchor_error_sec"] > 0.0
+
+
+def test_tac_detects_source_shots_when_paths_are_provided():
+    """Production TAC uses newly detected source shots, not prompt JSON shots."""
+    prompt_src_shots = [{"shot_id": 1, "t_start": 0.0, "t_end": 99.0, "duration_sec": 99.0}]
+    detected_source = [
+        {"frame_start": 0, "frame_end": 47},
+        {"frame_start": 48, "frame_end": 95},
+    ]
+    detected_edited = [
+        {"frame_start": 0, "frame_end": 47},
+        {"frame_start": 48, "frame_end": 95},
+    ]
+
+    def detect(path):
+        return detected_source if path == "source.mp4" else detected_edited
+
+    r = M.temporal_anchor_consistency(
+        prompt_src_shots,
+        "edited.mp4",
+        source_video_path="source.mp4",
+        source_fps=24.0,
+        edited_fps=24.0,
+        detect_shots_fn=detect,
+    )
+    assert r["tac"] is not None and r["tac"] > 0.999, f"tac={r['tac']}"
+    assert r["expected_count"] == 2, f"expected_count={r['expected_count']}"
+    assert r["source_count_from_detection"] is True
+
+
+def test_tac_t5_reorder_uses_detected_source_anchors():
+    """T5 reorder keeps prompt order, but durations come from source detection."""
+    prompt_src_shots = [
+        {"shot_id": 1, "t_start": 0.0, "t_end": 10.0, "duration_sec": 10.0},
+        {"shot_id": 2, "t_start": 10.0, "t_end": 20.0, "duration_sec": 10.0},
+    ]
+    detected_source = [
+        {"frame_start": 0, "frame_end": 23},   # 1s
+        {"frame_start": 24, "frame_end": 71},  # 2s
+    ]
+    detected_edited = [
+        {"frame_start": 0, "frame_end": 47},   # reordered shot 2
+        {"frame_start": 48, "frame_end": 71},  # reordered shot 1
+    ]
+
+    def detect(path):
+        return detected_source if path == "source.mp4" else detected_edited
+
+    r = M.temporal_anchor_consistency(
+        prompt_src_shots,
+        "edited.mp4",
+        source_video_path="source.mp4",
+        source_fps=24.0,
+        edited_fps=24.0,
+        expected_order=[2, 1],
+        detect_shots_fn=detect,
+    )
+    assert r["tac"] is not None and r["tac"] > 0.999, f"tac={r['tac']}"
+    assert r["source_count_from_detection"] is True
+    assert r["edited_count_from_detection"] is True
 
 
 def test_cxs_id_acp_floor_kicks_in():

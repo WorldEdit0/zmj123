@@ -36,6 +36,36 @@ from mseditbench import metrics as M
 from mseditbench.metrics import backends as B
 
 
+RUN_EVAL_METRICS = ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac")
+COMPUTABLE_METRICS = ("psq", "ee_v3", "nep", "csep_v3", "usp", "tac")
+VLM_METRICS = {"ee_v3", "csep_v3"}
+NON_VLM_METRICS = ("psq", "nep", "usp", "tac")
+
+
+def _parse_metrics(value: str | None) -> set[str]:
+    """Parse --metrics while keeping legacy output fields as None."""
+    if value is None or value.strip() in {"", "all"}:
+        return set(COMPUTABLE_METRICS)
+    aliases = {
+        "non_vlm": NON_VLM_METRICS,
+        "no_vlm": NON_VLM_METRICS,
+        "non-vlm": NON_VLM_METRICS,
+    }
+    out: set[str] = set()
+    for raw in value.split(","):
+        item = raw.strip()
+        if not item:
+            continue
+        if item in aliases:
+            out.update(aliases[item])
+            continue
+        if item not in COMPUTABLE_METRICS:
+            valid = ", ".join([*COMPUTABLE_METRICS, *aliases])
+            raise ValueError(f"unknown metric {item!r}; valid values: {valid}")
+        out.add(item)
+    return out
+
+
 def _maybe_per_shot_frames(video_path: str, shots: list[dict], stride: int, max_frames: int):
     # 中文注释：把一个视频按 prompt JSON 中的源视频 shot 边界切开，
     # 每个 shot 内按 stride 抽帧，最多 max_frames 帧。普通逐 shot 指标使用
@@ -153,6 +183,14 @@ def _mask_one_frame(mask_backend, frame: np.ndarray, query: str) -> tuple[np.nda
     return (m if hit else None), hit
 
 
+def _resize_mask_to(mask: np.ndarray, shape_hw: tuple[int, int]) -> np.ndarray:
+    h, w = int(shape_hw[0]), int(shape_hw[1])
+    if mask.shape[:2] == (h, w):
+        return mask.astype(np.uint8)
+    import cv2
+    return cv2.resize(mask.astype(np.uint8), (w, h), interpolation=cv2.INTER_NEAREST).astype(np.uint8)
+
+
 def _build_nep_masks(
     sample: dict,
     src_frames: dict[int, np.ndarray],
@@ -177,15 +215,17 @@ def _build_nep_masks(
             continue
         shot_hits = {"source": {}, "edited": {}, "used": False}
         masks = []
+        target_hw = src[len(src) // 2].shape[:2] if len(src) else None
 
         if len(src):
             frame = src[len(src) // 2]
+            target_hw = frame.shape[:2]
             for query in source_queries:
                 try:
                     m, hit = _mask_one_frame(mask_backend, frame, query)
                     shot_hits["source"][query] = hit
                     if m is not None:
-                        masks.append(m)
+                        masks.append(_resize_mask_to(m, target_hw))
                 except Exception as e:
                     print(f"[mask] sid={sample['sample_id']} shot={k} source {query!r}: {e}")
                     shot_hits["source"][query] = False
@@ -193,12 +233,14 @@ def _build_nep_masks(
         edt = edt_frames.get(k)
         if edt is not None and len(edt):
             frame = edt[len(edt) // 2]
+            if target_hw is None:
+                target_hw = frame.shape[:2]
             for query in edited_queries:
                 try:
                     m, hit = _mask_one_frame(mask_backend, frame, query)
                     shot_hits["edited"][query] = hit
                     if m is not None:
-                        masks.append(m)
+                        masks.append(_resize_mask_to(m, target_hw))
                 except Exception as e:
                     print(f"[mask] sid={sample['sample_id']} shot={k} edited {query!r}: {e}")
                     shot_hits["edited"][query] = False
@@ -309,6 +351,7 @@ def score_one(
     mask_backend=None,                      # callable (frames, phrase) -> mask, or None
     psq_fn=None,                            # callable frames -> (musiq,laion), or None for default mock
     shot_backend: str = "none",             # "omnishotcut" computes TAC; "none" leaves TAC=None
+    metrics: set[str] | None = None,
 ) -> dict:
     # 中文注释：score_one 是最核心的单个视频样本评分函数。
     # 输入是一条 prompt sample 和某个 baseline 生成的一个视频文件，
@@ -321,6 +364,7 @@ def score_one(
     instruction = edit["instruction"]
     applicable = edit.get("applicable_shots", [s["shot_id"] for s in shots])
     unedited = [s["shot_id"] for s in shots if s["shot_id"] not in applicable]
+    metrics = set(metrics or COMPUTABLE_METRICS)
 
     # 中文注释：source frames 对同一个 prompt 的 K 个输出完全相同，
     # 所以 main() 会缓存一次传进来，避免每个 k 都重复读源视频。
@@ -334,13 +378,19 @@ def score_one(
     # edit-side queries separately; their union is the allowed edit region.
     # EE_v3/CSEP_v3 are VLM full-frame judgments and do not consume masks.
     mask_spec = _get_mask_spec(sample)
-    edit_masks, mask_hits = _build_nep_masks(
-        sample, src_frames, edt_frames, applicable, mask_backend, mask_spec
-    )
+    if "nep" in metrics:
+        edit_masks, mask_hits = _build_nep_masks(
+            sample, src_frames, edt_frames, applicable, mask_backend, mask_spec
+        )
+    else:
+        edit_masks, mask_hits = None, {}
 
     psq_kwargs = {} if psq_fn is None else {"musiq_fn": psq_fn}
     # 中文注释：PSQ 只看编辑后视频的视觉质量，不依赖 source。
-    psq_r = M.psq(edt_frames, **psq_kwargs)
+    if "psq" in metrics:
+        psq_r = M.psq(edt_frames, **psq_kwargs)
+    else:
+        psq_r = {"psq": None, "reason": "metric skipped"}
 
     # v1 EE / CSEP — DEPRECATED. Skipped to save VLM tokens. Set fields to None
     # in result dict for backward compat with merge_shards / aggregate.json.
@@ -352,7 +402,16 @@ def score_one(
     # 普通局部任务用 edit mask 的 complement；T8 背景替换用 foreground
     # preserve mask 内部区域。缺 mask 的 shot 会被 nep(require_masks=True)
     # 跳过，避免回退到整帧相似度。
-    if mask_spec.get("nep_applicable"):
+    if "nep" not in metrics:
+        nep_r = {
+            "nep": None,
+            "per_shot_nep": {},
+            "n_scored": 0,
+            "n_skipped": 0,
+            "n_mask_missing": 0,
+            "reason": "metric skipped",
+        }
+    elif mask_spec.get("nep_applicable"):
         nep_r = M.nep(
             src_frames,
             edt_frames,
@@ -377,7 +436,12 @@ def score_one(
 
     # v3 EE / CSEP — VLM-as-judge headline metrics.
     # Skip for tasks where per-shot VLM rating doesn't make semantic sense.
-    if task_id in {"T5"} or mask_spec.get("edit_type") == "transition_style":
+    if not (metrics & VLM_METRICS):
+        ee3_r = {"ee": None, "per_shot": {}, "n_applicable": 0,
+                 "reason": "metric skipped"}
+        csep3_r = {"csep": None, "coverage": None, "consistency": None,
+                   "n_applicable": 0, "reason": "metric skipped"}
+    elif task_id in {"T5"} or mask_spec.get("edit_type") == "transition_style":
         # 中文注释：T5 改变 shot 结构，不适合用“每个原始 shot 是否完成编辑”
         # 来定义 EE/CSEP，所以显式跳过。历史 T7 transition JSON 也跳过；
         # 当前 T7 是全局光照任务，继续走普通 per-shot VLM 判断。
@@ -406,7 +470,17 @@ def score_one(
 
     # USP replaces the old SES. It measures DINOv2 content preservation only
     # on source shots that are not edited by the prompt; no face ID and no CLIP.
-    usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino_backend)
+    if "usp" in metrics:
+        usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino_backend)
+    else:
+        usp_r = {
+            "usp": None,
+            "per_shot_usp": {},
+            "n_scored": 0,
+            "n_unedited": len(unedited),
+            "n_missing": 0,
+            "reason": "metric skipped",
+        }
 
     # TAC compares expected source shot time anchors with edited-video shot
     # boundaries detected by OmniShotCut. T5 reorder uses the requested order
@@ -416,7 +490,17 @@ def score_one(
         expected_order = [int(x) for x in order] if isinstance(order, list) else None
     else:
         expected_order = None
-    if shot_backend == "omnishotcut":
+    if "tac" not in metrics:
+        tac_r = {
+            "tac": None,
+            "shot_count_match": False,
+            "expected_count": len(shots),
+            "edited_count": None,
+            "per_shot_tac": {},
+            "mean_anchor_error_sec": None,
+            "reason": "metric skipped",
+        }
+    elif shot_backend == "omnishotcut":
         try:
             tac_r = M.temporal_anchor_consistency(
                 shots,
@@ -500,6 +584,10 @@ def score_one(
             "tac_expected_count": tac_r.get("expected_count"),
             "tac_edited_count": tac_r.get("edited_count"),
             "tac_mean_anchor_error_sec": tac_r.get("mean_anchor_error_sec"),
+            "tac_source_count_from_detection": tac_r.get("source_count_from_detection"),
+            "tac_edited_count_from_detection": tac_r.get("edited_count_from_detection"),
+            "tac_source_shots": tac_r.get("source_shots") or [],
+            "tac_edited_shots": tac_r.get("edited_shots") or [],
             "tac_reason": tac_r.get("reason"),
             "mask_queries": mask_spec,
             "mask_query": legacy_mask_query,
@@ -528,6 +616,10 @@ def main():
                          "EE_v3/CSEP_v3 remain VLM full-frame judgments. Default off.")
     ap.add_argument("--backend_psq", default="mock", choices=["mock", "pyiqa"],
                     help="MUSIQ + LAION-Aes via pyiqa, or deterministic hash mock.")
+    ap.add_argument("--metrics", default="all",
+                    help="Comma-separated metrics to compute. Use 'all' or "
+                         "'non_vlm' (psq,nep,usp,tac). VLM metrics are "
+                         "ee_v3 and csep_v3; legacy ee/csep fields remain None.")
     ap.add_argument("--stride", type=int, default=4)
     ap.add_argument("--max_frames_per_shot", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
@@ -540,6 +632,7 @@ def main():
     ap.add_argument("--shard_id", type=int, default=0,
                     help="Which shard this process is. prompts = prompts[shard_id::num_shards].")
     args = ap.parse_args()
+    metrics = _parse_metrics(args.metrics)
 
     os.makedirs(args.output_dir, exist_ok=True)
     prompts = json.load(open(args.prompts_json))
@@ -549,10 +642,10 @@ def main():
     if args.limit:
         prompts = prompts[: args.limit]
 
-    dino = B.get_dino(args.backend_dino)
-    vlms = [B.get_vlm(args.backend_vlm)]
-    mask_backend = B.get_mask(args.backend_mask)
-    psq_fn = B.get_psq(args.backend_psq)
+    dino = B.get_dino(args.backend_dino) if metrics & {"nep", "usp"} else None
+    vlms = [B.get_vlm(args.backend_vlm)] if metrics & VLM_METRICS else []
+    mask_backend = B.get_mask(args.backend_mask) if "nep" in metrics else None
+    psq_fn = B.get_psq(args.backend_psq) if "psq" in metrics else None
 
     # Per-sample results: list of dicts. With K>1, each prompt produces K rows
     # plus an aggregated row.
@@ -599,6 +692,7 @@ def main():
                     mask_backend=mask_backend,
                     psq_fn=psq_fn,
                     shot_backend=args.backend_shot,
+                    metrics=metrics,
                 )
                 r["k"] = k
             except Exception as e:
@@ -614,7 +708,7 @@ def main():
             # 中文注释：先在同一个 prompt 内对 K 个生成样本求平均。
             # 这一步生成 {sid}.agg.json，代表“这个 prompt 的模型表现”。
             agg_p = {"sample_id": sid, "task_id": sample_rs[0]["task_id"], "k_count": len(sample_rs)}
-            for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
+            for metric in RUN_EVAL_METRICS:
                 xs = [r[metric] for r in sample_rs if r.get(metric) is not None]
                 # 中文注释：None 表示该指标对该样本不可评估/被任务规则跳过，
                 # 聚合时会被排除；不要把 None 当作 0。
@@ -636,8 +730,8 @@ def main():
         # 这样每个 prompt 权重相同，不会因为某条 prompt 有更多可用 K 样本而权重大。
         agg = {"baseline": args.baseline, "snapshot_id": args.snapshot_id,
                "task_id": per_sample_aggs[0]["task_id"], "n_prompts": len(per_sample_aggs),
-               "k_samples": args.num_samples}
-        for metric in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
+               "k_samples": args.num_samples, "metrics": sorted(metrics)}
+        for metric in RUN_EVAL_METRICS:
             # collect per-prompt mean (across K)
             xs = [a[f"{metric}_mean"] for a in per_sample_aggs if a.get(f"{metric}_mean") is not None]
             if xs:
@@ -656,7 +750,7 @@ def main():
             json.dump(agg, f, indent=2)
         print(f"\n{args.baseline} {agg['task_id']} shard {args.shard_id}/{args.num_shards}: "
               f"n_prompts={len(per_sample_aggs)} K={args.num_samples}")
-        for m in ("psq", "ee", "ee_v2", "ee_v3", "nep", "csep", "csep_v2", "csep_v3", "usp", "tac"):
+        for m in RUN_EVAL_METRICS:
             mn = agg.get(f"{m}_mean")
             sd = agg.get(f"{m}_std")
             mn_str = f"{mn:.3f}" if isinstance(mn, float) else "—"
