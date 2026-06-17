@@ -132,11 +132,14 @@ T8 = TaskDef(
 # T9 — shot-conditioned mixed edit binding
 T9 = TaskDef(
     task_id="T9",
-    description="Shot-Conditioned Composite Edit (per-shot edits sampled from T1/T2/T4/T6/T8)",
+    description=(
+        "Shot-Conditioned Composite Edit "
+        "(shot-local T1/T2/T4/T6/T8 edits + persistent two-object T1/T2/T4 edits)"
+    ),
     instruction_templates=[
         "For each shot, follow the [EDIT] or [KEEP] instruction exactly: {shot_plan}.",
     ],
-    target_phrase_template="shot-conditioned mixed edits",
+    target_phrase_template="shot-conditioned composite edits",
     requires=["characters", "key_objects"],
 )
 
