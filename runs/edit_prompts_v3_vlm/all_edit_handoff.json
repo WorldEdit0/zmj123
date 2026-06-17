@@ -41025,5 +41025,3224 @@
       },
       "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
     }
+  },
+  {
+    "sample_id": "00000_T9_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the barista with an elderly woman barista with short silver hair, keeping the espresso extraction into the white cup beside the black espresso machine.\nShot 2: [EDIT] Change the smooth silver stainless steel milk pitcher to a brushed copper milk pitcher while the barista pours steamed milk into the cup.\nShot 3: [KEEP] Keep the overhead close-up of the leaf-shaped latte art forming in the cup unchanged.\nShot 4: [EDIT] Change the shooting style of shot 4 to a close-up shot, keeping the finished latte being wiped, turned, and slid forward while cafe customers sit behind it.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "elderly woman barista with silver hair, white shirt, and black apron"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "brushed copper milk pitcher"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "close-up shot"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00001_T9_0001",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the grass agility field background with an indoor sports arena with blue padded walls, preserving the dog, trainer, obstacles, and starting layout.\nShot 2: [EDIT] Change the solid blue jump bar to a bright red jump bar while the Border Collie jumps over it and lands toward the tunnel.\nShot 3: [EDIT] Change the shooting style of shot 3 to an overhead tracking shot, keeping the dog entering the yellow tunnel and racing out toward the seesaw.\nShot 4: [KEEP] Keep the dog sitting before the trainer and receiving the reward treat unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T2": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "indoor sports arena with blue padded walls background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "bright red jump bar"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "overhead tracking shot"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00002_T9_0002",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the glossy red toy train body to a red toy train body covered with large yellow star stickers as it starts from the striped block station.\nShot 2: [EDIT] Change the shooting style of shot 2 to a side-view close-up, keeping the train crossing the blue arch bridge while the green wind-up robot passes behind it.\nShot 3: [KEEP] Keep the train circling the plaza with lamps and stopping at the second station unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 2,
+        "n_shots": 3,
+        "source_tasks": {
+          "T2": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "red toy train body covered with large yellow star stickers"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "side-view close-up"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00003_T9_0003",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Remove the round wall clock from the robot club classroom while keeping the girl, boy, desktop robot, hallway students, and room layout intact.\nShot 2: [EDIT] Change the shooting style of shot 2 to an overhead close-up, keeping hands tightening a screw in the transparent robot shell.\nShot 3: [EDIT] Change the blue circuit board inside the transparent robot to an orange glowing circuit board while the robot follows the table line and raises its red flag.\nShot 4: [KEEP] Keep the girl celebrating while the boy claps and the robot spins on the table unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without wall clock"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "overhead close-up"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "orange glowing circuit board inside the transparent robot"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00004_T9_0004",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the greenhouse potting bench background with an outdoor botanical garden nursery, preserving the sunflower seedling, moist soil, water droplets, and camera framing.\nShot 2: [EDIT] Replace the small black bee with a small orange butterfly circling the sunflower seedling while it is misted in the terracotta pot.\nShot 3: [KEEP] Keep the overhead pot view with four green leaves, central bud, and moving sunlight unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 2,
+        "n_shots": 3,
+        "source_tasks": {
+          "T1": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "outdoor botanical garden nursery background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "small orange butterfly"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00005_T9_0005",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the dark-haired female paramedic with a middle-aged male emergency doctor in the same deep blue uniform with yellow reflective stripes, keeping the stretcher preparation beside the ambulance.\nShot 2: [EDIT] Change the shooting style of shot 2 to a wheel-level close-up, keeping the male paramedic checking and locking the stretcher wheel assembly.\nShot 3: [KEEP] Keep the medical supplies, oxygen mask, gauze, and scissors being checked in the open kit unchanged.\nShot 4: [EDIT] Place a green triage clipboard on the stretcher frame while the paramedics unfold and align the stretcher under the ambulance lights.\nShot 5: [EDIT] Replace the hospital ambulance entrance background with a snow-covered mountain clinic entrance while preserving the stretcher, paramedics, nurse, and hospital-door action.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 5,
+        "source_tasks": {
+          "T1": 1,
+          "T4": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "middle-aged male emergency doctor in the same dark blue paramedic uniform with yellow reflective stripes"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "wheel-level close-up"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T4",
+            "edit_type": "static_add",
+            "target_phrase": "green triage clipboard"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "snow-covered mountain clinic entrance background"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00006_T9_0006",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Add a small bluebird perched on a branch above the squirrel near the tree hollow and acorn basket.\nShot 2: [EDIT] Change the shooting style of shot 2 to a water-level close-up, keeping the gray raccoon washing red berries in the blue stream.\nShot 3: [KEEP] Keep the spotted fawn lowering its head to smell the white wildflower unchanged.\nShot 4: [EDIT] Replace the cartoon forest floor background with a glowing mushroom grove at night while preserving the gathered forest characters, the white wildflower, and the waving pose.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T4": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "small bluebird perched on a branch"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "water-level close-up"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "glowing mushroom grove at night background"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00007_T9_0007",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the engineer's flat yellow safety vest to a yellow safety vest with two wide silver reflective bands while the black quadcopter launches from the pad.\nShot 2: [EDIT] Replace the steel bridge over river background with a desert canyon bridge inspection site, preserving the drone, bridge cables, and inspection surfaces.\nShot 3: [EDIT] Change the shooting style of shot 3 to a drone-eye close-up, keeping the drone camera inspecting the rusted crack on the bridge girder above the river.\nShot 4: [KEEP] Keep the engineer reading the tablet heat-map interface with the crack marker unchanged.\nShot 5: [EDIT] Replace the large white boat with a long red cargo barge moving under the bridge as the drone returns toward the landing pad.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 5,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "yellow safety vest with two wide silver reflective bands"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "desert canyon bridge inspection site background"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "drone-eye close-up"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "long red cargo barge on the river"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00008_T9_0008",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the orange cat with a small black-and-white market dog near the fruit stall while the white delivery robot leaves with the brown paper package.\nShot 2: [EDIT] Change the shooting style of shot 2 to a robot-eye-level close-up, keeping the robot scanning the QR code on the cobblestone path.\nShot 3: [KEEP] Keep the robot passing crates of tomatoes and market shoppers under striped awnings unchanged.\nShot 4: [EDIT] Add a child in a yellow raincoat watching the robot at the wooden pickup window while the package handoff remains intact.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "small black-and-white market dog"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "robot-eye-level close-up"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "child in a yellow raincoat watching the delivery robot"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00009_T9_0009",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Add a tourist in a white hat pausing behind the painter near the fountain while the easel and plaza composition remain intact.\nShot 2: [EDIT] Change the smooth blue-green painter jacket to a blue-green denim painter jacket while the painter adds watercolor detail near the fountain.\nShot 3: [EDIT] Replace the classical plaza background with a busy night market art corner while preserving the painter, finished painting, easel, and presentation pose.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 3,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "tourist in a white hat pausing behind the painter"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "blue-green denim painter jacket"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "busy night market art corner background"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00010_T9_0010",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the orange-and-white bakery cat fur to calico bakery cat fur with orange, black, and white patches, preserving the low peek from under the bakery furniture near the flour paw prints.\nShot 2: [EDIT] Add a bakery worker in a tan apron behind the glass display case while the cat sniffs the paper bag holding the baguette.\nShot 3: [KEEP] Keep the cat pressing a fresh flour paw print onto the wooden surface unchanged.\nShot 4: [EDIT] Replace the bakery interior and storefront background with a Paris sidewalk pastry stall, preserving the cat, baguette, croissant, passerby, and doorway pose.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "calico bakery cat fur with orange, black, and white patches"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "bakery worker in a tan apron behind the display case"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "Paris sidewalk pastry stall background"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00011_T9_0011",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the small green alien ball with a tiny silver rolling repair robot beside the clay astronaut and cardboard rocket setup.\nShot 2: [EDIT] Change the shooting style of shot 2 to a side-view close-up, keeping the astronaut taping the crack on the cardboard rocket.\nShot 3: [KEEP] Keep the astronaut tightening the rocket nut with the bright blue wrench unchanged.\nShot 4: [EDIT] Change the soft round cotton-like smoke to large dense puffy white smoke as the astronaut presses the red launch button.\nShot 5: [EDIT] Replace the handmade cardboard workshop background with a lunar crater base with silver domes, preserving the repaired rocket, smoke, astronaut, and small observer.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 5,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "tiny silver rolling repair robot"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "side-view close-up"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "large dense puffy white smoke"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "lunar crater base with silver domes background"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00012_T9_0012",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the commuters' dark umbrellas with clear plastic rain ponchos while they move through the wet neon transit entrance.\nShot 2: [KEEP] Keep the yellow-jacket delivery scooter passing the bus stop as passengers move around the bus unchanged.\nShot 3: [EDIT] Replace the rainy city transit background with a neon elevated train platform, preserving the taxis, umbrellas, glowing billboards, rain, and intersection timing.\nShot 4: [EDIT] Add a helicopter with a bright searchlight in the city sky above the traffic intersection while pedestrians with colorful umbrellas cross the reflective street.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "clear plastic rain ponchos"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "neon elevated train platform background"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "helicopter with a bright searchlight in the city sky above the traffic intersection"
+          }
+        ],
+        "untouched_shots": [
+          2
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00013_T9_0013",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the head chef with a female pastry chef wearing a black headscarf and white uniform as she sets up the white plate and raises the piping bag.\nShot 2: [EDIT] Change the shooting style of shot 2 to an overhead close-up, keeping the cream domes forming on the dessert.\nShot 3: [EDIT] Change the deep red raspberry sauce dots to dark blackberry-purple sauce dots between the cream domes.\nShot 4: [EDIT] Place a small folded order ticket beside the dessert plate on the steel pass while the chef places the mint leaf, rings the bell, and inspects the dessert.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "female pastry chef with a black headscarf and white uniform"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "overhead close-up"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "dark blackberry-purple sauce dots"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T4",
+            "edit_type": "static_add",
+            "target_phrase": "small folded order ticket"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00014_T9_0014",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the anime koi pond garden background with a snowy temple pond garden, preserving the koi, lotus leaves, stone bridge, stone lantern, and water composition.\nShot 2: [EDIT] Replace the blue dragonfly with a small hummingbird hovering beside the bamboo water spout as ripples spread across the pond.\nShot 3: [EDIT] Change the shooting style of shot 3 to an overhead shot, keeping the koi circling under petals, lotus stems, and mossy rocks.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 3,
+        "source_tasks": {
+          "T1": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "snowy temple pond garden background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T1",
+            "edit_type": "dynamic_replace",
+            "target_phrase": "small hummingbird with iridescent wings"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "overhead shot"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00015_T9_0015",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the glossy red classic car paint to matte red classic car paint in the garage establishing shot with mechanics and tool shelves.\nShot 2: [EDIT] Change the shooting style of shot 2 to a mirror close-up, keeping the mechanic polishing the chrome side mirror with a cloth.\nShot 3: [KEEP] Keep the wrench tightening a bolt inside the engine bay unchanged.\nShot 4: [KEEP] Keep the whitewall tire and chrome hubcap detail shot unchanged.\nShot 5: [EDIT] Replace the classic garage workshop background with an open-air vintage car show pavilion while preserving the restored car, mechanic, work lights, and final inspection pose.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 5,
+        "source_tasks": {
+          "T2": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "matte red classic car paint"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "mirror close-up"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "open-air vintage car show pavilion background"
+          }
+        ],
+        "untouched_shots": [
+          3,
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00016_T9_0016",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the floating island cloud-sea background with an aurora-lit sky temple above clouds, preserving the glowing blue tree and island silhouette.\nShot 2: [EDIT] Change the small multicolored glowing flowers to larger bell-shaped multicolored glowing flowers around the glowing tree roots.\nShot 3: [KEEP] Keep the waterfalls falling from the island edge into the cloud layer unchanged.\nShot 4: [EDIT] Change the shooting style of shot 4 to an interior close-up, keeping the hollow glowing tree releasing white sparks among tall grass leaves.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T2": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "aurora-lit sky temple above clouds background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "larger bell-shaped multicolored glowing flowers"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "interior close-up"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00017_T9_0017",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Add a small pearl jewelry box on the fitting-room table near the mirror while the bride, seamstress, and flower girl remain in place.\nShot 2: [EDIT] Change the ivory lace wedding dress to an ivory satin wedding dress with lace sleeves while the seamstress works on the button closure.\nShot 3: [EDIT] Replace the bride's silver beaded headpiece with a fresh white floral crown while keeping the veil attached as hands arrange it.\nShot 4: [KEEP] Keep the bride and seamstress inspecting the finished fit in the three-panel mirror unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T4": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_add",
+            "target_phrase": "small pearl jewelry box"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "ivory satin wedding dress with lace sleeves"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "fresh white floral crown"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00018_T9_0018",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Remove the hanging paper airplane from the toy race setup while keeping the duck, car, racetrack, blocks, and start-line layout intact.\nShot 2: [EDIT] Change the shooting style of shot 2 to a toy-level wide shot, keeping the duck and car racing between colorful blocks under sunlight.\nShot 3: [EDIT] Replace the toy playroom racetrack background with a moonlit nursery floor racetrack, preserving the duck's finish-line win and the cartoon stars above it.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 3,
+        "source_tasks": {
+          "T4": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without paper airplane hanging from the ceiling"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "toy-level wide shot"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "moonlit nursery floor racetrack background"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00019_T9_0019",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the white jump rails with stacked hay-bale jump blocks while the horse and rider approach the green-marked jump inside the sand arena.\nShot 2: [EDIT] Change the shooting style of shot 2 to a low-angle shot, keeping the chestnut horse taking off over the jump with the rider balanced above it.\nShot 3: [KEEP] Keep the horse landing and kicking up sand particles unchanged.\nShot 4: [EDIT] Add a blue arena flag beside the green-marked jump while the rider guides the horse away and the staff member passes in the background.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "stacked hay-bale jump blocks"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "low-angle shot"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T4",
+            "edit_type": "static_add",
+            "target_phrase": "blue arena flag"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00020_T9_0020",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the museum exhibition hall background with a grand glass-roofed train station gallery, preserving the marble sculpture, visitors, barrier layout, and slow circulation.\nShot 2: [EDIT] Remove the partially visible exhibition wall text behind the bronze mask case while keeping the visitor in the brown coat, red scarf, glass case, and mask intact.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 2,
+        "n_shots": 2,
+        "source_tasks": {
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "grand glass-roofed train station gallery background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without exhibition wall text"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00021_T9_0021",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the plain white lighthouse to a white lighthouse with red horizontal bands while waves crash over black reef rocks.\nShot 2: [EDIT] Replace the rocky coastline background with an arctic coast with ice floes, preserving the orange-brown seaweed, tide pool reflection, lighthouse position, and wet rocks.\nShot 3: [EDIT] Replace the small white fishing boat with a red sea kayak on the coastline horizon beyond the rocks and water.\nShot 4: [KEEP] Keep the lighthouse beam sweeping across shells, wet sand, and the evening sea unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "white lighthouse with red horizontal bands"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "arctic coast with ice floes background"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "red sea kayak on the horizon"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00022_T9_0022",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [KEEP] Keep the rover approaching the target rock across red sand with a dust devil in the distance unchanged.\nShot 2: [EDIT] Remove the yellow triangular warning marker from the rover side while preserving the wheels, blue solar panel, and red sand motion.\nShot 3: [EDIT] Replace the bright orbiter point with a small meteor streak crossing the sky while the rover extends its mechanical arm toward the target rock.\nShot 4: [KEEP] Keep the drill cutting into the dark rock and throwing red-brown powder unchanged.\nShot 5: [EDIT] Change the steady green sample-tube indicator light to a blinking red sample-tube indicator light as the spherical rock sample is sealed.\nShot 6: [EDIT] Change the shooting style of shot 6 to a long telephoto shot, keeping the rover departing over its tracks while the dust devil remains on the horizon.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 6,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 2,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without yellow triangular warning marker"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "small meteor streak crossing the sky"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "blinking red sample-tube indicator light"
+          },
+          {
+            "shot_id": 6,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "long telephoto shot"
+          }
+        ],
+        "untouched_shots": [
+          1,
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00023_T9_0023",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Remove the green emergency exit sign from the dance studio wall while keeping the dancer, barre, windows, mirrors, and reflected dancers intact.\nShot 2: [EDIT] Replace the mirrored dance studio background with an old theater rehearsal stage, preserving the dancer's pause near the mirror wall and the blue water bottle.\nShot 3: [EDIT] Change the pale pink ballet shoes to pale pink ballet shoes with long ribbons wrapped around the lower legs while the shoes work on the marked wooden floor.\nShot 4: [KEEP] Keep the dancer repeating the phrase while the mirror doubles the movement unchanged.\nShot 5: [KEEP] Keep the dancer finishing the rehearsal sequence in the window light unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 5,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without green emergency exit sign"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "old theater rehearsal stage background"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "pale pink ballet shoes with long ribbons wrapped around the lower legs"
+          }
+        ],
+        "untouched_shots": [
+          4,
+          5
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00024_T9_0024",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Remove the small candle from the ramen counter while keeping the ramen apprentice, older chef, wooden counter, and shop layout intact.\nShot 2: [EDIT] Change the shooting style of shot 2 to a steam-level close-up, keeping the apprentice lifting noodles from the metal pot with chopsticks and a bamboo strainer.\nShot 3: [EDIT] Replace the cozy ramen shop background with a busy train station noodle stall, preserving the ramen bowl, chashu, scallions, soft-boiled egg, and lucky cat placement.\nShot 4: [KEEP] Keep the apprentice presenting the completed bowl while the older chef supervises unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T4": 1,
+          "T6": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_delete",
+            "target_phrase": "a scene without small candle on the ramen counter"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "steam-level close-up"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "busy train station noodle stall background"
+          }
+        ],
+        "untouched_shots": [
+          4
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00025_T9_0025",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the wetland bird habitat background with a misty mountain lake marsh, preserving the white egret, reeds, boardwalk, shallow water, and reflections.\nShot 2: [EDIT] Change the blue-green and orange kingfisher plumage to a kingfisher with a prominent white head crest while it perches on the dead branch.\nShot 3: [EDIT] Add a small turtle swimming near the ducks in the wetland water while keeping the three-duck formation and foreground leafy plants.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 3,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "misty mountain lake marsh background"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "kingfisher with a prominent white head crest"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "small turtle swimming near the ducks"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00026_T9_0026",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Change the smooth red clay teapot to a speckled red clay teapot while it puffs white flour on the wooden table.\nShot 2: [EDIT] Replace the glossy blue bowl with a shallow white mixing dish that can still receive the brown sugar cube from the wooden spoon.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 2,
+        "n_shots": 2,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "speckled red clay teapot"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "shallow white mixing dish"
+          }
+        ],
+        "untouched_shots": []
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00027_T9_0027",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Add a shop assistant in a black apron sorting tools along the workshop wall while the mechanic checks the black road bike on the blue repair stand.\nShot 2: [EDIT] Change the silver bicycle chain to a black ceramic-coated bicycle chain in the drivetrain close-up as lubricant is applied to the chain and cassette.\nShot 3: [KEEP] Keep the torque wrench tightening the rear derailleur bolt unchanged.\nShot 4: [EDIT] Change the shooting style of shot 4 to a side-view close-up, keeping the mechanic pedaling the bike to test the chain shift while the red cyclist passes again.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 3,
+        "n_shots": 4,
+        "source_tasks": {
+          "T2": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "shop assistant in a black apron sorting tools"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "black ceramic-coated bicycle chain"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "side-view close-up"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00028_T9_0028",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Add a white plant label stake in the rooftop tomato planter while the gardener and small gardening robot work among the planters.\nShot 2: [EDIT] Change the smooth white and silver gardening robot shell to a white and copper brushed-metal gardening robot shell while it scans tomato leaves with its extendable arm.\nShot 3: [KEEP] Keep the gardener adjusting the spray while the robot backs away from the water mist unchanged.\nShot 4: [EDIT] Replace the rooftop garden background with a snowy mountain glass greenhouse with pine forest outside, preserving the robot, gardener, tomato plants, bamboo stakes, and planter grid.\nShot 5: [EDIT] Replace the wicker tomato basket with a green plastic harvest crate as the gardener places harvested tomatoes into it and the drone crosses the sky.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 5,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T4": 1,
+          "T8": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T4",
+            "edit_type": "static_add",
+            "target_phrase": "white plant label stake"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "white and copper brushed-metal gardening robot shell"
+          },
+          {
+            "shot_id": 4,
+            "source_task": "T8",
+            "edit_type": "background_replace",
+            "target_phrase": "snowy mountain glass greenhouse with pine forest outside background"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "green plastic harvest crate"
+          }
+        ],
+        "untouched_shots": [
+          3
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
+  },
+  {
+    "sample_id": "00029_T9_0029",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T9",
+      "instruction": "Shot 1: [EDIT] Replace the gray round suitcase with a floating transparent luggage pod for the blue alien traveler moving through the spaceport.\nShot 2: [EDIT] Change the blue-white glowing floor tiles to blue-white glowing floor tiles with pulsing arrow patterns while the green three-eyed alien opens the backpack at the luggage belt.\nShot 3: [EDIT] Change the shooting style of shot 3 to a low-angle close-up, keeping the maintenance robot welding the underside of the round spacecraft.\nShot 4: [KEEP] Keep the multicolored alien travelers sitting in colorful seats under the space windows unchanged.\nShot 5: [EDIT] Add a small pink alien child waving near the boarding gate while the robot arm taps the boarding screen and alien travelers wait.\nShot 6: [KEEP] Keep the round spacecraft lifting from the glowing runway with blue exhaust flames unchanged.",
+      "target_phrase": "shot-conditioned mixed T1/T2/T4/T6/T8 edits",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": false,
+        "edit_scope": "shot_conditioned_composite",
+        "edit_type": "mixed_per_shot",
+        "source_queries": [],
+        "edited_queries": [],
+        "combine": "none",
+        "reason": "T9 mixes local, background, and camera edits; preservation should be evaluated by per-shot task-specific metrics."
+      },
+      "extra": {
+        "edit_type": "shot_conditioned_composite",
+        "selection_policy": "handwritten balanced subset, one sample per source video",
+        "m": 4,
+        "n_shots": 6,
+        "source_tasks": {
+          "T1": 1,
+          "T2": 1,
+          "T4": 1,
+          "T6": 1
+        },
+        "shot_edits": [
+          {
+            "shot_id": 1,
+            "source_task": "T1",
+            "edit_type": "static_replace",
+            "target_phrase": "floating transparent luggage pod"
+          },
+          {
+            "shot_id": 2,
+            "source_task": "T2",
+            "edit_type": "attribute_edit",
+            "target_phrase": "blue-white glowing floor tiles with pulsing arrow patterns"
+          },
+          {
+            "shot_id": 3,
+            "source_task": "T6",
+            "edit_type": "cinematic_reshoot",
+            "target_phrase": "low-angle close-up"
+          },
+          {
+            "shot_id": 5,
+            "source_task": "T4",
+            "edit_type": "dynamic_add",
+            "target_phrase": "small pink alien child waving near the boarding gate"
+          }
+        ],
+        "untouched_shots": [
+          4,
+          6
+        ]
+      },
+      "author": "codex-handwritten-t9-shot-conditioned-20260617"
+    }
   }
 ]

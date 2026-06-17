@@ -1,4 +1,4 @@
-"""T1-T8 task templates and per-video prompt instantiation.
+"""T1-T9 task templates and per-video prompt instantiation.
 
 Each task is a small dataclass with:
 - a textual instruction template (Jinja-style {placeholders})
@@ -129,4 +129,15 @@ T8 = TaskDef(
     requires=["characters", "key_objects"],
 )
 
-ALL_TASKS = {t.task_id: t for t in [T1, T2, T3, T4, T5, T6, T7, T8]}
+# T9 — shot-conditioned mixed edit binding
+T9 = TaskDef(
+    task_id="T9",
+    description="Shot-Conditioned Composite Edit (per-shot edits sampled from T1/T2/T4/T6/T8)",
+    instruction_templates=[
+        "For each shot, follow the [EDIT] or [KEEP] instruction exactly: {shot_plan}.",
+    ],
+    target_phrase_template="shot-conditioned mixed edits",
+    requires=["characters", "key_objects"],
+)
+
+ALL_TASKS = {t.task_id: t for t in [T1, T2, T3, T4, T5, T6, T7, T8, T9]}
