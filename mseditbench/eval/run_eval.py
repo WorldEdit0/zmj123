@@ -25,9 +25,11 @@ orchestrator can be exercised without GPU. Swap in real backends with
 
 from __future__ import annotations
 import argparse
+from collections import defaultdict
 import json
 import os
 from pathlib import Path
+import re
 
 import numpy as np
 from tqdm import tqdm
@@ -176,6 +178,213 @@ def _get_mask_spec(sample: dict) -> dict:
     }
 
 
+def _mean_or_none(values) -> float | None:
+    xs = [float(v) for v in values if v is not None]
+    return float(np.mean(xs)) if xs else None
+
+
+def _clean_query_text(text: str | None) -> str:
+    text = (text or "").strip()
+    text = re.sub(r"^\s*(?:the|a|an)\s+", "", text, flags=re.IGNORECASE)
+    return text.strip(" .,;:")
+
+
+def _t9_shot_instruction_map(instruction: str) -> dict[int, str]:
+    out: dict[int, str] = {}
+    for raw in (instruction or "").splitlines():
+        m = re.match(r"\s*Shot\s+(\d+)\s*:\s*(.*)", raw, flags=re.IGNORECASE)
+        if not m:
+            continue
+        shot_id = int(m.group(1))
+        text = re.sub(r"^\[(?:EDIT|KEEP)\]\s*", "", m.group(2).strip(), flags=re.IGNORECASE)
+        text = re.split(
+            r"\.\s*(?:Apply this edit only|Do not inherit|If the same)",
+            text,
+            maxsplit=1,
+            flags=re.IGNORECASE,
+        )[0]
+        out[shot_id] = text.strip(" .")
+    return out
+
+
+def _split_preserve_queries(instruction: str) -> list[str]:
+    m = re.search(r"\bpreserving\s+(.+?)(?:\.|$)", instruction or "", flags=re.IGNORECASE)
+    if not m:
+        return []
+    raw = m.group(1)
+    parts = re.split(r",|\s+and\s+", raw, flags=re.IGNORECASE)
+    return [q for q in (_clean_query_text(p) for p in parts) if q]
+
+
+def _parse_t9_source_target_queries(shot_edit: dict, instruction: str) -> dict:
+    """Best-effort per-shot NEP mask policy for T9 independent_per_shot rows."""
+    source_task = shot_edit.get("source_task")
+    edit_type = shot_edit.get("edit_type")
+    target_phrase = _clean_query_text(shot_edit.get("target_phrase"))
+
+    base = {
+        "shot_id": int(shot_edit["shot_id"]),
+        "edit_id": f"shot-{int(shot_edit['shot_id'])}",
+        "source_task": source_task,
+        "edit_type": edit_type,
+        "target_phrase": target_phrase,
+        "source_queries": [],
+        "edited_queries": [],
+        "score_region": "complement",
+        "nep_applicable": False,
+        "reason": None,
+    }
+
+    if source_task == "T6":
+        base["reason"] = "cinematic re-shoot changes the whole target shot"
+        return base
+
+    if source_task == "T8":
+        preserve_queries = _split_preserve_queries(instruction)
+        if not preserve_queries:
+            base["reason"] = "background replacement has no foreground preserve queries"
+            return base
+        base.update({
+            "source_queries": preserve_queries,
+            "edited_queries": preserve_queries,
+            "score_region": "inside",
+            "nep_applicable": True,
+        })
+        return base
+
+    source_queries: list[str] = []
+    edited_queries: list[str] = []
+    if source_task == "T1":
+        m = re.search(
+            r"\bReplace\s+(.+?)\s+with\s+(.+?)(?:,|\s+while\b|\s+keeping\b|\.|$)",
+            instruction or "",
+            flags=re.IGNORECASE,
+        )
+        if m:
+            source_queries = [_clean_query_text(m.group(1))]
+        edited_queries = [target_phrase] if target_phrase else []
+    elif source_task == "T2":
+        m = re.search(
+            r"\bChange\s+(.+?)\s+to\s+(.+?)(?:\s+while\b|\s+as\b|,|\.|$)",
+            instruction or "",
+            flags=re.IGNORECASE,
+        )
+        if m:
+            source_queries = [_clean_query_text(m.group(1))]
+        edited_queries = [target_phrase] if target_phrase else []
+    elif source_task == "T4":
+        if edit_type and "delete" in edit_type:
+            m = re.search(r"\bRemove\s+(.+?)\s+from\s+", instruction or "", flags=re.IGNORECASE)
+            if m:
+                source_queries = [_clean_query_text(m.group(1))]
+        elif edit_type and "add" in edit_type:
+            edited_queries = [target_phrase] if target_phrase else []
+        else:
+            m = re.search(
+                r"\bReplace\s+(.+?)\s+with\s+(.+?)(?:,|\s+while\b|\.|$)",
+                instruction or "",
+                flags=re.IGNORECASE,
+            )
+            if m:
+                source_queries = [_clean_query_text(m.group(1))]
+            edited_queries = [target_phrase] if target_phrase else []
+
+    source_queries = [q for q in source_queries if q]
+    edited_queries = [q for q in edited_queries if q]
+    if not source_queries and not edited_queries:
+        base["reason"] = "no local mask query could be inferred"
+        return base
+    base.update({
+        "source_queries": source_queries,
+        "edited_queries": edited_queries,
+        "nep_applicable": True,
+    })
+    return base
+
+
+def _build_t9_metric_plan(sample: dict) -> dict | None:
+    edit = sample.get("edit") or {}
+    if edit.get("task_id") != "T9":
+        return None
+
+    extra = edit.get("extra") or {}
+    mode = extra.get("mode")
+    plan = {"mode": mode, "ee_units": [], "nep_targets": []}
+
+    if mode == "independent_per_shot":
+        instruction_by_shot = _t9_shot_instruction_map(edit.get("instruction") or "")
+        for row in extra.get("shot_edits") or []:
+            shot_id = int(row["shot_id"])
+            instruction = instruction_by_shot.get(shot_id) or row.get("target_phrase") or edit.get("instruction") or ""
+            unit = {
+                "unit_id": f"shot-{shot_id}",
+                "edit_id": f"shot-{shot_id}",
+                "shot_id": shot_id,
+                "source_task": row.get("source_task"),
+                "edit_type": row.get("edit_type"),
+                "instruction": instruction,
+                "target_phrase": row.get("target_phrase") or edit.get("target_phrase") or "",
+                "applicable_shots": [shot_id],
+            }
+            plan["ee_units"].append(unit)
+            plan["nep_targets"].append(_parse_t9_source_target_queries(row, instruction))
+        return plan
+
+    if mode == "sequential_two_edit_prompt":
+        components = {
+            str(c.get("edit_id")): c
+            for c in (extra.get("prompt_components") or [])
+            if c.get("edit_id") is not None
+        }
+        object_edits = {
+            str(c.get("edit_id")): c
+            for c in (extra.get("object_edits") or [])
+            if c.get("edit_id") is not None
+        }
+        targets_by_edit: dict[str, list[dict]] = defaultdict(list)
+        for impact in extra.get("metric_shot_impacts") or []:
+            shot_id = int(impact.get("shot_id"))
+            for target in impact.get("evaluation_targets") or []:
+                edit_id = str(target.get("edit_id"))
+                source_query = _clean_query_text(target.get("metric_source_query") or target.get("source_phrase"))
+                target_query = _clean_query_text(target.get("metric_target_query") or target.get("target_phrase"))
+                nep_target = {
+                    "shot_id": shot_id,
+                    "edit_id": edit_id,
+                    "source_task": target.get("source_task"),
+                    "edit_type": target.get("edit_type"),
+                    "target_object": target.get("target_object"),
+                    "target_phrase": target.get("target_phrase") or target_query,
+                    "source_queries": [source_query] if source_query else [],
+                    "edited_queries": [target_query] if target_query else [],
+                    "score_region": "complement",
+                    "nep_applicable": bool(source_query or target_query),
+                    "reason": None if (source_query or target_query) else "no local mask query in metric target",
+                }
+                plan["nep_targets"].append(nep_target)
+                targets_by_edit[edit_id].append(nep_target)
+
+        edit_ids = list(components.keys() or object_edits.keys())
+        for edit_id in edit_ids:
+            comp = components.get(edit_id) or {}
+            obj = object_edits.get(edit_id) or {}
+            shots_from_targets = sorted({int(t["shot_id"]) for t in targets_by_edit.get(edit_id, [])})
+            applicable_shots = shots_from_targets or [int(s) for s in (comp.get("applicable_shots") or obj.get("applicable_shots") or [])]
+            unit = {
+                "unit_id": f"edit-{edit_id}",
+                "edit_id": edit_id,
+                "source_task": comp.get("source_task") or obj.get("source_task"),
+                "edit_type": comp.get("edit_type") or obj.get("edit_type"),
+                "instruction": comp.get("instruction_fragment") or edit.get("instruction") or "",
+                "target_phrase": comp.get("target_phrase") or obj.get("target_phrase") or "",
+                "applicable_shots": applicable_shots,
+            }
+            plan["ee_units"].append(unit)
+        return plan
+
+    return plan
+
+
 def _mask_one_frame(mask_backend, frame: np.ndarray, query: str) -> tuple[np.ndarray | None, bool]:
     m3 = mask_backend(frame[None, ...], query)  # [1,H,W]
     m = m3[0]
@@ -251,6 +460,274 @@ def _build_nep_masks(
         mask_hits[str(k)] = shot_hits
 
     return (edit_masks or None), mask_hits
+
+
+def _build_t9_nep_masks(
+    sample: dict,
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    targets: list[dict],
+    mask_backend,
+) -> tuple[dict[int, np.ndarray] | None, dict]:
+    """Build per-shot union masks for T9 target rows.
+
+    Sequential T9 can have two active edits on the same shot. NEP should mask
+    the union of both edit regions before scoring the preserved complement.
+    """
+    mask_hits: dict[str, dict] = {}
+    if mask_backend is None:
+        for shot_id in sorted({int(t["shot_id"]) for t in targets}):
+            mask_hits[str(shot_id)] = {"used": False, "reason": "mask backend disabled", "targets": []}
+        return None, mask_hits
+
+    masks_by_shot: dict[int, list[np.ndarray]] = defaultdict(list)
+    for target in targets:
+        if not target.get("nep_applicable"):
+            continue
+        shot_id = int(target["shot_id"])
+        src = src_frames.get(shot_id)
+        edt = edt_frames.get(shot_id)
+        shot_hits = mask_hits.setdefault(str(shot_id), {"used": False, "targets": []})
+        target_hits = {
+            "edit_id": target.get("edit_id"),
+            "source": {},
+            "edited": {},
+        }
+        target_hw = None
+
+        if src is not None and len(src):
+            frame = src[len(src) // 2]
+            target_hw = frame.shape[:2]
+            for query in target.get("source_queries") or []:
+                try:
+                    m, hit = _mask_one_frame(mask_backend, frame, query)
+                    target_hits["source"][query] = hit
+                    if m is not None:
+                        masks_by_shot[shot_id].append(_resize_mask_to(m, target_hw))
+                except Exception as e:
+                    print(f"[mask] sid={sample['sample_id']} shot={shot_id} source {query!r}: {e}")
+                    target_hits["source"][query] = False
+
+        if edt is not None and len(edt):
+            frame = edt[len(edt) // 2]
+            if target_hw is None:
+                target_hw = frame.shape[:2]
+            for query in target.get("edited_queries") or []:
+                try:
+                    m, hit = _mask_one_frame(mask_backend, frame, query)
+                    target_hits["edited"][query] = hit
+                    if m is not None:
+                        masks_by_shot[shot_id].append(_resize_mask_to(m, target_hw))
+                except Exception as e:
+                    print(f"[mask] sid={sample['sample_id']} shot={shot_id} edited {query!r}: {e}")
+                    target_hits["edited"][query] = False
+
+        shot_hits["targets"].append(target_hits)
+
+    edit_masks: dict[int, np.ndarray] = {}
+    for shot_id, masks in masks_by_shot.items():
+        if masks:
+            edit_masks[shot_id] = np.maximum.reduce(masks).astype(np.uint8)
+            mask_hits.setdefault(str(shot_id), {"targets": []})["used"] = True
+    return (edit_masks or None), mask_hits
+
+
+def _score_t9_nep(
+    sample: dict,
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    t9_plan: dict,
+    dino_backend,
+    mask_backend,
+) -> dict:
+    targets = [t for t in (t9_plan.get("nep_targets") or []) if t.get("nep_applicable")]
+    if not targets:
+        return {
+            "nep": None,
+            "per_shot_nep": {},
+            "n_scored": 0,
+            "n_skipped": 0,
+            "n_mask_missing": 0,
+            "mask_mode": None,
+            "reason": "T9 has no NEP-applicable local targets",
+            "t9_targets": t9_plan.get("nep_targets") or [],
+            "mask_hits": {},
+        }
+
+    edit_masks, mask_hits = _build_t9_nep_masks(sample, src_frames, edt_frames, targets, mask_backend)
+    targets_by_shot: dict[int, list[dict]] = defaultdict(list)
+    for target in targets:
+        targets_by_shot[int(target["shot_id"])].append(target)
+
+    per_shot_nep: dict[int, float] = {}
+    n_skipped = 0
+    n_mask_missing = 0
+    mask_modes = set()
+    for shot_id, shot_targets in sorted(targets_by_shot.items()):
+        modes = {t.get("score_region", "complement") for t in shot_targets}
+        mask_mode = "inside" if modes == {"inside"} else "complement"
+        mask_modes.add(mask_mode)
+        r = M.nep(
+            {shot_id: src_frames[shot_id]} if shot_id in src_frames else {},
+            {shot_id: edt_frames[shot_id]} if shot_id in edt_frames else {},
+            per_shot_edit_masks={shot_id: edit_masks[shot_id]} if edit_masks and shot_id in edit_masks else None,
+            dino_backend=dino_backend,
+            require_masks=True,
+            mask_mode=mask_mode,
+        )
+        if r.get("per_shot_nep"):
+            per_shot_nep.update({int(k): float(v) for k, v in r["per_shot_nep"].items()})
+        n_skipped += int(r.get("n_skipped") or 0)
+        n_mask_missing += int(r.get("n_mask_missing") or 0)
+
+    if not per_shot_nep:
+        return {
+            "nep": None,
+            "per_shot_nep": {},
+            "n_scored": 0,
+            "n_skipped": n_skipped,
+            "n_mask_missing": n_mask_missing,
+            "mask_mode": "mixed" if len(mask_modes) > 1 else next(iter(mask_modes), None),
+            "reason": "required T9 edit-region masks were missing",
+            "t9_targets": t9_plan.get("nep_targets") or [],
+            "mask_hits": mask_hits,
+        }
+
+    return {
+        "nep": float(np.mean(list(per_shot_nep.values()))),
+        "per_shot_nep": per_shot_nep,
+        "n_scored": len(per_shot_nep),
+        "n_skipped": n_skipped,
+        "n_mask_missing": n_mask_missing,
+        "mask_mode": "mixed" if len(mask_modes) > 1 else next(iter(mask_modes), None),
+        "reason": None,
+        "t9_targets": t9_plan.get("nep_targets") or [],
+        "mask_hits": mask_hits,
+    }
+
+
+def _score_t9_vlm_metrics(
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    sample: dict,
+    t9_plan: dict,
+    vlm_backends,
+) -> tuple[dict, dict]:
+    vlm = vlm_backends[0] if vlm_backends else None
+    units = t9_plan.get("ee_units") or []
+    if not units:
+        ee3_r = {"ee": None, "per_shot": {}, "n_applicable": 0, "reason": "T9 has no EE units"}
+        csep3_r = {"csep": None, "coverage": None, "consistency": None, "n_applicable": 0}
+        return ee3_r, csep3_r
+
+    shot_scores: dict[int, list[float]] = defaultdict(list)
+    unit_results = []
+    for unit in units:
+        ee_r = M.ee_v3(
+            src_frames,
+            edt_frames,
+            [int(s) for s in unit.get("applicable_shots") or []],
+            unit.get("instruction") or sample["edit"].get("instruction") or "",
+            unit.get("target_phrase") or sample["edit"].get("target_phrase") or "",
+            vlm_backend=vlm,
+        )
+        per_shot = {
+            int(k): v.get("ee")
+            for k, v in (ee_r.get("per_shot") or {}).items()
+            if v.get("ee") is not None
+        }
+        for shot_id, score in per_shot.items():
+            shot_scores[shot_id].append(float(score))
+        unit_results.append({
+            **{k: unit.get(k) for k in ("unit_id", "edit_id", "shot_id", "source_task", "edit_type", "target_phrase")},
+            "applicable_shots": unit.get("applicable_shots") or [],
+            "ee": ee_r.get("ee"),
+            "per_shot": per_shot,
+            "frame_scores": {
+                str(k): v.get("frames") or []
+                for k, v in (ee_r.get("per_shot") or {}).items()
+            },
+            "reason": ee_r.get("reason"),
+        })
+
+    ee_mean = _mean_or_none([u.get("ee") for u in unit_results])
+    ee3_r = {
+        "ee": ee_mean,
+        "per_shot": {
+            int(k): {"ee": float(np.mean(v)), "frames": []}
+            for k, v in sorted(shot_scores.items())
+            if v
+        },
+        "n_applicable": sum(len(u.get("per_shot") or {}) for u in unit_results),
+        "frame_pairs_per_shot": unit_results[0].get("frame_pairs_per_shot"),
+        "prompt_template": "v3-ee-image-pair-rating:t9",
+        "t9_units": unit_results,
+        "aggregation": "mean over T9 edit units; each unit averages its applicable shots",
+    }
+
+    if t9_plan.get("mode") == "independent_per_shot":
+        csep3_r = {
+            "csep": None,
+            "coverage": None,
+            "consistency": None,
+            "n_applicable": 0,
+            "reason": "T9 independent_per_shot has unrelated one-shot edit units",
+            "t9_units": [],
+        }
+        return ee3_r, csep3_r
+
+    unit_by_id = {str(u.get("edit_id")): u for u in unit_results}
+    csep_units = []
+    for unit in units:
+        edit_id = str(unit.get("edit_id"))
+        applicable_shots = [int(s) for s in unit.get("applicable_shots") or []]
+        if len(applicable_shots) < 2:
+            csep_units.append({
+                "edit_id": edit_id,
+                "csep": None,
+                "reason": "<2 applicable shots",
+                "applicable_shots": applicable_shots,
+            })
+            continue
+        per_shot_ee = unit_by_id.get(edit_id, {}).get("per_shot") or {}
+        csep_r = M.csep_v3(
+            edt_frames,
+            applicable_shots,
+            {int(k): float(v) for k, v in per_shot_ee.items()},
+            unit.get("instruction") or sample["edit"].get("instruction") or "",
+            vlm_backend=vlm,
+        )
+        csep_units.append({
+            "edit_id": edit_id,
+            "source_task": unit.get("source_task"),
+            "edit_type": unit.get("edit_type"),
+            "target_phrase": unit.get("target_phrase"),
+            "applicable_shots": applicable_shots,
+            "csep": csep_r.get("csep"),
+            "coverage": csep_r.get("coverage"),
+            "consistency": csep_r.get("consistency"),
+            "n_pairs": csep_r.get("n_pairs"),
+            "pair_scores": csep_r.get("pair_scores") or {},
+            "reason": csep_r.get("reason"),
+        })
+
+    csep_vals = [u.get("csep") for u in csep_units if u.get("csep") is not None]
+    csep3_r = {
+        "csep": _mean_or_none(csep_vals),
+        "coverage": _mean_or_none([u.get("coverage") for u in csep_units]),
+        "consistency": _mean_or_none([u.get("consistency") for u in csep_units]),
+        "n_applicable": sum(len(u.get("applicable_shots") or []) for u in csep_units if u.get("csep") is not None),
+        "n_pairs": sum(int(u.get("n_pairs") or 0) for u in csep_units),
+        "pair_scores": {
+            f"{u.get('edit_id')}:{pair}": score
+            for u in csep_units
+            for pair, score in (u.get("pair_scores") or {}).items()
+        },
+        "t9_units": csep_units,
+        "reason": None if csep_vals else "no T9 edit unit had >=2 applicable scored shots",
+        "aggregation": "mean over per-edit CSEP values",
+    }
+    return ee3_r, csep3_r
 
 
 def _get_v2_text_pair(sample: dict) -> tuple[str, str]:
@@ -365,6 +842,7 @@ def score_one(
     applicable = edit.get("applicable_shots", [s["shot_id"] for s in shots])
     unedited = [s["shot_id"] for s in shots if s["shot_id"] not in applicable]
     metrics = set(metrics or COMPUTABLE_METRICS)
+    t9_plan = _build_t9_metric_plan(sample) if task_id == "T9" else None
 
     # 中文注释：source frames 对同一个 prompt 的 K 个输出完全相同，
     # 所以 main() 会缓存一次传进来，避免每个 k 都重复读源视频。
@@ -378,7 +856,7 @@ def score_one(
     # edit-side queries separately; their union is the allowed edit region.
     # EE_v3/CSEP_v3 are VLM full-frame judgments and do not consume masks.
     mask_spec = _get_mask_spec(sample)
-    if "nep" in metrics:
+    if "nep" in metrics and t9_plan is None:
         edit_masks, mask_hits = _build_nep_masks(
             sample, src_frames, edt_frames, applicable, mask_backend, mask_spec
         )
@@ -411,6 +889,16 @@ def score_one(
             "n_mask_missing": 0,
             "reason": "metric skipped",
         }
+    elif t9_plan is not None:
+        nep_r = _score_t9_nep(
+            sample,
+            src_frames,
+            edt_frames,
+            t9_plan,
+            dino_backend=dino_backend,
+            mask_backend=mask_backend,
+        )
+        mask_hits = nep_r.get("mask_hits") or {}
     elif mask_spec.get("nep_applicable"):
         nep_r = M.nep(
             src_frames,
@@ -441,6 +929,10 @@ def score_one(
                  "reason": "metric skipped"}
         csep3_r = {"csep": None, "coverage": None, "consistency": None,
                    "n_applicable": 0, "reason": "metric skipped"}
+    elif t9_plan is not None:
+        ee3_r, csep3_r = _score_t9_vlm_metrics(
+            src_frames, edt_frames, sample, t9_plan, vlm_backends
+        )
     elif task_id in {"T5"} or mask_spec.get("edit_type") == "transition_style":
         # 中文注释：T5 改变 shot 结构，不适合用“每个原始 shot 是否完成编辑”
         # 来定义 EE/CSEP，所以显式跳过。历史 T7 transition JSON 也跳过；
@@ -592,6 +1084,10 @@ def score_one(
             "mask_queries": mask_spec,
             "mask_query": legacy_mask_query,
             "mask_hits": mask_hits,
+            "t9_metric_plan": t9_plan,
+            "ee_v3_t9_units": ee3_r.get("t9_units") or [],
+            "csep_v3_t9_units": csep3_r.get("t9_units") or [],
+            "nep_t9_targets": nep_r.get("t9_targets") or [],
         },
     }
 

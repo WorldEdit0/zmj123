@@ -15,6 +15,11 @@ import traceback
 
 from mseditbench import metrics as M
 from mseditbench.metrics import backends as B
+from mseditbench.eval.run_eval import (
+    _build_t9_metric_plan,
+    _build_t9_nep_masks,
+    _score_t9_vlm_metrics,
+)
 
 
 # -- helpers -----------------------------------------------------------------
@@ -41,6 +46,129 @@ class AlwaysYesVlm(B.VlmBackend):
 
 class AlwaysNoVlm(B.VlmBackend):
     def yes_no(self, frames, q): return False
+
+
+class PromptScoredVlm(B.VlmBackend):
+    """Return configured scores when a substring appears in the judge prompt."""
+    def __init__(self, image_scores=None, pair_scores=None):
+        self.image_scores = image_scores or {}
+        self.pair_scores = pair_scores or {}
+
+    def yes_no(self, frames, q): return False
+
+    def _score(self, table, prompt):
+        for key, value in table.items():
+            if key in prompt:
+                return float(value)
+        return 0.0
+
+    def rate_image_pair(self, frame_a, frame_b, prompt, max_score=5):
+        return self._score(self.image_scores, prompt)
+
+    def rate_pair(self, frames_a, frames_b, prompt, max_score=5):
+        return self._score(self.pair_scores, prompt)
+
+
+def _t9_seq_sample():
+    return {
+        "sample_id": "toy_T9_seq",
+        "video_id": "toy",
+        "source_video": "toy.mp4",
+        "shots": [{"shot_id": i, "frame_start": (i - 1) * 10, "frame_end": i * 10 - 1} for i in range(1, 5)],
+        "edit": {
+            "task_id": "T9",
+            "instruction": "Change source A to target A; change source B to target B.",
+            "target_phrase": "persistent two-object edits",
+            "applicable_shots": [1, 2, 3, 4],
+            "extra": {
+                "mode": "sequential_two_edit_prompt",
+                "prompt_components": [
+                    {
+                        "edit_id": "A",
+                        "source_task": "T2",
+                        "edit_type": "attribute_edit",
+                        "instruction_fragment": "edit A",
+                        "target_phrase": "target A",
+                        "applicable_shots": [1, 2],
+                    },
+                    {
+                        "edit_id": "B",
+                        "source_task": "T2",
+                        "edit_type": "attribute_edit",
+                        "instruction_fragment": "edit B",
+                        "target_phrase": "target B",
+                        "applicable_shots": [2, 3, 4],
+                    },
+                ],
+                "object_edits": [
+                    {"edit_id": "A", "source_task": "T2", "target_phrase": "target A", "applicable_shots": [1, 2]},
+                    {"edit_id": "B", "source_task": "T2", "target_phrase": "target B", "applicable_shots": [2, 3, 4]},
+                ],
+                "metric_shot_impacts": [
+                    {
+                        "shot_id": 1,
+                        "evaluation_targets": [
+                            {
+                                "edit_id": "A",
+                                "source_task": "T2",
+                                "edit_type": "attribute_edit",
+                                "metric_source_query": "source A",
+                                "metric_target_query": "target A",
+                                "target_phrase": "target A",
+                            }
+                        ],
+                    },
+                    {
+                        "shot_id": 2,
+                        "evaluation_targets": [
+                            {
+                                "edit_id": "A",
+                                "source_task": "T2",
+                                "edit_type": "attribute_edit",
+                                "metric_source_query": "source A",
+                                "metric_target_query": "target A",
+                                "target_phrase": "target A",
+                            },
+                            {
+                                "edit_id": "B",
+                                "source_task": "T2",
+                                "edit_type": "attribute_edit",
+                                "metric_source_query": "source B",
+                                "metric_target_query": "target B",
+                                "target_phrase": "target B",
+                            },
+                        ],
+                    },
+                    {
+                        "shot_id": 3,
+                        "evaluation_targets": [
+                            {
+                                "edit_id": "B",
+                                "source_task": "T2",
+                                "edit_type": "attribute_edit",
+                                "metric_source_query": "source B",
+                                "metric_target_query": "target B",
+                                "target_phrase": "target B",
+                            }
+                        ],
+                    },
+                    {
+                        "shot_id": 4,
+                        "evaluation_targets": [
+                            {
+                                "edit_id": "B",
+                                "source_task": "T2",
+                                "edit_type": "attribute_edit",
+                                "metric_source_query": "source B",
+                                "metric_target_query": "target B",
+                                "target_phrase": "target B",
+                            }
+                        ],
+                    },
+                ],
+            },
+        },
+    }
 
 
 # -- tests -------------------------------------------------------------------
@@ -287,6 +415,77 @@ def test_psq_aggregation():
     src = {1: _make_frames(0), 2: _make_frames(1)}
     r = M.psq(src)
     assert r["psq"] is not None and 0.0 <= r["psq"] <= 1.0
+
+
+def test_t9_independent_per_shot_disables_csep():
+    sample = {
+        "sample_id": "toy_T9_ind",
+        "video_id": "toy",
+        "source_video": "toy.mp4",
+        "shots": [{"shot_id": 1, "frame_start": 0, "frame_end": 9}, {"shot_id": 2, "frame_start": 10, "frame_end": 19}],
+        "edit": {
+            "task_id": "T9",
+            "instruction": (
+                "Shot 1: [EDIT] Change the blue bar to a bright red bar.\n"
+                "Shot 2: [EDIT] Change the shooting style of shot 2 to a close-up shot."
+            ),
+            "target_phrase": "shot-local edits",
+            "applicable_shots": [1, 2],
+            "extra": {
+                "mode": "independent_per_shot",
+                "shot_edits": [
+                    {"shot_id": 1, "source_task": "T2", "edit_type": "attribute_edit", "target_phrase": "bright red bar"},
+                    {"shot_id": 2, "source_task": "T6", "edit_type": "cinematic_reshoot", "target_phrase": "close-up shot"},
+                ],
+            },
+        },
+    }
+    plan = _build_t9_metric_plan(sample)
+    assert [u["applicable_shots"] for u in plan["ee_units"]] == [[1], [2]]
+    src = {1: _make_frames(1, T=1), 2: _make_frames(2, T=1)}
+    edit = {1: _make_frames(3, T=1), 2: _make_frames(4, T=1)}
+    vlm = PromptScoredVlm(image_scores={"bright red bar": 0.2, "close-up shot": 0.8})
+    ee_r, csep_r = _score_t9_vlm_metrics(src, edit, sample, plan, [vlm])
+    assert abs(ee_r["ee"] - 0.5) < 1e-6, f"ee={ee_r['ee']}"
+    assert csep_r["csep"] is None, f"independent T9 should not have CSEP, got {csep_r['csep']}"
+
+
+def test_t9_sequential_ee_and_csep_are_edit_weighted():
+    sample = _t9_seq_sample()
+    plan = _build_t9_metric_plan(sample)
+    src = {i: _make_frames(i, T=1) for i in range(1, 5)}
+    edit = {i: _make_frames(i + 10, T=1) for i in range(1, 5)}
+    vlm = PromptScoredVlm(
+        image_scores={"edit A": 0.4, "edit B": 1.0},
+        pair_scores={"edit A": 0.25, "edit B": 1.0},
+    )
+    ee_r, csep_r = _score_t9_vlm_metrics(src, edit, sample, plan, [vlm])
+
+    assert abs(ee_r["ee"] - 0.7) < 1e-6, f"EE should average edit A and B equally, got {ee_r['ee']}"
+    expected_a = (0.4 * 0.25) ** 0.5
+    expected = (expected_a + 1.0) / 2
+    assert abs(csep_r["csep"] - expected) < 1e-6, f"csep={csep_r['csep']} expected={expected}"
+    assert len(csep_r["t9_units"]) == 2, f"units={csep_r['t9_units']}"
+
+
+def test_t9_nep_unions_multiple_edit_masks_per_shot():
+    sample = _t9_seq_sample()
+    plan = _build_t9_metric_plan(sample)
+    src = {i: np.zeros((1, 20, 20, 3), dtype=np.uint8) for i in range(1, 5)}
+    edit = {i: np.zeros((1, 20, 20, 3), dtype=np.uint8) for i in range(1, 5)}
+
+    def mask_backend(frames, query):
+        masks = np.zeros((len(frames), 20, 20), dtype=np.uint8)
+        if query in {"source A", "target A"}:
+            masks[:, :, :10] = 1
+        elif query in {"source B", "target B"}:
+            masks[:, :, 10:] = 1
+        return masks
+
+    masks, hits = _build_t9_nep_masks(sample, src, edit, plan["nep_targets"], mask_backend)
+    assert masks is not None and 2 in masks, "shot 2 should have a union edit mask"
+    assert int(masks[2].sum()) == 400, f"shot 2 union mask should cover both halves, got {masks[2].sum()}"
+    assert hits["2"]["used"] is True
 
 
 # -- runner ------------------------------------------------------------------
