@@ -1,7 +1,7 @@
 # MSEdit-Bench v1
 
 > **首个用于多镜头视频编辑的基准。**
-> 30 个多镜头视频、8 种任务类型、480 条手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和时间结构。
+> 30 个多镜头视频、8 种核心任务类型、480 条核心手写编辑提示词，并通过 VLM-as-Judge 评估流程进行评测，该流程覆盖编辑有效性、跨镜头一致性、保留能力和时间结构。v3 VLM-grounded prompt 集额外加入 60 条 T9 复合编辑扩展任务。
 
 [![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
@@ -14,7 +14,7 @@
 **MSEdit-Bench** 是首个做到以下几点的基准：
 
 1. 将多镜头视频作为一等对象来处理（逐镜头标注、跨镜头指标）
-2. 覆盖 **8 类不同的编辑任务**（替换 / 属性 / 风格 / 添加删除 / 结构重排 / 电影化 / 光照 / 背景替换）
+2. 覆盖 **8 类核心编辑任务**（替换 / 属性 / 风格 / 添加删除 / 结构重排 / 电影化 / 光照 / 背景替换），并在 v3 中加入 T9 复合编辑扩展任务
 3. 用经过校准、且与人类判断一致的 **VLM-as-Judge** 评估，替代脆弱的 CLIP-T 代理指标
 
 更完整的版本见 `RESEARCH_PLAN.md` 和 `DEEP_DIVE.md`。
@@ -27,14 +27,14 @@
 |---|---|
 | **源视频** | 30 个 mp4，每个 10 秒，720p @ 24 fps，由 ModelScope 托管 |
 | **镜头检测** | OmniShotCut（主）+ TransNetV2 + PySceneDetect（一致性投票）；重试后 30 / 30（100 %）命中率 |
-| **编辑提示词** | Claude 手写生成 480 条（T1-T8 各 60 条） |
+| **编辑提示词** | v2_10s：Claude 手写生成 480 条核心 prompt（T1-T8 各 60 条）；v3_vlm：`runs/edit_prompts_v3_vlm/` 额外包含 60 条 T9 复合编辑 prompt |
 | **评估** | Mask-aware（SAM-3）+ DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite 作为裁判 |
 | **K 样本协议** | 每条提示词 K = 3；报告 mean ± std |
-| **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 480 条 prompt 需要重新跑 |
+| **参考基线** | Seedance 2.0 Pro 和 Fast 已归档旧 420-prompt snapshot；当前 480 条核心 prompt 和可选 T9 扩展需要重新跑 |
 
 ---
 
-## 8 类任务
+## 8 类核心任务 + T9
 
 | ID | 名称 | 测试内容 | 示例指令 |
 |---|---|---|---|
@@ -46,8 +46,11 @@
 | **T6** | 电影化重拍 | 单镜头构图 / 摄影机运动变化 | “将镜头 1 重拍为低角度镜头，并带有缓慢上仰。” |
 | **T7** | 全局光照 | 具有明显特征、与场景关联的整体光照重渲染 | “将咖啡馆场景重新打成手电筒窄光束。” |
 | **T8** | 全局背景替换 | 替换背景，同时保留前景主体、主要人物和关键物体 | “将咖啡馆背景替换成山谷，同时保留咖啡师、杯子和咖啡机。” |
+| **T9** | 跨镜头复合编辑 | 仅用于 v3_vlm。前 30 条绑定独立逐镜头编辑；后 30 条使用两个普通 T1/T2/T4 风格 edit，要求相关对象在后续出现时保持编辑结果。 | “将花盆内的深色湿土改为白色土壤；在花盆边缘添加一只爬行的小红瓢虫。” |
 
 T5 现在也走统一评测入口。TAC 会根据 `new_order` 重建期望的编辑后时间线，再比较 shot 时间锚点。
+
+T9 位于 `runs/edit_prompts_v3_vlm/T9.json`。其中顺承性的后 30 条不在 prompt 中写 shot 标签、`[EDIT]` / `[KEEP]` 标记或额外保留约束；用于评分的对象级影响关系写在 `edit.extra.object_edits`、`edit.extra.prompt_components` 和 `edit.extra.metric_shot_impacts` 中。
 
 ---
 
@@ -109,6 +112,8 @@ runs/eval_my_baseline_v3/
 └── ...
 ```
 
+如果评测 v3 VLM-grounded prompt 集，将 `PROMPTS_DIR` 指向 `runs/edit_prompts_v3_vlm`。只有当 baseline 视频已放在 `videos/T9/` 且文件名匹配 `sample_id` 时才加入 `T9`。
+
 ---
 
 ## 指标（v3 = 主指标）
@@ -138,7 +143,7 @@ runs/eval_my_baseline_v3/
 
 ## 参考结果
 
-Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 480-prompt 任务集重跑：
+Seedance 2.0 Pro 与 Fast 在 2026-06-07 前 v2_10s 旧 420-prompt snapshot 上的归档结果（mask-aware，K=3，n=60 / task）。这些数值尚未按当前 480 条核心 prompt 任务集或 T9 扩展重跑：
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | 已退役 SES Pro | 已退役 SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -196,7 +201,8 @@ multi_shot_bench/
 │
 └── runs/                     # 所有流水线输出都落在这里
     ├── pilot_v2_10s/                    # ★ 镜头检测 30/30（当前）
-    ├── edit_prompts_v2_10s/             # ★ 480 条生产提示词
+    ├── edit_prompts_v2_10s/             # ★ 480 条核心生产提示词
+    ├── edit_prompts_v3_vlm/             # ★ v3 VLM-grounded prompt，包含 T9
     ├── seedance_v2v_edit_v2_10s/        # 旧 420-prompt Seedance Pro 归档输出
     ├── seedance_v2v_fast_edit_v2_10s/   # 旧 420-prompt Seedance Fast 归档输出
     ├── eval_seedance_v2v_v2_10s_v3/     # 旧 420-prompt Pro v3 leaderboard
@@ -261,7 +267,7 @@ bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
 
 ## 路线图
 
-**v1（本次发布）**：30 个源视频，480 条提示词，VLM-as-Judge 指标；归档 Pro/Fast 参考结果早于 2026-06-07 prompt 重构和 T8 新增，需要按当前任务集重跑。
+**v1（本次发布）**：30 个源视频，480 条核心 prompt 加 v3 T9 扩展，VLM-as-Judge 指标；归档 Pro/Fast 参考结果早于 2026-06-07 prompt 重构和 T8 新增，需要按当前任务集重跑。
 
 **v1.x 后续步骤**（按优先级排序）：
 1. VLM ensemble 多样化：添加 Gemini 2.5 Pro 和 GPT-4o 后端，避免裁判信号来自单一供应商

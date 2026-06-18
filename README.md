@@ -1,7 +1,7 @@
 # MSEdit-Bench v1
 
 > **The first benchmark for multi-shot video editing.**
-> 30 multi-shot videos, 8 task types, and 480 hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure.
+> 30 multi-shot videos, 8 core task types, and 480 core hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure. The v3 VLM-grounded prompt set additionally includes a 60-prompt T9 composite-edit extension.
 
 [![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
 
@@ -14,7 +14,7 @@ Existing video-edit benchmarks (TGVE, EditBoard, etc.) all target **single-clip*
 **MSEdit-Bench** is the first benchmark to:
 
 1. Target multi-shot videos as a first-class object (per-shot annotations, cross-shot metrics)
-2. Cover **8 distinct edit families** (replacement / attribute / style / object add-delete / structural reorder / cinematic / lighting / background replacement)
+2. Cover **8 distinct core edit families** (replacement / attribute / style / object add-delete / structural reorder / cinematic / lighting / background replacement), plus a v3 T9 composite-edit extension for multi-edit binding
 3. Replace fragile CLIP-T proxy metrics with a calibrated **VLM-as-Judge** evaluation that aligns with human judgment
 
 See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
@@ -27,14 +27,14 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 |---|---|
 | **Source videos** | 30 mp4s, 10 s each, 720p @ 24 fps, ModelScope-hosted |
 | **Shot detection** | OmniShotCut (primary) + TransNetV2 + PySceneDetect (consensus); 30 / 30 (100 %) hit rate after retry |
-| **Edit prompts** | 480 hand-written by Claude (T1-T8 = 60 each) |
+| **Edit prompts** | v2_10s: 480 hand-written core prompts (T1-T8 = 60 each); v3_vlm: `runs/edit_prompts_v3_vlm/` adds 60 T9 composite prompts |
 | **Evaluation** | Mask-aware (SAM-3) + DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite as judge |
 | **K-sample protocol** | K = 3 per prompt; report mean ± std |
-| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 480 prompts |
+| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 480 core prompts and the optional T9 extension |
 
 ---
 
-## The 8 task families
+## The 8 Core Task Families + T9
 
 | ID | Name | What it tests | Example instruction |
 |---|---|---|---|
@@ -46,8 +46,11 @@ See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
 | **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
 | **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with a narrow flashlight beam." |
 | **T8** | Global Background Replacement | Replace the background while preserving foreground subjects and key objects | "Replace the cafe background with a mountain valley while preserving the barista, cup, and espresso machine." |
+| **T9** | Composite Cross-Shot Editing | v3_vlm-only composite task. The first 30 prompts bind independent per-shot edits; the last 30 use two plain T1/T2/T4-style edits that should persist on the edited objects wherever they reappear. | "Change the dark wet soil inside the flower pot to white soil; add a small red ladybug crawling along the flower pot rim." |
 
 T5 now runs through the same evaluation entry point as the other tasks. TAC uses the requested `new_order` to build the expected post-edit timeline before comparing shot time anchors.
+
+T9 lives in `runs/edit_prompts_v3_vlm/T9.json`. Its sequential half deliberately avoids shot tags, `[EDIT]` / `[KEEP]` markers, and prompt-side persistence text; the scoring metadata is carried in `edit.extra.object_edits`, `edit.extra.prompt_components`, and `edit.extra.metric_shot_impacts`.
 
 ---
 
@@ -109,6 +112,8 @@ runs/eval_my_baseline_v3/
 └── ...
 ```
 
+For the v3 VLM-grounded prompt set, point `PROMPTS_DIR` to `runs/edit_prompts_v3_vlm`. Include `T9` only when the baseline has edited videos under `videos/T9/` with matching `sample_id`s.
+
 ---
 
 ## Metrics (v3 = headline)
@@ -138,7 +143,7 @@ Full design rationale: top of `mseditbench/metrics/ee_v3.py`.
 
 ## Reference results
 
-Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 480-prompt task set:
+Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 480-core-prompt task set or the T9 extension:
 
 | Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | retired SES Pro | retired SES Fast |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -196,7 +201,8 @@ multi_shot_bench/
 │
 └── runs/                     # all pipeline outputs land here
     ├── pilot_v2_10s/                    # ★ shot detection 30/30 (current)
-    ├── edit_prompts_v2_10s/             # ★ 480 production prompts
+    ├── edit_prompts_v2_10s/             # ★ 480 core production prompts
+    ├── edit_prompts_v3_vlm/             # ★ v3 VLM-grounded prompts, including T9
     ├── seedance_v2v_edit_v2_10s/        # archived old 420-prompt Seedance Pro outputs
     ├── seedance_v2v_fast_edit_v2_10s/   # archived old 420-prompt Seedance Fast outputs
     ├── eval_seedance_v2v_v2_10s_v3/     # archived old 420-prompt Pro v3 leaderboard
@@ -261,7 +267,7 @@ Approximate runtime: 8-GPU parallel + 64-way VLM concurrency, ~150 min per basel
 
 ## Roadmap
 
-**v1 (this release)**: 30 source videos, 480 prompts, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
+**v1 (this release)**: 30 source videos, 480 core prompts plus the v3 T9 extension, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
 
 **v1.x next steps** (in priority order):
 1. VLM ensemble diversification: add Gemini 2.5 Pro and GPT-4o backends so the judge isn't a single-vendor signal
