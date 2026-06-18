@@ -434,7 +434,16 @@ def test_t9_independent_per_shot_disables_csep():
             "extra": {
                 "mode": "independent_per_shot",
                 "shot_edits": [
-                    {"shot_id": 1, "source_task": "T2", "edit_type": "attribute_edit", "target_phrase": "bright red bar"},
+                    {
+                        "shot_id": 1,
+                        "source_task": "T2",
+                        "edit_type": "attribute_edit",
+                        "target_phrase": "bright red bar",
+                        "metric_nep_applicable": True,
+                        "metric_source_queries": ["explicit source bar"],
+                        "metric_edited_queries": ["explicit edited bar"],
+                        "metric_score_region": "complement",
+                    },
                     {"shot_id": 2, "source_task": "T6", "edit_type": "cinematic_reshoot", "target_phrase": "close-up shot"},
                 ],
             },
@@ -442,6 +451,8 @@ def test_t9_independent_per_shot_disables_csep():
     }
     plan = _build_t9_metric_plan(sample)
     assert [u["applicable_shots"] for u in plan["ee_units"]] == [[1], [2]]
+    assert plan["nep_targets"][0]["source_queries"] == ["explicit source bar"]
+    assert plan["nep_targets"][0]["edited_queries"] == ["explicit edited bar"]
     src = {1: _make_frames(1, T=1), 2: _make_frames(2, T=1)}
     edit = {1: _make_frames(3, T=1), 2: _make_frames(4, T=1)}
     vlm = PromptScoredVlm(image_scores={"bright red bar": 0.2, "close-up shot": 0.8})

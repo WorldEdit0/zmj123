@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -68,6 +69,137 @@ def _scope_independent_lines(lines: list[str]) -> list[str]:
         else:
             scoped.append(f"{line} Do not inherit any edited change from other shots.")
     return scoped
+
+
+def _clean_query_text(text: str | None) -> str:
+    text = (text or "").strip()
+    text = re.sub(r"^\s*(?:the|a|an)\s+", "", text, flags=re.IGNORECASE)
+    return text.strip(" .,;:")
+
+
+def _split_metric_queries(text: str) -> list[str]:
+    return [q for q in (_clean_query_text(p) for p in re.split(r",|\s+and\s+", text, flags=re.IGNORECASE)) if q]
+
+
+def _line_body_by_shot(lines: list[str]) -> dict[int, str]:
+    out = {}
+    for line in lines:
+        m = re.match(r"\s*Shot\s+(\d+)\s*:\s*(.*)", line, flags=re.IGNORECASE)
+        if not m:
+            continue
+        text = re.sub(r"^\[(?:EDIT|KEEP)\]\s*", "", m.group(2).strip(), flags=re.IGNORECASE)
+        out[int(m.group(1))] = text.strip(" .")
+    return out
+
+
+def _metric_metadata_from_mask_spec(spec: dict) -> dict:
+    score_region = spec.get("score_region", "complement")
+    if score_region == "mask":
+        score_region = "inside"
+    return {
+        "metric_nep_applicable": bool(spec.get("nep_applicable")),
+        "metric_source_queries": spec.get("source_queries") or [],
+        "metric_edited_queries": spec.get("edited_queries") or [],
+        "metric_score_region": score_region if spec.get("nep_applicable") else "none",
+        "metric_reason": spec.get("reason"),
+    }
+
+
+def _infer_independent_metric_metadata(shot_edit: dict, instruction: str, mask_spec: dict | None = None) -> dict:
+    if mask_spec is not None:
+        return _metric_metadata_from_mask_spec(mask_spec)
+
+    source_task = shot_edit.get("source_task")
+    edit_type = shot_edit.get("edit_type")
+    target_phrase = _clean_query_text(shot_edit.get("target_phrase"))
+    source_queries: list[str] = []
+    edited_queries: list[str] = []
+    score_region = "complement"
+    reason = None
+
+    if source_task == "T6":
+        return {
+            "metric_nep_applicable": False,
+            "metric_source_queries": [],
+            "metric_edited_queries": [],
+            "metric_score_region": "none",
+            "metric_reason": "Cinematic re-shoot changes framing/camera geometry for the whole target shot.",
+        }
+
+    if source_task == "T8":
+        m = re.search(r"\bpreserving\s+(.+?)(?:\.|$)", instruction or "", flags=re.IGNORECASE)
+        source_queries = _split_metric_queries(m.group(1)) if m else []
+        edited_queries = list(source_queries)
+        score_region = "inside"
+        reason = (
+            "T9 shot-local background replacement scores preservation inside "
+            "the explicitly preserved foreground/object queries."
+        )
+    elif source_task == "T1":
+        m = re.search(
+            r"\bReplace\s+(.+?)\s+with\s+(.+?)(?:,|\s+while\b|\s+keeping\b|\.|$)",
+            instruction or "",
+            flags=re.IGNORECASE,
+        )
+        if m:
+            source_queries = [_clean_query_text(m.group(1))]
+        edited_queries = [target_phrase] if target_phrase else []
+    elif source_task == "T2":
+        m = re.search(
+            r"\bChange\s+(.+?)\s+to\s+(.+?)(?:\s+while\b|\s+as\b|,|\.|$)",
+            instruction or "",
+            flags=re.IGNORECASE,
+        )
+        if m:
+            source_queries = [_clean_query_text(m.group(1))]
+        edited_queries = [target_phrase] if target_phrase else []
+    elif source_task == "T4":
+        if edit_type and "delete" in edit_type:
+            m = re.search(r"\bRemove\s+(.+?)\s+from\s+", instruction or "", flags=re.IGNORECASE)
+            if m:
+                source_queries = [_clean_query_text(m.group(1))]
+        elif edit_type and "add" in edit_type:
+            edited_queries = [target_phrase] if target_phrase else []
+        else:
+            m = re.search(
+                r"\bReplace\s+(.+?)\s+with\s+(.+?)(?:,|\s+while\b|\.|$)",
+                instruction or "",
+                flags=re.IGNORECASE,
+            )
+            if m:
+                source_queries = [_clean_query_text(m.group(1))]
+            edited_queries = [target_phrase] if target_phrase else []
+
+    source_queries = [q for q in source_queries if q]
+    edited_queries = [q for q in edited_queries if q]
+    applicable = bool(source_queries or edited_queries)
+    if not applicable and reason is None:
+        reason = "No local edit-region query is defined for this shot-local T9 edit."
+    return {
+        "metric_nep_applicable": applicable,
+        "metric_source_queries": source_queries,
+        "metric_edited_queries": edited_queries,
+        "metric_score_region": score_region if applicable else "none",
+        "metric_reason": reason,
+    }
+
+
+def _attach_independent_metric_metadata(
+    shot_edits: list[dict],
+    lines: list[str],
+    metric_specs: dict[tuple[str, str, str], dict],
+    video_id: str,
+) -> list[dict]:
+    body_by_shot = _line_body_by_shot(lines)
+    for shot_edit in shot_edits:
+        shot_id = int(shot_edit["shot_id"])
+        key = (video_id, shot_edit.get("source_task"), shot_edit.get("target_phrase"))
+        shot_edit.update(_infer_independent_metric_metadata(
+            shot_edit,
+            body_by_shot.get(shot_id, ""),
+            metric_specs.get(key),
+        ))
+    return shot_edits
 
 
 HAND_T9 = [
@@ -930,6 +1062,21 @@ def _load_base_by_video(prompt_dir: Path) -> dict[str, dict]:
     return base_by_video
 
 
+def _load_metric_specs(prompt_dir: Path) -> dict[tuple[str, str, str], dict]:
+    specs = {}
+    for task_id in ["T1", "T2", "T4", "T6", "T8"]:
+        path = prompt_dir / f"{task_id}.json"
+        if not path.exists():
+            continue
+        for sample in json.load(open(path)):
+            edit = sample.get("edit") or {}
+            target_phrase = edit.get("target_phrase")
+            mask_queries = edit.get("mask_queries")
+            if target_phrase and mask_queries:
+                specs[(sample["video_id"], task_id, target_phrase)] = mask_queries
+    return specs
+
+
 def _source_task_counts(shot_edits: list[dict]) -> dict[str, int]:
     return dict(sorted(Counter(e["source_task"] for e in shot_edits).items()))
 
@@ -952,6 +1099,62 @@ def _expand_object_edits(object_edits: list[dict]) -> list[dict]:
     return sorted(shot_edits, key=lambda e: (e["shot_id"], e["object_edit_id"]))
 
 
+def _prompt_components_from_object_edits(object_edits: list[dict]) -> list[dict]:
+    out = []
+    for edit in object_edits:
+        out.append({
+            "edit_id": edit["edit_id"],
+            "source_task": edit["source_task"],
+            "edit_type": edit["edit_type"],
+            "instruction_fragment": f"Change the {edit['source_phrase']} to {edit['target_phrase']}",
+            "target_object": edit["target_object"],
+            "source_phrase": edit["source_phrase"],
+            "target_phrase": edit["target_phrase"],
+            "start_shot": edit["start_shot"],
+            "applicable_shots": edit["applicable_shots"],
+        })
+    return out
+
+
+def _metric_shot_impacts(shots: list[dict], object_edits: list[dict]) -> list[dict]:
+    impacts = []
+    for shot in shots:
+        shot_id = int(shot["shot_id"])
+        active = [edit for edit in object_edits if shot_id in set(edit["applicable_shots"])]
+        inactive = [edit for edit in object_edits if shot_id not in set(edit["applicable_shots"])]
+        impacts.append({
+            "shot_id": shot_id,
+            "frame_start": shot.get("frame_start"),
+            "frame_end": shot.get("frame_end"),
+            "active_edit_ids": [edit["edit_id"] for edit in active],
+            "inactive_edit_ids": [edit["edit_id"] for edit in inactive],
+            "evaluation_targets": [
+                {
+                    "edit_id": edit["edit_id"],
+                    "source_task": edit["source_task"],
+                    "edit_type": edit["edit_type"],
+                    "target_object": edit["target_object"],
+                    "source_phrase": edit["source_phrase"],
+                    "target_phrase": edit["target_phrase"],
+                    "role": "start" if shot_id == int(edit["start_shot"]) else "continuation",
+                    "metric_source_query": edit["source_phrase"],
+                    "metric_target_query": edit["target_phrase"],
+                }
+                for edit in active
+            ],
+            "non_scored_edits": [
+                {
+                    "edit_id": edit["edit_id"],
+                    "target_object": edit["target_object"],
+                    "reason": "not applicable to this shot by object visibility or edit start shot",
+                }
+                for edit in inactive
+            ],
+            "should_score": bool(active),
+        })
+    return impacts
+
+
 def _validate_sample(sample: dict) -> list[str]:
     errors = []
     shots = sample["shots"]
@@ -960,7 +1163,7 @@ def _validate_sample(sample: dict) -> list[str]:
     extra = sample["edit"]["extra"]
     mode = extra.get("mode", "independent_per_shot")
     edited_ids = set(sample["edit"]["applicable_shots"])
-    if len(lines) != len(shots):
+    if mode == "independent_per_shot" and len(lines) != len(shots):
         errors.append(f"{sample['sample_id']}: line count {len(lines)} != shot count {len(shots)}")
     if not (1 < len(edited_ids) <= len(shots)):
         errors.append(f"{sample['sample_id']}: invalid edited-shot count {len(edited_ids)}")
@@ -971,23 +1174,42 @@ def _validate_sample(sample: dict) -> list[str]:
         logical_ids = {int(e["shot_id"]) for e in logical_edits}
         if logical_ids != edited_ids:
             errors.append(f"{sample['sample_id']}: independent applicable shots do not match shot_edits")
-    elif mode == "persistent_object_edit":
+        for edit in logical_edits:
+            required = {"metric_nep_applicable", "metric_source_queries", "metric_edited_queries", "metric_score_region"}
+            missing = required - set(edit)
+            if missing:
+                errors.append(f"{sample['sample_id']}: shot {edit['shot_id']} missing metric fields {sorted(missing)}")
+                continue
+            if edit["metric_nep_applicable"]:
+                if edit["metric_score_region"] not in {"complement", "inside"}:
+                    errors.append(f"{sample['sample_id']}: shot {edit['shot_id']} invalid metric_score_region")
+                if not (edit["metric_source_queries"] or edit["metric_edited_queries"]):
+                    errors.append(f"{sample['sample_id']}: shot {edit['shot_id']} NEP applicable without metric queries")
+            elif edit["metric_score_region"] != "none":
+                errors.append(f"{sample['sample_id']}: shot {edit['shot_id']} non-applicable NEP should use metric_score_region=none")
+    elif mode == "sequential_two_edit_prompt":
         object_edits = extra.get("object_edits", [])
         if len(object_edits) != 2:
-            errors.append(f"{sample['sample_id']}: persistent mode must define exactly two object edits")
+            errors.append(f"{sample['sample_id']}: sequential mode must define exactly two object edits")
+        if len(extra.get("prompt_components", [])) != len(object_edits):
+            errors.append(f"{sample['sample_id']}: sequential mode prompt_components mismatch")
+        if len(extra.get("metric_shot_impacts", [])) != len(shots):
+            errors.append(f"{sample['sample_id']}: sequential mode metric_shot_impacts mismatch")
         for obj in object_edits:
             if obj["source_task"] not in {"T1", "T2", "T4"}:
-                errors.append(f"{sample['sample_id']}: persistent edit uses disallowed source task {obj['source_task']}")
+                errors.append(f"{sample['sample_id']}: sequential edit uses disallowed source task {obj['source_task']}")
             if obj["start_shot"] not in obj["applicable_shots"]:
                 errors.append(f"{sample['sample_id']}: object edit {obj['edit_id']} start shot missing from applicable shots")
             if any(int(sid) not in shot_ids for sid in obj["applicable_shots"]):
                 errors.append(f"{sample['sample_id']}: object edit {obj['edit_id']} has shot outside source shots")
         object_ids = {int(sid) for obj in object_edits for sid in obj["applicable_shots"]}
         if object_ids != edited_ids:
-            errors.append(f"{sample['sample_id']}: persistent applicable shots do not match object_edits")
+            errors.append(f"{sample['sample_id']}: sequential applicable shots do not match object_edits")
     else:
         errors.append(f"{sample['sample_id']}: unknown T9 mode {mode}")
     for idx, line in enumerate(lines, start=1):
+        if mode != "independent_per_shot":
+            break
         prefix = f"Shot {idx}: "
         if not line.startswith(prefix):
             errors.append(f"{sample['sample_id']}: line {idx} missing prefix {prefix!r}")
@@ -1004,6 +1226,7 @@ def _validate_sample(sample: dict) -> list[str]:
 
 def build_samples(prompt_dir: Path) -> list[dict]:
     base_by_video = _load_base_by_video(prompt_dir)
+    metric_specs = _load_metric_specs(prompt_dir)
     out = []
     errors = []
 
@@ -1015,20 +1238,30 @@ def build_samples(prompt_dir: Path) -> list[dict]:
             raise KeyError(f"Missing base metadata for video {video_id}")
         sample = copy.deepcopy(base_by_video[video_id])
         sample["sample_id"] = f"{video_id}_T9_{idx:04d}"
-        mode = plan.get("mode", "independent_per_shot")
+        raw_mode = plan.get("mode", "independent_per_shot")
+        mode = "sequential_two_edit_prompt" if raw_mode == "persistent_object_edit" else raw_mode
         object_edits = copy.deepcopy(plan.get("object_edits", []))
-        if mode == "persistent_object_edit":
+        if mode == "sequential_two_edit_prompt":
             logical_edits = object_edits
             shot_edits = _expand_object_edits(object_edits)
             applicable = sorted({int(e["shot_id"]) for e in shot_edits})
-            lines = plan["lines"]
+            prompt_components = _prompt_components_from_object_edits(object_edits)
+            lines = [
+                f"{component['instruction_fragment'][0].lower()}{component['instruction_fragment'][1:]}"
+                for component in prompt_components
+            ]
             target_phrase = "persistent two-object T1/T2/T4 edits"
             edit_scope = "persistent_object_composite"
             edit_type = "persistent_two_object_edits"
-            selection_policy = "handwritten persistent two-object subset, one sample per source video"
-            reason = "T9 persistent mode mixes two local object edits and evaluates whether each edited object remains edited in later shots where it appears."
+            selection_policy = "handwritten two-edit combinations from T1/T2/T4, one sample per source video"
+            reason = "T9 sequential mode uses two plain edit instructions; metadata defines object-level shot applicability for metric scoring."
         else:
-            shot_edits = copy.deepcopy(plan["shot_edits"])
+            shot_edits = _attach_independent_metric_metadata(
+                copy.deepcopy(plan["shot_edits"]),
+                plan["lines"],
+                metric_specs,
+                video_id,
+            )
             logical_edits = shot_edits
             applicable = sorted({int(e["shot_id"]) for e in shot_edits})
             lines = _scope_independent_lines(plan["lines"])
@@ -1042,15 +1275,15 @@ def build_samples(prompt_dir: Path) -> list[dict]:
 
         sample["edit"] = {
             "task_id": "T9",
-            "instruction": "\n".join(lines),
+            "instruction": "; ".join(lines) + "." if mode == "sequential_two_edit_prompt" else "\n".join(lines),
             "target_phrase": target_phrase,
             "applicable_shots": applicable,
             "mask_queries": {
                 "nep_applicable": False,
                 "edit_scope": edit_scope,
                 "edit_type": edit_type,
-                "source_queries": [],
-                "edited_queries": [],
+                "source_queries": [e["source_phrase"] for e in object_edits] if mode == "sequential_two_edit_prompt" else [],
+                "edited_queries": [e["target_phrase"] for e in object_edits] if mode == "sequential_two_edit_prompt" else [],
                 "combine": "none",
                 "reason": reason,
             },
@@ -1066,13 +1299,16 @@ def build_samples(prompt_dir: Path) -> list[dict]:
             },
             "author": AUTHOR,
         }
-        if mode == "persistent_object_edit":
+        if mode == "sequential_two_edit_prompt":
             sample["edit"]["extra"]["object_edits"] = object_edits
             sample["edit"]["extra"]["n_object_edits"] = len(object_edits)
             sample["edit"]["extra"]["continuity_policy"] = (
-                "Each object edit starts at start_shot and remains active in every later applicable shot "
-                "where that named object appears; edits do not transfer to other objects."
+                "Use object_edits.applicable_shots and metric_shot_impacts to score each edit only on shots "
+                "where its object is visible after that edit starts."
             )
+            sample["edit"]["extra"]["instruction_style"] = "plain_two_edit_prompt_without_shot_tags_or_continuity_text"
+            sample["edit"]["extra"]["prompt_components"] = prompt_components
+            sample["edit"]["extra"]["metric_shot_impacts"] = _metric_shot_impacts(sample["shots"], object_edits)
         errors.extend(_validate_sample(sample))
         out.append(sample)
 

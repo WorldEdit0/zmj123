@@ -356,7 +356,7 @@
       },
       "modes": {
         "independent_per_shot": 30,
-        "persistent_object_edit": 30
+        "sequential_two_edit_prompt": 30
       },
       "source_task_ops": {
         "T1": 27,
@@ -373,7 +373,7 @@
           "T6": 19,
           "T8": 19
         },
-        "persistent_object_edit": {
+        "sequential_two_edit_prompt": {
           "T1": 11,
           "T2": 39,
           "T4": 10

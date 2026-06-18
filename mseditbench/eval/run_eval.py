@@ -235,6 +235,29 @@ def _parse_t9_source_target_queries(shot_edit: dict, instruction: str) -> dict:
         "reason": None,
     }
 
+    explicit_source_queries = _as_query_list(
+        shot_edit.get("metric_source_queries", shot_edit.get("metric_source_query"))
+    )
+    explicit_edited_queries = _as_query_list(
+        shot_edit.get("metric_edited_queries", shot_edit.get("metric_target_query"))
+    )
+    if (
+        "metric_nep_applicable" in shot_edit
+        or explicit_source_queries
+        or explicit_edited_queries
+    ):
+        score_region = shot_edit.get("metric_score_region", "complement")
+        if score_region == "mask":
+            score_region = "inside"
+        base.update({
+            "source_queries": explicit_source_queries,
+            "edited_queries": explicit_edited_queries,
+            "score_region": score_region,
+            "nep_applicable": bool(shot_edit.get("metric_nep_applicable")),
+            "reason": shot_edit.get("metric_reason"),
+        })
+        return base
+
     if source_task == "T6":
         base["reason"] = "cinematic re-shoot changes the whole target shot"
         return base
