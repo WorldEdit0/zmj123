@@ -131,7 +131,7 @@ PSQ = mean(所有 shot_psq)
 
 源码：`mseditbench/metrics/ee_v3.py`
 
-含义：Edit Effectiveness，判断目标编辑是否真的在 applicable shots 中完成。
+含义：Edit Effectiveness，只判断目标编辑是否真的在 applicable shots 中完成。
 
 ```text
 source per-shot frames          edited per-shot frames
@@ -146,7 +146,7 @@ source per-shot frames          edited per-shot frames
             N = EE_V3_FRAME_PAIRS
                        |
                        v
-       Qwen3-VL 看 ORIGINAL image + EDITED image
+       Qwen3-VL 看 ORIGINAL image + EDITED image + 当前编辑指令
                        |
                        v
              输出 0-5 整数，归一化到 0..1
@@ -162,6 +162,13 @@ source per-shot frames          edited per-shot frames
 
 - T5：shot 结构改变，不适合按源 shot 对齐算 EE。
 - 历史旧版 T7 transition prompt：如果 `edit.mask_queries.edit_type == "transition_style"`，也会跳过。当前 v2_10s 的 T7 是光照任务，会正常计算 EE_v3/CSEP_v3。
+
+EE_v3 的 VLM prompt 不暴露 `task_id`、`source_task`、`edit_type`、
+`shot_id` 等 benchmark 内部 metadata；这些字段只保留在外部结果 JSON 中，
+用于路由、聚合和排查。VLM 只需要判断当前编辑指令是否发生。背景保持、
+身份保持、整体画质和跨镜头一致性分别交给 NEP、PSQ、CSEP_v3 等指标，
+不会在 EE_v3 里重复扣分。T9 后 30 条如果一个 shot 同时包含 A/B 两个编辑，
+EE_v3 会拆成两个独立 edit unit；评测 A 时忽略 B 是否发生，评测 B 时同理。
 
 返回 `None` 的情况：没有有效 applicable shot 或 source/edit 缺帧。
 

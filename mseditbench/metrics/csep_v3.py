@@ -45,6 +45,9 @@ Rate how CONSISTENT the two shots are at showing the SAME edited result, on a 0-
   - same style / treatment (lighting, color grading, finish)
   - same level of edit applied (not one shot edited and the other not)
 
+Judge only the requested edit above. Ignore unrelated edits, unrelated scene changes,
+and source preservation issues unless they make the requested edit impossible to compare.
+
 STRICT SCALE — most multi-shot edits drift; reserve 5 for genuinely identical-feeling results:
   0 = totally inconsistent (e.g. one shot edited, the other unchanged; or completely different entity)
   1 = barely consistent (clearly different versions of the edit)

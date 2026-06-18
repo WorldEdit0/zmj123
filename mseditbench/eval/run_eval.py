@@ -666,6 +666,8 @@ def _score_t9_vlm_metrics(
             "applicable_shots": unit.get("applicable_shots") or [],
             "ee": ee_r.get("ee"),
             "per_shot": per_shot,
+            "frame_pairs_per_shot": ee_r.get("frame_pairs_per_shot"),
+            "prompt_template": ee_r.get("prompt_template"),
             "frame_scores": {
                 str(k): v.get("frames") or []
                 for k, v in (ee_r.get("per_shot") or {}).items()
@@ -683,7 +685,7 @@ def _score_t9_vlm_metrics(
         },
         "n_applicable": sum(len(u.get("per_shot") or {}) for u in unit_results),
         "frame_pairs_per_shot": unit_results[0].get("frame_pairs_per_shot"),
-        "prompt_template": "v3-ee-image-pair-rating:t9",
+        "prompt_template": "v3-ee-edit-only-image-pair-rating:t9",
         "t9_units": unit_results,
         "aggregation": "mean over T9 edit units; each unit averages its applicable shots",
     }

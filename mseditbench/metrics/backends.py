@@ -600,6 +600,28 @@ def _make_seed_vlm(
             text = self._do_call(content)
             return _parse_rating(text, max_score)
 
+        def rate_image_pair(self, frame_a, frame_b, prompt, max_score=5):
+            """Show one source/edit image pair for EE_v3."""
+            content = [{"type": "text", "text": "ORIGINAL image:"}]
+            content.append({
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{_encode(frame_a)}",
+                    "detail": detail,
+                },
+            })
+            content.append({"type": "text", "text": "EDITED image:"})
+            content.append({
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{_encode(frame_b)}",
+                    "detail": detail,
+                },
+            })
+            content.append({"type": "text", "text": prompt})
+            text = self._do_call(content)
+            return _parse_rating(text, max_score)
+
     return _SeedVlm()
 
 

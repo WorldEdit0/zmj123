@@ -15,6 +15,8 @@ import traceback
 
 from mseditbench import metrics as M
 from mseditbench.metrics import backends as B
+from mseditbench.metrics.ee_v3 import _build_prompt as _build_ee_v3_prompt
+from mseditbench.metrics.csep_v3 import _build_prompt as _build_csep_v3_prompt
 from mseditbench.eval.run_eval import (
     _build_t9_metric_plan,
     _build_t9_nep_masks,
@@ -215,6 +217,37 @@ def test_ee_full_pass():
              "target", "edit it", clip_backend=FailingClip(0.2),
              vlm_backends=[AlwaysYesVlm(), AlwaysYesVlm(), AlwaysYesVlm()])
     assert r["ee"] == 1.0, f"ee={r['ee']}"
+
+
+def test_ee_v3_prompt_is_edit_only_and_metadata_free():
+    prompt = _build_ee_v3_prompt(
+        "Replace the chef with a robot chef.",
+        "Task type: T1; Edit type: role_replace; Shot id: 1",
+    )
+    assert "Replace the chef with a robot chef." in prompt
+    banned = [
+        "Task type",
+        "Edit type",
+        "Shot id",
+        "Shot role",
+        "source_task",
+        "edit_type",
+        "target_phrase",
+        "region correctness",
+        "visual quality",
+        "artifact-free",
+    ]
+    for term in banned:
+        assert term not in prompt, f"metadata or coupled criterion leaked into prompt: {term}"
+    assert "Score only the requested edit" in prompt
+    assert "If another edit is also visible, ignore it" in prompt
+
+
+def test_csep_v3_prompt_ignores_unrelated_edits():
+    prompt = _build_csep_v3_prompt("Change the chef to a robot chef.")
+    assert "Change the chef to a robot chef." in prompt
+    assert "Judge only the requested edit above" in prompt
+    assert "Task type" not in prompt and "Shot id" not in prompt
 
 
 def test_nep_identity_is_one():

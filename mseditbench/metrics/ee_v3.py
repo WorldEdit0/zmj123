@@ -22,9 +22,9 @@ Iteration history:
 Why this should work where CLIP-T failed:
   - VLM sees the images directly, reads the instruction in context, and
     judges with semantic reasoning — not surface text-image similarity.
-  - VLM rewards visual quality + completeness + correctness, which is
-    what a human evaluator would. Pro's strengths (sharper, more coherent,
-    more complete edits) get credit.
+  - VLM judges only whether the requested edit happened. Preservation,
+    cross-shot consistency, and general visual quality are intentionally
+    left to NEP/CSEP/PSQ so metric meanings stay disentangled.
   - Continuous score (0-5) avoids binary-threshold pathologies of v1.
 
 VLM choice (default): Seed 2.0 Lite via Volcengine Ark (already wired in
@@ -45,44 +45,45 @@ from concurrent.futures import ThreadPoolExecutor
 from . import backends as B
 
 
-# Single-shot rating prompt. Stricter, multi-criteria, anchored scale.
-# The "most edits should be rated 2-4" anchoring is crucial — otherwise the VLM
-# rubber-stamps 5 on any visible change, losing differentiation between strong
-# (Pro) and weak (Fast) editors.
-_EE_PROMPT_TEMPLATE = """You are a STRICT visual judge of image edits. Be critical — most edits have flaws.
+# Single-shot rating prompt. VLM-visible inputs are only:
+# ORIGINAL image, EDITED image, and the requested edit text.
+# Internal benchmark metadata stays outside the prompt for attribution/routing.
+_EE_PROMPT_TEMPLATE = """You are a strict visual judge of edit effectiveness.
 
-You are shown two corresponding frames from the same timestamp:
-ORIGINAL image = un-edited source frame.
-EDITED image = output frame produced by an AI editor.
+You are shown two corresponding images:
+- ORIGINAL: the source image before editing.
+- EDITED: the generated image after editing.
 
-The user's edit instruction was:
-"{instruction}"
+Your only job is to decide whether the requested edit is visible and correctly applied in EDITED compared with ORIGINAL.
 
-The edit should produce: "{target_phrase}"
+Requested edit:
+"{edit_request}"
 
-Rate the edit on a 0-5 INTEGER scale considering ALL of:
-  (i)   instruction faithfulness — does the edit do what was asked?
-  (ii)  region correctness — was the right entity / area changed?
-  (iii) visual quality — is the result clean, sharp, coherent, free of artifacts?
-  (iv)  completeness — is the change fully realized (not half-done)?
+Judging rules:
+- Score only the requested edit above.
+- Do not judge background preservation, identity preservation, temporal consistency, or overall image quality.
+- Ignore unrelated changes unless they make it impossible to verify whether the requested edit happened.
+- If another edit is also visible, ignore it and judge only the requested edit above.
+- For global edits such as style, lighting, background, or camera/framing changes, judge only that requested visual axis.
 
-STRICT SCALE — most edits should land in 2-4; reserve 5 for truly excellent results:
-  0 = no visible change at all
-  1 = barely any change, OR change went wrong direction
-  2 = partial/sloppy change with major artifacts (blur, distortion, identity loss)
-  3 = clear correct change but with visible quality issues OR incomplete
-  4 = strong, mostly clean and complete change with minor issues
-  5 = near-perfect: faithful, sharp, complete, artifact-free
+Score 0-5:
+0 = the requested edit is absent, opposite, or applied to the wrong target.
+1 = the requested edit is barely visible or highly ambiguous.
+2 = the requested edit is partially attempted but mostly incorrect or too weak.
+3 = the requested edit is clearly present but incomplete, weak, or only partly correct.
+4 = the requested edit is mostly correct and easy to verify, with minor misses.
+5 = the requested edit is fully and unambiguously achieved.
 
-Output ONLY a single integer 0-5. No explanation."""
+Output ONLY one integer from 0 to 5. No explanation."""
 
 
 def _build_prompt(instruction: str, target_phrase: str) -> str:
-    # 中文注释：把原始编辑指令和目标短语填入固定裁判模板。
+    # 中文注释：VLM 只看直接可理解的编辑要求，不看 task_id/shot_id/edit_type
+    # 等 benchmark metadata。target_phrase 仅作为旧数据缺少 instruction 时的后备。
     # 模板要求 VLM 只输出 0-5 的整数，后端再归一化到 [0,1]。
+    edit_request = (instruction or "").strip() or (target_phrase or "").strip()
     return _EE_PROMPT_TEMPLATE.format(
-        instruction=(instruction or "").strip(),
-        target_phrase=(target_phrase or "").strip() or "the requested change",
+        edit_request=edit_request or "the requested edit",
     )
 
 
@@ -183,5 +184,5 @@ def ee_v3(
         "per_shot": per_shot,
         "n_applicable": len(per_shot),
         "frame_pairs_per_shot": frame_pairs_per_shot,
-        "prompt_template": "v3-ee-image-pair-rating",
+        "prompt_template": "v3-ee-edit-only-image-pair-rating",
     }
