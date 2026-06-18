@@ -11633,7 +11633,7 @@
     ],
     "edit": {
       "task_id": "T9",
-      "instruction": "Change the plain black ramen apprentice outfit to a black ramen apprentice outfit with white sleeve cuffs; replace the white ramen bowl with a red rim with a black ceramic donburi pot.",
+      "instruction": "Change the plain black ramen apprentice outfit to a black ramen apprentice outfit with white sleeve cuffs; replace the white red-rimmed ramen bowl with a black ceramic donburi pot.",
       "target_phrase": "persistent two-object T1/T2/T4 edits",
       "applicable_shots": [
         1,
@@ -11777,7 +11777,7 @@
             "edit_id": "B",
             "source_task": "T1",
             "edit_type": "static_replace",
-            "instruction_fragment": "replace the white ramen bowl with a red rim with a black ceramic donburi pot",
+            "instruction_fragment": "replace the white red-rimmed ramen bowl with a black ceramic donburi pot",
             "target_object": "ramen bowl",
             "source_phrase": "white ramen bowl with a red rim",
             "target_phrase": "black ceramic donburi pot",
