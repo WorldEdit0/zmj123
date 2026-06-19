@@ -6,7 +6,9 @@ anchors of the source sequence.
 The metric first detects shots in the edited video, normally with OmniShotCut.
 If the edited shot count differs from the expected shot count, TAC is 0. If
 the counts match, each edited shot is compared with its expected start/end
-time. Per-shot score is:
+time. The expected source timeline comes from benchmark shot metadata by
+default; source-side detector output can be enabled explicitly for diagnostics
+with ``detect_source_shots=True``. Per-shot score is:
 
     max(0, 1 - mean(|Δstart|, |Δend|) / expected_duration)
 
@@ -106,15 +108,14 @@ def temporal_anchor_consistency(
 
     ``edited_shots`` can be supplied directly for tests. Production callers
     pass ``edited_video_path`` and let ``detect_shots_fn`` default to
-    OmniShotCut.
+    OmniShotCut for edited-video boundaries. Source shot metadata is treated
+    as the benchmark reference unless ``detect_source_shots`` is set to true.
     """
     if source_fps is None:
         source_fps = _video_fps(source_video_path) if source_video_path else 24.0
 
     if detect_source_shots is None:
-        # Production callers provide both source and edited paths. In that case
-        # recompute source shot count and anchors instead of trusting prompt JSON.
-        detect_source_shots = bool(source_video_path and edited_video_path)
+        detect_source_shots = False
 
     needs_detector = (detect_source_shots and source_video_path) or edited_shots is None
     if needs_detector and detect_shots_fn is None:

@@ -1024,6 +1024,7 @@ def score_one(
                 edited_video_path,
                 source_video_path=src_path,
                 expected_order=expected_order,
+                detect_source_shots=False,
             )
         except Exception as e:
             tac_r = {

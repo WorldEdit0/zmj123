@@ -364,8 +364,8 @@ def test_tac_penalizes_anchor_drift():
     assert r["mean_anchor_error_sec"] > 0.0
 
 
-def test_tac_detects_source_shots_when_paths_are_provided():
-    """Production TAC uses newly detected source shots, not prompt JSON shots."""
+def test_tac_uses_prompt_source_shots_when_paths_are_provided():
+    """Production TAC uses prompt JSON source shots as the benchmark reference."""
     prompt_src_shots = [{"shot_id": 1, "t_start": 0.0, "t_end": 99.0, "duration_sec": 99.0}]
     detected_source = [
         {"frame_start": 0, "frame_end": 47},
@@ -387,20 +387,50 @@ def test_tac_detects_source_shots_when_paths_are_provided():
         edited_fps=24.0,
         detect_shots_fn=detect,
     )
+    assert r["tac"] == 0.0, f"tac={r['tac']}"
+    assert r["expected_count"] == 1, f"expected_count={r['expected_count']}"
+    assert r["edited_count"] == 2, f"edited_count={r['edited_count']}"
+    assert r["source_count_from_detection"] is False
+
+
+def test_tac_can_detect_source_shots_when_explicitly_requested():
+    """Source-side detection remains available as an explicit diagnostic mode."""
+    prompt_src_shots = [{"shot_id": 1, "t_start": 0.0, "t_end": 99.0, "duration_sec": 99.0}]
+    detected_source = [
+        {"frame_start": 0, "frame_end": 47},
+        {"frame_start": 48, "frame_end": 95},
+    ]
+    detected_edited = [
+        {"frame_start": 0, "frame_end": 47},
+        {"frame_start": 48, "frame_end": 95},
+    ]
+
+    def detect(path):
+        return detected_source if path == "source.mp4" else detected_edited
+
+    r = M.temporal_anchor_consistency(
+        prompt_src_shots,
+        "edited.mp4",
+        source_video_path="source.mp4",
+        source_fps=24.0,
+        edited_fps=24.0,
+        detect_shots_fn=detect,
+        detect_source_shots=True,
+    )
     assert r["tac"] is not None and r["tac"] > 0.999, f"tac={r['tac']}"
     assert r["expected_count"] == 2, f"expected_count={r['expected_count']}"
     assert r["source_count_from_detection"] is True
 
 
-def test_tac_t5_reorder_uses_detected_source_anchors():
-    """T5 reorder keeps prompt order, but durations come from source detection."""
+def test_tac_t5_reorder_uses_prompt_source_anchors():
+    """T5 reorder keeps prompt order, with durations from prompt source metadata."""
     prompt_src_shots = [
-        {"shot_id": 1, "t_start": 0.0, "t_end": 10.0, "duration_sec": 10.0},
-        {"shot_id": 2, "t_start": 10.0, "t_end": 20.0, "duration_sec": 10.0},
+        {"shot_id": 1, "t_start": 0.0, "t_end": 1.0, "duration_sec": 1.0},
+        {"shot_id": 2, "t_start": 1.0, "t_end": 3.0, "duration_sec": 2.0},
     ]
     detected_source = [
-        {"frame_start": 0, "frame_end": 23},   # 1s
-        {"frame_start": 24, "frame_end": 71},  # 2s
+        {"frame_start": 0, "frame_end": 239},    # 10s
+        {"frame_start": 240, "frame_end": 479},  # 10s
     ]
     detected_edited = [
         {"frame_start": 0, "frame_end": 47},   # reordered shot 2
@@ -420,7 +450,7 @@ def test_tac_t5_reorder_uses_detected_source_anchors():
         detect_shots_fn=detect,
     )
     assert r["tac"] is not None and r["tac"] > 0.999, f"tac={r['tac']}"
-    assert r["source_count_from_detection"] is True
+    assert r["source_count_from_detection"] is False
     assert r["edited_count_from_detection"] is True
 
 
