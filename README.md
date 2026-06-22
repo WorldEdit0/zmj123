@@ -1,292 +1,270 @@
-# MSEdit-Bench v1
+# MSEdit-Bench
 
-> **The first benchmark for multi-shot video editing.**
-> 30 multi-shot videos, 8 core task types, and 480 core hand-written edit prompts, evaluated with a VLM-as-Judge pipeline that captures edit effectiveness, cross-shot consistency, preservation, and temporal structure. The v3 VLM-grounded prompt set additionally includes a 60-prompt T9 composite-edit extension.
+MSEdit-Bench is a benchmark and evaluation toolkit for multi-shot video
+editing. It evaluates whether an editor can apply an instruction to videos
+with multiple shot cuts while preserving identity, objects, scene structure,
+and temporal anchors across shots.
 
-[![Tests](https://img.shields.io/badge/tests-17%2F17-brightgreen)]() [![License](https://img.shields.io/badge/license-CC--BY--4.0-blue)]() [![Status](https://img.shields.io/badge/status-v1-blue)]()
+This README describes the current files in this repository. Older v1/v2
+material may still exist in code comments or companion notes for history and
+ablation, but the current data path is the v3 prompt set under
+`runs/edit_prompts_v3_vlm/`.
 
----
+## Current Snapshot
 
-## Why this benchmark exists
-
-Existing video-edit benchmarks (TGVE, EditBoard, etc.) all target **single-clip** editing. But real-world video has **shot cuts** — a 10-second clip routinely contains 3-5 distinct shots, and a good editor must maintain identity, style, and causal state **across cuts**.
-
-**MSEdit-Bench** is the first benchmark to:
-
-1. Target multi-shot videos as a first-class object (per-shot annotations, cross-shot metrics)
-2. Cover **8 distinct core edit families** (replacement / attribute / style / object add-delete / structural reorder / cinematic / lighting / background replacement), plus a v3 T9 composite-edit extension for multi-edit binding
-3. Replace fragile CLIP-T proxy metrics with a calibrated **VLM-as-Judge** evaluation that aligns with human judgment
-
-See `RESEARCH_PLAN.md` and `DEEP_DIVE.md` for the long version.
-
----
-
-## At a glance
-
-| | |
+| Item | Current value |
 |---|---|
-| **Source videos** | 30 mp4s, 10 s each, 720p @ 24 fps, ModelScope-hosted |
-| **Shot detection** | OmniShotCut (primary) + TransNetV2 + PySceneDetect (consensus); 30 / 30 (100 %) hit rate after retry |
-| **Edit prompts** | v2_10s: 480 hand-written core prompts (T1-T8 = 60 each); v3_vlm: `runs/edit_prompts_v3_vlm/` adds 60 T9 composite prompts |
-| **Evaluation** | Mask-aware (SAM-3) + DINOv2 + pyiqa + OmniShotCut + Seed VLM 2.0 Lite as judge |
-| **K-sample protocol** | K = 3 per prompt; report mean ± std |
-| **Reference baselines** | Seedance 2.0 Pro & Fast archived for the pre-2026-06-07 420-prompt snapshot; rerun needed for the current 480 core prompts and the optional T9 extension |
+| Source prompt file | `source_prompts_multishot_v3_cn_flexible_draft.json` |
+| Source videos | 30 local mp4s under `runs/source_videos_v3/videos/` |
+| Source metadata | 10 seconds, 24 fps, expected 2-6 shots per video |
+| Edit prompt set | `runs/edit_prompts_v3_vlm/T1.json` through `T9.json` |
+| Prompt count | 560 total prompts |
+| Current baseline videos | `runs/seedance_v2v_edit_v3_10s_0616/videos/` and `runs/seedance_v2v_fast_edit_v3_10s_0616/videos/` |
+| Current eval summaries | `runs/eval_seedance_v2v_pro_v3_10s_0616_non_vlm/`, `runs/eval_seedance_v2v_fast_v3_10s_0616_non_vlm/`, and `runs/eval_seedance_v2v_pro_fast_v3_10s_0616_non_vlm/` |
+| Main evaluator | `mseditbench/eval/run_eval.py` |
+| Unified launchers | `scripts/eval_suite.sh`, `scripts/run_eval_parallel.sh` |
+| Standalone VLM-only evaluator | `standalone_ee_csep_eval/` |
 
----
+Generated videos, checkpoints, zips, and most large local assets are ignored by
+git. The README still names their expected local paths because the evaluator
+uses those paths directly.
 
-## The 8 Core Task Families + T9
+## Task Set
 
-| ID | Name | What it tests | Example instruction |
-|---|---|---|---|
-| **T1** | Cross-Shot Replacement | Individual-level dynamic entity replacement plus function-compatible category-level static object replacement | "Replace the barista with a silver-haired female barista." / "Swap the latte cup for a wide ceramic latte bowl." |
-| **T2** | Cross-Shot Attribute Edit | Localized same-object changes in color, material, pattern, texture, hairstyle, and fur/hair length | "Change the barista's black apron to a deep maroon apron in every shot." |
-| **T3** | Global Style | Whole-frame re-render to a broad, explicit visual style | "Re-render the cafe scene in pixel art style." |
-| **T4** | Cross-Shot Add/Delete | Static add, static delete, and dynamic add operations, 20 prompts each; dynamic delete is excluded to preserve narrative continuity | "Place a small brass desk bell next to the white ceramic latte cup." |
-| **T5** | Shot Reorder | Symbolic shot-order edit | "Reorder the video to shot order 3, 1, 2." |
-| **T6** | Cinematic Re-shoot | Single-shot framing/camera-move change | "Re-shoot shot 1 as a low-angle shot with a slow tilt-up." |
-| **T7** | Global Lighting | Whole-frame re-lighting with distinctive scene-appropriate illumination | "Re-light the cafe scene with a narrow flashlight beam." |
-| **T8** | Global Background Replacement | Replace the background while preserving foreground subjects and key objects | "Replace the cafe background with a mountain valley while preserving the barista, cup, and espresso machine." |
-| **T9** | Composite Cross-Shot Editing | v3_vlm-only composite task. The first 30 prompts bind independent per-shot edits; the last 30 use two plain T1/T2/T4-style edits that should persist on the edited objects wherever they reappear. | "Change the dark wet soil inside the flower pot to white soil; add a small red ladybug crawling along the flower pot rim." |
+The current v3 prompt manifest is
+`runs/edit_prompts_v3_vlm/manifest.json`.
 
-T5 now runs through the same evaluation entry point as the other tasks. TAC uses the requested `new_order` to build the expected post-edit timeline before comparing shot time anchors.
+| Task | Count | What it tests |
+|---|---:|---|
+| T1 Cross-Shot Replacement | 60 | Dynamic entity replacement and static object replacement |
+| T2 Cross-Shot Attribute Edit | 60 | Color, material, texture, pattern, text, hair, or other same-object changes |
+| T3 Global Style | 60 | Whole-video style re-rendering while preserving content and shot order |
+| T4 Cross-Shot Add/Delete | 80 | Static add, static delete, dynamic add, and dynamic delete, 20 prompts each |
+| T5 Shot Reorder | 60 | Symbolic shot-order changes scored mainly through TAC |
+| T6 Cinematic Re-shoot | 60 | Shot-local framing or camera-motion changes |
+| T7 Global Lighting | 60 | Whole-video lighting changes |
+| T8 Global Background Replacement | 60 | Background replacement with foreground preservation masks |
+| T9 Composite Cross-Shot Editing | 60 | Shot-conditioned mixed edits plus persistent two-object composite edits |
 
-T9 lives in `runs/edit_prompts_v3_vlm/T9.json`. Its sequential half deliberately avoids shot tags, `[EDIT]` / `[KEEP]` markers, and prompt-side persistence text; the scoring metadata is carried in `edit.extra.object_edits`, `edit.extra.prompt_components`, and `edit.extra.metric_shot_impacts`.
+T9 has two modes:
 
----
+- `independent_per_shot`: different shots receive separate edit instructions;
+  CSEP is skipped for one-shot edit units.
+- `sequential_two_edit_prompt`: two object-level edits are scored separately
+  and should persist wherever their target objects reappear.
 
-## Quick start
+## Metrics
 
-### 1. Install
+The main evaluator writes one `{sample_id}_k*.eval.json` per edited video, then
+one `{sample_id}.agg.json` per prompt, then a task-level `aggregate.json`.
+
+| Metric | File | Meaning |
+|---|---|---|
+| PSQ | `mseditbench/metrics/psq.py` | Perceptual and aesthetic quality of edited frames |
+| EE_v3 | `mseditbench/metrics/ee_v3.py` | VLM-as-judge edit effectiveness on applicable shots |
+| CSEP_v3 | `mseditbench/metrics/csep_v3.py` | Cross-shot edit propagation: `sqrt(coverage * consistency)` |
+| NEP | `mseditbench/metrics/nep.py` | Non-edit preservation using SAM3 masks and DINOv2 similarity |
+| USP | `mseditbench/metrics/usp.py` | Preservation of source shots outside `edit.applicable_shots` |
+| TAC | `mseditbench/metrics/tac.py` | Temporal anchor consistency from edited-video shot boundaries |
+
+Legacy CLIP-based EE/CSEP files are retained for comparison, but the current
+headline VLM metrics are `EE_v3` and `CSEP_v3`.
+
+## Repository Layout
+
+```text
+.
+|-- README.md
+|-- README_zh.md
+|-- source_prompts_multishot_v3_cn_flexible_draft.json
+|-- modelscope_dl.py
+|-- docs/
+|   `-- metrics_flow_zh.md
+|-- scripts/
+|   |-- build_v3_vlm_edit_prompts.py
+|   |-- eval_suite.sh
+|   |-- recompute_usp_parallel.sh
+|   `-- run_eval_parallel.sh
+|-- mseditbench/
+|   |-- schema.py
+|   |-- preprocess/
+|   |-- edit_prompts/
+|   |-- metrics/
+|   |-- eval/
+|   |-- baselines/
+|   |-- tracking/
+|   |-- identity/
+|   `-- tests/
+|-- runs/
+|   |-- source_videos_v3/
+|   |-- edit_prompts_v3_vlm/
+|   |-- seedance_v2v_edit_v3_10s_0616/
+|   |-- seedance_v2v_fast_edit_v3_10s_0616/
+|   |-- eval_seedance_v2v_pro_v3_10s_0616_non_vlm/
+|   |-- eval_seedance_v2v_fast_v3_10s_0616_non_vlm/
+|   `-- eval_seedance_v2v_pro_fast_v3_10s_0616_non_vlm/
+|-- seedance_api_example/
+`-- standalone_ee_csep_eval/
+```
+
+`CLAUDE.md` and `PROJECT_ONBOARDING.md` are useful historical notes, but they
+may contain older local paths. Treat this README and the code under
+`mseditbench/` as the current reference.
+
+## Installation
+
+There is no current top-level lockfile or install script in the repository.
+Use Python 3.10+ or 3.11+, then install the dependencies needed by the backend
+you plan to run.
+
+Minimal smoke-test dependencies:
 
 ```bash
-git clone <this-repo>
-cd multi_shot_bench
-bash install.sh        # installs Python deps + pre-fetches DINOv2 / SAM-3 / OmniShotCut / pyiqa weights
+python -m venv .venv
+source .venv/bin/activate
+pip install numpy opencv-python tqdm
 ```
 
-You will need:
-- Python 3.11+
-- A CUDA GPU (≥ 24 GB recommended for SAM-3)
-- An ARK API key for the Seed VLM judge (`export ARK_API_KEY=...`)
+Additional real backends are loaded lazily:
 
-### 2. Run an editor baseline (Seedance reference shown)
+- `pyiqa` for PSQ.
+- DINOv2 and PyTorch for NEP/USP.
+- SAM3 checkpoints for NEP masks. Default path:
+  `mseditbench/ckpt/sam3/sam3.pt`, or set `SAM3_CKPT`.
+- OmniShotCut for TAC.
+- `volcenginesdkarkruntime` plus `ARK_API_KEY` for `BACKEND_VLM=seed`.
+- A local Qwen3-VL checkpoint plus `QWEN3VL_MODEL_PATH` for
+  `BACKEND_VLM=qwen3vl`.
 
-We treat the editor as a **black box**. Drop your edited mp4s under any directory in this layout:
+## Expected Video Layout
 
+For each baseline, put edited videos under:
+
+```text
+runs/<baseline_name>/videos/<TASK>/<sample_id>_k0.mp4
 ```
-runs/<your_baseline_name>/videos/T{1..8}/{sample_id}_k{0,1,2}.mp4
+
+For example:
+
+```text
+runs/seedance_v2v_edit_v3_10s_0616/videos/T1/00000_T1_0000_k0.mp4
 ```
 
-Where `sample_id` matches the `sample_id` field in `runs/edit_prompts_v2_10s/T*.json`, and `k` indexes the K = 3 samples for that prompt.
+Set `NUM_SAMPLES=1` for the current local v3 runs. If you generate multiple
+samples per prompt, add `_k1`, `_k2`, etc. and set `NUM_SAMPLES` accordingly.
 
-For Seedance API users, ready-to-launch scripts live in [`seedance2.0/scripts/`](https://github.com/.../seedance2.0):
+## Run a Smoke Test
+
+This exercises the orchestration with mock heavy backends. It still needs the
+source and edited videos to exist locally.
 
 ```bash
-# Pro
-bash scripts/infer_v2_mutilshot_edit_v2_10s_all.sh
-
-# Fast
-bash scripts/infer_v2_fast_mutilshot_edit_v2_10s_all.sh
+python3 -m mseditbench.eval.run_eval \
+  --prompts_json runs/edit_prompts_v3_vlm/T1.json \
+  --baseline_dir runs/seedance_v2v_edit_v3_10s_0616/videos/T1 \
+  --videos_root runs/source_videos_v3/videos \
+  --output_dir /tmp/mseditbench_smoke/T1 \
+  --baseline seedance_v2v_pro \
+  --snapshot_id smoke_v3 \
+  --backend_dino mock \
+  --backend_vlm mock \
+  --backend_shot none \
+  --backend_mask none \
+  --backend_psq mock \
+  --num_samples 1 \
+  --limit 2
 ```
 
-### 3. Evaluate
+## Run the Current Non-VLM Evaluation
+
+The current checked summaries are non-VLM summaries: PSQ, NEP, USP, and TAC are
+filled, while EE_v3/CSEP_v3 are blank until a VLM run is performed.
 
 ```bash
-export ARK_API_KEY="<your-volcengine-ark-key>"
+PROMPTS_DIR=runs/edit_prompts_v3_vlm \
+SOURCE_VIDEOS_ROOT=runs/source_videos_v3/videos \
+BASELINE_NAME=seedance_v2v_pro \
+BASELINE_VIDEOS_ROOT=runs/seedance_v2v_edit_v3_10s_0616/videos \
+EVAL_OUT_ROOT=runs/eval_seedance_v2v_pro_v3_10s_0616_non_vlm \
+SNAPSHOT_ID=v3_10s_0616_non_vlm \
+NUM_SAMPLES=1 \
+NUM_SHARDS=8 \
+METRICS=non_vlm \
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8 T9
 
-PROMPTS_DIR=runs/edit_prompts_v2_10s \
-SOURCE_VIDEOS_ROOT=/abs/path/to/source_videos_10s/videos \
-BASELINE_NAME=my_baseline \
-BASELINE_VIDEOS_ROOT=runs/my_baseline/videos \
-EVAL_OUT_ROOT=runs/eval_my_baseline_v3 \
-SNAPSHOT_ID=my_baseline_v1 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
+python3 -m mseditbench.eval.summarize \
+  --eval_root runs/eval_seedance_v2v_pro_v3_10s_0616_non_vlm
 ```
 
-This shards across 8 GPUs, computes all metrics with mask-aware backends + Seed VLM judge, and writes:
+For a smaller machine, set `NUM_SHARDS=1`.
 
-```
-runs/eval_my_baseline_v3/
-├── T1/aggregate.json        # task-level mean ± std for every metric
-├── T1/<sample_id>.eval.json # per-prompt × per-K detailed scores
-└── ...
-```
+## Run EE_v3 and CSEP_v3
 
-For the v3 VLM-grounded prompt set, point `PROMPTS_DIR` to `runs/edit_prompts_v3_vlm`. Include `T9` only when the baseline has edited videos under `videos/T9/` with matching `sample_id`s.
-
----
-
-## Metrics (v3 = headline)
-
-| Metric | What it measures | Backend | Range |
-|---|---|---|---|
-| **PSQ** | Perceptual quality of edited frames | pyiqa MUSIQ + LAION-Aes | [0, 1] ↑ |
-| **EE_v3** | Did the edit apply the instruction? | Seed VLM 0-5 rating per shot | [0, 1] ↑ |
-| **CSEP_v3** | Does the edit propagate consistently across shots? | √(coverage × consistency); both VLM-rated | [0, 1] ↑ |
-| **NEP** | Is the un-edited / preserved region kept intact? | DINOv2 cos sim outside local edit masks; for T8, inside the foreground preserve mask from `edit.mask_queries` | [0, 1] ↑ / None when inapplicable |
-| **USP** | Are source shots not targeted by the edit preserved? | DINOv2 cos sim on shots outside `edit.applicable_shots` | [0, 1] ↑ / None when all shots are edited |
-| **TAC** | Did edited-video shot boundaries preserve expected time anchors? | OmniShotCut shot detection; shot-count mismatch gives 0, matched shots are penalized by start/end drift | [0, 1] ↑ |
-
-**Each metric has its own file under `mseditbench/metrics/`** with a docstring carrying the formula. v1/v2 versions are retained marked `DEPRECATED` for ablation.
-
-### Why VLM-as-Judge (v3)?
-
-We tried two CLIP-T-based versions before settling on VLM-as-Judge:
-
-- **v1** (binary CLIP-T threshold + 3-VLM unanimous): pathologically zeros out real edits when CLIP-T uplift is sub-threshold; correlated VLM votes amplify single-judge errors.
-- **v2** (continuous CLIP-T uplift): scores were in a more reasonable range but Pro consistently scored *below* Fast — because CLIP-T rewards small targeted nudges (Fast's regime) over larger but cleaner re-renders (Pro's regime). This is a metric artefact, not a model truth.
-- **v3** (VLM directly rates 0-5 with a strict anchored scale): aligns with human judgment, captures visual quality + completeness + correctness directly. Pro's PSQ advantage carries through; Pro and Fast end up within ~4 pp of each other, which matches the qualitative reality.
-
-Full design rationale: top of `mseditbench/metrics/ee_v3.py`.
-
----
-
-## Reference results
-
-Archived Seedance 2.0 Pro vs Fast results on the pre-2026-06-07 v2_10s 420-prompt snapshot (mask-aware, K=3, n=60 / task). These numbers are not yet rerun on the current 480-core-prompt task set or the T9 extension:
-
-| Task | PSQ Pro | PSQ Fast | EE_v3 Pro | EE_v3 Fast | CSEP_v3 Pro | CSEP_v3 Fast | NEP Pro | NEP Fast | retired SES Pro | retired SES Fast |
-|---|---|---|---|---|---|---|---|---|---|---|
-| T1 char | **0.596** | 0.576 | 0.523 | 0.543 | 0.531 | 0.537 | 0.855 | 0.893 | 1.000 | 1.000 |
-| T2 attr | **0.598** | 0.573 | 0.567 | 0.627 | 0.681 | 0.717 | 0.950 | 0.972 | 0.797 | 0.822 |
-| T3 style | **0.602** | 0.577 | 0.496 | 0.565 | 0.556 | 0.600 | 0.902 | 0.911 | **0.717** | 0.704 |
-| T4 obj | **0.598** | 0.573 | 0.367 | 0.458 | 0.414 | 0.480 | 0.943 | 0.959 | 0.811 | 0.825 |
-| T6 cam | **0.579** | 0.560 | **0.698** | 0.670 | — | — | 0.508 | 0.567 | 0.653 | 0.673 |
-
-Bold = single-task winner.
-
-**5-task means** over T1/T2/T3/T4/T6: Pro wins PSQ and is slightly behind on EE_v3/CSEP_v3. The archived SES columns are from the retired face/CLIP metric and are kept only to make the old table interpretable. The current metric set requires a rerun to report USP/TAC.
-
----
-
-## Repository layout
-
-```
-multi_shot_bench/
-├── README.md                 # ← you are here
-├── HOWTO.md                  # detailed pipeline walkthrough
-├── CLAUDE.md                 # project status / decisions for future contributors
-│
-├── DEEP_DIVE.md              # long-form motivation & related work
-├── RESEARCH_PLAN.md          # 18-week plan with metric formulas & schedule
-├── SURVEY_REPORT.md          # field survey (50+ benchmarks reviewed)
-├── RELATED_WORK_SURVEY.md    # method survey (editors / metrics / evaluators)
-├── AGENT_BENCH_DESIGN.md     # design doc for the agent-track extension (v2)
-│
-├── install.sh                # zero-to-runnable setup
-├── bench_config.json         # snapshot pin (commercial-API model IDs)
-│
-├── mseditbench/              # the Python package
-│   ├── schema.py             # canonical dataclasses
-│   ├── preprocess/           # OmniShotCut + TN/PS shot detection, contact sheets
-│   ├── tracking/             # Grounded-DINO + SAM-2-Video entity tubes
-│   ├── identity/             # InsightFace face DB
-│   ├── edit_prompts/         # task templates + 480 hand-written prompts
-│   ├── metrics/              # PSQ / EE / CSEP / NEP / USP / TAC
-│   │   ├── ee_v3.py          # ★ v3 EE — VLM-as-Judge (headline)
-│   │   ├── csep_v3.py        # ★ v3 CSEP — VLM-as-Judge pairwise
-│   │   ├── ee.py             # v1 EE (DEPRECATED, kept for ablation)
-│   │   ├── ee_v2.py          # v2 EE (DEPRECATED, kept for ablation)
-│   │   ├── csep.py / csep_v2.py     # v1 / v2 CSEP (DEPRECATED)
-│   │   ├── nep.py / psq.py / usp.py / tac.py / cxs_id.py
-│   │   └── backends.py       # DINOv2 / SAM-3 / pyiqa / OmniShotCut / Seed VLM
-│   ├── baselines/            # editor baseline interface (Aleph reference impl)
-│   ├── eval/                 # orchestrator + leaderboard + recompute tools
-│   └── tests/                # 17 unit tests on synthetic data, all backends mocked
-│
-├── scripts/                  # top-level launchers
-│   ├── run_eval_parallel.sh           # 8-GPU parallel mask-aware eval
-│   ├── recompute_usp_parallel.sh      # USP/TAC-only recompute
-│   └── recompute_psq_parallel.sh      # PSQ-only recompute
-│
-└── runs/                     # all pipeline outputs land here
-    ├── pilot_v2_10s/                    # ★ shot detection 30/30 (current)
-    ├── edit_prompts_v2_10s/             # ★ 480 core production prompts
-    ├── edit_prompts_v3_vlm/             # ★ v3 VLM-grounded prompts, including T9
-    ├── seedance_v2v_edit_v2_10s/        # archived old 420-prompt Seedance Pro outputs
-    ├── seedance_v2v_fast_edit_v2_10s/   # archived old 420-prompt Seedance Fast outputs
-    ├── eval_seedance_v2v_v2_10s_v3/     # archived old 420-prompt Pro v3 leaderboard
-    └── eval_seedance_v2v_fast_v2_10s_v3/ # archived old 420-prompt Fast v3 leaderboard
-```
-
----
-
-## Adding a new editor baseline
-
-Three options, in order of effort:
-
-1. **Drop-in mp4s** (no code): produce edited videos at the right paths and run `run_eval_parallel.sh` with the right env vars. See "Quick start" §2.
-
-2. **Subclass `EditorBaseline`** in `mseditbench/baselines/base.py` and register in `BASELINE_REGISTRY` if you want the orchestrator to call your editor's API end-to-end. See `mseditbench/baselines/aleph.py` for the reference implementation.
-
-3. **Inference-only**: see `seedance2.0/pyscripts/infer_v2_mutilshot_edit.py` for a stand-alone script that calls a remote v2v API and writes mp4s in the expected layout.
-
----
-
-## Snapshot Protocol
-
-Commercial API outputs drift over time. We pin model IDs in `bench_config.json` and archive all generated videos. When citing this benchmark, always reference the snapshot ID present in your `aggregate.json` files (e.g. `pilot_v2_10s_v3`).
-
----
-
-## Reproducing the reference numbers
+For Ark/Seed VLM:
 
 ```bash
-# 1. Get source videos (already in data/source_videos_10s/ or via ModelScope)
-#    https://modelscope.cn/datasets/inLine013/videobed_10s
-# 2. Run shot detection (30/30 hit rate expected)
-python -m mseditbench.preprocess.shot_detect \
-    --videos_dir data/source_videos_10s/videos \
-    --output_dir runs/pilot_v2_10s/shots \
-    --source_json seedance_api_example/source_prompts_multishot_v2_10s.json
-python -m mseditbench.preprocess.pilot_report \
-    --shots_dir runs/pilot_v2_10s/shots \
-    --source_json seedance_api_example/source_prompts_multishot_v2_10s.json \
-    --output_md runs/pilot_v2_10s/pilot_report.md \
-    --output_json runs/pilot_v2_10s/pilot_report.json
+export ARK_API_KEY="<your-key>"
 
-# 3. Archived old 420-prompt Seedance Pro / Fast outputs are under
-#    runs/seedance_v2v_{edit,fast_edit}_v2_10s/videos/
-
-# 4. Run the v3 evaluation
-export ARK_API_KEY=...
-PROMPTS_DIR=runs/edit_prompts_v2_10s \
-SOURCE_VIDEOS_ROOT=/abs/path/data/source_videos_10s/videos \
-BASELINE_NAME=seedance_v2v_pro_v2_10s \
-BASELINE_VIDEOS_ROOT=runs/seedance_v2v_edit_v2_10s/videos \
-EVAL_OUT_ROOT=runs/eval_seedance_v2v_v2_10s_v3 \
-SNAPSHOT_ID=pilot_v2_10s_v3 \
-bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8
-
-# 5. Aggregate matches the README leaderboard within K-sample noise.
+PROMPTS_DIR=runs/edit_prompts_v3_vlm \
+SOURCE_VIDEOS_ROOT=runs/source_videos_v3/videos \
+BASELINE_NAME=seedance_v2v_pro \
+BASELINE_VIDEOS_ROOT=runs/seedance_v2v_edit_v3_10s_0616/videos \
+EVAL_OUT_ROOT=runs/eval_seedance_v2v_pro_v3_10s_0616_vlm \
+SNAPSHOT_ID=v3_10s_0616_vlm \
+NUM_SAMPLES=1 \
+NUM_SHARDS=8 \
+METRICS=all \
+BACKEND_VLM=seed \
+bash scripts/run_eval_parallel.sh T1 T2 T3 T4 T5 T6 T7 T8 T9
 ```
 
-Approximate runtime: 8-GPU parallel + 64-way VLM concurrency, ~150 min per baseline for the standard task set.
+For local Qwen3-VL, set `BACKEND_VLM=qwen3vl` and point
+`QWEN3VL_MODEL_PATH` to the checkpoint.
 
----
+If you only need EE_v3/CSEP_v3 without the full repository, use
+`standalone_ee_csep_eval/`. It contains copied T1-T9 prompts, VLM prompt
+templates, and a self-contained evaluator:
 
-## Roadmap
+```bash
+cd standalone_ee_csep_eval
+pip install -r requirements.txt
+cp .env.example .env
+source .env
+python src/eval_ee_csep.py --tasks T1,T2,T9
+```
 
-**v1 (this release)**: 30 source videos, 480 core prompts plus the v3 T9 extension, VLM-as-Judge metrics; archived Pro/Fast references predate the 2026-06-07 prompt rebalance and T8 addition, and need rerun for the current task set.
+## Current Reference Results
 
-**v1.x next steps** (in priority order):
-1. VLM ensemble diversification: add Gemini 2.5 Pro and GPT-4o backends so the judge isn't a single-vendor signal
-2. VACE 14B as a second open-source baseline (already configured in `seedance2.0/scripts/run_vace_*.sh`, awaits launch)
-3. Real Runway Aleph baseline (T1 + T2 first)
-4. Luma Modify / Veo 3.1 / Pika / DomoAI commercial baselines
+The current local comparison is non-VLM only and uses `K=1`.
 
-**v2 — Agent track (companion paper, separate directory)**: see `AGENT_BENCH_DESIGN.md` for a 715-line design doc. Same 30 source videos, same prompts, but evaluated with **agent-decomposed pipelines** (Plan-Then-Execute, ReAct, CodeAct, etc.). New compound tasks (T9 multi-axis / T10 conditional-branched / T11 iterative-refinement) and trajectory metrics (plan quality / tool-use efficiency / counterfactual probes).
+| Task | Prompts | Pro score | Fast score | Fast - Pro |
+|---|---:|---:|---:|---:|
+| T1 | 60 | 0.8642 | 0.8643 | 0.0001 |
+| T2 | 60 | 0.8652 | 0.8670 | 0.0019 |
+| T3 | 60 | 0.7536 | 0.7733 | 0.0198 |
+| T4 | 80 | 0.8703 | 0.8681 | -0.0022 |
+| T5 | 60 | 0.5237 | 0.5075 | -0.0162 |
+| T6 | 60 | 0.8288 | 0.8164 | -0.0124 |
+| T7 | 60 | 0.7515 | 0.7613 | 0.0098 |
+| T8 | 60 | 0.8206 | 0.8209 | 0.0003 |
+| T9 | 60 | 0.8618 | 0.8428 | -0.0190 |
+| Overall |  | 0.7933 | 0.7913 | -0.0020 |
 
----
+Because these are non-VLM summaries, they should not be read as final
+instruction-following scores. Run EE_v3/CSEP_v3 for final edit-effectiveness
+and cross-shot consistency reporting.
 
-## Citing
+## Tests
 
-Citation block will land here once the paper is on arXiv. For now please cite the GitHub repo URL and the snapshot ID of your eval run.
+The metrics tests use mocked heavy backends:
 
----
+```bash
+python3 -m mseditbench.tests.test_metrics
+```
 
-## License
+## Git Notes
 
-- **Code & annotations**: CC-BY-4.0
-- **Source video files**: re-distribution restricted to a ~100-clip qualitative subset (commercial-API ToS; full 30-video set hosted on ModelScope under `inLine013/videobed_10s`)
-- **Reference Seedance outputs**: archived for reproducibility; not redistributed publicly
+`.gitignore` intentionally excludes generated videos, archives, checkpoints,
+and local model folders such as `CLIP/`, `OmniShotCut/`, `sam3/`, and
+`Qwen3-VL/`. Python, Markdown, and JSON files are allowed through so prompt and
+evaluation metadata can be tracked separately from large binary artifacts.
