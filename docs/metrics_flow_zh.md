@@ -170,6 +170,23 @@ EE_v3 的 VLM prompt 不暴露 `task_id`、`source_task`、`edit_type`、
 不会在 EE_v3 里重复扣分。T9 后 30 条如果一个 shot 同时包含 A/B 两个编辑，
 EE_v3 会拆成两个独立 edit unit；评测 A 时忽略 B 是否发生，评测 B 时同理。
 
+T9 前 30 条 `independent_per_shot` 的 EE_v3 仍然汇总到同一个 `ee_v3`
+字段，但每个单镜头 edit unit 会同时评两类约束：
+
+```text
+unit_ee =
+  mean(
+    目标 shot 上：edit A 是否完成,
+    其他 source shots 上：edit A 是否没有错误泄漏过去，也就是 non-A 是否成立
+  )
+
+T9 EE_v3 = mean(所有 unit_ee)
+```
+
+因此如果 shot 1 的目标对象做了 A，但 A 被错误继承到 shot 2/3/4，
+这些 off-target shot 的 non-A VLM 分数会进入同一个 EE_v3 计算并拉低分数；
+不会新增单独的 leaderboard 指标。
+
 返回 `None` 的情况：没有有效 applicable shot 或 source/edit 缺帧。
 
 ## NEP

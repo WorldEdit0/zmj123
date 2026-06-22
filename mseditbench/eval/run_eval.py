@@ -26,6 +26,7 @@ orchestrator can be exercised without GPU. Swap in real backends with
 from __future__ import annotations
 import argparse
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
@@ -407,12 +408,19 @@ def _build_t9_metric_plan(sample: dict) -> dict | None:
     extra = edit.get("extra") or {}
     mode = extra.get("mode")
     plan = {"mode": mode, "ee_units": [], "nep_targets": []}
+    all_shot_ids = [int(s["shot_id"]) for s in sample.get("shots") or []]
 
     if mode == "independent_per_shot":
         instruction_by_shot = _t9_shot_instruction_map(edit.get("instruction") or "")
         for row in extra.get("shot_edits") or []:
             shot_id = int(row["shot_id"])
             instruction = instruction_by_shot.get(shot_id) or row.get("target_phrase") or edit.get("instruction") or ""
+            source_queries = _as_query_list(
+                row.get("metric_source_queries", row.get("metric_source_query"))
+            )
+            edited_queries = _as_query_list(
+                row.get("metric_edited_queries", row.get("metric_target_query"))
+            )
             unit = {
                 "unit_id": f"shot-{shot_id}",
                 "edit_id": f"shot-{shot_id}",
@@ -421,7 +429,10 @@ def _build_t9_metric_plan(sample: dict) -> dict | None:
                 "edit_type": row.get("edit_type"),
                 "instruction": instruction,
                 "target_phrase": row.get("target_phrase") or edit.get("target_phrase") or "",
+                "source_queries": source_queries,
+                "edited_queries": edited_queries,
                 "applicable_shots": [shot_id],
+                "non_a_applicable_shots": [s for s in all_shot_ids if s != shot_id],
             }
             plan["ee_units"].append(unit)
             plan["nep_targets"].append(_parse_t9_source_target_queries(row, instruction))
@@ -703,6 +714,134 @@ def _score_t9_nep(
     }
 
 
+_T9_NON_A_PROMPT_TEMPLATE = """You are a strict visual judge for shot-local edit leakage.
+
+You are shown two corresponding images:
+- ORIGINAL: the source image before editing.
+- EDITED: the generated image after editing.
+
+This shot is NOT supposed to receive the following shot-local edit:
+"{instruction}"
+
+Forbidden edited result / target:
+"{target_phrase}"
+
+Source-side object or region, when applicable:
+"{source_phrase}"
+
+Your job is to decide whether EDITED correctly keeps this shot free of that forbidden edit.
+
+Judging rules:
+- Score high only when the forbidden edit is absent from EDITED.
+- If the relevant object or setting is visible, it should remain in its source-video form with respect to this forbidden edit.
+- If the relevant object or setting is not visible in this image pair, score high unless the forbidden edited result is nevertheless visible.
+- Ignore unrelated changes unless they make it impossible to verify whether this forbidden edit leaked into the shot.
+
+Score 0-5:
+0 = the forbidden edit is clearly applied in this non-target shot.
+1 = the forbidden edit is likely present or strongly ambiguous.
+2 = there are noticeable signs of the forbidden edit, but it is incomplete or uncertain.
+3 = mostly no forbidden edit, with minor ambiguous traces.
+4 = no clear forbidden edit; only tiny uncertainty.
+5 = the forbidden edit is absent, and this shot preserves the source-video form for that edit.
+
+Output ONLY one integer from 0 to 5. No explanation."""
+
+
+def _score_t9_non_a_vlm(
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    unit: dict,
+    vlm_backend,
+    vlm_max_workers: int | None = None,
+    frame_pairs_per_shot: int | None = None,
+) -> dict:
+    """Score T9 independent off-target shots for the non-A constraint.
+
+    This is not a separate leaderboard metric. Its per-shot scores are folded
+    into the same T9 EE unit score as additional "the edit must not appear
+    here" checks.
+    """
+    if vlm_backend is None:
+        vlm_backend = B.get_vlm("mock")
+    if vlm_max_workers is None:
+        vlm_max_workers = int(os.environ.get("VLM_MAX_WORKERS", 8))
+    if frame_pairs_per_shot is None:
+        frame_pairs_per_shot = int(os.environ.get("EE_V3_FRAME_PAIRS", 3))
+    if getattr(vlm_backend, "is_local_model", False):
+        vlm_max_workers = 1
+
+    off_shots = [int(s) for s in unit.get("non_a_applicable_shots") or []]
+    valid_shots = [
+        k for k in off_shots
+        if k in src_frames and k in edt_frames and len(src_frames[k]) and len(edt_frames[k])
+    ]
+    if not valid_shots:
+        return {
+            "ee": None,
+            "per_shot": {},
+            "n_applicable": 0,
+            "reason": "no non-A off-target shots had frames",
+        }
+
+    source_phrase = "; ".join(unit.get("source_queries") or [])
+    target_phrase = "; ".join(unit.get("edited_queries") or []) or unit.get("target_phrase") or ""
+    prompt = _T9_NON_A_PROMPT_TEMPLATE.format(
+        instruction=(unit.get("instruction") or "").strip(),
+        target_phrase=target_phrase.strip(),
+        source_phrase=source_phrase.strip() or "not specified",
+    )
+
+    def _pair_indices(n_src: int, n_edit: int) -> list[tuple[int, int]]:
+        n = min(n_src, n_edit)
+        if n <= 0:
+            return []
+        m = min(max(1, frame_pairs_per_shot), n)
+        if m == 1:
+            mid = (n - 1) // 2
+            return [(int(mid), int(mid))]
+        idx = np.linspace(0, n - 1, m).round().astype(int)
+        return [(int(i), int(i)) for i in idx]
+
+    def _score_shot(k: int):
+        sf = src_frames[k]
+        ef = edt_frames[k]
+        frame_rows = []
+        try:
+            for si, ei in _pair_indices(len(sf), len(ef)):
+                r = vlm_backend.rate_image_pair(sf[si], ef[ei], prompt, max_score=5)
+                frame_rows.append({
+                    "source_idx": si,
+                    "edit_idx": ei,
+                    "ee": r if r is not None else 0.0,
+                    "raw": r,
+                })
+        except Exception as e:
+            return k, None, [], f"error: {type(e).__name__}: {e}"
+        if not frame_rows:
+            return k, None, [], "no matched frames"
+        return k, float(np.mean([x["ee"] for x in frame_rows])), frame_rows, None
+
+    per_shot = {}
+    with ThreadPoolExecutor(max_workers=min(vlm_max_workers, max(1, len(valid_shots)))) as ex:
+        for k, score, frame_rows, err in ex.map(_score_shot, valid_shots):
+            per_shot[k] = {
+                "ee": score if score is not None else 0.0,
+                "raw": score,
+                "frames": frame_rows,
+                "error": err,
+            }
+
+    scores = [v["ee"] for v in per_shot.values()]
+    return {
+        "ee": float(np.mean(scores)) if scores else None,
+        "per_shot": per_shot,
+        "n_applicable": len(per_shot),
+        "frame_pairs_per_shot": frame_pairs_per_shot,
+        "prompt_template": "v3-ee-t9-non-a-shot-local-leakage-check",
+    }
+
+
 def _score_t9_vlm_metrics(
     src_frames: dict[int, np.ndarray],
     edt_frames: dict[int, np.ndarray],
@@ -717,6 +856,7 @@ def _score_t9_vlm_metrics(
         csep3_r = {"csep": None, "coverage": None, "consistency": None, "n_applicable": 0}
         return ee3_r, csep3_r
 
+    is_independent = t9_plan.get("mode") == "independent_per_shot"
     shot_scores: dict[int, list[float]] = defaultdict(list)
     unit_results = []
     for unit in units:
@@ -728,25 +868,72 @@ def _score_t9_vlm_metrics(
             unit.get("target_phrase") or sample["edit"].get("target_phrase") or "",
             vlm_backend=vlm,
         )
-        per_shot = {
+        positive_per_shot = {
             int(k): v.get("ee")
             for k, v in (ee_r.get("per_shot") or {}).items()
             if v.get("ee") is not None
         }
-        for shot_id, score in per_shot.items():
+
+        non_a_r = {
+            "ee": None,
+            "per_shot": {},
+            "n_applicable": 0,
+            "reason": "not used for this T9 mode",
+        }
+        non_a_per_shot = {}
+        if is_independent:
+            non_a_r = _score_t9_non_a_vlm(
+                src_frames,
+                edt_frames,
+                unit,
+                vlm_backend=vlm,
+            )
+            non_a_per_shot = {
+                int(k): v.get("ee")
+                for k, v in (non_a_r.get("per_shot") or {}).items()
+                if v.get("ee") is not None
+            }
+
+        combined_per_shot = dict(positive_per_shot)
+        for shot_id, score in non_a_per_shot.items():
+            combined_per_shot[shot_id] = score
+        unit_scores = [
+            float(v)
+            for v in [*positive_per_shot.values(), *non_a_per_shot.values()]
+            if v is not None
+        ]
+        unit_ee = float(np.mean(unit_scores)) if unit_scores else None
+
+        for shot_id, score in combined_per_shot.items():
             shot_scores[shot_id].append(float(score))
         unit_results.append({
             **{k: unit.get(k) for k in ("unit_id", "edit_id", "shot_id", "source_task", "edit_type", "target_phrase")},
             "applicable_shots": unit.get("applicable_shots") or [],
-            "ee": ee_r.get("ee"),
-            "per_shot": per_shot,
+            "non_a_applicable_shots": unit.get("non_a_applicable_shots") or [],
+            "ee": unit_ee,
+            "per_shot": combined_per_shot,
+            "positive_ee": ee_r.get("ee"),
+            "positive_per_shot": positive_per_shot,
+            "non_a_ee": non_a_r.get("ee"),
+            "non_a_per_shot": non_a_per_shot,
             "frame_pairs_per_shot": ee_r.get("frame_pairs_per_shot"),
             "prompt_template": ee_r.get("prompt_template"),
             "frame_scores": {
                 str(k): v.get("frames") or []
                 for k, v in (ee_r.get("per_shot") or {}).items()
             },
+            "non_a_prompt_template": non_a_r.get("prompt_template"),
+            "non_a_frame_scores": {
+                str(k): v.get("frames") or []
+                for k, v in (non_a_r.get("per_shot") or {}).items()
+            },
+            "aggregation": (
+                "mean of target-shot positive EE and off-target non-A EE checks"
+                if is_independent
+                else "positive EE only"
+            ),
             "reason": ee_r.get("reason"),
+            "non_a_reason": non_a_r.get("reason"),
         })
 
     ee_mean = _mean_or_none([u.get("ee") for u in unit_results])
@@ -761,7 +948,12 @@ def _score_t9_vlm_metrics(
         "frame_pairs_per_shot": unit_results[0].get("frame_pairs_per_shot"),
         "prompt_template": "v3-ee-edit-only-image-pair-rating:t9",
         "t9_units": unit_results,
-        "aggregation": "mean over T9 edit units; each unit averages its applicable shots",
+        "aggregation": (
+            "mean over T9 edit units; independent_per_shot units average "
+            "target-shot positive EE with off-target non-A EE checks"
+            if is_independent
+            else "mean over T9 edit units; each unit averages its applicable shots"
+        ),
     }
 
     if t9_plan.get("mode") == "independent_per_shot":

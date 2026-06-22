@@ -73,6 +73,19 @@ class PromptScoredVlm(B.VlmBackend):
         return self._score(self.pair_scores, prompt)
 
 
+class LeakageAwareVlm(B.VlmBackend):
+    """Score positive EE as perfect, but fail non-A checks on bright leaked shots."""
+    def yes_no(self, frames, q): return False
+
+    def rate_image_pair(self, frame_a, frame_b, prompt, max_score=5):
+        if "shot-local edit leakage" in prompt:
+            return 0.0 if float(frame_b.mean()) > 200.0 else 1.0
+        return 1.0
+
+    def rate_pair(self, frames_a, frames_b, prompt, max_score=5):
+        return 1.0
+
+
 def _t9_seq_sample():
     return {
         "sample_id": "toy_T9_seq",
@@ -576,6 +589,7 @@ def test_t9_independent_per_shot_disables_csep():
     }
     plan = _build_t9_metric_plan(sample)
     assert [u["applicable_shots"] for u in plan["ee_units"]] == [[1], [2]]
+    assert [u["non_a_applicable_shots"] for u in plan["ee_units"]] == [[2], [1]]
     assert plan["nep_targets"][0]["source_queries"] == ["explicit source bar"]
     assert plan["nep_targets"][0]["edited_queries"] == ["explicit edited bar"]
     src = {1: _make_frames(1, T=1), 2: _make_frames(2, T=1)}
@@ -584,6 +598,52 @@ def test_t9_independent_per_shot_disables_csep():
     ee_r, csep_r = _score_t9_vlm_metrics(src, edit, sample, plan, [vlm])
     assert abs(ee_r["ee"] - 0.5) < 1e-6, f"ee={ee_r['ee']}"
     assert csep_r["csep"] is None, f"independent T9 should not have CSEP, got {csep_r['csep']}"
+
+
+def test_t9_independent_non_a_leakage_penalizes_ee():
+    sample = {
+        "sample_id": "toy_T9_leak",
+        "video_id": "toy",
+        "source_video": "toy.mp4",
+        "shots": [
+            {"shot_id": 1, "frame_start": 0, "frame_end": 9},
+            {"shot_id": 2, "frame_start": 10, "frame_end": 19},
+            {"shot_id": 3, "frame_start": 20, "frame_end": 29},
+        ],
+        "edit": {
+            "task_id": "T9",
+            "instruction": "Shot 1: [EDIT] Change the blue bar to a bright red bar.",
+            "target_phrase": "shot-local edit",
+            "applicable_shots": [1],
+            "extra": {
+                "mode": "independent_per_shot",
+                "shot_edits": [
+                    {
+                        "shot_id": 1,
+                        "source_task": "T2",
+                        "edit_type": "attribute_edit",
+                        "target_phrase": "bright red bar",
+                        "metric_source_queries": ["blue bar"],
+                        "metric_edited_queries": ["bright red bar"],
+                    },
+                ],
+            },
+        },
+    }
+    plan = _build_t9_metric_plan(sample)
+    src = {i: np.zeros((1, 8, 8, 3), dtype=np.uint8) for i in range(1, 4)}
+    edit = {
+        1: np.zeros((1, 8, 8, 3), dtype=np.uint8),       # target shot: positive EE is perfect
+        2: np.zeros((1, 8, 8, 3), dtype=np.uint8),       # off-target: no leak
+        3: np.full((1, 8, 8, 3), 255, dtype=np.uint8),   # off-target: leaked forbidden edit
+    }
+    ee_r, csep_r = _score_t9_vlm_metrics(src, edit, sample, plan, [LeakageAwareVlm()])
+    assert abs(ee_r["ee"] - (2.0 / 3.0)) < 1e-6, f"ee={ee_r['ee']}"
+    unit = ee_r["t9_units"][0]
+    assert unit["positive_ee"] == 1.0, unit
+    assert abs(unit["non_a_ee"] - 0.5) < 1e-6, unit
+    assert unit["non_a_per_shot"] == {2: 1.0, 3: 0.0}, unit["non_a_per_shot"]
+    assert csep_r["csep"] is None
 
 
 def test_t9_sequential_ee_and_csep_are_edit_weighted():
