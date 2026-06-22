@@ -26,6 +26,7 @@ standalone_ee_csep_eval/
     T1.json ... T9.json
   vlm_prompts/
     ee_v3.txt
+    ee_v3_non_a.txt
     csep_v3.txt
   src/
     eval_ee_csep.py          # main EE/CSEP evaluator
@@ -201,6 +202,10 @@ shot to the VLM.
 T9 is split into separate edit units:
 
 - `independent_per_shot`: one edit unit per edited shot; CSEP is skipped.
+  Each unit's EE also scores the other shots with `ee_v3_non_a.txt` to
+  penalize leakage of that shot-local edit into non-target shots. These
+  non-A checks are folded into the same unit `ee` and the same top-level
+  `ee_v3`; no extra metric is emitted.
 - `sequential_two_edit_prompt`: edit A and edit B are evaluated separately.
   If the same shot contains both edits, that shot is scored once for edit A
   and once for edit B with different VLM prompts.

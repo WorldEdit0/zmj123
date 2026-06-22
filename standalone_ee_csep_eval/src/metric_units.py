@@ -8,6 +8,14 @@ def clean_text(text: str | None) -> str:
     return (text or "").strip(" \t\r\n.,;:")
 
 
+def as_query_list(value) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value] if value else []
+    return [str(v) for v in value if v]
+
+
 def shot_instruction_map(instruction: str, *, edit_only: bool = False) -> dict[int, str]:
     out: dict[int, str] = {}
     for raw in (instruction or "").splitlines():
@@ -56,6 +64,7 @@ def build_t9_metric_plan(sample: dict) -> dict | None:
     extra = edit.get("extra") or {}
     mode = extra.get("mode")
     plan = {"mode": mode, "ee_units": []}
+    all_shot_ids = [int(s["shot_id"]) for s in sample.get("shots") or []]
 
     if mode == "independent_per_shot":
         instruction_by_shot = shot_instruction_map(edit.get("instruction") or "")
@@ -71,9 +80,18 @@ def build_t9_metric_plan(sample: dict) -> dict | None:
                 "unit_id": f"shot-{shot_id}",
                 "edit_id": f"shot-{shot_id}",
                 "shot_id": shot_id,
+                "source_task": row.get("source_task"),
+                "edit_type": row.get("edit_type"),
                 "instruction": instruction,
                 "target_phrase": row.get("target_phrase") or edit.get("target_phrase") or "",
+                "source_queries": as_query_list(
+                    row.get("metric_source_queries", row.get("metric_source_query"))
+                ),
+                "edited_queries": as_query_list(
+                    row.get("metric_edited_queries", row.get("metric_target_query"))
+                ),
                 "applicable_shots": [shot_id],
+                "non_a_applicable_shots": [s for s in all_shot_ids if s != shot_id],
                 "csep_applicable": False,
             })
         return plan

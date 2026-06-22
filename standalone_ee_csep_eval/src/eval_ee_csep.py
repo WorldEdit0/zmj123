@@ -78,6 +78,7 @@ def score_ee_unit(
     edt_frames: dict[int, np.ndarray],
     judge: ArkVlmJudge,
     ee_template: str,
+    ee_non_a_template: str,
     frame_pairs_per_shot: int,
 ) -> dict:
     edit_request = (unit.get("instruction") or "").strip() or (unit.get("target_phrase") or "").strip()
@@ -111,14 +112,137 @@ def score_ee_unit(
                 "ee": float(mean([x["ee"] for x in frame_scores])),
                 "frames": frame_scores,
             }
+    positive_ee = _mean_or_none([v["ee"] for v in per_shot.values()])
+    non_a = {
+        "ee": None,
+        "per_shot": {},
+        "n_applicable": 0,
+        "prompt": None,
+        "prompt_template": None,
+        "reason": "not used for this edit unit",
+    }
+    if unit.get("non_a_applicable_shots"):
+        non_a = score_ee_non_a_unit(
+            unit,
+            src_frames,
+            edt_frames,
+            judge,
+            ee_non_a_template,
+            frame_pairs_per_shot,
+        )
+
+    combined_per_shot = dict(per_shot)
+    combined_per_shot.update(non_a.get("per_shot") or {})
+    unit_scores = [v["ee"] for v in combined_per_shot.values() if v.get("ee") is not None]
     return {
         "unit_id": unit.get("unit_id"),
         "edit_id": unit.get("edit_id"),
+        "shot_id": unit.get("shot_id"),
+        "source_task": unit.get("source_task"),
+        "edit_type": unit.get("edit_type"),
         "instruction": edit_request,
+        "target_phrase": unit.get("target_phrase") or "",
         "applicable_shots": unit.get("applicable_shots") or [],
+        "non_a_applicable_shots": unit.get("non_a_applicable_shots") or [],
+        "ee": _mean_or_none(unit_scores),
+        "per_shot": combined_per_shot,
+        "prompt": prompt,
+        "positive_ee": positive_ee,
+        "positive_per_shot": per_shot,
+        "non_a_ee": non_a.get("ee"),
+        "non_a_per_shot": non_a.get("per_shot") or {},
+        "non_a_prompt": non_a.get("prompt"),
+        "non_a_prompt_template": non_a.get("prompt_template"),
+        "non_a_frame_scores": {
+            str(k): v.get("frames") or []
+            for k, v in (non_a.get("per_shot") or {}).items()
+        },
+        "aggregation": (
+            "mean of target-shot positive EE and off-target non-A EE checks"
+            if unit.get("non_a_applicable_shots")
+            else "positive EE only"
+        ),
+        "non_a_reason": non_a.get("reason"),
+    }
+
+
+def score_ee_non_a_unit(
+    unit: dict,
+    src_frames: dict[int, np.ndarray],
+    edt_frames: dict[int, np.ndarray],
+    judge: ArkVlmJudge,
+    ee_non_a_template: str,
+    frame_pairs_per_shot: int,
+) -> dict:
+    """Score T9 independent off-target shots for the non-A constraint.
+
+    This remains part of EE_v3: these scores are folded into the edit unit's
+    `ee` field by score_ee_unit instead of creating a separate metric.
+    """
+    off_shots = [int(s) for s in unit.get("non_a_applicable_shots") or []]
+    valid_shots = [
+        shot_id for shot_id in off_shots
+        if (
+            shot_id in src_frames
+            and shot_id in edt_frames
+            and len(src_frames[shot_id])
+            and len(edt_frames[shot_id])
+        )
+    ]
+    if not valid_shots:
+        return {
+            "ee": None,
+            "per_shot": {},
+            "n_applicable": 0,
+            "prompt": None,
+            "prompt_template": "v3-ee-t9-non-a-shot-local-leakage-check",
+            "reason": "no non-A off-target shots had frames",
+        }
+
+    source_phrase = "; ".join(unit.get("source_queries") or [])
+    target_phrase = "; ".join(unit.get("edited_queries") or []) or unit.get("target_phrase") or ""
+    prompt = format_template(
+        ee_non_a_template,
+        instruction=(unit.get("instruction") or "").strip(),
+        target_phrase=target_phrase.strip(),
+        source_phrase=source_phrase.strip() or "not specified",
+    )
+    per_shot = {}
+    for shot_id in valid_shots:
+        sf = src_frames[shot_id]
+        ef = edt_frames[shot_id]
+        frame_scores = []
+        for si, ei in matched_pair_indices(len(sf), len(ef), frame_pairs_per_shot):
+            try:
+                r = judge.rate_image_pair(sf[si], ef[ei], prompt)
+                score = r["score"] if r["score"] is not None else 0.0
+                frame_scores.append({
+                    "source_idx": si,
+                    "edit_idx": ei,
+                    "ee": score,
+                    "raw_response": r.get("raw_response"),
+                })
+            except Exception as exc:  # pragma: no cover - API dependent
+                frame_scores.append({
+                    "source_idx": si,
+                    "edit_idx": ei,
+                    "ee": 0.0,
+                    "error": f"{type(exc).__name__}: {exc}",
+                })
+        if frame_scores:
+            per_shot[str(shot_id)] = {
+                "ee": float(mean([x["ee"] for x in frame_scores])),
+                "frames": frame_scores,
+            }
+
+    return {
         "ee": _mean_or_none([v["ee"] for v in per_shot.values()]),
         "per_shot": per_shot,
+        "n_applicable": len(per_shot),
+        "frame_pairs_per_shot": frame_pairs_per_shot,
         "prompt": prompt,
+        "prompt_template": "v3-ee-t9-non-a-shot-local-leakage-check",
+        "reason": None if per_shot else "no matched frames",
     }
 
 
@@ -188,6 +312,7 @@ def evaluate_sample(
     edited_video: Path,
     judge: ArkVlmJudge,
     ee_template: str,
+    ee_non_a_template: str,
     csep_template: str,
     stride: int,
     max_frames_per_shot: int,
@@ -211,7 +336,7 @@ def evaluate_sample(
         }
 
     ee_units = [
-        score_ee_unit(unit, src_frames, edt_frames, judge, ee_template, frame_pairs_per_shot)
+        score_ee_unit(unit, src_frames, edt_frames, judge, ee_template, ee_non_a_template, frame_pairs_per_shot)
         for unit in units
     ]
     ee_by_unit = {str(u.get("unit_id")): u for u in ee_units}
@@ -286,6 +411,7 @@ def main() -> None:
     output_root = Path(args.output_dir)
     output_root.mkdir(parents=True, exist_ok=True)
     ee_template = load_template(RUN_ROOT / "vlm_prompts" / "ee_v3.txt")
+    ee_non_a_template = load_template(RUN_ROOT / "vlm_prompts" / "ee_v3_non_a.txt")
     csep_template = load_template(RUN_ROOT / "vlm_prompts" / "csep_v3.txt")
     judge = ArkVlmJudge()
 
@@ -317,6 +443,7 @@ def main() -> None:
                     edited_video,
                     judge,
                     ee_template,
+                    ee_non_a_template,
                     csep_template,
                     args.stride,
                     args.max_frames_per_shot,
