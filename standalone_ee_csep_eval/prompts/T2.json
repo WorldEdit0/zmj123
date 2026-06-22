@@ -1,0 +1,4906 @@
+[
+  {
+    "sample_id": "00000_T2_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain black apron to black apron with large white polka dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black apron with large white polka dots",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain black apron"
+        ],
+        "edited_queries": [
+          "black apron with large white polka dots"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "plain black apron",
+        "new_value": "black apron with large white polka dots"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00000_T2_0001",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth silver stainless steel milk pitcher to brushed copper milk pitcher in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "brushed copper milk pitcher",
+      "target_entity": "O2",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth silver stainless steel milk pitcher"
+        ],
+        "edited_queries": [
+          "brushed copper milk pitcher"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_finish",
+        "old_value": "smooth silver stainless steel milk pitcher",
+        "new_value": "brushed copper milk pitcher"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00001_T2_0002",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change black-and-white Border Collie fur to solid white Border Collie fur in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "solid white Border Collie fur",
+      "target_entity": "A1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "black-and-white Border Collie fur"
+        ],
+        "edited_queries": [
+          "solid white Border Collie fur"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "coat_color",
+        "old_value": "black-and-white Border Collie fur",
+        "new_value": "solid white Border Collie fur"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00001_T2_0003",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change solid blue jump bar to bright red jump bar in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright red jump bar",
+      "target_entity": "O1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "solid blue jump bar"
+        ],
+        "edited_queries": [
+          "bright red jump bar"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "color",
+        "old_value": "solid blue jump bar",
+        "new_value": "bright red jump bar"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00002_T2_0004",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change glossy red toy train body to red toy train body covered with large yellow star stickers in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red toy train body covered with large yellow star stickers",
+      "target_entity": "T1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "glossy red toy train body"
+        ],
+        "edited_queries": [
+          "red toy train body covered with large yellow star stickers"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "large_sticker_pattern",
+        "old_value": "glossy red toy train body",
+        "new_value": "red toy train body covered with large yellow star stickers"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00002_T2_0005",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change round yellow robot eyes to square yellow robot eyes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "square yellow robot eyes",
+      "target_entity": "B1",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "round yellow robot eyes"
+        ],
+        "edited_queries": [
+          "square yellow robot eyes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "shape",
+        "old_value": "round yellow robot eyes",
+        "new_value": "square yellow robot eyes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00003_T2_0006",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change short dark schoolgirl bob haircut to long twin-braid hairstyle in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "long twin-braid hairstyle",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "short dark schoolgirl bob haircut"
+        ],
+        "edited_queries": [
+          "long twin-braid hairstyle"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "hairstyle",
+        "old_value": "short dark schoolgirl bob haircut",
+        "new_value": "long twin-braid hairstyle"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00003_T2_0007",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change blue circuit board inside the transparent robot to orange glowing circuit board inside the transparent robot in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "orange glowing circuit board inside the transparent robot",
+      "target_entity": "O1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blue circuit board inside the transparent robot"
+        ],
+        "edited_queries": [
+          "orange glowing circuit board inside the transparent robot"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "light_color",
+        "old_value": "blue circuit board inside the transparent robot",
+        "new_value": "orange glowing circuit board inside the transparent robot"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00004_T2_0008",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change dark wet soil inside the flower pot to white soil inside the flower pot in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white soil inside the flower pot",
+      "target_entity": "O5",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "dark wet soil inside the flower pot"
+        ],
+        "edited_queries": [
+          "white soil inside the flower pot"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "soil_color",
+        "old_value": "dark wet soil inside the flower pot",
+        "new_value": "white soil inside the flower pot"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00004_T2_0009",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain matte terracotta flower pot to terracotta flower pot with a wide white painted band around the middle in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "terracotta flower pot with a wide white painted band around the middle",
+      "target_entity": "O1",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain matte terracotta flower pot"
+        ],
+        "edited_queries": [
+          "terracotta flower pot with a wide white painted band around the middle"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "painted_band",
+        "old_value": "plain matte terracotta flower pot",
+        "new_value": "terracotta flower pot with a wide white painted band around the middle"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00005_T2_0010",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain deep blue paramedic uniform to deep blue paramedic uniform with reflective silver stripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "deep blue paramedic uniform with reflective silver stripes",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain deep blue paramedic uniform"
+        ],
+        "edited_queries": [
+          "deep blue paramedic uniform with reflective silver stripes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "reflective_pattern",
+        "old_value": "plain deep blue paramedic uniform",
+        "new_value": "deep blue paramedic uniform with reflective silver stripes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00005_T2_0011",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth blue stretcher mattress to bright orange stretcher mattress in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright orange stretcher mattress",
+      "target_entity": "O2",
+      "applicable_shots": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth blue stretcher mattress"
+        ],
+        "edited_queries": [
+          "bright orange stretcher mattress"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "color",
+        "old_value": "smooth blue stretcher mattress",
+        "new_value": "bright orange stretcher mattress"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00006_T2_0012",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain blue scarf on the squirrel to red-and-white striped scarf on the squirrel in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red-and-white striped scarf on the squirrel",
+      "target_entity": "A1",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain blue scarf on the squirrel"
+        ],
+        "edited_queries": [
+          "red-and-white striped scarf on the squirrel"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "stripe_pattern",
+        "old_value": "plain blue scarf on the squirrel",
+        "new_value": "red-and-white striped scarf on the squirrel"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00006_T2_0013",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change red berries to bright purple berries in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright purple berries",
+      "target_entity": "O6",
+      "applicable_shots": [
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "red berries"
+        ],
+        "edited_queries": [
+          "bright purple berries"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "color",
+        "old_value": "red berries",
+        "new_value": "bright purple berries"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00007_T2_0014",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change flat yellow safety vest to yellow safety vest with two wide silver reflective bands in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "yellow safety vest with two wide silver reflective bands",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "flat yellow safety vest"
+        ],
+        "edited_queries": [
+          "yellow safety vest with two wide silver reflective bands"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "reflective_bands",
+        "old_value": "flat yellow safety vest",
+        "new_value": "yellow safety vest with two wide silver reflective bands"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00007_T2_0015",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change steady red drone indicator lights to blinking green drone indicator lights in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blinking green drone indicator lights",
+      "target_entity": "M1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "steady red drone indicator lights"
+        ],
+        "edited_queries": [
+          "blinking green drone indicator lights"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "light_behavior",
+        "old_value": "steady red drone indicator lights",
+        "new_value": "blinking green drone indicator lights"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00008_T2_0016",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change blue circular robot eyes to blue crescent-shaped robot eyes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue crescent-shaped robot eyes",
+      "target_entity": "R1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blue circular robot eyes"
+        ],
+        "edited_queries": [
+          "blue crescent-shaped robot eyes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "shape",
+        "old_value": "blue circular robot eyes",
+        "new_value": "blue crescent-shaped robot eyes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00008_T2_0017",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change red and white striped awning to red and white checkerboard awning in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red and white checkerboard awning",
+      "target_entity": "O4",
+      "applicable_shots": [
+        1,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "red and white striped awning"
+        ],
+        "edited_queries": [
+          "red and white checkerboard awning"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "red and white striped awning",
+        "new_value": "red and white checkerboard awning"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00009_T2_0018",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth blue-green painter jacket to blue-green denim painter jacket in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue-green denim painter jacket",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth blue-green painter jacket"
+        ],
+        "edited_queries": [
+          "blue-green denim painter jacket"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material",
+        "old_value": "smooth blue-green painter jacket",
+        "new_value": "blue-green denim painter jacket"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00009_T2_0019",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change multi-color watercolor palette to pastel-only watercolor palette in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "pastel-only watercolor palette",
+      "target_entity": "O3",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "multi-color watercolor palette"
+        ],
+        "edited_queries": [
+          "pastel-only watercolor palette"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "palette_color",
+        "old_value": "multi-color watercolor palette",
+        "new_value": "pastel-only watercolor palette"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00010_T2_0020",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change orange-and-white bakery cat fur to calico bakery cat fur with orange, black, and white patches in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "calico bakery cat fur with orange, black, and white patches",
+      "target_entity": "A1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "orange-and-white bakery cat fur"
+        ],
+        "edited_queries": [
+          "calico bakery cat fur with orange, black, and white patches"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "coat_color",
+        "old_value": "orange-and-white bakery cat fur",
+        "new_value": "calico bakery cat fur with orange, black, and white patches"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00010_T2_0021",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change white 'Lattes & Croissants' storefront text to gold 'Lattes & Croissants' storefront text in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "gold 'Lattes & Croissants' storefront text",
+      "target_entity": "TXT1",
+      "applicable_shots": [
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white 'Lattes & Croissants' storefront text"
+        ],
+        "edited_queries": [
+          "gold 'Lattes & Croissants' storefront text"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "text_color",
+        "old_value": "white 'Lattes & Croissants' storefront text",
+        "new_value": "gold 'Lattes & Croissants' storefront text"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00011_T2_0022",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth white clay astronaut suit to white clay astronaut suit with a large red circular chest badge in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white clay astronaut suit with a large red circular chest badge",
+      "target_entity": "T1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth white clay astronaut suit"
+        ],
+        "edited_queries": [
+          "white clay astronaut suit with a large red circular chest badge"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "large_badge",
+        "old_value": "smooth white clay astronaut suit",
+        "new_value": "white clay astronaut suit with a large red circular chest badge"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00011_T2_0023",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change soft round cotton-like smoke to large dense puffy white smoke in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "large dense puffy white smoke",
+      "target_entity": "O6",
+      "applicable_shots": [
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "soft round cotton-like smoke"
+        ],
+        "edited_queries": [
+          "large dense puffy white smoke"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "size_and_density",
+        "old_value": "soft round cotton-like smoke",
+        "new_value": "large dense puffy white smoke"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00012_T2_0024",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change bright yellow delivery jacket to bright yellow delivery jacket with black sleeve stripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright yellow delivery jacket with black sleeve stripes",
+      "target_entity": "B1",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "bright yellow delivery jacket"
+        ],
+        "edited_queries": [
+          "bright yellow delivery jacket with black sleeve stripes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "bright yellow delivery jacket",
+        "new_value": "bright yellow delivery jacket with black sleeve stripes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00012_T2_0025",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain dark commuter umbrellas to transparent plastic commuter umbrellas in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "transparent plastic commuter umbrellas",
+      "target_entity": "G1",
+      "applicable_shots": [
+        1,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain dark commuter umbrellas"
+        ],
+        "edited_queries": [
+          "transparent plastic commuter umbrellas"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_transparency",
+        "old_value": "plain dark commuter umbrellas",
+        "new_value": "transparent plastic commuter umbrellas"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00013_T2_0026",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change white chef uniform to black chef uniform in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black chef uniform",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white chef uniform"
+        ],
+        "edited_queries": [
+          "black chef uniform"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "clothing_color",
+        "old_value": "white chef uniform",
+        "new_value": "black chef uniform"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00013_T2_0027",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change deep red raspberry sauce dots to dark blackberry-purple sauce dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "dark blackberry-purple sauce dots",
+      "target_entity": "O6",
+      "applicable_shots": [
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "deep red raspberry sauce dots"
+        ],
+        "edited_queries": [
+          "dark blackberry-purple sauce dots"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "food_color",
+        "old_value": "deep red raspberry sauce dots",
+        "new_value": "dark blackberry-purple sauce dots"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00014_T2_0028",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change golden-red koi scales to golden-red koi scales with larger black-edged markings in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "golden-red koi scales with larger black-edged markings",
+      "target_entity": "A1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "golden-red koi scales"
+        ],
+        "edited_queries": [
+          "golden-red koi scales with larger black-edged markings"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "scale_pattern",
+        "old_value": "golden-red koi scales",
+        "new_value": "golden-red koi scales with larger black-edged markings"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00014_T2_0029",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change small rounded pink cherry blossom petals to large broad pink cherry blossom petals in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "large broad pink cherry blossom petals",
+      "target_entity": "O2",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "small rounded pink cherry blossom petals"
+        ],
+        "edited_queries": [
+          "large broad pink cherry blossom petals"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "petal_size_and_shape",
+        "old_value": "small rounded pink cherry blossom petals",
+        "new_value": "large broad pink cherry blossom petals"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00015_T2_0030",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change glossy red classic car paint to matte red classic car paint in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "matte red classic car paint",
+      "target_entity": "V1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "glossy red classic car paint"
+        ],
+        "edited_queries": [
+          "matte red classic car paint"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "surface_finish",
+        "old_value": "glossy red classic car paint",
+        "new_value": "matte red classic car paint"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00015_T2_0031",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change whitewall tire stripe to bright orange tire stripe in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright orange tire stripe",
+      "target_entity": "O14",
+      "applicable_shots": [
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "whitewall tire stripe"
+        ],
+        "edited_queries": [
+          "bright orange tire stripe"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "color",
+        "old_value": "whitewall tire stripe",
+        "new_value": "bright orange tire stripe"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00016_T2_0032",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change blue glowing tree leaves to violet glowing tree leaves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "violet glowing tree leaves",
+      "target_entity": "P1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blue glowing tree leaves"
+        ],
+        "edited_queries": [
+          "violet glowing tree leaves"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "glow_color",
+        "old_value": "blue glowing tree leaves",
+        "new_value": "violet glowing tree leaves"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00016_T2_0033",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change small multicolored glowing flowers to larger bell-shaped multicolored glowing flowers in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "larger bell-shaped multicolored glowing flowers",
+      "target_entity": "O6",
+      "applicable_shots": [
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "small multicolored glowing flowers"
+        ],
+        "edited_queries": [
+          "larger bell-shaped multicolored glowing flowers"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "flower_shape",
+        "old_value": "small multicolored glowing flowers",
+        "new_value": "larger bell-shaped multicolored glowing flowers"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00017_T2_0034",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain blue seamstress shirt to blue seamstress shirt with a white tailor apron over it in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue seamstress shirt with a white tailor apron over it",
+      "target_entity": "C2",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain blue seamstress shirt"
+        ],
+        "edited_queries": [
+          "blue seamstress shirt with a white tailor apron over it"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "clothing_layer",
+        "old_value": "plain blue seamstress shirt",
+        "new_value": "blue seamstress shirt with a white tailor apron over it"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00017_T2_0035",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change ivory lace wedding dress to ivory satin wedding dress with lace sleeves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "ivory satin wedding dress with lace sleeves",
+      "target_entity": "O1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "ivory lace wedding dress"
+        ],
+        "edited_queries": [
+          "ivory satin wedding dress with lace sleeves"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material",
+        "old_value": "ivory lace wedding dress",
+        "new_value": "ivory satin wedding dress with lace sleeves"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00018_T2_0036",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth yellow duck body to yellow duck body with orange polka dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "yellow duck body with orange polka dots",
+      "target_entity": "T1",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth yellow duck body"
+        ],
+        "edited_queries": [
+          "yellow duck body with orange polka dots"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "smooth yellow duck body",
+        "new_value": "yellow duck body with orange polka dots"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00018_T2_0037",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change glossy blue tin toy car to blue tin toy car with a large white racing number on the side in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue tin toy car with a large white racing number on the side",
+      "target_entity": "T2",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "glossy blue tin toy car"
+        ],
+        "edited_queries": [
+          "blue tin toy car with a large white racing number on the side"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "large_number_decal",
+        "old_value": "glossy blue tin toy car",
+        "new_value": "blue tin toy car with a large white racing number on the side"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00019_T2_0038",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change loose chestnut horse mane to braided chestnut horse mane in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "braided chestnut horse mane",
+      "target_entity": "A1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "loose chestnut horse mane"
+        ],
+        "edited_queries": [
+          "braided chestnut horse mane"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "hairstyle",
+        "old_value": "loose chestnut horse mane",
+        "new_value": "braided chestnut horse mane"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00019_T2_0039",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain dark blue rider jacket to dark blue rider jacket with wide white shoulder straps in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "dark blue rider jacket with wide white shoulder straps",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain dark blue rider jacket"
+        ],
+        "edited_queries": [
+          "dark blue rider jacket with wide white shoulder straps"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "shoulder_straps",
+        "old_value": "plain dark blue rider jacket",
+        "new_value": "dark blue rider jacket with wide white shoulder straps"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00020_T2_0040",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change white marble sculpture to white marble sculpture with gray veining in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white marble sculpture with gray veining",
+      "target_entity": "O1",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "white marble sculpture"
+        ],
+        "edited_queries": [
+          "white marble sculpture with gray veining"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_pattern",
+        "old_value": "white marble sculpture",
+        "new_value": "white marble sculpture with gray veining"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00020_T2_0041",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain red scarf to red scarf with thin white stripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "red scarf with thin white stripes",
+      "target_entity": "B1",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain red scarf"
+        ],
+        "edited_queries": [
+          "red scarf with thin white stripes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "plain red scarf",
+        "new_value": "red scarf with thin white stripes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00021_T2_0042",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain white lighthouse to white lighthouse with red horizontal bands in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white lighthouse with red horizontal bands",
+      "target_entity": "O3",
+      "applicable_shots": [
+        1,
+        2,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain white lighthouse"
+        ],
+        "edited_queries": [
+          "white lighthouse with red horizontal bands"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "plain white lighthouse",
+        "new_value": "white lighthouse with red horizontal bands"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00021_T2_0043",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change flat orange-brown seaweed to thick long tangled orange-brown seaweed in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "thick long tangled orange-brown seaweed",
+      "target_entity": "O5",
+      "applicable_shots": [
+        2,
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "flat orange-brown seaweed"
+        ],
+        "edited_queries": [
+          "thick long tangled orange-brown seaweed"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "size_and_shape",
+        "old_value": "flat orange-brown seaweed",
+        "new_value": "thick long tangled orange-brown seaweed"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00022_T2_0044",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth blue solar panels to blue solar panels with gold grid lines in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue solar panels with gold grid lines",
+      "target_entity": "R1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth blue solar panels"
+        ],
+        "edited_queries": [
+          "blue solar panels with gold grid lines"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "surface_pattern",
+        "old_value": "smooth blue solar panels",
+        "new_value": "blue solar panels with gold grid lines"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00022_T2_0045",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change steady green sample-tube indicator light to blinking red sample-tube indicator light in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blinking red sample-tube indicator light",
+      "target_entity": "O11",
+      "applicable_shots": [
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "steady green sample-tube indicator light"
+        ],
+        "edited_queries": [
+          "blinking red sample-tube indicator light"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "light_behavior",
+        "old_value": "steady green sample-tube indicator light",
+        "new_value": "blinking red sample-tube indicator light"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00023_T2_0046",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change matte deep blue leotard to shiny satin deep blue leotard in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "shiny satin deep blue leotard",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "matte deep blue leotard"
+        ],
+        "edited_queries": [
+          "shiny satin deep blue leotard"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_finish",
+        "old_value": "matte deep blue leotard",
+        "new_value": "shiny satin deep blue leotard"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00023_T2_0047",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change pale pink ballet shoes to pale pink ballet shoes with long ribbons wrapped around the lower legs in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "pale pink ballet shoes with long ribbons wrapped around the lower legs",
+      "target_entity": "O4",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "pale pink ballet shoes"
+        ],
+        "edited_queries": [
+          "pale pink ballet shoes with long ribbons wrapped around the lower legs"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "long_ribbons",
+        "old_value": "pale pink ballet shoes",
+        "new_value": "pale pink ballet shoes with long ribbons wrapped around the lower legs"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00024_T2_0048",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain black ramen apprentice outfit to black ramen apprentice outfit with white sleeve cuffs in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black ramen apprentice outfit with white sleeve cuffs",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain black ramen apprentice outfit"
+        ],
+        "edited_queries": [
+          "black ramen apprentice outfit with white sleeve cuffs"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "clothing_detail",
+        "old_value": "plain black ramen apprentice outfit",
+        "new_value": "black ramen apprentice outfit with white sleeve cuffs"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00024_T2_0049",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change orange soft-boiled egg yolk to bright golden runny egg yolk in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "bright golden runny egg yolk",
+      "target_entity": "O7",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "orange soft-boiled egg yolk"
+        ],
+        "edited_queries": [
+          "bright golden runny egg yolk"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "food_texture_color",
+        "old_value": "orange soft-boiled egg yolk",
+        "new_value": "bright golden runny egg yolk"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00025_T2_0050",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change blue-green and orange kingfisher plumage to kingfisher with a prominent white head crest in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "kingfisher with a prominent white head crest",
+      "target_entity": "A2",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blue-green and orange kingfisher plumage"
+        ],
+        "edited_queries": [
+          "kingfisher with a prominent white head crest"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "head_crest",
+        "old_value": "blue-green and orange kingfisher plumage",
+        "new_value": "kingfisher with a prominent white head crest"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00025_T2_0051",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth green foreground leafy plants to taller wider green foreground reed leaves in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "taller wider green foreground reed leaves",
+      "target_entity": "O5",
+      "applicable_shots": [
+        3
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth green foreground leafy plants"
+        ],
+        "edited_queries": [
+          "taller wider green foreground reed leaves"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "plant_size_and_shape",
+        "old_value": "smooth green foreground leafy plants",
+        "new_value": "taller wider green foreground reed leaves"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00026_T2_0052",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth red clay teapot to speckled red clay teapot in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "speckled red clay teapot",
+      "target_entity": "T1",
+      "applicable_shots": [
+        1
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth red clay teapot"
+        ],
+        "edited_queries": [
+          "speckled red clay teapot"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "surface_pattern",
+        "old_value": "smooth red clay teapot",
+        "new_value": "speckled red clay teapot"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00026_T2_0053",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change glossy blue ceramic bowl to blue ceramic bowl with large white polka dots in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue ceramic bowl with large white polka dots",
+      "target_entity": "O5",
+      "applicable_shots": [
+        2
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "glossy blue ceramic bowl"
+        ],
+        "edited_queries": [
+          "blue ceramic bowl with large white polka dots"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "pattern",
+        "old_value": "glossy blue ceramic bowl",
+        "new_value": "blue ceramic bowl with large white polka dots"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00027_T2_0054",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain gray mechanic jacket to gray mechanic jacket with black tool suspenders in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "gray mechanic jacket with black tool suspenders",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain gray mechanic jacket"
+        ],
+        "edited_queries": [
+          "gray mechanic jacket with black tool suspenders"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "clothing_accessory",
+        "old_value": "plain gray mechanic jacket",
+        "new_value": "gray mechanic jacket with black tool suspenders"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00027_T2_0055",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change silver bicycle chain to black ceramic-coated bicycle chain in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "black ceramic-coated bicycle chain",
+      "target_entity": "O3",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "silver bicycle chain"
+        ],
+        "edited_queries": [
+          "black ceramic-coated bicycle chain"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_finish",
+        "old_value": "silver bicycle chain",
+        "new_value": "black ceramic-coated bicycle chain"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00028_T2_0056",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change plain light blue gardener shirt to light blue gardener shirt with a green gardening apron over it in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "light blue gardener shirt with a green gardening apron over it",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "plain light blue gardener shirt"
+        ],
+        "edited_queries": [
+          "light blue gardener shirt with a green gardening apron over it"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "clothing_layer",
+        "old_value": "plain light blue gardener shirt",
+        "new_value": "light blue gardener shirt with a green gardening apron over it"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00028_T2_0057",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth white and silver gardening robot shell to white and copper brushed-metal gardening robot shell in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "white and copper brushed-metal gardening robot shell",
+      "target_entity": "R1",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth white and silver gardening robot shell"
+        ],
+        "edited_queries": [
+          "white and copper brushed-metal gardening robot shell"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "material_finish",
+        "old_value": "smooth white and silver gardening robot shell",
+        "new_value": "white and copper brushed-metal gardening robot shell"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00029_T2_0058",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change smooth blue alien traveler skin to blue alien traveler skin with bold purple stripes in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue alien traveler skin with bold purple stripes",
+      "target_entity": "C1",
+      "applicable_shots": [
+        1,
+        5
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "smooth blue alien traveler skin"
+        ],
+        "edited_queries": [
+          "blue alien traveler skin with bold purple stripes"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "skin_pattern",
+        "old_value": "smooth blue alien traveler skin",
+        "new_value": "blue alien traveler skin with bold purple stripes"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00029_T2_0059",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T2",
+      "instruction": "Change blue-white glowing floor tiles to blue-white glowing floor tiles with pulsing arrow patterns in the applicable shots, while preserving the same object identity, motion, and scene layout.",
+      "target_phrase": "blue-white glowing floor tiles with pulsing arrow patterns",
+      "target_entity": "O5",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "local",
+        "edit_type": "attribute_edit",
+        "source_queries": [
+          "blue-white glowing floor tiles"
+        ],
+        "edited_queries": [
+          "blue-white glowing floor tiles with pulsing arrow patterns"
+        ],
+        "combine": "union"
+      },
+      "extra": {
+        "attribute_category": "light_pattern",
+        "old_value": "blue-white glowing floor tiles",
+        "new_value": "blue-white glowing floor tiles with pulsing arrow patterns"
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  }
+]

@@ -1,0 +1,5788 @@
+[
+  {
+    "sample_id": "00000_T8_0000",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cozy cafe interior and street-window background with snowy alpine lodge cafe with pine ridges outside, while preserving barista in white shirt and black apron, white ceramic latte cup, stainless steel milk pitcher, black espresso machine, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy alpine lodge cafe with pine ridges outside background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cozy cafe interior and street-window background",
+        "new_background": "snowy alpine lodge cafe with pine ridges outside",
+        "preserve_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ],
+        "edited_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00000_T8_0001",
+    "video_id": "00000",
+    "source_video": "00000.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 66
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 67,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 125,
+        "frame_end": 200
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 201,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Barista in white shirt and black apron, main subject, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in blue coat, first passes by outside glass door, then sits by window looking at phone, background entity"
+      },
+      {
+        "id": "B2",
+        "desc": "Additional customer in dark clothing sitting at table, background entity"
+      },
+      {
+        "id": "B3",
+        "desc": "Cyclist in dark clothing passing outside window, background dynamic entity"
+      }
+    ],
+    "key_objects": [
+      "White ceramic latte cup",
+      "Stainless steel milk pitcher",
+      "Espresso machine",
+      "Wooden bar counter",
+      "Glass door",
+      "White saucer",
+      "Gray cloth",
+      "Wooden tables and chairs",
+      "Phone"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cozy cafe interior and street-window background with sunlit seaside kiosk with turquoise water beyond the counter, while preserving barista in white shirt and black apron, white ceramic latte cup, stainless steel milk pitcher, black espresso machine, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit seaside kiosk with turquoise water beyond the counter background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cozy cafe interior and street-window background",
+        "new_background": "sunlit seaside kiosk with turquoise water beyond the counter",
+        "preserve_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ],
+        "edited_queries": [
+          "barista in white shirt and black apron",
+          "white ceramic latte cup",
+          "stainless steel milk pitcher",
+          "black espresso machine"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00001_T8_0002",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the grass agility training field background with indoor sports arena with blue padded walls, while preserving Border Collie, trainer in red jacket, blue jump bar, yellow tunnel, wooden seesaw, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "indoor sports arena with blue padded walls background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "grass agility training field background",
+        "new_background": "indoor sports arena with blue padded walls",
+        "preserve_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ],
+        "edited_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00001_T8_0003",
+    "video_id": "00001",
+    "source_video": "00001.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 29
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 30,
+        "frame_end": 77
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 78,
+        "frame_end": 188
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 189,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Black-and-white Border Collie, the protagonist, completing an agility training course, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human trainer wearing red jacket, black pants, and white shoes, guiding the Border Collie through the agility course, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small white dog sitting near the yellow tunnel, background entity, appearing only in shot 1"
+      },
+      {
+        "id": "B2",
+        "desc": "Person in dark clothing standing on path in distance, background entity, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Blue jump bar",
+      "Yellow tunnel",
+      "Wooden seesaw",
+      "Yellow and gray ramp",
+      "Number 15 sign",
+      "Wooden fence",
+      "Grass training field",
+      "Treat"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the grass agility training field background with mountain meadow dog park with distant snow peaks, while preserving Border Collie, trainer in red jacket, blue jump bar, yellow tunnel, wooden seesaw, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "mountain meadow dog park with distant snow peaks background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "grass agility training field background",
+        "new_background": "mountain meadow dog park with distant snow peaks",
+        "preserve_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ],
+        "edited_queries": [
+          "Border Collie",
+          "trainer in red jacket",
+          "blue jump bar",
+          "yellow tunnel",
+          "wooden seesaw"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00002_T8_0004",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the wooden-floor toy city background with child bedroom carpet city with soft blanket hills, while preserving red toy train, green wind-up robot, blue arch bridge, train tracks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "child bedroom carpet city with soft blanket hills background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "wooden-floor toy city background",
+        "new_background": "child bedroom carpet city with soft blanket hills",
+        "preserve_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ],
+        "edited_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00002_T8_0005",
+    "video_id": "00002",
+    "source_video": "00002.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 38
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 39,
+        "frame_end": 131
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 132,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red toy train with round white headlights, the protagonist, pulling green and purple carriages, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small green wind-up robot with yellow eyes, background character, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "Train tracks",
+      "Building-block station",
+      "Blue arch bridge",
+      "Colorful block buildings",
+      "Plastic trees",
+      "Mini street lamps",
+      "Green train carriage",
+      "Purple train carriage",
+      "Paper airplane",
+      "Central plaza with fountain",
+      "Second building-block station",
+      "Wooden floor"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the wooden-floor toy city background with snowy toy mountain village, while preserving red toy train, green wind-up robot, blue arch bridge, train tracks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy toy mountain village background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "wooden-floor toy city background",
+        "new_background": "snowy toy mountain village",
+        "preserve_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ],
+        "edited_queries": [
+          "red toy train",
+          "green wind-up robot",
+          "blue arch bridge",
+          "train tracks"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00003_T8_0006",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the school robot club classroom background with modern glass-walled robotics lab, while preserving short-haired school girl, glasses-wearing boy, transparent desktop robot, screwdriver, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "modern glass-walled robotics lab background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "school robot club classroom background",
+        "new_background": "modern glass-walled robotics lab",
+        "preserve_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ],
+        "edited_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00003_T8_0007",
+    "video_id": "00003",
+    "source_video": "00003.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 36
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 37,
+        "frame_end": 118
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 119,
+        "frame_end": 193
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 194,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short dark brown-haired high school girl in dark blue uniform with white collar and blue armbands, protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Black-haired high school boy with glasses in dark blue uniform, supporting character, appears in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Two high school students in dark blue uniforms walking past hallway windows, dynamic background entities, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Small desktop robot",
+      "Screwdriver",
+      "Whiteboard",
+      "Electric fan",
+      "Lab table",
+      "Wooden chairs",
+      "Wall clock",
+      "Glass door",
+      "Tools and equipment",
+      "Small red flag"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the school robot club classroom background with nighttime science fair booth with poster boards, while preserving short-haired school girl, glasses-wearing boy, transparent desktop robot, screwdriver, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "nighttime science fair booth with poster boards background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "school robot club classroom background",
+        "new_background": "nighttime science fair booth with poster boards",
+        "preserve_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ],
+        "edited_queries": [
+          "short-haired school girl",
+          "glasses-wearing boy",
+          "transparent desktop robot",
+          "screwdriver"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00004_T8_0008",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the greenhouse potting bench background with outdoor botanical garden nursery, while preserving sunflower seedling, terracotta pot, water droplets, bee, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "outdoor botanical garden nursery background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "greenhouse potting bench background",
+        "new_background": "outdoor botanical garden nursery",
+        "preserve_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ],
+        "edited_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00004_T8_0009",
+    "video_id": "00004",
+    "source_video": "00004.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 137,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "Sunflower seedling that shows significant growth across shots, from emerging cotyledons to four large leaves with central bud, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Small black bee that flies around the sunflower seedling, dynamic background entity, appears in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Gardener's shadow with hat visible through greenhouse glass, static background entity, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "向日葵幼苗",
+      "陶土花盆",
+      "喷壶",
+      "温室玻璃",
+      "湿润泥土"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the greenhouse potting bench background with bright kitchen windowsill herb garden, while preserving sunflower seedling, terracotta pot, water droplets, bee, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "bright kitchen windowsill herb garden background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "greenhouse potting bench background",
+        "new_background": "bright kitchen windowsill herb garden",
+        "preserve_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ],
+        "edited_queries": [
+          "sunflower seedling",
+          "terracotta pot",
+          "water droplets",
+          "bee"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00005_T8_0010",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the hospital ambulance entrance background with rainy airport emergency bay, while preserving two paramedics, folding stretcher, ambulance, oxygen mask, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "rainy airport emergency bay background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "hospital ambulance entrance background",
+        "new_background": "rainy airport emergency bay",
+        "preserve_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ],
+        "edited_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00005_T8_0011",
+    "video_id": "00005",
+    "source_video": "00005.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 72
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 73,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "深色头发扎成发髻的女性医护人员，穿着深蓝色制服，袖子有黄色反光条纹，主角，出现在镜头1、3、4、5"
+      },
+      {
+        "id": "C2",
+        "desc": "短发男性医护人员，穿着深蓝色制服，袖子和裤腿有黄色反光条纹，辅助角色，出现在镜头1、2、4"
+      },
+      {
+        "id": "B1",
+        "desc": "穿白色制服的护士推着医疗车，背景动态实体，出现在镜头1和5"
+      }
+    ],
+    "key_objects": [
+      "救护车",
+      "折叠担架",
+      "医院入口",
+      "路灯",
+      "救护车 rear doors",
+      "急救包",
+      "氧气面罩",
+      "纱布",
+      "剪刀",
+      "蓝色床单",
+      "白色轿车",
+      "医疗车"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the hospital ambulance entrance background with snow-covered mountain clinic entrance, while preserving two paramedics, folding stretcher, ambulance, oxygen mask, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snow-covered mountain clinic entrance background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "hospital ambulance entrance background",
+        "new_background": "snow-covered mountain clinic entrance",
+        "preserve_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ],
+        "edited_queries": [
+          "two paramedics",
+          "folding stretcher",
+          "ambulance",
+          "oxygen mask"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00006_T8_0012",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cartoon forest floor background with sunny meadow picnic clearing, while preserving squirrel, raccoon, fawn, acorn basket, white wildflower, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunny meadow picnic clearing background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cartoon forest floor background",
+        "new_background": "sunny meadow picnic clearing",
+        "preserve_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ],
+        "edited_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00006_T8_0013",
+    "video_id": "00006",
+    "source_video": "00006.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Brown squirrel with bushy tail wearing blue scarf, main character, holds acorn basket, appears in shots 1 and 4"
+      },
+      {
+        "id": "A2",
+        "desc": "Chubby gray raccoon with black facial markings and ringed tail, main character, appears in shots 2 and 4"
+      },
+      {
+        "id": "A3",
+        "desc": "Brown fawn with white spots and large ears, main character, appears in shots 3 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Small yellow bird and green frog, dynamic background entities, appear in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "acorn basket",
+      "tree hollow",
+      "acorn",
+      "mushrooms",
+      "tree roots",
+      "red berries",
+      "stream stones",
+      "stream water",
+      "white wildflower",
+      "grass blades",
+      "butterfly",
+      "autumn leaves",
+      "forest rocks"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cartoon forest floor background with glowing mushroom grove at night, while preserving squirrel, raccoon, fawn, acorn basket, white wildflower, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "glowing mushroom grove at night background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cartoon forest floor background",
+        "new_background": "glowing mushroom grove at night",
+        "preserve_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ],
+        "edited_queries": [
+          "squirrel",
+          "raccoon",
+          "fawn",
+          "acorn basket",
+          "white wildflower"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00007_T8_0014",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the steel bridge over river background with desert canyon bridge inspection site, while preserving engineer, black quadcopter drone, tablet, bridge crack, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "desert canyon bridge inspection site background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "steel bridge over river background",
+        "new_background": "desert canyon bridge inspection site",
+        "preserve_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ],
+        "edited_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00007_T8_0015",
+    "video_id": "00007",
+    "source_video": "00007.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 42
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 43,
+        "frame_end": 82
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 83,
+        "frame_end": 113
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 114,
+        "frame_end": 142
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 143,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Engineer wearing white hard hat, yellow safety vest, and blue shirt, operating tablet to control drone, main supporting character appearing in shots 1, 4, and 5"
+      },
+      {
+        "id": "M1",
+        "desc": "Black industrial quadcopter drone with red indicator lights and dual-lens camera, protagonist performing bridge inspection, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Large white commercial boat moving slowly on river below bridge, dynamic background entity appearing in shots 3 and 5"
+      }
+    ],
+    "key_objects": [
+      "Quadcopter drone",
+      "Tablet",
+      "Steel bridge",
+      "Landing pad",
+      "Bridge cables",
+      "Bridge crack",
+      "Tablet interface"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the steel bridge over river background with snowy suspension bridge over an icy river, while preserving engineer, black quadcopter drone, tablet, bridge crack, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy suspension bridge over an icy river background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "steel bridge over river background",
+        "new_background": "snowy suspension bridge over an icy river",
+        "preserve_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ],
+        "edited_queries": [
+          "engineer",
+          "black quadcopter drone",
+          "tablet",
+          "bridge crack"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00008_T8_0016",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the old market street background with futuristic indoor food court, while preserving white delivery robot, paper package, pickup window, QR code, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "futuristic indoor food court background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "old market street background",
+        "new_background": "futuristic indoor food court",
+        "preserve_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ],
+        "edited_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00008_T8_0017",
+    "video_id": "00008",
+    "source_video": "00008.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 54
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 55,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 165
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 166,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色配送机器人，带有蓝色圆形眼睛表情，主角，出现在镜头1-4"
+      },
+      {
+        "id": "A1",
+        "desc": "橙色小猫，背景动态实体，出现在镜头1和4"
+      },
+      {
+        "id": "R2",
+        "desc": "绿色圆形清洁机器人，远处背景实体，出现在镜头2"
+      },
+      {
+        "id": "C1",
+        "desc": "水果摊摊主，穿蓝色上衣，出现在镜头1"
+      },
+      {
+        "id": "C2",
+        "desc": "取货人，仅可见手，出现在镜头4"
+      },
+      {
+        "id": "G1",
+        "desc": "市场顾客群体，背景人群，出现在镜头1和3"
+      }
+    ],
+    "key_objects": [
+      "纸袋包裹",
+      "水果摊",
+      "QR码",
+      "红色条纹遮阳篷",
+      "木箱",
+      "取货窗口",
+      "鹅卵石路面",
+      "水果和蔬菜",
+      "木桶",
+      "黄色条纹遮阳篷"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the old market street background with Mediterranean stone alley market, while preserving white delivery robot, paper package, pickup window, QR code, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "Mediterranean stone alley market background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "old market street background",
+        "new_background": "Mediterranean stone alley market",
+        "preserve_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ],
+        "edited_queries": [
+          "white delivery robot",
+          "paper package",
+          "pickup window",
+          "QR code"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00009_T8_0018",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the classical plaza background with quiet canal-side square, while preserving street painter, wooden easel, watercolor palette, finished painting, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "quiet canal-side square background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "classical plaza background",
+        "new_background": "quiet canal-side square",
+        "preserve_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ],
+        "edited_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00009_T8_0019",
+    "video_id": "00009",
+    "source_video": "00009.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 84
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 85,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "戴棕色贝雷帽、穿蓝绿色夹克的中年男性街头画家，主角，出现在镜头1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "远处模糊的行人群体，穿着各色服装，背景动态实体，出现在镜头1和3"
+      },
+      {
+        "id": "A1",
+        "desc": "灰黑色鸽子群体，在画家附近地面活动，出现在镜头1和2"
+      }
+    ],
+    "key_objects": [
+      "画架",
+      "画板",
+      "调色板",
+      "画笔",
+      "折叠椅",
+      "喷泉",
+      "路灯",
+      "鹅卵石地面",
+      "带柱廊的古典建筑",
+      "橙红色建筑立面",
+      "溶剂罐"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the classical plaza background with busy night market art corner, while preserving street painter, wooden easel, watercolor palette, finished painting, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "busy night market art corner background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "classical plaza background",
+        "new_background": "busy night market art corner",
+        "preserve_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ],
+        "edited_queries": [
+          "street painter",
+          "wooden easel",
+          "watercolor palette",
+          "finished painting"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00010_T8_0020",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bakery interior and storefront background with sunny farmhouse kitchen bakery, while preserving orange-and-white cat, baguette bag, flour paw prints, croissant, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunny farmhouse kitchen bakery background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bakery interior and storefront background",
+        "new_background": "sunny farmhouse kitchen bakery",
+        "preserve_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ],
+        "edited_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00010_T8_0021",
+    "video_id": "00010",
+    "source_video": "00010.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 115
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 116,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Long-haired orange-and-white cat with distinct facial markings, protagonist, exploring bakery, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Person in pink shirt (with red cap in shot 4) walking past outside bakery, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Orange-and-white cat",
+      "Baguette in paper bag",
+      "Flour paw prints",
+      "Wooden furniture",
+      "Glass display case",
+      "Flour pile",
+      "Butter croissant",
+      "Glass door",
+      "Storefront sign"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bakery interior and storefront background with Paris sidewalk pastry stall, while preserving orange-and-white cat, baguette bag, flour paw prints, croissant, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "Paris sidewalk pastry stall background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bakery interior and storefront background",
+        "new_background": "Paris sidewalk pastry stall",
+        "preserve_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ],
+        "edited_queries": [
+          "orange-and-white cat",
+          "baguette bag",
+          "flour paw prints",
+          "croissant"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00011_T8_0022",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the handmade cardboard workshop background with child's bedroom rocket playset, while preserving clay astronaut, cardboard rocket, blue wrench, red button, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "child's bedroom rocket playset background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "handmade cardboard workshop background",
+        "new_background": "child's bedroom rocket playset",
+        "preserve_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ],
+        "edited_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00011_T8_0023",
+    "video_id": "00011",
+    "source_video": "00011.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 48
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 49,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 89,
+        "frame_end": 148
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 149,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "White clay astronaut figure with silver helmet and gloves, protagonist, appears in all shots"
+      },
+      {
+        "id": "G1",
+        "desc": "Small green spherical alien with large white googly eyes, background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "Cardboard rocket",
+      "Blue wrench",
+      "Silver tape",
+      "Red button",
+      "Silver nut and bolt",
+      "White smoke effect",
+      "Rocket tail light",
+      "Red flag on pole"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the handmade cardboard workshop background with lunar crater base with silver domes, while preserving clay astronaut, cardboard rocket, blue wrench, red button, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "lunar crater base with silver domes background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "handmade cardboard workshop background",
+        "new_background": "lunar crater base with silver domes",
+        "preserve_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ],
+        "edited_queries": [
+          "clay astronaut",
+          "cardboard rocket",
+          "blue wrench",
+          "red button"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00012_T8_0024",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rainy city transit background with covered airport terminal drop-off lane, while preserving umbrella commuters, delivery rider, bus passengers, wet pavement, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "covered airport terminal drop-off lane background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rainy city transit background",
+        "new_background": "covered airport terminal drop-off lane",
+        "preserve_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ],
+        "edited_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00012_T8_0025",
+    "video_id": "00012",
+    "source_video": "00012.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 50
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 51,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 97,
+        "frame_end": 133
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 134,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of nighttime commuters with dark umbrellas, main group subject, appearing in shots 1 and 4"
+      },
+      {
+        "id": "B1",
+        "desc": "Food-delivery scooter rider in bright yellow jacket, dynamic background entity, appearing in shot 2"
+      },
+      {
+        "id": "B2",
+        "desc": "Bus passengers boarding and exiting, background entities, appearing in shot 2"
+      },
+      {
+        "id": "B3",
+        "desc": "Pedestrians with colorful umbrellas crossing intersection, background entities, appearing in shot 4"
+      }
+    ],
+    "key_objects": [
+      "地铁入口",
+      "公交车",
+      "出租车灯牌",
+      "斑马线",
+      "霓虹广告牌"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rainy city transit background with neon elevated train platform, while preserving umbrella commuters, delivery rider, bus passengers, wet pavement, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "neon elevated train platform background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rainy city transit background",
+        "new_background": "neon elevated train platform",
+        "preserve_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ],
+        "edited_queries": [
+          "umbrella commuters",
+          "delivery rider",
+          "bus passengers",
+          "wet pavement"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00013_T8_0026",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the stainless restaurant kitchen background with marble pastry studio with tall windows, while preserving chef in white uniform, white plate, cream domes, raspberry sauce, service bell, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "marble pastry studio with tall windows background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "stainless restaurant kitchen background",
+        "new_background": "marble pastry studio with tall windows",
+        "preserve_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ],
+        "edited_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00013_T8_0027",
+    "video_id": "00013",
+    "source_video": "00013.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 150
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 151,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Head chef in white uniform with short brown hair, protagonist, appears in all shots"
+      }
+    ],
+    "key_objects": [
+      "White round plate",
+      "Piping bag",
+      "Metal container",
+      "Cream domes",
+      "Piping nozzle",
+      "Raspberry sauce",
+      "Squeeze bottle",
+      "Mint leaf",
+      "Service bell",
+      "Stainless steel counter",
+      "Metal shelving"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the stainless restaurant kitchen background with sunlit beachside dessert stand with blue ocean behind, while preserving chef in white uniform, white plate, cream domes, raspberry sauce, service bell, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit beachside dessert stand with blue ocean behind background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "stainless restaurant kitchen background",
+        "new_background": "sunlit beachside dessert stand with blue ocean behind",
+        "preserve_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ],
+        "edited_queries": [
+          "chef in white uniform",
+          "white plate",
+          "cream domes",
+          "raspberry sauce",
+          "service bell"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00014_T8_0028",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the anime koi pond garden background with snowy temple pond garden, while preserving golden-red koi, lotus leaves, bamboo water spout, stone lantern, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy temple pond garden background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "anime koi pond garden background",
+        "new_background": "snowy temple pond garden",
+        "preserve_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ],
+        "edited_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00014_T8_0029",
+    "video_id": "00014",
+    "source_video": "00014.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Golden-red koi fish with orange and yellow scale patterns, protagonist, appears in all shots"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue dragonfly with transparent wings, secondary animal, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Tiny figure possibly representing a little girl on stone bridge, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Lotus leaves",
+      "Cherry blossom petals",
+      "Stone bridge",
+      "Bamboo water spout",
+      "Stone lantern",
+      "Moss-covered rocks",
+      "Water ripples",
+      "Lotus stems"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the anime koi pond garden background with moonlit bamboo courtyard pond, while preserving golden-red koi, lotus leaves, bamboo water spout, stone lantern, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "moonlit bamboo courtyard pond background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "anime koi pond garden background",
+        "new_background": "moonlit bamboo courtyard pond",
+        "preserve_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ],
+        "edited_queries": [
+          "golden-red koi",
+          "lotus leaves",
+          "bamboo water spout",
+          "stone lantern"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00015_T8_0030",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the classic garage workshop background with open-air vintage car show pavilion, while preserving red classic car, mechanic, chrome side mirror, whitewall tire, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "open-air vintage car show pavilion background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "classic garage workshop background",
+        "new_background": "open-air vintage car show pavilion",
+        "preserve_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ],
+        "edited_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00015_T8_0031",
+    "video_id": "00015",
+    "source_video": "00015.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 97
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 98,
+        "frame_end": 136
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 137,
+        "frame_end": 197
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 198,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "V1",
+        "desc": "Red classic car with chrome details and whitewall tires, the vehicle protagonist, appearing in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Mechanic wearing gray clothing, supporting character, appearing in shots 1, 3, 5"
+      },
+      {
+        "id": "C2",
+        "desc": "Second mechanic wearing gray clothing, additional supporting character not mentioned in source, appearing only in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Red classic car",
+      "Garage roller door",
+      "Polishing cloth",
+      "Wrench",
+      "Chrome side mirror",
+      "Tool shelves",
+      "Workbenches",
+      "Ceiling fan",
+      "Engine bay",
+      "Work lights",
+      "Chrome valve cover",
+      "Cooling fan",
+      "Engine hoses",
+      "Whitewall tire",
+      "Chrome hubcap",
+      "Car fender"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the classic garage workshop background with desert roadside restoration shed, while preserving red classic car, mechanic, chrome side mirror, whitewall tire, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "desert roadside restoration shed background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "classic garage workshop background",
+        "new_background": "desert roadside restoration shed",
+        "preserve_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ],
+        "edited_queries": [
+          "red classic car",
+          "mechanic",
+          "chrome side mirror",
+          "whitewall tire"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00016_T8_0032",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the floating island cloud-sea background with aurora-lit sky temple above clouds, while preserving glowing blue tree, blue crystals, waterfalls, glowing flowers, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "aurora-lit sky temple above clouds background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "floating island cloud-sea background",
+        "new_background": "aurora-lit sky temple above clouds",
+        "preserve_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ],
+        "edited_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00016_T8_0033",
+    "video_id": "00016",
+    "source_video": "00016.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 121
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 122,
+        "frame_end": 176
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 177,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "P1",
+        "desc": "漂浮岛屿中央的蓝色发光树，主角，出现在所有镜头中"
+      }
+    ],
+    "key_objects": [
+      "蓝色发光树",
+      "漂浮岛屿",
+      "水晶石",
+      "云海",
+      "风车岛屿",
+      "发光花朵",
+      "瀑布",
+      "蓝色落叶",
+      "树中火花",
+      "高大草叶"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the floating island cloud-sea background with snowy mountain valley at sunset, while preserving glowing blue tree, blue crystals, waterfalls, glowing flowers, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy mountain valley at sunset background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "floating island cloud-sea background",
+        "new_background": "snowy mountain valley at sunset",
+        "preserve_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ],
+        "edited_queries": [
+          "glowing blue tree",
+          "blue crystals",
+          "waterfalls",
+          "glowing flowers"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00017_T8_0034",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bridal fitting room background with sunlit palace dressing room, while preserving bride, seamstress, ivory lace wedding dress, three-panel mirror, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit palace dressing room background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bridal fitting room background",
+        "new_background": "sunlit palace dressing room",
+        "preserve_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ],
+        "edited_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00017_T8_0035",
+    "video_id": "00017",
+    "source_video": "00017.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 24
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 25,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Young bride with dark brown hair in updo, wearing ivory lace wedding dress and silver beaded headpiece, main protagonist, appears in shots 1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "Older female seamstress with light skin tone, wearing blue shirt and silver ring, assistant, appears in shots 1-2, 4 and hands visible in shot 3"
+      },
+      {
+        "id": "B1",
+        "desc": "Young flower girl in white dress carrying light pink flower basket, background entity, appears in shot 1"
+      }
+    ],
+    "key_objects": [
+      "Wedding dress",
+      "Three-panel mirror",
+      "Round pedestal",
+      "Veil with headpiece",
+      "Doorway with glass panels",
+      "Light cream curtains",
+      "Flower basket",
+      "Silver ring",
+      "White chair and table"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bridal fitting room background with sunlit garden wedding tent with flowers, while preserving bride, seamstress, ivory lace wedding dress, three-panel mirror, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit garden wedding tent with flowers background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bridal fitting room background",
+        "new_background": "sunlit garden wedding tent with flowers",
+        "preserve_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ],
+        "edited_queries": [
+          "bride",
+          "seamstress",
+          "ivory lace wedding dress",
+          "three-panel mirror"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00018_T8_0036",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the toy playroom racetrack background with miniature backyard race track made of cardboard, while preserving yellow wind-up duck, blue tin toy car, finish flags, building blocks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "miniature backyard race track made of cardboard background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "toy playroom racetrack background",
+        "new_background": "miniature backyard race track made of cardboard",
+        "preserve_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ],
+        "edited_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00018_T8_0037",
+    "video_id": "00018",
+    "source_video": "00018.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 44
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 45,
+        "frame_end": 173
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 174,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Yellow wind-up duck toy with orange beak and feet, protagonist, winner of the race, appears in shots 1-3"
+      },
+      {
+        "id": "T2",
+        "desc": "Blue tin toy car with expressive eyes and white accents, racing companion, appears in shots 1-3"
+      },
+      {
+        "id": "B1",
+        "desc": "Spring-loaded clown toy with colorful outfit, dynamic background entity on toy box, appears in shots 1 and 3"
+      }
+    ],
+    "key_objects": [
+      "Building blocks",
+      "Finish flags",
+      "Toy box",
+      "Paper airplane",
+      "Colorful balls",
+      "Window",
+      "Wind-up key",
+      "Cartoon stars"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the toy playroom racetrack background with moonlit nursery floor racetrack, while preserving yellow wind-up duck, blue tin toy car, finish flags, building blocks, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "moonlit nursery floor racetrack background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "toy playroom racetrack background",
+        "new_background": "moonlit nursery floor racetrack",
+        "preserve_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ],
+        "edited_queries": [
+          "yellow wind-up duck",
+          "blue tin toy car",
+          "finish flags",
+          "building blocks"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00019_T8_0038",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the sand equestrian arena background with indoor show-jumping arena with sponsor banners, while preserving chestnut horse, rider, white jump rails, sand particles, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "indoor show-jumping arena with sponsor banners background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "sand equestrian arena background",
+        "new_background": "indoor show-jumping arena with sponsor banners",
+        "preserve_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ],
+        "edited_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00019_T8_0039",
+    "video_id": "00019",
+    "source_video": "00019.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 117,
+        "frame_end": 175
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 176,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "Chestnut brown horse with white facial marking and white ankle markings, the protagonist, appears in all shots"
+      },
+      {
+        "id": "C1",
+        "desc": "Human rider wearing black helmet, dark blue jacket, white pants, and black boots, the supporting protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Staff member in dark clothing leading a brown and white pony, dynamic background entities, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "White jump with green markers",
+      "Wooden fence",
+      "Sand arena",
+      "Green trees",
+      "Blue sky",
+      "Jump number identifier",
+      "Navy blue saddle pad",
+      "Reins",
+      "Horse leg protection",
+      "Flying sand particles"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the sand equestrian arena background with green countryside horse field, while preserving chestnut horse, rider, white jump rails, sand particles, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "green countryside horse field background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "sand equestrian arena background",
+        "new_background": "green countryside horse field",
+        "preserve_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ],
+        "edited_queries": [
+          "chestnut horse",
+          "rider",
+          "white jump rails",
+          "sand particles"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00020_T8_0040",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the museum exhibition hall background with grand glass-roofed train station gallery, while preserving marble sculpture, museum visitors, bronze mask, glass display case, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "grand glass-roofed train station gallery background",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "museum exhibition hall background",
+        "new_background": "grand glass-roofed train station gallery",
+        "preserve_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ],
+        "edited_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00020_T8_0041",
+    "video_id": "00020",
+    "source_video": "00020.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 132
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 133,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "G1",
+        "desc": "Group of approximately 20-25 museum visitors wearing various colored clothing, moving slowly throughout exhibition space, appears in shot 1"
+      },
+      {
+        "id": "B1",
+        "desc": "Individual visitor wearing brown coat and red scarf, walking past display case, appears in shot 2"
+      }
+    ],
+    "key_objects": [
+      "Marble sculpture",
+      "Round pedestal",
+      "Barrier ropes",
+      "Wooden floor",
+      "Bronze mask",
+      "Glass display case",
+      "Exhibition wall text"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the museum exhibition hall background with dark industrial art warehouse, while preserving marble sculpture, museum visitors, bronze mask, glass display case, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "dark industrial art warehouse background",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "museum exhibition hall background",
+        "new_background": "dark industrial art warehouse",
+        "preserve_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ],
+        "edited_queries": [
+          "marble sculpture",
+          "museum visitors",
+          "bronze mask",
+          "glass display case"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00021_T8_0042",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rocky coastline background with arctic coast with ice floes, while preserving reef rocks, white lighthouse, seaweed, seagulls, fishing boat, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "arctic coast with ice floes background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rocky coastline background",
+        "new_background": "arctic coast with ice floes",
+        "preserve_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ],
+        "edited_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00021_T8_0043",
+    "video_id": "00021",
+    "source_video": "00021.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 52
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 53,
+        "frame_end": 108
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 109,
+        "frame_end": 168
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 169,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "N1",
+        "desc": "Coastline with black reef rocks, waves, and white lighthouse as the primary natural subject, appearing in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Flock of seagulls flying in distance and small white boat on horizon, dynamic background entities"
+      }
+    ],
+    "key_objects": [
+      "Reef rocks",
+      "Sea spray",
+      "Lighthouse",
+      "Seagulls",
+      "Seaweed",
+      "Tide pool",
+      "Fishing boat",
+      "Seashells",
+      "Lighthouse beam"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rocky coastline background with tropical volcanic shoreline at sunset, while preserving reef rocks, white lighthouse, seaweed, seagulls, fishing boat, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "tropical volcanic shoreline at sunset background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rocky coastline background",
+        "new_background": "tropical volcanic shoreline at sunset",
+        "preserve_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ],
+        "edited_queries": [
+          "reef rocks",
+          "white lighthouse",
+          "seaweed",
+          "seagulls",
+          "fishing boat"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00022_T8_0044",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the Mars desert background with frozen alien plain with a giant ringed planet on the horizon, while preserving six-wheeled rover, mechanical arm, target rock, sample tube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "frozen alien plain with a giant ringed planet on the horizon background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "Mars desert background",
+        "new_background": "frozen alien plain with a giant ringed planet on the horizon",
+        "preserve_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ],
+        "edited_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00022_T8_0045",
+    "video_id": "00022",
+    "source_video": "00022.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 57
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 58,
+        "frame_end": 104
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 105,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 149
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 150,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "R1",
+        "desc": "白色六轮火星车，带有蓝色太阳能板和蓝色发光轮缘，主角，出现在所有镜头"
+      },
+      {
+        "id": "B1",
+        "desc": "棕色尘暴柱，背景动态实体，出现在镜头1和6"
+      },
+      {
+        "id": "B2",
+        "desc": "天空中的明亮轨道器光点，背景动态实体，出现在镜头3"
+      },
+      {
+        "id": "G1",
+        "desc": "散落在火星表面的黑色岩石群，静态环境元素，出现在所有镜头"
+      }
+    ],
+    "key_objects": [
+      "机械臂",
+      "车轮",
+      "太阳能板",
+      "红色沙地",
+      "尘暴",
+      "目标岩石",
+      "钻头",
+      "岩石粉末",
+      "岩石样本",
+      "样本管",
+      "指示灯",
+      "车辙",
+      "警示标志",
+      "山丘"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the Mars desert background with lunar crater field with Earth hanging overhead, while preserving six-wheeled rover, mechanical arm, target rock, sample tube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "lunar crater field with Earth hanging overhead background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "Mars desert background",
+        "new_background": "lunar crater field with Earth hanging overhead",
+        "preserve_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ],
+        "edited_queries": [
+          "six-wheeled rover",
+          "mechanical arm",
+          "target rock",
+          "sample tube"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00023_T8_0046",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the mirrored dance studio background with old theater rehearsal stage, while preserving female dancer, mirror reflections, wooden floor, ballet shoes, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "old theater rehearsal stage background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "mirrored dance studio background",
+        "new_background": "old theater rehearsal stage",
+        "preserve_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ],
+        "edited_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00023_T8_0047",
+    "video_id": "00023",
+    "source_video": "00023.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 53
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 54,
+        "frame_end": 80
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 81,
+        "frame_end": 116
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 117,
+        "frame_end": 164
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 165,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "穿着深蓝色紧身衣和浅粉色紧身裤的女性芭蕾舞者，主角，出现在镜头1-5"
+      },
+      {
+        "id": "B1",
+        "desc": "镜子中可见的两位穿着深蓝色紧身衣的舞者，背景群体，出现在镜头1、2、4、5"
+      }
+    ],
+    "key_objects": [
+      "排练镜",
+      "木质地板",
+      "蓝色水瓶",
+      "芭蕾舞鞋",
+      "木质把杆",
+      "窗户",
+      "紧急出口标识"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the mirrored dance studio background with sunlit rooftop dance deck, while preserving female dancer, mirror reflections, wooden floor, ballet shoes, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunlit rooftop dance deck background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "mirrored dance studio background",
+        "new_background": "sunlit rooftop dance deck",
+        "preserve_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ],
+        "edited_queries": [
+          "female dancer",
+          "mirror reflections",
+          "wooden floor",
+          "ballet shoes"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00024_T8_0048",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cozy ramen shop background with open-air lantern festival noodle stall, while preserving ramen apprentice, older ramen master, ramen bowl, noodle pot, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "open-air lantern festival noodle stall background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cozy ramen shop background",
+        "new_background": "open-air lantern festival noodle stall",
+        "preserve_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ],
+        "edited_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00024_T8_0049",
+    "video_id": "00024",
+    "source_video": "00024.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 45
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 46,
+        "frame_end": 89
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 90,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 173,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "黑发黑眸的年轻拉面学徒，穿黑色传统服装，主角，出现在镜头1-4"
+      },
+      {
+        "id": "C2",
+        "desc": "灰发年长的拉面师傅，穿灰色传统服装，监督者，出现在镜头1和4"
+      }
+    ],
+    "key_objects": [
+      "拉面碗",
+      "竹筛",
+      "煮面锅",
+      "长筷子",
+      "叉烧肉片",
+      "葱花",
+      "溏心蛋",
+      "菜单板",
+      "招财猫摆件",
+      "木质柜台",
+      "吊灯",
+      "推拉门",
+      "调味品容器",
+      "筷子筒",
+      "小蜡烛"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the cozy ramen shop background with busy train station noodle stall, while preserving ramen apprentice, older ramen master, ramen bowl, noodle pot, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "busy train station noodle stall background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "cozy ramen shop background",
+        "new_background": "busy train station noodle stall",
+        "preserve_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ],
+        "edited_queries": [
+          "ramen apprentice",
+          "older ramen master",
+          "ramen bowl",
+          "noodle pot"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00025_T8_0050",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the wetland bird habitat background with misty mountain lake marsh, while preserving white egret, kingfisher, three ducks, reeds, shallow water, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "misty mountain lake marsh background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "wetland bird habitat background",
+        "new_background": "misty mountain lake marsh",
+        "preserve_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ],
+        "edited_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00025_T8_0051",
+    "video_id": "00025",
+    "source_video": "00025.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 88
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 89,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "A1",
+        "desc": "White egret with long neck, main subject in shot 1, standing in shallow water"
+      },
+      {
+        "id": "A2",
+        "desc": "Blue-green and orange kingfisher with dark blue head, main subject in shot 2, perched on dead branch"
+      },
+      {
+        "id": "A3",
+        "desc": "Three brown ducks with darker patterns, main subjects in shot 3, swimming in formation"
+      },
+      {
+        "id": "B1",
+        "desc": "Possible distant human figure, background entity in shot 1, potentially on boardwalk"
+      }
+    ],
+    "key_objects": [
+      "Reeds",
+      "Shallow water flats",
+      "Wooden boardwalk",
+      "Dead branch",
+      "Foreground leafy plants",
+      "Water reflections"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the wetland bird habitat background with golden rice-paddy wetland, while preserving white egret, kingfisher, three ducks, reeds, shallow water, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "golden rice-paddy wetland background",
+      "applicable_shots": [
+        1,
+        2,
+        3
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "wetland bird habitat background",
+        "new_background": "golden rice-paddy wetland",
+        "preserve_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ],
+        "edited_queries": [
+          "white egret",
+          "kingfisher",
+          "three ducks",
+          "reeds",
+          "shallow water"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00026_T8_0052",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the clay kitchen tabletop background with colorful toy bakery storefront, while preserving red clay teapot, wooden spoon, blue bowl, flour, sugar cube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "colorful toy bakery storefront background",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "clay kitchen tabletop background",
+        "new_background": "colorful toy bakery storefront",
+        "preserve_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ],
+        "edited_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00026_T8_0053",
+    "video_id": "00026",
+    "source_video": "00026.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 96
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 97,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "T1",
+        "desc": "Red clay teapot with googly eyes, main protagonist, appears in shot 1"
+      },
+      {
+        "id": "O2",
+        "desc": "Light brown wooden spoon, supporting protagonist, appears in shot 2"
+      },
+      {
+        "id": "B1",
+        "desc": "Red cherry tomato, dynamic background entity, appears in shots 1 and 2"
+      }
+    ],
+    "key_objects": [
+      "cutting board",
+      "flour",
+      "sugar cube",
+      "blue bowl",
+      "flour jar",
+      "tiled wall",
+      "wooden table"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the clay kitchen tabletop background with sunny dollhouse kitchen counter, while preserving red clay teapot, wooden spoon, blue bowl, flour, sugar cube, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sunny dollhouse kitchen counter background",
+      "applicable_shots": [
+        1,
+        2
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "clay kitchen tabletop background",
+        "new_background": "sunny dollhouse kitchen counter",
+        "preserve_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ],
+        "edited_queries": [
+          "red clay teapot",
+          "wooden spoon",
+          "blue bowl",
+          "flour",
+          "sugar cube"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00027_T8_0054",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bicycle workshop background with outdoor cycling race service tent, while preserving female mechanic, black road bike, blue repair stand, silver chain, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "outdoor cycling race service tent background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bicycle workshop background",
+        "new_background": "outdoor cycling race service tent",
+        "preserve_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ],
+        "edited_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00027_T8_0055",
+    "video_id": "00027",
+    "source_video": "00027.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 71
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 72,
+        "frame_end": 112
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 113,
+        "frame_end": 169
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 170,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Female bicycle mechanic wearing gray jacket with 'PELOTON' logo and blue jeans, protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Cyclist in red clothing riding past outside workshop window, dynamic background entity, appears in shots 1 and 4"
+      }
+    ],
+    "key_objects": [
+      "Black road bike",
+      "Blue repair stand",
+      "Silver chain",
+      "Rear derailleur",
+      "Hanging bicycle wheels",
+      "Large workshop windows",
+      "Organized tool wall",
+      "Chain lube bottle",
+      "Cassette cogs",
+      "Torque wrench"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the bicycle workshop background with sleek modern bike showroom, while preserving female mechanic, black road bike, blue repair stand, silver chain, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "sleek modern bike showroom background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "bicycle workshop background",
+        "new_background": "sleek modern bike showroom",
+        "preserve_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ],
+        "edited_queries": [
+          "female mechanic",
+          "black road bike",
+          "blue repair stand",
+          "silver chain"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00028_T8_0056",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rooftop garden background with snowy mountain glass greenhouse with pine forest outside, while preserving gardener, gardening robot, tomato plants, harvest basket, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "snowy mountain glass greenhouse with pine forest outside background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rooftop garden background",
+        "new_background": "snowy mountain glass greenhouse with pine forest outside",
+        "preserve_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ],
+        "edited_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00028_T8_0057",
+    "video_id": "00028",
+    "source_video": "00028.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 60
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 61,
+        "frame_end": 103
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 104,
+        "frame_end": 144
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 145,
+        "frame_end": 192
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 193,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "Short-haired gardener in light blue shirt and navy blue pants, main protagonist, appears in shots 1, 3, 4, 5"
+      },
+      {
+        "id": "R1",
+        "desc": "Small white and silver gardening robot with extendable arm and screen, main protagonist, appears in all shots"
+      },
+      {
+        "id": "B1",
+        "desc": "Black delivery drone flying in background sky, dynamic background entity, appears in shots 1 and 5"
+      }
+    ],
+    "key_objects": [
+      "屋顶菜箱",
+      "银色园艺机器人",
+      "喷灌头",
+      "番茄藤",
+      "城市天际线"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the rooftop garden background with desert rooftop hydroponic farm, while preserving gardener, gardening robot, tomato plants, harvest basket, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "desert rooftop hydroponic farm background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "rooftop garden background",
+        "new_background": "desert rooftop hydroponic farm",
+        "preserve_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ],
+        "edited_queries": [
+          "gardener",
+          "gardening robot",
+          "tomato plants",
+          "harvest basket"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00029_T8_0058",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the spaceport terminal background with underwater glass travel terminal, while preserving blue alien traveler, round suitcase, round spacecraft, boarding screen, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "underwater glass travel terminal background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "spaceport terminal background",
+        "new_background": "underwater glass travel terminal",
+        "preserve_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ],
+        "edited_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  },
+  {
+    "sample_id": "00029_T8_0059",
+    "video_id": "00029",
+    "source_video": "00029.mp4",
+    "shots": [
+      {
+        "shot_id": 1,
+        "frame_start": 0,
+        "frame_end": 68
+      },
+      {
+        "shot_id": 2,
+        "frame_start": 69,
+        "frame_end": 98
+      },
+      {
+        "shot_id": 3,
+        "frame_start": 99,
+        "frame_end": 124
+      },
+      {
+        "shot_id": 4,
+        "frame_start": 125,
+        "frame_end": 172
+      },
+      {
+        "shot_id": 5,
+        "frame_start": 173,
+        "frame_end": 201
+      },
+      {
+        "shot_id": 6,
+        "frame_start": 202,
+        "frame_end": 240
+      }
+    ],
+    "characters": [
+      {
+        "id": "C1",
+        "desc": "蓝色细长人形外星旅行者，拖着灰色圆形行李箱，主角之一，出现在镜头1和5"
+      },
+      {
+        "id": "C2",
+        "desc": "绿色三眼外星角色，有三只眼睛和微笑表情，出现在镜头2"
+      },
+      {
+        "id": "R1",
+        "desc": "灰色带橙色细节的维修机器人，手持焊接喷枪，出现在镜头3"
+      },
+      {
+        "id": "R2",
+        "desc": "白色圆形清洁机器人，带蓝色眼睛，安装在墙上，出现在镜头2"
+      },
+      {
+        "id": "R3",
+        "desc": "浅蓝色机器人手臂，带蓝色眼睛，用于操作登机屏幕，出现在镜头5"
+      },
+      {
+        "id": "G1",
+        "desc": "多种颜色和形状的外星旅客群体，坐在彩色座椅上，出现在镜头1和4"
+      },
+      {
+        "id": "B1",
+        "desc": "绿色高个外星背景角色，站在登机口旁，出现在镜头5"
+      },
+      {
+        "id": "B2",
+        "desc": "紫色锥形头小外星背景角色，站在B1旁边，出现在镜头5"
+      }
+    ],
+    "key_objects": [
+      "圆形宇宙飞船",
+      "圆形行李箱",
+      "行李传送带",
+      "登机屏幕",
+      "发光地板瓷砖",
+      "太空窗户",
+      "棕色背包",
+      "星星贴纸",
+      "焊接喷枪",
+      "彩色座椅",
+      "小型屏幕",
+      "登机口门框",
+      "发光跑道",
+      "天花板灯光",
+      "蓝色排气火焰",
+      "焊接火花"
+    ],
+    "edit": {
+      "task_id": "T8",
+      "instruction": "Replace the spaceport terminal background with retro moonbase departure lounge, while preserving blue alien traveler, round suitcase, round spacecraft, boarding screen, and the original foreground scale, actions, camera framing, and shot order across every shot.",
+      "target_phrase": "retro moonbase departure lounge background",
+      "applicable_shots": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extra": {
+        "render_axis": "background",
+        "old_background": "spaceport terminal background",
+        "new_background": "retro moonbase departure lounge",
+        "preserve_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ]
+      },
+      "mask_queries": {
+        "nep_applicable": true,
+        "edit_scope": "global_background",
+        "edit_type": "background_replace",
+        "source_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ],
+        "edited_queries": [
+          "blue alien traveler",
+          "round suitcase",
+          "round spacecraft",
+          "boarding screen"
+        ],
+        "combine": "union",
+        "score_region": "mask",
+        "reason": "T8 replaces the background; NEP scores DINOv2 preservation inside the foreground preserve mask."
+      },
+      "author": "codex-handwritten-v3-vlm-boundaryfix-20260611"
+    }
+  }
+]
