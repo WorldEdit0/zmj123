@@ -45,12 +45,19 @@ Rate how CONSISTENT the two shots are at showing the SAME edited result, on a 0-
   - same style / treatment (lighting, color grading, finish)
   - same level of edit applied (not one shot edited and the other not)
 
+Evaluation scope:
+- Both frame sets are already selected from shots where this same requested edit should be evaluated.
+- Compare only the visible evidence relevant to the requested edit in each frame set.
+- The edited target may be visible only in part. Judge whether the visible parts in both frame sets are consistent with the same requested edit.
+- Do not require the same crop, pose, full body, full object, or viewpoint across shots.
+- If one frame set has no relevant visible evidence for the requested edit, the consistency is unverifiable and should receive a low score.
+
 Judge only the requested edit above. Ignore unrelated edits, unrelated scene changes,
 and source preservation issues unless they make the requested edit impossible to compare.
 
 STRICT SCALE — most multi-shot edits drift; reserve 5 for genuinely identical-feeling results:
-  0 = totally inconsistent (e.g. one shot edited, the other unchanged; or completely different entity)
-  1 = barely consistent (clearly different versions of the edit)
+  0 = totally inconsistent, with clearly different or missing edited results across the two frame sets
+  1 = barely consistent or not enough relevant visible evidence to compare
   2 = noticeable inconsistency (different colors / proportions / details)
   3 = mostly consistent, minor drift
   4 = strongly consistent, only tiny variations

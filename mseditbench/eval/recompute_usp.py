@@ -18,6 +18,7 @@ import numpy as np
 from tqdm import tqdm
 
 from mseditbench import metrics as M
+from mseditbench.eval.run_eval import _t5_reordered_edit_shots
 from mseditbench.metrics import backends as B
 
 
@@ -124,8 +125,10 @@ def main():
                 stride=args.stride,
                 max_frames=args.max_frames_per_shot,
             )
+            t5_usp_shots = _t5_reordered_edit_shots(sample)
+            edt_shots_for_usp = t5_usp_shots or sample["shots"]
             edt_frames = M.per_shot_frames(
-                edited, sample["shots"],
+                edited, edt_shots_for_usp,
                 stride=args.stride,
                 max_frames=args.max_frames_per_shot,
             )
@@ -133,9 +136,22 @@ def main():
             print(f"[err] {ef.name}: {e}")
             continue
 
-        applicable = sample["edit"].get("applicable_shots", [s["shot_id"] for s in sample["shots"]])
-        unedited = [s["shot_id"] for s in sample["shots"] if s["shot_id"] not in applicable]
-        usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino)
+        if t5_usp_shots:
+            usp_shot_ids = [int(s["shot_id"]) for s in t5_usp_shots]
+            usp_alignment = [
+                {
+                    "edited_position": int(s["edited_position"]),
+                    "source_shot_id": int(s["source_shot_id"]),
+                    "edited_frame_start": int(s["frame_start"]),
+                    "edited_frame_end": int(s["frame_end"]),
+                }
+                for s in t5_usp_shots
+            ]
+        else:
+            applicable = sample["edit"].get("applicable_shots", [s["shot_id"] for s in sample["shots"]])
+            usp_shot_ids = [s["shot_id"] for s in sample["shots"] if s["shot_id"] not in applicable]
+            usp_alignment = None
+        usp_r = M.usp(src_frames, edt_frames, usp_shot_ids, dino_backend=dino)
         d["usp"] = usp_r["usp"]
         extra = d.setdefault("extra", {})
         extra["usp_per_shot"] = usp_r["per_shot_usp"]
@@ -143,6 +159,7 @@ def main():
         extra["usp_n_unedited"] = usp_r.get("n_unedited")
         extra["usp_n_missing"] = usp_r.get("n_missing")
         extra["usp_reason"] = usp_r.get("reason")
+        extra["usp_t5_alignment"] = usp_alignment
 
         if args.backend_shot == "omnishotcut":
             try:

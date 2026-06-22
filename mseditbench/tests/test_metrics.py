@@ -21,6 +21,8 @@ from mseditbench.eval.run_eval import (
     _build_t9_metric_plan,
     _build_t9_nep_masks,
     _score_t9_vlm_metrics,
+    _t5_reordered_edit_shots,
+    _vlm_instruction_for_applicable_shots,
 )
 
 
@@ -241,6 +243,10 @@ def test_ee_v3_prompt_is_edit_only_and_metadata_free():
         assert term not in prompt, f"metadata or coupled criterion leaked into prompt: {term}"
     assert "Score only the requested edit" in prompt
     assert "If another edit is also visible, ignore it" in prompt
+    assert "only partially visible" in prompt
+    assert "visible part reflects the requested edit" in prompt
+    assert "Do not require a full body" in prompt
+    assert "For example" not in prompt and "robotic" not in prompt
 
 
 def test_csep_v3_prompt_ignores_unrelated_edits():
@@ -248,6 +254,42 @@ def test_csep_v3_prompt_ignores_unrelated_edits():
     assert "Change the chef to a robot chef." in prompt
     assert "Judge only the requested edit above" in prompt
     assert "Task type" not in prompt and "Shot id" not in prompt
+    assert "visible parts in both frame sets are consistent" in prompt
+    assert "Do not require the same crop" in prompt
+    assert "e.g." not in prompt and "hand or arm" not in prompt
+
+
+def test_ee_v3_scores_only_applicable_shots():
+    src = {1: _make_frames(1, T=1), 2: _make_frames(2, T=1)}
+    edit = {1: _make_frames(3, T=1), 2: _make_frames(4, T=1)}
+    vlm = PromptScoredVlm(image_scores={"robot hand": 1.0})
+    r = M.ee_v3(
+        src,
+        edit,
+        [2],
+        "Replace the visible hand with a robot hand.",
+        "",
+        vlm_backend=vlm,
+        frame_pairs_per_shot=1,
+    )
+    assert set(r["per_shot"]) == {2}, f"per_shot={r['per_shot']}"
+    assert r["n_applicable"] == 1, f"n_applicable={r['n_applicable']}"
+    assert r["ee"] == 1.0, f"ee={r['ee']}"
+
+
+def test_t6_vlm_instruction_uses_only_edit_shot_text():
+    instruction = (
+        "Shot 1: [KEEP] Keep the wide cafe shot unchanged.\n"
+        "Shot 2: [EDIT] Change the shooting style of shot 2 to a close-up shot, keeping the barista pouring milk.\n"
+        "Shot 3: [KEEP] Keep the latte art shot unchanged."
+    )
+    out = _vlm_instruction_for_applicable_shots(
+        {"edit": {"task_id": "T6"}},
+        instruction,
+        [2],
+    )
+    assert out == "Change the shooting style of shot 2 to a close-up shot, keeping the barista pouring milk.", out
+    assert "[KEEP]" not in out and "Shot 1" not in out and "Shot 3" not in out
 
 
 def test_nep_identity_is_one():
@@ -322,6 +364,26 @@ def test_usp_none_when_no_unedited_shots():
     r = M.usp({1: _make_frames(0)}, {1: _make_frames(0)}, [])
     assert r["usp"] is None, f"usp should be None, got {r['usp']}"
     assert r["reason"] == "no unedited shots for this prompt"
+
+
+def test_t5_usp_uses_reordered_corresponding_shots():
+    sample = {
+        "shots": [
+            {"shot_id": 1, "frame_start": 0, "frame_end": 9},
+            {"shot_id": 2, "frame_start": 10, "frame_end": 29},
+            {"shot_id": 3, "frame_start": 30, "frame_end": 39},
+        ],
+        "edit": {"task_id": "T5", "extra": {"new_order": [2, 1, 3]}},
+    }
+    slots = _t5_reordered_edit_shots(sample)
+    assert [s["shot_id"] for s in slots] == [2, 1, 3], slots
+    assert [(s["frame_start"], s["frame_end"]) for s in slots] == [(0, 19), (20, 29), (30, 39)]
+
+    src = {1: _make_frames(1), 2: _make_frames(2), 3: _make_frames(3)}
+    reordered_edit = {2: src[2], 1: src[1], 3: src[3]}
+    r = M.usp(src, reordered_edit, [2, 1, 3])
+    assert r["usp"] is not None and r["usp"] > 0.999, f"usp={r['usp']}"
+    assert r["n_scored"] == 3, f"n_scored={r['n_scored']}"
 
 
 def test_tac_perfect_when_boundaries_match():

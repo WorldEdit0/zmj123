@@ -75,6 +75,46 @@ def _maybe_per_shot_frames(video_path: str, shots: list[dict], stride: int, max_
     return M.per_shot_frames(video_path, shots, stride=stride, max_frames=max_frames)
 
 
+def _t5_reordered_edit_shots(sample: dict) -> list[dict] | None:
+    """Return edited-video shot slots keyed by their source shot id for T5 USP.
+
+    T5 changes temporal order, not shot content. USP therefore compares each
+    original source shot with the edited-video segment where that source shot
+    should appear after applying edit.extra.new_order.
+    """
+    edit = sample.get("edit") or {}
+    if edit.get("task_id") != "T5":
+        return None
+    order = (edit.get("extra") or {}).get("new_order")
+    if not isinstance(order, list) or not order:
+        return None
+
+    try:
+        order_ids = [int(x) for x in order]
+    except (TypeError, ValueError):
+        return None
+
+    by_id = {int(sh.get("shot_id", i + 1)): sh for i, sh in enumerate(sample.get("shots") or [])}
+    out: list[dict] = []
+    cursor = 0
+    for pos, shot_id in enumerate(order_ids, start=1):
+        source_shot = by_id.get(shot_id)
+        if source_shot is None:
+            return None
+        duration = int(source_shot["frame_end"]) - int(source_shot["frame_start"]) + 1
+        if duration <= 0:
+            return None
+        out.append({
+            "shot_id": shot_id,
+            "frame_start": cursor,
+            "frame_end": cursor + duration - 1,
+            "source_shot_id": shot_id,
+            "edited_position": pos,
+        })
+        cursor += duration
+    return out
+
+
 # SAM-3 minimum mask area (pixels). Below this, treat as a miss. For local
 # NEP, miss shots are skipped instead of falling back to whole-frame scoring.
 _MASK_MIN_PIXELS = 100
@@ -189,14 +229,19 @@ def _clean_query_text(text: str | None) -> str:
     return text.strip(" .,;:")
 
 
-def _t9_shot_instruction_map(instruction: str) -> dict[int, str]:
+def _shot_instruction_map(instruction: str, *, edit_only: bool = False) -> dict[int, str]:
     out: dict[int, str] = {}
     for raw in (instruction or "").splitlines():
         m = re.match(r"\s*Shot\s+(\d+)\s*:\s*(.*)", raw, flags=re.IGNORECASE)
         if not m:
             continue
         shot_id = int(m.group(1))
-        text = re.sub(r"^\[(?:EDIT|KEEP)\]\s*", "", m.group(2).strip(), flags=re.IGNORECASE)
+        rest = m.group(2).strip()
+        role_m = re.match(r"^\[(EDIT|KEEP)\]\s*(.*)", rest, flags=re.IGNORECASE)
+        role = role_m.group(1).upper() if role_m else None
+        if edit_only and role != "EDIT":
+            continue
+        text = role_m.group(2).strip() if role_m else rest
         text = re.split(
             r"\.\s*(?:Apply this edit only|Do not inherit|If the same)",
             text,
@@ -205,6 +250,35 @@ def _t9_shot_instruction_map(instruction: str) -> dict[int, str]:
         )[0]
         out[shot_id] = text.strip(" .")
     return out
+
+
+def _t9_shot_instruction_map(instruction: str) -> dict[int, str]:
+    return _shot_instruction_map(instruction)
+
+
+def _vlm_instruction_for_applicable_shots(
+    sample: dict,
+    default_instruction: str,
+    applicable_shots: list[int],
+) -> str:
+    """Return only the direct edit text relevant to the VLM-scored shots.
+
+    Prompt JSONs such as T6 contain one [EDIT] line plus several [KEEP] lines
+    for human/video-generator control. VLM metrics should not see the KEEP
+    lines; they judge only the edit on shots selected by applicable_shots.
+    """
+    edit_map = _shot_instruction_map(default_instruction, edit_only=True)
+    if not edit_map:
+        return default_instruction
+
+    selected = []
+    for shot_id in applicable_shots:
+        text = edit_map.get(int(shot_id))
+        if text:
+            selected.append(text.strip(" ."))
+    if not selected:
+        return default_instruction
+    return " ".join(f"{text}." for text in selected)
 
 
 def _split_preserve_queries(instruction: str) -> list[str]:
@@ -973,21 +1047,61 @@ def score_one(
         vlm = vlm_backends[0] if vlm_backends else None
         # 中文注释：EE_v3 先算每个 applicable shot 的编辑有效性；
         # run_eval 会把逐帧对分数放到 extra.ee_v3_frame_scores 里方便排查。
+        vlm_instruction = _vlm_instruction_for_applicable_shots(
+            sample, instruction, [int(s) for s in applicable]
+        )
         ee3_r = M.ee_v3(
-            src_frames, edt_frames, applicable, instruction, target_phrase,
+            src_frames, edt_frames, applicable, vlm_instruction, target_phrase,
             vlm_backend=vlm,
         )
         per_shot_ee3 = {k: v["ee"] for k, v in (ee3_r.get("per_shot") or {}).items()}
         # 中文注释：CSEP_v3 使用 EE_v3 的 per-shot 分数作为 coverage，
         # 再额外判断 edited shots 之间是否一致。
         csep3_r = M.csep_v3(
-            edt_frames, applicable, per_shot_ee3, instruction,
+            edt_frames, applicable, per_shot_ee3, vlm_instruction,
             vlm_backend=vlm,
         )
 
     # USP replaces the old SES. It measures DINOv2 content preservation only
     # on source shots that are not edited by the prompt; no face ID and no CLIP.
-    if "usp" in metrics:
+    usp_alignment = None
+    if "usp" in metrics and task_id == "T5":
+        t5_usp_shots = _t5_reordered_edit_shots(sample)
+        if t5_usp_shots:
+            try:
+                t5_edt_frames = _maybe_per_shot_frames(
+                    edited_video_path, t5_usp_shots, stride, max_frames_per_shot
+                )
+                usp_shot_ids = [int(s["shot_id"]) for s in t5_usp_shots]
+                usp_r = M.usp(src_frames, t5_edt_frames, usp_shot_ids, dino_backend=dino_backend)
+                usp_alignment = [
+                    {
+                        "edited_position": int(s["edited_position"]),
+                        "source_shot_id": int(s["source_shot_id"]),
+                        "edited_frame_start": int(s["frame_start"]),
+                        "edited_frame_end": int(s["frame_end"]),
+                    }
+                    for s in t5_usp_shots
+                ]
+            except Exception as e:
+                usp_r = {
+                    "usp": None,
+                    "per_shot_usp": {},
+                    "n_scored": 0,
+                    "n_unedited": len(t5_usp_shots),
+                    "n_missing": len(t5_usp_shots),
+                    "reason": f"T5 reordered USP frame extraction failed: {type(e).__name__}: {e}",
+                }
+        else:
+            usp_r = {
+                "usp": None,
+                "per_shot_usp": {},
+                "n_scored": 0,
+                "n_unedited": 0,
+                "n_missing": 0,
+                "reason": "T5 reordered USP mapping missing or invalid",
+            }
+    elif "usp" in metrics:
         usp_r = M.usp(src_frames, edt_frames, unedited, dino_backend=dino_backend)
     else:
         usp_r = {
@@ -1097,6 +1211,7 @@ def score_one(
             "usp_n_unedited": usp_r.get("n_unedited"),
             "usp_n_missing": usp_r.get("n_missing"),
             "usp_reason": usp_r.get("reason"),
+            "usp_t5_alignment": usp_alignment,
             "tac_per_shot": tac_r.get("per_shot_tac") or {},
             "tac_shot_count_match": tac_r.get("shot_count_match"),
             "tac_expected_count": tac_r.get("expected_count"),
